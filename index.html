@@ -27,6 +27,16 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    /* global marked */
+    /* global hljs */
+    marked.setOptions({
+      highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+  </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
   
   <script type="text/babel" src="/js/v2ray.js"></script>
