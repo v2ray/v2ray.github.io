@@ -6,3 +6,5 @@ clone and improve it. Please do not republish the portal for other purposes.
 V2Ray portal is the entry point to learn and use V2Ray. It has all necessary information regarding
 all V2Ray projects.
 
+## Licence
+All rights reserved.
