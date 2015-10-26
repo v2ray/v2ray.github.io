@@ -23,7 +23,27 @@ var NavBar = React.createClass({
     );
   }
 });
+
 ReactDOM.render(
   <NavBar />,
   document.getElementById('navbar')
 );
+
+var Footer = React.createClass({
+  render: function() {
+    return (
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright &copy; V2Ray.com</p>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Footer />,
+  document.getElementById('footer')
+)
