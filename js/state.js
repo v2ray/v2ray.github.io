@@ -13,11 +13,11 @@ function SiteState() {
 SiteState.prototype.reloadState = function() {
   var self = this;
   var hash = window.location.hash;
-  if (hash === null ||
-      hash.length === 0 ||
-      hash.indexOf(self.state, hash.length - self.state.length) > -1) {
+  if (hash !== null && hash.indexOf(self.state, hash.length - self.state.length) > -1) {
+    // We are already in this state.
     return;
   }
+  self.article = 'index-zh-cn';
   var entries = hash.substring(1).split('&');
   entries.forEach(function(entry) {
     var eqPos = entry.indexOf('=');

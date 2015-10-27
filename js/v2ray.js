@@ -1,5 +1,7 @@
 /* global React */
 /* global ReactDOM */
+/* global v2raySiteState */
+/* global articles */
 
 var NavBar = React.createClass({
   goToArticile: function(article) {
@@ -34,7 +36,7 @@ var NavBar = React.createClass({
                 新手上路 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="#">安装 V2Ray</a></li>
+                <li><a href="#" onClick={this.goToArticile('install-zh-cn')}>安装 V2Ray</a></li>
                 <li><a href="#">客户端配置</a></li>
                 <li><a href="#">服务器配置</a></li>
               </ul>
@@ -54,6 +56,7 @@ var NavBar = React.createClass({
               </ul>
             </li>
             <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
+            <li><a href="#" onClick={this.goToArticile('donate-zh-cn')}>捐助</a></li>
           </ul>
         </div>
       </div>

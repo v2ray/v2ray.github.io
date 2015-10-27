@@ -40,5 +40,7 @@ Article.prototype.getMarkedContent = function(callback) {
 var articles = {
   'index-zh-cn': new Article('首页', 'index.md'),
   'guide-zh-cn': new Article('用户指引', 'guide.md'),
-  'vmess-zh-cn': new Article('VMess 协议', 'vmess.md')
+  'vmess-zh-cn': new Article('VMess 协议', 'vmess.md'),
+  'install-zh-cn': new Article('V2Ray 安装', 'install.md'),
+  'donate-zh-cn': new Article('资助 V2Ray', 'donate.md')
 };
