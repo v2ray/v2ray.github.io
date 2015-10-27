@@ -45,5 +45,7 @@ var articles = {
   'donate-zh-cn': new Article('资助 V2Ray', 'donate.md'),
   'roadmap-zh-cn': new Article('开发计划', 'roadmap.md'),
   'issue-zh-cn': new Article('Issue 指引', 'issue.md'),
-  'develop-zh-cn': new Article('开发指引', 'develop.md')
+  'develop-zh-cn': new Article('开发指引', 'develop.md'),
+  'benchmark-zh-cn': new Article('性能评测', 'benchmark.md'),
+  'design-zh-cn': new Article('设计概要', 'design.md')
 };

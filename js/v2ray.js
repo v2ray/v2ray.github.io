@@ -37,9 +37,10 @@ var NavBar = React.createClass({
               </a>
               <ul className="dropdown-menu">
                 <li><a href="#" onClick={this.goToArticile('install-zh-cn')}>安装 V2Ray</a></li>
-                <li><a href="#">客户端配置</a></li>
+                <li><a href="#" onClick={this.goToArticile('guide-zh-cn')}>客户端配置</a></li>
                 <li><a href="#">服务器配置</a></li>
                 <li><a href="#" onClick={this.goToArticile('issue-zh-cn')}>Issue 指引</a></li>
+                <li><a href="#" onClick={this.goToArticile('benchmark-zh-cn')}>性能评测</a></li>
               </ul>
             </li>
             <li>
@@ -53,7 +54,7 @@ var NavBar = React.createClass({
               </a>
               <ul className="dropdown-menu">
                 <li><a href="#" onClick={this.goToArticile('roadmap-zh-cn')}>开发计划</a></li>
-                <li><a href="#">概要设计</a></li>
+                <li><a href="#" onClick={this.goToArticile('design-zh-cn')}>设计概要</a></li>
                 <li><a href="#" onClick={this.goToArticile('vmess-zh-cn')}>VMess 协议</a></li>
                 <li><a href="#" onClick={this.goToArticile('develop-zh-cn')}>开发指引</a></li>
               </ul>
