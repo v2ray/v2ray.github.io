@@ -22,7 +22,7 @@ var NavBar = React.createClass({
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand" href="https://v2ray.com/">V2Ray</a>
+          <a className="navbar-brand" href="https://www.v2ray.com/">V2Ray</a>
         </div>
         <div className="collapse navbar-collapse" id="v2ray-navbar">
           <ul className="nav navbar-nav">
