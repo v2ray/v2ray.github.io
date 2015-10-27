@@ -1,9 +1,7 @@
 function SiteState() {
   var self = this;
   self.stateChangeCallbacks = [];
-  self.article = 'index-zh-cn';
-  self.newState();
-  
+
   window.onpopstate = function (event) {
     self.reloadState();
   };
@@ -13,11 +11,12 @@ function SiteState() {
 SiteState.prototype.reloadState = function() {
   var self = this;
   var hash = window.location.hash;
-  if (hash !== null && hash.indexOf(self.state, hash.length - self.state.length) > -1) {
+  if (hash !== null && self.state && hash.indexOf(self.state, hash.length - self.state.length) > -1) {
     // We are already in this state.
     return;
   }
   self.article = 'index-zh-cn';
+  self.newState();
   var entries = hash.substring(1).split('&');
   entries.forEach(function(entry) {
     var eqPos = entry.indexOf('=');
