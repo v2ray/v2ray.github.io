@@ -97,6 +97,9 @@ var Content = React.createClass({
       content: ''
     };
   },
+  componentDidUpdate: function() {
+    jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+  },
   componentDidMount: function() {
     var self = this;
     v2raySiteState.registerStateChangeCallback(function(state) {
