@@ -16,7 +16,8 @@ var NavBar = React.createClass({
         </div>
         <div className="collapse navbar-collapse" id="v2ray-navbar">
           <ul className="nav navbar-nav">
-            <li><a href="#a=guide-zh-cn">指引</a></li>
+            <li><a href="#a=guide-zh-cn">新手上路</a></li>
+            <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
           </ul>
         </div>
       </div>
