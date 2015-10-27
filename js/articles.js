@@ -47,5 +47,6 @@ var articles = {
   'issue-zh-cn': new Article('Issue 指引', 'issue.md'),
   'develop-zh-cn': new Article('开发指引', 'develop.md'),
   'benchmark-zh-cn': new Article('性能评测', 'benchmark.md'),
-  'design-zh-cn': new Article('设计概要', 'design.md')
+  'design-zh-cn': new Article('设计概要', 'design.md'),
+  'errors-zh-cn': new Article('常见错误信息', 'errors.md')
 };

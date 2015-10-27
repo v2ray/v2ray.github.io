@@ -40,6 +40,7 @@ var NavBar = React.createClass({
                 <li><a href="#" onClick={this.goToArticile('guide-zh-cn')}>客户端配置</a></li>
                 <li><a href="#">服务器配置</a></li>
                 <li><a href="#" onClick={this.goToArticile('issue-zh-cn')}>Issue 指引</a></li>
+                <li><a href="#" onClick={this.goToArticile('errors-zh-cn')}>常见错</a></li>
                 <li><a href="#" onClick={this.goToArticile('benchmark-zh-cn')}>性能评测</a></li>
               </ul>
             </li>
