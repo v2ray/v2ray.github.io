@@ -39,7 +39,8 @@ Article.prototype.getMarkedContent = function(callback) {
 
 var articles = {
   'index-zh-cn': new Article('首页', 'index.md'),
-  'guide-zh-cn': new Article('用户指引', 'guide.md'),
+  'guide-zh-cn': new Article('客户端配置', 'guide.md'),
+  'guide-server-zh-cn': new Article('服务器配置', 'guide-server.md'),
   'vmess-zh-cn': new Article('VMess 协议', 'vmess.md'),
   'install-zh-cn': new Article('V2Ray 安装', 'install.md'),
   'donate-zh-cn': new Article('资助 V2Ray', 'donate.md'),
@@ -48,5 +49,6 @@ var articles = {
   'develop-zh-cn': new Article('开发指引', 'develop.md'),
   'benchmark-zh-cn': new Article('性能评测', 'benchmark.md'),
   'design-zh-cn': new Article('设计概要', 'design.md'),
-  'errors-zh-cn': new Article('常见错误信息', 'errors.md')
+  'errors-zh-cn': new Article('常见错误信息', 'errors.md'),
+  'workflow-zh-cn': new Article('工作机制', 'workflow.md')
 };

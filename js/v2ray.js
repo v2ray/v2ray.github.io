@@ -36,11 +36,12 @@ var NavBar = React.createClass({
                 新手上路 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
+                <li><a href="#" onClick={this.goToArticile('workflow-zh-cn')}>工作机制</a></li>
                 <li><a href="#" onClick={this.goToArticile('install-zh-cn')}>安装 V2Ray</a></li>
                 <li><a href="#" onClick={this.goToArticile('guide-zh-cn')}>客户端配置</a></li>
-                <li><a href="#">服务器配置</a></li>
+                <li><a href="#" onClick={this.goToArticile('guide-server-zh-cn')}>服务器配置</a></li>
                 <li><a href="#" onClick={this.goToArticile('issue-zh-cn')}>Issue 指引</a></li>
-                <li><a href="#" onClick={this.goToArticile('errors-zh-cn')}>常见错</a></li>
+                <li><a href="#" onClick={this.goToArticile('errors-zh-cn')}>常见错误</a></li>
                 <li><a href="#" onClick={this.goToArticile('benchmark-zh-cn')}>性能评测</a></li>
               </ul>
             </li>

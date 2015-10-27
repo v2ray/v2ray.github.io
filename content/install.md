@@ -1,7 +1,7 @@
 # V2Ray 安装方式
 
 ## 预编译程序
-发布于 [Release](https://github.com/v2ray/v2ray-core/releases) 中，每周更新，[更新周期见此](https://github.com/V2Ray/v2ray-core/blob/master/spec/roadmap.md)。
+发布于 [Release](https://github.com/v2ray/v2ray-core/releases) 中，每周更新，[更新周期见此](#a=roadmap-zh-cn)。
 
 其中：
 * v2ray-linux-32.zip: 适用于 32 位 Linux，各种发行版均可。
