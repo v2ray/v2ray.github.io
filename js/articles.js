@@ -39,5 +39,6 @@ Article.prototype.getMarkedContent = function(callback) {
 
 var articles = {
   'index-zh-cn': new Article('首页', 'index.md'),
-  'guide-zh-cn': new Article('用户指引', 'guide.md')
+  'guide-zh-cn': new Article('用户指引', 'guide.md'),
+  'vmess-zh-cn': new Article('VMess 协议', 'vmess.md')
 };

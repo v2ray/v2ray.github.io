@@ -68,6 +68,7 @@ SiteState.prototype.pushState = function() {
   this.newState();
   var hash = '#a=' + this.article + '&z=' + this.state;
   window.location = hash;
+  this.onStateChange();
 };
 
 var v2raySiteState = new SiteState();

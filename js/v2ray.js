@@ -2,6 +2,14 @@
 /* global ReactDOM */
 
 var NavBar = React.createClass({
+  goToArticile: function(article) {
+    return function(e) {
+      e.preventDefault();
+      v2raySiteState.setArticle(article);
+      v2raySiteState.pushState();
+      return false;
+    };
+  },
   render: function() {
     return (
       <div className="container">
@@ -16,7 +24,35 @@ var NavBar = React.createClass({
         </div>
         <div className="collapse navbar-collapse" id="v2ray-navbar">
           <ul className="nav navbar-nav">
-            <li><a href="#a=guide-zh-cn">新手上路</a></li>
+            <li>
+              <a className="dropdown-toggle"
+                 data-toggle="dropdown"
+                 href="#"
+                 role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                新手上路 <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu">
+                <li><a href="#">安装 V2Ray</a></li>
+                <li><a href="#">客户端配置</a></li>
+                <li><a href="#">服务器配置</a></li>
+              </ul>
+            </li>
+            <li>
+              <a className="dropdown-toggle"
+                 data-toggle="dropdown"
+                 href="#"
+                 role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                技术细节 <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu">
+                <li><a href="#">概要设计</a></li>
+                <li><a href="#" onClick={this.goToArticile('vmess-zh-cn')}>VMess 协议</a></li>
+              </ul>
+            </li>
             <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
           </ul>
         </div>
