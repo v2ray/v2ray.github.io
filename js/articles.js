@@ -5,6 +5,7 @@ function Article(title, contentFile) {
   this.title = title;
   this.contentFile = contentFile;
   this.content = null;
+  this.fileType = contentFile.split('.').pop();
 }
 
 Article.prototype.loadContent = function(callback) {
@@ -32,8 +33,13 @@ Article.prototype.getContent = function(callback) {
 };
 
 Article.prototype.getMarkedContent = function(callback) {
-  this.getContent(function(data) {
-    callback(marked(data));
+  var self = this;
+  self.getContent(function(data) {
+    var markedContent = data;
+    if (self.fileType == 'md') {
+      markedContent = marked(data);
+    }
+    callback(markedContent);
   });
 };
 
