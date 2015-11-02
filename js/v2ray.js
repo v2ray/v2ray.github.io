@@ -7,6 +7,7 @@ var NavBar = React.createClass({
   goToArticile: function(article) {
     return function(e) {
       e.preventDefault();
+      jQuery('#navbar-toggle-button').setAttr('data-toggle', 'collapse');
       v2raySiteState.setArticle(article);
       v2raySiteState.pushState();
       return false;
@@ -16,7 +17,7 @@ var NavBar = React.createClass({
     return (
       <div className="container">
         <div className="navbar-header">
-          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#v2ray-navbar">
+          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#v2ray-navbar" id="navbar-toggle-button">
             <span className="sr-only">Toggle navigation</span>
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
