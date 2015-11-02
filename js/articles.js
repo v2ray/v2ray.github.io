@@ -56,5 +56,6 @@ var articles = {
   'benchmark-zh-cn': new Article('性能评测', 'benchmark.md'),
   'design-zh-cn': new Article('设计概要', 'design.md'),
   'errors-zh-cn': new Article('常见错误信息', 'errors.md'),
-  'workflow-zh-cn': new Article('工作机制', 'workflow.md')
+  'workflow-zh-cn': new Article('工作机制', 'workflow.md'),
+  'config-zh-cn': new Article('配置文件', 'config.md')
 };

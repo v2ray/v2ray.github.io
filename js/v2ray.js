@@ -52,6 +52,19 @@ var NavBar = React.createClass({
                  role="button"
                  aria-haspopup="true"
                  aria-expanded="false">
+                进阶内容 <span className="caret"></span>
+              </a>
+              <ul className="dropdown-menu">
+                <li><a href="#" onClick={this.goToArticile('config-zh-cn')}>配置文件</a></li>
+              </ul>
+            </li>
+            <li>
+              <a className="dropdown-toggle"
+                 data-toggle="dropdown"
+                 href="#"
+                 role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
                 技术细节 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
