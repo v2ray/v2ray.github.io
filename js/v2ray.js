@@ -57,7 +57,7 @@ var NavBar = React.createClass({
               </a>
               <ul className="dropdown-menu">
                 <li><a href="#" onClick={this.goToArticle('config-zh-cn')}>配置文件</a></li>
-                <li><a href="#" onClick={this.goToArticle('protocols-zh-ch')}>协议列表</a></li>
+                <li><a href="#" onClick={this.goToArticle('protocols-zh-cn')}>协议列表</a></li>
               </ul>
             </li>
             <li>
