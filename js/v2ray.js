@@ -4,7 +4,7 @@
 /* global articles */
 
 var NavBar = React.createClass({
-  goToArticile: function(article) {
+  goToArticle: function(article) {
     return function(e) {
       e.preventDefault();
       jQuery('#navbar-toggle-button').attr('data-toggle', 'collapse');
@@ -37,13 +37,13 @@ var NavBar = React.createClass({
                 新手上路 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticile('workflow-zh-cn')}>工作机制</a></li>
-                <li><a href="#" onClick={this.goToArticile('install-zh-cn')}>安装 V2Ray</a></li>
-                <li><a href="#" onClick={this.goToArticile('guide-zh-cn')}>客户端配置</a></li>
-                <li><a href="#" onClick={this.goToArticile('guide-server-zh-cn')}>服务器配置</a></li>
-                <li><a href="#" onClick={this.goToArticile('issue-zh-cn')}>Issue 指引</a></li>
-                <li><a href="#" onClick={this.goToArticile('errors-zh-cn')}>常见错误</a></li>
-                <li><a href="#" onClick={this.goToArticile('benchmark-zh-cn')}>性能评测</a></li>
+                <li><a href="#" onClick={this.goToArticle('workflow-zh-cn')}>工作机制</a></li>
+                <li><a href="#" onClick={this.goToArticle('install-zh-cn')}>安装 V2Ray</a></li>
+                <li><a href="#" onClick={this.goToArticle('guide-zh-cn')}>客户端配置</a></li>
+                <li><a href="#" onClick={this.goToArticle('guide-server-zh-cn')}>服务器配置</a></li>
+                <li><a href="#" onClick={this.goToArticle('issue-zh-cn')}>Issue 指引</a></li>
+                <li><a href="#" onClick={this.goToArticle('errors-zh-cn')}>常见错误</a></li>
+                <li><a href="#" onClick={this.goToArticle('benchmark-zh-cn')}>性能评测</a></li>
               </ul>
             </li>
             <li>
@@ -56,8 +56,8 @@ var NavBar = React.createClass({
                 进阶内容 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticile('config-zh-cn')}>配置文件</a></li>
-                <li><a href="#" onClick={this.goToArticile('protocols-zh-cn')}>协议列表</a></li>
+                <li><a href="#" onClick={this.goToArticle('config-zh-cn')}>配置文件</a></li>
+                <li><a href="#" onClick={this.goToArticle('protocols-zh-ch')}>协议列表</a></li>
               </ul>
             </li>
             <li>
@@ -70,14 +70,14 @@ var NavBar = React.createClass({
                 技术细节 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticile('roadmap-zh-cn')}>开发计划</a></li>
-                <li><a href="#" onClick={this.goToArticile('design-zh-cn')}>设计概要</a></li>
-                <li><a href="#" onClick={this.goToArticile('vmess-zh-cn')}>VMess 协议</a></li>
-                <li><a href="#" onClick={this.goToArticile('develop-zh-cn')}>开发指引</a></li>
+                <li><a href="#" onClick={this.goToArticle('roadmap-zh-cn')}>开发计划</a></li>
+                <li><a href="#" onClick={this.goToArticle('design-zh-cn')}>设计概要</a></li>
+                <li><a href="#" onClick={this.goToArticle('vmess-zh-cn')}>VMess 协议</a></li>
+                <li><a href="#" onClick={this.goToArticle('develop-zh-cn')}>开发指引</a></li>
               </ul>
             </li>
             <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
-            <li><a href="#" onClick={this.goToArticile('donate-zh-cn')}>捐助</a></li>
+            <li><a href="#" onClick={this.goToArticle('donate-zh-cn')}>捐助</a></li>
           </ul>
         </div>
       </div>
