@@ -37,7 +37,7 @@ Freedom 是一个传出数据协议，可以用来向任意网络发送（正常
 暂未实现
 
 ## Socks (Inbound)
-Socks 是一个传入数据协议，兼容 [Socks 4](http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol) 和 [Socks 5](http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol)，暂不支持 Sock 4a。
+Socks 是一个传入数据协议，兼容 [Socks 4](http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol) 和 [Socks 5](http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol)，暂不支持 Socks 4a。
 
 **协议名称**：socks
 
