@@ -7,7 +7,7 @@ var NavBar = React.createClass({
   goToArticile: function(article) {
     return function(e) {
       e.preventDefault();
-      jQuery('#navbar-toggle-button').setAttr('data-toggle', 'collapse');
+      jQuery('#navbar-toggle-button').attr('data-toggle', 'collapse');
       v2raySiteState.setArticle(article);
       v2raySiteState.pushState();
       return false;
