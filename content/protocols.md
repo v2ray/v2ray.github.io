@@ -46,13 +46,15 @@ Socks 是一个传入数据协议，兼容 [Socks 4](http://ftp.icm.edu.pl/packa
 {
   "auth": "noauth",
   "udp": false,
-  "ip": "127.0.0.1"
+  "ip": "127.0.0.1",
+  "timeout": 0
 }
 ```
 其中：
 * auth：Socks 协议的认证方式，目前只支持“noauth”即匿名方式。
 * udp：是否开启 UDP 协议的支持，true / false。
 * ip：当开启 UDP 时，V2Ray 需要知道本机的 IP 地址。
+* timeout：从 Socks 客户端读取数据的超时设置（秒），0 表示不限时。
 
 ## VMess (Inbound / Outbound)
 VMess 是一个加密传输协议，它分为传入和传出两部分，通常作为 V2Ray 客户端和服务器之间的桥梁。
@@ -68,8 +70,7 @@ VMess 是一个加密传输协议，它分为传入和传出两部分，通常�
       "port": 37192,
       "users": [
         {"id": "27848739-7e62-4138-9fd3-098a63964b6b"}
-      ],
-      "network": "tcp"
+      ]
     }
   ]
 }
@@ -82,7 +83,6 @@ VMess 是一个加密传输协议，它分为传入和传出两部分，通常�
   * users：一组服务器认可的用户，其中每一个用户：
     * id：VMess 的用户 ID。
     * level：用户等级，此处可填但不会起作用。
-  * udp：是否支持 UDP 协议，true / false。
 
 
 **VMess 传入协议配置**：
@@ -98,7 +98,6 @@ VMess 是一个加密传输协议，它分为传入和传出两部分，通常�
       "level": 1
     }
   ],
-  "udp": false
 }
 ```
 
@@ -108,4 +107,3 @@ VMess 是一个加密传输协议，它分为传入和传出两部分，通常�
   * level：用户等级
     * 当 level 为 0 时，此用户不被信任，V2Ray 将对此用户进行严格的安全限制；
     * 当 level 大于 0 时，此用户被信任，V2Ray 将放宽对些用户的限制；
-* udp：是否支持 UDP 协议，true / false。

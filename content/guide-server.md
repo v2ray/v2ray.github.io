@@ -21,8 +21,7 @@
       "clients": [
           // 认可的用户 ID，必须包含 Server A （客户端）中的用户 ID
         {"id": "ad937d9d-6e23-4a5a-ba23-bce5092a7c51"}
-      ],
-      "udp": false // 如果要使用 UDP 转发，请改成 true
+      ]
     }
   },
   "outbound": {

@@ -32,8 +32,7 @@
             // 用户 ID，必须包含在 Server B（服务器）的配置文件中。此 ID 将被用于通信的认证。
             // 为了安全，请自行更换随机的 ID，可以使用 https://www.uuidgenerator.net/ 来生成新的 ID。
             {"id": "ad937d9d-6e23-4a5a-ba23-bce5092a7c51"}
-          ],
-          "network": "tcp" // 如果要使用 UDP 转发，请改成 "tcp,udp"
+          ]
         }
       ]
     }
