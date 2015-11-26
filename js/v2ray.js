@@ -42,9 +42,7 @@ var NavBar = React.createClass({
                 <li><a href="#" onClick={this.goToArticle('install-zh-cn')}>安装 V2Ray</a></li>
                 <li><a href="#" onClick={this.goToArticle('guide-zh-cn')}>客户端配置</a></li>
                 <li><a href="#" onClick={this.goToArticle('guide-server-zh-cn')}>服务器配置</a></li>
-                <li><a href="#" onClick={this.goToArticle('issue-zh-cn')}>Issue 指引</a></li>
-                <li><a href="#" onClick={this.goToArticle('errors-zh-cn')}>常见错误</a></li>
-                <li><a href="#" onClick={this.goToArticle('benchmark-zh-cn')}>性能评测</a></li>
+                <li><a href="#" onClick={this.goToArticle('official-server-zh-cn')}>官方服务器</a></li>
               </ul>
             </li>
             <li>
@@ -59,6 +57,9 @@ var NavBar = React.createClass({
               <ul className="dropdown-menu">
                 <li><a href="#" onClick={this.goToArticle('config-zh-cn')}>配置文件</a></li>
                 <li><a href="#" onClick={this.goToArticle('protocols-zh-cn')}>协议列表</a></li>
+                <li><a href="#" onClick={this.goToArticle('issue-zh-cn')}>Issue 指引</a></li>
+                <li><a href="#" onClick={this.goToArticle('errors-zh-cn')}>常见错误</a></li>
+                <li><a href="#" onClick={this.goToArticle('benchmark-zh-cn')}>性能评测</a></li>
               </ul>
             </li>
             <li>
