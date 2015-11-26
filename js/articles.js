@@ -58,5 +58,6 @@ var articles = {
   'errors-zh-cn': new Article('常见错误信息', 'errors.md'),
   'workflow-zh-cn': new Article('工作机制', 'workflow.md'),
   'config-zh-cn': new Article('配置文件', 'config.md'),
-  'protocols-zh-cn': new Article('协议列表', 'protocols.md')
+  'protocols-zh-cn': new Article('协议列表', 'protocols.md'),
+  'firstuse-zh-cn': new Article('初次使用', 'firstuse.md'),
 };

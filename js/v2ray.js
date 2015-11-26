@@ -37,6 +37,7 @@ var NavBar = React.createClass({
                 新手上路 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
+                <li><a href="#" onClick={this.goToArticle('firstuse-zh-cn')}>初次使用</a></li>
                 <li><a href="#" onClick={this.goToArticle('workflow-zh-cn')}>工作机制</a></li>
                 <li><a href="#" onClick={this.goToArticle('install-zh-cn')}>安装 V2Ray</a></li>
                 <li><a href="#" onClick={this.goToArticle('guide-zh-cn')}>客户端配置</a></li>
