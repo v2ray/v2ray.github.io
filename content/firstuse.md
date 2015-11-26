@@ -3,8 +3,7 @@
 本文将介绍 V2Ray 客户端搭配 SwitchyOmega 的使用方法。
 
 ## 下载并开启 V2Ray
-推荐使用预编译的安装包进行安装。打开[下载页面](https://github.com/v2ray/v2ray-core/releases)，按照你
-所用的操作系统下载相应的安装包。
+推荐使用预编译的安装包进行安装。打开[下载页面](https://github.com/v2ray/v2ray-core/releases)，按照你所用的操作系统[下载相应的安装包](#a=install-zh-cn)。
 
 以 64 位 Windows 来举例：
 * 下载 v2ray-windows-64.zip；
