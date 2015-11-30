@@ -5,7 +5,7 @@
 ### 文件位置：
 在 V2Ray 的官方发行版中包含了两个配置文件：
 * [vpoint_socks_vmess.json](https://github.com/v2ray/v2ray-core/blob/master/release/config/vpoint_socks_vmess.json)：包含了 V2Ray 客户端的默认配置；
-* [vpoint_vmess_freedom.json](https://github.com/v2ray/v2ray-core/blob/master/release/config/vpoint_socks_vmess.json)：包含了 V2Ray 客户端的默认配置。
+* [vpoint_vmess_freedom.json](https://github.com/v2ray/v2ray-core/blob/master/release/config/vpoint_vmess_freedom.json)：包含了 V2Ray 客户端的默认配置。
 
 两个文件的格式大体相同，配置服务器请基于 vpoint\_vmess\_freedom.json 文件进行修改：
 
