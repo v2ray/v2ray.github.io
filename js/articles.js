@@ -60,5 +60,6 @@ var articles = {
   'config-zh-cn': new Article('配置文件', 'config.md'),
   'protocols-zh-cn': new Article('协议列表', 'protocols.md'),
   'firstuse-zh-cn': new Article('初次使用', 'firstuse.md'),
-  'official-server-zh-cn': new Article('官方服务器', 'official-server.md')
+  'official-server-zh-cn': new Article('官方服务器', 'official-server.md'),
+  'updates-zh-cn': new Article('更新日志', 'updates.md')
 };

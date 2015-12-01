@@ -28,55 +28,10 @@ var NavBar = React.createClass({
         <div className="collapse navbar-collapse" id="v2ray-navbar">
           <ul className="nav navbar-nav">
             <li>
-              <a className="dropdown-toggle"
-                 data-toggle="dropdown"
-                 href="#"
-                 role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                新手上路 <span className="caret"></span>
-              </a>
-              <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticle('firstuse-zh-cn')}>初次使用</a></li>
-                <li><a href="#" onClick={this.goToArticle('workflow-zh-cn')}>工作机制</a></li>
-                <li><a href="#" onClick={this.goToArticle('install-zh-cn')}>安装 V2Ray</a></li>
-                <li><a href="#" onClick={this.goToArticle('guide-zh-cn')}>客户端配置</a></li>
-                <li><a href="#" onClick={this.goToArticle('guide-server-zh-cn')}>服务器配置</a></li>
-                <li><a href="#" onClick={this.goToArticle('official-server-zh-cn')}>官方服务器</a></li>
-              </ul>
+              <a href="#" onClick={this.goToArticle('updates-zh-cn')}>更新日志</a>
             </li>
             <li>
-              <a className="dropdown-toggle"
-                 data-toggle="dropdown"
-                 href="#"
-                 role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                进阶内容 <span className="caret"></span>
-              </a>
-              <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticle('config-zh-cn')}>配置文件</a></li>
-                <li><a href="#" onClick={this.goToArticle('protocols-zh-cn')}>协议列表</a></li>
-                <li><a href="#" onClick={this.goToArticle('issue-zh-cn')}>Issue 指引</a></li>
-                <li><a href="#" onClick={this.goToArticle('errors-zh-cn')}>常见错误</a></li>
-                <li><a href="#" onClick={this.goToArticle('benchmark-zh-cn')}>性能评测</a></li>
-              </ul>
-            </li>
-            <li>
-              <a className="dropdown-toggle"
-                 data-toggle="dropdown"
-                 href="#"
-                 role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                技术细节 <span className="caret"></span>
-              </a>
-              <ul className="dropdown-menu">
-                <li><a href="#" onClick={this.goToArticle('roadmap-zh-cn')}>开发计划</a></li>
-                <li><a href="#" onClick={this.goToArticle('design-zh-cn')}>设计概要</a></li>
-                <li><a href="#" onClick={this.goToArticle('vmess-zh-cn')}>VMess 协议</a></li>
-                <li><a href="#" onClick={this.goToArticle('develop-zh-cn')}>开发指引</a></li>
-              </ul>
+              <a href="https://github.com/v2ray/v2ray.github.io/wiki" target="_blank">Wiki</a>
             </li>
             <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
             <li><a href="#" onClick={this.goToArticle('donate-zh-cn')}>捐助</a></li>
