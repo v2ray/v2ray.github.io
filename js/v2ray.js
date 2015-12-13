@@ -35,6 +35,7 @@ var NavBar = React.createClass({
             </li>
             <li><a href="https://github.com/v2ray/v2ray-core/releases" target="_blank">下载</a></li>
             <li><a href="#" onClick={this.goToArticle('donate-zh-cn')}>捐助</a></li>
+            <li><a href="#">最新版本：1.2</a></li>
           </ul>
         </div>
       </div>
