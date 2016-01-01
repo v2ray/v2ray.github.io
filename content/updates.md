@@ -3,9 +3,9 @@
 ## 2016.01.11 v1.3 （未发布）
 * 智能 DNS 解析；
 * VMess 动态端口；
-* 致谢：
-  * chenxiaoqino 翻译了大量 Wiki 文章；
-  * adoot 提供了 Docker 配置文件。
+* Wiki 中更新了一些英语页面（感谢 chenxiaoqino）；
+* Docker 配置文件（感谢 adoot）；
+* HTTP 代理（感谢 adoot）；
 
 ## 2015.12.14 v1.2
 * 简洁且高效的国内 IP 路由；
