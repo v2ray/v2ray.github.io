@@ -16,4 +16,4 @@ V2Ray 的详细使用说明将逐步移至 [Wiki](https://github.com/v2ray/v2ray
 * 聊天室：<a href="https://gitter.im/v2ray/v2ray-core" target="_blank">https://gitter.im/v2ray/v2ray-core</a>
 * Twitter：<a href="https://twitter.com/projectv2ray" target="_blank">https://twitter.com/projectv2ray</a>
 * 私下联系：love@v2ray.com
-
+* [PGP 公钥](#a=pgp-zh-cn)
