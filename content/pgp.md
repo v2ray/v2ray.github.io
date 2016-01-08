@@ -1,3 +1,4 @@
+```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Comment: GPGTools - https://gpgtools.org
 
@@ -50,3 +51,4 @@ X7R92mxQ+gCZgePwG4gOE/xAqHZh84VzdWZJ4cehPgHa/z/enqbQbiQAwTXld4Wt
 PeRpd1GUXXeoGCw=
 =To5T
 -----END PGP PUBLIC KEY BLOCK-----
+```
