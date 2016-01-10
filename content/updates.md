@@ -8,6 +8,7 @@
 * Wiki 中更新了一些英语页面（感谢 chenxiaoqino）；
 * Docker 配置文件（感谢 adoot）；
 * HTTP 代理（感谢 adoot）；
+* 路由中内置了常见的[国内网站域名](https://github.com/v2ray/v2ray.github.io/wiki/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE#chinasites-v2ray-13)；
 * VMess 配置中新增了 [alterId 选项](https://github.com/v2ray/v2ray.github.io/wiki/%E5%8D%8F%E8%AE%AE%E5%88%97%E8%A1%A8#vmess-inbound--outbound)；
 * 修复了若干小问题；
 
