@@ -1,9 +1,9 @@
 # 更新日志
 
-## 2016.01.18 v1.4 (未发布)
-* 智能 DNS 解析；
-* VMess 动态端口；
+## 2016.01.18 v1.4
 * 更新了[安装脚本](https://github.com/v2ray/v2ray.github.io/wiki/%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F:-%E9%A2%84%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F)，在 Debian / Ubuntu / CentOS 7 中可自动安装和更新 V2Ray；
+
+* 修复了一个 VMess 的内存使用问题；
 
 ## 2016.01.11 v1.3
 * Wiki 中更新了一些英语页面（感谢 chenxiaoqino）；
