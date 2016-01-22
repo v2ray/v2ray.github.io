@@ -6,7 +6,6 @@ V2Ray 支持以下资助方式，收到捐赠之后您的昵称将会显示在�
 ### 礼品卡
 请发送礼品卡编码至  donate@v2ray.com
 * [Amazon Gift Card](https://www.amazon.com/gp/product/B004LLIKVU/gcrnsts?ie=UTF8&qid=1443538350&ref_=lp_2238192011_1_1&s=gift-cards&sr=1-1)
-* iTunes Gift Card
 
 
 ## 感谢您的帮助
