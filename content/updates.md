@@ -1,7 +1,9 @@
 # 更新日志
 
-## 2016.01.30 v1.6 (未发布)
+## 2016.01.30 v1.6
 * 服务器端支持 Shadowsocks；
+  * [协议详情](https://github.com/v2ray/v2ray.github.io/wiki/%E5%8D%8F%E8%AE%AE%E5%88%97%E8%A1%A8#shadowsocks-inbound-v2ray-16)
+  * [配置示例](https://github.com/v2ray/v2ray.github.io/wiki/%E9%85%8D%E7%BD%AE%E6%A0%B7%E4%BE%8B%EF%BC%9AShadowsocks-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF)
 
 ## 2016.01.23 v1.5
 * 修复了一个 VMess 中的安全性问题，导致了 1.5 和之前版本不兼容，请同时升级你的客户端和服务器端；
