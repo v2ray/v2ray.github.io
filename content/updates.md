@@ -1,11 +1,17 @@
 # 更新日志
 
-## 2016.01.30 v1.6
+## 2016.02.08 v1.7
+* 提升了 UDP 转发的性能；
+* 提升了 Shadowsocks 的安全性；
+* 修复了一些问题；
+* 祝大家新年快乐！
+
+## 2016.02.01 v1.6
 * 服务器端支持 Shadowsocks；
   * [协议详情](https://github.com/v2ray/v2ray.github.io/wiki/%E5%8D%8F%E8%AE%AE%E5%88%97%E8%A1%A8#shadowsocks-inbound-v2ray-16)
   * [配置示例](https://github.com/v2ray/v2ray.github.io/wiki/%E9%85%8D%E7%BD%AE%E6%A0%B7%E4%BE%8B%EF%BC%9AShadowsocks-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF)
 
-## 2016.01.23 v1.5
+## 2016.01.25 v1.5
 * 修复了一个 VMess 中的安全性问题，导致了 1.5 和之前版本不兼容，请同时升级你的客户端和服务器端；
 * 修复了一个路由不能正常工作的问题； 
 * [动态端口](https://github.com/v2ray/v2ray.github.io/wiki/%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3)；
