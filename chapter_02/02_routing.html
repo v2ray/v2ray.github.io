@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="zh_cn" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>路由配置 | V2Ray 用户手册</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../chapter_02/01_protocols.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.3"
+        data-chapter-title="路由配置"
+        data-filepath="chapter_02/02_routing.md"
+        data-basepath=".."
+        data-revision="Tue Feb 09 2016 10:48:16 GMT+0000 (UTC)"
+        data-innerlanguage="zh_cn">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter_00/index.html">
+            
+                
+                    <a href="../chapter_00/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        欢迎使用 V2Ray
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter_00/00_about.html">
+            
+                
+                    <a href="../chapter_00/00_about.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        关于 V2Ray
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter_00/01_versions.html">
+            
+                
+                    <a href="../chapter_00/01_versions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        版本更新历史
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter_00/02_donate.html">
+            
+                
+                    <a href="../chapter_00/02_donate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        捐助本项目
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter_01/index.html">
+            
+                
+                    <a href="../chapter_01/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        新手入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter_01/00_workflow.html">
+            
+                
+                    <a href="../chapter_01/00_workflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        工作机制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter_01/01_install.html">
+            
+                
+                    <a href="../chapter_01/01_install.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        下载安装
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter_02/index.html">
+            
+                
+                    <a href="../chapter_02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        配置文件
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter_02/00_overview.html">
+            
+                
+                    <a href="../chapter_02/00_overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        文件格式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter_02/01_protocols.html">
+            
+                
+                    <a href="../chapter_02/01_protocols.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        协议列表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="chapter_02/02_routing.html">
+            
+                
+                    <a href="../chapter_02/02_routing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        路由配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >V2Ray 用户手册</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x8DEF;&#x7531;&#x529F;&#x80FD;">&#x8DEF;&#x7531;&#x529F;&#x80FD;</h1>
+<p>V2Ray &#x5185;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4F20;&#x5165;&#x6570;&#x636E;&#x6309;&#x9700;&#x6C42;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x53D1;&#x51FA;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x6309;&#x9700;&#x7FFB;&#x5899;&#x7684;&#x76EE;&#x7684;&#x3002;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x7684;&#x5E38;&#x89C1;&#x7528;&#x6CD5;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x6BD4;&#x5982;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x6216;&#x8005;&#x4E00;&#x53F0;&#x56FD;&#x5185;&#x7684; VPS &#x4E0A;&#xFF09;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x5F80;&#x8FD9;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x6765;&#x9009;&#x62E9;&#x662F;&#x5426;&#x8F6C;&#x53D1;&#x81F3;&#x56FD;&#x5916;&#x7684; VPS&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#x51CF;&#x5316;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#xFF0C;&#x5F53;&#x8DEF;&#x7531;&#x6709;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E0D;&#x5FC5;&#x4FEE;&#x6539;&#x6BCF;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x53EA;&#x9700;&#x4FEE;&#x6539;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x53EA;&#x652F;&#x6301; strategy = &quot;rules&quot;&#xFF0C;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;rules&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+      <span class="hljs-string">&quot;domain&quot;</span>: [
+        <span class="hljs-string">&quot;baidu.com&quot;</span>,
+        <span class="hljs-string">&quot;qq.com&quot;</span>
+      ],
+      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+    },
+    {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+      <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
+      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+    },
+    {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+      <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;udp&quot;</span>,
+      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
+    }
+  ]
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;&quot;rules&quot;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A; TCP/UDP &#x8FDE;&#x63A5;&#xFF0C;&#x8DEF;&#x7531;&#x5C06;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x4F9D;&#x6B21;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x751F;&#x6548;&#x65F6;&#xFF0C;&#x5373;&#x5C06;&#x8FD9;&#x4E2A;&#x8FDE;&#x63A5;&#x6309;&#x6B64;&#x89C4;&#x5219;&#x7684;&#x8BBE;&#x7F6E;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x3002;</p>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x90FD;&#x6709;&#x4E24;&#x4E2A;&#x5FC5;&#x987B;&#x7684;&#x5C5E;&#x6027;&#xFF1A; type &#x548C; outboundTag&#x3002;type &#x8868;&#x793A;&#x6B64;&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x76EE;&#x524D;&#x652F;&#x6301;&#x7684;&#x7C7B;&#x578B;&#x6709;&#xFF1A;field&#x3001;chinaip &#x548C; chinasites&#xFF1B;outboundTag &#x5BF9;&#x5E94;&#x4E00;&#x4E2A;[[&#x989D;&#x5916;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;|&#x914D;&#x7F6E;&#x6587;&#x4EF6;]]&#x7684;&#x6807;&#x8BC6;&#x3002;</p>
+<p>&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BE6;&#x7EC6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h3 id="field-v2ray-11">field (V2Ray 1.1+)</h3>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+  <span class="hljs-string">&quot;domain&quot;</span>: [
+    <span class="hljs-string">&quot;baidu.com&quot;</span>,
+    <span class="hljs-string">&quot;qq.com&quot;</span>
+  ],
+  <span class="hljs-string">&quot;ip&quot;</span>: [
+    <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
+    <span class="hljs-string">&quot;10.0.0.0/8&quot;</span>,
+    <span class="hljs-string">&quot;fc00::/7&quot;</span>,
+    <span class="hljs-string">&quot;fe80::/10&quot;</span>
+  ],
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;0-100&quot;</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+  <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>domain: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x6BCF;&#x4E00;&#x9879;&#x662F;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x7684;&#x5339;&#x914D;&#x3002;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;<ul>
+<li>&#x7EAF;&#x5B57;&#x7B26;&#x4E32;: &#x5F53;&#x6B64;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x4E2D;&#x4EFB;&#x610F;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x6BD4;&#x5982;&quot;sina.com&quot;&#x53EF;&#x4EE5;&#x5339;&#x914D;&quot;sina.com&quot;&#x3001;&quot;sina.com.cn&quot;&#x548C;&quot;www.sina.com&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D;&quot;sina.cn&quot;&#x3002;</li>
+<li>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;: &#x7531;&quot;regexp:&quot;&#xFF0C;&#x4F59;&#x4E0B;&#x90E8;&#x5206;&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x5F53;&#x6B64;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x65F6;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x4F8B;&#x5982;&quot;regexp:\\.goo.*\\.com$&quot;&#x5339;&#x914D;&quot;www.google.com&quot;&#x3001;&quot;fonts.googleapis.com&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D;&quot;google.com&quot;&#x3002;</li>
+</ul>
+</li>
+<li>ip&#xFF1A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A; <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR</a>&#x3002;&#x5F53;&#x67D0;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x76EE;&#x6807; IP &#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+<li>port&#xFF1A;&#x7AEF;&#x53E3;&#x8303;&#x56F4;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;<ul>
+<li>&quot;a-b&quot;: a &#x548C; b &#x5747;&#x4E3A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4E14;&#x5C0F;&#x4E8E; 65536&#x3002;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x662F;&#x4E00;&#x4E2A;&#x524D;&#x540E;&#x95ED;&#x5408;&#x533A;&#x95F4;&#xFF0C;&#x5F53;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x843D;&#x5728;&#x6B64;&#x8303;&#x56F4;&#x5185;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+<li>a: a &#x4E3A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4E14;&#x5C0F;&#x4E8E; 65536&#x3002;&#x5F53;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x4E3A; a &#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+</ul>
+</li>
+<li>network: &#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&quot;tcp&quot;&#x3001;&quot;udp&quot;&#x6216;&quot;tcp,udp&quot;&#xFF0C;&#x5F53;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#x662F;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+</ul>
+<p>&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ul>
+<li>&#x5F53;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x5F53;&#x524D;&#x89C4;&#x5219;&#x751F;&#x6548;&#xFF1B;</li>
+<li>&#x5F53;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x6307;&#x5B9A;&#x4E86;&#x57DF;&#x540D;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x4E2D;&#x53EA;&#x6709; IP &#x89C4;&#x5219;&#xFF0C;&#x6CA1;&#x6709;&#x57DF;&#x540D;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</li>
+</ul>
+<h3 id="chinaip-v2ray-12">chinaip (V2Ray 1.2+)</h3>
+<p>&#x6B64;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF0C;&#x6CA1;&#x6709;&#x989D;&#x5916;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;chinaip&quot;</span>,
+  <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+}
+</code></pre>
+<p>chinaip &#x4F1A;&#x5339;&#x914D;&#x6240;&#x6709;&#x4E2D;&#x56FD;&#x5883;&#x5185;&#x7684; IP&#xFF0C;&#x76EE;&#x524D;&#x53EA;&#x5305;&#x542B; IPv4 &#x6570;&#x636E;&#x3002;IP &#x6BB5;&#x4FE1;&#x606F;&#x7531; <a href="https://github.com/shadowsocks/ChinaDNS" target="_blank">ChinaDNS</a> &#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x811A;&#x672C;&#x751F;&#x6210;&#x3002;</p>
+<h3 id="chinasites-v2ray-13">chinasites (V2Ray 1.3+)</h3>
+<p>&#x6B64;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF0C;&#x6CA1;&#x6709;&#x989D;&#x5916;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;chinasites&quot;</span>,
+  <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+}
+</code></pre>
+<p>chinasites &#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E9B;<a href="https://github.com/v2ray/v2ray-core/blob/master/app/router/rules/json/chinasites.go" target="_blank">&#x5E38;&#x89C1;&#x7684;&#x56FD;&#x5185;&#x7F51;&#x7AD9;&#x57DF;&#x540D;</a>&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x4E3A;&#x8FD9;&#x4E9B;&#x57DF;&#x540D;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter_02/01_protocols.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 协议列表"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
