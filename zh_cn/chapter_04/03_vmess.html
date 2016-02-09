@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>新手入门 | V2Ray 用户手册</title>
+        <title>VMess 协议 | V2Ray 用户手册</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="../chapter_01/00_workflow.html" />
     
-    
-    <link rel="prev" href="../chapter_00/02_donate.html" />
+    <link rel="prev" href="../chapter_04/02_design.html" />
     
 
         
@@ -49,9 +47,9 @@
         
         
     <div class="book"
-        data-level="2"
-        data-chapter-title="新手入门"
-        data-filepath="chapter_01/README.md"
+        data-level="5.4"
+        data-chapter-title="VMess 协议"
+        data-filepath="chapter_04/03_vmess.md"
         data-basepath=".."
         data-revision="Tue Feb 09 2016 20:56:42 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
@@ -148,7 +146,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2" data-path="chapter_01/index.html">
+        <li class="chapter " data-level="2" data-path="chapter_01/index.html">
             
                 
                     <a href="../chapter_01/index.html">
@@ -407,7 +405,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="chapter_04/03_vmess.html">
+        <li class="chapter active" data-level="5.4" data-path="chapter_04/03_vmess.html">
             
                 
                     <a href="../chapter_04/03_vmess.html">
@@ -460,8 +458,81 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x65B0;&#x624B;&#x5165;&#x95E8;">&#x65B0;&#x624B;&#x5165;&#x95E8;</h1>
-<p>&#x672C;&#x7AE0;&#x8282;&#x4ECB;&#x7ECD;&#x4E86; V2Ray &#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+                        <h1 id="vmess-&#x534F;&#x8BAE;">VMess &#x534F;&#x8BAE;</h1>
+<p>VMess &#x662F; V2Ray &#x539F;&#x521B;&#x7684;&#x52A0;&#x5BC6;&#x901A;&#x8BAF;&#x534F;&#x8BAE;&#x3002;</p>
+<h2 id="&#x6458;&#x8981;">&#x6458;&#x8981;</h2>
+<ul>
+<li>&#x7248;&#x672C;&#xFF1A;1</li>
+</ul>
+<h2 id="&#x683C;&#x5F0F;">&#x683C;&#x5F0F;</h2>
+<h3 id="&#x6570;&#x636E;&#x8BF7;&#x6C42;">&#x6570;&#x636E;&#x8BF7;&#x6C42;</h3>
+<p>&#x8BA4;&#x8BC1;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>16 &#x5B57;&#x8282;&#xFF1A;&#x57FA;&#x4E8E;&#x65F6;&#x95F4;&#x7684; hash(&#x7528;&#x6237; ID)&#xFF0C;&#x89C1;&#x4E0B;&#x6587;</li>
+</ul>
+<p>&#x6307;&#x4EE4;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x76EE;&#x524D;&#x4E3A; 0x1</li>
+<li>16 &#x5B57;&#x8282;&#xFF1A;&#x8BF7;&#x6C42;&#x6570;&#x636E; IV</li>
+<li>16 &#x5B57;&#x8282;&#xFF1A;&#x8BF7;&#x6C42;&#x6570;&#x636E; Key</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F; V</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x9009;&#x9879; Opt</li>
+<li>2 &#x5B57;&#x8282;&#xFF1A;&#x4FDD;&#x7559;</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x6307;&#x4EE4;<ul>
+<li>0x00&#xFF1A;&#x4FDD;&#x7559;</li>
+<li>0x01&#xFF1A;TCP &#x8BF7;&#x6C42;</li>
+<li>0x02&#xFF1A;UDP &#x8BF7;&#x6C42;</li>
+</ul>
+</li>
+<li>2 &#x5B57;&#x8282;&#xFF1A;&#x76EE;&#x6807;&#x7AEF;&#x53E3;</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x76EE;&#x6807;&#x7C7B;&#x578B;<ul>
+<li>0x01&#xFF1A;IPv4</li>
+<li>0x02&#xFF1A;&#x57DF;&#x540D;</li>
+<li>0x03&#xFF1A;IPv6</li>
+</ul>
+</li>
+<li>&#x76EE;&#x6807;&#x5730;&#x5740;&#xFF1A;<ul>
+<li>4 &#x5B57;&#x8282;&#xFF1A;IPv4</li>
+<li>1 &#x5B57;&#x8282;&#x957F;&#x5EA6; + &#x57DF;&#x540D;</li>
+<li>16 &#x5B57;&#x8282;&#xFF1A;IPv6</li>
+</ul>
+</li>
+<li>4 &#x5B57;&#x8282;&#xFF1A;&#x6307;&#x4EE4;&#x90E8;&#x5206;&#x524D;&#x9762;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x7684; FNV1a hash</li>
+</ul>
+<p>&#x6570;&#x636E;&#x90E8;&#x5206;</p>
+<ul>
+<li>N &#x5B57;&#x8282;&#xFF1A;&#x8BF7;&#x6C42;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#x6307;&#x4EE4;&#x90E8;&#x5206;&#x7ECF;&#x8FC7; AES-128-CFB &#x52A0;&#x5BC6;&#xFF1A;</p>
+<ul>
+<li>Key&#xFF1A;md5(&#x7528;&#x6237; ID + &apos;c48619fe-8f02-49e0-b9e9-edf763e17e21&apos;)</li>
+<li>IV&#xFF1A;md5(X + X + X + X)&#xFF0C;X = []byte(UserHash &#x751F;&#x6210;&#x7684;&#x65F6;&#x95F4;) (8 &#x5B57;&#x8282;, Big Endian)</li>
+</ul>
+<p>&#x6570;&#x636E;&#x90E8;&#x5206;&#x4F7F;&#x7528; AES-128-CFB &#x52A0;&#x5BC6;&#xFF0C;Key &#x548C; IV &#x5728;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x4E2D;</p>
+<h3 id="&#x6570;&#x636E;&#x5E94;&#x7B54;">&#x6570;&#x636E;&#x5E94;&#x7B54;</h3>
+<p>&#x6570;&#x636E;&#x90E8;&#x5206;</p>
+<ul>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F; V</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x4FDD;&#x7559;</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x6307;&#x4EE4; Cmd</li>
+<li>1 &#x5B57;&#x8282;&#xFF1A;&#x6307;&#x4EE4;&#x957F;&#x5EA6; M</li>
+<li>M &#x5B57;&#x8282;&#xFF1A;&#x6307;&#x4EE4;&#x5185;&#x5BB9;</li>
+<li>N &#x5B57;&#x8282;&#xFF1A;&#x5E94;&#x7B54;&#x6570;&#x636E;</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#x6570;&#x636E;&#x90E8;&#x5206;&#x4F7F;&#x7528; AES-128-CFB &#x52A0;&#x5BC6;&#xFF0C;IV &#x4E3A; md5(&#x8BF7;&#x6C42;&#x6570;&#x636E; IV)&#xFF0C;Key &#x4E3A; md5(&#x8BF7;&#x6C42;&#x6570;&#x636E; Key)</p>
+<h2 id="&#x7528;&#x6237;-id">&#x7528;&#x6237; ID</h2>
+<p>ID &#x7B49;&#x4EF7;&#x4E8E; <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>&#xFF0C;&#x662F;&#x4E00;&#x4E2A; 16 &#x5B57;&#x8282;&#x957F;&#x7684;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x4EE4;&#x724C;&#xFF08;Token&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; ID &#x5F62;&#x5982;&#xFF1A;de305d54-75b4-431b-adb2-eb6b9e546014&#xFF0C;&#x51E0;&#x4E4E;&#x5B8C;&#x5168;&#x968F;&#x673A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x7684; UUID &#x751F;&#x6210;&#x5668;&#x6765;&#x751F;&#x6210;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.uuidgenerator.net/" target="_blank">&#x8FD9;&#x4E2A;</a>&#x3002;</p>
+<p>ID &#x5728;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x8FC7;&#x7A0B;&#x4E2D;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x5F53;&#x524D; ID &#x65F6;&#xFF0C;&#x624D;&#x8FDB;&#x884C;&#x540E;&#x7EED;&#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x751A;&#x81F3;&#x52A0;&#x5165;&#x9ED1;&#x540D;&#x5355;&#x3002;</p>
+<p>&#x5728;&#x591A;&#x7528;&#x6237;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x5E10;&#x53F7;&#x5E94;&#x4E0E; ID &#x5206;&#x5F00;&#x5B58;&#x653E;&#xFF0C;&#x5373;&#x7528;&#x6237;&#x5E10;&#x53F7;&#x548C; ID &#x6709;&#x4E00;&#x5BF9;&#x4E00;&#x6216;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5728; V2Ray Server &#x4E2D;&#xFF0C;&#x53EA;&#x8D1F;&#x8D23;&#x7BA1;&#x7406; ID&#xFF0C;&#x7528;&#x6237;&#x5E10;&#x53F7;&#xFF08;&#x53CA;&#x6743;&#x9650;&#x3001;&#x8D39;&#x7528;&#x7B49;&#xFF09;&#x7531;&#x53E6;&#x5916;&#x7684;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x5728;&#x540E;&#x7EED;&#x7248;&#x672C;&#x4E2D;&#xFF0C;V2Ray Server &#x4E4B;&#x95F4;&#x5E94;&#x6709;&#x80FD;&#x529B;&#x8FDB;&#x884C;&#x6C9F;&#x901A;&#x800C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x4E34;&#x65F6; ID&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x901A;&#x8BAF;&#x7684;&#x53EF;&#x63A2;&#x6D4B;&#x6027;&#x3002;</p>
+<h2 id="&#x57FA;&#x4E8E;&#x65F6;&#x95F4;&#x7684;&#x7528;&#x6237;-id-hash">&#x57FA;&#x4E8E;&#x65F6;&#x95F4;&#x7684;&#x7528;&#x6237; ID Hash</h2>
+<ul>
+<li>H = MD5</li>
+<li>K = &#x7528;&#x6237; ID (16 &#x5B57;&#x8282;)</li>
+<li>M = UTC &#x65F6;&#x95F4;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x79D2;&#xFF0C;&#x53D6;&#x503C;&#x4E3A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x7684;&#x524D;&#x540E; 30 &#x79D2;&#x968F;&#x673A;&#x503C;(8 &#x5B57;&#x8282;, Big Endian)</li>
+<li>Hash = HMAC(H, K, M)</li>
+</ul>
 
                     
                     </section>
@@ -472,10 +543,8 @@
         </div>
 
         
-        <a href="../chapter_00/02_donate.html" class="navigation navigation-prev " aria-label="Previous page: 捐助 V2Ray"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter_04/02_design.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 核心设计"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../chapter_01/00_workflow.html" class="navigation navigation-next " aria-label="Next page: 工作机制"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
