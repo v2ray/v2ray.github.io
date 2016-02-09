@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>工作机制 | V2Ray 用户手册</title>
+        <title>JSON | V2Ray 用户手册</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../chapter_01/01_install.html" />
+    <link rel="next" href="../chapter_02/01_overview.html" />
     
     
-    <link rel="prev" href="../chapter_01/index.html" />
+    <link rel="prev" href="../chapter_02/index.html" />
     
 
         
@@ -49,11 +49,11 @@
         
         
     <div class="book"
-        data-level="2.1"
-        data-chapter-title="工作机制"
-        data-filepath="chapter_01/00_workflow.md"
+        data-level="3.1"
+        data-chapter-title="JSON"
+        data-filepath="chapter_02/00_json.md"
         data-basepath=".."
-        data-revision="Tue Feb 09 2016 10:48:16 GMT+0000 (UTC)"
+        data-revision="Tue Feb 09 2016 11:49:21 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
     
 
@@ -137,7 +137,7 @@
                         
                             <b>1.3.</b>
                         
-                        捐助本项目
+                        捐助 V2Ray
                     </a>
             
             
@@ -164,7 +164,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1" data-path="chapter_01/00_workflow.html">
+        <li class="chapter " data-level="2.1" data-path="chapter_01/00_workflow.html">
             
                 
                     <a href="../chapter_01/00_workflow.html">
@@ -215,14 +215,29 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="chapter_02/00_overview.html">
+        <li class="chapter active" data-level="3.1" data-path="chapter_02/00_json.html">
             
                 
-                    <a href="../chapter_02/00_overview.html">
+                    <a href="../chapter_02/00_json.html">
                 
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
+                        
+                        JSON
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter_02/01_overview.html">
+            
+                
+                    <a href="../chapter_02/01_overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
                         
                         文件格式
                     </a>
@@ -230,14 +245,14 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="chapter_02/01_protocols.html">
+        <li class="chapter " data-level="3.3" data-path="chapter_02/02_protocols.html">
             
                 
-                    <a href="../chapter_02/01_protocols.html">
+                    <a href="../chapter_02/02_protocols.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                         协议列表
                     </a>
@@ -245,16 +260,82 @@
             
         </li>
     
-        <li class="chapter " data-level="3.3" data-path="chapter_02/02_routing.html">
+        <li class="chapter " data-level="3.4" data-path="chapter_02/03_routing.html">
             
                 
-                    <a href="../chapter_02/02_routing.html">
+                    <a href="../chapter_02/03_routing.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                         路由配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter_03/index.html">
+            
+                
+                    <a href="../chapter_03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        高级功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter_04/index.html">
+            
+                
+                    <a href="../chapter_04/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        代码细节
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter_04/00_roadmap.html">
+            
+                
+                    <a href="../chapter_04/00_roadmap.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        开发计划
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter_04/01_guide.html">
+            
+                
+                    <a href="../chapter_04/01_guide.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        开发指引
                     </a>
             
             
@@ -298,16 +379,28 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x5DE5;&#x4F5C;&#x673A;&#x5236;">&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h1>
-<h2 id="&#x4E2A;&#x4EBA;&#x4F7F;&#x7528;">&#x4E2A;&#x4EBA;&#x4F7F;&#x7528;</h2>
-<p>&#x4F60;&#x9700;&#x8981;&#x81F3;&#x5C11;&#x4E24;&#x4E2A; V2Ray Server&#xFF08;&#x8BBE;&#x4E3A; A&#x3001;B&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x7A7F;&#x5899;&#x3002;&#x4EE5;&#x7F51;&#x9875;&#x6D4F;&#x89C8;&#x4E3A;&#x4F8B;&#xFF0C;&#x4F60;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x548C; A &#x4EE5; Socks 5 &#x534F;&#x8BAE;&#x901A;&#x4FE1;&#xFF0C;
-B &#x548C;&#x76EE;&#x6807;&#x7F51;&#x7AD9;&#x4E4B;&#x95F4;&#x4EE5; HTTP &#x534F;&#x8BAE;&#x901A;&#x4FE1;&#xFF0C;A &#x548C; B &#x4E4B;&#x95F4;&#x4F7F;&#x7528; V2Ray &#x7684;&#x81EA;&#x6709;&#x534F;&#x8BAE; [[VMess]] &#x901A;&#x4FE1;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
-<p><img src="../resources/v2ray.png" alt=""></p>
-<p>&#x901A;&#x5E38; Server A &#x8FD0;&#x884C;&#x5728;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x7535;&#x8111;&#xFF0C;Server B &#x8FD0;&#x884C;&#x5728;&#x4E00;&#x53F0;&#x6D77;&#x5916;&#x7684; VPS &#x4E2D;&#x3002;</p>
-<p>&#x4E0A;&#x8FF0;&#x7684;&#x67B6;&#x6784;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5BA2;&#x6237;&#x7AEF; / &#x670D;&#x52A1;&#x5668;&#x67B6;&#x6784;&#x3002;Server A &#x5145;&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x7528;&#x4E8E;&#x52A0;&#x5BC6;&#x5E76;&#x53D1;&#x9001;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF1B;Server B &#x5145;&#x5F53;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x89E3;&#x5BC6;&#x5E76;&#x54CD;&#x5E94;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x3002;</p>
-<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;V2Ray &#x4F7F;&#x7528;&#x65F6;&#x95F4;&#x6233;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684; UTC &#x65F6;&#x95F4;&#x76F8;&#x5DEE;&#x4E0D;&#x8D85;&#x8FC7;&#x4E24;&#x5206;&#x949F;&#xFF08;&#x65F6;&#x533A;&#x4E0D;&#x9650;&#xFF09;&#x3002;</p>
-<h2 id="&#x591A;&#x4EBA;&#x5171;&#x4EAB;">&#x591A;&#x4EBA;&#x5171;&#x4EAB;</h2>
-<p>V2Ray &#x4E5F;&#x53EF;&#x88AB;&#x90E8;&#x7F72;&#x6210;&#x591A;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;&#x2026;&#x2026;&#xFF08;&#x672A;&#x5B8C;&#x5F85;&#x7EED;&#xFF09;</p>
+                        <h2 id="json-&#x683C;&#x5F0F;">JSON &#x683C;&#x5F0F;</h2>
+<p>V2Ray &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A; JSON &#x683C;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x719F;&#x6089; JSON &#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x6BB5;&#x3002;</p>
+<p>JSON&#xFF0C;&#x5168;&#x79F0; <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation</a>&#xFF0C;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#x662F; Javascript 
+&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x3002;&#x4E00;&#x4E2A; JSON &#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x5927;&#x62EC;&#x53F7;&#x201C;{&#x201D;&#x5F00;&#x5934;&#xFF0C;&#x5927;&#x62EC;&#x53F7;&#x201C;}&#x201D;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; JSON &#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF08;Key-Value Pair&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#xFF0C;&#x800C;&#x503C;&#x6709;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5E38;
+&#x89C1;&#x7684;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#x3001;&#x6570;&#x5B57;&#xFF08;Number&#xFF09;&#x3001;&#x5E03;&#x5C14;&#xFF08;Bool&#xFF09;&#x3001;&#x6570;&#x7EC4;&#xFF08;Array&#xFF09;&#x548C;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A; JSON
+&#x5BF9;&#x8C61;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;stringValue&quot;</span>: <span class="hljs-string">&quot;This is a string.&quot;</span>,
+  <span class="hljs-string">&quot;numberValue&quot;</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-string">&quot;boolValue&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;arrayValue&quot;</span>: [<span class="hljs-string">&quot;this&quot;</span>, <span class="hljs-string">&quot;is&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;string&quot;</span>, <span class="hljs-string">&quot;array&quot;</span>],
+  <span class="hljs-string">&quot;objectValue&quot;</span>: {
+    <span class="hljs-string">&quot;another&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x901A;&#x5E38;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x540E;&#x9762;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&#x201C;,&#x201D;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x540E;&#x9762;&#x7D27;&#x8DDF;&#x4E00;&#x4E2A;&#x5927;&#x62EC;&#x53F7;&#x201C;&#xFF5D;&#x201D;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x4E00;&#x5B9A;&#x4E0D;&#x80FD;&#x6709;&#x9017;&#x53F7;&#x3002;</li>
+<li>Javascript &#x4E2D;&#x7684;&#x6CE8;&#x91CA;&#x7B26;&#x201C;//&#x201D;&#x548C;&#x201C;/* */&#x201D;&#x4E0D;&#x80FD;&#x5728; JSON &#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</li>
+</ol>
 
                     
                     </section>
@@ -318,10 +411,10 @@ B &#x548C;&#x76EE;&#x6807;&#x7F51;&#x7AD9;&#x4E4B;&#x95F4;&#x4EE5; HTTP &#x534F;
         </div>
 
         
-        <a href="../chapter_01/index.html" class="navigation navigation-prev " aria-label="Previous page: 新手入门"><i class="fa fa-angle-left"></i></a>
+        <a href="../chapter_02/index.html" class="navigation navigation-prev " aria-label="Previous page: 配置文件"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../chapter_01/01_install.html" class="navigation navigation-next " aria-label="Next page: 下载安装"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter_02/01_overview.html" class="navigation navigation-next " aria-label="Next page: 文件格式"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
