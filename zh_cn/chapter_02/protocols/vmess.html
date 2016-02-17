@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Shadowsocks | V2Ray 用户手册</title>
+        <title>VMess | V2Ray 用户手册</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../chapter_05/00_config/07_vps_relay.html" />
+    <link rel="next" href="../../chapter_02/03_routing.html" />
     
     
-    <link rel="prev" href="../../chapter_05/00_config/05_dyn_port.html" />
+    <link rel="prev" href="../../chapter_02/protocols/socks.html" />
     
 
         
@@ -49,9 +49,9 @@
         
         
     <div class="book"
-        data-level="5.1.7"
-        data-chapter-title="Shadowsocks"
-        data-filepath="chapter_05/00_config/06_shadowsocks.md"
+        data-level="2.3.7"
+        data-chapter-title="VMess"
+        data-filepath="chapter_02/protocols/vmess.md"
         data-basepath="../.."
         data-revision="Wed Feb 17 2016 12:12:26 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
@@ -426,7 +426,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.7" data-path="chapter_02/protocols/vmess.html">
+        <li class="chapter active" data-level="2.3.7" data-path="chapter_02/protocols/vmess.html">
             
                 
                     <a href="../../chapter_02/protocols/vmess.html">
@@ -735,7 +735,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.1.7" data-path="chapter_05/00_config/06_shadowsocks.html">
+        <li class="chapter " data-level="5.1.7" data-path="chapter_05/00_config/06_shadowsocks.html">
             
                 
                     <a href="../../chapter_05/00_config/06_shadowsocks.html">
@@ -823,88 +823,79 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="shadowsocks-&#x670D;&#x52A1;&#x5668;&#x7AEF;">Shadowsocks &#x670D;&#x52A1;&#x5668;&#x7AEF;</h1>
-<p>V2Ray &#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x652F;&#x6301; Shadowsocks &#x534F;&#x8BAE;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x540C;&#x65F6;&#x5728;&#x4F7F;&#x7528; V2Ray &#x548C; Shadowsocks&#xFF0C;&#x90A3;&#x4E48;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5F00;&#x542F;&#x4E24;&#x79CD;&#x534F;&#x8BAE;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x3002;</p>
-<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4EE5; VMess &#x4E3A;&#x4E3B;&#xFF0C;&#x540C;&#x65F6;&#x5F00;&#x653E; Shadowsocks &#x7AEF;&#x53E3;&#x7684;&#x914D;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">37192</span>, <span class="hljs-comment">// &#x4E3B;&#x7AEF;&#x53E3;</span>
-  <span class="hljs-string">&quot;log&quot;</span> : {
-    <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/access.log&quot;</span>, <span class="hljs-comment">// &#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;</span>
-    <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/error.log&quot;</span>,   <span class="hljs-comment">// &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;</span>
-    <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>                  <span class="hljs-comment">// &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#xFF0C;&#x53EF;&#x9009; debug / info / warning / error</span>
-  },
-  <span class="hljs-string">&quot;inbound&quot;</span>: {
-    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,    <span class="hljs-comment">// &#x4E3B;&#x4F20;&#x5165;&#x534F;&#x8BAE;&#xFF0C;&#x53C2;&#x89C1;&#x534F;&#x8BAE;&#x5217;&#x8868;</span>
-    <span class="hljs-string">&quot;settings&quot;</span>: {
-      <span class="hljs-string">&quot;clients&quot;</span>: [
-        {
-          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;3b129dec-72a3-4d28-aeee-028a0fe86e22&quot;</span>,  <span class="hljs-comment">// &#x7528;&#x6237; ID&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x987B;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; ID &#x624D;&#x53EF;&#x4EE5;&#x4E2D;&#x8F6C;&#x6D41;&#x91CF;</span>
-          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>  <span class="hljs-comment">// &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x81EA;&#x7528; VPS &#x53EF;&#x8BBE;&#x4E3A; 1&#xFF1B;&#x5171;&#x4EAB; VPS &#x8BF7;&#x8BBE;&#x4E3A; 0&#x3002;</span>
-        }
-      ]
-    }
-  },
-  <span class="hljs-string">&quot;outbound&quot;</span>: {
-    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,  <span class="hljs-comment">// &#x4E3B;&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#xFF0C;&#x53C2;&#x89C1;&#x534F;&#x8BAE;&#x5217;&#x8868;</span>
-    <span class="hljs-string">&quot;settings&quot;</span>: {}
-  },
-  <span class="hljs-string">&quot;inboundDetour&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;shadowsocks&quot;</span>,   <span class="hljs-comment">// &#x5F00;&#x542F; Shadowsocks</span>
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">30001</span>, <span class="hljs-comment">// &#x76D1;&#x542C; 30001 &#x7AEF;&#x53E3;</span>
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;aes-256-cfb&quot;</span>, <span class="hljs-comment">// &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x652F;&#x6301; aes-256-cfb &#x548C; aes-128-cfb</span>
-        <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;v2ray&quot;</span>,     <span class="hljs-comment">// &#x5BC6;&#x7801;&#xFF0C;&#x5FC5;&#x987B;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x76F8;&#x540C;</span>
-        <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>             <span class="hljs-comment">// &#x662F;&#x5426;&#x5F00;&#x542F; UDP &#x8F6C;&#x53D1;</span>
+                        <h1 id="vmess">VMess</h1>
+<p><a href="../../chapter_04/03_vmess.html">VMess</a> &#x662F;&#x4E00;&#x4E2A;&#x52A0;&#x5BC6;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x5B83;&#x5206;&#x4E3A;&#x4F20;&#x5165;&#x548C;&#x4F20;&#x51FA;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x901A;&#x5E38;&#x4F5C;&#x4E3A; V2Ray &#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x6865;&#x6881;&#x3002;</p>
+<ul>
+<li>&#x540D;&#x79F0;&#xFF1A;vmess</li>
+<li>&#x7C7B;&#x578B;&#xFF1A;Inbound / Outbound</li>
+<li>VMess &#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#xFF1A;<pre><code class="lang-javascript">{
+<span class="hljs-string">&quot;vnext&quot;</span>: [
+  {
+    <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">37192</span>,
+    <span class="hljs-string">&quot;users&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
+        <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">10</span>
       }
-    },
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;shadowsocks&quot;</span>,   <span class="hljs-comment">// &#x5F00;&#x542F; Shadowsocks</span>
-      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">30002</span>, <span class="hljs-comment">// &#x76D1;&#x542C; 30002 &#x7AEF;&#x53E3;&#xFF0C;&#x7531;&#x4E8E; Shadowsocks &#x7684;&#x9650;&#x5236;&#xFF0C;&#x591A;&#x7528;&#x6237;&#x7684;&#x65F6;&#x5019;&#x53EA;&#x80FD;&#x5F00;&#x591A;&#x4E2A;&#x7AEF;&#x53E3;</span>
-      <span class="hljs-string">&quot;settings&quot;</span>: {  <span class="hljs-comment">// &#x914D;&#x7F6E;&#x548C;&#x4E0A;&#x8FF0;&#x7C7B;&#x4F3C;</span>
-        <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;aes-256-cfb&quot;</span>,
-        <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;v2ray-2&quot;</span>,
-        <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>
-      }
-    }
-  ],
-  <span class="hljs-string">&quot;outboundDetour&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;blackhole&quot;</span>,  <span class="hljs-comment">// &#x989D;&#x5916;&#x7684;&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#xFF0C;&#x53C2;&#x89C1;&#x534F;&#x8BAE;&#x5217;&#x8868;</span>
-      <span class="hljs-string">&quot;settings&quot;</span>: {},
-      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
-    }
-  ],
-  <span class="hljs-string">&quot;routing&quot;</span>: {
-    <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
-    <span class="hljs-string">&quot;settings&quot;</span>: {
-      <span class="hljs-string">&quot;rules&quot;</span>: [
-        {
-          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,  <span class="hljs-comment">// &#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C06;&#x5C4F;&#x853D;&#x6240;&#x6709;&#x5C40;&#x57DF;&#x7F51;&#x6D41;&#x91CF;&#xFF0C;&#x4EE5;&#x63D0;&#x5347;&#x5B89;&#x5168;&#x6027;&#x3002;</span>
-          <span class="hljs-string">&quot;ip&quot;</span>: [
-            <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;10.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;100.64.0.0/10&quot;</span>,
-            <span class="hljs-string">&quot;127.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;169.254.0.0/16&quot;</span>,
-            <span class="hljs-string">&quot;172.16.0.0/12&quot;</span>,
-            <span class="hljs-string">&quot;192.0.0.0/24&quot;</span>,
-            <span class="hljs-string">&quot;192.0.2.0/24&quot;</span>,
-            <span class="hljs-string">&quot;192.168.0.0/16&quot;</span>,
-            <span class="hljs-string">&quot;198.18.0.0/15&quot;</span>,
-            <span class="hljs-string">&quot;198.51.100.0/24&quot;</span>,
-            <span class="hljs-string">&quot;203.0.113.0/24&quot;</span>,
-            <span class="hljs-string">&quot;::1/128&quot;</span>,
-            <span class="hljs-string">&quot;fc00::/7&quot;</span>,
-            <span class="hljs-string">&quot;fe80::/10&quot;</span>
-          ],
-          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
-        }
-      ]
-    }
+    ]
   }
+]
 }
 </code></pre>
+</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>vnext&#xFF1A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF1A;<ul>
+<li>address&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x4EC5;&#x652F;&#x6301; IP &#x5730;&#x5740;&#x3002;</li>
+<li>port&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</li>
+<li>users&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
+<li>id&#xFF1A;VMess &#x7528;&#x6237;&#x7684;&#x4E3B; ID&#x3002;</li>
+<li>alterId (V2Ray 1.3): &#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x9632;&#x6B62;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E3B; ID &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x518D;&#x989D;&#x5916;&#x751F;&#x6210;&#x591A;&#x4E2A; ID&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x989D;&#x5916;&#x7684; ID &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x63A8;&#x8350;&#x503C;&#x4E3A; 100&#x3002;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 0&#x3002;&#x6700;&#x5927;&#x503C; 65535&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x76F8;&#x540C;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>VMess &#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#xFF1A;<pre><code class="lang-javascript">{
+<span class="hljs-string">&quot;clients&quot;</span>: [
+  {
+    <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
+    <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
+  }
+],
+<span class="hljs-string">&quot;features&quot;</span>: {
+  <span class="hljs-string">&quot;detour&quot;</span>: {
+    <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;tag_to_detour&quot;</span>
+  }
+}
+}
+</code></pre>
+</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li>clients&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
+<li>id&#xFF1A;VMess &#x7684;&#x7528;&#x6237; ID&#x3002;</li>
+<li>level&#xFF1A;&#x7528;&#x6237;&#x7B49;&#x7EA7;<ul>
+<li>&#x5F53; level &#x4E3A; 0 &#x65F6;&#xFF0C;&#x6B64;&#x7528;&#x6237;&#x4E0D;&#x88AB;&#x4FE1;&#x4EFB;&#xFF0C;V2Ray &#x5C06;&#x5BF9;&#x6B64;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4E25;&#x683C;&#x7684;&#x5B89;&#x5168;&#x9650;&#x5236;&#xFF1B;</li>
+<li>&#x5F53; level &#x5927;&#x4E8E; 0 &#x65F6;&#xFF0C;&#x6B64;&#x7528;&#x6237;&#x88AB;&#x4FE1;&#x4EFB;&#xFF0C;V2Ray &#x5C06;&#x653E;&#x5BBD;&#x5BF9;&#x6B64;&#x7528;&#x6237;&#x7684;&#x9650;&#x5236;&#xFF1B;</li>
+</ul>
+</li>
+<li>alterId (V2Ray 1.3+): &#x540C; Inbound&#x3002;</li>
+</ul>
+</li>
+<li>features (V2Ray 1.5+): VMess &#x7684;&#x7279;&#x6027;&#x914D;&#x7F6E;&#xFF1A;<ul>
+<li>detour: &#x8F6C;&#x5411; outboundDetour<ul>
+<li>to: &#x4E00;&#x4E2A; outboundDetour &#x7684; tag&#xFF0C;&#x8BE6;&#x89C1;<a href="../02_protocols.html">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
                     
                     </section>
@@ -915,10 +906,10 @@
         </div>
 
         
-        <a href="../../chapter_05/00_config/05_dyn_port.html" class="navigation navigation-prev " aria-label="Previous page: 动态端口"><i class="fa fa-angle-left"></i></a>
+        <a href="../../chapter_02/protocols/socks.html" class="navigation navigation-prev " aria-label="Previous page: SOCKS"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../chapter_05/00_config/07_vps_relay.html" class="navigation navigation-next " aria-label="Next page: VPS 中转"><i class="fa fa-angle-right"></i></a>
+        <a href="../../chapter_02/03_routing.html" class="navigation navigation-next " aria-label="Next page: 路由配置"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
