@@ -53,7 +53,7 @@
         data-chapter-title="VMess"
         data-filepath="chapter_02/protocols/vmess.md"
         data-basepath="../.."
-        data-revision="Wed Feb 24 2016 09:53:39 GMT+0000 (UTC)"
+        data-revision="Thu Feb 25 2016 14:05:19 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
     
 
@@ -867,7 +867,7 @@
 <li>port&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</li>
 <li>users&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
 <li>id&#xFF1A;VMess &#x7528;&#x6237;&#x7684;&#x4E3B; ID&#x3002;</li>
-<li>alterId (V2Ray 1.3): &#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x9632;&#x6B62;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E3B; ID &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x518D;&#x989D;&#x5916;&#x751F;&#x6210;&#x591A;&#x4E2A; ID&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x989D;&#x5916;&#x7684; ID &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x63A8;&#x8350;&#x503C;&#x4E3A; 100&#x3002;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 0&#x3002;&#x6700;&#x5927;&#x503C; 65535&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x76F8;&#x540C;&#x3002;</li>
+<li>alterId: &#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x9632;&#x6B62;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E3B; ID &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x518D;&#x989D;&#x5916;&#x751F;&#x6210;&#x591A;&#x4E2A; ID&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x989D;&#x5916;&#x7684; ID &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x63A8;&#x8350;&#x503C;&#x4E3A; 100&#x3002;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 0&#x3002;&#x6700;&#x5927;&#x503C; 65535&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x76F8;&#x540C;&#x3002;</li>
 </ul>
 </li>
 </ul>
@@ -879,9 +879,14 @@
   {
     <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
     <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
+    <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>
   }
 ],
+<span class="hljs-string">&quot;default&quot;</span>: {
+  <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">32</span>
+},
 <span class="hljs-string">&quot;features&quot;</span>: {
   <span class="hljs-string">&quot;detour&quot;</span>: {
     <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;tag_to_detour&quot;</span>
@@ -893,21 +898,30 @@
 </ul>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li>clients&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
+<li>clients&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#x3002;clients &#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;&#x3002;&#x5F53;&#x6B64;&#x914D;&#x7F6E;&#x7528;&#x4F5C;&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x3002;<ul>
+<li>&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
 <li>id&#xFF1A;VMess &#x7684;&#x7528;&#x6237; ID&#x3002;</li>
 <li>level&#xFF1A;&#x7528;&#x6237;&#x7B49;&#x7EA7;<ul>
 <li>&#x5F53; level &#x4E3A; 0 &#x65F6;&#xFF0C;&#x6B64;&#x7528;&#x6237;&#x4E0D;&#x88AB;&#x4FE1;&#x4EFB;&#xFF0C;V2Ray &#x5C06;&#x5BF9;&#x6B64;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4E25;&#x683C;&#x7684;&#x5B89;&#x5168;&#x9650;&#x5236;&#xFF1B;</li>
-<li>&#x5F53; level &#x5927;&#x4E8E; 0 &#x65F6;&#xFF0C;&#x6B64;&#x7528;&#x6237;&#x88AB;&#x4FE1;&#x4EFB;&#xFF0C;V2Ray &#x5C06;&#x653E;&#x5BBD;&#x5BF9;&#x6B64;&#x7528;&#x6237;&#x7684;&#x9650;&#x5236;&#xFF1B;</li>
+<li>&#x5F53; level &#x5927;&#x4E8E; 0 &#x65F6;&#xFF0C;&#x6B64;&#x7528;&#x6237;&#x88AB;&#x4FE1;&#x4EFB;&#xFF0C;V2Ray &#x5C06;&#x653E;&#x5BBD;&#x5BF9;&#x6B64;&#x7528;&#x6237;&#x7684;&#x9650;&#x5236;&#x3002;</li>
 </ul>
 </li>
-<li>alterId (V2Ray 1.3+): &#x540C; Inbound&#x3002;</li>
+<li>alterId: &#x540C; Inbound&#x3002;</li>
+<li>email: &#x7528;&#x6237;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7528;&#x6237;&#x7684;&#x6D41;&#x91CF;&#x3002;</li>
 </ul>
 </li>
-<li>features (V2Ray 1.5+): VMess &#x7684;&#x7279;&#x6027;&#x914D;&#x7F6E;&#xFF1A;<ul>
+</ul>
+</li>
+<li>features: VMess &#x7684;&#x7279;&#x6027;&#x914D;&#x7F6E;&#xFF1A;<ul>
 <li>detour: &#x8F6C;&#x5411; outboundDetour<ul>
 <li>to: &#x4E00;&#x4E2A; outboundDetour &#x7684; tag&#xFF0C;&#x8BE6;&#x89C1;<a href="../02_protocols.html">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li>default (V2Ray 1.9+): &#x53EF;&#x9009;&#xFF0C;clients &#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;<ul>
+<li>level: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x610F;&#x4E49;&#x540C;&#x4E0A;</li>
+<li>alterId: &#x540C; Inbound&#x3002;  </li>
 </ul>
 </li>
 </ul>
