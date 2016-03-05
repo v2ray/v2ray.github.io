@@ -53,7 +53,7 @@
         data-chapter-title="动态端口"
         data-filepath="chapter_05/00_config/05_dyn_port.md"
         data-basepath="../.."
-        data-revision="Tue Mar 01 2016 12:08:12 GMT+0000 (UTC)"
+        data-revision="Sat Mar 05 2016 13:20:49 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
     
 
@@ -860,7 +860,7 @@
       ],
       <span class="hljs-string">&quot;features&quot;</span>: {             <span class="hljs-comment">// VMess &#x7279;&#x6027;&#x914D;&#x7F6E;</span>
         <span class="hljs-string">&quot;detour&quot;</span>: {             <span class="hljs-comment">// &#x7ED5;&#x8DEF;&#x914D;&#x7F6E;</span>
-          <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;detourHandler&quot;</span> <span class="hljs-comment">// &#x6307;&#x5B9A;&#x7ED5;&#x8DEF;&#x534F;&#x8BAE;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x8981;&#x4E0B;&#x9762; inboundDetour &#x4E2D;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x6837;</span>
+          <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;detour&quot;</span> <span class="hljs-comment">// &#x6307;&#x5B9A;&#x7ED5;&#x8DEF;&#x534F;&#x8BAE;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x8981;&#x4E0B;&#x9762; inboundDetour &#x4E2D;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x6837;</span>
         }
       }
     }
@@ -873,16 +873,8 @@
     {
       <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
       <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;30001-30100&quot;</span>,  <span class="hljs-comment">// &#x6309;&#x9700;&#x5F00;&#x653E; 30001 &#x5230; 300100 &#x8FD9; 100 &#x4E2A;&#x7AEF;&#x53E3;</span>
-      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;detourHandler&quot;</span>, <span class="hljs-comment">// &#x548C;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x81F4;</span>
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;clients&quot;</span>: [  <span class="hljs-comment">// clients &#x90E8;&#x5206;&#x548C;&#x539F;&#x6709;&#x914D;&#x7F6E;&#x4E00;&#x6837;</span>
-          {
-            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;3b129dec-72a3-4d28-aeee-028a0fe86e22&quot;</span>,
-            <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
-            <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
-          }
-        ]
-      },
+      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;detour&quot;</span>, <span class="hljs-comment">// &#x548C;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x81F4;</span>
+      <span class="hljs-string">&quot;settings&quot;</span>: {},
       <span class="hljs-string">&quot;allocate&quot;</span>: {            <span class="hljs-comment">// &#x7AEF;&#x53E3;&#x5206;&#x914D;&#x6A21;&#x5F0F;</span>
         <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;random&quot;</span>,  <span class="hljs-comment">// &#x968F;&#x673A;&#x5F00;&#x542F;</span>
         <span class="hljs-string">&quot;concurrency&quot;</span>: <span class="hljs-number">2</span>,      <span class="hljs-comment">// &#x540C;&#x65F6;&#x5F00;&#x653E;&#x4E24;&#x4E2A;&#x7AEF;&#x53E3;</span>
