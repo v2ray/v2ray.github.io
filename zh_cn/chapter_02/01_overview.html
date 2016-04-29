@@ -53,7 +53,7 @@
         data-chapter-title="文件格式"
         data-filepath="chapter_02/01_overview.md"
         data-basepath=".."
-        data-revision="Thu Apr 28 2016 18:53:09 GMT+0000 (UTC)"
+        data-revision="Fri Apr 29 2016 09:43:39 GMT+0000 (UTC)"
         data-innerlanguage="zh_cn">
     
 
@@ -869,9 +869,22 @@
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li>access: &#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x6BD4;&#x5982; /tmp/v2ray_access.log &#xFF08;Linux&#xFF09;&#x6216;&#x8005; C:\Temp\v2ray_access.log&#xFF08;Windows&#xFF09;&#x3002;</li>
-<li>error: &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x6BD4;&#x5982; /tmp/v2ray_error.log &#xFF08;Linux&#xFF09;&#x6216;&#x8005; C:\Temp\v2ray_error.log&#xFF08;Windows&#xFF09;&#x3002;</li>
-<li>logleve: &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x7684;&#x7EA7;&#x522B;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; debug&#x3001;info&#x3001;warning &#x548C; error&#x3002;&#x5176;&#x4E2D; debug &#x8BB0;&#x5F55;&#x7684;&#x6570;&#x636E;&#x6700;&#x591A;&#xFF0C;error &#x8BB0;&#x5F55;&#x7684;&#x6700;&#x5C11;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; warning&#x3002;</li>
+<li>access: &#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x5176;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;<ul>
+<li>&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x5982; /tmp/v2ray_access.log &#xFF08;Linux&#xFF09;&#x6216;&#x8005; C:\Temp\v2ray_access.log&#xFF08;Windows&#xFF09;&#xFF1B;</li>
+<li>&#x6216;&#x8005;&#x7559;&#x7A7A;&#x8868;&#x793A;&#x4E0D;&#x8BB0;&#x5F55;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x3002;</li>
+</ul>
+</li>
+<li>error: &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x5176;&#x503C;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;<ul>
+<li>&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x7684;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x5982; /tmp/v2ray_error.log &#xFF08;Linux&#xFF09;&#x6216;&#x8005; C:\Temp\v2ray_error.log&#xFF08;Windows&#xFF09;&#xFF1B;</li>
+<li>&#x6216;&#x8005;&#x7559;&#x7A7A;&#x8868;&#x793A;&#x4E0D;&#x8BB0;&#x5F55;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x3002;</li>
+</ul>
+</li>
+<li>loglevel: &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x7684;&#x7EA7;&#x522B;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; debug&#x3001;info&#x3001;warning&#x3001;error &#x548C; none&#xFF1A;<ul>
+<li>&#x5176;&#x4E2D; debug &#x8BB0;&#x5F55;&#x7684;&#x6570;&#x636E;&#x6700;&#x591A;&#xFF0C;error &#x8BB0;&#x5F55;&#x7684;&#x6700;&#x5C11;&#xFF1B;</li>
+<li>none &#x8868;&#x793A;&#x4E0D;&#x8BB0;&#x5F55;&#x4EFB;&#x4F55;&#x5185;&#x5BB9; &#xFF08;V2Ray 1.13+&#xFF09;&#xFF1B;</li>
+<li>&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; warning&#x3002;</li>
+</ul>
+</li>
 </ul>
 <h2 id="&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#xFF08;routing&#xFF09;">&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#xFF08;routing&#xFF09;</h2>
 <pre><code class="lang-javascript">{
