@@ -905,6 +905,7 @@ VMess &#x4F7F;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#
 <li>&#x54CD;&#x5E94;&#x8BA4;&#x8BC1; V&#xFF1A;&#x968F;&#x673A;&#x503C;&#xFF1B;</li>
 <li>&#x9009;&#x9879; Opt&#xFF1A;<ul>
 <li>0x01&#xFF1A;&#x5E26;&#x6821;&#x9A8C;&#x7684;&#x6570;&#x636E;&#x6D41;&#xFF1B;</li>
+<li>0x02&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x671F;&#x5F85;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF1B; </li>
 </ul>
 </li>
 <li>&#x6307;&#x4EE4; Cmd&#xFF1A;<ul>
@@ -971,7 +972,7 @@ VMess &#x4F7F;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#
 <tbody>
 <tr>
 <td>&#x54CD;&#x5E94;&#x8BA4;&#x8BC1; V</td>
-<td>&#x4FDD;&#x7559;</td>
+<td>&#x9009;&#x9879;Opt</td>
 <td>&#x6307;&#x4EE4; Cmd</td>
 <td>&#x6307;&#x4EE4;&#x957F;&#x5EA6; M</td>
 <td>&#x6307;&#x4EE4;&#x5185;&#x5BB9;</td>
@@ -982,6 +983,10 @@ VMess &#x4F7F;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#
 <p>&#x5176;&#x4E2D;</p>
 <ul>
 <li>&#x54CD;&#x5E94;&#x8BA4;&#x8BC1; V&#xFF1A;&#x5FC5;&#x987B;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;&#x54CD;&#x5E94;&#x8BA4;&#x8BC1; V &#x4E00;&#x81F4;&#xFF1B;</li>
+<li>&#x9009;&#x9879; Opt&#xFF1A;<ul>
+<li>0x01&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x51C6;&#x5907;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF1B;</li>
+</ul>
+</li>
 <li>&#x6307;&#x4EE4; Cmd&#xFF1A;<ul>
 <li>0x01&#xFF1A;&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x6307;&#x4EE4;</li>
 </ul>
@@ -1060,7 +1065,7 @@ VMess &#x4F7F;&#x7528;&#x975E;&#x5BF9;&#x79F0;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess 协议","level":"1.5.4","depth":2,"next":{"title":"编译源文件","level":"1.5.5","depth":2,"path":"chapter_04/04_compile.md","ref":"chapter_04/04_compile.md","articles":[]},"previous":{"title":"核心设计","level":"1.5.3","depth":2,"path":"chapter_04/02_design.md","ref":"chapter_04/02_design.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh_cn","gitbook":"*"},"file":{"path":"chapter_04/03_vmess.md","mtime":"2016-06-04T18:27:00.960Z","type":"markdown"},"gitbook":{"version":"3.0.3","time":"2016-06-04T18:27:52.031Z"},"basePath":"..","book":{"language":"zh_cn"}});
+            gitbook.page.hasChanged({"page":{"title":"VMess 协议","level":"1.5.4","depth":2,"next":{"title":"编译源文件","level":"1.5.5","depth":2,"path":"chapter_04/04_compile.md","ref":"chapter_04/04_compile.md","articles":[]},"previous":{"title":"核心设计","level":"1.5.3","depth":2,"path":"chapter_04/02_design.md","ref":"chapter_04/02_design.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh_cn","gitbook":"*"},"file":{"path":"chapter_04/03_vmess.md","mtime":"2016-06-04T23:00:13.396Z","type":"markdown"},"gitbook":{"version":"3.0.3","time":"2016-06-04T23:01:03.810Z"},"basePath":"..","book":{"language":"zh_cn"}});
         });
     </script>
 </div>
