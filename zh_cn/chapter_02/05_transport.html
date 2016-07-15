@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.1.1">
+        <meta name="generator" content="GitBook 3.2.0">
         
         
         
@@ -875,11 +875,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><a name="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;</h1>
-<p>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#xFF08;transport&#xFF09;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86; V2Ray &#x5982;&#x4F55;&#x4F7F;&#x7528; TCP&#x3001;UDP &#x7B49;&#x57FA;&#x7840;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;&#x914D;&#x7F6E;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E8C;&#x662F;&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;&#x3002;</p>
-<h2 id="&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a name="&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5168;&#x5C40;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2>
-<p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &quot;transport&quot; &#x9879;&#x3002;</p>
-<pre><code class="lang-javascript">{
+                                <h1 id="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><a name="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;</h1><p>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#xFF08;transport&#xFF09;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86; V2Ray &#x5982;&#x4F55;&#x4F7F;&#x7528; TCP&#x3001;UDP &#x7B49;&#x57FA;&#x7840;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;&#x914D;&#x7F6E;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E8C;&#x662F;&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;&#x3002;</p><h2 id="&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a name="&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5168;&#x5C40;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2><p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &quot;transport&quot; &#x9879;&#x3002;</p><pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {
     <span class="hljs-string">&quot;connectionReuse&quot;</span>: <span class="hljs-literal">true</span>
   },
@@ -890,41 +886,34 @@
     <span class="hljs-string">&quot;downlinkCapacity&quot;</span>: <span class="hljs-number">20</span>,
     <span class="hljs-string">&quot;congestion&quot;</span>: <span class="hljs-literal">false</span>
   }
-}
-</code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
-<ul>
-<li>tcpSettings: &#x9488;&#x5BF9; TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;<ul>
-<li>connectionReuse: &#x662F;&#x5426;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; true&#x3002;<ul>
-<li>&#x76EE;&#x524D;&#x53EA;&#x5BF9; VMess &#x8D77;&#x4F5C;&#x7528;&#xFF1B;</li>
-<li>&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x5728;&#x4F20;&#x8F93;&#x5B8C;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; TCP &#x8FDE;&#x63A5;&#x6765;&#x4F20;&#x8F93;&#x4E0B;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x3002;</li>
-</ul>
+}</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p><ul><li>tcpSettings: &#x9488;&#x5BF9; TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;
+<ul><li>connectionReuse: &#x662F;&#x5426;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; true&#x3002;
+<ul><li>&#x76EE;&#x524D;&#x53EA;&#x5BF9; VMess &#x8D77;&#x4F5C;&#x7528;&#xFF1B;
 </li>
-</ul>
+<li>&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x5728;&#x4F20;&#x8F93;&#x5B8C;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; TCP &#x8FDE;&#x63A5;&#x6765;&#x4F20;&#x8F93;&#x4E0B;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x3002;
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><p>kcpSettings: &#x9488;&#x5BF9; KCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;</p><ul><li>mtu: &#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;&#xFF08;maximum transmission unit&#xFF09;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; 576 - 1460 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 1350&#x3002;
 </li>
-<li>kcpSettings: &#x9488;&#x5BF9; KCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;<ul>
-<li>mtu: &#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;&#xFF08;maximum transmission unit&#xFF09;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; 576 - 1460 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 1350&#x3002;</li>
-<li>tti: &#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;transmission time interval&#xFF09;&#xFF0C;&#x5355;&#x4F4D;&#x6BEB;&#x79D2;&#xFF08;ms&#xFF09;&#xFF0C;KCP &#x5C06;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x9891;&#x7387;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;&#x8BF7;&#x9009;&#x8BD1;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; 10 - 100 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 20&#x3002;</li>
-<li>uplinkCapacity: &#x4E0A;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 5&#x3002;<ul>
-<li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;</li>
-<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;</li>
-</ul>
+<li>tti: &#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;transmission time interval&#xFF09;&#xFF0C;&#x5355;&#x4F4D;&#x6BEB;&#x79D2;&#xFF08;ms&#xFF09;&#xFF0C;KCP &#x5C06;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x9891;&#x7387;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;&#x8BF7;&#x9009;&#x8BD1;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; 10 - 100 &#x4E4B;&#x95F4;&#x7684;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 20&#x3002;
 </li>
-<li>downlinkCapacity: &#x4E0B;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x63A5;&#x6536;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 20&#x3002;<ul>
-<li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;</li>
-<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;</li>
-</ul>
+<li><p>uplinkCapacity: &#x4E0A;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 5&#x3002;</p><ul><li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;
 </li>
-<li>congestion: &#x662F;&#x5426;&#x542F;&#x7528;&#x62E5;&#x585E;&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false&#x3002;<ul>
-<li>&#x5F00;&#x542F;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x4E4B;&#x540E;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x52A8;&#x76D1;&#x6D4B;&#x7F51;&#x7EDC;&#x8D28;&#x91CF;&#xFF0C;&#x5F53;&#x4E22;&#x5305;&#x4E25;&#x91CD;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x964D;&#x4F4E;&#x541E;&#x5410;&#x91CF;&#xFF1B;&#x5F53;&#x7F51;&#x7EDC;&#x7545;&#x901A;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x9002;&#x5F53;&#x589E;&#x52A0;&#x541E;&#x5410;&#x91CF;&#x3002;</li>
-</ul>
+<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;
+</li></ul>
 </li>
-</ul>
+<li><p>downlinkCapacity: &#x4E0B;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x63A5;&#x6536;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 20&#x3002;</p><ul><li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;
 </li>
-</ul>
-<h2 id="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><a name="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;</h2>
-<p>&#x6BCF;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x3001;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
-<pre><code class="lang-javascript">{
+<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;
+</li></ul>
+</li>
+<li><p>congestion: &#x662F;&#x5426;&#x542F;&#x7528;&#x62E5;&#x585E;&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false&#x3002;</p><ul><li>&#x5F00;&#x542F;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x4E4B;&#x540E;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x52A8;&#x76D1;&#x6D4B;&#x7F51;&#x7EDC;&#x8D28;&#x91CF;&#xFF0C;&#x5F53;&#x4E22;&#x5305;&#x4E25;&#x91CD;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x964D;&#x4F4E;&#x541E;&#x5410;&#x91CF;&#xFF1B;&#x5F53;&#x7F51;&#x7EDC;&#x7545;&#x901A;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x9002;&#x5F53;&#x589E;&#x52A0;&#x541E;&#x5410;&#x91CF;&#x3002;
+</li></ul>
+</li></ul>
+</li></ul>
+<h2 id="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><a name="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;</h2><p>&#x6BCF;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x3001;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p><pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
   <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>,
   <span class="hljs-string">&quot;tlsSettings&quot;</span>: {
@@ -936,25 +925,21 @@
       }
     ]
   }
-}
-</code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
-<ul>
-<li>network: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; &quot;tcp&quot; &#x6216; &quot;kcp&quot;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; &quot;tcp&quot;&#xFF1B;<ul>
-<li>&#x76EE;&#x524D;&#x4EC5;&#x6709; VMess &#x534F;&#x8BAE;&#x652F;&#x6301; kcp&#xFF0C;&#x5176;&#x5B83;&#x534F;&#x8BAE;&#x5728; kcp &#x4E0A;&#x4F1A;&#x4F20;&#x8F93;&#x5931;&#x8D25;&#x3002;</li>
-</ul>
+}</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p><ul><li><p>network: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; &quot;tcp&quot; &#x6216; &quot;kcp&quot;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; &quot;tcp&quot;&#xFF1B;</p><ul><li>&#x76EE;&#x524D;&#x4EC5;&#x6709; VMess &#x534F;&#x8BAE;&#x652F;&#x6301; kcp&#xFF0C;&#x5176;&#x5B83;&#x534F;&#x8BAE;&#x5728; kcp &#x4E0A;&#x4F1A;&#x4F20;&#x8F93;&#x5931;&#x8D25;&#x3002;
+</li></ul>
 </li>
-<li>security: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; &quot;none&quot; &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;&quot;tls&quot; &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
-<li>tlsSettings: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; Chacha &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
-<li>allowInsecure: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</li>
-<li>certificates: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF08;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;<ul>
-<li>certificateFile: &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;</li>
-<li>keyFile: &#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;</li>
-</ul>
+<li><p>security: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; &quot;none&quot; &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;&quot;tls&quot; &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</p></li>
+<li>tlsSettings: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; Chacha &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;
+<ul><li>allowInsecure: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;
 </li>
-</ul>
+<li>certificates: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF08;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;
+<ul><li>certificateFile: &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;
 </li>
-</ul>
+<li>keyFile: &#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;
+</li></ul>
+</li></ul>
+</li></ul>
 
                                 
                                 </section>
@@ -998,7 +983,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"进阶使用","level":"1.4","depth":1,"path":"chapter_03/README.md","ref":"chapter_03/README.md","articles":[{"title":"动态端口","level":"1.4.1","depth":2,"path":"chapter_03/00_dynport.md","ref":"chapter_03/00_dynport.md","articles":[]},{"title":"Effective V2Ray","level":"1.4.2","depth":2,"path":"chapter_03/01_effective.md","ref":"chapter_03/01_effective.md","articles":[]},{"title":"mKCP","level":"1.4.3","depth":2,"path":"chapter_03/kcp.md","ref":"chapter_03/kcp.md","articles":[]}]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh_cn","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2016-07-11T11:46:40.464Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-11T11:48:09.553Z"},"basePath":"..","book":{"language":"zh_cn"}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"进阶使用","level":"1.4","depth":1,"path":"chapter_03/README.md","ref":"chapter_03/README.md","articles":[{"title":"动态端口","level":"1.4.1","depth":2,"path":"chapter_03/00_dynport.md","ref":"chapter_03/00_dynport.md","articles":[]},{"title":"Effective V2Ray","level":"1.4.2","depth":2,"path":"chapter_03/01_effective.md","ref":"chapter_03/01_effective.md","articles":[]},{"title":"mKCP","level":"1.4.3","depth":2,"path":"chapter_03/kcp.md","ref":"chapter_03/kcp.md","articles":[]}]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh_cn","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2016-07-15T15:54:29.073Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-07-15T15:55:36.645Z"},"basePath":"..","book":{"language":"zh_cn"}});
         });
     </script>
 </div>
