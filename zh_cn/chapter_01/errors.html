@@ -1,0 +1,929 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>错误信息 · V2Ray 官方网站</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="issue.html" />
+    
+    
+    <link rel="prev" href="internal.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    欢迎使用 V2Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../chapter_00/01_versions.html">
+            
+                <a href="../chapter_00/01_versions.html">
+            
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../chapter_00/02_donate.html">
+            
+                <a href="../chapter_00/02_donate.html">
+            
+                    
+                    捐助支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../chapter_00/pgp.html">
+            
+                <a href="../chapter_00/pgp.html">
+            
+                    
+                    加密通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../chapter_00/faq.html">
+            
+                <a href="../chapter_00/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    新手入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="workflow.html">
+            
+                <a href="workflow.html">
+            
+                    
+                    使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    安装运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="internal.html">
+            
+                <a href="internal.html">
+            
+                    
+                    工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="errors.html">
+            
+                <a href="errors.html">
+            
+                    
+                    错误信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="issue.html">
+            
+                <a href="issue.html">
+            
+                    
+                    问题讨论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="hardware.html">
+            
+                <a href="hardware.html">
+            
+                    
+                    硬件要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    速度测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="3rd_party.html">
+            
+                <a href="3rd_party.html">
+            
+                    
+                    客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../chapter_02/">
+            
+                <a href="../chapter_02/">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../chapter_02/00_json.html">
+            
+                <a href="../chapter_02/00_json.html">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../chapter_02/01_overview.html">
+            
+                <a href="../chapter_02/01_overview.html">
+            
+                    
+                    文件格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../chapter_02/02_protocols.html">
+            
+                <a href="../chapter_02/02_protocols.html">
+            
+                    
+                    协议列表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../chapter_02/protocols/blackhole.html">
+            
+                <a href="../chapter_02/protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../chapter_02/protocols/dokodemo.html">
+            
+                <a href="../chapter_02/protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../chapter_02/protocols/freedom.html">
+            
+                <a href="../chapter_02/protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../chapter_02/protocols/http.html">
+            
+                <a href="../chapter_02/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../chapter_02/protocols/shadowsocks.html">
+            
+                <a href="../chapter_02/protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../chapter_02/protocols/socks.html">
+            
+                <a href="../chapter_02/protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../chapter_02/protocols/vmess.html">
+            
+                <a href="../chapter_02/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../chapter_02/03_routing.html">
+            
+                <a href="../chapter_02/03_routing.html">
+            
+                    
+                    路由配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../chapter_02/04_dns.html">
+            
+                <a href="../chapter_02/04_dns.html">
+            
+                    
+                    DNS 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../chapter_02/05_transport.html">
+            
+                <a href="../chapter_02/05_transport.html">
+            
+                    
+                    传输配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../chapter_03/">
+            
+                <a href="../chapter_03/">
+            
+                    
+                    进阶使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../chapter_03/00_dynport.html">
+            
+                <a href="../chapter_03/00_dynport.html">
+            
+                    
+                    动态端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../chapter_03/01_effective.html">
+            
+                <a href="../chapter_03/01_effective.html">
+            
+                    
+                    Effective V2Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../chapter_03/kcp.html">
+            
+                <a href="../chapter_03/kcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../chapter_04/">
+            
+                <a href="../chapter_04/">
+            
+                    
+                    代码细节
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../chapter_04/00_roadmap.html">
+            
+                <a href="../chapter_04/00_roadmap.html">
+            
+                    
+                    开发计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../chapter_04/01_guide.html">
+            
+                <a href="../chapter_04/01_guide.html">
+            
+                    
+                    开发指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../chapter_04/02_design.html">
+            
+                <a href="../chapter_04/02_design.html">
+            
+                    
+                    核心设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../chapter_04/03_vmess.html">
+            
+                <a href="../chapter_04/03_vmess.html">
+            
+                    
+                    VMess 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../chapter_04/mkcp.html">
+            
+                <a href="../chapter_04/mkcp.html">
+            
+                    
+                    mKCP 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../chapter_04/04_compile.html">
+            
+                <a href="../chapter_04/04_compile.html">
+            
+                    
+                    编译源文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../chapter_05/">
+            
+                <a href="../chapter_05/">
+            
+                    
+                    参考
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../chapter_05/00_config/">
+            
+                <a href="../chapter_05/00_config/">
+            
+                    
+                    常用配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../chapter_05/00_config/00_socks_client.html">
+            
+                <a href="../chapter_05/00_config/00_socks_client.html">
+            
+                    
+                    SOCKS 客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../chapter_05/00_config/01_multi_server.html">
+            
+                <a href="../chapter_05/00_config/01_multi_server.html">
+            
+                    
+                    连接多服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../chapter_05/00_config/02_blacklist.html">
+            
+                <a href="../chapter_05/00_config/02_blacklist.html">
+            
+                    
+                    黑名单模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../chapter_05/00_config/03_port_map.html">
+            
+                <a href="../chapter_05/00_config/03_port_map.html">
+            
+                    
+                    端口映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../chapter_05/00_config/04_vmess_server.html">
+            
+                <a href="../chapter_05/00_config/04_vmess_server.html">
+            
+                    
+                    VMess 服务器端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../chapter_05/00_config/05_dyn_port.html">
+            
+                <a href="../chapter_05/00_config/05_dyn_port.html">
+            
+                    
+                    动态端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../chapter_05/00_config/06_shadowsocks.html">
+            
+                <a href="../chapter_05/00_config/06_shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="../chapter_05/00_config/07_vps_relay.html">
+            
+                <a href="../chapter_05/00_config/07_vps_relay.html">
+            
+                    
+                    VPS 中转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="../chapter_05/00_config/08_static_hosts.html">
+            
+                <a href="../chapter_05/00_config/08_static_hosts.html">
+            
+                    
+                    静态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="../chapter_05/00_config/09_ad_blocker.html">
+            
+                <a href="../chapter_05/00_config/09_ad_blocker.html">
+            
+                    
+                    广告拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../chapter_05/01_exp.html">
+            
+                <a href="../chapter_05/01_exp.html">
+            
+                    
+                    网友经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >错误信息</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><a name="&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;" class="plugin-anchor" href="#&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</h1><h2 id="vmess-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;"><a name="vmess-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;" class="plugin-anchor" href="#vmess-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;"><i class="fa fa-link" aria-hidden="true"></i></a>VMess &#x8BA4;&#x8BC1;&#x5931;&#x8D25;</h2><h3 id="&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><a name="&#x9519;&#x8BEF;&#x4FE1;&#x606F;" class="plugin-anchor" href="#&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x4FE1;&#x606F;</h3><ul><li>Invalid authentication
+</li>
+<li>VMessOut: Failed to read VMess response (0 bytes): EOF
+</li>
+<li>VMessOut: Failed to read VMess response (0 bytes): wsarecv: An existing connection was forcibly closed by the remote host.
+</li></ul>
+<h3 id="&#x539F;&#x56E0;"><a name="&#x539F;&#x56E0;" class="plugin-anchor" href="#&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x56E0;</h3><ol><li>&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x7528;&#x6237; ID &#x4E0D;&#x5339;&#x914D;&#xFF1B;
+</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x7528;&#x6237; alterId &#x4E0D;&#x5339;&#x914D;&#xFF1B;
+</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x65F6;&#x95F4;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x8BEF;&#x5DEE;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x4E24;&#x5206;&#x949F;&#xFF1B;
+</li>
+<li>&#x5076;&#x7136;&#x56E0;&#x7D20;&#xFF0C;&#x53EF;&#x5FFD;&#x7565;&#xFF1B;
+</li></ol>
+<h2 id="shadowsocks-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;"><a name="shadowsocks-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;" class="plugin-anchor" href="#shadowsocks-&#x8BA4;&#x8BC1;&#x5931;&#x8D25;"><i class="fa fa-link" aria-hidden="true"></i></a>Shadowsocks &#x8BA4;&#x8BC1;&#x5931;&#x8D25;</h2><h3 id="&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><a name="&#x9519;&#x8BEF;&#x4FE1;&#x606F;" class="plugin-anchor" href="#&#x9519;&#x8BEF;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x4FE1;&#x606F;</h3><p>Shadowsocks: Unknown address type: xxx</p><h3 id="&#x539F;&#x56E0;"><a name="&#x539F;&#x56E0;" class="plugin-anchor" href="#&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x56E0;</h3><ol><li>Shadowsocks &#x534F;&#x8BAE;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x6216;&#x662F;&#x5BC6;&#x7801;&#x4E0D;&#x5339;&#x914D;&#xFF1B;
+</li></ol>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="internal.html" class="navigation navigation-prev " aria-label="Previous page: 工作原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="issue.html" class="navigation navigation-next " aria-label="Next page: 问题讨论">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"错误信息","level":"1.2.4","depth":2,"next":{"title":"问题讨论","level":"1.2.5","depth":2,"path":"chapter_01/issue.md","ref":"chapter_01/issue.md","articles":[]},"previous":{"title":"工作原理","level":"1.2.3","depth":2,"path":"chapter_01/internal.md","ref":"chapter_01/internal.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_01/errors.md","mtime":"2016-08-18T21:00:28.982Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-18T21:02:23.178Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
