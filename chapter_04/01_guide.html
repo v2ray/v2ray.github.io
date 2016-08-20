@@ -863,9 +863,9 @@
 </li></ul>
 <h2 id="&#x5F00;&#x53D1;&#x6D41;&#x7A0B;"><a name="&#x5F00;&#x53D1;&#x6D41;&#x7A0B;" class="plugin-anchor" href="#&#x5F00;&#x53D1;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F00;&#x53D1;&#x6D41;&#x7A0B;</h2><h3 id="&#x5199;&#x4EE3;&#x7801;&#x4E4B;&#x524D;"><a name="&#x5199;&#x4EE3;&#x7801;&#x4E4B;&#x524D;" class="plugin-anchor" href="#&#x5199;&#x4EE3;&#x7801;&#x4E4B;&#x524D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5199;&#x4EE3;&#x7801;&#x4E4B;&#x524D;</h3><p>&#x53D1;&#x73B0;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#xFF0C;&#x6216;&#x5BF9;&#x9879;&#x76EE;&#x6709;&#x4EFB;&#x4F55;&#x60F3;&#x6CD5;&#xFF0C;&#x8BF7;&#x7ACB;&#x5373;<a href="../chapter_01/issue.html">&#x521B;&#x5EFA; Issue</a> &#x8BA8;&#x8BBA;&#x4E4B;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x91CD;&#x590D;&#x52B3;&#x52A8;&#x548C;&#x6D88;&#x8017;&#x5728;&#x4EE3;&#x7801;&#x4E0A;&#x7684;&#x65F6;&#x95F4;&#x3002;</p><h3 id="&#x4FEE;&#x6539;&#x4EE3;&#x7801;"><a name="&#x4FEE;&#x6539;&#x4EE3;&#x7801;" class="plugin-anchor" href="#&#x4FEE;&#x6539;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4FEE;&#x6539;&#x4EE3;&#x7801;</h3><ul><li><p>Golang</p><ul><li>&#x8BF7;&#x53C2;&#x8003; <a href="https://golang.org/doc/effective_go.html" target="_blank">Effective Go</a>&#xFF1B;
 </li>
-<li>&#x6BCF;&#x4E00;&#x6B21; commit &#x4E4B;&#x524D;&#x8BF7;&#x8FD0;&#x884C;&#xFF1A; gofmt -w github.com/v2ray/v2ray-core/
+<li>&#x6BCF;&#x4E00;&#x6B21; commit &#x4E4B;&#x524D;&#x8BF7;&#x8FD0;&#x884C;&#xFF1A; gofmt -w v2ray.com/core/
 </li>
-<li>&#x6BCF;&#x4E00;&#x6B21; commit &#x4E4B;&#x524D;&#x8BF7;&#x786E;&#x4FDD;&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;&#xFF1A; go test -tags json github.com/v2ray/v2ray-core/...
+<li>&#x6BCF;&#x4E00;&#x6B21; commit &#x4E4B;&#x524D;&#x8BF7;&#x786E;&#x4FDD;&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;&#xFF1A; go test -tags json v2ray.com/core/...
 </li>
 <li>&#x63D0;&#x4EA4; PR &#x4E4B;&#x524D;&#x8BF7;&#x786E;&#x4FDD;&#x65B0;&#x589E;&#x4EE3;&#x7801;&#x6709;&#x8D85;&#x8FC7; 70% &#x7684;&#x4EE3;&#x7801;&#x8986;&#x76D6;&#x7387;&#xFF08;code coverage&#xFF09;&#x3002;
 </li></ul>
@@ -880,7 +880,7 @@
 <li>&#x7531;&#x4E8E; Golang &#x7684;&#x7279;&#x6B8A;&#x9700;&#x6C42;&#xFF08;Package path&#xFF09;&#xFF0C;Go &#x9879;&#x76EE;&#x7684; PR &#x6D41;&#x7A0B;&#x548C;&#x5176;&#x5B83;&#x9879;&#x76EE;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF1A;
 <ol><li>&#x5148; Fork &#x672C;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684; github.com/your/v2ray-core&#xFF1B;
 </li>
-<li>&#x5728;&#x4F60;&#x7684; Go workspace &#x4E2D;&#x8FD0;&#x884C;&#xFF1A;<code>go get -u github.com/v2ray/v2ray-core/...</code>&#xFF1B;
+<li>&#x5728;&#x4F60;&#x7684; Go workspace &#x4E2D;&#x8FD0;&#x884C;&#xFF1A;<code>go get -u v2ray.com/core/...</code>&#xFF1B;
 </li>
 <li>&#x5728; go get &#x521B;&#x5EFA;&#x7684; v2ray-core &#x76EE;&#x5F55;&#x4E2D;&#x8FD0;&#x884C;&#xFF1A;<code>git remote add fork https://github.com/you/cooltool.git</code>&#xFF1B;
 </li>
@@ -888,7 +888,7 @@
 </li>
 <li>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x8FD0;&#x884C;&#xFF1A;<code>git push fork</code>&#xFF1B;
 </li>
-<li>&#x7136;&#x540E;&#x53BB;&#x4F60;&#x7684; fork&#xFF08;&#x5C31;&#x662F; github.com/your/v2ray-core&#xFF09;&#x4E2D;&#x53D1;&#x4E00;&#x4E2A; PR &#x5373;&#x53EF;&#xFF1B;
+<li>&#x7136;&#x540E;&#x53BB;&#x4F60;&#x7684; fork&#xFF08;&#x5C31;&#x662F; v2ray.com/core&#xFF09;&#x4E2D;&#x53D1;&#x4E00;&#x4E2A; PR &#x5373;&#x53EF;&#xFF1B;
 </li>
 <li>&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#x4FEE;&#x6539;&#x81EA;<a href="http://blog.campoy.cat/2014/03/github-and-go-forking-pull-requests-and.html" target="_blank">&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;</a>&#x3002;
 </li></ol>
@@ -962,7 +962,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"开发指引","level":"1.5.2","depth":2,"next":{"title":"核心设计","level":"1.5.3","depth":2,"path":"chapter_04/02_design.md","ref":"chapter_04/02_design.md","articles":[]},"previous":{"title":"开发计划","level":"1.5.1","depth":2,"path":"chapter_04/00_roadmap.md","ref":"chapter_04/00_roadmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_04/01_guide.md","mtime":"2016-08-20T18:56:40.749Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-20T18:57:59.386Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"开发指引","level":"1.5.2","depth":2,"next":{"title":"核心设计","level":"1.5.3","depth":2,"path":"chapter_04/02_design.md","ref":"chapter_04/02_design.md","articles":[]},"previous":{"title":"开发计划","level":"1.5.1","depth":2,"path":"chapter_04/00_roadmap.md","ref":"chapter_04/00_roadmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_04/01_guide.md","mtime":"2016-08-20T21:38:17.543Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-20T21:40:00.927Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
