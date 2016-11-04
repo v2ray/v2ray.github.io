@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>VPS 中转 · V2Ray 官方网站</title>
+        <title>KCP,TCP+动态端口 · V2Ray 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
     
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="08_static_hosts.html" />
+    <link rel="next" href="02_blacklist.html" />
     
     
-    <link rel="prev" href="06_shadowsocks.html" />
+    <link rel="prev" href="01_multi_server.html" />
     
 
     </head>
@@ -682,7 +682,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="10_multi_mode.html">
+        <li class="chapter active" data-level="1.6.1.3" data-path="10_multi_mode.html">
             
                 <a href="10_multi_mode.html">
             
@@ -760,7 +760,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.1.9" data-path="07_vps_relay.html">
+        <li class="chapter " data-level="1.6.1.9" data-path="07_vps_relay.html">
             
                 <a href="07_vps_relay.html">
             
@@ -852,7 +852,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >VPS 中转</a>
+        <a href="../.." >KCP,TCP+动态端口</a>
     </h1>
 </div>
 
@@ -864,94 +864,172 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x56FD;&#x5185;-vps-&#x4E2D;&#x8F6C;"><a name="&#x56FD;&#x5185;-vps-&#x4E2D;&#x8F6C;" class="plugin-anchor" href="#&#x56FD;&#x5185;-vps-&#x4E2D;&#x8F6C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FD;&#x5185; VPS &#x4E2D;&#x8F6C;</h1>
-<p>&#x4E3A;&#x4E86;&#x7EF4;&#x62A4;&#x65B9;&#x4FBF;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x5728;&#x56FD;&#x5185;&#x67B6;&#x8BBE;&#x4E00;&#x53F0;&#x4E2D;&#x8F6C; VPS&#xFF0C;&#x5728;&#x8FD9;&#x53F0; VPS &#x4E0A;&#x5224;&#x65AD;&#x76EE;&#x6807;&#x5730;&#x5740;&#x662F;&#x56FD;&#x5185;&#x8FD8;&#x662F;&#x56FD;&#x5916;&#x7684;&#xFF0C;&#x53EA;&#x628A;&#x56FD;&#x5916;&#x7684;&#x6D41;&#x91CF;&#x5411;&#x56FD;&#x5916; VPS &#x8F6C;&#x53D1;&#xFF0C;&#x800C;&#x56FD;&#x5185;&#x7684;&#x6D41;&#x91CF;&#x4F7F;&#x7528;&#x76F4;&#x8FDE;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5728;&#x7528;&#x6237;&#x7684;&#x7535;&#x8111;&#x53EA;&#x9700;&#x8981;&#x628A;&#x6240;&#x6709;&#x6D41;&#x91CF;&#x53D1;&#x5F80;&#x8FD9;&#x53F0; VPS&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x90FD;&#x914D;&#x7F6E;&#x767D;&#x540D;&#x5355;&#xFF0C;&#x8F83;&#x4E3A;&#x7701;&#x529B;&#x3002;</p>
+                                <h1 id="&#x540C;&#x65F6;&#x5F00;&#x542F;kcptcp&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x56DB;&#x79CD;"><a name="&#x540C;&#x65F6;&#x5F00;&#x542F;kcptcp&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x56DB;&#x79CD;" class="plugin-anchor" href="#&#x540C;&#x65F6;&#x5F00;&#x542F;kcptcp&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x56DB;&#x79CD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540C;&#x65F6;&#x5F00;&#x542F;KCP,TCP+&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x56DB;&#x79CD;</h1>
+<ul>
+<li>&#x4F7F;&#x7528;&#x65F6;&#x8BB0;&#x5F97;&#x53BB;&#x6389;json&#x91CC;//&#x5F00;&#x5934;&#x7684;&#x6CE8;&#x91CA;</li>
+<li><p>UUID &#x751F;&#x6210;&#x7F51;&#x7AD9;: <a href="https://www.uuidgenerator.net" target="_blank">https://www.uuidgenerator.net</a></p>
 <pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;log&quot;</span> : {
-    <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/access.log&quot;</span>,
-    <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/error.log&quot;</span>,
-    <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>
+<span class="hljs-string">&quot;log&quot;</span>: {
+  <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/access.log&quot;</span>,  <span class="hljs-comment">//&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;&#x81EA;&#x884C;&#x4FEE;&#x6539;</span>
+  <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/error.log&quot;</span>,    <span class="hljs-comment">//&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;&#x81EA;&#x884C;&#x4FEE;&#x6539;</span>
+  <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>
+},
+
+<span class="hljs-string">&quot;inbound&quot;</span>: {
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">28000</span>,       <span class="hljs-comment">//kcp (udp) &#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {
+    <span class="hljs-string">&quot;clients&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;xx--xx-xx-xx&quot;</span>,  <span class="hljs-comment">//&#x66FF;&#x6362;&#x4F60;&#x7684;UUID&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8BB0;&#x5F97;&#x5BF9;&#x5E94;</span>
+        <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>,            <span class="hljs-comment">//&#x5BA2;&#x6237;&#x7AEF;&#x8BB0;&#x5F97;&#x5BF9;&#x5E94;</span>
+        <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>            <span class="hljs-comment">//&#x5BA2;&#x6237;&#x7AEF;&#x8BB0;&#x5F97;&#x5BF9;&#x5E94;</span>
+      }
+    ]
   },
-  <span class="hljs-string">&quot;inbound&quot;</span>: {
-    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">37192</span>,
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {
+    <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;kcp&quot;</span>  <span class="hljs-comment">//&#x542F;&#x7528;kcp</span>
+  }
+},
+
+<span class="hljs-string">&quot;inboundDetour&quot;</span>: [               <span class="hljs-comment">//&#x4E3E;&#x4F8B;&#x5982;&#x679C;&#x53EA;&#x60F3;&#x4F7F;&#x7528;KCP&#x4E00;&#x79CD;inboundDetour&#x7684;&#x6574;&#x4E2A;&#x6BB5;&#x5C31;&#x53EF;&#x4EE5;&#x5168;&#x90E8;&#x5220;&#x9664;^_^</span>
+  {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">28000</span>,       <span class="hljs-comment">//tcp (tcp) &#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
     <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
     <span class="hljs-string">&quot;settings&quot;</span>: {
       <span class="hljs-string">&quot;clients&quot;</span>: [
         {
-          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;3b129dec-72a3-4d28-aeee-028a0fe86e22&quot;</span>,
-          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;xx--xx-xx-xx&quot;</span>,  <span class="hljs-comment">//&#x66FF;&#x6362;&#x4F60;&#x7684;UUID&#x4E0D;&#x80FD;&#x91CD;&#x590D;</span>
+          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
         }
       ]
     }
   },
-  <span class="hljs-string">&quot;outbound&quot;</span>: {
-    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>, <span class="hljs-comment">// &#x51FA;&#x53E3;&#x534F;&#x8BAE;</span>
+  {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">28001</span>,       <span class="hljs-comment">//kcp (udp) &#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x4E3B;&#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
     <span class="hljs-string">&quot;settings&quot;</span>: {
-      <span class="hljs-string">&quot;vnext&quot;</span>: [
+      <span class="hljs-string">&quot;clients&quot;</span>: [
         {
-          <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;8.8.8.8&quot;</span>, <span class="hljs-comment">// &#x670D;&#x52A1;&#x5668; IP &#x5730;&#x5740;</span>
-          <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">17173</span>,  <span class="hljs-comment">// &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</span>
-          <span class="hljs-string">&quot;users&quot;</span>: [
-            {<span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;d17a1af7-efa5-42ca-b7e9-6a35282d737f&quot;</span>} <span class="hljs-comment">// &#x7528;&#x6237; ID&#xFF0C;&#x987B;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x914D;&#x7F6E;&#x76F8;&#x540C;</span>
-          ]
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;xx--xx-xx-xx&quot;</span>,  <span class="hljs-comment">//&#x66FF;&#x6362;&#x4F60;&#x7684;UUID&#x4E0D;&#x80FD;&#x91CD;&#x590D;</span>
+          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
         }
-      ]
-    }
-  },
-  <span class="hljs-string">&quot;outboundDetour&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;blackhole&quot;</span>,
-      <span class="hljs-string">&quot;settings&quot;</span>: {},
-      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
+      ],
+      <span class="hljs-string">&quot;detour&quot;</span>: {
+        <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;detour-kcp&quot;</span>
+      }
     },
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,
-      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>,
-      <span class="hljs-string">&quot;settings&quot;</span>: {}
+    <span class="hljs-string">&quot;streamSettings&quot;</span>: {
+      <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;kcp&quot;</span>
     }
-  ],
-  <span class="hljs-string">&quot;routing&quot;</span>: {
-    <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
+  },
+  {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">28001</span>,       <span class="hljs-comment">//tcp (tcp) &#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x4E3B;&#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
     <span class="hljs-string">&quot;settings&quot;</span>: {
-      <span class="hljs-string">&quot;rules&quot;</span>: [
+      <span class="hljs-string">&quot;clients&quot;</span>: [
         {
-          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;chinaip&quot;</span>, <span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x56FD;&#x5185;&#x7684; IP&#xFF0C;&#x90FD;&#x91C7;&#x7528;&#x76F4;&#x8FDE;&#x6A21;&#x5F0F;</span>
-          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-        },
-        {
-          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,  <span class="hljs-comment">// &#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x7F51;&#x7AD9;&#xFF0C;&#x4E5F;&#x4F7F;&#x7528;&#x76F4;&#x8FDE;&#x6A21;&#x5F0F;</span>
-          <span class="hljs-string">&quot;domain&quot;</span>: [
-            <span class="hljs-string">&quot;qq.com&quot;</span>,
-            <span class="hljs-string">&quot;baidu.com&quot;</span>
-          ],
-          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-        },
-        {
-          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,  <span class="hljs-comment">// &#x7981;&#x6B62;&#x8BBF;&#x95EE;&#x5C40;&#x57DF;&#x7F51;</span>
-          <span class="hljs-string">&quot;ip&quot;</span>: [
-            <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;10.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;100.64.0.0/10&quot;</span>,
-            <span class="hljs-string">&quot;127.0.0.0/8&quot;</span>,
-            <span class="hljs-string">&quot;169.254.0.0/16&quot;</span>,
-            <span class="hljs-string">&quot;172.16.0.0/12&quot;</span>,
-            <span class="hljs-string">&quot;192.0.0.0/24&quot;</span>,
-            <span class="hljs-string">&quot;192.0.2.0/24&quot;</span>,
-            <span class="hljs-string">&quot;192.168.0.0/16&quot;</span>,
-            <span class="hljs-string">&quot;198.18.0.0/15&quot;</span>,
-            <span class="hljs-string">&quot;198.51.100.0/24&quot;</span>,
-            <span class="hljs-string">&quot;203.0.113.0/24&quot;</span>,
-            <span class="hljs-string">&quot;::1/128&quot;</span>,
-            <span class="hljs-string">&quot;fc00::/7&quot;</span>,
-            <span class="hljs-string">&quot;fe80::/10&quot;</span>
-          ],
-          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;xx--xx-xx-xx&quot;</span>,  <span class="hljs-comment">//&#x66FF;&#x6362;&#x4F60;&#x7684;UUID&#x4E0D;&#x80FD;&#x91CD;&#x590D;</span>
+          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>
         }
-      ]
+      ],
+      <span class="hljs-string">&quot;detour&quot;</span>: {
+        <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;detour-tcp&quot;</span>
+      }
+    }
+  },
+  {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;50001-50100&quot;</span>,   <span class="hljs-comment">//kcp (udp)&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x76D1;&#x542C;&#x8303;&#x56F4; </span>
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;detour-kcp&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {},
+    <span class="hljs-string">&quot;allocate&quot;</span>: {
+      <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;random&quot;</span>, <span class="hljs-comment">//&#x968F;&#x673A;</span>
+      <span class="hljs-string">&quot;concurrency&quot;</span>: <span class="hljs-number">2</span>,     <span class="hljs-comment">//&#x5F00;&#x653E;2&#x4E2A;&#x7AEF;&#x53E3;</span>
+      <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-number">5</span>          <span class="hljs-comment">//5&#x5206;&#x949F;&#x5237;&#x65B0;&#x4E00;&#x6B21;</span>
+    },
+    <span class="hljs-string">&quot;streamSettings&quot;</span>: {
+      <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;kcp&quot;</span>
+    }
+  },
+  {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;50001-50100&quot;</span>,   <span class="hljs-comment">//tcp (tcp)&#x52A8;&#x6001;&#x7AEF;&#x53E3;&#x76D1;&#x542C;&#x8303;&#x56F4; </span>
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;detour-tcp&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {},
+    <span class="hljs-string">&quot;allocate&quot;</span>: {
+      <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;random&quot;</span>,
+      <span class="hljs-string">&quot;concurrency&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-number">5</span>
+    }
+  }
+],
+
+<span class="hljs-string">&quot;outbound&quot;</span>: {
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {}
+},
+
+<span class="hljs-string">&quot;outboundDetour&quot;</span>: [
+  {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;blackhole&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {},
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
+  }
+],
+
+<span class="hljs-string">&quot;routing&quot;</span>: {
+  <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {
+    <span class="hljs-string">&quot;rules&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+        <span class="hljs-string">&quot;ip&quot;</span>: [
+          <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
+          <span class="hljs-string">&quot;10.0.0.0/8&quot;</span>,
+          <span class="hljs-string">&quot;100.64.0.0/10&quot;</span>,
+          <span class="hljs-string">&quot;127.0.0.0/8&quot;</span>,
+          <span class="hljs-string">&quot;169.254.0.0/16&quot;</span>,
+          <span class="hljs-string">&quot;172.16.0.0/12&quot;</span>,
+          <span class="hljs-string">&quot;192.0.0.0/24&quot;</span>,
+          <span class="hljs-string">&quot;192.0.2.0/24&quot;</span>,
+          <span class="hljs-string">&quot;192.168.0.0/16&quot;</span>,
+          <span class="hljs-string">&quot;198.18.0.0/15&quot;</span>,
+          <span class="hljs-string">&quot;198.51.100.0/24&quot;</span>,
+          <span class="hljs-string">&quot;::1/128&quot;</span>,
+          <span class="hljs-string">&quot;fc00::/7&quot;</span>,
+          <span class="hljs-string">&quot;fe80::/10&quot;</span>
+        ],
+        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
+      }
+    ]
+  }
+},
+
+<span class="hljs-string">&quot;transport&quot;</span>: {
+  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {
+    <span class="hljs-string">&quot;connectionReuse&quot;</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {
+    <span class="hljs-string">&quot;mtu&quot;</span>: <span class="hljs-number">1350</span>,
+    <span class="hljs-string">&quot;tti&quot;</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-string">&quot;uplinkCapacity&quot;</span>: <span class="hljs-number">12</span>,
+    <span class="hljs-string">&quot;downlinkCapacity&quot;</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-string">&quot;congestion&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;readBufferSize&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;writeBufferSize&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
     }
   }
 }
+}
 </code></pre>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -963,12 +1041,12 @@
 
             
                 
-                <a href="06_shadowsocks.html" class="navigation navigation-prev " aria-label="Previous page: Shadowsocks">
+                <a href="01_multi_server.html" class="navigation navigation-prev " aria-label="Previous page: 连接多服务器">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="08_static_hosts.html" class="navigation navigation-next " aria-label="Next page: 静态路由">
+                <a href="02_blacklist.html" class="navigation navigation-next " aria-label="Next page: 黑名单模式">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -979,7 +1057,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VPS 中转","level":"1.6.1.9","depth":3,"next":{"title":"静态路由","level":"1.6.1.10","depth":3,"path":"chapter_05/00_config/08_static_hosts.md","ref":"chapter_05/00_config/08_static_hosts.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.6.1.8","depth":3,"path":"chapter_05/00_config/06_shadowsocks.md","ref":"chapter_05/00_config/06_shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_05/00_config/07_vps_relay.md","mtime":"2016-11-04T10:03:50.453Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-04T10:05:06.861Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"KCP,TCP+动态端口","level":"1.6.1.3","depth":3,"next":{"title":"黑名单模式","level":"1.6.1.4","depth":3,"path":"chapter_05/00_config/02_blacklist.md","ref":"chapter_05/00_config/02_blacklist.md","articles":[]},"previous":{"title":"连接多服务器","level":"1.6.1.2","depth":3,"path":"chapter_05/00_config/01_multi_server.md","ref":"chapter_05/00_config/01_multi_server.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_05/00_config/10_multi_mode.md","mtime":"2016-11-04T10:03:50.453Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-04T10:05:06.861Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
