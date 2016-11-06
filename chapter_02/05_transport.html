@@ -957,7 +957,7 @@
 <li><code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x6307;&#x5B9A;&#x4E86;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;&#x5728;&#x9700;&#x8981;&#x9AD8;&#x901F;&#x4F20;&#x8F93;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x8F83;&#x5927;&#x7684; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x4F1A;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x63D0;&#x9AD8;&#x901F;&#x5EA6;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#x3002;&#x5728;&#x7F51;&#x901F;&#x4E0D;&#x8D85;&#x8FC7; 20MB/s &#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 1MB &#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF1B;&#x8D85;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x589E;&#x52A0; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x624B;&#x52A8;&#x5E73;&#x8861;&#x901F;&#x5EA6;&#x548C;&#x5185;&#x5B58;&#x7684;&#x5173;&#x7CFB;&#x3002;</li>
 </ul>
 <h3 id="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><a name="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;</h3>
-<p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</p>
+<p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;&#x7ECF;&#x8FC7;&#x9002;&#x5F53;&#x914D;&#x7F6E;&#x540E;&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x517C;&#x5BB9; SSR &#x7684; http_simple &#x548C; http_post &#x6DF7;&#x6DC6;&#x3002;</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>
   <span class="hljs-string">&quot;request&quot;</span>: {
@@ -969,7 +969,10 @@
       <span class="hljs-string">&quot;User-Agent&quot;</span>: [
         <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;</span>,
                 <span class="hljs-string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46&quot;</span>
-      ]
+      ],
+      <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: [<span class="hljs-string">&quot;gzip, deflate&quot;</span>],
+      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
+      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
     }
   },
   <span class="hljs-string">&quot;response&quot;</span>: {
@@ -978,7 +981,9 @@
     <span class="hljs-string">&quot;reason&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>,
     <span class="hljs-string">&quot;headers&quot;</span>: {
       <span class="hljs-string">&quot;Content-Type&quot;</span>: [<span class="hljs-string">&quot;application/octet-stream&quot;</span>, <span class="hljs-string">&quot;video/mpeg&quot;</span>],
-      <span class="hljs-string">&quot;Transfer-Encoding&quot;</span>: [<span class="hljs-string">&quot;chunked&quot;</span>]
+      <span class="hljs-string">&quot;Transfer-Encoding&quot;</span>: [<span class="hljs-string">&quot;chunked&quot;</span>],
+      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
+      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
     }
   }
 }
@@ -993,7 +998,7 @@
 <li><code>headers</code>: HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x4F1A;&#x9644;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x89C1;&#x6837;&#x4F8B;&#x3002;</li>
 </ul>
 </li>
-<li><code>response</code>: HTTP &#x54CD;&#x5E94;&#xFF0C;&#x53EF;&#x4EE5;&#x6B64;&#x9879;&#x4E0D;&#x51FA;&#x73B0;&#x65F6;&#xFF0C;&#x517C;&#x5BB9; SSR &#x7684; http_simple &#x548C; http_post &#x6DF7;&#x6DC6;&#x3002;<ul>
+<li><code>response</code>: HTTP &#x54CD;&#x5E94;<ul>
 <li><code>version</code>: HTTP &#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;1.1&quot;</code>&#x3002;</li>
 <li><code>status</code>: HTTP &#x72B6;&#x6001;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;200&quot;</code>&#x3002;</li>
 <li><code>reason</code>: HTTP &#x72B6;&#x6001;&#x8BF4;&#x660E;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;OK&quot;</code>&#x3002;</li>
@@ -1068,7 +1073,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"进阶使用","level":"1.4","depth":1,"path":"chapter_03/README.md","ref":"chapter_03/README.md","articles":[{"title":"动态端口","level":"1.4.1","depth":2,"path":"chapter_03/00_dynport.md","ref":"chapter_03/00_dynport.md","articles":[]},{"title":"Effective V2Ray","level":"1.4.2","depth":2,"path":"chapter_03/01_effective.md","ref":"chapter_03/01_effective.md","articles":[]},{"title":"mKCP","level":"1.4.3","depth":2,"path":"chapter_03/kcp.md","ref":"chapter_03/kcp.md","articles":[]}]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2016-11-05T23:43:53.642Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-05T23:45:03.223Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"进阶使用","level":"1.4","depth":1,"path":"chapter_03/README.md","ref":"chapter_03/README.md","articles":[{"title":"动态端口","level":"1.4.1","depth":2,"path":"chapter_03/00_dynport.md","ref":"chapter_03/00_dynport.md","articles":[]},{"title":"Effective V2Ray","level":"1.4.2","depth":2,"path":"chapter_03/01_effective.md","ref":"chapter_03/01_effective.md","articles":[]},{"title":"mKCP","level":"1.4.3","depth":2,"path":"chapter_03/kcp.md","ref":"chapter_03/kcp.md","articles":[]}]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2016-11-06T12:55:24.240Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-06T12:56:29.457Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
