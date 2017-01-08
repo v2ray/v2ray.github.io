@@ -878,12 +878,37 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="socks"><a name="socks" class="plugin-anchor" href="#socks"><i class="fa fa-link" aria-hidden="true"></i></a>Socks</h1>
-<p>Socks &#x662F;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x6570;&#x636E;&#x534F;&#x8BAE;&#xFF0C;&#x517C;&#x5BB9; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 4</a> &#x548C; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 5</a>&#xFF0C;&#x6682;&#x4E0D;&#x652F;&#x6301; Socks 4a&#x3002;</p>
+<p>&#x6807;&#x51C6; Socks &#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#xFF0C;&#x517C;&#x5BB9; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 4</a>&#x3001;Socks 4a &#x548C; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 5</a>&#x3002;</p>
 <ul>
 <li>&#x540D;&#x79F0;&#xFF1A;socks</li>
-<li>&#x7C7B;&#x578B;&#xFF1A;Inbound</li>
-<li>&#x914D;&#x7F6E;&#xFF1A;</li>
+<li>&#x7C7B;&#x578B;&#xFF1A;Inbound / Outbound</li>
 </ul>
+<h2 id="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214"><a name="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214" class="plugin-anchor" href="#socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214"><i class="fa fa-link" aria-hidden="true"></i></a>Socks &#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E; (V2Ray 2.14+)</h2>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;servers&quot;</span>: [{
+    <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1234</span>,
+    <span class="hljs-string">&quot;users&quot;</span>: [
+      {<span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;test user&quot;</span>, <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>}
+    ]
+  }]
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>servers</code>: Socks &#x670D;&#x52A1;&#x5668;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4E3A;&#xFF1A;<ul>
+<li><code>address</code>: &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</li>
+<li><code>port</code>: &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</li>
+<li><code>users</code>: &#x7528;&#x6237;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4E3A;&#xFF1A;<ul>
+<li><code>user</code>: &#x7528;&#x6237;&#x540D;</li>
+<li><code>pass</code>: &#x5BC6;&#x7801;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x4E86;&#x7528;&#x6237;&#x65F6;&#xFF0C;Socks &#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x4F7F;&#x7528;&#x6B64;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#xFF1B;&#x5982;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4E0D;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x3002;</p>
+<h2 id="socks-&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E;"><a name="socks-&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E;" class="plugin-anchor" href="#socks-&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>Socks &#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E;</h2>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,
   <span class="hljs-string">&quot;accounts&quot;</span>: [
@@ -935,7 +960,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SOCKS","level":"1.3.3.6","depth":3,"next":{"title":"VMess","level":"1.3.3.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.3.3.5","depth":3,"path":"chapter_02/protocols/shadowsocks.md","ref":"chapter_02/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/socks.md","mtime":"2017-01-05T11:18:03.387Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-05T11:19:19.293Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SOCKS","level":"1.3.3.6","depth":3,"next":{"title":"VMess","level":"1.3.3.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.3.3.5","depth":3,"path":"chapter_02/protocols/shadowsocks.md","ref":"chapter_02/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/socks.md","mtime":"2017-01-08T00:33:18.789Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-08T00:34:21.181Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
