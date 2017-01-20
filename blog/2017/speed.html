@@ -1,0 +1,326 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>传说中的性能测试 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../2016/one-year.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    官方博客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../2016/one-year.html">
+            
+                <a href="../2016/one-year.html">
+            
+                    
+                    一周年记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="speed.html">
+            
+                <a href="speed.html">
+            
+                    
+                    传说中的性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >传说中的性能测试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4F20;&#x8BF4;&#x4E2D;&#x7684;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;">&#x4F20;&#x8BF4;&#x4E2D;&#x7684;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;</h1>
+<p>&#x4E00;&#x76F4;&#x90FD;&#x6709;&#x4EBA;&#x95EE; V2Ray &#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x76F4;&#x90FD;&#x5F88;&#x65E0;&#x5948;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x4EBA;&#x6D4B;&#x8FC7;&#x3002;&#x88AB;&#x95EE;&#x5F97;&#x70E6;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x7ED9;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x79D1;&#x5B66;&#xFF0C;&#x6BD4;&#x8F83;&#x51C6;&#x786E;&#x7684;&#x7ED3;&#x8BBA;&#x3002;</p>
+<h2 id="&#x672C;&#x6B21;&#x6D4B;&#x8BD5;&#x7684;&#x76EE;&#x7684;">&#x672C;&#x6B21;&#x6D4B;&#x8BD5;&#x7684;&#x76EE;&#x7684;</h2>
+<p>&#x6D4B;&#x8BD5; VMess &#x548C; Shadowsocks &#x5404;&#x79CD;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6781;&#x9650;&#x901F;&#x5EA6;&#x3002;</p>
+<h2 id="&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;">&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</h2>
+<p>&#x5728;&#x540C;&#x4E00;&#x53F0;&#x4E3B;&#x673A;&#x4E0A;&#x540C;&#x65F6;&#x542F;&#x52A8; V2Ray &#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF0C;&#x4F7F;&#x7528;&#x73AF;&#x56DE;&#x7F51;&#x7EDC;&#xFF08;Loopback&#xFF09;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x63A5;&#x53D7;&#x5230;&#x9884;&#x8BBE;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x9A8C;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53D1;&#x51FA;&#x540C;&#x6837;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x6D4B;&#x8BD5;&#x73AF;&#x5883;">&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</h3>
+<p>&#x4E00;&#x53F0;&#x4E91;&#x4E3B;&#x673A;&#xFF0C;&#x5185;&#x5B58; 2GB&#xFF0C;CPU &#x4FE1;&#x606F;&#x5982;&#x4E0B;&#x3002;&#x663E;&#x7136;&#x8FD9;&#x53F0;&#x673A;&#x5668;&#x672C;&#x8EAB;&#x7684;&#x6027;&#x80FD;&#x4E0D;&#x600E;&#x4E48;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x4E00;&#x53F0;&#x66F4;&#x597D;&#x7684;&#x673A;&#x5668;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x66F4;&#x597D;&#x7684;&#x7EDD;&#x5BF9;&#x6570;&#x503C;&#xFF0C;&#x4F46;&#x672C;&#x6B21;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x503C;&#x6BD4;&#x4F8B;&#x6709;&#x53C2;&#x8003;&#x4EF7;&#x503C;&#x3002;</p>
+<pre><code class="lang-text">Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 61
+Model name:            Virtual CPU a7769a6388d5
+Stepping:              2
+CPU MHz:               2399.996
+BogoMIPS:              4799.99
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              4096K
+NUMA node0 CPU(s):     0,1
+</code></pre>
+<h3 id="&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;">&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;</h3>
+<p>&#x7279;&#x5730;&#x5199;&#x4E86;&#x4E24;&#x4E2A;&#x5C0F;&#x5DE5;&#x5177;&#xFF1A;loadgen &#x548C; receiver&#x3002;</p>
+<p>loadgen &#x7528;&#x4E8E;&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5BF9;&#x67D0;&#x4E2A;&#x7AEF;&#x53E3;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF0C;&#x652F;&#x6301;&#x76F4;&#x8FDE;&#x548C; Socks &#x534F;&#x8BAE;&#x3002;&#x53EF;&#x914D;&#x7F6E;&#x5E76;&#x53D1;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x53D1;&#x9001;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x9A8C;&#x8BC1; receiver &#x7684;&#x53CD;&#x9988;&#x3002;&#x5982;&#x679C; receiver &#x6536;&#x5230;&#x4E86;&#x540C;&#x6837;&#x6570;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x8868;&#x660E;&#x4F20;&#x8F93;&#x7ED3;&#x675F;&#x3002;</p>
+<p>receiver &#x7528;&#x4E8E;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x6B21;&#x6536;&#x5230;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x628A;&#x603B;&#x5171;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x5B57;&#x8282;&#x6570;&#x53D1;&#x56DE;&#xFF0C;&#x5E76;&#x7B49;&#x5F85;&#x8FDE;&#x63A5;&#x53D1;&#x8D77;&#x65B9;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x7531;&#x4E8E; VMess &#x7684;&#x6B63;&#x786E;&#x6027;&#x5DF2;&#x88AB;&#x5176;&#x5B83;&#x7684;&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x8FDE;&#x63A5;&#x7545;&#x901A;&#xFF0C;&#x5373;&#x6536;&#x5230;&#x6570;&#x636E;&#x91CF;&#x7B49;&#x4E8E;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x91CF;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="&#x57FA;&#x672C;&#x4FE1;&#x606F;">&#x57FA;&#x672C;&#x4FE1;&#x606F;</h3>
+<p>&#x6211;&#x4EEC;&#x7528; loadgen &#x548C; receiver &#x76F4;&#x63A5;&#x5BF9;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x73AF;&#x56DE;&#x7F51;&#x7EDC;&#x7684;&#x5927;&#x81F4;&#x6027;&#x80FD;&#x3002;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;50 GB / &#x8FDE;&#x63A5;
+&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;   | 1 | 2 | 4
+-----------|---|---|----
+&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;|4266|4654|4551</p>
+<p>&#x5BF9;&#x6BD4;&#x4E0B;&#x9762;&#x5B9E;&#x9A8C;&#x4E2D;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x73AF;&#x56DE;&#x7F51;&#x7EDC;&#x7684;&#x57FA;&#x672C;&#x901F;&#x5EA6;&#x4E0D;&#x4F1A;&#x6210;&#x4E3A;&#x74F6;&#x9888;&#x3002;</p>
+<p>&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x57FA;&#x7840;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x53C8;&#x6D4B;&#x4E86;&#x4E00;&#x4E0B;&#x4F7F;&#x7528; V2Ray &#x76F4;&#x8FDE;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x5B9E;&#x9A8C;&#x4E2D;&#x53EA;&#x542F;&#x52A8;&#x4E00;&#x4E2A; V2Ray &#x8FDB;&#x7A0B;&#xFF0C;&#x914D;&#x7F6E; Dokodemo-door &lt;-&gt; Freedom&#x3002;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;10 GB / &#x8FDE;&#x63A5;
+&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;   | 1 | 2 | 4
+-----------|---|---|----
+&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;|640|819|787</p>
+<h3 id="vmess-&#x6D4B;&#x8BD5;">VMess &#x6D4B;&#x8BD5;</h3>
+<p>&#x6D4B;&#x8BD5;&#x573A;&#x666F;&#x7684;&#x5DEE;&#x522B;&#x662F; VMess &#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5176;&#x5B83;&#x90FD;&#x4E00;&#x6837;&#x3002;&#x4F20;&#x5165;&#x4F9D;&#x7136;&#x662F; Dokodemo-door&#xFF0C;&#x4F20;&#x51FA;&#x662F; Freedom&#x3002;</p>
+<ul>
+<li>VMess CFB: AES-128-CFB &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;</li>
+<li>VMess GCM: AES-128-GCM &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;</li>
+<li>VMess Chacha: Chacha20-poly1305 &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;</li>
+<li>VMess None: &#x4E0D;&#x52A0;&#x5BC6;</li>
+</ul>
+<p>&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF08;&#x6570;&#x636E;&#x91CF;&#xFF1A;10 GB / &#x8FDE;&#x63A5;&#xFF09;&#xFF1A;</p>
+<p><img src="speed-vmess.png" alt=""></p>
+<p>&#x89E3;&#x8BFB;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x901F;&#x5EA6; GCM &gt; Chacha &gt; None &gt; CFB&#xFF1B;</li>
+<li>VMess &#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;&#x3002;&#x7531;&#x4E8E; CPU &#x662F;&#x53CC;&#x6838;&#xFF0C;&#x6240;&#x4EE5; 2 &#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x901F;&#x5EA6;&#x6BD4;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x5FEB;&#xFF0C;&#x800C; 4 &#x4E2A;&#x8FDE;&#x63A5;&#x5BF9;&#x6BD4; 2 &#x4E2A;&#x8FDE;&#x63A5;&#x5219;&#x6CA1;&#x6709;&#x660E;&#x663E;&#x63D0;&#x5347;&#xFF1B;</li>
+</ul>
+<p>&#x5F88;&#x6709;&#x8DA3;&#x7684;&#x4E00;&#x70B9;&#x662F; None &#x5C45;&#x7136;&#x6BD4; GCM &#x6162;&#x3002;&#x4E0D;&#x52A0;&#x5BC6;&#x53CD;&#x800C;&#x6BD4;&#x52A0;&#x5BC6;&#x6162;&#xFF0C;&#x6709;&#x4E00;&#x70B9;&#x8FDD;&#x53CD;&#x5E38;&#x8BC6;&#x3002;&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;VMess &#x4E0D;&#x7BA1;&#x52A0;&#x4E0D;&#x52A0;&#x5BC6;&#xFF0C;&#x90FD;&#x4F1A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x6821;&#x9A8C;&#xFF0C;None &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6821;&#x9A8C;&#x7B97;&#x6CD5;&#x662F; FNV&#xFF0C;&#x800C; GCM &#x662F;&#x4E00;&#x4E2A; AEAD &#x7B97;&#x6CD5;&#xFF0C;&#x81EA;&#x5E26;&#x6821;&#x9A8C;&#x3002;&#x4E8E;&#x662F;&#x5E26; CPU &#x52A0;&#x6210;&#x7684;&#x6821;&#x9A8C;&#x6BD4;&#x8F6F;&#x4EF6;&#x5B9E;&#x73B0;&#x7684;&#x6821;&#x9A8C;&#x5FEB;&#x4E86;&#x4E0D;&#x5C0F;&#x3002;&#x8FD9;&#x4E00;&#x70B9;&#x4E5F;&#x8D85;&#x51FA;&#x4E86;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x9884;&#x671F;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x8003;&#x8651;&#x63D0;&#x5347;&#x6821;&#x9A8C;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<h3 id="&#x4E0E;-shadowsocks-&#x5BF9;&#x6BD4;">&#x4E0E; Shadowsocks &#x5BF9;&#x6BD4;</h3>
+<p>V2Ray &#x548C; Shadowsocks &#x7684;&#x6BD4;&#x8F83;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x3002;&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x90A3;&#x5C31;&#x4E00;&#x8D77;&#x6D4B;&#x4E00;&#x4E0B;&#x5427;&#x3002;</p>
+<ul>
+<li>V2Ray SS CFB: V2Ray &#x4E2D;&#x7684; Shadowsocks &#x5B9E;&#x73B0;&#xFF0C;AES-128-CFB &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF1B;</li>
+<li>SS-Libev CFB: Shadowsocks libev 2.5.6&#xFF0C;AES-128-CFB &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF; ss-tunnel&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF; ss-server&#xFF1B;</li>
+<li>SSR-PY CFB: ShadowsocksR &#x6700;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#xFF08;2017-01-20&#xFF09;&#xFF0C;AES-128-CFB &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x5176;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#xFF1A;auth_aes128_md5&#x3001;tls1.2_ticket_auth_compatible&#x3002;</li>
+</ul>
+<p>OTA &#x5728;&#x6240;&#x6709; Shadowsocks &#x4E2D;&#x90FD;&#x542F;&#x7528;&#x4E86;&#x3002;</p>
+<p>&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#xFF08;&#x6570;&#x636E;&#x91CF;&#xFF1A;10 GB / &#x8FDE;&#x63A5;&#xFF09;&#xFF1A;</p>
+<p><img src="speed-all.png" alt=""></p>
+<p>&#x89E3;&#x8BFB;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>VMess &#x7684;&#x901F;&#x5EA6;&#x4F18;&#x4E8E; Shadowsocks&#xFF1B;</li>
+<li>&#x6BD4;&#x8D77; ss-libev &#x548C; ssr-python&#xFF0C;V2Ray &#x5728;&#x591A;&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x7684;&#x573A;&#x666F;&#x4E2D;&#x66F4;&#x6709;&#x4F18;&#x52BF;&#xFF1B;</li>
+</ul>
+<h2 id="&#x7ED3;&#x8BBA;">&#x7ED3;&#x8BBA;</h2>
+<ul>
+<li>&#x5728;&#x4E00;&#x53F0;&#x53CC;&#x6838; 2.4 GHz &#x7684;&#x4E3B;&#x673A;&#x4E0A;&#xFF0C;V2Ray &#x7684;&#x6781;&#x9650;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x8D85;&#x8FC7; 400 MB/s&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x901F;&#x5EA6;&#x6709;&#x9700;&#x6C42;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; VMess + AES-128-GCM&#x3002;</li>
+</ul>
+<h2 id="&#x540E;&#x8BB0;">&#x540E;&#x8BB0;</h2>
+<ul>
+<li>&#x5728;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#x90FD;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7; 10 MB/s&#xFF0C;&#x4E0A;&#x8FF0;&#x6D4B;&#x8BD5;&#x7684;&#x6BCF;&#x79CD;&#x65B9;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x3002;&#x4F46;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x9AD8;&#x6027;&#x80FD;&#x4F20;&#x8F93;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x4E0A;&#x8FF0;&#x7684;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x8FD0;&#x884C;&#x591A;&#x6B21;&#x7684;&#x5E73;&#x5747;&#x503C;&#x3002;&#x7531;&#x4E8E;&#x865A;&#x62DF;&#x673A;&#x7684;&#x4E0D;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x8BEF;&#x5DEE;&#x5728; 5% &#x4EE5;&#x4E0B;&#x3002;</li>
+<li>&#x5176;&#x5B83;&#x65B9;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x5982; CPU &#x548C;&#x5185;&#x5B58;&#x5360;&#x7528;&#xFF0C;&#x4F1A;&#x5728;&#x540E;&#x7EED;&#x7684;&#x6D4B;&#x8BD5;&#x4E2D;&#x8FDB;&#x884C;&#x3002;</li>
+<li>loadgen &#x548C; receiver &#x53EF;&#x4EE5;&#x7531; iPerf &#x66FF;&#x4EE3;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x95EE;&#x9898;&#x662F; iPerf &#x4E0D;&#x652F;&#x6301; Socks &#x534F;&#x8BAE;&#x3002;</li>
+<li>&#x4E0A;&#x8FF0;&#x6240;&#x6709;&#x5DE5;&#x5177;&#x548C;&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;<a href="https://github.com/v2ray/experiments/tree/master/benchmark" target="_blank">&#x5728;&#x8FD9;&#x91CC;&#x627E;&#x5230;</a>&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../2016/one-year.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 一周年记">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"传说中的性能测试","level":"1.1.2","depth":2,"previous":{"title":"一周年记","level":"1.1.1","depth":2,"path":"2016/one-year.md","ref":"2016/one-year.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","disqus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"v2ray"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"2017/speed.md","mtime":"2017-01-20T22:00:03.514Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-20T22:01:50.324Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
