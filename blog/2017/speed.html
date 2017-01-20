@@ -206,16 +206,46 @@ NUMA node0 CPU(s):     0,1
 <p>&#x7531;&#x4E8E; VMess &#x7684;&#x6B63;&#x786E;&#x6027;&#x5DF2;&#x88AB;&#x5176;&#x5B83;&#x7684;&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x9A8C;&#x8BC1;&#x8FDE;&#x63A5;&#x7545;&#x901A;&#xFF0C;&#x5373;&#x6536;&#x5230;&#x6570;&#x636E;&#x91CF;&#x7B49;&#x4E8E;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x91CF;&#x5373;&#x53EF;&#x3002;</p>
 <h3 id="&#x57FA;&#x672C;&#x4FE1;&#x606F;">&#x57FA;&#x672C;&#x4FE1;&#x606F;</h3>
 <p>&#x6211;&#x4EEC;&#x7528; loadgen &#x548C; receiver &#x76F4;&#x63A5;&#x5BF9;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x73AF;&#x56DE;&#x7F51;&#x7EDC;&#x7684;&#x5927;&#x81F4;&#x6027;&#x80FD;&#x3002;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;50 GB / &#x8FDE;&#x63A5;
-&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;   | 1 | 2 | 4
------------|---|---|----
-&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;|4266|4654|4551</p>
+<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;50 GB / &#x8FDE;&#x63A5;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;</td>
+<td>4266</td>
+<td>4654</td>
+<td>4551</td>
+</tr>
+</tbody>
+</table>
 <p>&#x5BF9;&#x6BD4;&#x4E0B;&#x9762;&#x5B9E;&#x9A8C;&#x4E2D;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x73AF;&#x56DE;&#x7F51;&#x7EDC;&#x7684;&#x57FA;&#x672C;&#x901F;&#x5EA6;&#x4E0D;&#x4F1A;&#x6210;&#x4E3A;&#x74F6;&#x9888;&#x3002;</p>
 <p>&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x57FA;&#x7840;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x53C8;&#x6D4B;&#x4E86;&#x4E00;&#x4E0B;&#x4F7F;&#x7528; V2Ray &#x76F4;&#x8FDE;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x5B9E;&#x9A8C;&#x4E2D;&#x53EA;&#x542F;&#x52A8;&#x4E00;&#x4E2A; V2Ray &#x8FDB;&#x7A0B;&#xFF0C;&#x914D;&#x7F6E; Dokodemo-door &lt;-&gt; Freedom&#x3002;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;10 GB / &#x8FDE;&#x63A5;
-&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;   | 1 | 2 | 4
------------|---|---|----
-&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;|640|819|787</p>
+<p>&#x6570;&#x636E;&#x91CF;&#xFF1A;10 GB / &#x8FDE;&#x63A5;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x901F;&#x5EA6;&#xFF08;MB/s&#xFF09;</td>
+<td>640</td>
+<td>819</td>
+<td>787</td>
+</tr>
+</tbody>
+</table>
 <h3 id="vmess-&#x6D4B;&#x8BD5;">VMess &#x6D4B;&#x8BD5;</h3>
 <p>&#x6D4B;&#x8BD5;&#x573A;&#x666F;&#x7684;&#x5DEE;&#x522B;&#x662F; VMess &#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5176;&#x5B83;&#x90FD;&#x4E00;&#x6837;&#x3002;&#x4F20;&#x5165;&#x4F9D;&#x7136;&#x662F; Dokodemo-door&#xFF0C;&#x4F20;&#x51FA;&#x662F; Freedom&#x3002;</p>
 <ul>
@@ -283,7 +313,7 @@ NUMA node0 CPU(s):     0,1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传说中的性能测试","level":"1.1.2","depth":2,"previous":{"title":"一周年记","level":"1.1.1","depth":2,"path":"2016/one-year.md","ref":"2016/one-year.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","disqus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"v2ray"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"2017/speed.md","mtime":"2017-01-20T22:00:03.514Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-20T22:01:50.324Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传说中的性能测试","level":"1.1.2","depth":2,"previous":{"title":"一周年记","level":"1.1.1","depth":2,"path":"2016/one-year.md","ref":"2016/one-year.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","disqus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"v2ray"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"2017/speed.md","mtime":"2017-01-20T22:18:24.024Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-20T22:20:04.525Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
