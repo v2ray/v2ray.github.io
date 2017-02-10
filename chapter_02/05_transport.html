@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../chapter_03/" />
+    <link rel="next" href="tcp.html" />
     
     
     <link rel="prev" href="04_dns.html" />
@@ -465,6 +465,25 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="tcp.html">
+            
+                <a href="tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -882,151 +901,16 @@
 <h2 id="&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a name="&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5168;&#x5C40;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2>
 <p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &quot;transport&quot; &#x9879;&#x3002;</p>
 <pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {
-    <span class="hljs-string">&quot;connectionReuse&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;header&quot;</span>: {
-      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
-    }
-  },
-  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {
-    <span class="hljs-string">&quot;mtu&quot;</span>: <span class="hljs-number">1350</span>,
-    <span class="hljs-string">&quot;tti&quot;</span>: <span class="hljs-number">20</span>,
-    <span class="hljs-string">&quot;uplinkCapacity&quot;</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">&quot;downlinkCapacity&quot;</span>: <span class="hljs-number">20</span>,
-    <span class="hljs-string">&quot;congestion&quot;</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-string">&quot;readBufferSize&quot;</span>: <span class="hljs-number">1</span>,
-    <span class="hljs-string">&quot;writeBufferSize&quot;</span>: <span class="hljs-number">1</span>,
-    <span class="hljs-string">&quot;header&quot;</span>: {
-      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
-    }
-  },
-  <span class="hljs-string">&quot;wsSettings&quot;</span>: {
-    <span class="hljs-string">&quot;connectionReuse&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
-  }
+  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;wsSettings&quot;</span>: {}
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li><code>tcpSettings</code>: &#x9488;&#x5BF9; TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;<ul>
-<li><code>connectionReuse</code>: &#x662F;&#x5426;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>true</code>&#x3002;<ul>
-<li>&#x76EE;&#x524D;&#x53EA;&#x5BF9; VMess &#x8D77;&#x4F5C;&#x7528;&#xFF1B;</li>
-<li>&#x5F53;&#x503C;&#x4E3A; <code>true</code> &#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x5728;&#x4F20;&#x8F93;&#x5B8C;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; TCP &#x8FDE;&#x63A5;&#x6765;&#x4F20;&#x8F93;&#x4E0B;&#x4E00;&#x6BB5;&#x6570;&#x636E;&#x3002;</li>
-</ul>
-</li>
-<li><code>header</code>: &#x6570;&#x636E;&#x5305;&#x5934;&#x90E8;&#x4F2A;&#x88C5;&#x8BBE;&#x7F6E;&#xFF1A;<ul>
-<li><code>type</code>: &#x4F2A;&#x88C5;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&#xFF1A;<ul>
-<li><code>&quot;none&quot;</code>: &#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x4F2A;&#x88C5;&#xFF1B;</li>
-<li><code>&quot;http&quot;</code>: &#x4F2A;&#x88C5;&#x6210; HTTP &#x6570;&#x636E;&#x6D41;&#xFF0C;&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x89C1;&#x4E0B;&#x3002;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>kcpSettings</code>: &#x9488;&#x5BF9; <a href="../chapter_03/kcp.html">mKCP</a> &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;<ul>
-<li><code>mtu</code>: &#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;&#xFF08;maximum transmission unit&#xFF09;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; <code>576</code> - <code>1460</code> &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>1350</code>&#x3002;</li>
-<li><code>tti</code>: &#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;transmission time interval&#xFF09;&#xFF0C;&#x5355;&#x4F4D;&#x6BEB;&#x79D2;&#xFF08;ms&#xFF09;&#xFF0C;mKCP &#x5C06;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x9891;&#x7387;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;&#x8BF7;&#x9009;&#x8BD1;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; <code>10</code> - <code>100</code> &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;<ul>
-<li>v2.0 &#x5305;&#x62EC;&#x4E4B;&#x524D;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>20</code>&#xFF1B;</li>
-<li>v2.1 &#x5F00;&#x59CB;&#x9ED8;&#x8BA4;&#x503C;&#x6539;&#x4E3A; <code>50</code>&#x3002;</li>
-</ul>
-</li>
-<li><code>uplinkCapacity</code>: &#x4E0A;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>5</code>&#x3002;<ul>
-<li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;</li>
-<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;</li>
-</ul>
-</li>
-<li><code>downlinkCapacity</code>: &#x4E0B;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x63A5;&#x6536;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>20</code>&#x3002;<ul>
-<li>&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#xFF1B;</li>
-<li>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#xFF1B;</li>
-</ul>
-</li>
-<li><code>congestion</code>: &#x662F;&#x5426;&#x542F;&#x7528;&#x62E5;&#x585E;&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code>&#x3002;<ul>
-<li>&#x5F00;&#x542F;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x4E4B;&#x540E;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x52A8;&#x76D1;&#x6D4B;&#x7F51;&#x7EDC;&#x8D28;&#x91CF;&#xFF0C;&#x5F53;&#x4E22;&#x5305;&#x4E25;&#x91CD;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x964D;&#x4F4E;&#x541E;&#x5410;&#x91CF;&#xFF1B;&#x5F53;&#x7F51;&#x7EDC;&#x7545;&#x901A;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x9002;&#x5F53;&#x589E;&#x52A0;&#x541E;&#x5410;&#x91CF;&#x3002;</li>
-</ul>
-</li>
-<li><code>readBufferSize</code>: &#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x8BFB;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x662F; MB&#x3002;<ul>
-<li>2.8 &#x4E4B;&#x524D;&#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>1</code>&#x3002;</li>
-<li>2.9 &#x4E4B;&#x540E;&#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>2</code>&#x3002;</li>
-</ul>
-</li>
-<li><code>writeBufferSize</code>: &#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x5199;&#x5165;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x662F; MB&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>1</code>&#x3002;<ul>
-<li>2.8 &#x4E4B;&#x524D;&#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>1</code>&#x3002;</li>
-<li>2.9 &#x4E4B;&#x540E;&#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>2</code>&#x3002;</li>
-</ul>
-</li>
-<li><code>header</code>: &#x6570;&#x636E;&#x5305;&#x5934;&#x90E8;&#x4F2A;&#x88C5;&#x8BBE;&#x7F6E;&#xFF1A;<ul>
-<li><code>type</code>: &#x4F2A;&#x88C5;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&#xFF1A;<ul>
-<li><code>&quot;none&quot;</code>: &#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x4F2A;&#x88C5;&#xFF0C;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x662F;&#x6CA1;&#x6709;&#x7279;&#x5F81;&#x7684;&#x6570;&#x636E;&#x5305;&#x3002;</li>
-<li><code>&quot;srtp&quot;</code>: &#x4F2A;&#x88C5;&#x6210; SRTP &#x6570;&#x636E;&#x5305;&#xFF0C;&#x4F1A;&#x88AB;&#x8BC6;&#x522B;&#x4E3A;&#x89C6;&#x9891;&#x901A;&#x8BDD;&#x6570;&#x636E;&#xFF08;&#x5982; FaceTime&#xFF09;&#x3002;</li>
-<li><code>&quot;utp&quot;</code>: &#x4F2A;&#x88C5;&#x6210; uTP &#x6570;&#x636E;&#x5305;&#xFF0C;&#x4F1A;&#x88AB;&#x8BC6;&#x522B;&#x4E3A; BT &#x4E0B;&#x8F7D;&#x6570;&#x636E;&#x3002;</li>
-<li><code>&quot;wechat-video&quot;</code>: &#x4F2A;&#x88C5;&#x6210;&#x5FAE;&#x4FE1;&#x89C6;&#x9891;&#x901A;&#x8BDD;&#x7684;&#x6570;&#x636E;&#x5305;&#x3002;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>wsSettings</code>: &#x9488;&#x5BF9; WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;&#xFF1A;<ul>
-<li><code>connectionReuse</code>: &#x662F;&#x5426;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>true</code>&#x3002;</li>
-<li><code>path</code>: WebSocket &#x6240;&#x4F7F;&#x7528;&#x7684; HTTP &#x534F;&#x8BAE;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;&quot;</code>&#x3002;</li>
-</ul>
-</li>
-</ul>
-<h3 id="&#x914D;&#x7F6E;&#x5EFA;&#x8BAE;"><a name="&#x914D;&#x7F6E;&#x5EFA;&#x8BAE;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x5EFA;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x5EFA;&#x8BAE;</h3>
-<ul>
-<li><code>uplinkCapacity</code> &#x548C; <code>downlinkCapacity</code> &#x51B3;&#x5B9A;&#x4E86; mKCP &#x7684;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x4EE5;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x4E3A;&#x4F8B;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684; <code>uplinkCapacity</code> &#x6307;&#x5B9A;&#x4E86;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x800C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684; <code>downlinkCapacity</code> &#x6307;&#x5B9A;&#x4E86;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x4E24;&#x8005;&#x7684;&#x503C;&#x4EE5;&#x8F83;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x4E3A;&#x51C6;&#x3002;&#x63A8;&#x8350;&#x628A; <code>downlinkCapacity</code> &#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x503C;&#xFF0C;&#x6BD4;&#x5982; 100&#xFF0C;&#x800C; <code>uplinkCapacity</code> &#x8BBE;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x7F51;&#x7EDC;&#x901F;&#x5EA6;&#x3002;&#x5F53;&#x901F;&#x5EA6;&#x4E0D;&#x591F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x9010;&#x6E10;&#x589E;&#x52A0; <code>uplinkCapacity</code> &#x7684;&#x503C;&#xFF0C;&#x76F4;&#x5230;&#x5E26;&#x5BBD;&#x7684;&#x4E24;&#x500D;&#x5DE6;&#x53F3;&#x3002;</li>
-<li><code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x6307;&#x5B9A;&#x4E86;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;&#x5728;&#x9700;&#x8981;&#x9AD8;&#x901F;&#x4F20;&#x8F93;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x8F83;&#x5927;&#x7684; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x4F1A;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x63D0;&#x9AD8;&#x901F;&#x5EA6;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#x3002;&#x5728;&#x7F51;&#x901F;&#x4E0D;&#x8D85;&#x8FC7; 20MB/s &#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 1MB &#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF1B;&#x8D85;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x589E;&#x52A0; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x624B;&#x52A8;&#x5E73;&#x8861;&#x901F;&#x5EA6;&#x548C;&#x5185;&#x5B58;&#x7684;&#x5173;&#x7CFB;&#x3002;</li>
-</ul>
-<h3 id="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><a name="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;</h3>
-<p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
-  <span class="hljs-string">&quot;request&quot;</span>: {
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
-    <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;GET&quot;</span>,
-    <span class="hljs-string">&quot;path&quot;</span>: [<span class="hljs-string">&quot;/&quot;</span>],
-    <span class="hljs-string">&quot;headers&quot;</span>: {
-      <span class="hljs-string">&quot;Host&quot;</span>: [<span class="hljs-string">&quot;www.baidu.com&quot;</span>, <span class="hljs-string">&quot;www.bing.com&quot;</span>],
-      <span class="hljs-string">&quot;User-Agent&quot;</span>: [
-        <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;</span>,
-        <span class="hljs-string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46&quot;</span>
-      ],
-      <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: [<span class="hljs-string">&quot;gzip, deflate&quot;</span>],
-      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
-      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
-    }
-  },
-  <span class="hljs-string">&quot;response&quot;</span>: {
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
-    <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;200&quot;</span>,
-    <span class="hljs-string">&quot;reason&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>,
-    <span class="hljs-string">&quot;headers&quot;</span>: {
-      <span class="hljs-string">&quot;Content-Type&quot;</span>: [<span class="hljs-string">&quot;application/octet-stream&quot;</span>, <span class="hljs-string">&quot;video/mpeg&quot;</span>],
-      <span class="hljs-string">&quot;Transfer-Encoding&quot;</span>: [<span class="hljs-string">&quot;chunked&quot;</span>],
-      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
-      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
-    }
-  }
-}
-</code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
-<ul>
-<li><code>type</code>: &#x548C; <code>tcpSettings</code> &#x4E2D;&#x7684; <code>type</code> &#x662F;&#x540C;&#x4E00;&#x9879;&#x3002;</li>
-<li><code>request</code>: HTTP &#x8BF7;&#x6C42;<ul>
-<li><code>version</code>: HTTP &#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;1.1&quot;</code>&#x3002;</li>
-<li><code>method</code>: HTTP &#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;GET&quot;</code>&#x3002;</li>
-<li><code>path</code>: &#x8DEF;&#x5F84;&#xFF0C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;/&quot;</code>&#x3002;&#x5F53;&#x6709;&#x591A;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
-<li><code>headers</code>: HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x4F1A;&#x9644;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x89C1;&#x6837;&#x4F8B;&#x3002;</li>
-</ul>
-</li>
-<li><code>response</code>: HTTP &#x54CD;&#x5E94;<ul>
-<li><code>version</code>: HTTP &#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;1.1&quot;</code>&#x3002;</li>
-<li><code>status</code>: HTTP &#x72B6;&#x6001;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;200&quot;</code>&#x3002;</li>
-<li><code>reason</code>: HTTP &#x72B6;&#x6001;&#x8BF4;&#x660E;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;OK&quot;</code>&#x3002;</li>
-<li><code>headers</code>: HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x4F1A;&#x9644;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x89C1;&#x6837;&#x4F8B;&#x3002;</li>
-</ul>
-</li>
+<li><code>tcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/tcp.md">TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
+<li><code>kcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/mkcp.md">mKCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
+<li><code>wsSettings</code>: &#x9488;&#x5BF9; <a href="transport/websocket.md">WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
 </ul>
 <h2 id="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><a name="&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;</h2>
 <p>&#x6BCF;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x3001;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
@@ -1050,11 +934,7 @@
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001; <code>&quot;kcp&quot;</code> &#x6216; <code>&quot;ws&quot;</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#xFF1B;<ul>
-<li>&#x76EE;&#x524D;&#x4EC5;&#x6709; VMess &#x534F;&#x8BAE;&#x652F;&#x6301; kcp&#xFF0C;&#x5176;&#x5B83;&#x534F;&#x8BAE;&#x5728; kcp &#x4E0A;&#x4F1A;&#x4F20;&#x8F93;&#x5931;&#x8D25;&#x3002;</li>
-<li>WebSocket (ws) &#x76EE;&#x524D;&#x5904;&#x4E8E;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;&#xFF0C;&#x4F7F;&#x7528;&#x524D;&#x8BF7;&#x786E;&#x8BA4;&#x4F60;&#x77E5;&#x9053;&#x8BE5;&#x600E;&#x4E48;&#x914D;&#x7F6E;&#x3002;</li>
-</ul>
-</li>
+<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001; <code>&quot;kcp&quot;</code> &#x6216; <code>&quot;ws&quot;</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#xFF1B;</li>
 <li><code>security</code>: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
 <li><code>tlsSettings</code>: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; ChaCha &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
 <li><code>serverName</code>: &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</li>
@@ -1067,7 +947,7 @@
 </ul>
 </li>
 <li><code>tcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; TCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; TCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>kcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; KCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; KCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
+<li><code>kcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; mKCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; mKCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>wsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 </ul>
 
@@ -1086,7 +966,7 @@
                 </a>
                 
                 
-                <a href="../chapter_03/" class="navigation navigation-next " aria-label="Next page: 进阶使用">
+                <a href="tcp.html" class="navigation navigation-next " aria-label="Next page: TCP">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1097,7 +977,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"进阶使用","level":"1.4","depth":1,"path":"chapter_03/README.md","ref":"chapter_03/README.md","articles":[{"title":"动态端口","level":"1.4.1","depth":2,"path":"chapter_03/00_dynport.md","ref":"chapter_03/00_dynport.md","articles":[]},{"title":"Effective V2Ray","level":"1.4.2","depth":2,"path":"chapter_03/01_effective.md","ref":"chapter_03/01_effective.md","articles":[]},{"title":"mKCP","level":"1.4.3","depth":2,"path":"chapter_03/kcp.md","ref":"chapter_03/kcp.md","articles":[]},{"title":"传出代理","level":"1.4.4","depth":2,"path":"chapter_03/outboundproxy.md","ref":"chapter_03/outboundproxy.md","articles":[]}]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2017-02-03T15:39:15.139Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-03T15:40:40.461Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.3.6","depth":2,"next":{"title":"TCP","level":"1.3.6.1","depth":3,"path":"chapter_02/tcp.md","ref":"chapter_02/tcp.md","articles":[]},"previous":{"title":"DNS 配置","level":"1.3.5","depth":2,"path":"chapter_02/04_dns.md","ref":"chapter_02/04_dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2017-02-10T14:48:32.238Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-10T14:50:17.063Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
