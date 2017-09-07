@@ -980,45 +980,53 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;"><a name="&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;</h1>
-<p>&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;&#x662F;&#x6307;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x4E2D;&#x8F6C;&#x8BF7;&#x6C42;&#xFF0C;&#x53EA;&#x5BF9;&#x6307;&#x5B9A;&#x7684; IP &#x6216;&#x57DF;&#x540D;&#x624D;&#x4E2D;&#x8F6C;&#x3002;</p>
+<p>&#x9ED1;&#x540D;&#x5355;&#x6A21;&#x5F0F;&#x662F;&#x6307;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x4E2D;&#x8F6C;&#x8BF7;&#x6C42;&#xFF0C;&#x53EA;&#x5BF9;&#x6307;&#x5B9A;&#x7684; IP &#x6216;&#x57DF;&#x540D;&#x624D;&#x4E2D;&#x8F6C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x4F3C;PAC&#x7684;&#x6548;&#x679C;&#x3002;</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;log&quot;</span>: {
-    <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/var/log/v2ray/error.log&quot;</span>,
+    <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>
   },
   <span class="hljs-string">&quot;inbound&quot;</span>: {
-    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,
-    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;socks&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,           <span class="hljs-comment">// &#x672C;&#x5730;&#x76D1;&#x542C;&#x7AEF;&#x53E3;</span>
+    <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;socks&quot;</span>,    <span class="hljs-comment">// &#x4F7F;&#x7528; Socks(5) &#x4F20;&#x5165;&#x534F;&#x8BAE;</span>
     <span class="hljs-string">&quot;settings&quot;</span>: {
-      <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,
-      <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,     <span class="hljs-comment">// &#x4E0D;&#x8BA4;&#x8BC1;</span>
+      <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,         <span class="hljs-comment">// &#x4E0D;&#x5F00;&#x542F; UDP &#x8F6C;&#x53D1;</span>
       <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
     }
   },
   <span class="hljs-string">&quot;outbound&quot;</span>: {
-    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>, <span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x76F4;&#x8FDE;&#xFF0C;&#x53EA;&#x6709;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x7684;&#x57DF;&#x540D;&#x624D;&#x8F6C;&#x53D1;</span>
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,  <span class="hljs-comment">// &#x9ED8;&#x8BA4;&#x76F4;&#x8FDE;&#xFF0C;&#x53EA;&#x6709;&#x8DEF;&#x7531;&#x5339;&#x914D;&#x7684;&#x57DF;&#x540D;&#x6216;IP&#x624D;&#x8F6C;&#x53D1;</span>
     <span class="hljs-string">&quot;settings&quot;</span>: {}
   },
-  <span class="hljs-string">&quot;outboundDetour&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
-      <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>,
-      <span class="hljs-string">&quot;settings&quot;</span>: {
-        <span class="hljs-string">&quot;vnext&quot;</span>: [
-          {
-            <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;195.154.64.131&quot;</span>,
-            <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">17173</span>,
-            <span class="hljs-string">&quot;users&quot;</span>: [
-              {<span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;d0609d48-f2d4-43c1-92ff-a077ca7222b4&quot;</span>}
-            ]
-          }
-        ]
-      }
+  <span class="hljs-string">&quot;outboundDetour&quot;</span>: {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,    <span class="hljs-comment">// &#x4F7F;&#x7528;VMess&#x534F;&#x8BAE;&#x4F5C;&#x4E3A;&#x989D;&#x5916;&#x4F20;&#x51FA;&#x534F;&#x8BAE;</span>
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;proxy_please&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {
+      <span class="hljs-string">&quot;vnext&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>, <span class="hljs-comment">// &#x670D;&#x52A1;&#x5668;IP&#x5730;&#x5740;</span>
+          <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">12345</span>,        <span class="hljs-comment">// &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</span>
+          <span class="hljs-string">&quot;users&quot;</span>: [
+            {
+              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;</span>, <span class="hljs-comment">// UUID</span>
+              <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>,            <span class="hljs-comment">// &#x989D;&#x5916;ID&#xFF0C;&#x9700;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x914D;&#x7F6E;&#x76F8;&#x540C;</span>
+              <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span> <span class="hljs-comment">// &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;</span>
+            }
+          ]
+        }
+      ]
+    },
+    <span class="hljs-string">&quot;mux&quot;</span>: {
+      <span class="hljs-string">&quot;enabled&quot;</span>: <span class="hljs-literal">true</span>
     }
-  ],
+  },
   <span class="hljs-string">&quot;routing&quot;</span>: {
     <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
     <span class="hljs-string">&quot;settings&quot;</span>: {
       <span class="hljs-string">&quot;rules&quot;</span>: [
+        <span class="hljs-comment">// ========== BEGIN ==========</span>
         {
           <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
           <span class="hljs-string">&quot;domain&quot;</span>: [
@@ -1053,13 +1061,23 @@
             <span class="hljs-string">&quot;wikipedia.com&quot;</span>,
             <span class="hljs-string">&quot;wikipedia.org&quot;</span>
           ],
-          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span> <span class="hljs-comment">// &#x4E0E; VMess &#x534F;&#x8BAE;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x4EE5;&#x5339;&#x914D;&#x4E0A;&#x8FF0;&#x57DF;&#x540D;&#x7684;&#x8BF7;&#x6C42;&#x5C06;&#x88AB;&#x4E2D;&#x8F6C;</span>
+          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;proxy_please&quot;</span> <span class="hljs-comment">// &#x4E0E;&#x989D;&#x5916;&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x7684;&#x6807;&#x7B7E;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x4EE5;&#x5339;&#x914D;&#x4E0A;&#x8FF0;&#x57DF;&#x540D;&#x7684;&#x8BF7;&#x6C42;&#x5C06;&#x88AB;&#x4E2D;&#x8F6C;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+          <span class="hljs-string">&quot;ip&quot;</span>: [
+            <span class="hljs-string">&quot;91.108.4.0/22&quot;</span>,
+            <span class="hljs-string">&quot;109.239.140.0/24&quot;</span>
+          ],
+          <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;proxy_please&quot;</span>
         }
+        <span class="hljs-comment">// ========== END ==========</span>
       ]
     }
   }
 }
 </code></pre>
+<p>&#x540C;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#xFF0C;<a href="00_socks_client.html">&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</a>&#x4E2D;&#x7684;&#x914D;&#x7F6E;&#x542B;&#x4E49;&#x662F;&#x201C;&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x90FD;&#x8D70;&#x4E2D;&#x8F6C;&#xFF0C;&#x53EA;&#x6709;&#x7279;&#x5B9A;&#x57DF;&#x540D;&#x6216;IP&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x5185;&#x7F51;&#x5730;&#x5740;&#x548C;&#x56FD;&#x5185;&#x5730;&#x5740;&#xFF09;&#x624D;&#x76F4;&#x8FDE;&#x201D;&#x3002;</p>
 
                                 
                                 </section>
@@ -1087,7 +1105,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"黑名单模式","level":"1.6.1.4","depth":3,"next":{"title":"端口映射","level":"1.6.1.5","depth":3,"path":"chapter_05/00_config/03_port_map.md","ref":"chapter_05/00_config/03_port_map.md","articles":[]},"previous":{"title":"KCP,TCP+动态端口","level":"1.6.1.3","depth":3,"path":"chapter_05/00_config/10_multi_mode.md","ref":"chapter_05/00_config/10_multi_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_05/00_config/02_blacklist.md","mtime":"2017-08-27T00:12:34.020Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-27T00:13:24.388Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"黑名单模式","level":"1.6.1.4","depth":3,"next":{"title":"端口映射","level":"1.6.1.5","depth":3,"path":"chapter_05/00_config/03_port_map.md","ref":"chapter_05/00_config/03_port_map.md","articles":[]},"previous":{"title":"KCP,TCP+动态端口","level":"1.6.1.3","depth":3,"path":"chapter_05/00_config/10_multi_mode.md","ref":"chapter_05/00_config/10_multi_mode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_05/00_config/02_blacklist.md","mtime":"2017-09-07T21:11:58.115Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-07T21:12:53.741Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
