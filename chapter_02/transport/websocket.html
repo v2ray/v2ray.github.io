@@ -984,13 +984,17 @@
 <p>&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;connectionReuse&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-string">&quot;headers&quot;</span>: {
+    <span class="hljs-string">&quot;Host&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>
+  }
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
 <li><code>connectionReuse</code>: &#x662F;&#x5426;&#x91CD;&#x7528; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>true</code>&#x3002;</li>
 <li><code>path</code>: WebSocket &#x6240;&#x4F7F;&#x7528;&#x7684; HTTP &#x534F;&#x8BAE;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;&quot;</code>&#x3002;</li>
+<li><code>headers</code>: &#x81EA;&#x5B9A;&#x4E49; HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x7A7A;&#x3002;</li>
 </ul>
 
                                 
@@ -1019,7 +1023,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebSocket","level":"1.3.7.3","depth":3,"next":{"title":"环境变量","level":"1.3.8","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"previous":{"title":"mKCP","level":"1.3.7.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/websocket.md","mtime":"2017-09-28T20:56:46.536Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-28T20:57:37.586Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WebSocket","level":"1.3.7.3","depth":3,"next":{"title":"环境变量","level":"1.3.8","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"previous":{"title":"mKCP","level":"1.3.7.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/websocket.md","mtime":"2017-10-14T03:49:35.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-14T03:50:26.563Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
