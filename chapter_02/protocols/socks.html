@@ -965,7 +965,7 @@
 <li>&#x540D;&#x79F0;&#xFF1A;socks</li>
 <li>&#x7C7B;&#x578B;&#xFF1A;Inbound / Outbound</li>
 </ul>
-<h2 id="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214"><a name="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214" class="plugin-anchor" href="#socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;-v2ray-214"><i class="fa fa-link" aria-hidden="true"></i></a>Socks &#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E; (V2Ray 2.14+)</h2>
+<h2 id="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;"><a name="socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;" class="plugin-anchor" href="#socks-&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>Socks &#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E;</h2>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;servers&quot;</span>: [{
     <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
@@ -973,7 +973,8 @@
     <span class="hljs-string">&quot;users&quot;</span>: [
       {
         <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;test user&quot;</span>,
-        <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>
+        <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>,
+        <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
       }
     ]
   }]
@@ -987,6 +988,7 @@
 <li><code>users</code>: &#x7528;&#x6237;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4E3A;&#xFF1A;<ul>
 <li><code>user</code>: &#x7528;&#x6237;&#x540D;</li>
 <li><code>pass</code>: &#x5BC6;&#x7801;</li>
+<li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;</li>
 </ul>
 </li>
 </ul>
@@ -1008,7 +1010,8 @@
   ],
   <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
-  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>
+  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
@@ -1020,7 +1023,8 @@
 </li>
 <li><code>udp</code>: &#x662F;&#x5426;&#x5F00;&#x542F; UDP &#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#xFF0C;<code>true</code> / <code>false</code>&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code>&#x3002;</li>
 <li><code>ip</code>: &#x5F53;&#x5F00;&#x542F; UDP &#x65F6;&#xFF0C;V2Ray &#x9700;&#x8981;&#x77E5;&#x9053;&#x672C;&#x673A;&#x7684; IP &#x5730;&#x5740;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 127.0.0.1&#x3002;</li>
-<li><code>timeout</code>: &#x4ECE; Socks &#x5BA2;&#x6237;&#x7AEF;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF08;&#x79D2;&#xFF09;&#xFF0C;0 &#x8868;&#x793A;&#x4E0D;&#x9650;&#x65F6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>300</code>&#x3002;</li>
+<li><code>timeout</code> (V2Ray 3.1 &#x540E;&#x7B49;&#x4EF7;&#x4E8E;&#x5BF9;&#x5E94;&#x7528;&#x6237;&#x7B49;&#x7EA7;&#x7684; <code>connIdle</code> &#x7B56;&#x7565;): &#x4ECE; Socks &#x5BA2;&#x6237;&#x7AEF;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF08;&#x79D2;&#xFF09;&#xFF0C;0 &#x8868;&#x793A;&#x4E0D;&#x9650;&#x65F6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>300</code>&#x3002;</li>
+<li><code>userLevel</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x7B49;&#x7EA7;&#x3002;</li>
 </ul>
 
                                 
@@ -1049,7 +1053,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SOCKS","level":"1.3.3.6","depth":3,"next":{"title":"VMess","level":"1.3.3.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.3.3.5","depth":3,"path":"chapter_02/protocols/shadowsocks.md","ref":"chapter_02/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/socks.md","mtime":"2017-12-05T15:18:27.691Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-05T15:19:24.364Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SOCKS","level":"1.3.3.6","depth":3,"next":{"title":"VMess","level":"1.3.3.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.3.3.5","depth":3,"path":"chapter_02/protocols/shadowsocks.md","ref":"chapter_02/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/socks.md","mtime":"2017-12-05T16:37:59.068Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-05T16:39:05.008Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
