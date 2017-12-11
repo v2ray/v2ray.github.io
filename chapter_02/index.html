@@ -777,7 +777,24 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h1>
-<p>&#x672C;&#x7AE0;&#x8282;&#x4ECB;&#x7ECD;&#x4E86;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p>V2Ray &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A; JSON &#x683C;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x719F;&#x6089; JSON &#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x6BB5;&#x3002;</p>
+<p>JSON&#xFF0C;&#x5168;&#x79F0; <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation</a>&#xFF0C;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#x662F; Javascript &#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x3002;&#x4E00;&#x4E2A; JSON &#x6587;&#x4EF6;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x5927;&#x62EC;&#x53F7;&#x201C;{&#x201D;&#x5F00;&#x5934;&#xFF0C;&#x5927;&#x62EC;&#x53F7;&#x201C;}&#x201D;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; JSON &#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF08;Key-Value Pair&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#xFF0C;&#x800C;&#x503C;&#x6709;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#xFF08;String&#xFF09;&#x3001;&#x6570;&#x5B57;&#xFF08;Number&#xFF09;&#x3001;&#x5E03;&#x5C14;&#xFF08;Bool&#xFF09;&#x3001;&#x6570;&#x7EC4;&#xFF08;Array&#xFF09;&#x548C;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A; JSON&#x5BF9;&#x8C61;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;stringValue&quot;</span>: <span class="hljs-string">&quot;This is a string.&quot;</span>,
+  <span class="hljs-string">&quot;numberValue&quot;</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-string">&quot;boolValue&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;arrayValue&quot;</span>: [<span class="hljs-string">&quot;this&quot;</span>, <span class="hljs-string">&quot;is&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;string&quot;</span>, <span class="hljs-string">&quot;array&quot;</span>],
+  <span class="hljs-string">&quot;objectValue&quot;</span>: {
+    <span class="hljs-string">&quot;another&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
+  }
+}
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x901A;&#x5E38;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x540E;&#x9762;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&quot;,&quot;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x540E;&#x9762;&#x7D27;&#x8DDF;&#x4E00;&#x4E2A;&#x5927;&#x62EC;&#x53F7;&quot;&#xFF5D;&quot;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x4E00;&#x5B9A;&#x4E0D;&#x80FD;&#x6709;&#x9017;&#x53F7;&#x3002;</li>
+<li>V2Ray &#x7684; JSON &#x683C;&#x5F0F;&#x652F;&#x6301;&#x6CE8;&#x91CA;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;&#x201C;//&#x201D;&#x6216;&#x8005;&#x201C;/<em> </em>/&#x201D;&#x6765;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#x3002;</li>
+</ol>
 
                                 
                                 </section>
@@ -801,7 +818,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置文件","level":"1.2","depth":1,"next":{"title":"JSON","level":"1.2.1","depth":2,"path":"chapter_02/00_json.md","ref":"chapter_02/00_json.md","articles":[]},"previous":{"title":"白话文教程↪","level":"1.1.9","depth":2,"url":"https://toutyrater.github.io","ref":"https://toutyrater.github.io","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/README.md","mtime":"2017-12-11T14:04:08.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-11T14:05:11.777Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置文件","level":"1.2","depth":1,"next":{"title":"JSON","level":"1.2.1","depth":2,"path":"chapter_02/00_json.md","ref":"chapter_02/00_json.md","articles":[]},"previous":{"title":"白话文教程↪","level":"1.1.9","depth":2,"url":"https://toutyrater.github.io","ref":"https://toutyrater.github.io","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors","feathers-collapsible-menu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"feathers-collapsible-menu":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/README.md","mtime":"2017-12-11T22:56:00.439Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-11T22:57:03.757Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -809,6 +826,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-feathers-collapsible-menu/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
