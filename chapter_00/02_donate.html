@@ -791,6 +791,7 @@
 <h2 id="&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;"><a name="&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;</h2>
 <p>&#x6350;&#x8D60;&#x91D1;&#x989D;&#xFF1A;<input id="damount" type="number" min="1" step="any" value="25">&#x7F8E;&#x5143;</p>
 <p>* &#x7531;&#x4E8E;&#x5E73;&#x53F0;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5C0F;&#x4E8E; 1 &#x7F8E;&#x5143;&#x7684;&#x6350;&#x8D60;&#x53EF;&#x80FD;&#x4F1A;&#x5168;&#x90E8;&#x7528;&#x4E8E;&#x652F;&#x4ED8;&#x624B;&#x7EED;&#x8D39;&#x800C;&#x53D8;&#x5F97;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x7C7B;&#x6350;&#x8D60;&#x4F1A;&#x76F4;&#x63A5;&#x53D1;&#x8D77;&#x9000;&#x6B3E;&#x3002;</p>
+<script src="https://js.stripe.com/v3/"></script>
 <script>
 function getAmount() {
     var e = document.getElementById('damount');
@@ -808,12 +809,36 @@ function doPaypalMe(event) {
   document.location.href='https://www.paypal.me/ProjectV2Ray/' + getAmount();
 }
 
+function doStripe(event) {
+  event.preventDefault();
+  var amt = parseInt(getAmount(), 10);
+  if (!amt) {
+    amt = 25;
+  }
+  amt = amt * 85;
+  var stripe = Stripe('pk_live_gnBpo8a9p6mluv62soVQtjic');
+  var src = stripe.createSource({
+    type: 'alipay',
+    amount: amt,
+    currency: 'eur',
+    redirect: {
+        return_url: 'https://www.v2ray.com/chapter_00/02_donate.html',
+    },
+    }).then(function(result) {
+    // handle result.error or result.source
+    });
+  if (src.redirect.url) {
+    document.location.href=src.redirect.url;
+  }
+}
+
 </script>
 
-<p>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF1A;<input type="button" value="Paypal" onclick="doPaypalMe(event);"> <input type="button" value="&#x4FE1;&#x7528;&#x5361;" onclick="doPaypal(event);"></p>
+<p>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF1A;<input type="button" value="Paypal" onclick="doPaypalMe(event);"> <input type="button" value="&#x4FE1;&#x7528;&#x5361;" onclick="doPaypal(event);"> <input type="button" value="&#x652F;&#x4ED8;&#x5B9D;" onclick="doStripe(event);"></p>
 <form id="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input id="paypalamount" type="hidden" name="amount" value="25">
+<input type="hidden" name="currency_code" value="usd">
 <input type="hidden" name="hosted_button_id" value="4TU3UKYANT2WY">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
@@ -838,9 +863,27 @@ function doPaypalMe(event) {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">2017.11.22</td>
-<td style="text-align:left">&#x3000;&#x3000;b******g@protonmail.com</td>
-<td style="text-align:right">$15</td>
+<td style="text-align:center">2017.12.12</td>
+<td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
+<td style="text-align:right">$123</td>
+<td>&#xA3; 100</td>
+</tr>
+<tr>
+<td style="text-align:center">2017.12.11</td>
+<td style="text-align:left">&#x3000;&#x3000;zh*******zb@outlook.com</td>
+<td style="text-align:right">$8</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2017.12.10</td>
+<td style="text-align:left">&#x3000;&#x3000;o******r@outlook.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2017.12.10</td>
+<td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
+<td style="text-align:right">$10</td>
 <td></td>
 </tr>
 <tr>
@@ -1448,7 +1491,7 @@ function doPaypalMe(event) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"捐助支持","level":"1.1.5","depth":2,"next":{"title":"贡献你的 CPU","level":"1.1.5.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]},"previous":{"title":"命令行参数","level":"1.1.4","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/02_donate.md","mtime":"2017-12-12T13:26:21.191Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-12T13:27:17.531Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"捐助支持","level":"1.1.5","depth":2,"next":{"title":"贡献你的 CPU","level":"1.1.5.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]},"previous":{"title":"命令行参数","level":"1.1.4","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/02_donate.md","mtime":"2017-12-12T13:54:31.158Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-12T13:55:35.360Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
