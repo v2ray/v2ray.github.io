@@ -374,13 +374,34 @@
 <li>All donations are listed below with sensitive information masked out. If you wish to be listed in other ways, please mention it when making the donation.</li>
 <li>Thank you for loving Project V.</li>
 </ul>
-<h2 id="credit-card-and-paypal"><a name="credit-card-and-paypal" class="plugin-anchor" href="#credit-card-and-paypal"><i class="fa fa-link" aria-hidden="true"></i></a>Credit Card and Paypal</h2>
-<p>Use this link: <a href="https://www.paypal.me/ProjectV2Ray/25" target="_blank">Paypal.me/ProjectV2Ray</a> Or the button below:</p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<h2 id="the-usual-way"><a name="the-usual-way" class="plugin-anchor" href="#the-usual-way"><i class="fa fa-link" aria-hidden="true"></i></a>The Usual Way</h2>
+<p>Amount: <input id="damount" type="number" min="1" step="any" value="25">USD</p>
+<p>* Donations that less than 1 USD may be refunded due to high service fees.</p>
+<script>
+function getAmount() {
+    var e = document.getElementById('damount');
+    return e.value;
+}
+
+function doPaypal(event) {
+  event.preventDefault();
+  document.getElementById('paypalamount').value = getAmount();
+  document.getElementById('paypalform').submit();
+}
+
+function doPaypalMe(event) {
+  event.preventDefault();
+  document.location.href='https://www.paypal.me/ProjectV2Ray/' + getAmount();
+}
+
+</script>
+
+<p>Donate via: <input type="button" value="Paypal" onclick="doPaypalMe(event);"> <input type="button" value="Credit Card" onclick="doPaypal(event);"></p>
+<form id="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
+<input id="paypalamount" type="hidden" name="amount" value="25">
+<input type="hidden" name="currency_code" value="usd">
 <input type="hidden" name="hosted_button_id" value="4TU3UKYANT2WY">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
 <h2 id="cryptocurrency"><a name="cryptocurrency" class="plugin-anchor" href="#cryptocurrency"><i class="fa fa-link" aria-hidden="true"></i></a>Cryptocurrency</h2>
@@ -1030,7 +1051,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.2","depth":2,"next":{"title":"Support","level":"1.1.3","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.3.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.3.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2017-12-12T15:51:05.558Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-12T15:52:16.255Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.2","depth":2,"next":{"title":"Support","level":"1.1.3","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.3.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.3.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2017-12-12T20:25:48.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-12T20:27:09.983Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
