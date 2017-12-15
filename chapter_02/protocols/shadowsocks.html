@@ -784,19 +784,19 @@
 <p>&#x4E0E;&#x5B98;&#x65B9;&#x7248;&#x672C;&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF1A;</p>
 <ul>
 <li>&#x652F;&#x6301; TCP &#x548C; UDP &#x6570;&#x636E;&#x5305;&#x8F6C;&#x53D1;&#xFF0C;&#x5176;&#x4E2D; UDP &#x53EF;&#x9009;&#x62E9;&#x6027;&#x5173;&#x95ED;&#xFF1B;</li>
-<li>&#x652F;&#x6301; <a href="https://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>&#xFF1B;<ul>
+<li>&#x652F;&#x6301; <a href="https://web.archive.org/web/20161221022225/http://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>&#xFF1B;<ul>
 <li>&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x9009;&#x5F00;&#x542F;&#x6216;&#x5173;&#x95ED;&#xFF1B;</li>
 <li>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53EF;&#x5F3A;&#x5236;&#x5F00;&#x542F;&#x3001;&#x5173;&#x95ED;&#x6216;&#x81EA;&#x9002;&#x5E94;&#xFF1B;</li>
 </ul>
 </li>
-<li>&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF08;&#x5176;&#x4E2D; AEAD &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x5728; V2Ray 3.0 &#x4E2D;&#x52A0;&#x5165;&#xFF09;&#xFF1A;<ul>
+<li>&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF08;&#x5176;&#x4E2D; <a href="https://shadowsocks.org/en/spec/AEAD-Ciphers.html" target="_blank">AEAD</a> &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x5728; V2Ray 3.0 &#x4E2D;&#x52A0;&#x5165;&#xFF09;&#xFF1A;<ul>
 <li>aes-256-cfb</li>
 <li>aes-128-cfb</li>
 <li>chacha20</li>
 <li>chacha20-ietf</li>
 <li>aes-256-gcm</li>
 <li>aes-128-gcm</li>
-<li>chacha20-poly1305</li>
+<li>chacha20-poly1305 &#x6216; chacha20-ietf-poly1305</li>
 </ul>
 </li>
 <li>&#x63D2;&#x4EF6;&#xFF1A;<ul>
@@ -834,7 +834,7 @@
 </li>
 <li><code>password</code>: &#x5BC6;&#x7801;&#xFF0C;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x3002;Shadowsocks &#x534F;&#x8BAE;&#x4E0D;&#x9650;&#x5236;&#x5BC6;&#x7801;&#x957F;&#x5EA6;&#xFF0C;&#x4F46;&#x77ED;&#x5BC6;&#x7801;&#x4F1A;&#x66F4;&#x53EF;&#x80FD;&#x88AB;&#x7834;&#x89E3;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; 16 &#x5B57;&#x7B26;&#x6216;&#x66F4;&#x957F;&#x7684;&#x5BC6;&#x7801;&#x3002;</li>
 <li><code>udp</code>: <code>true</code> / <code>false</code>&#xFF0C;&#x662F;&#x5426;&#x5F00;&#x542F; UDP &#x8F6C;&#x53D1;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code>&#x3002;</li>
-<li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>0</code>&#x3002;&#x5982;&#x679C;&#x662F;&#x81EA;&#x7528;&#x7684; VPS&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x6210; <code>1</code>&#x3002;&#x8BE6;&#x89C1;<a href="policy.md">&#x672C;&#x5730;&#x7B56;&#x7565;</a>&#x3002;</li>
+<li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>0</code>&#x3002;&#x5982;&#x679C;&#x662F;&#x81EA;&#x7528;&#x7684; VPS&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x6210; <code>1</code>&#x3002;&#x8BE6;&#x89C1;<a href="../policy.html">&#x672C;&#x5730;&#x7B56;&#x7565;</a>&#x3002;</li>
 <li><code>ota</code>: <code>true</code> / <code>false</code>&#xFF0C;&#x662F;&#x5426;&#x5F3A;&#x5236; OTA&#xFF0C;&#x9ED8;&#x8BA4;&#x6A21;&#x5F0F;&#x4E3A;&#x81EA;&#x52A8;&#xFF0C;&#x5F53;&#x6307;&#x5B9A;&#x4E86; <code>true</code> / <code>false</code> &#x65F6;&#xFF0C;&#x5219;&#x4E3A;&#x5F3A;&#x5236;&#x4E0D;&#x542F;&#x7528;&#x6216;&#x542F;&#x7528;&#x3002;<ul>
 <li>&#x5F53;&#x4F7F;&#x7528; AEAD &#x65F6;&#xFF0C;<code>ota</code> &#x8BBE;&#x7F6E;&#x65E0;&#x6548;</li>
 </ul>
