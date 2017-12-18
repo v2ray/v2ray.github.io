@@ -30,7 +30,7 @@
             <h1>
               <span class="cf-error-type" data-translate="error">Error</span>
               <span class="cf-error-code">522</span>
-              <small class="heading-ray-id">Ray ID: 3cf1d126d9c5555e &bull; 2017-12-18 11:35:23 UTC</small>
+              <small class="heading-ray-id">Ray ID: 3cf4fa1bb974256d &bull; 2017-12-18 20:47:39 UTC</small>
             </h1>
             <h2 class="cf-subheadline" data-translate="error_desc">Connection timed out</h2>
         </div><!-- /.error-overview -->
@@ -93,9 +93,9 @@
 
         <div class="cf-error-footer cf-wrapper">
   <p>
-    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3cf1d126d9c5555e</strong></span>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>3cf4fa1bb974256d</strong></span>
     <span class="cf-footer-separator">&bull;</span>
-    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.225.183.135</span>
+    <span class="cf-footer-item"><span data-translate="your_ip">Your IP</span>: 35.192.239.150</span>
     <span class="cf-footer-separator">&bull;</span>
     <span class="cf-footer-item"><span data-translate="performance_security_by">Performance &amp; security by</span> <a data-orig-proto="https" data-orig-ref="www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
     
