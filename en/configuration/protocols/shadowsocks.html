@@ -603,19 +603,19 @@
 <p>Compatibility with official version:</p>
 <ul>
 <li>Supports both TCP and UDP connections, where UDP can be optional turned off.</li>
-<li>Supports <a href="https://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>&#xFF1B;<ul>
+<li>Supports <a href="https://web.archive.org/web/20161221022225/https://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>&#xFF1B;<ul>
 <li>Client may choose to turn on or off.</li>
 <li>Server may choose to enable, disable or auto.</li>
 </ul>
 </li>
-<li>Encryption methods:<ul>
+<li>Encryption methods (<a href="https://shadowsocks.org/en/spec/AEAD-Ciphers.html" target="_blank">AEAD</a> ciphers added in V2Ray 3.0):<ul>
 <li>aes-256-cfb</li>
 <li>aes-128-cfb</li>
 <li>chacha20</li>
 <li>chacha20-ietf</li>
 <li>aes-256-gcm</li>
 <li>aes-128-gcm</li>
-<li>chacha20-poly1305</li>
+<li>chacha20-poly1305 a.k.a. chacha20-ietf-poly1305</li>
 </ul>
 </li>
 <li>Plugins&#xFF1A;<ul>
@@ -653,7 +653,7 @@
 </li>
 <li><code>password</code>: Password. Can be any string.</li>
 <li><code>udp</code>: <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
-<li><code>level</code>: User level. Default to <code>0</code>. See <a href="policy.md">Policy</a>.</li>
+<li><code>level</code>: User level. Default to <code>0</code>. See <a href="../policy.html">Policy</a>.</li>
 <li><code>ota</code>: <code>true</code> or <code>false</code>, whether or not to enable OTA. Default to auto mode.<ul>
 <li>When AEAD is used, <code>ota</code> has no effect.</li>
 </ul>
@@ -723,7 +723,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2017-12-28T22:58:39.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-28T22:59:55.431Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-01-03T21:57:31.640Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-03T21:58:38.877Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
