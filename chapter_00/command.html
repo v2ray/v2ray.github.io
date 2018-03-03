@@ -14,8 +14,11 @@
                 var host = window.location.hostname;
                 return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
             }
-            if (inIframe() || !isValidDomain()) {
-                window.location.href = "https://www.v2ray.com/";
+            if (inIframe()) {
+                window.top.location.href = 'https://www.v2ray.com/';
+            }
+            if (!isValidDomain()) {
+                window.location.href = 'https://www.v2ray.com/';
             }
         </script>
         
@@ -875,7 +878,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-03-03T20:10:52.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-03T20:11:45.806Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-03-03T20:18:18.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-03T20:19:16.583Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
