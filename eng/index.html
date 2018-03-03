@@ -7,19 +7,16 @@
         <title>Introduction · Project V 开发人员参考</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-            function inIframe () {
-                try { return window.self !== window.top; } catch (e) { return true; }
-            }
-            function isValidDomain() {
-                var host = window.location.hostname;
-                return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
-            }
-            if (inIframe()) {
-                window.top.location.href = 'https://www.v2ray.com/';
-            }
-            if (!isValidDomain()) {
-                window.location.href = 'https://www.v2ray.com/';
-            }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -318,7 +315,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"代码入门","level":"1.2","depth":1,"path":"intro/README.md","ref":"intro/README.md","articles":[{"title":"加入组织","level":"1.2.1","depth":2,"path":"intro/org.md","ref":"intro/org.md","articles":[]},{"title":"开发计划","level":"1.2.2","depth":2,"path":"intro/roadmap.md","ref":"intro/roadmap.md","articles":[]},{"title":"开发指引","level":"1.2.3","depth":2,"path":"intro/guide.md","ref":"intro/guide.md","articles":[]},{"title":"核心设计","level":"1.2.4","depth":2,"path":"intro/design.md","ref":"intro/design.md","articles":[]},{"title":"编译源文件","level":"1.2.5","depth":2,"path":"intro/compile.md","ref":"intro/compile.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 开发人员参考","language":"zh","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-03-03T20:18:18.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-03T20:19:48.426Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"代码入门","level":"1.2","depth":1,"path":"intro/README.md","ref":"intro/README.md","articles":[{"title":"加入组织","level":"1.2.1","depth":2,"path":"intro/org.md","ref":"intro/org.md","articles":[]},{"title":"开发计划","level":"1.2.2","depth":2,"path":"intro/roadmap.md","ref":"intro/roadmap.md","articles":[]},{"title":"开发指引","level":"1.2.3","depth":2,"path":"intro/guide.md","ref":"intro/guide.md","articles":[]},{"title":"核心设计","level":"1.2.4","depth":2,"path":"intro/design.md","ref":"intro/design.md","articles":[]},{"title":"编译源文件","level":"1.2.5","depth":2,"path":"intro/compile.md","ref":"intro/compile.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 开发人员参考","language":"zh","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-03-03T20:22:02.495Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-03T20:23:41.957Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
