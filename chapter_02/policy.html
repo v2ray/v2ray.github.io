@@ -512,7 +512,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="05_transport.html">
+        <li class="chapter " data-level="1.2.8" data-path="../chpater_02/stats.html">
+            
+                <a href="../chpater_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="05_transport.html">
             
                 <a href="05_transport.html">
             
@@ -526,7 +539,7 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.8.1" data-path="transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
             
                 <a href="transport/tcp.html">
             
@@ -539,7 +552,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.2" data-path="transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
             
                 <a href="transport/mkcp.html">
             
@@ -552,7 +565,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.3" data-path="transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
             
                 <a href="transport/websocket.html">
             
@@ -570,7 +583,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="env.html">
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
             
                 <a href="env.html">
             
@@ -821,7 +834,9 @@ if (inIframe() || !isValidDomain()) {
             <span class="hljs-string">&quot;handshake&quot;</span>: <span class="hljs-number">4</span>,
             <span class="hljs-string">&quot;connIdle&quot;</span>: <span class="hljs-number">300</span>,
             <span class="hljs-string">&quot;uplinkOnly&quot;</span>: <span class="hljs-number">5</span>,
-            <span class="hljs-string">&quot;downlinkOnly&quot;</span>: <span class="hljs-number">30</span>
+            <span class="hljs-string">&quot;downlinkOnly&quot;</span>: <span class="hljs-number">30</span>,
+            <span class="hljs-string">&quot;statsUserUplink&quot;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&quot;statsUserDownlink&quot;</span>: <span class="hljs-literal">false</span>
         }
     }
 }
@@ -833,6 +848,8 @@ if (inIframe() || !isValidDomain()) {
 <li><code>connIdle</code>: &#x8FDE;&#x63A5;&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x3002;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;</li>
 <li><code>uplinkOnly</code>: &#x5F53;&#x8FDE;&#x63A5;&#x4E0B;&#x884C;&#x7EBF;&#x8DEF;&#x5173;&#x95ED;&#x540E;&#x7684;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x3002;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;</li>
 <li><code>downlinkOnly</code>: &#x5F53;&#x8FDE;&#x63A5;&#x4E0A;&#x884C;&#x7EBF;&#x8DEF;&#x5173;&#x95ED;&#x540E;&#x7684;&#x65F6;&#x95F4;&#x9650;&#x5236;&#x3002;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;</li>
+<li><code>statsUserUplink</code>: &#x5F53;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5F00;&#x542F;&#x5F53;&#x524D;&#x7B49;&#x7EA7;&#x7684;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;&#x4E0A;&#x884C;&#x6D41;&#x91CF;&#x7EDF;&#x8BA1;&#x3002;</li>
+<li><code>statsUserDownlink</code>: &#x5F53;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5F00;&#x542F;&#x5F53;&#x524D;&#x7B49;&#x7EA7;&#x7684;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;&#x4E0B;&#x884C;&#x6D41;&#x91CF;&#x7EDF;&#x8BA1;&#x3002;</li>
 </ul>
 </li>
 </ul>
@@ -871,7 +888,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"本地策略","level":"1.2.3","depth":2,"next":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/policy.md","mtime":"2018-03-22T09:55:32.918Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-22T09:56:35.808Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"本地策略","level":"1.2.3","depth":2,"next":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/policy.md","mtime":"2018-03-31T19:09:22.372Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-31T19:10:13.659Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
