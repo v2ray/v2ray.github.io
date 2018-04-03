@@ -681,7 +681,8 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>,
   <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
@@ -698,12 +699,13 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 </li>
 <li><code>password</code>: Password. Can be any string.</li>
-<li><code>udp</code>: <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
+<li><code>udp</code> (Deprecated, use <code>network</code>): <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
 <li><code>level</code>: User level. Default to <code>0</code>. See <a href="../policy.html">Policy</a>.</li>
 <li><code>ota</code>: <code>true</code> or <code>false</code>, whether or not to enable OTA. Default to auto mode.<ul>
 <li>When AEAD is used, <code>ota</code> has no effect.</li>
 </ul>
 </li>
+<li><code>network</code> (V2Ray 3.16+): Type of network, either <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. Default to <code>&quot;tcp&quot;</code>.</li>
 </ul>
 <h2 id="outbound-proxy-configuration"><a name="outbound-proxy-configuration" class="plugin-anchor" href="#outbound-proxy-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound proxy configuration</h2>
 <pre><code class="lang-javascript">{
@@ -769,7 +771,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-03-31T19:23:07.632Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-31T19:24:22.445Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-04-03T16:03:13.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-03T16:04:21.207Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
