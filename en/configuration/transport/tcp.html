@@ -643,27 +643,28 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>TCP &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
-<p>&#x914D;&#x7F6E;&#xFF1A;</p>
+                                <h1 id="tcp-transport"><a name="tcp-transport" class="plugin-anchor" href="#tcp-transport"><i class="fa fa-link" aria-hidden="true"></i></a>TCP Transport</h1>
+<p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/transport/tcp.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
+<p>Configuration:</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;header&quot;</span>: {
     <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
   }
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>header</code>: &#x6570;&#x636E;&#x5305;&#x5934;&#x90E8;&#x4F2A;&#x88C5;&#x8BBE;&#x7F6E;&#xFF1A;<ul>
-<li><code>type</code>: &#x4F2A;&#x88C5;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&#xFF1A;<ul>
-<li><code>&quot;none&quot;</code>: &#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x4F2A;&#x88C5;&#xFF1B;</li>
-<li><code>&quot;http&quot;</code>: &#x4F2A;&#x88C5;&#x6210; HTTP &#x6570;&#x636E;&#x6D41;&#xFF0C;&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x89C1;&#x4E0B;&#x3002;</li>
+<li><code>header</code>: Header obfuscation settings:<ul>
+<li><code>type</code>: Type of obfuscation. Choices are:<ul>
+<li><code>&quot;none&quot;</code>: Default. No obfuscation at all.</li>
+<li><code>&quot;http&quot;</code>: HTTP obfuscation. See below.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><a name="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;</h2>
-<p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</p>
+<h2 id="http-obfuscation"><a name="http-obfuscation" class="plugin-anchor" href="#http-obfuscation"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP obfuscation</h2>
+<p>HTTP obfuscation must be configured (and matching) for the inbound and outbound of the connecting peers.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
   <span class="hljs-string">&quot;request&quot;</span>: {
@@ -696,19 +697,19 @@ if (inIframe() || !isValidDomain()) {
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li><code>type</code>: &#x548C; <code>tcpSettings</code> &#x4E2D;&#x7684; <code>type</code> &#x662F;&#x540C;&#x4E00;&#x9879;&#x3002;</li>
-<li><code>request</code>: HTTP &#x8BF7;&#x6C42;<ul>
-<li><code>version</code>: HTTP &#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;1.1&quot;</code>&#x3002;</li>
-<li><code>method</code>: HTTP &#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;GET&quot;</code>&#x3002;</li>
-<li><code>path</code>: &#x8DEF;&#x5F84;&#xFF0C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;/&quot;</code>&#x3002;&#x5F53;&#x6709;&#x591A;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
-<li><code>headers</code>: HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x4F1A;&#x9644;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x89C1;&#x6837;&#x4F8B;&#x3002;</li>
+<li><code>type</code>: same <code>type</code> entry as in <code>tcpSettings</code>.</li>
+<li><code>request</code>: HTTP request settings:<ul>
+<li><code>version</code>: HTTP version, default value <code>&quot;1.1&quot;</code></li>
+<li><code>method</code>: HTTP method, default value <code>&quot;GET&quot;</code>&#x3002;</li>
+<li><code>path</code>: Path. A string array. Default value is <code>[&quot;/&quot;]</code>. When there are multiple values, value is picked up randomly for each request.</li>
+<li><code>headers</code>: HTTP headers. It is a key value pair. Each key is key of the HTTP header, and value is the value of the HTTP header. When multiple values are set, the effetive value is picked up randomly for each request. Default settings is same as the example above.</li>
 </ul>
 </li>
-<li><code>response</code>: HTTP &#x54CD;&#x5E94;<ul>
-<li><code>version</code>: HTTP &#x7248;&#x672C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;1.1&quot;</code>&#x3002;</li>
-<li><code>status</code>: HTTP &#x72B6;&#x6001;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;200&quot;</code>&#x3002;</li>
-<li><code>reason</code>: HTTP &#x72B6;&#x6001;&#x8BF4;&#x660E;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;OK&quot;</code>&#x3002;</li>
-<li><code>headers</code>: HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x4F1A;&#x9644;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x952E;&#xFF0C;&#x5E76;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x89C1;&#x6837;&#x4F8B;&#x3002;</li>
+<li><code>response</code>: HTTP response.<ul>
+<li><code>version</code>: HTTP version. Default value is <code>&quot;1.1&quot;</code>.</li>
+<li><code>status</code>: HTTP status. Default value is <code>&quot;200&quot;</code>.</li>
+<li><code>reason</code>: HTTP status text. Default value is <code>&quot;OK&quot;</code>.</li>
+<li><code>headers</code>: HTTP header. Same as request headers, but for response.</li>
 </ul>
 </li>
 </ul>
@@ -739,7 +740,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-04-10T15:36:35.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T15:37:53.634Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-04-10T19:31:47.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-10T19:32:55.576Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
