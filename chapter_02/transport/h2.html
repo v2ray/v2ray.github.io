@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SOCKS · Project V 官方网站</title>
+        <title>HTTP/2 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
 function inIframe () {
@@ -69,10 +69,10 @@ if (inIframe() || !isValidDomain()) {
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="vmess.html" />
+    <link rel="next" href="../env.html" />
     
     
-    <link rel="prev" href="shadowsocks.html" />
+    <link rel="prev" href="websocket.html" />
     
 
     </head>
@@ -351,9 +351,9 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="blackhole.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../protocols/blackhole.html">
             
-                <a href="blackhole.html">
+                <a href="../protocols/blackhole.html">
             
                     
                     Blackhole
@@ -364,9 +364,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="dokodemo.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="../protocols/dokodemo.html">
             
-                <a href="dokodemo.html">
+                <a href="../protocols/dokodemo.html">
             
                     
                     Dokodemo
@@ -377,9 +377,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="freedom.html">
+        <li class="chapter " data-level="1.2.2.3" data-path="../protocols/freedom.html">
             
-                <a href="freedom.html">
+                <a href="../protocols/freedom.html">
             
                     
                     Freedom
@@ -390,9 +390,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../protocols/http.html">
             
-                <a href="http.html">
+                <a href="../protocols/http.html">
             
                     
                     HTTP
@@ -403,9 +403,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.5" data-path="../protocols/shadowsocks.html">
             
-                <a href="shadowsocks.html">
+                <a href="../protocols/shadowsocks.html">
             
                     
                     Shadowsocks
@@ -416,9 +416,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2.6" data-path="socks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../protocols/socks.html">
             
-                <a href="socks.html">
+                <a href="../protocols/socks.html">
             
                     
                     SOCKS
@@ -429,9 +429,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="vmess.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../protocols/vmess.html">
             
-                <a href="vmess.html">
+                <a href="../protocols/vmess.html">
             
                     
                     VMess
@@ -539,9 +539,9 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.9.1" data-path="../transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="tcp.html">
             
-                <a href="../transport/tcp.html">
+                <a href="tcp.html">
             
                     
                     TCP
@@ -552,9 +552,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.2" data-path="../transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
             
-                <a href="../transport/mkcp.html">
+                <a href="mkcp.html">
             
                     
                     mKCP
@@ -565,9 +565,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.3" data-path="../transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="websocket.html">
             
-                <a href="../transport/websocket.html">
+                <a href="websocket.html">
             
                     
                     WebSocket
@@ -578,9 +578,9 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.4" data-path="../transport/h2.html">
+        <li class="chapter active" data-level="1.2.9.4" data-path="h2.html">
             
-                <a href="../transport/h2.html">
+                <a href="h2.html">
             
                     
                     HTTP/2
@@ -825,7 +825,7 @@ if (inIframe() || !isValidDomain()) {
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >SOCKS</a>
+        <a href="../.." >HTTP/2</a>
     </h1>
 </div>
 
@@ -837,73 +837,24 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="socks"><a name="socks" class="plugin-anchor" href="#socks"><i class="fa fa-link" aria-hidden="true"></i></a>Socks</h1>
-<p><img src="../../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/configuration/protocols/socks.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a></p>
-<p>&#x6807;&#x51C6; Socks &#x534F;&#x8BAE;&#x5B9E;&#x73B0;&#xFF0C;&#x517C;&#x5BB9; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 4</a>&#x3001;Socks 4a &#x548C; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">Socks 5</a>&#x3002;</p>
-<ul>
-<li>&#x540D;&#x79F0;&#xFF1A;socks</li>
-<li>&#x7C7B;&#x578B;&#xFF1A;Inbound / Outbound</li>
-</ul>
-<h2 id="outbound"><a name="outbound" class="plugin-anchor" href="#outbound"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
+                                <h1 id="http2-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="http2-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#http2-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP/2 &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
+<p><img src="../../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/configuration/protocols/h2.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a></p>
+<p>V2Ray 3.17 &#x4E2D;&#x52A0;&#x5165;&#x4E86;&#x57FA;&#x4E8E; HTTP/2 &#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x3002;&#x5B83;&#x5B8C;&#x6574;&#x6309;&#x7167; HTTP/2 &#x6807;&#x51C6;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x5B83;&#x7684; HTTP &#x670D;&#x52A1;&#x5668;&#xFF08;&#x5982; Nginx&#xFF09;&#x8FDB;&#x884C;&#x4E2D;&#x8F6C;&#x3002;</p>
+<p>&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;servers&quot;</span>: [{
-    <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
-    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1234</span>,
-    <span class="hljs-string">&quot;users&quot;</span>: [
-      {
-        <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;test user&quot;</span>,
-        <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>,
-        <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
-      }
-    ]
-  }]
+  <span class="hljs-string">&quot;host&quot;</span>: [<span class="hljs-string">&quot;v2ray.com&quot;</span>],
+  <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;/random/path&quot;</span>
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li><code>servers</code>: Socks &#x670D;&#x52A1;&#x5668;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4E3A;&#xFF1A;<ul>
-<li><code>address</code>: &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</li>
-<li><code>port</code>: &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;</li>
-<li><code>users</code>: &#x7528;&#x6237;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4E3A;&#xFF1A;<ul>
-<li><code>user</code>: &#x7528;&#x6237;&#x540D;</li>
-<li><code>pass</code>: &#x5BC6;&#x7801;</li>
-<li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;</li>
+<li><code>host</code>: &#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x968F;&#x673A;&#x4ECE;&#x5217;&#x8868;&#x4E2D;&#x9009;&#x51FA;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;&#x662F;&#x5426;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x3002;</li>
+<li><code>path</code>: HTTP &#x8DEF;&#x5F84;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
-<li>&#x5F53;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x4E86;&#x7528;&#x6237;&#x65F6;&#xFF0C;Socks &#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x4F7F;&#x7528;&#x6B64;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#xFF1B;&#x5982;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4E0D;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x3002;</li>
-<li>&#x4EC5;&#x652F;&#x6301;&#x8FDE;&#x63A5;&#x5230; Socks 5 &#x670D;&#x52A1;&#x5668;&#x3002;</li>
-</ul>
-<h2 id="inbound"><a name="inbound" class="plugin-anchor" href="#inbound"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,
-  <span class="hljs-string">&quot;accounts&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;my-username&quot;</span>,
-      <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;my-password&quot;</span>
-    }
-  ],
-  <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
-  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
-}
-</code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
-<ul>
-<li><code>auth</code>: Socks &#x534F;&#x8BAE;&#x7684;&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#xFF0C;&#x652F;&#x6301;<code>&quot;noauth&quot;</code>&#x533F;&#x540D;&#x65B9;&#x5F0F;&#x548C;<code>&quot;password&quot;</code>&#x7528;&#x6237;&#x5BC6;&#x7801;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;noauth&quot;</code>&#x3002;</li>
-<li><code>accounts</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5E10;&#x53F7;&#xFF0C;&#x7528;&#x6237;&#x540D;&#x7531;<code>user</code>&#x6307;&#x5B9A;&#xFF0C;&#x5BC6;&#x7801;&#x7531;<code>pass</code>&#x6307;&#x5B9A;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x7A7A;&#x3002;<ul>
-<li>&#x5F53; <code>auth</code> &#x4E3A; <code>password</code> &#x65F6;&#x6709;&#x6548;&#x3002;</li>
-</ul>
-</li>
-<li><code>udp</code>: &#x662F;&#x5426;&#x5F00;&#x542F; UDP &#x534F;&#x8BAE;&#x7684;&#x652F;&#x6301;&#xFF0C;<code>true</code> / <code>false</code>&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code>&#x3002;</li>
-<li><code>ip</code>: &#x5F53;&#x5F00;&#x542F; UDP &#x65F6;&#xFF0C;V2Ray &#x9700;&#x8981;&#x77E5;&#x9053;&#x672C;&#x673A;&#x7684; IP &#x5730;&#x5740;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 127.0.0.1&#x3002;</li>
-<li><code>timeout</code> (V2Ray 3.1 &#x540E;&#x7B49;&#x4EF7;&#x4E8E;&#x5BF9;&#x5E94;&#x7528;&#x6237;&#x7B49;&#x7EA7;&#x7684; <code>connIdle</code> &#x7B56;&#x7565;): &#x4ECE; Socks &#x5BA2;&#x6237;&#x7AEF;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF08;&#x79D2;&#xFF09;&#xFF0C;0 &#x8868;&#x793A;&#x4E0D;&#x9650;&#x65F6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>300</code>&#x3002;</li>
-<li><code>userLevel</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x7B49;&#x7EA7;&#x3002;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x5F00;&#x542F; TLS &#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x6B64;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x76EE;&#x524D;&#x5C1A;&#x5728;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x5404;&#x79CD;&#x95EE;&#x9898;&#xFF0C;&#x4E5F;&#x4E0D;&#x6392;&#x9664;&#x4E4B;&#x540E;&#x4F1A;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x3002;</li>
 </ul>
 
                                 
@@ -916,12 +867,12 @@ if (inIframe() || !isValidDomain()) {
 
             
                 
-                <a href="shadowsocks.html" class="navigation navigation-prev " aria-label="Previous page: Shadowsocks">
+                <a href="websocket.html" class="navigation navigation-prev " aria-label="Previous page: WebSocket">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="vmess.html" class="navigation navigation-next " aria-label="Next page: VMess">
+                <a href="../env.html" class="navigation navigation-next " aria-label="Next page: 环境变量">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -932,7 +883,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SOCKS","level":"1.2.2.6","depth":3,"next":{"title":"VMess","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/vmess.md","ref":"chapter_02/protocols/vmess.md","articles":[]},"previous":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"chapter_02/protocols/shadowsocks.md","ref":"chapter_02/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/socks.md","mtime":"2018-04-11T08:54:50.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T08:55:55.014Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"HTTP/2","level":"1.2.9.4","depth":3,"next":{"title":"环境变量","level":"1.2.10","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"previous":{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/h2.md","mtime":"2018-04-11T08:54:50.070Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T08:55:55.014Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
