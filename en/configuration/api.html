@@ -671,9 +671,9 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="api"><a name="api" class="plugin-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>API</h1>
 <p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/api.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
-<p>V2Ray &#x4E2D;&#x53EF;&#x4EE5;&#x5F00;&#x653E;&#x4E00;&#x4E9B; API &#x4EE5;&#x4FBF;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x3002;&#x8FD9;&#x4E9B; API &#x90FD;&#x57FA;&#x4E8E; <a href="https://grpc.io/" target="_blank">gRPC</a>&#x3002;</p>
-<p>&#x5F53;&#x8FDC;&#x7A0B;&#x63A7;&#x5236;&#x5F00;&#x542F;&#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x5EFA;&#x4E00;&#x4E2A;&#x4F20;&#x51FA;&#x4EE3;&#x7406;&#xFF0C;&#x4EE5;<code>tag</code>&#x914D;&#x7F6E;&#x7684;&#x503C;&#x4E3A;&#x6807;&#x8BC6;&#x3002;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x624B;&#x52A8;&#x5C06;&#x6240;&#x6709;&#x7684; gRPC &#x4F20;&#x5165;&#x8FDE;&#x63A5;&#x901A;&#x8FC7;<a href="03_routing.md">&#x8DEF;&#x7531;</a>&#x6307;&#x5411;&#x8FD9;&#x4E00;&#x4F20;&#x51FA;&#x4EE3;&#x7406;&#x3002;</p>
-<p>&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>V2Ray provides some API for remote access. These APIs are based on <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
+<p>When API is enabled, V2Ray creates an outbound proxy automatically, tagged as <code>tag</code>. User must <a href="routing.html">route</a> all gRPC connections to this outbound.</p>
+<p>Configuration:</p>
 <pre><code class="lang-javascript">{
     <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;api&quot;</span>,
     <span class="hljs-string">&quot;services&quot;</span>: [
@@ -683,26 +683,24 @@ if (inIframe() || !isValidDomain()) {
     ]
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>tag</code>: &#x4F20;&#x51FA;&#x4EE3;&#x7406;&#x6807;&#x8BC6;&#x3002;</li>
-<li><code>services</code>: &#x5F00;&#x542F;&#x7684; API &#x5217;&#x8868;&#x3002;</li>
+<li><code>tag</code>: The tag of the outbound proxy.</li>
+<li><code>services</code>: List of enabled APIs.</li>
 </ul>
 <h2 id="supported-api-list"><a name="supported-api-list" class="plugin-anchor" href="#supported-api-list"><i class="fa fa-link" aria-hidden="true"></i></a>Supported API list</h2>
 <h3 id="handlerservice"><a name="handlerservice" class="plugin-anchor" href="#handlerservice"><i class="fa fa-link" aria-hidden="true"></i></a>HandlerService</h3>
-<p>&#x4E00;&#x4E9B;&#x5BF9;&#x4E8E;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x4EE3;&#x7406;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x7684; API&#xFF0C;&#x53EF;&#x7528;&#x7684;&#x529F;&#x80FD;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>API for manipulating inbound and outbound proxies. The following functionalities are provided:</p>
 <ul>
-<li>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F20;&#x5165;&#x4EE3;&#x7406;&#xFF1B;</li>
-<li>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F20;&#x51FA;&#x4EE3;&#x7406;&#xFF1B;</li>
-<li>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x7684;&#x4F20;&#x5165;&#x4EE3;&#x7406;&#xFF1B;</li>
-<li>&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x73B0;&#x6709;&#x7684;&#x4F20;&#x51FA;&#x4EE3;&#x7406;&#xFF1B;</li>
-<li>&#x5728;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x4EE3;&#x7406;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF08;&#x4EC5;&#x652F;&#x6301; VMess&#xFF09;&#xFF1B;</li>
-<li>&#x5728;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x4EE3;&#x7406;&#x4E2D;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF08;&#x4EC5;&#x652F;&#x6301; VMess&#xFF09;&#xFF1B;</li>
+<li>Add a new inbound/outbound proxy.</li>
+<li>Remove an existing inbound/outbound proxy.</li>
+<li>Add a new user to an inbound proxy (VMess only).</li>
+<li>Remove an existing user from an inbound proxy (VMess only).</li>
 </ul>
 <h3 id="loggerservice"><a name="loggerservice" class="plugin-anchor" href="#loggerservice"><i class="fa fa-link" aria-hidden="true"></i></a>LoggerService</h3>
 <p>To restart internal logger. Can work with logrotate for operating log files.</p>
 <h3 id="statsservice"><a name="statsservice" class="plugin-anchor" href="#statsservice"><i class="fa fa-link" aria-hidden="true"></i></a>StatsService</h3>
-<p>Internal <a href="stats.html">Statistics</a>.</p>
+<p>Support for internal <a href="stats.html">Statistics</a>.</p>
 
                                 
                                 </section>
@@ -730,7 +728,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"statistics","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-04-11T22:30:33.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-11T22:31:44.738Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"statistics","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-04-12T09:46:50.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-12T09:48:14.048Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
