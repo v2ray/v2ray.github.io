@@ -671,49 +671,41 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="routing"><a name="routing" class="plugin-anchor" href="#routing"><i class="fa fa-link" aria-hidden="true"></i></a>Routing</h1>
 <p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/03_routing.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
-<p>V2Ray &#x5185;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x4F20;&#x5165;&#x6570;&#x636E;&#x6309;&#x9700;&#x6C42;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x53D1;&#x51FA;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x6309;&#x9700;&#x4EE3;&#x7406;&#x7684;&#x76EE;&#x7684;&#x3002;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x7684;&#x5E38;&#x89C1;&#x7528;&#x6CD5;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x6BD4;&#x5982;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x6216;&#x8005;&#x4E00;&#x53F0;&#x56FD;&#x5185;&#x7684; VPS &#x4E0A;&#xFF09;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x5F80;&#x8FD9;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x6765;&#x9009;&#x62E9;&#x662F;&#x5426;&#x8F6C;&#x53D1;&#x81F3;&#x56FD;&#x5916;&#x7684; VPS&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#x51CF;&#x5316;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#xFF0C;&#x5F53;&#x8DEF;&#x7531;&#x6709;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E0D;&#x5FC5;&#x4FEE;&#x6539;&#x6BCF;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x53EA;&#x9700;&#x4FEE;&#x6539;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x76EE;&#x524D;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x53EA;&#x652F;&#x6301; strategy = &quot;rules&quot;&#xFF0C;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>V2Ray has an internal routing mechanism. It routes inbound connections to various outbound based on rules. A common scenario is to split traffic by country. V2Ray can detect target country (by Geo IP) of a connection, and sends then connection to corresponding outbound proxy.</p>
+<p>Configuration:</p>
 <pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>,
-  <span class="hljs-string">&quot;rules&quot;</span>: [
-    {
-      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-      <span class="hljs-string">&quot;domain&quot;</span>: [
-        <span class="hljs-string">&quot;baidu.com&quot;</span>,
-        <span class="hljs-string">&quot;qq.com&quot;</span>
-      ],
-      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-    },
-    {
-      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-      <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
-      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-    },
-    {
-      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-      <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;udp&quot;</span>,
-      <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
-    }
-  ]
+  <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {
+    <span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>,
+    <span class="hljs-string">&quot;rules&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+        <span class="hljs-string">&quot;domain&quot;</span>: [
+          <span class="hljs-string">&quot;baidu.com&quot;</span>,
+          <span class="hljs-string">&quot;qq.com&quot;</span>
+        ],
+        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+      }
+    ]
+  }
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>domainStrategy</code>: &#x57DF;&#x540D;&#x89E3;&#x6790;&#x7B56;&#x7565;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&#xFF1A;<ul>
-<li><code>&quot;AsIs&quot;</code>: &#x53EA;&#x4F7F;&#x7528;&#x57DF;&#x540D;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</li>
-<li><code>&quot;IPIfNonMatch&quot;</code>: &#x5F53;&#x57DF;&#x540D;&#x6CA1;&#x6709;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x89C4;&#x5219;&#x65F6;&#xFF0C;&#x5C06;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x6210; IP&#xFF08;A &#x8BB0;&#x5F55;&#x6216; AAAA &#x8BB0;&#x5F55;&#xFF09;&#x518D;&#x6B21;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF1B;<ul>
-<li>&#x5F53;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x6709;&#x591A;&#x4E2A; A &#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x4F1A;&#x5C1D;&#x8BD5;&#x5339;&#x914D;&#x6240;&#x6709;&#x7684; A &#x8BB0;&#x5F55;&#xFF0C;&#x76F4;&#x5230;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4E0E;&#x67D0;&#x4E2A;&#x89C4;&#x5219;&#x5339;&#x914D;&#x4E3A;&#x6B62;&#xFF1B;</li>
-<li>&#x89E3;&#x6790;&#x540E;&#x7684; IP &#x4EC5;&#x5728;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x65F6;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x8F6C;&#x53D1;&#x7684;&#x6570;&#x636E;&#x5305;&#x4E2D;&#x4F9D;&#x7136;&#x4F7F;&#x7528;&#x539F;&#x59CB;&#x57DF;&#x540D;&#xFF1B;</li>
+<li><code>strategy</code>: The only valid value for now is <code>&quot;rules&quot;</code>.</li>
+<li><code>domainStrategy</code>: Domain resolution strategy. Choices are:<ul>
+<li><code>&quot;AsIs&quot;</code>: Only use domain for routing. Default value.</li>
+<li><code>&quot;IPIfNonMatch&quot;</code>: When no rule matches current domain, V2Ray resolves it into IP addresses (A or AAAA records) and try all rules again.<ul>
+<li>If a domain has multiple IP addresses, V2Ray tries all of them.</li>
+<li>The resolved IPs are only used for routing decisions, the traffic is still sent to original domain address.</li>
 </ul>
 </li>
-<li><code>&quot;IPOnDemand&quot;</code> (V2Ray 2.48+): &#x5F53;&#x5339;&#x914D;&#x65F6;&#x78B0;&#x5230;&#x4EFB;&#x4F55;&#x57FA;&#x4E8E; IP &#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x57DF;&#x540D;&#x7ACB;&#x5373;&#x89E3;&#x6790;&#x4E3A; IP &#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF1B;</li>
+<li><code>&quot;IPOnDemand&quot;</code>: As long as there is a IP-based rule, V2Ray resolves the domain into IP immediately.</li>
 </ul>
 </li>
-<li><code>rules</code>: &#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E2A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A; TCP/UDP &#x8FDE;&#x63A5;&#xFF0C;&#x8DEF;&#x7531;&#x5C06;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x4F9D;&#x6B21;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x751F;&#x6548;&#x65F6;&#xFF0C;&#x5373;&#x5C06;&#x8FD9;&#x4E2A;&#x8FDE;&#x63A5;&#x6309;&#x6B64;&#x89C4;&#x5219;&#x7684;&#x8BBE;&#x7F6E;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x3002;</li>
+<li><code>rules</code>: An array of rules. For each inbound connection, V2Ray tries these rules from top down one by one. If a rule takes effect, the connection will be routed to the <code>outboundTag</code> of the rule.</li>
 </ul>
-<p>&#x6BCF;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x90FD;&#x6709;&#x4E24;&#x4E2A;&#x5FC5;&#x987B;&#x7684;&#x5C5E;&#x6027;&#xFF1A; <code>type</code>&#x548C;<code>outboundTag</code>&#x3002;<code>type</code>&#x8868;&#x793A;&#x6B64;&#x89C4;&#x5219;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x76EE;&#x524D;&#x652F;&#x6301;&#x7684;&#x7C7B;&#x578B;&#x6709;&#xFF1A;<code>&quot;field&quot;</code>&#x3001;<code>&quot;chinaip&quot;</code>&#x548C;<code>&quot;chinasites&quot;</code>&#xFF1B;<code>outboundTag</code> &#x5BF9;&#x5E94;&#x4E00;&#x4E2A;<a href="02_protocols.md">&#x989D;&#x5916;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x914D;&#x7F6E;</a>&#x7684;&#x6807;&#x8BC6;&#x3002;</p>
-<p>&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BE6;&#x7EC6;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
-<h2 id="field"><a name="field" class="plugin-anchor" href="#field"><i class="fa fa-link" aria-hidden="true"></i></a>field</h2>
+<p>Configuration for each rule:</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
   <span class="hljs-string">&quot;domain&quot;</span>: [
@@ -742,41 +734,42 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>domain</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x6BCF;&#x4E00;&#x9879;&#x662F;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x7684;&#x5339;&#x914D;&#x3002;&#x6709;&#x56DB;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;<ul>
-<li>&#x7EAF;&#x5B57;&#x7B26;&#x4E32;: &#x5F53;&#x6B64;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x4E2D;&#x4EFB;&#x610F;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x6BD4;&#x5982;&quot;sina.com&quot;&#x53EF;&#x4EE5;&#x5339;&#x914D;&quot;sina.com&quot;&#x3001;&quot;sina.com.cn&quot;&#x548C;&quot;www.sina.com&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D;&quot;sina.cn&quot;&#x3002;</li>
-<li>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;: &#x7531;&quot;regexp:&quot;&#x5F00;&#x59CB;&#xFF0C;&#x4F59;&#x4E0B;&#x90E8;&#x5206;&#x662F;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x5F53;&#x6B64;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x65F6;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x4F8B;&#x5982;&quot;regexp:\\.goo.*\\.com$&quot;&#x5339;&#x914D;&quot;www.google.com&quot;&#x3001;&quot;fonts.googleapis.com&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D;&quot;google.com&quot;&#x3002;</li>
-<li>&#x5B50;&#x57DF;&#x540D;: &#x7531;&quot;domain:&quot;&#x5F00;&#x59CB;&#xFF0C;&#x4F59;&#x4E0B;&#x90E8;&#x5206;&#x662F;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x3002;&#x5F53;&#x6B64;&#x57DF;&#x540D;&#x662F;&#x76EE;&#x6807;&#x57DF;&#x540D;&#x6216;&#x5176;&#x5B50;&#x57DF;&#x540D;&#x65F6;&#xFF0C;&#x8BE5;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x4F8B;&#x5982;&quot;domain:v2ray.com&quot;&#x5339;&#x914D;&quot;www.v2ray.com&quot;&#x3001;&quot;v2ray.com&quot;&#xFF0C;&#x4F46;&#x4E0D;&#x5339;&#x914D;&quot;xv2ray.com&quot;&#x3002;</li>
-<li>&#x5E38;&#x7528;&#x56FD;&#x5185;&#x57DF;&#x540D; (V2Ray 2.46+): &#x7279;&#x6B8A;&#x503C;<code>&quot;geosite:cn&quot;</code>&#xFF0C;&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E9B;<a href="https://www.v2ray.com/links/chinasites/" target="_blank">&#x5E38;&#x89C1;&#x7684;&#x56FD;&#x5185;&#x7F51;&#x7AD9;&#x57DF;&#x540D;</a>&#x3002;</li>
+<li><code>type</code>: The only valid value for now is <code>&quot;field&quot;</code>.</li>
+<li><code>domain</code>: An array of domains. There are four formats:<ul>
+<li>Substring: If this string matches any part of the targeting domain, this rule takes effet. Example: rule <code>&quot;sina.com&quot;</code> matches targeting domain <code>&quot;sina.com&quot;</code>, <code>&quot;sina.com.cn&quot;</code> and <code>&quot;www.sina.com&quot;</code>, but not <code>&quot;sina.cn&quot;</code>.</li>
+<li>Regular expression: Begining with <code>&quot;regexp:&quot;</code>, the rest is a regular expression. When the regexp matches targeting domain, this rule takes effect. Example: rule <code>&quot;regexp:\\.goo.*\\.com$&quot;</code> matches <code>&quot;www.google.com&quot;</code> and <code>&quot;fonts.googleapis.com&quot;</code>, but not <code>&quot;google.com&quot;</code>.</li>
+<li>Subdomain: Begining with <code>&quot;domain:&quot;</code> and the rest is a domain. When the targeting domain is exactly the value, or is a subdomain of the value, this rule takes effect. Example: rule <code>&quot;domain:v2ray.com&quot;</code> matches <code>&quot;www.v2ray.com&quot;</code>, <code>&quot;v2ray.com&quot;</code>, but not <code>&quot;xv2ray.com&quot;</code>.</li>
+<li>Common domains in China: Special value <code>&quot;geosite:cn&quot;</code> for a list of <a href="https://www.v2ray.com/links/chinasites/" target="_blank">common domains in China</a>.</li>
 </ul>
 </li>
-<li><code>ip</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4EE3;&#x8868;&#x4E00;&#x4E2A; IP &#x8303;&#x56F4;&#x3002;&#x5F53;&#x67D0;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x76EE;&#x6807; IP &#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x6709;&#x4E09;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;<ul>
-<li>IP: &#x5F62;&#x5982;<code>&quot;127.0.0.1&quot;</code>&#x3002;</li>
-<li><a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR</a></li>
-<li>GeoIP (V2Ray 2.46+): &#x5F62;&#x5982;<code>&quot;geoip:cn&quot;</code>&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;<code>geoip:</code>&#xFF08;&#x5C0F;&#x5199;&#xFF09;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x53CC;&#x5B57;&#x7B26;&#x56FD;&#x5BB6;&#x4EE3;&#x7801;&#xFF0C;&#x652F;&#x6301;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x53EF;&#x4EE5;&#x4E0A;&#x7F51;&#x7684;&#x56FD;&#x5BB6;&#x3002;<ul>
-<li>Special value: <code>&quot;geoip:private&quot;</code> (V2Ray 3.5+), includes all private network addresses, such as <code>127.0.0.1</code>.</li>
+<li><code>ip</code>: An array of IP ranges. When the targeting IP is in one of the ranges, this rule takes effect. There are three formats:<ul>
+<li>IP: such as <code>&quot;127.0.0.1&quot;</code>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR</a>: such as <code>&quot;127.0.0.0/8&quot;</code>.</li>
+<li>GeoIP: such as <code>&quot;geoip:cn&quot;</code>. It begins with <code>geoip:</code> (lower case) and followed by two letter of country code.<ul>
+<li>Special value <code>&quot;geoip:private&quot;</code>: for all private addresses such as <code>127.0.0.1</code>.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>port</code>&#xFF1A;&#x7AEF;&#x53E3;&#x8303;&#x56F4;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;<ul>
-<li><code>&quot;a-b&quot;</code>: a &#x548C; b &#x5747;&#x4E3A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4E14;&#x5C0F;&#x4E8E; 65536&#x3002;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x662F;&#x4E00;&#x4E2A;&#x524D;&#x540E;&#x95ED;&#x5408;&#x533A;&#x95F4;&#xFF0C;&#x5F53;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x843D;&#x5728;&#x6B64;&#x8303;&#x56F4;&#x5185;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
-<li><code>a</code>: a &#x4E3A;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4E14;&#x5C0F;&#x4E8E; 65536&#x3002;&#x5F53;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x4E3A; a &#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+<li><code>port</code>&#xFF1A;Port range. Formats are:<ul>
+<li><code>&quot;a-b&quot;</code>: Both <code>a</code> and <code>b</code> are positive integers and less than 65536. When the targeting port is in [<code>a</code>, <code>b</code>), this rule takes effect.</li>
+<li><code>a</code>: <code>a</code> is a positive integer, and less than 65536. When the targeting port is <code>a</code>, this rule takes effect.</li>
 </ul>
 </li>
-<li><code>network</code>: &#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&quot;tcp&quot;&#x3001;&quot;udp&quot;&#x6216;&quot;tcp,udp&quot;&#xFF0C;&#x5F53;&#x8FDE;&#x63A5;&#x65B9;&#x5F0F;&#x662F;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
-<li><code>source</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A; IP &#x6216; CIDR&#x3002;&#x5F53;&#x67D0;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x6765;&#x6E90; IP &#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
-<li><code>user</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x90AE;&#x7BB1;&#x5730;&#x5740;&#x3002;&#x5F53;&#x67D0;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x6765;&#x6E90;&#x7528;&#x6237;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;&#x5F53;&#x524D; Shadowsocks &#x548C; VMess &#x652F;&#x6301;&#x6B64;&#x89C4;&#x5219;&#x3002;</li>
-<li><code>inboundTag</code>: &#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x5185;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#x3002;&#x5F53;&#x67D0;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x7684;&#x6807;&#x8BC6;&#x65F6;&#xFF0C;&#x6B64;&#x89C4;&#x5219;&#x751F;&#x6548;&#x3002;</li>
+<li><code>network</code>: Choices are <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. When the connection has in the chosen network, this rule take effect.</li>
+<li><code>source</code>: An array of IP ranges. Same format as <code>ip</code>. When the source IP of the connection is in the IP range, this rule takes effect.</li>
+<li><code>user</code>: An array of email address. When the inbound connection uses an user account of the email address, this rule takes effect. For now  Shadowsocks and VMess support user with email.</li>
+<li><code>inboundTag</code>: An array of string as inbound proxy tags. When the connection comes from one of the specified inbound proxy, this rule takes effect.</li>
+<li><code>outboundTag</code> <a href="02_protocols.md">Tag of the outbound</a> that the connection will be sent to, if this rule take effect.</li>
 </ul>
-<p>&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF1A;</p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
-<li>&#x5F53;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x5F53;&#x524D;&#x89C4;&#x5219;&#x751F;&#x6548;&#xFF1B;<ul>
-<li>&#x5982;&#x679C;&#x591A;&#x4E2A;&#x89C4;&#x5219;&#x5206;&#x522B;&#x4F7F;&#x7528;&#x4E86;<code>domain</code>&#x6216;&#x8005;<code>ip</code>&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x6DFB;&#x52A0;&#x591A;&#x6761;&#x89C4;&#x5219;&#xFF1B;</li>
+<li>When multiple attributes of the rule are specified, they must be satisfied together, in order to make the rule effective.<ul>
+<li>If you want to route connections by <code>domain</code> or <code>ip</code>, you probably need multiple rules, instead of one rule containing both <code>domain</code> and <code>ip</code>.</li>
 </ul>
 </li>
-<li>&#x5F53;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x6307;&#x5B9A;&#x4E86;&#x57DF;&#x540D;&#xFF0C;&#x800C;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#x4E2D;&#x53EA;&#x6709; IP &#x89C4;&#x5219;&#xFF0C;&#x6CA1;&#x6709;&#x57DF;&#x540D;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x751F;&#x6548;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</li>
 </ul>
 
                                 
@@ -805,7 +798,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-04-17T10:15:38.190Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-17T10:22:52.497Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-04-17T10:51:30.199Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-17T10:52:39.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
