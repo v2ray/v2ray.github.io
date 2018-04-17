@@ -864,21 +864,20 @@ if (inIframe() || !isValidDomain()) {
 <p>V2Ctl &#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-shell">v2ctl &lt;command&gt; &lt;options&gt;
 </code></pre>
-<p>&#x53EF;&#x4F7F;&#x7528;&#x7684; command &#x5982;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A; command &#x6709;&#x5404;&#x81EA;&#x4E0D;&#x540C;&#x7684; options&#x3002;</p>
+<p>Command &#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li><code>verify [--sig=/path/to/sigfile] /file/to/verify</code>: &#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x7531; Project V &#x5B98;&#x65B9;&#x7B7E;&#x540D;&#x3002;</li>
+<li><code>config</code>: &#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6; JSON &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6253;&#x5370; Protobuf &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x3002;</li>
+<li><code>uuid</code>: &#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684; UUID&#x3002;</li>
+</ul>
 <h3 id="verify"><a name="verify" class="plugin-anchor" href="#verify"><i class="fa fa-link" aria-hidden="true"></i></a>Verify</h3>
 <p><code>v2ctl verify [--sig=/path/to/sigfile] /file/to/verify</code></p>
 <p>&#x6B64;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x7531; Project V &#x5B98;&#x65B9;&#x7B7E;&#x540D;&#x3002;</p>
 <p>&#x53C2;&#x6570;&#xFF1A;</p>
 <ul>
 <li><code>sig</code>&#xFF1A;&#x7B7E;&#x540D;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x52A0;&#x5165;&apos;.sig&apos;&#x540E;&#x7F00;&#x3002;</li>
-<li>&#x7B2C;&#x4E00;&#x53C2;&#x6570;&#xFF1A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</li>
+<li><code>/file/to/verify</code>&#xFF1A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</li>
 </ul>
-<h3 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h3>
-<p><code>v2ctl config</code></p>
-<p>&#x6B64;&#x547D;&#x4EE4;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6; JSON &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6253;&#x5370; Protobuf &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
-<h3 id="uuid"><a name="uuid" class="plugin-anchor" href="#uuid"><i class="fa fa-link" aria-hidden="true"></i></a>UUID</h3>
-<p><code>v2ray uuid</code></p>
-<p>&#x6B64;&#x547D;&#x4EE4;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;&#x5B83;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684; UUID&#x3002;</p>
 
                                 
                                 </section>
@@ -906,7 +905,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-04-13T19:36:35.254Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T19:37:26.982Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-04-17T10:15:38.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-17T10:22:35.493Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
