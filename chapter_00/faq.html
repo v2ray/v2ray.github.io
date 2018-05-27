@@ -7,9 +7,16 @@
         <title>常见问题 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -61,6 +68,8 @@
     <link rel="icon" type="image/png" href="/resources/favicon-192.png">
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="license.html" />
     
     
     <link rel="prev" href="pgp.html" />
@@ -257,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -270,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -477,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/api.html">
+            
+                <a href="../chapter_02/api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/stats.html">
+            
+                <a href="../chapter_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter_02/05_transport.html">
             
                 <a href="../chapter_02/05_transport.html">
             
@@ -491,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../chapter_02/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../chapter_02/transport/tcp.html">
             
                 <a href="../chapter_02/transport/tcp.html">
             
@@ -504,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../chapter_02/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../chapter_02/transport/mkcp.html">
             
                 <a href="../chapter_02/transport/mkcp.html">
             
@@ -517,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../chapter_02/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../chapter_02/transport/websocket.html">
             
                 <a href="../chapter_02/transport/websocket.html">
             
@@ -530,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../chapter_02/transport/h2.html">
+            
+                <a href="../chapter_02/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_02/env.html">
             
                 <a href="../chapter_02/env.html">
             
@@ -823,10 +884,14 @@
 
             
                 
-                <a href="pgp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 私下联系">
+                <a href="pgp.html" class="navigation navigation-prev " aria-label="Previous page: 私下联系">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="license.html" class="navigation navigation-next " aria-label="Next page: 项目授权">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -835,7 +900,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常见问题","level":"1.1.8","depth":2,"next":{"title":"博客↪","level":"1.1.9","depth":2,"url":"https://steemit.com/@v2ray","ref":"https://steemit.com/@v2ray","articles":[]},"previous":{"title":"私下联系","level":"1.1.7.2","depth":3,"path":"chapter_00/pgp.md","ref":"chapter_00/pgp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/faq.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常见问题","level":"1.1.8","depth":2,"next":{"title":"项目授权","level":"1.1.9","depth":2,"path":"chapter_00/license.md","ref":"chapter_00/license.md","articles":[]},"previous":{"title":"私下联系","level":"1.1.7.2","depth":3,"path":"chapter_00/pgp.md","ref":"chapter_00/pgp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/faq.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

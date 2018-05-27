@@ -7,9 +7,16 @@
         <title>TCP · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -259,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="../../chapter_00/license.html">
+            
+                <a href="../../chapter_00/license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -272,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -479,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../05_transport.html">
             
                 <a href="../05_transport.html">
             
@@ -493,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.7.1" data-path="tcp.html">
+        <li class="chapter active" data-level="1.2.9.1" data-path="tcp.html">
             
                 <a href="tcp.html">
             
@@ -506,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
             
                 <a href="mkcp.html">
             
@@ -519,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="websocket.html">
             
                 <a href="websocket.html">
             
@@ -532,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="h2.html">
+            
+                <a href="h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
             
                 <a href="../env.html">
             
@@ -779,7 +838,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>TCP &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
-<p><img src="../../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/configuration/protocols/tcp.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a></p>
+<p><img src="../../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/configuration/transport/tcp.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a></p>
 <p>&#x914D;&#x7F6E;&#xFF1A;</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;header&quot;</span>: {
@@ -798,7 +857,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><a name="http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;" class="plugin-anchor" href="#http-&#x4F2A;&#x88C5;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;</h2>
+<h2 id="http-header"><a name="http-header" class="plugin-anchor" href="#http-header"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E; </h2>
 <p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
@@ -875,7 +934,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.7.1","depth":3,"next":{"title":"mKCP","level":"1.2.7.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"previous":{"title":"传输配置","level":"1.2.7","depth":2,"path":"chapter_02/05_transport.md","ref":"chapter_02/05_transport.md","articles":[{"title":"TCP","level":"1.2.7.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.7.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.7.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/tcp.md","mtime":"2018-01-16T11:02:56.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"previous":{"title":"传输配置","level":"1.2.9","depth":2,"path":"chapter_02/05_transport.md","ref":"chapter_02/05_transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"chapter_02/transport/h2.md","ref":"chapter_02/transport/h2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/tcp.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

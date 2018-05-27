@@ -7,9 +7,16 @@
         <title>WebSocket · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -62,7 +69,7 @@
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../env.html" />
+    <link rel="next" href="h2.html" />
     
     
     <link rel="prev" href="mkcp.html" />
@@ -259,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="../../chapter_00/license.html">
+            
+                <a href="../../chapter_00/license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -272,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -479,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../05_transport.html">
             
                 <a href="../05_transport.html">
             
@@ -493,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="tcp.html">
             
                 <a href="tcp.html">
             
@@ -506,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
             
                 <a href="mkcp.html">
             
@@ -519,7 +565,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.7.3" data-path="websocket.html">
+        <li class="chapter active" data-level="1.2.9.3" data-path="websocket.html">
             
                 <a href="websocket.html">
             
@@ -532,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="h2.html">
+            
+                <a href="h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
             
                 <a href="../env.html">
             
@@ -794,7 +853,7 @@
 <li><code>path</code>: WebSocket &#x6240;&#x4F7F;&#x7528;&#x7684; HTTP &#x534F;&#x8BAE;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;&quot;</code>&#x3002;</li>
 <li><code>headers</code>: &#x81EA;&#x5B9A;&#x4E49; HTTP &#x5934;&#xFF0C;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6BCF;&#x4E2A;&#x952E;&#x8868;&#x793A;&#x4E00;&#x4E2A; HTTP &#x5934;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x7A7A;&#x3002;</li>
 </ul>
-<h2 id="&#x5C0F;&#x8D34;&#x58EB;"><a name="&#x5C0F;&#x8D34;&#x58EB;" class="plugin-anchor" href="#&#x5C0F;&#x8D34;&#x58EB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB;</h2>
+<h2 id="tip"><a name="tip" class="plugin-anchor" href="#tip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
 <li>&#x4ECE; V2Ray 3.4 &#x8D77;&#xFF0C;Websocket &#x4F1A;&#x8BC6;&#x522B; HTTP &#x8BF7;&#x6C42;&#x7684; X-Forwarded-For &#x5934;&#x6765;&#x7528;&#x505A;&#x6D41;&#x91CF;&#x7684;&#x6E90;&#x5730;&#x5740;&#x3002;</li>
 </ul>
@@ -814,7 +873,7 @@
                 </a>
                 
                 
-                <a href="../env.html" class="navigation navigation-next " aria-label="Next page: 环境变量">
+                <a href="h2.html" class="navigation navigation-next " aria-label="Next page: HTTP/2">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -825,7 +884,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WebSocket","level":"1.2.7.3","depth":3,"next":{"title":"环境变量","level":"1.2.8","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"previous":{"title":"mKCP","level":"1.2.7.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/websocket.md","mtime":"2018-01-16T11:02:56.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WebSocket","level":"1.2.9.3","depth":3,"next":{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"chapter_02/transport/h2.md","ref":"chapter_02/transport/h2.md","articles":[]},"previous":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/websocket.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

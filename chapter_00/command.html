@@ -7,9 +7,16 @@
         <title>命令行参数 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -259,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -272,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -479,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/api.html">
+            
+                <a href="../chapter_02/api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/stats.html">
+            
+                <a href="../chapter_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter_02/05_transport.html">
             
                 <a href="../chapter_02/05_transport.html">
             
@@ -493,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../chapter_02/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../chapter_02/transport/tcp.html">
             
                 <a href="../chapter_02/transport/tcp.html">
             
@@ -506,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../chapter_02/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../chapter_02/transport/mkcp.html">
             
                 <a href="../chapter_02/transport/mkcp.html">
             
@@ -519,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../chapter_02/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../chapter_02/transport/websocket.html">
             
                 <a href="../chapter_02/transport/websocket.html">
             
@@ -532,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../chapter_02/transport/h2.html">
+            
+                <a href="../chapter_02/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_02/env.html">
             
                 <a href="../chapter_02/env.html">
             
@@ -779,6 +838,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;"><a name="&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;</h1>
+<p><img src="../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/welcome/command.html" target="_blank"><img src="../resources/english.svg" alt="English"></a></p>
 <h2 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h2>
 <p>V2Ray &#x7684;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-shell">v2ray [-version] [-test] [-config=config.json] [-format=json]
@@ -790,6 +850,7 @@
 <li><code>-config</code>:<ul>
 <li>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF1B;</li>
 <li>&#x5F53;&#x503C;&#x4E3A;<code>stdin:</code>&#x65F6;&#xFF0C;&#x5C06;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x5FC5;&#x987B;&#x5728;&#x8F93;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x5173;&#x95ED;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x6D41;&#x3002;</li>
+<li>(3.17+) &#x5F53;&#x5176;&#x503C;&#x4EE5;<code>http://</code>&#x6216;<code>https://</code>(&#x5747;&#x4E3A;&#x5C0F;&#x5199;)&#x5F00;&#x5934;&#x65F6;&#xFF0C;V2Ray &#x5C06;&#x5C1D;&#x8BD5;&#x4ECE;&#x8FD9;&#x4E2A;&#x8FDC;&#x7A0B;&#x5730;&#x5740;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</li>
 <li>&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;V2Ray &#x5C06;&#x5148;&#x540E;&#x5C1D;&#x8BD5;&#x4ECE;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF08;Working Directory&#xFF09;&#x548C;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>v2ray.location.asset</code>&#x6240;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x4E2D;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</li>
 </ul>
 </li>
@@ -803,18 +864,20 @@
 <p>V2Ctl &#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-shell">v2ctl &lt;command&gt; &lt;options&gt;
 </code></pre>
-<p>&#x53EF;&#x4F7F;&#x7528;&#x7684; command &#x5982;&#x4E0B;&#xFF0C;&#x6BCF;&#x4E2A; command &#x6709;&#x5404;&#x81EA;&#x4E0D;&#x540C;&#x7684; options&#x3002;</p>
+<p>Command &#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li><code>verify [--sig=/path/to/sigfile] /file/to/verify</code>: &#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x7531; Project V &#x5B98;&#x65B9;&#x7B7E;&#x540D;&#x3002;</li>
+<li><code>config</code>: &#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6; JSON &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6253;&#x5370; Protobuf &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x3002;</li>
+<li><code>uuid</code>: &#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684; UUID&#x3002;</li>
+</ul>
 <h3 id="verify"><a name="verify" class="plugin-anchor" href="#verify"><i class="fa fa-link" aria-hidden="true"></i></a>Verify</h3>
 <p><code>v2ctl verify [--sig=/path/to/sigfile] /file/to/verify</code></p>
 <p>&#x6B64;&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x7531; Project V &#x5B98;&#x65B9;&#x7B7E;&#x540D;&#x3002;</p>
 <p>&#x53C2;&#x6570;&#xFF1A;</p>
 <ul>
 <li><code>sig</code>&#xFF1A;&#x7B7E;&#x540D;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x52A0;&#x5165;&apos;.sig&apos;&#x540E;&#x7F00;&#x3002;</li>
-<li>&#x7B2C;&#x4E00;&#x53C2;&#x6570;&#xFF1A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</li>
+<li><code>/file/to/verify</code>&#xFF1A;&#x5F85;&#x9A8C;&#x8BC1;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</li>
 </ul>
-<h3 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h3>
-<p><code>v2ctl config</code></p>
-<p>&#x6B64;&#x547D;&#x4EE4;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6; JSON &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6253;&#x5370; Protobuf &#x683C;&#x5F0F;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 
                                 
                                 </section>
@@ -842,7 +905,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"命令行参数","level":"1.1.5","depth":2,"next":{"title":"捐助支持","level":"1.1.6","depth":2,"path":"chapter_00/02_donate.md","ref":"chapter_00/02_donate.md","articles":[{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]}]},"previous":{"title":"新手上路","level":"1.1.4","depth":2,"path":"chapter_00/start.md","ref":"chapter_00/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/command.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

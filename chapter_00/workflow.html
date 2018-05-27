@@ -7,9 +7,16 @@
         <title>使用方式 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -259,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -272,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -479,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/api.html">
+            
+                <a href="../chapter_02/api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/stats.html">
+            
+                <a href="../chapter_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter_02/05_transport.html">
             
                 <a href="../chapter_02/05_transport.html">
             
@@ -493,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../chapter_02/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../chapter_02/transport/tcp.html">
             
                 <a href="../chapter_02/transport/tcp.html">
             
@@ -506,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../chapter_02/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../chapter_02/transport/mkcp.html">
             
                 <a href="../chapter_02/transport/mkcp.html">
             
@@ -519,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../chapter_02/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../chapter_02/transport/websocket.html">
             
                 <a href="../chapter_02/transport/websocket.html">
             
@@ -532,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../chapter_02/transport/h2.html">
+            
+                <a href="../chapter_02/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_02/env.html">
             
                 <a href="../chapter_02/env.html">
             
@@ -779,17 +838,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><a name="&#x5DE5;&#x4F5C;&#x673A;&#x5236;" class="plugin-anchor" href="#&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h1>
-<p><img src="resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/welcome/workflow.html" target="_blank"><img src="resources/english.svg" alt="English"></a></p>
+<p><img src="../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/welcome/workflow.html" target="_blank"><img src="../resources/english.svg" alt="English"></a></p>
 <h2 id="&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;"><a name="&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;</h2>
 <p>&#x548C;&#x5176;&#x5B83;&#x7684;&#x7F51;&#x7EDC;&#x4EE3;&#x7406;&#x5DE5;&#x5177;&#x4E00;&#x6837;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4E00;&#x53F0;&#x914D;&#x7F6E;&#x4E86; V2Ray &#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5; V2Ray &#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x7136;&#x540E;&#x5373;&#x53EF;&#x6D41;&#x7545;&#x5730;&#x8BBF;&#x95EE;&#x4E92;&#x8054;&#x7F51;&#x3002;</p>
-<p><img src="../resources/direct.svg" alt=""></p>
+<p><img src="../resources/direct.svg" alt="direct"></p>
 <p>&#x4E00;&#x4E2A; V2Ray &#x670D;&#x52A1;&#x5668;&#x53EF;&#x540C;&#x65F6;&#x652F;&#x6301;&#x591A;&#x53F0;&#x8BBE;&#x5907;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7406;&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x7ECF;&#x8FC7;&#x5408;&#x7406;&#x7684;&#x914D;&#x7F6E;&#xFF0C;V2Ray &#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x5E76;&#x533A;&#x5206;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x548C;&#x4E0D;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x7684;&#x6D41;&#x91CF;&#xFF0C;&#x76F4;&#x8FDE;&#x7684;&#x6D41;&#x91CF;&#x4E0D;&#x9700;&#x8981;&#x7ED5;&#x8DEF;&#x3002;</p>
 <h2 id="&#x6865;&#x63A5;&#x6A21;&#x5F0F;"><a name="&#x6865;&#x63A5;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x6865;&#x63A5;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6865;&#x63A5;&#x6A21;&#x5F0F;</h2>
 <p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x5728;&#x6BCF;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#x4E0A;&#x90FD;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x53F0;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6240;&#x6709;&#x6D41;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x5224;&#x65AD;&#x3002;</p>
-<p><img src="../resources/relay.svg" alt=""></p>
+<p><img src="../resources/relay.svg" alt="relay"></p>
 <h2 id="&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><a name="&#x5DE5;&#x4F5C;&#x539F;&#x7406;" class="plugin-anchor" href="#&#x5DE5;&#x4F5C;&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x539F;&#x7406;</h2>
 <p>&#x5728;&#x914D;&#x7F6E; V2Ray &#x4E4B;&#x524D;&#xFF0C;&#x4E0D;&#x59A8;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B; V2Ray &#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x5355;&#x4E2A; V2Ray &#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#x793A;&#x610F;&#x56FE;&#x3002;&#x591A;&#x4E2A; V2Ray &#x4E4B;&#x95F4;&#x4E92;&#x76F8;&#x72EC;&#x7ACB;&#xFF0C;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#x3002;</p>
-<p><img src="../resources/internal.svg" alt=""></p>
+<p><img src="../resources/internal.svg" alt="internal"></p>
 <ul>
 <li>&#x9700;&#x8981;&#x914D;&#x7F6E;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x534F;&#x8BAE;&#xFF08;Inbound&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#xFF08;Outbound&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;<a href="../chapter_02/02_protocols.html">&#x534F;&#x8BAE;&#x5217;&#x8868;</a>&#x89C1;&#x7B2C;&#x4E8C;&#x7AE0;&#x8282;&#x3002;<ul>
 <li>&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x8D1F;&#x8D23;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x5982;&#x6D4F;&#x89C8;&#x5668;&#xFF09;&#x901A;&#x4FE1;&#xFF1A;<ul>
@@ -833,7 +892,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使用方式","level":"1.1.2","depth":2,"next":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"previous":{"title":"版本历史","level":"1.1.1","depth":2,"path":"chapter_00/01_versions.md","ref":"chapter_00/01_versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/workflow.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"使用方式","level":"1.1.2","depth":2,"next":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"previous":{"title":"版本历史","level":"1.1.1","depth":2,"path":"chapter_00/01_versions.md","ref":"chapter_00/01_versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/workflow.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

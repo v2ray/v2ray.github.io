@@ -7,9 +7,16 @@
         <title>配置文件 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -257,7 +264,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="../chapter_00/license.html">
+            
+                <a href="../chapter_00/license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -270,7 +290,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -477,7 +497,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="05_transport.html">
             
                 <a href="05_transport.html">
             
@@ -491,7 +537,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
             
                 <a href="transport/tcp.html">
             
@@ -504,7 +550,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
             
                 <a href="transport/mkcp.html">
             
@@ -517,7 +563,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
             
                 <a href="transport/websocket.html">
             
@@ -530,12 +576,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="env.html">
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
             
                 <a href="env.html">
             
@@ -794,7 +853,7 @@
 <p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;</p>
 <ol>
 <li>&#x901A;&#x5E38;&#x4E00;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x540E;&#x9762;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&quot;,&quot;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#x540E;&#x9762;&#x7D27;&#x8DDF;&#x4E00;&#x4E2A;&#x5927;&#x62EC;&#x53F7;&quot;&#xFF5D;&quot;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x4E00;&#x5B9A;&#x4E0D;&#x80FD;&#x6709;&#x9017;&#x53F7;&#x3002;</li>
-<li>V2Ray &#x7684; JSON &#x683C;&#x5F0F;&#x652F;&#x6301;&#x6CE8;&#x91CA;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;&#x201C;//&#x201D;&#x6216;&#x8005;&#x201C;/<em> </em>/&#x201D;&#x6765;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#x3002;</li>
+<li>V2Ray &#x7684; JSON &#x683C;&#x5F0F;&#x652F;&#x6301;&#x6CE8;&#x91CA;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;&#x201C;//&#x201D;&#x6216;&#x8005;&#x201C;/* */&#x201D;&#x6765;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;&#x3002;</li>
 </ol>
 
                                 
@@ -819,7 +878,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"配置文件","level":"1.2","depth":1,"next":{"title":"文件格式","level":"1.2.1","depth":2,"path":"chapter_02/01_overview.md","ref":"chapter_02/01_overview.md","articles":[]},"previous":{"title":"白话文教程↪","level":"1.1.10","depth":2,"url":"https://toutyrater.github.io/","ref":"https://toutyrater.github.io/","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/README.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配置文件","level":"1.2","depth":1,"next":{"title":"文件格式","level":"1.2.1","depth":2,"path":"chapter_02/01_overview.md","ref":"chapter_02/01_overview.md","articles":[]},"previous":{"title":"白话文教程↪","level":"1.1.11","depth":2,"url":"https://toutyrater.github.io/","ref":"https://toutyrater.github.io/","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/README.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

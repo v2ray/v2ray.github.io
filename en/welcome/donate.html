@@ -7,9 +7,16 @@
         <title>Donation · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -65,7 +72,7 @@
     <link rel="next" href="help.html" />
     
     
-    <link rel="prev" href="install.html" />
+    <link rel="prev" href="command.html" />
     
 
     </head>
@@ -143,7 +150,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.4" data-path="donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.5" data-path="donate.html">
             
                 <a href="donate.html">
             
@@ -156,7 +176,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="help.html">
+        <li class="chapter " data-level="1.1.6" data-path="help.html">
             
                 <a href="help.html">
             
@@ -170,7 +190,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="tg.html">
             
                 <a href="tg.html">
             
@@ -183,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="pgp.html">
             
                 <a href="pgp.html">
             
@@ -198,6 +218,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -395,7 +428,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../configuration/transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../configuration/api.html">
+            
+                <a href="../configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../configuration/transport.html">
             
                 <a href="../configuration/transport.html">
             
@@ -409,7 +468,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../configuration/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../configuration/transport/tcp.html">
             
                 <a href="../configuration/transport/tcp.html">
             
@@ -422,7 +481,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../configuration/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../configuration/transport/mkcp.html">
             
                 <a href="../configuration/transport/mkcp.html">
             
@@ -435,7 +494,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../configuration/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../configuration/transport/websocket.html">
             
                 <a href="../configuration/transport/websocket.html">
             
@@ -448,12 +507,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../configuration/transport/h2.html">
+            
+                <a href="../configuration/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../configuration/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../configuration/env.html">
             
                 <a href="../configuration/env.html">
             
@@ -609,7 +681,7 @@
 </ul>
 <h2 id="the-usual-way"><a name="the-usual-way" class="plugin-anchor" href="#the-usual-way"><i class="fa fa-link" aria-hidden="true"></i></a>The Usual Way</h2>
 <p>Amount: <input id="damount" type="number" min="1" step="any" value="25">USD</p>
-<p>* Donations that less than 1 USD may be refunded due to high service fees.</p>
+<p>* Donations that less than 1 USD may be refunded due to high service fees, and will not be listed in the sponsor list below.</p>
 <script>
 function getAmount() {
     var e = document.getElementById('damount');
@@ -639,10 +711,13 @@ function doPaypalMe(event) {
 
 <h2 id="cryptocurrency"><a name="cryptocurrency" class="plugin-anchor" href="#cryptocurrency"><i class="fa fa-link" aria-hidden="true"></i></a>Cryptocurrency</h2>
 <ul>
-<li>Bitcoin: <a href="https://blockchain.info/address/15DumaY9Pc3CRf2uKTXAp4R21sEkymvpJo" target="_blank">15DumaY9Pc3CRf2uKTXAp4R21sEkymvpJo</a></li>
-<li>Bitcoin Case: <a href="https://blockdozer.com/insight/address/1473sDqeigUEdctzexUhxjBAiGizsS5tjD" target="_blank">1473sDqeigUEdctzexUhxjBAiGizsS5tjD</a></li>
-<li>Ethereum: <a href="https://etherscan.io/address/0x2d2306cDB993f3db217141EbDc5AF4fc54150c2b" target="_blank">0x2d2306cDB993f3db217141EbDc5AF4fc54150c2b</a></li>
+<li>Bitcoin: <a href="https://blockchain.info/address/15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW" target="_blank">15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW</a></li>
+<li>Bitcoin Case: <a href="https://blockdozer.com/insight/address/1NNRgpWYD8UX1bkcokCEoD6HHpaw98onxa" target="_blank">1NNRgpWYD8UX1bkcokCEoD6HHpaw98onxa</a></li>
+<li>Ethereum: <a href="https://etherscan.io/address/0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e" target="_blank">0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e</a></li>
+<li>Litecoin: <a href="https://insight.litecore.io/address/LVdeH2HkCgGRs8ZEpan7fkAEEPbiJ4McoR" target="_blank">LVdeH2HkCgGRs8ZEpan7fkAEEPbiJ4McoR</a></li>
 <li>Monero: 48kA4NyLRCWQvB7U2A77G66Z25uWbyzmoZSYjxJfrMR1J4dRFW6fWFLDn3wirAqP8ySnR4rnvoXWxfkNFhrK5ZxY1WyBqKg</li>
+<li>EOS: <a href="https://etherscan.io/token/EOS?a=0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e" target="_blank">0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e</a></li>
+<li>OMG: <a href="https://etherscan.io/token/OmiseGo?a=0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e" target="_blank">0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e</a></li>
 </ul>
 <h2 id="thank-you-for-your-donation"><a name="thank-you-for-your-donation" class="plugin-anchor" href="#thank-you-for-your-donation"><i class="fa fa-link" aria-hidden="true"></i></a>Thank you for your donation</h2>
 <p>The list is updated on average once every week. Please be patient to see your name.</p>
@@ -657,7 +732,271 @@ function doPaypalMe(event) {
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">2017.01.06</td>
+<td style="text-align:center">2018.04.19</td>
+<td style="text-align:left">&#x3000;&#x3000;x****w@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.19</td>
+<td style="text-align:left">&#x3000;&#x3000;&#x8304;&#x5B50;</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.19</td>
+<td style="text-align:left">&#x3000;&#x3000;ch*********73@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.19</td>
+<td style="text-align:left">&#x3000;&#x3000;&#x96F7;&#x950B;</td>
+<td style="text-align:right">$2.68</td>
+<td>ETH 0.005</td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.18</td>
+<td style="text-align:left">&#x3000;&#x3000;&#x53CD;&#x5BA1;&#x67E5;&#x5C0F;&#x6C5F;</td>
+<td style="text-align:right">$3</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.18</td>
+<td style="text-align:left">&#x3000;&#x3000;li*******16@gmail.com</td>
+<td style="text-align:right">$2</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.18</td>
+<td style="text-align:left">&#x3000;&#x3000;&#x5AE9;&#x6A21;&#x7231;&#x597D;&#x8005;</td>
+<td style="text-align:right">$43.95</td>
+<td>OMG 3</td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.17</td>
+<td style="text-align:left">&#x3000;&#x3000;ti*******en@hotmail.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.17</td>
+<td style="text-align:left">&#x3000;&#x3000;hh</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.17</td>
+<td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
+<td style="text-align:right">$8.12</td>
+<td>BTC 0.001</td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.17</td>
+<td style="text-align:left">&#x3000;&#x3000;no******32@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.17</td>
+<td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.09</td>
+<td style="text-align:left">&#x3000;&#x3000;z********7@163.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.08</td>
+<td style="text-align:left">&#x3000;&#x3000;6********1@qq.com</td>
+<td style="text-align:right">$50</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.05</td>
+<td style="text-align:left">&#x3000;&#x3000;r*******n@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.04.05</td>
+<td style="text-align:left">&#x3000;&#x3000;ya******ge@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.29</td>
+<td style="text-align:left">&#x3000;&#x3000;xi***********00@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.23</td>
+<td style="text-align:left">&#x3000;&#x3000;cs***********92@qq.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.18</td>
+<td style="text-align:left">&#x3000;&#x3000;w*****n@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.16</td>
+<td style="text-align:left">&#x3000;&#x3000;ya***********26@gmail.com</td>
+<td style="text-align:right">$2</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.15</td>
+<td style="text-align:left">&#x3000;&#x3000;x*****g@163.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.13</td>
+<td style="text-align:left">&#x3000;&#x3000;si*********x</td>
+<td style="text-align:right">$30</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.10</td>
+<td style="text-align:left">&#x3000;&#x3000;hy******in@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.09</td>
+<td style="text-align:left">&#x3000;&#x3000;so*********aa@foxmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.07</td>
+<td style="text-align:left">&#x3000;&#x3000;de******p@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.06</td>
+<td style="text-align:left">&#x3000;&#x3000;cs*****o2@gmail.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.02</td>
+<td style="text-align:left">&#x3000;&#x3000;z*******i@qq.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.03.01</td>
+<td style="text-align:left">&#x3000;&#x3000;bl*****gz@gmail.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.27</td>
+<td style="text-align:left">&#x3000;&#x3000;w*******y@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.26</td>
+<td style="text-align:left">&#x3000;&#x3000;7*******2@qq.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.25</td>
+<td style="text-align:left">&#x3000;&#x3000;v******o@outlook.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.23</td>
+<td style="text-align:left">&#x3000;&#x3000;ch******nd@gmail.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.23</td>
+<td style="text-align:left">&#x3000;&#x3000;y*******y@gmail.com</td>
+<td style="text-align:right">$30</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.16</td>
+<td style="text-align:left">&#x3000;&#x3000;o*******n@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.14</td>
+<td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.12</td>
+<td style="text-align:left">&#x3000;&#x3000;27*****67@qq.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.12</td>
+<td style="text-align:left">&#x3000;&#x3000;k***@****.me</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.12</td>
+<td style="text-align:left">&#x3000;&#x3000;j*****@********e.com</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.07</td>
+<td style="text-align:left">&#x3000;&#x3000;s****o@qq.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.04</td>
+<td style="text-align:left">&#x3000;&#x3000;w****d@protonmail.ch</td>
+<td style="text-align:right">$25</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.02</td>
+<td style="text-align:left">&#x3000;&#x3000;up**********al@gmail.com</td>
+<td style="text-align:right">$10</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.02.01</td>
+<td style="text-align:left">&#x3000;&#x3000;22*******18@qq.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.01.31</td>
+<td style="text-align:left">&#x3000;&#x3000;w****h@qq.com</td>
+<td style="text-align:right">$15</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.01.20</td>
+<td style="text-align:left">&#x3000;&#x3000;li********45@163.com</td>
+<td style="text-align:right">$5</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">2018.01.06</td>
 <td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
 <td style="text-align:right">$10</td>
 <td></td>
@@ -675,465 +1014,465 @@ function doPaypalMe(event) {
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.23</td>
+<td style="text-align:center">2017</td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$30</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.17</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;b****t@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.12</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$123</td>
-<td>&#xA3; 100</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.11</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;zh*******zb@outlook.com</td>
-<td style="text-align:right">$8</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.11</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$18.53</td>
-<td>ETH 0.03</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.10</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;o******r@outlook.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.10</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.04</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;lp*****36@gmail.com</td>
-<td style="text-align:right">$3</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.03</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;xa******en@outlook.com</td>
-<td style="text-align:right">$20</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.12.01</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;g*****u@protonmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.22</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;b******g@protonmail.com</td>
-<td style="text-align:right">$15</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.21</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;25******14@qq.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.20</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;v****s@icloud.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.17</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;a******1@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.15</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$61.88</td>
-<td>XMR 0.5</td>
-</tr>
-<tr>
-<td style="text-align:center">2017.11.14</td>
-<td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.13</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
+<td style="text-align:right"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;wn*******or@gmail.com</td>
-<td style="text-align:right">$ 0.99</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.11</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;zh**************ng@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.08</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;c*****l@gmail.com</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.08</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ww*********tv@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.06</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;3******9@qq.com</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.03</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;1********1@163.com</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.11.01</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;de*******su@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.31</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;b******n@outlook.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.30</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;bo********se@gmail.com</td>
-<td style="text-align:right">$15</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.30</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;xi*********ng@live.com</td>
-<td style="text-align:right">$4</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.29</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;5****3@gmail.com</td>
-<td style="text-align:right">$20</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.29</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;bl******iu@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;s****c@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;sp******ck@hotmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.27</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;c****i@live.com</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.24</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;l******r@msn.cn</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.24</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;k******e@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.23</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;m*******p@gmail.com</td>
-<td style="text-align:right">$3</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.23</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;il*****dl@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.20</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;w******8@msn.com</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.19</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;do*****xm@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.15</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;li********ss@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.08</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ti*******er@outlook.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.05</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Ed******on</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.10.02</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$9.67</td>
-<td>BTC 0.0017</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.09.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$5124</td>
-<td>BTC 1.23</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.09.27</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$6582</td>
-<td>BTC 1.67</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.09.15</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;w*****y@qq.com</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.09.13</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;18*******02@139.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.25</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;cd**********05@gmail.com</td>
-<td style="text-align:right">$7.07</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.25</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;le*******08@gmail.com</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.24</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;no*****32@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.21</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;do******xu@hotmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.20</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;v****1@qq.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.11</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;fi*********ai@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.08</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;hi*********08@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.07</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Li*******en</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.08.03</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;c****s@qq.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.30</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;a****e@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;****ond</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Ors********el</td>
-<td style="text-align:right">$200</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.27</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;fi****ng@outlook.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.23</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;xy*****ry@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.22</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ya******ge@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.21</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;v****t@gmail.com</td>
-<td style="text-align:right">$3.91</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.20</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$273.93</td>
-<td>BTC 0.1</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.07.08</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;m****b@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.06.26</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;mz*****ng@126.com</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.06.07</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$2582</td>
-<td>ETH 9.78792317</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.06.07</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$1028</td>
-<td>BTC 0.36</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.05.01</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$20.88</td>
-<td>BTC 0.01494717</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.03.29</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$10.31</td>
-<td>BTC 0.01</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.03.28</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ye*******yo@gmail.com</td>
-<td style="text-align:right">$7.5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.03.26</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;wu****in@hotmail.com</td>
-<td style="text-align:right">$1</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.02.25</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ya*****un@hotmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.02.23</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$12</td>
-<td>BTC 0.01</td>
+<td style="text-align:right"></td>
+<td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.02.21</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ro*******an</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.02.07</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ye*******yo@gmail.com</td>
-<td style="text-align:right">$5</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.01.31</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Mi*******ag</td>
-<td style="text-align:right">$100</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.01.06</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;ya******ge@gmail.com</td>
-<td style="text-align:right">$10</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
-<td style="text-align:center">2017.01.04</td>
+<td style="text-align:center"></td>
 <td style="text-align:left">&#x3000;&#x3000;Anonymous</td>
-<td style="text-align:right">$25</td>
+<td style="text-align:right"></td>
 <td></td>
 </tr>
 <tr>
@@ -1305,7 +1644,7 @@ function doPaypalMe(event) {
 
             
                 
-                <a href="install.html" class="navigation navigation-prev " aria-label="Previous page: Install">
+                <a href="command.html" class="navigation navigation-prev " aria-label="Previous page: Commandline">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1321,7 +1660,7 @@ function doPaypalMe(event) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.4","depth":2,"next":{"title":"Support","level":"1.1.5","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.5.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.5.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.5","depth":2,"next":{"title":"Support","level":"1.1.6","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.6.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.6.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Commandline","level":"1.1.4","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2018-05-27T18:14:28.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

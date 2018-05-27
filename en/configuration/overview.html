@@ -7,9 +7,16 @@
         <title>Overview · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -143,7 +150,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../welcome/donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/command.html">
+            
+                <a href="../welcome/command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/donate.html">
             
                 <a href="../welcome/donate.html">
             
@@ -156,7 +176,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../welcome/help.html">
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/help.html">
             
                 <a href="../welcome/help.html">
             
@@ -170,7 +190,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="../welcome/tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="../welcome/tg.html">
             
                 <a href="../welcome/tg.html">
             
@@ -183,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="../welcome/pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="../welcome/pgp.html">
             
                 <a href="../welcome/pgp.html">
             
@@ -198,6 +218,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/license.html">
+            
+                <a href="../welcome/license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -395,7 +428,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="transport.html">
             
                 <a href="transport.html">
             
@@ -409,7 +468,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
             
                 <a href="transport/tcp.html">
             
@@ -422,7 +481,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
             
                 <a href="transport/mkcp.html">
             
@@ -435,7 +494,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
             
                 <a href="transport/websocket.html">
             
@@ -448,12 +507,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="env.html">
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
             
                 <a href="env.html">
             
@@ -598,10 +670,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="configuration-overview"><a name="configuration-overview" class="plugin-anchor" href="#configuration-overview"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration Overview</h1>
+<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/01_overview.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
 <p>V2Ray shares a same structure of configuration between server side and client side shown as below. Server and client configurations are different in specific sections.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;log&quot;</span>: {},
+  <span class="hljs-string">&quot;api&quot;</span>: {},
   <span class="hljs-string">&quot;dns&quot;</span>: {},
+  <span class="hljs-string">&quot;stats&quot;</span>: {},
   <span class="hljs-string">&quot;routing&quot;</span>: {},
   <span class="hljs-string">&quot;policy&quot;</span>: {},
   <span class="hljs-string">&quot;inbound&quot;</span>: {},
@@ -614,8 +689,10 @@
 <p>Where:</p>
 <ul>
 <li><code>log</code>: log configuration;</li>
+<li><code>api</code>: API configuration;</li>
 <li><code>dns</code>: DNS configuration;</li>
-<li><code>routing</code>: routing configuration;</li>
+<li><code>stats</code>: When specified, internal <a href="stats.html">Statistics</a> is enabled;</li>
+<li><code>routing</code>: <a href="routing.html">Routing configuration</a>;</li>
 <li><code>inbound</code>: master inbound interface configuration;</li>
 <li><code>outbound</code>: master outbound interface configuration;</li>
 <li><code>inboundDetour</code>: extra inbound interfaces configurations;</li>
@@ -648,40 +725,10 @@
 </ul>
 </li>
 </ul>
+<h2 id="api-configuration"><a name="api-configuration" class="plugin-anchor" href="#api-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>API Configuration</h2>
+<p>RPC API to control the V2Ray instance. See <a href="api.html">API configuration</a> for details.</p>
 <h2 id="dns-configurations-dns"><a name="dns-configurations-dns" class="plugin-anchor" href="#dns-configurations-dns"><i class="fa fa-link" aria-hidden="true"></i></a>DNS Configurations (dns)</h2>
 <p>Internal DNS server&apos;s configurations, if this section is omitted or empty, V2Ray will use your system-wide DNS configuration. For details, see <a href="04_dns.md">DNS Configurations</a></p>
-<h2 id="routing-configurations&#xFF08;routing&#xFF09;"><a name="routing-configurations&#xFF08;routing&#xFF09;" class="plugin-anchor" href="#routing-configurations&#xFF08;routing&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Routing Configurations&#xFF08;routing&#xFF09;</h2>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
-  <span class="hljs-string">&quot;settings&quot;</span>: {
-    <span class="hljs-string">&quot;rules&quot;</span>: [
-      {
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-        <span class="hljs-string">&quot;domain&quot;</span>: [
-          <span class="hljs-string">&quot;baidu.com&quot;</span>,
-          <span class="hljs-string">&quot;qq.com&quot;</span>
-        ],
-        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-      },
-      {
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-        <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
-        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
-      },
-      {
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
-        <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;udp&quot;</span>,
-        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;blocked&quot;</span>
-      }
-    ]
-  }
-}
-</code></pre>
-<p>Where:</p>
-<ul>
-<li><code>strategy</code>: routing strategy, currently the only valid value is `&quot;rules&quot;.</li>
-<li><code>settings</code>: For specific configurations, see <a href="03_routing.md">Routing Configurations</a>&#xFF1B;</li>
-</ul>
 <h2 id="policy"><a name="policy" class="plugin-anchor" href="#policy"><i class="fa fa-link" aria-hidden="true"></i></a>Local Policy </h2>
 <p>Configurations for permissions and other security strategies. For details, see <a href="policy.html">Local Policy</a>.</p>
 <h2 id="master-inbound-interface-configurations-inbound"><a name="master-inbound-interface-configurations-inbound" class="plugin-anchor" href="#master-inbound-interface-configurations-inbound"><i class="fa fa-link" aria-hidden="true"></i></a>Master Inbound Interface Configurations (inbound)</h2>
@@ -699,6 +746,12 @@
 <p>Where:</p>
 <ul>
 <li><code>port</code>: listening port.</li>
+<li><code>port</code>: port to be listen from. Accepted formats are:<ul>
+<li>Integer: actual port number.</li>
+<li>Env variable (V2Ray 3.23+): Beginning with <code>&quot;env:&quot;</code>, an env variable specifies the port in string format, such as <code>&quot;env:PORT&quot;</code>. V2Ray will decode the variable as string.</li>
+<li>String (V2Ray 3.23+): A numberic string value, such as <code>&quot;1234&quot;</code>.</li>
+</ul>
+</li>
 <li><code>listen</code>: listening IP address, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
 <li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
 <li><code>settings</code>: Protocol-specific settings, details are at protocols&apos; detail pages.</li>
@@ -757,7 +810,12 @@
 <p>Where:</p>
 <ul>
 <li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
-<li><code>port</code>: port number, could be a single number or range specified by a string, for example:<code>&quot;5-10&quot;</code> stands for port number 5 to 10.</li>
+<li><code>port</code>: port to be listen from. Accepted formats are:<ul>
+<li>Integer: actual port number.</li>
+<li>Env variable (V2Ray 3.23+): Beginning with <code>&quot;env:&quot;</code>, an env variable specifies the port in string format, such as <code>&quot;env:PORT&quot;</code>. V2Ray will decode the variable as string.</li>
+<li>String: Either a numberic string value, such as <code>&quot;1234&quot;</code>, or a port range like <code>&quot;5-10&quot;</code> which stands for port number 5 to 10.</li>
+</ul>
+</li>
 <li><code>tag</code>: This inbound interface&apos;s tag, which should be unique among all inbound/outbound interfaces.</li>
 <li><code>listen</code>: listening IP address, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
 <li><code>allocate</code>: Allocation options:<ul>
@@ -830,7 +888,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Overview","level":"1.2.1","depth":2,"next":{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Configuration","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Overview","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"Transport","level":"1.2.7","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.7.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.7.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.7.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]}]},{"title":"Env Variables","level":"1.2.8","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-01-16T11:02:56.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Overview","level":"1.2.1","depth":2,"next":{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Configuration","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Overview","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Statistics","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},{"title":"Env Variables","level":"1.2.10","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

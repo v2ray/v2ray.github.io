@@ -7,9 +7,16 @@
         <title>Shadowsocks · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -143,7 +150,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../../welcome/donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="../../welcome/command.html">
+            
+                <a href="../../welcome/command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../welcome/donate.html">
             
                 <a href="../../welcome/donate.html">
             
@@ -156,7 +176,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../../welcome/help.html">
+        <li class="chapter " data-level="1.1.6" data-path="../../welcome/help.html">
             
                 <a href="../../welcome/help.html">
             
@@ -170,7 +190,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="../../welcome/tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="../../welcome/tg.html">
             
                 <a href="../../welcome/tg.html">
             
@@ -183,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="../../welcome/pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="../../welcome/pgp.html">
             
                 <a href="../../welcome/pgp.html">
             
@@ -198,6 +218,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../../welcome/license.html">
+            
+                <a href="../../welcome/license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -395,7 +428,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../transport.html">
             
                 <a href="../transport.html">
             
@@ -409,7 +468,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../transport/tcp.html">
             
                 <a href="../transport/tcp.html">
             
@@ -422,7 +481,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../transport/mkcp.html">
             
                 <a href="../transport/mkcp.html">
             
@@ -435,7 +494,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../transport/websocket.html">
             
                 <a href="../transport/websocket.html">
             
@@ -448,12 +507,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../transport/h2.html">
+            
+                <a href="../transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
             
                 <a href="../env.html">
             
@@ -635,7 +707,8 @@
   <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>,
   <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
@@ -652,12 +725,13 @@
 </ul>
 </li>
 <li><code>password</code>: Password. Can be any string.</li>
-<li><code>udp</code>: <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
+<li><code>udp</code> (Deprecated, use <code>network</code>): <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
 <li><code>level</code>: User level. Default to <code>0</code>. See <a href="../policy.html">Policy</a>.</li>
 <li><code>ota</code>: <code>true</code> or <code>false</code>, whether or not to enable OTA. Default to auto mode.<ul>
 <li>When AEAD is used, <code>ota</code> has no effect.</li>
 </ul>
 </li>
+<li><code>network</code> (V2Ray 3.16+): Type of network, either <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. Default to <code>&quot;tcp&quot;</code>.</li>
 </ul>
 <h2 id="outbound-proxy-configuration"><a name="outbound-proxy-configuration" class="plugin-anchor" href="#outbound-proxy-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound proxy configuration</h2>
 <pre><code class="lang-javascript">{
@@ -723,7 +797,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-01-16T11:02:56.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"next":{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

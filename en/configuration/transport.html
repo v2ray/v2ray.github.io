@@ -7,9 +7,16 @@
         <title>Transport · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -65,7 +72,7 @@
     <link rel="next" href="transport/tcp.html" />
     
     
-    <link rel="prev" href="mux.html" />
+    <link rel="prev" href="stats.html" />
     
 
     </head>
@@ -143,7 +150,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../welcome/donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/command.html">
+            
+                <a href="../welcome/command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/donate.html">
             
                 <a href="../welcome/donate.html">
             
@@ -156,7 +176,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../welcome/help.html">
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/help.html">
             
                 <a href="../welcome/help.html">
             
@@ -170,7 +190,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="../welcome/tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="../welcome/tg.html">
             
                 <a href="../welcome/tg.html">
             
@@ -183,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="../welcome/pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="../welcome/pgp.html">
             
                 <a href="../welcome/pgp.html">
             
@@ -198,6 +218,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/license.html">
+            
+                <a href="../welcome/license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -395,7 +428,33 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.7" data-path="transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="transport.html">
             
                 <a href="transport.html">
             
@@ -409,7 +468,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
             
                 <a href="transport/tcp.html">
             
@@ -422,7 +481,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
             
                 <a href="transport/mkcp.html">
             
@@ -435,7 +494,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
             
                 <a href="transport/websocket.html">
             
@@ -448,12 +507,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="env.html">
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
             
                 <a href="env.html">
             
@@ -598,58 +670,132 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="transport-settings"><a name="transport-settings" class="plugin-anchor" href="#transport-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Transport Settings</h1>
-<p>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#xFF08;transport&#xFF09;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86; V2Ray &#x5982;&#x4F55;&#x4F7F;&#x7528; TCP&#x3001;UDP &#x7B49;&#x57FA;&#x7840;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;&#x914D;&#x7F6E;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E8C;&#x662F;&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#x3002;&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x534F;&#x8BAE;&#x7528;&#x600E;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x8F93;&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x51FA;&#x4F20;&#x5165;&#x534F;&#x8BAE;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x540C;&#x6837;&#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x3002;&#x5F53;&#x5206;&#x534F;&#x8BAE;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x79CD;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x586B;&#x5199;&#x5176;&#x8BBE;&#x7F6E;&#x65F6;&#xFF0C;&#x6B64;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x4F1A;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/transport.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
+<p>Transport settings is for how V2Ray sends and receives data from its peers. The settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global-configuration"><a name="global-configuration" class="plugin-anchor" href="#global-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration</h2>
-<p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &quot;transport&quot; &#x9879;&#x3002;</p>
+<p>Global settings is in the &quot;transport&quot; entry of V2Ray config.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;wsSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>tcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/tcp.html">TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>kcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/mkcp.html">mKCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>wsSettings</code>: &#x9488;&#x5BF9; <a href="transport/websocket.html">WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
+<li><code>tcpSettings</code>: Settings for <a href="transport/tcp.html">TCP transport</a>&#x3002;</li>
+<li><code>kcpSettings</code>: Settings for <a href="transport/mkcp.html">mKCP transport</a>&#x3002;</li>
+<li><code>wsSettings</code>: Settings for <a href="transport/websocket.html">WebSocket transport</a>&#x3002;</li>
+<li><code>httpSettings</code>: Settings for <a href="transport/h2.html">HTTP/2 transport</a>&#x3002;</li>
 </ul>
 <h2 id="per-proxy-configuration"><a name="per-proxy-configuration" class="plugin-anchor" href="#per-proxy-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Per-proxy Configuration</h2>
-<p>&#x6BCF;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x3001;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<p>Each inbound and outbound proxy may has its own transport settings. Each inbound, inboundDetour, outbound and outboundDetour entry may have a <code>streamSettings</code> for transport.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
   <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>,
   <span class="hljs-string">&quot;tlsSettings&quot;</span>: {
     <span class="hljs-string">&quot;serverName&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>,
+    <span class="hljs-string">&quot;alpn&quot;</span>: [<span class="hljs-string">&quot;http/1.1&quot;</span>],
     <span class="hljs-string">&quot;allowInsecure&quot;</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-string">&quot;certificates&quot;</span>: [
       {
+        <span class="hljs-string">&quot;usage&quot;</span>: <span class="hljs-string">&quot;encipherment&quot;</span>,
+
         <span class="hljs-string">&quot;certificateFile&quot;</span>: <span class="hljs-string">&quot;/path/to/certificate.crt&quot;</span>,
-        <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/path/to/key.key&quot;</span>
+        <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/path/to/key.key&quot;</span>,
+
+        <span class="hljs-string">&quot;certificate&quot;</span>: [
+          <span class="hljs-string">&quot;-----BEGIN CERTIFICATE-----&quot;</span>,
+          <span class="hljs-string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span>,
+          <span class="hljs-string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span>,
+          <span class="hljs-string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span>,
+          <span class="hljs-string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span>,
+          <span class="hljs-string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span>,
+          <span class="hljs-string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span>,
+          <span class="hljs-string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span>,
+          <span class="hljs-string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span>,
+          <span class="hljs-string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span>,
+          <span class="hljs-string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span>,
+          <span class="hljs-string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span>,
+          <span class="hljs-string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span>,
+          <span class="hljs-string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span>,
+          <span class="hljs-string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span>,
+          <span class="hljs-string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span>,
+          <span class="hljs-string">&quot;-----END CERTIFICATE-----&quot;</span>
+        ],
+        <span class="hljs-string">&quot;key&quot;</span>: [
+          <span class="hljs-string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>,
+          <span class="hljs-string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span>,
+          <span class="hljs-string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span>,
+          <span class="hljs-string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span>,
+          <span class="hljs-string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span>,
+          <span class="hljs-string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span>,
+          <span class="hljs-string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span>,
+          <span class="hljs-string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span>,
+          <span class="hljs-string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span>,
+          <span class="hljs-string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span>,
+          <span class="hljs-string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span>,
+          <span class="hljs-string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span>,
+          <span class="hljs-string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span>,
+          <span class="hljs-string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span>,
+          <span class="hljs-string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span>,
+          <span class="hljs-string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span>,
+          <span class="hljs-string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span>,
+          <span class="hljs-string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span>,
+          <span class="hljs-string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span>,
+          <span class="hljs-string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span>,
+          <span class="hljs-string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span>,
+          <span class="hljs-string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span>,
+          <span class="hljs-string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span>,
+          <span class="hljs-string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span>,
+          <span class="hljs-string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span>,
+          <span class="hljs-string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span>,
+          <span class="hljs-string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
+        ]
       }
     ]
   },
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;wsSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
 }
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<p>Where:</p>
 <ul>
-<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001; <code>&quot;kcp&quot;</code> &#x6216; <code>&quot;ws&quot;</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#xFF1B;</li>
-<li><code>security</code>: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
-<li><code>tlsSettings</code>: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; ChaCha &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
-<li><code>serverName</code>: &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</li>
-<li><code>allowInsecure</code>: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</li>
-<li><code>certificates</code>: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF08;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;<ul>
-<li><code>certificateFile</code>: &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;</li>
-<li><code>keyFile</code>: &#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;</li>
+<li><code>network</code>: Network type of the stream transport. Choices are <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>, or <code>&quot;http&quot;</code>. Default value <code>&quot;tcp&quot;</code>.</li>
+<li><code>security</code>: Type of security. Choices are <code>&quot;none&quot;</code> (default) for no extra security, or <code>&quot;tls&quot;</code> for using <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
+<li><code>tlsSettings</code>: TLS settings. TLS is provided by Golang. Support up to TLS 1.2. DTLS is not supported.<ul>
+<li><code>serverName</code>: Server name (usually domain) used for TLS authentication.</li>
+<li><code>alpn</code> (V2Ray 3.18+): An array of strings, to specifiy the ALPN value in TLS handshake. Default value is <code>[&quot;http/1.1&quot;]</code>.</li>
+<li><code>allowInsecure</code>: If <code>true</code>, V2Ray allowss insecure connection at TLS client.</li>
+<li><code>allowInsecureCiphers</code> (V2Ray 3.24+): Whehter or not to allow insecure cipher suites. By default TLS only uses cipher suites from TLS 1.3 spec. Turn on this option to allow cipher suites with static RSA keys.</li>
+<li><code>certificates</code>: List of TLS certificates. Each entry is one certificate.<ul>
+<li><code>usage</code> (V2Ray 3.17+): Purpose of the certificate. Default value <code>&quot;encipherment&quot;</code>. Choices are:<ul>
+<li><code>&quot;encipherment&quot;</code>: Certificate is used for TLS authentication and encryption.</li>
+<li><code>&quot;verify&quot;</code>: Certificate is used for validating TLS certificates from remote peer. In this case, the certificate has to be a CA certificate. For now, Windows is not supported.</li>
+<li><code>&quot;issue&quot;</code>: Certificate is used for issuing other certificates. In this case, the certificate has to be a CA certificate.</li>
+</ul>
+</li>
+<li><code>certificateFile</code>: File path to the certificate. If the certificate is generated by OpenSSL, the path ends with &quot;.crt&quot;.</li>
+<li><code>certificate</code> (V2Ray 3.17+): List of strings as content of the certificate. See the example above. Either <code>certificate</code> or <code>certificateFile</code> must not be empty.</li>
+<li><code>keyFile</code>: File path to the private key. If generated by OpenSSL, the file usually ends with &quot;.key&quot;. Key file with password is not supported.</li>
+<li><code>key</code> (V2Ray 3.17+): List of strings as content of the private key. See the example above. Either <code>key</code> or <code>keyFile</code> must not be empty.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>tcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; TCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; TCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>kcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; mKCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; mKCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>wsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
+<li><code>tcpSettings</code>: TCP transport configuration for current proxy. Effective only when the proxy uses TCP transport. Configuration is the same as it is in global configuration.</li>
+<li><code>kcpSettings</code>: mKCP transport configuration for current proxy. Effective only when the proxy uses mKCP transport. Configuration is the same as it is in global configuration.</li>
+<li><code>wsSettings</code>: WebSocket transport configuration for current proxy. Effective only when the proxy uses WebSocket transport. Configuration is the same as it is in global configuration.</li>
+<li><code>httpSettings</code>: HTTP/2 transport configuration for current proxy. Effective only when the proxy uses HTTP/2 transport. Configuration is the same as it is in global configuration.</li>
+</ul>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<ul>
+<li>When <code>certificateFile</code> and <code>certificate</code> are both filled in. V2Ray uses <code>certificateFile</code>. Same for <code>keyFile</code> and <code>key</code>.</li>
+<li>When there is a new client request, say for <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, V2Ray will find a certificate for <code>&quot;v2ray.com&quot;</code> first. If not found, V2Ray will try to issue a new certificate using any existing certificate whose <code>usage</code> is <code>&quot;issue&quot;</code> for <code>&quot;v2ray.com&quot;</code>. The new certificate expires in one hour, and will be added to certificate pool for later reuse.</li>
+<li>When <code>usage</code> is <code>&quot;verify&quot;</code>, both <code>keyFile</code> and <code>key</code> can be empty.</li>
+<li>Use <code>v2ctl cert -ca</code> command to generate a new CA certificate.</li>
 </ul>
 
                                 
@@ -662,7 +808,7 @@
 
             
                 
-                <a href="mux.html" class="navigation navigation-prev " aria-label="Previous page: Mux">
+                <a href="stats.html" class="navigation navigation-prev " aria-label="Previous page: Statistics">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -678,7 +824,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.7","depth":2,"next":{"title":"TCP","level":"1.2.7.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-01-16T11:02:56.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistics","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -7,9 +7,16 @@
         <title>新手上路 · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -259,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    项目授权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -272,7 +292,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.11" >
             
                 <a target="_blank" href="https://toutyrater.github.io/">
             
@@ -479,7 +499,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/05_transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/api.html">
+            
+                <a href="../chapter_02/api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/stats.html">
+            
+                <a href="../chapter_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter_02/05_transport.html">
             
                 <a href="../chapter_02/05_transport.html">
             
@@ -493,7 +539,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../chapter_02/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../chapter_02/transport/tcp.html">
             
                 <a href="../chapter_02/transport/tcp.html">
             
@@ -506,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../chapter_02/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../chapter_02/transport/mkcp.html">
             
                 <a href="../chapter_02/transport/mkcp.html">
             
@@ -519,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../chapter_02/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../chapter_02/transport/websocket.html">
             
                 <a href="../chapter_02/transport/websocket.html">
             
@@ -532,12 +578,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../chapter_02/transport/h2.html">
+            
+                <a href="../chapter_02/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_02/env.html">
             
                 <a href="../chapter_02/env.html">
             
@@ -858,7 +917,7 @@
 <li>&#x5728; Windows &#x548C; macOS &#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x662F; V2Ray &#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>config.json</code> &#x6587;&#x4EF6;&#x3002;&#x76F4;&#x63A5;&#x8FD0;&#x884C; <code>v2ray</code> &#x6216; <code>v2ray.exe</code> &#x5373;&#x53EF;&#x3002;</li>
 <li>&#x5728; Linux &#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x4F4D;&#x4E8E; <code>/etc/v2ray/config.json</code> &#x6587;&#x4EF6;&#x3002;&#x8FD0;&#x884C; <code>v2ray --config=/etc/v2ray/config.json</code>&#xFF0C;&#x6216;&#x4F7F;&#x7528; systemd &#x7B49;&#x5DE5;&#x5177;&#x628A; V2Ray &#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x3002;</li>
 </ul>
-<p>&#x66F4;&#x591A;&#x8BE6;&#x89C1;&#x7684;&#x8BF4;&#x660E;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://toutyrater.github.io/" target="_blank">&#x767D;&#x8BDD;&#x6587;&#x6559;&#x7A0B;</a>&#x548C;<a href="../chapter_02/overview.md">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BF4;&#x660E;</a>&#x3002;</p>
+<p>&#x66F4;&#x591A;&#x8BE6;&#x89C1;&#x7684;&#x8BF4;&#x660E;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://toutyrater.github.io/" target="_blank">&#x767D;&#x8BDD;&#x6587;&#x6559;&#x7A0B;</a>&#x548C;<a href="../chapter_02/01_overview.html">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BF4;&#x660E;</a>&#x3002;</p>
 
                                 
                                 </section>
@@ -886,7 +945,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"新手上路","level":"1.1.4","depth":2,"next":{"title":"命令行参数","level":"1.1.5","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"previous":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/start.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:03:56.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"新手上路","level":"1.1.4","depth":2,"next":{"title":"命令行参数","level":"1.1.5","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"previous":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/start.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

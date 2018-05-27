@@ -7,9 +7,16 @@
         <title>Version History · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -143,7 +150,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="donate.html">
             
                 <a href="donate.html">
             
@@ -156,7 +176,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="help.html">
+        <li class="chapter " data-level="1.1.6" data-path="help.html">
             
                 <a href="help.html">
             
@@ -170,7 +190,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="tg.html">
             
                 <a href="tg.html">
             
@@ -183,7 +203,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="pgp.html">
             
                 <a href="pgp.html">
             
@@ -198,6 +218,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -395,7 +428,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="../configuration/transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="../configuration/api.html">
+            
+                <a href="../configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../configuration/transport.html">
             
                 <a href="../configuration/transport.html">
             
@@ -409,7 +468,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="../configuration/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="../configuration/transport/tcp.html">
             
                 <a href="../configuration/transport/tcp.html">
             
@@ -422,7 +481,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="../configuration/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="../configuration/transport/mkcp.html">
             
                 <a href="../configuration/transport/mkcp.html">
             
@@ -435,7 +494,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="../configuration/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="../configuration/transport/websocket.html">
             
                 <a href="../configuration/transport/websocket.html">
             
@@ -448,12 +507,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="../configuration/transport/h2.html">
+            
+                <a href="../configuration/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="../configuration/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="../configuration/env.html">
             
                 <a href="../configuration/env.html">
             
@@ -599,6 +671,53 @@
                                 
                                 <h1 id="version-history"><a name="version-history" class="plugin-anchor" href="#version-history"><i class="fa fa-link" aria-hidden="true"></i></a>Version History</h1>
 <p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_00/01_versions.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
+<h2 id="20180601-v324"><a name="20180601-v324" class="plugin-anchor" href="#20180601-v324"><i class="fa fa-link" aria-hidden="true"></i></a>2018.06.01 v3.24</h2>
+<ul>
+<li>Internal buffer size (per connection) can now be configured in JSON configuration.</li>
+<li>mKCP now supports DTLS 1.2 header.</li>
+<li>TLS transport now only support cipher suites in TLS 1.3 spec.</li>
+</ul>
+<h2 id="20180525-v323"><a name="20180525-v323" class="plugin-anchor" href="#20180525-v323"><i class="fa fa-link" aria-hidden="true"></i></a>2018.05.25 v3.23</h2>
+<ul>
+<li>In JSON configuration, port can now be specified from env variables.</li>
+<li>JSON config now supports to load domains and IPs from specified files.</li>
+</ul>
+<h2 id="20180420-v319"><a name="20180420-v319" class="plugin-anchor" href="#20180420-v319"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.20 v3.19</h2>
+<ul>
+<li>Traffic stats for inbound proxies.</li>
+</ul>
+<h2 id="20180413-v317"><a name="20180413-v317" class="plugin-anchor" href="#20180413-v317"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.13 v3.17</h2>
+<ul>
+<li>V2Ray can load config file from HTTP(s).</li>
+<li>TLS in V2Ray can issue new certificates by provided CA certificates for domains in incoming requests.</li>
+<li><a href="../configuration/transport/h2.html">HTTP/2</a> transport.</li>
+</ul>
+<h2 id="20180406-v316"><a name="20180406-v316" class="plugin-anchor" href="#20180406-v316"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.06 v3.16</h2>
+<ul>
+<li><a href="../configuration/stats.html">Statistics</a>.</li>
+<li>Shadowsocks inbound now can be configured to only listen on UDP. Strongly recommend to not listen on both TCP and UDP on the same port.</li>
+</ul>
+<h2 id="20180302-v311"><a name="20180302-v311" class="plugin-anchor" href="#20180302-v311"><i class="fa fa-link" aria-hidden="true"></i></a>2018.03.02 v3.11</h2>
+<ul>
+<li>A new settings is introduced in VMess inbound, to forbid client using insecure encryption methods.</li>
+<li>Offers ARMv7 release.</li>
+<li>Offers MIPS release that doesn&apos;t require FPU.</li>
+</ul>
+<h2 id="20180223-v310"><a name="20180223-v310" class="plugin-anchor" href="#20180223-v310"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.23 v3.10</h2>
+<ul>
+<li>Log entries now contain session ID to distinguish proxy sessions.</li>
+<li>Bug fixes.</li>
+</ul>
+<h2 id="20180215-v39"><a name="20180215-v39" class="plugin-anchor" href="#20180215-v39"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.15 v3.9</h2>
+<ul>
+<li>Happy New Year!</li>
+<li>Bug fixes.</li>
+</ul>
+<h2 id="20180209-v37"><a name="20180209-v37" class="plugin-anchor" href="#20180209-v37"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.09 v3.7</h2>
+<ul>
+<li>Developer preview: <a href="../configuration/api.html">Remote API</a>&#x3002;</li>
+<li>Bug fixes.</li>
+</ul>
 <h2 id="20171229-v35"><a name="20171229-v35" class="plugin-anchor" href="#20171229-v35"><i class="fa fa-link" aria-hidden="true"></i></a>2017.12.29 v3.5</h2>
 <ul>
 <li>Geoip now supports private network address under name &quot;private&quot;.</li>
@@ -664,8 +783,8 @@
 </ul>
 <h2 id="20170421-v224"><a name="20170421-v224" class="plugin-anchor" href="#20170421-v224"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.21 v2.24</h2>
 <ul>
-<li>Stablize Mux.</li>
-<li>Improves memory effeciency.</li>
+<li>Stabilize Mux.</li>
+<li>Improves memory efficiency.</li>
 </ul>
 <h2 id="20170415-v223"><a name="20170415-v223" class="plugin-anchor" href="#20170415-v223"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.15 v2.23</h2>
 <ul>
@@ -739,7 +858,7 @@
 </ul>
 <h2 id="20161205-v29"><a name="20161205-v29" class="plugin-anchor" href="#20161205-v29"><i class="fa fa-link" aria-hidden="true"></i></a>2016.12.05 v2.9</h2>
 <ul>
-<li>Fix compatiblity with Alpine Linux.</li>
+<li>Fix compatibility with Alpine Linux.</li>
 </ul>
 <h2 id="20161128-v28"><a name="20161128-v28" class="plugin-anchor" href="#20161128-v28"><i class="fa fa-link" aria-hidden="true"></i></a>2016.11.28 v2.8</h2>
 <ul>
@@ -924,7 +1043,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Version History","level":"1.1.1","depth":2,"next":{"title":"Workflow","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},"previous":{"title":"Welcome to V2Ray","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},{"title":"Workflow","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},{"title":"Donation","level":"1.1.4","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},{"title":"Support","level":"1.1.5","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.5.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.5.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/versions.md","mtime":"2018-01-16T11:02:56.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Version History","level":"1.1.1","depth":2,"next":{"title":"Workflow","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},"previous":{"title":"Welcome to V2Ray","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},{"title":"Workflow","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},{"title":"Commandline","level":"1.1.4","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},{"title":"Donation","level":"1.1.5","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},{"title":"Support","level":"1.1.6","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.6.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.6.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},{"title":"License","level":"1.1.7","depth":2,"path":"welcome/license.md","ref":"welcome/license.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/versions.md","mtime":"2018-05-27T18:14:28.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

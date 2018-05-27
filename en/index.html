@@ -7,9 +7,16 @@
         <title>Welcome to V2Ray · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
-        if (location.protocol !== 'https:') {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
         </script>
         
     
@@ -141,7 +148,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="welcome/donate.html">
+        <li class="chapter " data-level="1.1.4" data-path="welcome/command.html">
+            
+                <a href="welcome/command.html">
+            
+                    
+                    Commandline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="welcome/donate.html">
             
                 <a href="welcome/donate.html">
             
@@ -154,7 +174,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="welcome/help.html">
+        <li class="chapter " data-level="1.1.6" data-path="welcome/help.html">
             
                 <a href="welcome/help.html">
             
@@ -168,7 +188,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.1.5.1" data-path="welcome/tg.html">
+        <li class="chapter " data-level="1.1.6.1" data-path="welcome/tg.html">
             
                 <a href="welcome/tg.html">
             
@@ -181,7 +201,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.5.2" data-path="welcome/pgp.html">
+        <li class="chapter " data-level="1.1.6.2" data-path="welcome/pgp.html">
             
                 <a href="welcome/pgp.html">
             
@@ -196,6 +216,19 @@
     
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="welcome/license.html">
+            
+                <a href="welcome/license.html">
+            
+                    
+                    License
+            
+                </a>
+            
+
             
         </li>
     
@@ -393,7 +426,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="configuration/transport.html">
+        <li class="chapter " data-level="1.2.7" data-path="configuration/api.html">
+            
+                <a href="configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="configuration/stats.html">
+            
+                <a href="configuration/stats.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="configuration/transport.html">
             
                 <a href="configuration/transport.html">
             
@@ -407,7 +466,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.7.1" data-path="configuration/transport/tcp.html">
+        <li class="chapter " data-level="1.2.9.1" data-path="configuration/transport/tcp.html">
             
                 <a href="configuration/transport/tcp.html">
             
@@ -420,7 +479,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.2" data-path="configuration/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.9.2" data-path="configuration/transport/mkcp.html">
             
                 <a href="configuration/transport/mkcp.html">
             
@@ -433,7 +492,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7.3" data-path="configuration/transport/websocket.html">
+        <li class="chapter " data-level="1.2.9.3" data-path="configuration/transport/websocket.html">
             
                 <a href="configuration/transport/websocket.html">
             
@@ -446,12 +505,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.4" data-path="configuration/transport/h2.html">
+            
+                <a href="configuration/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="configuration/env.html">
+        <li class="chapter " data-level="1.2.10" data-path="configuration/env.html">
             
                 <a href="configuration/env.html">
             
@@ -597,10 +669,10 @@
                                 
                                 <h1 id="project-v"><a name="project-v" class="plugin-anchor" href="#project-v"><i class="fa fa-link" aria-hidden="true"></i></a>Project V</h1>
 <p><img src="resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/" target="_blank"><img src="resources/chinese.svg" alt="Chinese"></a></p>
-<p>Project V is a set of tools to help you build your own privicy network over internet.</p>
+<p>Project V is a set of tools to help you build your own privacy network over internet.</p>
 <h2 id="introduction"><a name="introduction" class="plugin-anchor" href="#introduction"><i class="fa fa-link" aria-hidden="true"></i></a>Introduction</h2>
 <p>Project is provides a single core with various GUI programs. The core, V2Ray, is for network connection, routing and data processing, while GUI programs are for user friendly experience.</p>
-<p>V2Ray&apos;s reponsibility is tranfer data from its client to specified server, based on user configuration. It runs as a commandline tool. It can be configured via JSON based configuration.</p>
+<p>V2Ray&apos;s responsibility is transfer data from its client to specified server, based on user configuration. It runs as a commandline tool. It can be configured via JSON based configuration.</p>
 <h2 id="features"><a name="features" class="plugin-anchor" href="#features"><i class="fa fa-link" aria-hidden="true"></i></a>Features</h2>
 <h3 id="multiple-proxy-support"><a name="multiple-proxy-support" class="plugin-anchor" href="#multiple-proxy-support"><i class="fa fa-link" aria-hidden="true"></i></a>Multiple proxy support</h3>
 <p>V2Ray supports Socks, HTTP, Shadowsocks and VMess protocol.</p>
@@ -609,13 +681,13 @@
 <li>By combining different inbound and outbound proxies, one can change traffic format dynamically.</li>
 </ul>
 <h3 id="multiple-transport-protocols"><a name="multiple-transport-protocols" class="plugin-anchor" href="#multiple-transport-protocols"><i class="fa fa-link" aria-hidden="true"></i></a>Multiple transport protocols</h3>
-<p>All proxies above can be send/recieve over TLS, TCL, mKCP and more transport protocols.</p>
+<p>All proxies above can be send/receive over TLS, TCP, mKCP and more transport protocols.</p>
 <h3 id="flexible-routing"><a name="flexible-routing" class="plugin-anchor" href="#flexible-routing"><i class="fa fa-link" aria-hidden="true"></i></a>Flexible routing</h3>
 <p>V2Ray has an internal router, which can be configured to proxy traffic, or send directly, or even block them.</p>
 <h2 id="update-this-site"><a name="update-this-site" class="plugin-anchor" href="#update-this-site"><i class="fa fa-link" aria-hidden="true"></i></a>Update this site</h2>
 <p>This site is generated by GitBook, and host on GitHub. If you&apos;d like to modify its content, please send pull request to <a href="https://github.com/v2ray/manual" target="_blank">this repo</a>.</p>
 <h2 id="license"><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h2>
-<p>This website is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+<p>This website is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</p>
 
                                 
                                 </section>
@@ -639,7 +711,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Welcome to V2Ray","level":"1.1","depth":1,"next":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-01-16T11:02:56.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-16T11:04:15.577Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Welcome to V2Ray","level":"1.1","depth":1,"next":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
