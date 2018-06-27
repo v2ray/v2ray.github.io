@@ -683,19 +683,21 @@ if (inIframe() || !isValidDomain()) {
       <span class="hljs-string">&quot;localhost&quot;</span>
   ],
   <span class="hljs-string">&quot;clientIp&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
-  <span class="hljs-string">&quot;clientIp6&quot;</span>: <span class="hljs-string">&quot;2001:0db8:85a3:0000:0000:8a2e:0370:7334&quot;</span>
 }
 </code></pre>
 <p>Where:</p>
 <ul>
-<li><code>hosts</code>: A list of static IP addresses. Each entry has a domain name as key and IP address as value. If a DNS query targets one of the domains in this list, the corresponding IP will be returned immediately and DNS query will not be relayed.</li>
+<li><code>hosts</code>: A list of static IP addresses. Each entry has a domain name as key and IP address as value. If a DNS query targets one of the domains in this list, the corresponding IP will be returned immediately and DNS query will not be relayed. The format of the domain is:<ul>
+<li>Such as <code>&quot;v2ray.com&quot;</code>: The domain to be resolved has to equal to this domain.</li>
+<li>Such as <code>&quot;domain:v2ray.com&quot;</code>: The domain to be resolved can be this domain or any of its sub-domains.</li>
+</ul>
+</li>
 <li><code>servers</code>: A list of DNS server addresses. If there are more than one servers, they will be queried from top down. Options for DNS address:<ul>
 <li><code>&quot;IP&quot;</code>: An IP address whose port 53 is open for DNS query.</li>
 <li><code>&quot;localhost&quot;</code>: A special value that V2Ray will use DNS query from local machine.</li>
 </ul>
 </li>
 <li><code>clientIp</code>: IPv4 address of current system. This is used to notify DNS server for better IP resolution. The value can&apos;t be a private address.</li>
-<li><code>clientIp6</code>: IPv6 address of current system. This is used to notify DNS server for better IP resolution. The value can&apos;t be a private address.</li>
 </ul>
 <p>To use the internal DNS service, you need to configure <code>domainStrategy</code> in <a href="routing.html">routing</a>.</p>
 <p>The DNS queries relayed by this DNS service will also be dispatched based on routing settings. No extra configuration is required.</p>
@@ -736,7 +738,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-06-26T15:57:45.136Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-26T15:59:07.812Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-06-27T07:18:22.803Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-27T07:19:51.687Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
