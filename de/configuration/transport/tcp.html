@@ -1,0 +1,767 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TCP · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mkcp.html" />
+    
+    
+    <link rel="prev" href="../transport.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Willkommen bei V2Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../welcome/versions.html">
+            
+                <a href="../../welcome/versions.html">
+            
+                    
+                    Versionsgeschichte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../welcome/workflow.html">
+            
+                <a href="../../welcome/workflow.html">
+            
+                    
+                    Arbeitsablauf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../welcome/install.html">
+            
+                <a href="../../welcome/install.html">
+            
+                    
+                    Installieren
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../welcome/command.html">
+            
+                <a href="../../welcome/command.html">
+            
+                    
+                    Befehlszeile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../welcome/donate.html">
+            
+                <a href="../../welcome/donate.html">
+            
+                    
+                    Spende
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../../welcome/help.html">
+            
+                <a href="../../welcome/help.html">
+            
+                    
+                    Unterstützung
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../../welcome/tg.html">
+            
+                <a href="../../welcome/tg.html">
+            
+                    
+                    Telegramm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="../../welcome/pgp.html">
+            
+                <a href="../../welcome/pgp.html">
+            
+                    
+                    Private Kommunikation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../../welcome/license.html">
+            
+                <a href="../../welcome/license.html">
+            
+                    
+                    Lizenz
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Aufbau
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    Überblick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../protocols.html">
+            
+                <a href="../protocols.html">
+            
+                    
+                    Protokolle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../protocols/blackhole.html">
+            
+                <a href="../protocols/blackhole.html">
+            
+                    
+                    Schwarzes Loch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../protocols/dokodemo.html">
+            
+                <a href="../protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../protocols/freedom.html">
+            
+                <a href="../protocols/freedom.html">
+            
+                    
+                    Freiheit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../protocols/http.html">
+            
+                <a href="../protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../protocols/shadowsocks.html">
+            
+                <a href="../protocols/shadowsocks.html">
+            
+                    
+                    Schattensocken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../protocols/socks.html">
+            
+                <a href="../protocols/socks.html">
+            
+                    
+                    SOCKEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../protocols/vmess.html">
+            
+                <a href="../protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../policy.html">
+            
+                <a href="../policy.html">
+            
+                    
+                    Politik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../routing.html">
+            
+                <a href="../routing.html">
+            
+                    
+                    Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../dns.html">
+            
+                <a href="../dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../mux.html">
+            
+                <a href="../mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    Statistiken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../transport.html">
+            
+                <a href="../transport.html">
+            
+                    
+                    Transport
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.9.1" data-path="tcp.html">
+            
+                <a href="tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
+            
+                <a href="mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="h2.html">
+            
+                <a href="h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
+            
+                <a href="../env.html">
+            
+                    
+                    Env-Variablen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../ui_client/">
+            
+                <a href="../../ui_client/">
+            
+                    
+                    Kunden
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../ui_client/windows.html">
+            
+                <a href="../../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../ui_client/osx.html">
+            
+                <a href="../../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../ui_client/ios.html">
+            
+                <a href="../../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../ui_client/android.html">
+            
+                <a href="../../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../ui_client/service.html">
+            
+                <a href="../../ui_client/service.html">
+            
+                    
+                    Dienstleistungen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >TCP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tcp-transport"><a name="tcp-transport" class="plugin-anchor" href="#tcp-transport"><i class="fa fa-link" aria-hidden="true"></i></a>TCP-Transport</h1>
+<p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/transport/tcp.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
+<p>Aufbau:</p>
+<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Kopfzeile&quot;</span>: {<span class="hljs-string">&quot;Typ&quot;</span>: <span class="hljs-string">&quot;keine&quot;</span>}}
+</code></pre>
+<p>Woher:</p>
+<ul>
+<li><code>Header</code>: Kopfzeilenverschleierung Einstellungen: <ul>
+<li><code>Art</code>: Art der Verschleierung Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>&quot;keine&quot;</code>: Standard. Keine Verschleierung.</li>
+<li><code>&quot;http&quot;</code>: HTTP-Verschleierung. Siehe unten.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="http-verschleierung"><a name="http-verschleierung" class="plugin-anchor" href="#http-verschleierung"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP-Verschleierung</h2>
+<p>Die HTTP-Verschleierung muss f&#xFC;r die eingehenden und ausgehenden verbindenden Peers konfiguriert (und passend sein).</p>
+<pre><code class="lang-javascript">{&quot;Typ&quot;: &quot;http&quot;, &quot;Anfrage&quot;: {&quot;Version&quot;: &quot;1.1&quot;, &quot;Methode&quot;: &quot;GET&quot;, &quot;Pfad&quot;: [&quot;/&quot;], &quot;Kopfzeilen&quot;: {&quot;Host&quot;: [ &quot;www.baidu.com&quot;, &quot;www.bing.com&quot;, &quot;User-Agent&quot;: [&quot;Mozilla / 5.0 (Windows NT 10.0; WOW64)&quot; AppleWebKit / 537.36 (KHTML, wie Gecko) Chrome / 53.0.2785.143 Safari /537.36 &quot;,&quot; Mozilla / 5.0 (iPhone; CPU iPhone OS 10_0_2 wie Mac OS X) AppleWebKit / 601.1 (KHTML, wie Gecko) CriOS / 53.0.2785.109 Mobil / 14A456 Safari / 601.1.46 &quot;],&quot; Accept-Encoding &quot; : [&quot;gzip, deflate&quot;], &quot;Verbindung&quot;: [&quot;keep-alive&quot;], &quot;Pragma&quot;: &quot;no-cache&quot;}}, &quot;Antwort&quot;: {&quot;version&quot;: &quot;1.1&quot;, &quot;status&quot;: &quot;200&quot;, &quot;Grund&quot;: &quot;OK&quot;, &quot;Kopfzeilen&quot;: {&quot;Content-Type&quot;: [&quot;application / octet-stream&quot;, &quot;video / mpeg&quot;], &quot;Transfer-Encoding&quot;: [&quot;chunked&quot;] , &quot;Verbindung&quot;: [&quot;keep-alive&quot;], &quot;Pragma&quot;: &quot;no-cache&quot;}}}
+</code></pre>
+<p>::</p>
+<ul>
+<li><code>Typ</code>: gleich <code>Typ</code> Eintrag wie in <code>tcpSettings</code>.</li>
+<li><code>anfordern</code>: HTTP-Anfrageeinstellungen: <ul>
+<li><code>Version</code>: HTTP-Version, Standardwert <code>&quot;1.1&quot;</code></li>
+<li><code>Methode</code>: HTTP-Methode, Standardwert <code>&quot;GET&quot;</code>.</li>
+<li><code>Pfad</code>: Pfad. Ein String-Array. Der Standardwert ist <code>[&quot;/&quot;]</code>. Wenn mehrere Werte vorhanden sind, wird der Wert f&#xFC;r jede Anforderung zuf&#xE4;llig ausgew&#xE4;hlt.</li>
+<li><code>Header</code>: HTTP-Header. Es ist ein Schl&#xFC;sselwertpaar. Jeder Schl&#xFC;ssel ist der Schl&#xFC;ssel des HTTP-Headers und der Wert ist der Wert des HTTP-Headers. Wenn mehrere Werte festgelegt sind, wird der effektive Wert f&#xFC;r jede Anforderung zuf&#xE4;llig ausgew&#xE4;hlt. Die Standardeinstellungen sind die gleichen wie im obigen Beispiel.</li>
+</ul>
+</li>
+<li><code>Antwort</code>: HTTP-Antwort <ul>
+<li><code>Version</code>: HTTP-Version. Standardwert ist <code>&quot;1.1&quot;</code>.</li>
+<li><code>Status</code>: HTTP-Status. Standardwert ist <code>&quot;200&quot;</code>.</li>
+<li><code>Grund</code>: HTTP-Statustext. Standardwert ist <code>&quot;OK&quot;</code>.</li>
+<li><code>Header</code>: HTTP-Header. Wie Anforderungsheader, aber f&#xFC;r die Antwort.</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../transport.html" class="navigation navigation-prev " aria-label="Previous page: Transport">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mkcp.html" class="navigation navigation-next " aria-label="Next page: mKCP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

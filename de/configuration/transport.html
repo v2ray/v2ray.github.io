@@ -1,0 +1,783 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transport · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="transport/tcp.html" />
+    
+    
+    <link rel="prev" href="stats.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Willkommen bei V2Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../welcome/versions.html">
+            
+                <a href="../welcome/versions.html">
+            
+                    
+                    Versionsgeschichte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../welcome/workflow.html">
+            
+                <a href="../welcome/workflow.html">
+            
+                    
+                    Arbeitsablauf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../welcome/install.html">
+            
+                <a href="../welcome/install.html">
+            
+                    
+                    Installieren
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/command.html">
+            
+                <a href="../welcome/command.html">
+            
+                    
+                    Befehlszeile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/donate.html">
+            
+                <a href="../welcome/donate.html">
+            
+                    
+                    Spende
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/help.html">
+            
+                <a href="../welcome/help.html">
+            
+                    
+                    Unterstützung
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../welcome/tg.html">
+            
+                <a href="../welcome/tg.html">
+            
+                    
+                    Telegramm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="../welcome/pgp.html">
+            
+                <a href="../welcome/pgp.html">
+            
+                    
+                    Private Kommunikation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/license.html">
+            
+                <a href="../welcome/license.html">
+            
+                    
+                    Lizenz
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Aufbau
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Überblick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="protocols.html">
+            
+                <a href="protocols.html">
+            
+                    
+                    Protokolle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="protocols/blackhole.html">
+            
+                <a href="protocols/blackhole.html">
+            
+                    
+                    Schwarzes Loch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="protocols/dokodemo.html">
+            
+                <a href="protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="protocols/freedom.html">
+            
+                <a href="protocols/freedom.html">
+            
+                    
+                    Freiheit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="protocols/http.html">
+            
+                <a href="protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="protocols/shadowsocks.html">
+            
+                <a href="protocols/shadowsocks.html">
+            
+                    
+                    Schattensocken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="protocols/socks.html">
+            
+                <a href="protocols/socks.html">
+            
+                    
+                    SOCKEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="protocols/vmess.html">
+            
+                <a href="protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="policy.html">
+            
+                <a href="policy.html">
+            
+                    
+                    Politik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="dns.html">
+            
+                <a href="dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="mux.html">
+            
+                <a href="mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Statistiken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="transport.html">
+            
+                <a href="transport.html">
+            
+                    
+                    Transport
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
+            
+                <a href="transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
+            
+                <a href="transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
+            
+                <a href="transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    Env-Variablen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    Kunden
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    Dienstleistungen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Transport</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="transporteinstellungen"><a name="transporteinstellungen" class="plugin-anchor" href="#transporteinstellungen"><i class="fa fa-link" aria-hidden="true"></i></a>Transporteinstellungen</h1>
+<p><img src="../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/transport.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinesisch"></a></p>
+<p>Transporteinstellungen gibt an, wie V2Ray Daten von seinen Peers sendet und empf&#xE4;ngt. Die Einstellungen teilen sich in zwei Teile: globale Einstellungen und pro Proxy-Einstellungen. Per-Proxy-Einstellungen gibt an, wie jeder einzelne Proxy seine Daten verarbeitet, w&#xE4;hrend globale Einstellungen f&#xFC;r alle Proxies gelten. Normalerweise m&#xFC;ssen die eingehenden und ausgehenden Proxies zwischen dem verbindenden Peer die gleichen Transporteinstellungen haben. Wenn ein Proxy keine Transporteinstellungen hat, gelten die globalen Einstellungen.</p>
+<h2 id="globale-konfiguration"><a name="globale-konfiguration" class="plugin-anchor" href="#globale-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Globale Konfiguration</h2>
+<p>Globale Einstellungen befinden sich im Eintrag &quot;Transport&quot; von V2Ray config.</p>
+<pre><code class="lang-javascript">{<span class="hljs-string">&quot;tcpSettings&quot;</span>: {}, <span class="hljs-string">&quot;kcpSettings&quot;</span>: {}, <span class="hljs-string">&quot;wsSettings&quot;</span>: {}, <span class="hljs-string">&quot;httpSettings&quot;</span>: {}}
+</code></pre>
+<p>Woher:</p>
+<ul>
+<li><code>tcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/tcp.html">TCP-Transport</a>.</li>
+<li><code>kcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/mkcp.html">mKCP Transport</a>.</li>
+<li><code>wsSettings</code>: Einstellungen f&#xFC;r <a href="transport/websocket.html">WebSocket-Transport</a>.</li>
+<li><code>httpSettings</code>: Einstellungen f&#xFC;r <a href="transport/h2.html">HTTP / 2 Transport</a>.</li>
+</ul>
+<h2 id="pro-proxy-konfiguration"><a name="pro-proxy-konfiguration" class="plugin-anchor" href="#pro-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Pro-Proxy-Konfiguration</h2>
+<p>Jeder eingehende und ausgehende Proxy hat m&#xF6;glicherweise eigene Transporteinstellungen. Jeder eingehende, eingehendeDetour-, ausgehende und ausgehendeDetour-Eintrag kann eine <code>streamSettings</code> f&#xFC;r den Transport haben.</p>
+<pre><code class="lang-javascript">{<span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>, <span class="hljs-string">&quot;Sicherheit&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>, <span class="hljs-string">&quot;tlsSettings&quot;</span>: {<span class="hljs-string">&quot;Servername&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>, <span class="hljs-string">&quot;alpn&quot;</span>: [<span class="hljs-string">&quot;http / 1.1&quot;</span>], <span class="hljs-string">&quot;allowInsecure&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;Zertifikate&quot;</span>: [{<span class="hljs-string">&quot;usage&quot;</span>: <span class="hljs-string">&quot;verschl&#xFC;sselung&quot;</span>, <span class="hljs-string">&quot;certificateFile&quot;</span>: <span class="hljs-string">&quot;/pfad/zu/zertifikate.crt&quot;</span>, <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/pfad/zu/key.key&quot;</span>, <span class="hljs-string">&quot;Zertifikat&quot;</span>: [<span class="hljs-string">&quot; ----- ----- ZERTIFIKAT BEGIN &quot;</span> <span class="hljs-string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR / 7kAwDQYJKoZIhvcNAQELBQAw&quot;</span>, <span class="hljs-string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span>, <span class="hljs-string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ +&quot;</span>, <span class="hljs-string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp / c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span>, <span class="hljs-string">&quot;OzhV0FD20 / 0YELou85TwnkTw5l9GVCXT02NG pGlYsFrxesUHpojdl8tIcn113M5 +&quot;</span>, <span class="hljs-string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span>,<span class="hljs-string">&quot; OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko / W + JCGapcC7O74palwBUuXE1iH + Jp &quot;</span> <span class="hljs-string">&quot;noPjGp4qE2ognW3WH / SGQ + rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span>, <span class="hljs-string">&quot;A1UdDwEB / wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span>, <span class="hljs-string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw / vzkV8Q32NILEMlPVqeJU&quot;</span>,<span class="hljs-string">&quot; 7UxVgIODBV6A1b3tOU oktuhmgSSaQxjhYbFAVTD LUglMUCxNbj56luBRlLLQWo + + &quot;</span> <span class="hljs-string">&quot;9BUhC / ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span>, <span class="hljs-string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk + 0A / 8&quot;</span>, <span class="hljs-string">&quot;R / 2s + sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY + r6BckT1QPDIQKYy615j1LpOtwZe /&quot;</span>, <span class="hljs-string">&quot;d4q7MD / dkzRDsch7t2cIjM / PYeMuzh87admSyL6hdtK0Nm / Q&quot;</span>,<span class="hljs-string">&quot; ----- END CERTIFICATE-- --- &quot;</span>], <span class="hljs-string">&quot;Schl&#xFC;ssel&quot;</span>: [ <span class="hljs-string">&quot;----- BEGIN PRIVATE KEY RSA -----&quot;</span>, <span class="hljs-string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span>, <span class="hljs-string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span>, <span class="hljs-string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span>, <span class="hljs-string">&quot;jkUX + 57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span>,<span class="hljs-string">&quot; itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu + KWpcAVLlxNYh / iaZ6D4xqeKhNq &quot;</span> <span class="hljs-string">&quot;IJ1t1h / 7IEPq76NtHl2 / VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span>, <span class="hljs-string">&quot;+ QRP o9xQLYGhQnmOYb27OpwnRCYojSlT + mvLcqwvevnHsr9WxyA PkZ3AYS2PLue +&quot;</span>, <span class="hljs-string">&quot;+ C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy xVDFgNhWap&quot;</span>, <span class="hljs-string">&quot;/ CMzfQYziB7GlnrM6hH838iiy0dlv4I / HKK + 3 / YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span>,<span class="hljs-string">&quot; aPKZ5qb nV + 4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7 + SG0b0bqloti4 + oQXqGtiESUwEW&#x201C;, &quot;</span>/ Wzi7oyCbFJoPsFWp1P5 + wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4<span class="hljs-string">&quot;, &quot;</span>bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe + jyy98CELOO2DNbB9QNJ<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">8</span>cSSU / PjkxQlgbOJc8DEprdMldN5xI / srlsbQWCj72wXxXnVnh991bI2clwt7oYi<span class="hljs-string">&quot;, &quot;</span>pcGZwzCrJyFL + QaZmYzLxkxYl1tCiiuqLm + EkjxCWKTX / kKEFb6rtnMCgYEAx0WR<span class="hljs-string">&quot;, &quot;</span>L8Uue3lXxhXRdBS5QRTBNklkSxtU + <span class="hljs-number">2</span>yyXRpvFa7Qam + GghJs5RKfJ9lTvjfM / pXg<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">3</span>vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH / kzKxIeRo4l64mioKdDwK / <span class="hljs-number">4</span>CZtS7<span class="hljs-string">&quot;, &quot;</span>az0Lq3eS6bq11qL4mEdE6Gn / Y + sqB83GHZYju80CgYABFm4KbbBcW + <span class="hljs-number">1</span>RKv9WSBtK<span class="hljs-string">&quot;, &quot;</span>gVIagV / <span class="hljs-number">89</span>moWLa / uuLmtApyEqZSfn5mAHqdc0 + F8C2 / Pl9KHh50u99zfKv8AsHfH<span class="hljs-string">&quot;, &quot;</span>TtjuVAvZg10GcZdTQ / I41ruficYL0gpfZ3haVWWxNl + J47di4iapXPxeGWtVA + U8<span class="hljs-string">&quot;, &quot;</span>eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">64</span>cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q<span class="hljs-string">&quot;, &#x201E;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2 &quot;</span>,<span class="hljs-string">&quot; GxvNAoGBAM4g2z8NTPMqX + 8IBGkGgmcYuRQxd3cs7LOSEjF9hPy1it2ZFe / yUKq &quot;</span>,<span class="hljs-string">&quot; ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamx wPUBtxRJR &quot;</span>,<span class="hljs-string">&quot; cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT &quot;</span>,<span class="hljs-string">&quot; ----- RSA-PRIVATSCHL&#xDC;SSEL ENDE ----- &quot;</span>]}]},<span class="hljs-string">&quot; tcpSettings &quot;</span>: {},<span class="hljs-string">&quot; kcpSettings &quot;</span>: {},<span class="hljs-string">&quot; wsSettings &quot;</span>: {},<span class="hljs-string">&quot; httpSettings &quot;</span>: {}}
+</code></pre>
+<p>Woher:</p>
+<ul>
+<li><code>Netzwerk</code>: Netzwerktyp des Stream-Transports. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>oder <code>&quot;http&quot;</code>. Standardwert <code>&quot;tcp&quot;</code>.</li>
+<li><code>Sicherheit</code>: Art der Sicherheit. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;keine&quot;</code> (Standard) f&#xFC;r keine zus&#xE4;tzliche Sicherheit oder <code>&quot;TLS&quot;</code> f&#xFC;r die Verwendung von <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
+<li><code>tlsEinstellungen</code>: TLS-Einstellungen TLS wird von Golang bereitgestellt. Unterst&#xFC;tzung f&#xFC;r TLS 1.2 DTLS wird nicht unterst&#xFC;tzt. <ul>
+<li><code>Servername</code>: Servername (normalerweise Dom&#xE4;ne), der f&#xFC;r die TLS-Authentifizierung verwendet wird.</li>
+<li><code>alpn</code> (V2Ray 3.18+): Ein Array von Strings, um den ALPN-Wert im TLS-Handshake zu spezifizieren. Der Standardwert ist <code>[&quot;http / 1.1&quot;]</code>.</li>
+<li><code>allowInsecure</code>: Wenn <code>true</code>, erlaubt V2Ray eine unsichere Verbindung am TLS-Client.</li>
+<li><code>allowInsecureCiphers</code> (V2Ray 3.24+): Ob wir unsichere Cipher Suites erlauben oder nicht. Standardm&#xE4;&#xDF;ig verwendet TLS nur Cipher-Suites aus der Spezifikation TLS 1.3. Aktivieren Sie diese Option, um Verschl&#xFC;sselungssammlungen mit statischen RSA-Schl&#xFC;sseln zuzulassen.</li>
+<li><code>Zertifikate</code>: Liste der TLS-Zertifikate Jeder Eintrag ist ein Zertifikat. <ul>
+<li><code>Verwendung</code> (V2Ray 3.17+): Zweck des Zertifikats. Standardwert <code>&quot;Verschl&#xFC;sselung&quot;</code>. Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>&quot;Verschl&#xFC;sselung&quot;</code>: Zertifikat wird f&#xFC;r TLS-Authentifizierung und Verschl&#xFC;sselung verwendet.</li>
+<li><code>&quot;verify&quot;</code>: Zertifikat wird zur Validierung von TLS-Zertifikaten von Remote-Peer verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein. Derzeit wird Windows nicht unterst&#xFC;tzt.</li>
+<li><code>&quot;Issue&quot;</code>: Zertifikat wird f&#xFC;r die Ausstellung anderer Zertifikate verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein.</li>
+</ul>
+</li>
+<li><code>certificateFile</code>: Dateipfad zum Zertifikat. Wenn das Zertifikat von OpenSSL generiert wird, endet der Pfad mit &quot;.crt&quot;.</li>
+<li><code>Zertifikat</code> (V2Ray 3.17+): Liste der Strings als Inhalt des Zertifikats. Siehe das obige Beispiel. Entweder <code>Zertifikat</code> oder <code>Zertifikatsdatei</code> darf nicht leer sein.</li>
+<li><code>keyFile</code>: Dateipfad zum privaten Schl&#xFC;ssel. Wenn von OpenSSL generiert, endet die Datei normalerweise mit &quot;.key&quot;. Schl&#xFC;sseldatei mit Passwort wird nicht unterst&#xFC;tzt.</li>
+<li><code>Taste</code> (V2Ray 3.17+): Liste der Strings als Inhalt des privaten Schl&#xFC;ssels. Siehe das obige Beispiel. Entweder <code>Taste</code> oder <code>Taste</code> darf nicht leer sein.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tcpSettings</code>: TCP-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy TCP-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
+<li><code>kcpSettings</code>: mKCP-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den mKCP-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
+<li><code>wsSettings</code>: WebSocket-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den WebSocket-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
+<li><code>httpSettings</code>: HTTP / 2-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den HTTP / 2-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
+</ul>
+<h2 id="tipps"><a name="tipps" class="plugin-anchor" href="#tipps"><i class="fa fa-link" aria-hidden="true"></i></a>Tipps</h2>
+<ul>
+<li>Wenn <code>certificateFile</code> und <code>certificate</code> beide ausgef&#xFC;llt. V2Ray verwendet <code>certificateFile</code>. Gleiches f&#xFC;r <code>keyFile</code> und <code>key</code>.</li>
+<li>Wenn es eine neue Client-Anfrage gibt, sagen wir f&#xFC;r <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, findet V2Ray zuerst ein Zertifikat f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Wenn V2Ray nicht gefunden wird, versucht V2Ray, ein neues Zertifikat mit einem vorhandenen Zertifikat auszustellen, dessen <code>Verwendung</code> <code>&quot;Problem&quot;</code> f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Das neue Zertifikat l&#xE4;uft in einer Stunde ab und wird dem Zertifikatspool zur sp&#xE4;teren Wiederverwendung hinzugef&#xFC;gt.</li>
+<li>Wenn <code>Verwendung</code> <code>&quot;verify&quot;</code>, k&#xF6;nnen sowohl <code>keyFile</code> als auch <code>key</code> leer sein.</li>
+<li>Verwenden Sie den Befehl <code>v2ctl cert -ca</code> , um ein neues CA-Zertifikat zu generieren.</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="stats.html" class="navigation navigation-prev " aria-label="Previous page: Statistiken">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="transport/tcp.html" class="navigation navigation-next " aria-label="Next page: TCP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

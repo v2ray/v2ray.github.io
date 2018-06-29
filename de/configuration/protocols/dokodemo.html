@@ -1,0 +1,771 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dokodemo · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="freedom.html" />
+    
+    
+    <link rel="prev" href="blackhole.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Willkommen bei V2Ray
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../welcome/versions.html">
+            
+                <a href="../../welcome/versions.html">
+            
+                    
+                    Versionsgeschichte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../welcome/workflow.html">
+            
+                <a href="../../welcome/workflow.html">
+            
+                    
+                    Arbeitsablauf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../welcome/install.html">
+            
+                <a href="../../welcome/install.html">
+            
+                    
+                    Installieren
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../welcome/command.html">
+            
+                <a href="../../welcome/command.html">
+            
+                    
+                    Befehlszeile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../welcome/donate.html">
+            
+                <a href="../../welcome/donate.html">
+            
+                    
+                    Spende
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../../welcome/help.html">
+            
+                <a href="../../welcome/help.html">
+            
+                    
+                    Unterstützung
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../../welcome/tg.html">
+            
+                <a href="../../welcome/tg.html">
+            
+                    
+                    Telegramm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6.2" data-path="../../welcome/pgp.html">
+            
+                <a href="../../welcome/pgp.html">
+            
+                    
+                    Private Kommunikation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../../welcome/license.html">
+            
+                <a href="../../welcome/license.html">
+            
+                    
+                    Lizenz
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Aufbau
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    Überblick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../protocols.html">
+            
+                <a href="../protocols.html">
+            
+                    
+                    Protokolle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="blackhole.html">
+            
+                <a href="blackhole.html">
+            
+                    
+                    Schwarzes Loch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="dokodemo.html">
+            
+                <a href="dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="freedom.html">
+            
+                <a href="freedom.html">
+            
+                    
+                    Freiheit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="http.html">
+            
+                <a href="http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="shadowsocks.html">
+            
+                <a href="shadowsocks.html">
+            
+                    
+                    Schattensocken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="socks.html">
+            
+                <a href="socks.html">
+            
+                    
+                    SOCKEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="vmess.html">
+            
+                <a href="vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../policy.html">
+            
+                <a href="../policy.html">
+            
+                    
+                    Politik
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../routing.html">
+            
+                <a href="../routing.html">
+            
+                    
+                    Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../dns.html">
+            
+                <a href="../dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../mux.html">
+            
+                <a href="../mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    Statistiken
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../transport.html">
+            
+                <a href="../transport.html">
+            
+                    
+                    Transport
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../transport/tcp.html">
+            
+                <a href="../transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../transport/mkcp.html">
+            
+                <a href="../transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="../transport/websocket.html">
+            
+                <a href="../transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="../transport/h2.html">
+            
+                <a href="../transport/h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
+            
+                <a href="../env.html">
+            
+                    
+                    Env-Variablen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../ui_client/">
+            
+                <a href="../../ui_client/">
+            
+                    
+                    Kunden
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../ui_client/windows.html">
+            
+                <a href="../../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../ui_client/osx.html">
+            
+                <a href="../../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../ui_client/ios.html">
+            
+                <a href="../../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../ui_client/android.html">
+            
+                <a href="../../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../ui_client/service.html">
+            
+                <a href="../../ui_client/service.html">
+            
+                    
+                    Dienstleistungen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Dokodemo</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dokodemo-door"><a name="dokodemo-door" class="plugin-anchor" href="#dokodemo-door"><i class="fa fa-link" aria-hidden="true"></i></a>Dokodemo-Door</h1>
+<p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/protocols/dokodemo.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
+<p>Dokodemo-door ist ein Protokoll f&#xFC;r eingehende Verbindungen. Es nimmt alle Verbindungen und &#xFC;bergibt sie an das angegebene Ziel.</p>
+<p>Dokodemo-door kann auch (wenn konfiguriert) als transparenter Proxy arbeiten.</p>
+<ul>
+<li>Name: dokodemo-t&#xFC;r</li>
+<li>Typ: Eingehend</li>
+<li>Aufbau:</li>
+</ul>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">53</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
+}
+</code></pre>
+<p>Woher:</p>
+<ul>
+<li><code>Adresse</code>: Adresse des Zielservers. Kann eine IPv4-, IPv6- oder eine Dom&#xE4;ne in Zeichenfolgenform sein. <ul>
+<li>Wenn <code>followRedirect</code> (siehe unten) ist <code>wahr</code>, <code>Adresse</code> kann leer sein.</li>
+</ul>
+</li>
+<li><code>Port</code>: Port des Zielservers. Ganze Zahl.</li>
+<li><code>Netzwerk</code>: Typ des Netzwerks, entweder &quot;TCP&quot; oder &quot;UDP&quot;.</li>
+<li><code>FolgenRedirect</code>: Wenn der Wert <code>wahr</code>, erkennt dokodemo-door das Ziel von TProxy und verwendet es als Ziel. <ul>
+<li>Funktioniert nur unter Linux</li>
+<li>Unterst&#xFC;tzt TCP / IPv4-Verbindungen</li>
+<li>Unterst&#xFC;tzt UDP / IPv4-Pakete. Erfordert die Berechtigung root (CAP \ _NET \ _ADMIN)</li>
+</ul>
+</li>
+<li><code>userLevel</code>: Benutzerebene. Alle Verbindungen teilen diese Ebene. Siehe <a href="../policy.html">Richtlinie</a> f&#xFC;r Details.</li>
+</ul>
+<h2 id="beispiele-f&#xFC;r-transparenten-proxy"><a name="beispiele-f&#xFC;r-transparenten-proxy" class="plugin-anchor" href="#beispiele-f&#xFC;r-transparenten-proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Beispiele f&#xFC;r transparenten Proxy</h2>
+<p>F&#xFC;gen Sie eine dokodemo-T&#xFC;r eingehend wie folgt hinzu.</p>
+<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Netzwerk&quot;</span>: <span class="hljs-string">&quot;tcp, udp&quot;</span>, <span class="hljs-string">&quot;Zeit&#xFC;berschreitung&quot;</span>: <span class="hljs-number">30</span>, <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>}
+</code></pre>
+<p>Konfigurieren Sie iptables wie folgt.</p>
+<pre><code class="lang-plain"># Create new chain root @ Wrt: ~ # iptables -t nat -N V2RAY root @ Wrt: ~ # iptables -t mangle -N V2RAY root @ Wrt: ~ # iptables -t mangle -N V2RAY_MARK # Ignoriere die Adresse deines V2Ray-Servers # Es ist sehr wichtig, sei einfach vorsichtig.
+root @ Wrt: ~ # iptables -t nat -A V2RAY -d 123.123.123.123 -j R&#xDC;CKKEHR # Ignorieren von LANs und anderen Adressen, die Sie den Proxy umgehen m&#xF6;chten # Eine vollst&#xE4;ndige Liste der reservierten Netzwerke finden Sie unter Wikipedia und RFC5735.
+root @ Wrt: ~ # iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN Wurzel @ Wrt: ~ # iptables - t nat -A V2RAY -d 172.16.0.0/12 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 240.0.0.0/4 -j ZUR&#xDC;CK # Alles andere sollte zu Dokodemo-doors lokalen Port root @ Wrt umgeleitet werden: ~ # iptables -t nat -A V2RAY -p tcp -j REDIRECT --zu-ports 12345 # F&#xFC;gen Sie alle UDP-Regeln root @ Wrt hinzu: ~ # ip route hinzuf&#xFC;gen lokalen Standard dev lo Tabelle 100 root @ Wrt: ~ # ip rule add fwmark 1 lookup 100 Wurzel @ Wrt: ~ # iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-Markierung 0x01 / 0x01 root @ Wrt: ~ # iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1 # Wende die Regeln root @ Wrt an: ~ # iptables -t nat - A OUTPUT -p tcp -j V2RAY Wurzel @ Wrt: ~ # iptables -t mangle -A PREROUTING -j V2RAY Wurzel @ Wrt: ~ # iptables -t mangle -A OUTPUT -j V2RAY_MARK
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="blackhole.html" class="navigation navigation-prev " aria-label="Previous page: Schwarzes Loch">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="freedom.html" class="navigation navigation-next " aria-label="Next page: Freiheit">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
