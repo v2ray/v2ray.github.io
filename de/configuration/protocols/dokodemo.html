@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -671,10 +671,10 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="dokodemo-door"><a name="dokodemo-door" class="plugin-anchor" href="#dokodemo-door"><i class="fa fa-link" aria-hidden="true"></i></a>Dokodemo-Door</h1>
 <p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/protocols/dokodemo.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
-<p>Dokodemo-door ist ein Protokoll f&#xFC;r eingehende Verbindungen. Es nimmt alle Verbindungen und &#xFC;bergibt sie an das angegebene Ziel.</p>
-<p>Dokodemo-door kann auch (wenn konfiguriert) als transparenter Proxy arbeiten.</p>
+<p>Dokodemo-door is a protocol for inbound connections. Es nimmt alle Verbindungen und &#xFC;bergibt sie an das angegebene Ziel.</p>
+<p>Dokodemo-door can also (if configured) work as a transparent proxy.</p>
 <ul>
-<li>Name: dokodemo-t&#xFC;r</li>
+<li>Name: dokodemo-door</li>
 <li>Typ: Eingehend</li>
 <li>Aufbau:</li>
 </ul>
@@ -692,9 +692,9 @@ if (inIframe() || !isValidDomain()) {
 <li>Wenn <code>followRedirect</code> (siehe unten) ist <code>wahr</code>, <code>Adresse</code> kann leer sein.</li>
 </ul>
 </li>
-<li><code>Port</code>: Port des Zielservers. Ganze Zahl.</li>
+<li><code>port</code>: Port des Zielservers. Ganze Zahl.</li>
 <li><code>Netzwerk</code>: Typ des Netzwerks, entweder &quot;TCP&quot; oder &quot;UDP&quot;.</li>
-<li><code>followRedirect</code>: Wenn der Wert <code>wahr</code>, erkennt dokodemo-door das Ziel von TProxy und verwendet es als Ziel. <ul>
+<li><code>followRedirect</code>: Wenn der Wert <code>true</code>, erkennt dokodemo-door das Ziel von TProxy und verwendet es als Ziel. <ul>
 <li>Funktioniert nur unter Linux</li>
 <li>Unterst&#xFC;tzt TCP / IPv4-Verbindungen</li>
 <li>Unterst&#xFC;tzt UDP / IPv4-Pakete. Erfordert die Berechtigung root (CAP \ _NET \ _ADMIN)</li>
@@ -772,7 +772,7 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

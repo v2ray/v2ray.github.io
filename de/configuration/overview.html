@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -672,7 +672,19 @@ if (inIframe() || !isValidDomain()) {
                                 <h1 id="konfigurations&#xFC;bersicht"><a name="konfigurations&#xFC;bersicht" class="plugin-anchor" href="#konfigurations&#xFC;bersicht"><i class="fa fa-link" aria-hidden="true"></i></a>Konfigurations&#xFC;bersicht</h1>
 <p><img src="../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/01_overview.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinesisch"></a></p>
 <p>V2Ray teilt die gleiche Struktur der Konfiguration zwischen der Serverseite und der Clientseite wie unten gezeigt. Server- und Client-Konfigurationen unterscheiden sich in bestimmten Abschnitten.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;log&quot;</span>: {}, <span class="hljs-string">&quot;api&quot;</span>: {}, <span class="hljs-string">&quot;DNS&quot;</span>: {}, <span class="hljs-string">&quot;Statistik&quot;</span>: {}, <span class="hljs-string">&quot;routing&quot;</span>: {}, <span class="hljs-string">&quot;Richtlinie&quot;</span>: {}, <span class="hljs-string">&quot;Inbound&quot;</span>: {}, <span class="hljs-string">&quot;outbound&quot;</span>: {}, <span class="hljs-string">&quot;inboundDetour&quot;</span>: [], <span class="hljs-string">&quot;outboundDetour&quot;</span>: [], <span class="hljs-string">&quot;Transport&quot;</span>: {}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;log&quot;</span>: {},
+  <span class="hljs-string">&quot;api&quot;</span>: {},
+  <span class="hljs-string">&quot;dns&quot;</span>: {},
+  <span class="hljs-string">&quot;stats&quot;</span>: {},
+  <span class="hljs-string">&quot;routing&quot;</span>: {},
+  <span class="hljs-string">&quot;policy&quot;</span>: {},
+  <span class="hljs-string">&quot;inbound&quot;</span>: {},
+  <span class="hljs-string">&quot;outbound&quot;</span>: {},
+  <span class="hljs-string">&quot;inboundDetour&quot;</span>: [],
+  <span class="hljs-string">&quot;outboundDetour&quot;</span>: [],
+  <span class="hljs-string">&quot;transport&quot;</span>: {}
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -689,7 +701,11 @@ if (inIframe() || !isValidDomain()) {
 <li><code>Transport</code>: Konfigurationen des Transportprotokolls auf niedriger Ebene. Weitere Informationen finden Sie unter <a href="transport.html">Protokolltransportoptionen</a>.</li>
 </ul>
 <h2 id="protokollkonfiguration-protokoll"><a name="protokollkonfiguration-protokoll" class="plugin-anchor" href="#protokollkonfiguration-protokoll"><i class="fa fa-link" aria-hidden="true"></i></a>Protokollkonfiguration (Protokoll)</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/ Pfad / zu / Datei&quot;</span>, <span class="hljs-string">&quot;Fehler&quot;</span>: <span class="hljs-string">&quot;/ Pfad / zu / Datei&quot;</span>, <span class="hljs-string">&quot;Loglevel&quot;</span>: <span class="hljs-string">&quot;Warnung&quot;</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/path/to/file&quot;</span>,
+  <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/path/to/file&quot;</span>,
+  <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -712,7 +728,15 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="master-eingangsschnittstellenkonfigurationen-eingang"><a name="master-eingangsschnittstellenkonfigurationen-eingang" class="plugin-anchor" href="#master-eingangsschnittstellenkonfigurationen-eingang"><i class="fa fa-link" aria-hidden="true"></i></a>Master-Eingangsschnittstellenkonfigurationen (Eingang)</h2>
 <p>Die Master-Eingangsschnittstelle wird verwendet, um Daten von Clients, Browsern oder anderen &#xFC;bergeordneten Proxy-Servern zu empfangen. Die verf&#xFC;gbaren Protokolle sind unter <a href="02_protocols.md">Protokolle</a>.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>, <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;Protokollname&quot;</span>, <span class="hljs-string">&quot;Einstellungen&quot;</span>: {}, <span class="hljs-string">&quot;streamSettings&quot;</span>: {}, <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;inbound_tag_name&quot;</span>, <span class="hljs-string">&quot;domainOverride&quot;</span> : [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,
+  <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;inbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;domainOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -736,7 +760,17 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="konfiguration-ausgehender-master-schnittstellen-ausgehend"><a name="konfiguration-ausgehender-master-schnittstellen-ausgehend" class="plugin-anchor" href="#konfiguration-ausgehender-master-schnittstellen-ausgehend"><i class="fa fa-link" aria-hidden="true"></i></a>Konfiguration ausgehender Master-Schnittstellen (ausgehend)</h2>
 <p>Die Master-Ausgangsschnittstelle wird verwendet, um Daten an entfernte Server oder den n&#xE4;chsten Proxy-Server zu senden. Verf&#xFC;gbare Protokolle sind unter <a href="02_protocols.md">Protokolle</a>aufgelistet.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>, <span class="hljs-string">&quot;Protokoll&quot;</span>: <span class="hljs-string">&quot;Protokollname&quot;</span>, <span class="hljs-string">&quot;Einstellungen&quot;</span>: {}, <span class="hljs-string">&quot;Tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>, <span class="hljs-string">&quot;streamSettings&quot;</span>: {}, <span class="hljs-string">&quot;proxySettings&quot;</span>: {<span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>}, <span class="hljs-string">&quot;mux&quot;</span>: {}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;proxySettings&quot;</span>: {
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>
+  },
+  <span class="hljs-string">&quot;mux&quot;</span>: {}
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -753,7 +787,20 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="konfiguration-zus&#xE4;tzlicher-inbound-schnittstellen-eingehende-umleitung"><a name="konfiguration-zus&#xE4;tzlicher-inbound-schnittstellen-eingehende-umleitung" class="plugin-anchor" href="#konfiguration-zus&#xE4;tzlicher-inbound-schnittstellen-eingehende-umleitung"><i class="fa fa-link" aria-hidden="true"></i></a>Konfiguration zus&#xE4;tzlicher Inbound-Schnittstellen (eingehende Umleitung)</h2>
 <p>Dieser Abschnitt ist ein Array, das mehrere Konfigurationen f&#xFC;r zus&#xE4;tzliche eingehende Schnittstellen enth&#xE4;lt, die jeweils die folgende Struktur verwenden:</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;Protokollname&quot;</span>, <span class="hljs-string">&quot;Port&quot;</span>: <span class="hljs-string">&quot;Portnummer&quot;</span>, <span class="hljs-string">&quot;Tag&quot;</span>: <span class="hljs-string">&quot;this_inbound_tag_name&quot;</span>, <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;allocate&quot;</span>: {<span class="hljs-string">&quot;strategie&quot;</span>: <span class="hljs-string">&quot;always&quot;</span>, <span class="hljs-string">&quot;refresh &quot;</span>: <span class="hljs-number">5</span>,<span class="hljs-string">&quot; Nebenl&#xE4;ufigkeit &quot;</span>: <span class="hljs-number">3</span>},<span class="hljs-string">&quot; Einstellungen &quot;</span>: {},<span class="hljs-string">&quot; streamSettings &quot;</span>: {},<span class="hljs-string">&quot; domainOverride &quot;</span>: [<span class="hljs-string">&quot; http &quot;</span>,<span class="hljs-string">&quot; tls &quot;</span>]}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;port_number&quot;</span>,
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_inbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+  <span class="hljs-string">&quot;allocate&quot;</span>: {
+    <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;always&quot;</span>,
+    <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">&quot;concurrency&quot;</span>: <span class="hljs-number">3</span>
+  },
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;domainOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -782,7 +829,17 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h3 id="konfiguration-zus&#xE4;tzlicher-outbound-schnittstellen-outbound-umleitung"><a name="konfiguration-zus&#xE4;tzlicher-outbound-schnittstellen-outbound-umleitung" class="plugin-anchor" href="#konfiguration-zus&#xE4;tzlicher-outbound-schnittstellen-outbound-umleitung"><i class="fa fa-link" aria-hidden="true"></i></a>Konfiguration zus&#xE4;tzlicher Outbound-Schnittstellen (Outbound-Umleitung)</h3>
 <p>Dieser Abschnitt ist ein Array, das mehrere Konfigurationen f&#xFC;r extra ausgehende Schnittstellen enth&#xE4;lt, die jeweils die folgende Struktur verwenden:</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Protokoll&quot;</span>: <span class="hljs-string">&quot;Protokollname&quot;</span>, <span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>, <span class="hljs-string">&quot;Tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>, <span class="hljs-string">&quot;Einstellungen&quot;</span>: {}, <span class="hljs-string">&quot;streamSettings&quot;</span>: {}, <span class="hljs-string">&quot;proxySettings&quot;</span>: {<span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>}, <span class="hljs-string">&quot;mux&quot;</span>: {}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;proxySettings&quot;</span>: {
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>
+  },
+  <span class="hljs-string">&quot;mux&quot;</span>: {}
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -824,7 +881,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Überblick","level":"1.2.1","depth":2,"next":{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Aufbau","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Überblick","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},{"title":"Env-Variablen","level":"1.2.10","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Überblick","level":"1.2.1","depth":2,"next":{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Aufbau","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Überblick","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},{"title":"Env-Variablen","level":"1.2.10","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

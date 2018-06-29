@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -673,12 +673,27 @@ if (inIframe() || !isValidDomain()) {
 <p><img src="../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/03_routing.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinesisch"></a></p>
 <p>V2Ray verf&#xFC;gt &#xFC;ber einen internen Routing-Mechanismus. Es leitet eingehende Verbindungen basierend auf Regeln an verschiedene ausgehende Verbindungen weiter. Ein h&#xE4;ufiges Szenario ist die Aufteilung des Datenverkehrs nach L&#xE4;ndern. V2Ray kann das Zielland (nach Geo-IP) einer Verbindung erkennen und sendet dann eine Verbindung zum entsprechenden ausgehenden Proxy.</p>
 <p>Aufbau:</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Strategie&quot;</span>: <span class="hljs-string">&quot;Regeln&quot;</span>, <span class="hljs-string">&quot;Einstellungen&quot;</span>: {<span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>, <span class="hljs-string">&quot;Regeln&quot;</span>: [{<span class="hljs-string">&quot;Typ&quot;</span>: <span class="hljs-string">&quot;Feld&quot;</span>, <span class="hljs-string">&quot;Dom&#xE4;ne&quot;</span>: [<span class="hljs-string">&quot;Baidu.com&quot;</span>, <span class="hljs-string">&quot;qq. com &quot;</span>],<span class="hljs-string">&quot; outboundTag &quot;</span>:<span class="hljs-string">&quot; direkt &quot;</span>}]}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;rules&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {
+    <span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>,
+    <span class="hljs-string">&quot;rules&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+        <span class="hljs-string">&quot;domain&quot;</span>: [
+          <span class="hljs-string">&quot;baidu.com&quot;</span>,
+          <span class="hljs-string">&quot;qq.com&quot;</span>
+        ],
+        <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+      }
+    ]
+  }
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Strategie</code>: Der einzige g&#xFC;ltige Wert f&#xFC;r jetzt ist <code>&quot;Regeln&quot;</code>.</li>
-<li><code>Dom&#xE4;nenstrategie</code>: Strategie der Dom&#xE4;nenaufl&#xF6;sung. Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>strategy</code>: Der einzige g&#xFC;ltige Wert f&#xFC;r jetzt ist <code>&quot;rules&quot;</code>.</li>
+<li><code>domainStrategy</code>: Strategie der Dom&#xE4;nenaufl&#xF6;sung. Auswahlm&#xF6;glichkeiten sind: <ul>
 <li><code>&quot;AsIs&quot;</code>: Verwende nur die Domain f&#xFC;r das Routing. Standardwert.</li>
 <li><code>&quot;IPIfNonMatch&quot;</code>: Wenn keine Regel der aktuellen Dom&#xE4;ne entspricht, l&#xF6;st V2Ray sie in IP-Adressen (A- oder AAAA-Datens&#xE4;tze) auf und versucht alle Regeln erneut. <ul>
 <li>Wenn eine Dom&#xE4;ne mehrere IP-Adressen hat, versucht V2Ray alle von ihnen.</li>
@@ -688,15 +703,41 @@ if (inIframe() || !isValidDomain()) {
 <li><code>&quot;IPOnDemand&quot;</code>: Solange es eine IP-basierte Regel gibt, l&#xF6;st V2Ray die Dom&#xE4;ne sofort in IP auf.</li>
 </ul>
 </li>
-<li><code>Regeln</code>: Ein Array von Regeln. F&#xFC;r jede eingehende Verbindung versucht V2Ray diese Regeln von oben nach unten nacheinander auszuf&#xFC;hren. Wenn eine Regel wirksam wird, wird die Verbindung an den Ausgang <code>outboundTag</code> der Regel weitergeleitet.</li>
+<li><code>rules</code>: Ein Array von Regeln. F&#xFC;r jede eingehende Verbindung versucht V2Ray diese Regeln von oben nach unten nacheinander auszuf&#xFC;hren. Wenn eine Regel wirksam wird, wird die Verbindung an den Ausgang <code>outboundTag</code> der Regel weitergeleitet.</li>
 </ul>
 <p>Konfiguration f&#xFC;r jede Regel:</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;Feld&quot;</span>, <span class="hljs-string">&quot;Dom&#xE4;ne&quot;</span>: [<span class="hljs-string">&quot;baidu.com&quot;</span>, <span class="hljs-string">&quot;qq.com&quot;</span>, <span class="hljs-string">&quot;geosite: cn&quot;</span>], <span class="hljs-string">&quot;ip&quot;</span>: [<span class="hljs-string">&quot;0.0.0.0/8&quot;</span>, <span class="hljs-string">&quot;10.0.0.0 / 8 &quot;</span>,<span class="hljs-string">&quot; fc00 :: / 7 &quot;</span>,<span class="hljs-string">&quot; fe80 :: / 10 &quot;</span>,<span class="hljs-string">&quot; geoip: cn &quot;</span>],<span class="hljs-string">&quot; port &quot;</span>:<span class="hljs-string">&quot; 0-100 &quot;</span>,<span class="hljs-string">&quot; netzwerk &quot;</span>:<span class="hljs-string">&quot; tcp &quot;</span>,<span class="hljs-string">&quot; source &quot;</span>: [ <span class="hljs-string">&quot;10.0.0.1&quot;</span>,], <span class="hljs-string">&quot;user&quot;</span>: [<span class="hljs-string">&quot;love@v2ray.com&quot;</span>], <span class="hljs-string">&quot;inboundTag&quot;</span>: [<span class="hljs-string">&quot;tag-vmess&quot;</span>], <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direkt&quot;</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+  <span class="hljs-string">&quot;domain&quot;</span>: [
+    <span class="hljs-string">&quot;baidu.com&quot;</span>,
+    <span class="hljs-string">&quot;qq.com&quot;</span>,
+    <span class="hljs-string">&quot;geosite:cn&quot;</span>
+  ],
+  <span class="hljs-string">&quot;ip&quot;</span>: [
+    <span class="hljs-string">&quot;0.0.0.0/8&quot;</span>,
+    <span class="hljs-string">&quot;10.0.0.0/8&quot;</span>,
+    <span class="hljs-string">&quot;fc00::/7&quot;</span>,
+    <span class="hljs-string">&quot;fe80::/10&quot;</span>,
+    <span class="hljs-string">&quot;geoip:cn&quot;</span>
+  ],
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;0-100&quot;</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+  <span class="hljs-string">&quot;source&quot;</span>: [
+    <span class="hljs-string">&quot;10.0.0.1&quot;</span>,
+  ],
+  <span class="hljs-string">&quot;user&quot;</span>: [
+    <span class="hljs-string">&quot;love@v2ray.com&quot;</span>
+  ],
+  <span class="hljs-string">&quot;inboundTag&quot;</span>: [
+    <span class="hljs-string">&quot;tag-vmess&quot;</span>
+  ],
+  <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Typ</code>: Der einzige g&#xFC;ltige Wert f&#xFC;r jetzt ist <code>&quot;field&quot;</code>.</li>
-<li><code>Domain</code>: Ein Array von Dom&#xE4;nen. Es gibt vier Formate: <ul>
+<li><code>type</code>: Der einzige g&#xFC;ltige Wert f&#xFC;r jetzt ist <code>&quot;field&quot;</code>.</li>
+<li><code>domain</code>: Ein Array von Dom&#xE4;nen. Es gibt vier Formate: <ul>
 <li>Teilzeichenfolge: Wenn diese Zeichenfolge mit einem Teil der Zieldom&#xE4;ne &#xFC;bereinstimmt, wird diese Regel wirksam. Beispiel: Regel <code>&quot;sina.com&quot;</code> stimmt mit Targeting Domain <code>&#xFC;berein &quot;sina.com&quot;</code>, <code>&quot;sina.com.cn&quot;</code> und <code>&quot;www.sina.com&quot;</code>, aber nicht <code>&quot;sina.cn&quot;</code>.</li>
 <li>Regul&#xE4;rer Ausdruck: Beginnt mit <code>&quot;regexp:&quot;</code>, der Rest ist ein regul&#xE4;rer Ausdruck. Wenn die regul&#xE4;re Ausrichtungsdatei der Ausrichtungsdom&#xE4;ne entspricht, wird diese Regel wirksam. Beispiel: Regel <code>&quot;regexp: \. Goo. * \. Com $&quot;</code> entspricht <code>&quot;www.google.com&quot;</code> und <code>&quot;fonts.googleapis.com&quot;</code>, aber nicht <code>&quot;google.com&quot;</code>.</li>
 <li>Subdomain: Beginnt mit <code>&quot;domain:&quot;</code> und der Rest ist eine Domain. Wenn die Ausrichtungsdom&#xE4;ne genau der Wert oder eine Unterdom&#xE4;ne des Werts ist, wird diese Regel wirksam. Beispiel: Regel <code>&quot;domain: v2ray.com&quot;</code> entspricht <code>&quot;www.v2ray.com&quot;</code>, <code>&quot;v2ray.com&quot;</code>, aber nicht <code>&quot;xv2ray.com&quot;</code>.</li>
@@ -704,7 +745,7 @@ if (inIframe() || !isValidDomain()) {
 <li>Domains aus Datei (V2Ray 3.23+): Wie <code>&quot;ext: file: tag&quot;</code>. Der Wert muss mit <code>ext:</code> (Kleinbuchstaben) beginnen, gefolgt von Dateiname und Tag. Die Datei wird in platziert <a href="env.html#location-of-v2ray-asset">Ressourcenverzeichnis</a>, und hat das gleiche Format von <code>geosite.dat</code>. Das Tag muss in der Datei vorhanden sein.</li>
 </ul>
 </li>
-<li><code>IP</code>: Ein Array von IP-Bereichen. Wenn sich die Targeting-IP in einem der Bereiche befindet, wird diese Regel wirksam. Es gibt drei Formate: <ul>
+<li><code>ip</code>: Ein Array von IP-Bereichen. Wenn sich die Targeting-IP in einem der Bereiche befindet, wird diese Regel wirksam. Es gibt drei Formate: <ul>
 <li>IP: wie <code>&quot;127.0.0.1&quot;</code>.</li>
 <li><a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">CIDR</a>: wie <code>&quot;127.0.0.0/8&quot;</code>.</li>
 <li>GeoIP: wie <code>&quot;geoip: cn&quot;</code>. Es beginnt mit <code>GeoIP:</code> (Kleinbuchstaben) und gefolgt von zwei Buchstaben des L&#xE4;ndercodes. <ul>
@@ -714,24 +755,24 @@ if (inIframe() || !isValidDomain()) {
 <li>IPs aus Datei (V2Ray 3.23+): Wie <code>&quot;ext: file: tag&quot;</code>. Der Wert muss mit <code>ext:</code> (Kleinbuchstaben) beginnen, gefolgt von Dateiname und Tag. Die Datei wird in platziert <a href="env.html#location-of-v2ray-asset">Ressourcenverzeichnis</a>, und hat das gleiche Format von <code>geoip.dat</code>. Das Tag muss in der Datei vorhanden sein.</li>
 </ul>
 </li>
-<li><code>Hafen</code>: Portbereich Formate sind: <ul>
+<li><code>port</code>: Portbereich Formate sind: <ul>
 <li><code>&quot;ab&quot;</code>: Sowohl <code>a</code> als auch <code>b</code> sind positive ganze Zahlen und weniger als 65536. Wenn sich der Targeting-Port in [<code>a</code>, <code>b</code>, wird diese Regel wirksam.</li>
 <li><code>a</code>: <code>a</code> ist eine positive ganze Zahl und weniger als 65536. Wenn der Targeting-Port <code>a</code>, wird diese Regel wirksam.</li>
 </ul>
 </li>
-<li><code>Netzwerk</code>: Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>oder <code>&quot;tcp, udp&quot;</code>. Wenn die Verbindung im ausgew&#xE4;hlten Netzwerk vorhanden ist, wird diese Regel wirksam.</li>
-<li><code>Quelle</code>: Ein Array von IP-Bereichen. Gleiches Format wie <code>IP</code>. Wenn sich die Quell-IP der Verbindung im IP-Bereich befindet, wird diese Regel wirksam.</li>
-<li><code>Benutzer</code>: Ein Array von E-Mail-Adresse. Wenn die eingehende Verbindung ein Benutzerkonto der E-Mail-Adresse verwendet, wird diese Regel wirksam. Momentan unterst&#xFC;tzen Shadowsocks und VMess Benutzer mit E-Mail.</li>
+<li><code>network</code>: Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>oder <code>&quot;tcp, udp&quot;</code>. Wenn die Verbindung im ausgew&#xE4;hlten Netzwerk vorhanden ist, wird diese Regel wirksam.</li>
+<li><code>source</code>: Ein Array von IP-Bereichen. Gleiches Format wie <code>IP</code>. Wenn sich die Quell-IP der Verbindung im IP-Bereich befindet, wird diese Regel wirksam.</li>
+<li><code>user</code>: Ein Array von E-Mail-Adresse. Wenn die eingehende Verbindung ein Benutzerkonto der E-Mail-Adresse verwendet, wird diese Regel wirksam. Momentan unterst&#xFC;tzen Shadowsocks und VMess Benutzer mit E-Mail.</li>
 <li><code>inboundTag</code>: Ein Array mit einer Zeichenfolge als eingehende Proxy-Tags. Wenn die Verbindung von einem der angegebenen eingehenden Proxyserver stammt, wird diese Regel wirksam.</li>
 <li><code>outboundTag</code> <a href="protocols.html">Tag des Ausgangs</a> , an den die Verbindung gesendet wird, wenn diese Regel wirksam wird.</li>
 </ul>
 <h2 id="tipps"><a name="tipps" class="plugin-anchor" href="#tipps"><i class="fa fa-link" aria-hidden="true"></i></a>Tipps</h2>
 <ul>
 <li>Wenn mehrere Attribute der Regel angegeben sind, m&#xFC;ssen sie zusammen erf&#xFC;llt sein, damit die Regel wirksam wird. <ul>
-<li>Wenn Sie Verbindungen &#xFC;ber <code>Dom&#xE4;ne</code> oder <code>IP</code>routen m&#xF6;chten, ben&#xF6;tigen Sie wahrscheinlich mehrere Regeln anstelle einer Regel, die sowohl <code>Dom&#xE4;ne</code> als auch <code>IP</code>.</li>
+<li>Wenn Sie Verbindungen &#xFC;ber <code>domain</code> oder <code>ip</code>routen m&#xF6;chten, ben&#xF6;tigen Sie wahrscheinlich mehrere Regeln anstelle einer Regel, die sowohl <code>domain</code> als auch <code>ip</code>.</li>
 </ul>
 </li>
-<li><code>&quot;ext: geoip.dat: cn&quot;</code> entspricht <code>&quot;geoip: cn&quot;</code>.</li>
+<li><code>&quot;ext:geoip.dat:cn&quot;</code> entspricht <code>&quot;geoip:cn&quot;</code>.</li>
 </ul>
 
                                 
@@ -760,7 +801,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

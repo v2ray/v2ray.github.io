@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -676,54 +676,87 @@ if (inIframe() || !isValidDomain()) {
 <li>Geben Sie ein: Eingehend / Ausgehend</li>
 </ul>
 <h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;vnext&quot;</span>: [{<span class="hljs-string">&quot;adresse&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">37192</span>, <span class="hljs-string">&quot;benutzer&quot;</span>: [{<span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>, <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">10</span> , <span class="hljs-string">&quot;Sicherheit&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>, <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>}]}]}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;vnext&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">37192</span>,
+      <span class="hljs-string">&quot;users&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">10</span>,
+          <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>,
+          <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
+        }
+      ]
+    }
+  ]
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
 <li><p><code>vnext</code>: Ein Array, bei dem jeder Eintrag ein Remote-Server ist </p>
 <ul>
 <li><code>Adresse</code>: Serveradresse, m&#xF6;glicherweise IPv4, IPv6 oder Dom&#xE4;nenname.</li>
-<li><code>Port</code>: Server-Port</li>
-<li><p><code>Benutzer</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist </p>
+<li><code>port</code>: Server-Port</li>
+<li><p><code>users</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist </p>
 <ul>
-<li><code>ID</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
+<li><code>id</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
 <li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Empfehle 32.</li>
-<li><p><code>Stufe</code>: Benutzerebene. Weitere Sie unter <a href="../Policy.md"> Richtlinie</a>.&lt;/li&gt; </p>
+<li><p><code>level</code>: Benutzerebene. Weitere Sie unter <a href="../Policy.md"> Richtlinie</a>.&lt;/li&gt; </p>
 <ul>
-<li><code>Sicherheit</code>: Verschl&#xFC;sselungsmethode Optionen sind: <ul>
+<li><code>security</code>: Verschl&#xFC;sselungsmethode Optionen sind: <ul>
 <li><code>&quot;aes-128-cfb&quot;</code></li>
 <li><code>&quot;aes-128-gcm&quot;</code>: Empfohlen f&#xFC;r PC.</li>
 <li><code>&quot;chacha20-poly1305&quot;</code>: Empfohlen f&#xFC;r Mobilger&#xE4;te.</li>
 <li><code>&quot;auto&quot;</code>: Standardwert. Verwenden Sie andernfalls <code>aes-128-gcm</code> auf AMD64 und S390x oder <code>chacha20-poly1305</code>.</li>
-<li><code>&quot;keine&quot;</code>: Der Verkehr ist &#xFC;berhaupt nicht verschl&#xFC;sselt.&lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt; </li>
+<li><code>&quot;none&quot;</code>: Der Verkehr ist &#xFC;berhaupt nicht verschl&#xFC;sselt.&lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt;&lt;/li&gt; &lt;/ul&gt; </li>
 </ul>
 </li>
 </ul>
 <h2 id="eingehende-proxy-konfiguration"><a name="eingehende-proxy-konfiguration" class="plugin-anchor" href="#eingehende-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Eingehende Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;clients&quot;</span>: [{<span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>, <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>, <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>}], <span class="hljs-string">&quot; Standard &quot;</span>: {<span class="hljs-string">&quot; level &quot;</span>: <span class="hljs-number">0</span>,<span class="hljs-string">&quot; alterId &quot;</span>: <span class="hljs-number">32</span>},<span class="hljs-string">&quot; Umleitung &quot;</span>: {<span class="hljs-string">&quot; to &quot;</span>:<span class="hljs-string">&quot; tag_to_detour &quot;</span>},<span class="hljs-string">&quot; disableInsecureEncryption &quot;</span>: <span class="hljs-literal">false</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;clients&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
+      <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>,
+      <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;default&quot;</span>: {
+    <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">32</span>
+  },
+  <span class="hljs-string">&quot;detour&quot;</span>: {
+    <span class="hljs-string">&quot;to&quot;</span>: <span class="hljs-string">&quot;tag_to_detour&quot;</span>
+  },
+  <span class="hljs-string">&quot;disableInsecureEncryption&quot;</span>: <span class="hljs-literal">false</span>
+}
 </code></pre>
-<p>Where:</p>
+<p>Wo:</p>
 <ul>
-<li><code>Kunden</code>: Ein Array f&#xFC;r g&#xFC;ltige Benutzerkonten. Kann leer sein, wenn es f&#xFC;r die dynamische Portfunktion verwendet wird. <ul>
+<li><code>clients</code>: Ein Array f&#xFC;r g&#xFC;ltige Benutzerkonten. Kann leer sein, wenn es f&#xFC;r die dynamische Portfunktion verwendet wird. <ul>
 <li>Jeder Client enth&#xE4;lt: <ul>
-<li><code>ID</code>: Benutzer ID, in Form von <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
-<li><code>Stufe</code>: Benutzerebene. Siehe <a href="../policy.html">Policy</a> * <code>alterId</code>: Anzahl der alternativen IDs. Wie in Inbound. Der Wert muss mit dem des Clients &#xFC;bereinstimmen.</li>
-<li><code>E-Mail</code>: E-Mail-Adresse, um Benutzer zu identifizieren.</li>
+<li><code>id</code>: Benutzer ID, in Form von <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
+<li><code>level</code>: User level. See <a href="../policy.html">Policy</a> for its usage.</li>
+<li><code>alterId</code>: Number of alternative IDs. Same as in Inbound. Value must be the same as connecting clients.</li>
+<li><code>email</code>: Email address to identify users.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>Umleitung</code>: Option, um dem Kunden einen Umweg zu empfehlen. <ul>
+<li><code>detour</code>: Option, um dem Kunden einen Umweg zu empfehlen. <ul>
 <li><code>bis</code>: Das Tag eines eingehenden Proxy. Siehe <a href="../02_protocols.md">&#xDC;bersicht</a>. Wenn konfiguriert, schl&#xE4;gt VMess dem Client vor, den Umweg f&#xFC;r weitere Verbindungen zu verwenden.</li>
 </ul>
 </li>
-<li><code>Standard</code>: Optionale Standard-Client-Konfiguration. Wird normalerweise im Umleitungs-Proxy verwendet. <ul>
-<li><code>Stufe</code>: Benutzerebene.</li>
+<li><code>default</code>: Optionale Standard-Client-Konfiguration. Wird normalerweise im Umleitungs-Proxy verwendet. <ul>
+<li><code>level</code>: Benutzerebene.</li>
 <li><code>alterId</code>: Anzahl der alternativen IDs. Standardwert 64.</li>
 </ul>
 </li>
-<li><code>disableInsecureEncryption</code> (V2Ray 3.11+): Verbietet dem Client die Verwendung von unsicheren Verschl&#xFC;sselungsmethoden. Wenn der Wert auf &quot;true&quot; gesetzt ist, werden die Verbindungen sofort beendet, wenn die folgende Verschl&#xFC;sselung verwendet wird. Standardwert <code>false</code>. <ul>
-<li><code>keiner</code></li>
+<li><code>disableInsecureEncryption</code>: Forbids client for using insecure encryption methods. Wenn der Wert auf &quot;true&quot; gesetzt ist, werden die Verbindungen sofort beendet, wenn die folgende Verschl&#xFC;sselung verwendet wird. Standardwert <code>false</code>. <ul>
+<li><code>none</code></li>
 <li><code>aes-128-cfb</code></li>
 </ul>
 </li>
@@ -769,7 +802,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.7","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.7","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

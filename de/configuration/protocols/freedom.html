@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -669,7 +669,7 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="freiheit"><a name="freiheit" class="plugin-anchor" href="#freiheit"><i class="fa fa-link" aria-hidden="true"></i></a>Freiheit</h1>
+                                <h1 id="freedom"><a name="freedom" class="plugin-anchor" href="#freedom"><i class="fa fa-link" aria-hidden="true"></i></a>Freedom</h1>
 <p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/protocols/freedom.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
 <p>Freedom ist ein Protokoll f&#xFC;r ausgehende Verbindungen. Es &#xFC;bergibt alle TCP- oder UDP-Verbindungen an ihre Ziele.</p>
 <ul>
@@ -677,13 +677,17 @@ if (inIframe() || !isValidDomain()) {
 <li>Typ: Ausgehend</li>
 <li>Aufbau:</li>
 </ul>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>, <span class="hljs-string">&quot;Weiterleitung&quot;</span>: <span class="hljs-string">&quot;127.0.0.1:3366&quot;</span>, <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;domainStrategy&quot;</span>: <span class="hljs-string">&quot;AsIs&quot;</span>,
+  <span class="hljs-string">&quot;redirect&quot;</span>: <span class="hljs-string">&quot;127.0.0.1:3366&quot;</span>,
+  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Dom&#xE4;nenstrategie</code>: Strategie f&#xFC;r die Domain-Namensaufl&#xF6;sung. Optionen sind: <ul>
+<li><code>domainStrategy</code>: Strategie f&#xFC;r die Domain-Namensaufl&#xF6;sung. Optionen sind: <ul>
 <li><code>&quot;AsIs&quot;</code>: Standard. Beheben Sie den Dom&#xE4;nennamen nach System.</li>
-<li><code>&quot;UseIP&quot;</code>: Verwende <a href="../04_dns.md">interne DNS</a> f&#xFC;r die Domain-Namensaufl&#xF6;sung.</li>
+<li><code>&quot;UseIP&quot;</code>: Use <a href="../dns.html">internal DNS</a> for domain name resolution.</li>
 </ul>
 </li>
 <li><code>redirect</code>: Leite alle Verbindungen zu dieser Adresse um, in der Form <code>&quot;127.0.0.1:80&quot;</code> oder <code>&quot;: 1234&quot;</code>.</li>
@@ -716,7 +720,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Freiheit","level":"1.2.2.3","depth":3,"next":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/freedom.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Freiheit","level":"1.2.2.3","depth":3,"next":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/freedom.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

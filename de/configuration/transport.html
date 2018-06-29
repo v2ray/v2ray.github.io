@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -674,39 +674,113 @@ if (inIframe() || !isValidDomain()) {
 <p>Transporteinstellungen gibt an, wie V2Ray Daten von seinen Peers sendet und empf&#xE4;ngt. Die Einstellungen teilen sich in zwei Teile: globale Einstellungen und pro Proxy-Einstellungen. Per-Proxy-Einstellungen gibt an, wie jeder einzelne Proxy seine Daten verarbeitet, w&#xE4;hrend globale Einstellungen f&#xFC;r alle Proxies gelten. Normalerweise m&#xFC;ssen die eingehenden und ausgehenden Proxies zwischen dem verbindenden Peer die gleichen Transporteinstellungen haben. Wenn ein Proxy keine Transporteinstellungen hat, gelten die globalen Einstellungen.</p>
 <h2 id="globale-konfiguration"><a name="globale-konfiguration" class="plugin-anchor" href="#globale-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Globale Konfiguration</h2>
 <p>Globale Einstellungen befinden sich im Eintrag &quot;Transport&quot; von V2Ray config.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;tcpSettings&quot;</span>: {}, <span class="hljs-string">&quot;kcpSettings&quot;</span>: {}, <span class="hljs-string">&quot;wsSettings&quot;</span>: {}, <span class="hljs-string">&quot;httpSettings&quot;</span>: {}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
 <li><code>tcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/tcp.html">TCP-Transport</a>.</li>
 <li><code>kcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/mkcp.html">mKCP Transport</a>.</li>
 <li><code>wsSettings</code>: Einstellungen f&#xFC;r <a href="transport/websocket.html">WebSocket-Transport</a>.</li>
-<li><code>httpSettings</code>: Einstellungen f&#xFC;r <a href="transport/h2.html">HTTP / 2 Transport</a>.</li>
+<li><code>httpSettings</code>: Einstellungen f&#xFC;r <a href="transport/h2.html">HTTP/2 Transport</a>.</li>
 </ul>
 <h2 id="pro-proxy-konfiguration"><a name="pro-proxy-konfiguration" class="plugin-anchor" href="#pro-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Pro-Proxy-Konfiguration</h2>
 <p>Jeder eingehende und ausgehende Proxy hat m&#xF6;glicherweise eigene Transporteinstellungen. Jeder eingehende, eingehendeDetour-, ausgehende und ausgehendeDetour-Eintrag kann eine <code>streamSettings</code> f&#xFC;r den Transport haben.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>, <span class="hljs-string">&quot;Sicherheit&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>, <span class="hljs-string">&quot;tlsSettings&quot;</span>: {<span class="hljs-string">&quot;Servername&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>, <span class="hljs-string">&quot;alpn&quot;</span>: [<span class="hljs-string">&quot;http / 1.1&quot;</span>], <span class="hljs-string">&quot;allowInsecure&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;Zertifikate&quot;</span>: [{<span class="hljs-string">&quot;usage&quot;</span>: <span class="hljs-string">&quot;verschl&#xFC;sselung&quot;</span>, <span class="hljs-string">&quot;certificateFile&quot;</span>: <span class="hljs-string">&quot;/pfad/zu/zertifikate.crt&quot;</span>, <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/pfad/zu/key.key&quot;</span>, <span class="hljs-string">&quot;Zertifikat&quot;</span>: [<span class="hljs-string">&quot; ----- ----- ZERTIFIKAT BEGIN &quot;</span> <span class="hljs-string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR / 7kAwDQYJKoZIhvcNAQELBQAw&quot;</span>, <span class="hljs-string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span>, <span class="hljs-string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ +&quot;</span>, <span class="hljs-string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp / c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span>, <span class="hljs-string">&quot;OzhV0FD20 / 0YELou85TwnkTw5l9GVCXT02NG pGlYsFrxesUHpojdl8tIcn113M5 +&quot;</span>, <span class="hljs-string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span>,<span class="hljs-string">&quot; OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko / W + JCGapcC7O74palwBUuXE1iH + Jp &quot;</span> <span class="hljs-string">&quot;noPjGp4qE2ognW3WH / SGQ + rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span>, <span class="hljs-string">&quot;A1UdDwEB / wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span>, <span class="hljs-string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw / vzkV8Q32NILEMlPVqeJU&quot;</span>,<span class="hljs-string">&quot; 7UxVgIODBV6A1b3tOU oktuhmgSSaQxjhYbFAVTD LUglMUCxNbj56luBRlLLQWo + + &quot;</span> <span class="hljs-string">&quot;9BUhC / ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span>, <span class="hljs-string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk + 0A / 8&quot;</span>, <span class="hljs-string">&quot;R / 2s + sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY + r6BckT1QPDIQKYy615j1LpOtwZe /&quot;</span>, <span class="hljs-string">&quot;d4q7MD / dkzRDsch7t2cIjM / PYeMuzh87admSyL6hdtK0Nm / Q&quot;</span>,<span class="hljs-string">&quot; ----- END CERTIFICATE-- --- &quot;</span>], <span class="hljs-string">&quot;Schl&#xFC;ssel&quot;</span>: [ <span class="hljs-string">&quot;----- BEGIN PRIVATE KEY RSA -----&quot;</span>, <span class="hljs-string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span>, <span class="hljs-string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span>, <span class="hljs-string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span>, <span class="hljs-string">&quot;jkUX + 57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span>,<span class="hljs-string">&quot; itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu + KWpcAVLlxNYh / iaZ6D4xqeKhNq &quot;</span> <span class="hljs-string">&quot;IJ1t1h / 7IEPq76NtHl2 / VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span>, <span class="hljs-string">&quot;+ QRP o9xQLYGhQnmOYb27OpwnRCYojSlT + mvLcqwvevnHsr9WxyA PkZ3AYS2PLue +&quot;</span>, <span class="hljs-string">&quot;+ C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy xVDFgNhWap&quot;</span>, <span class="hljs-string">&quot;/ CMzfQYziB7GlnrM6hH838iiy0dlv4I / HKK + 3 / YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span>,<span class="hljs-string">&quot; aPKZ5qb nV + 4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7 + SG0b0bqloti4 + oQXqGtiESUwEW&#x201C;, &quot;</span>/ Wzi7oyCbFJoPsFWp1P5 + wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4<span class="hljs-string">&quot;, &quot;</span>bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe + jyy98CELOO2DNbB9QNJ<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">8</span>cSSU / PjkxQlgbOJc8DEprdMldN5xI / srlsbQWCj72wXxXnVnh991bI2clwt7oYi<span class="hljs-string">&quot;, &quot;</span>pcGZwzCrJyFL + QaZmYzLxkxYl1tCiiuqLm + EkjxCWKTX / kKEFb6rtnMCgYEAx0WR<span class="hljs-string">&quot;, &quot;</span>L8Uue3lXxhXRdBS5QRTBNklkSxtU + <span class="hljs-number">2</span>yyXRpvFa7Qam + GghJs5RKfJ9lTvjfM / pXg<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">3</span>vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH / kzKxIeRo4l64mioKdDwK / <span class="hljs-number">4</span>CZtS7<span class="hljs-string">&quot;, &quot;</span>az0Lq3eS6bq11qL4mEdE6Gn / Y + sqB83GHZYju80CgYABFm4KbbBcW + <span class="hljs-number">1</span>RKv9WSBtK<span class="hljs-string">&quot;, &quot;</span>gVIagV / <span class="hljs-number">89</span>moWLa / uuLmtApyEqZSfn5mAHqdc0 + F8C2 / Pl9KHh50u99zfKv8AsHfH<span class="hljs-string">&quot;, &quot;</span>TtjuVAvZg10GcZdTQ / I41ruficYL0gpfZ3haVWWxNl + J47di4iapXPxeGWtVA + U8<span class="hljs-string">&quot;, &quot;</span>eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW<span class="hljs-string">&quot;, &quot;</span><span class="hljs-number">64</span>cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q<span class="hljs-string">&quot;, &#x201E;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2 &quot;</span>,<span class="hljs-string">&quot; GxvNAoGBAM4g2z8NTPMqX + 8IBGkGgmcYuRQxd3cs7LOSEjF9hPy1it2ZFe / yUKq &quot;</span>,<span class="hljs-string">&quot; ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamx wPUBtxRJR &quot;</span>,<span class="hljs-string">&quot; cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT &quot;</span>,<span class="hljs-string">&quot; ----- RSA-PRIVATSCHL&#xDC;SSEL ENDE ----- &quot;</span>]}]},<span class="hljs-string">&quot; tcpSettings &quot;</span>: {},<span class="hljs-string">&quot; kcpSettings &quot;</span>: {},<span class="hljs-string">&quot; wsSettings &quot;</span>: {},<span class="hljs-string">&quot; httpSettings &quot;</span>: {}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
+  <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>,
+  <span class="hljs-string">&quot;tlsSettings&quot;</span>: {
+    <span class="hljs-string">&quot;serverName&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>,
+    <span class="hljs-string">&quot;alpn&quot;</span>: [<span class="hljs-string">&quot;http/1.1&quot;</span>],
+    <span class="hljs-string">&quot;allowInsecure&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;certificates&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;usage&quot;</span>: <span class="hljs-string">&quot;encipherment&quot;</span>,
+
+        <span class="hljs-string">&quot;certificateFile&quot;</span>: <span class="hljs-string">&quot;/path/to/certificate.crt&quot;</span>,
+        <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/path/to/key.key&quot;</span>,
+
+        <span class="hljs-string">&quot;certificate&quot;</span>: [
+          <span class="hljs-string">&quot;-----BEGIN CERTIFICATE-----&quot;</span>,
+          <span class="hljs-string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span>,
+          <span class="hljs-string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span>,
+          <span class="hljs-string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span>,
+          <span class="hljs-string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span>,
+          <span class="hljs-string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span>,
+          <span class="hljs-string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span>,
+          <span class="hljs-string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span>,
+          <span class="hljs-string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span>,
+          <span class="hljs-string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span>,
+          <span class="hljs-string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span>,
+          <span class="hljs-string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span>,
+          <span class="hljs-string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span>,
+          <span class="hljs-string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span>,
+          <span class="hljs-string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span>,
+          <span class="hljs-string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span>,
+          <span class="hljs-string">&quot;-----END CERTIFICATE-----&quot;</span>
+        ],
+        <span class="hljs-string">&quot;key&quot;</span>: [
+          <span class="hljs-string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>,
+          <span class="hljs-string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span>,
+          <span class="hljs-string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span>,
+          <span class="hljs-string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span>,
+          <span class="hljs-string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span>,
+          <span class="hljs-string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span>,
+          <span class="hljs-string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span>,
+          <span class="hljs-string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span>,
+          <span class="hljs-string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span>,
+          <span class="hljs-string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span>,
+          <span class="hljs-string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span>,
+          <span class="hljs-string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span>,
+          <span class="hljs-string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span>,
+          <span class="hljs-string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span>,
+          <span class="hljs-string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span>,
+          <span class="hljs-string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span>,
+          <span class="hljs-string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span>,
+          <span class="hljs-string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span>,
+          <span class="hljs-string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span>,
+          <span class="hljs-string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span>,
+          <span class="hljs-string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span>,
+          <span class="hljs-string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span>,
+          <span class="hljs-string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span>,
+          <span class="hljs-string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span>,
+          <span class="hljs-string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span>,
+          <span class="hljs-string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span>,
+          <span class="hljs-string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
+        ]
+      }
+    ]
+  },
+  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Netzwerk</code>: Netzwerktyp des Stream-Transports. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>oder <code>&quot;http&quot;</code>. Standardwert <code>&quot;tcp&quot;</code>.</li>
-<li><code>Sicherheit</code>: Art der Sicherheit. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;keine&quot;</code> (Standard) f&#xFC;r keine zus&#xE4;tzliche Sicherheit oder <code>&quot;TLS&quot;</code> f&#xFC;r die Verwendung von <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
-<li><code>tlsEinstellungen</code>: TLS-Einstellungen TLS wird von Golang bereitgestellt. Unterst&#xFC;tzung f&#xFC;r TLS 1.2 DTLS wird nicht unterst&#xFC;tzt. <ul>
-<li><code>Servername</code>: Servername (normalerweise Dom&#xE4;ne), der f&#xFC;r die TLS-Authentifizierung verwendet wird.</li>
+<li><code>network</code>: Netzwerktyp des Stream-Transports. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>oder <code>&quot;http&quot;</code>. Standardwert <code>&quot;tcp&quot;</code>.</li>
+<li><code>security</code>: Art der Sicherheit. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;none&quot;</code> (Standard) f&#xFC;r keine zus&#xE4;tzliche Sicherheit oder <code>&quot;TLS&quot;</code> f&#xFC;r die Verwendung von <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
+<li><code>tlsSettings</code>: TLS-Einstellungen TLS wird von Golang bereitgestellt. Unterst&#xFC;tzung f&#xFC;r TLS 1.2 DTLS wird nicht unterst&#xFC;tzt. <ul>
+<li><code>servername</code>: Servername (normalerweise Dom&#xE4;ne), der f&#xFC;r die TLS-Authentifizierung verwendet wird.</li>
 <li><code>alpn</code> (V2Ray 3.18+): Ein Array von Strings, um den ALPN-Wert im TLS-Handshake zu spezifizieren. Der Standardwert ist <code>[&quot;http / 1.1&quot;]</code>.</li>
 <li><code>allowInsecure</code>: Wenn <code>true</code>, erlaubt V2Ray eine unsichere Verbindung am TLS-Client.</li>
 <li><code>allowInsecureCiphers</code> (V2Ray 3.24+): Ob wir unsichere Cipher Suites erlauben oder nicht. Standardm&#xE4;&#xDF;ig verwendet TLS nur Cipher-Suites aus der Spezifikation TLS 1.3. Aktivieren Sie diese Option, um Verschl&#xFC;sselungssammlungen mit statischen RSA-Schl&#xFC;sseln zuzulassen.</li>
 <li><code>Zertifikate</code>: Liste der TLS-Zertifikate Jeder Eintrag ist ein Zertifikat. <ul>
-<li><code>Verwendung</code> (V2Ray 3.17+): Zweck des Zertifikats. Standardwert <code>&quot;Verschl&#xFC;sselung&quot;</code>. Auswahlm&#xF6;glichkeiten sind: <ul>
-<li><code>&quot;Verschl&#xFC;sselung&quot;</code>: Zertifikat wird f&#xFC;r TLS-Authentifizierung und Verschl&#xFC;sselung verwendet.</li>
+<li><code>usage</code> (V2Ray 3.17+): Zweck des Zertifikats. Standardwert <code>&quot;encipherment&quot;</code>. Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>&quot;encipherment&quot;</code>: Zertifikat wird f&#xFC;r TLS-Authentifizierung und Verschl&#xFC;sselung verwendet.</li>
 <li><code>&quot;verify&quot;</code>: Zertifikat wird zur Validierung von TLS-Zertifikaten von Remote-Peer verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein. Derzeit wird Windows nicht unterst&#xFC;tzt.</li>
-<li><code>&quot;Issue&quot;</code>: Zertifikat wird f&#xFC;r die Ausstellung anderer Zertifikate verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein.</li>
+<li><code>&quot;issue&quot;</code>: Zertifikat wird f&#xFC;r die Ausstellung anderer Zertifikate verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein.</li>
 </ul>
 </li>
 <li><code>certificateFile</code>: Dateipfad zum Zertifikat. Wenn das Zertifikat von OpenSSL generiert wird, endet der Pfad mit &quot;.crt&quot;.</li>
-<li><code>Zertifikat</code> (V2Ray 3.17+): Liste der Strings als Inhalt des Zertifikats. Siehe das obige Beispiel. Entweder <code>Zertifikat</code> oder <code>Zertifikatsdatei</code> darf nicht leer sein.</li>
+<li><code>certificate</code> (V2Ray 3.17+): Liste der Strings als Inhalt des Zertifikats. Siehe das obige Beispiel. Entweder <code>certificate</code> oder <code>certificateFile</code> darf nicht leer sein.</li>
 <li><code>keyFile</code>: Dateipfad zum privaten Schl&#xFC;ssel. Wenn von OpenSSL generiert, endet die Datei normalerweise mit &quot;.key&quot;. Schl&#xFC;sseldatei mit Passwort wird nicht unterst&#xFC;tzt.</li>
-<li><code>Taste</code> (V2Ray 3.17+): Liste der Strings als Inhalt des privaten Schl&#xFC;ssels. Siehe das obige Beispiel. Entweder <code>Taste</code> oder <code>Taste</code> darf nicht leer sein.</li>
+<li><code>key</code> (V2Ray 3.17+): Liste der Strings als Inhalt des privaten Schl&#xFC;ssels. Siehe das obige Beispiel. Entweder <code>Taste</code> oder <code>Taste</code> darf nicht leer sein.</li>
 </ul>
 </li>
 </ul>
@@ -719,8 +793,8 @@ if (inIframe() || !isValidDomain()) {
 <h2 id="tipps"><a name="tipps" class="plugin-anchor" href="#tipps"><i class="fa fa-link" aria-hidden="true"></i></a>Tipps</h2>
 <ul>
 <li>Wenn <code>certificateFile</code> und <code>certificate</code> beide ausgef&#xFC;llt. V2Ray verwendet <code>certificateFile</code>. Gleiches f&#xFC;r <code>keyFile</code> und <code>key</code>.</li>
-<li>Wenn es eine neue Client-Anfrage gibt, sagen wir f&#xFC;r <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, findet V2Ray zuerst ein Zertifikat f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Wenn V2Ray nicht gefunden wird, versucht V2Ray, ein neues Zertifikat mit einem vorhandenen Zertifikat auszustellen, dessen <code>Verwendung</code> <code>&quot;Problem&quot;</code> f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Das neue Zertifikat l&#xE4;uft in einer Stunde ab und wird dem Zertifikatspool zur sp&#xE4;teren Wiederverwendung hinzugef&#xFC;gt.</li>
-<li>Wenn <code>Verwendung</code> <code>&quot;verify&quot;</code>, k&#xF6;nnen sowohl <code>keyFile</code> als auch <code>key</code> leer sein.</li>
+<li>Wenn es eine neue Client-Anfrage gibt, sagen wir f&#xFC;r <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, findet V2Ray zuerst ein Zertifikat f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Wenn V2Ray nicht gefunden wird, versucht V2Ray, ein neues Zertifikat mit einem vorhandenen Zertifikat auszustellen, dessen <code>usage</code> <code>&quot;issue&quot;</code> f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Das neue Zertifikat l&#xE4;uft in einer Stunde ab und wird dem Zertifikatspool zur sp&#xE4;teren Wiederverwendung hinzugef&#xFC;gt.</li>
+<li>Wenn <code>usage</code> <code>&quot;verify&quot;</code>, k&#xF6;nnen sowohl <code>keyFile</code> als auch <code>key</code> leer sein.</li>
 <li>Verwenden Sie den Befehl <code>v2ctl cert -ca</code> , um ein neues CA-Zertifikat zu generieren.</li>
 </ul>
 
@@ -750,7 +824,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

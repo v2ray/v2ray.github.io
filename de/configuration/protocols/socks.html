@@ -102,7 +102,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../">
             
                     
-                    Willkommen bei V2Ray
+                    Project V
             
                 </a>
             
@@ -677,17 +677,29 @@ if (inIframe() || !isValidDomain()) {
 <li>Geben Sie ein: Eingehend / Ausgehend</li>
 </ul>
 <h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Server&quot;</span>: [{<span class="hljs-string">&quot;Adresse&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;Port&quot;</span>: <span class="hljs-number">1234</span>, <span class="hljs-string">&quot;Benutzer&quot;</span>: [{<span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;test user&quot;</span>, <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>, <span class="hljs-string">&quot;level&quot;</span> : <span class="hljs-number">0</span>}]}]}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;servers&quot;</span>: [{
+    <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1234</span>,
+    <span class="hljs-string">&quot;users&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;test user&quot;</span>,
+        <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;test pass&quot;</span>,
+        <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
+      }
+    ]
+  }]
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Server</code>: Socks Server Liste, in der jeder Eintrag hat: <ul>
-<li><code>Adresse</code>: Serveradresse</li>
-<li><code>Port</code>: Server-Port</li>
-<li><code>Benutzer</code>: Liste der Benutzerkonten: <ul>
-<li><code>Benutzer</code>: Benutzername</li>
-<li><code>Pass</code>: Passwort</li>
-<li><code>Stufe</code>: Benutzerebene.</li>
+<li><code>servers</code>: Socks Server Liste, in der jeder Eintrag hat: <ul>
+<li><code>address</code>: Serveradresse</li>
+<li><code>port</code>: Server-Port</li>
+<li><code>users</code>: Liste der Benutzerkonten: <ul>
+<li><code>user</code>: Benutzername</li>
+<li><code>pass</code>: Passwort</li>
+<li><code>level</code>: Benutzerebene.</li>
 </ul>
 </li>
 </ul>
@@ -699,20 +711,31 @@ if (inIframe() || !isValidDomain()) {
 <li>Unterst&#xFC;tzt nur SOCKS5-Server.</li>
 </ul>
 <h2 id="eingehende-proxy-konfiguration"><a name="eingehende-proxy-konfiguration" class="plugin-anchor" href="#eingehende-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Eingehende Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>, <span class="hljs-string">&quot;Konten&quot;</span>: [{<span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;mein-Benutzername&quot;</span>, <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;mein-Passwort&quot;</span>}], <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;127.0. 0.1 &quot;</span>,<span class="hljs-string">&quot; userLevel &quot;</span>: <span class="hljs-number">0</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>,
+  <span class="hljs-string">&quot;accounts&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;my-username&quot;</span>,
+      <span class="hljs-string">&quot;pass&quot;</span>: <span class="hljs-string">&quot;my-password&quot;</span>
+    }
+  ],
+  <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;ip&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
+}
 </code></pre>
-<p>::</p>
+<p>Wo:</p>
 <ul>
-<li><code>autorisiert</code>: Socken Authentifizierungsmethode. Standard auf <code>&quot;noauth&quot;</code>. Optionen sind: <ul>
+<li><code>auth</code>: Socken Authentifizierungsmethode. Standard auf <code>&quot;noauth&quot;</code>. Optionen sind: <ul>
 <li><code>&quot;noauth&quot;</code>: Anonym.</li>
 <li><code>&quot;Passwort&quot;</code>: Benutzer und Passwort <a href="https://tools.ietf.org/html/rfc1929" target="_blank">RFC 1929</a></li>
 </ul>
 </li>
-<li><code>Konten</code>: Ein Array, in dem jeder Eintrag <code>Benutzer</code> f&#xFC;r Benutzername und <code>Pass</code> f&#xFC;r Kennwort enth&#xE4;lt. Standard bis leer <ul>
-<li>Funktioniert nur, wenn <code>Auth</code> <code>&quot;Passwort&quot;</code></li>
+<li><code>accounts</code>: Ein Array, in dem jeder Eintrag <code>user</code> f&#xFC;r Benutzername und <code>pass</code> f&#xFC;r Kennwort enth&#xE4;lt. Standard bis leer <ul>
+<li>Funktioniert nur, wenn <code>auth</code> ist <code>&quot;password&quot;</code></li>
 </ul>
 </li>
-<li><code>udp</code>: <code>wahr</code> oder <code>falsch</code> um UDP zu aktivieren. Standard auf falsch.</li>
+<li><code>udp</code>: <code>true</code> oder <code>false</code> um UDP zu aktivieren. Standard auf falsch.</li>
 <li><code>ip</code>: Wenn UDP aktiviert ist, empf&#xE4;ngt diese IP-Adresse UDP-Pakete vom Client. Standard auf <code>&quot;127.0.0.1&quot;</code>.</li>
 <li><code>userLevel</code>: Benutzerebene. Alle Verbindungen teilen diese Ebene.</li>
 </ul>
@@ -743,7 +766,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"next":{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"previous":{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/socks.md","mtime":"2018-06-29T13:00:15.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T13:01:39.022Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"next":{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"previous":{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/socks.md","mtime":"2018-06-29T21:13:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T21:14:38.006Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
