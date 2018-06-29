@@ -42,6 +42,8 @@ if (inIframe() || !isValidDomain()) {
 
     
         
+        <link rel="stylesheet" href="../../styles/website.css">
+        
     
         
     
@@ -667,7 +669,7 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="schwarzes-loch"><a name="schwarzes-loch" class="plugin-anchor" href="#schwarzes-loch"><i class="fa fa-link" aria-hidden="true"></i></a>Schwarzes Loch</h1>
+                                <h1 id="blackhole"><a name="blackhole" class="plugin-anchor" href="#blackhole"><i class="fa fa-link" aria-hidden="true"></i></a>Blackhole</h1>
 <p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/protocols/blackhole.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
 <p>Blackhole ist ein Protokoll f&#xFC;r ausgehende Verbindungen. Es blockiert alle Verbindungen mit vordefinierten Antworten. Kombiniert mit <a href="../03_routing.md"> Routing </a> Dies kann zum Sperren des Zugriffs auf einige Websites verwendet werden.</p>
 <ul>
@@ -675,13 +677,17 @@ if (inIframe() || !isValidDomain()) {
 <li>Typ: Ausgehend</li>
 <li>Konfiguration:</li>
 </ul>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Antwort&quot;</span>: {<span class="hljs-string">&quot;Typ&quot;</span>: <span class="hljs-string">&quot;keine&quot;</span>}}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
+  }
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Antwort</code>: Vordefinierte Antwort Blockhole sendet (falls vorhanden) vordefinierte Daten sofort f&#xFC;r jede Verbindung, die an es weitergeleitet wird, und schlie&#xDF;t die Verbindung. <ul>
-<li><code>Art</code>: Art der Antwort, verf&#xFC;gbare Optionen sind: <ul>
-<li><code>&quot;keine&quot;</code>: Standardwert. Leere Antwort.</li>
+<li><code>response</code>: Vordefinierte Antwort Blockhole sendet (falls vorhanden) vordefinierte Daten sofort f&#xFC;r jede Verbindung, die an es weitergeleitet wird, und schlie&#xDF;t die Verbindung. <ul>
+<li><code>type</code>: Art der Antwort, verf&#xFC;gbare Optionen sind: <ul>
+<li><code>&quot;none&quot;</code>: Standardwert. Leere Antwort.</li>
 <li><code>&quot;http&quot;</code>: Eine g&#xFC;ltige HTTP 403-Antwort.</li>
 </ul>
 </li>
@@ -715,7 +721,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"next":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"previous":{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/blackhole.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"next":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"previous":{"title":"Protokolle","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Schattensocken","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/blackhole.md","mtime":"2018-06-29T12:48:16.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T12:49:45.282Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

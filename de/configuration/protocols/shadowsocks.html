@@ -42,6 +42,8 @@ if (inIframe() || !isValidDomain()) {
 
     
         
+        <link rel="stylesheet" href="../../styles/website.css">
+        
     
         
     
@@ -667,7 +669,7 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="schattensocken"><a name="schattensocken" class="plugin-anchor" href="#schattensocken"><i class="fa fa-link" aria-hidden="true"></i></a>Schattensocken</h1>
+                                <h1 id="shadowsocks"><a name="shadowsocks" class="plugin-anchor" href="#shadowsocks"><i class="fa fa-link" aria-hidden="true"></i></a>Shadowsocks</h1>
 <p><img src="../../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/protocols/shadowsocks.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinesisch"></a></p>
 <p><a href="https://www.shadowsocks.org/" target="_blank">Shadowsocks</a> Protokoll f&#xFC;r ein- und ausgehende Verbindungen.</p>
 <p>Kompatibilit&#xE4;t mit der offiziellen Version:</p>
@@ -699,9 +701,17 @@ if (inIframe() || !isValidDomain()) {
 <li>Geben Sie ein: Eingehend / Ausgehend</li>
 </ul>
 <h2 id="inbound-proxy-konfiguration"><a name="inbound-proxy-konfiguration" class="plugin-anchor" href="#inbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Inbound-Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>, <span class="hljs-string">&quot;Methode&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>, <span class="hljs-string">&quot;passwort&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>, <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>, <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span> , <span class="hljs-string">&quot;Netzwerk&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>,
+  <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>,
+  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>,
+  <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>
+}
 </code></pre>
-<p>::</p>
+<p>Where:</p>
 <ul>
 <li><code>E-Mail</code>: E-Mail-Adresse. Wird zur Benutzeridentifikation verwendet.</li>
 <li><code>Methode</code>: Verschl&#xFC;sselungsmethode Kein Standardwert Optionen sind: <ul>
@@ -726,7 +736,7 @@ if (inIframe() || !isValidDomain()) {
 <h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
 <pre><code class="lang-javascript">{<span class="hljs-string">&quot;Server&quot;</span>: [{<span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>, <span class="hljs-string">&quot;Adresse&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;Port&quot;</span>: <span class="hljs-number">1234</span>, <span class="hljs-string">&quot;Methode&quot;</span>: <span class="hljs-string">&quot;Methode&quot;</span>, <span class="hljs-string">&quot;Passwort&quot;</span>: <span class="hljs-string">&quot;Passwort&quot;</span> , <span class="hljs-string">&quot;ota&quot;</span>: falsch, <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>}]}
 </code></pre>
-<p>::</p>
+<p>Where:</p>
 <ul>
 <li><code>E-Mail</code>: E-Mail-Adresse. Wird zur Benutzeridentifikation verwendet.</li>
 <li><code>Adresse</code>: Adresse des Shadowsocks-Servers. Kann IPv4, IPv6 oder Dom&#xE4;ne sein.</li>
@@ -775,7 +785,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Schattensocken","level":"1.2.2.5","depth":3,"next":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Schattensocken","level":"1.2.2.5","depth":3,"next":{"title":"SOCKEN","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-06-29T12:48:16.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T12:49:45.282Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

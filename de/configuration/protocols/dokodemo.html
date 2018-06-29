@@ -42,6 +42,8 @@ if (inIframe() || !isValidDomain()) {
 
     
         
+        <link rel="stylesheet" href="../../styles/website.css">
+        
     
         
     
@@ -686,13 +688,13 @@ if (inIframe() || !isValidDomain()) {
 </code></pre>
 <p>Woher:</p>
 <ul>
-<li><code>Adresse</code>: Adresse des Zielservers. Kann eine IPv4-, IPv6- oder eine Dom&#xE4;ne in Zeichenfolgenform sein. <ul>
+<li><code>address</code>: Adresse des Zielservers. Kann eine IPv4-, IPv6- oder eine Dom&#xE4;ne in Zeichenfolgenform sein. <ul>
 <li>Wenn <code>followRedirect</code> (siehe unten) ist <code>wahr</code>, <code>Adresse</code> kann leer sein.</li>
 </ul>
 </li>
 <li><code>Port</code>: Port des Zielservers. Ganze Zahl.</li>
 <li><code>Netzwerk</code>: Typ des Netzwerks, entweder &quot;TCP&quot; oder &quot;UDP&quot;.</li>
-<li><code>FolgenRedirect</code>: Wenn der Wert <code>wahr</code>, erkennt dokodemo-door das Ziel von TProxy und verwendet es als Ziel. <ul>
+<li><code>followRedirect</code>: Wenn der Wert <code>wahr</code>, erkennt dokodemo-door das Ziel von TProxy und verwendet es als Ziel. <ul>
 <li>Funktioniert nur unter Linux</li>
 <li>Unterst&#xFC;tzt TCP / IPv4-Verbindungen</li>
 <li>Unterst&#xFC;tzt UDP / IPv4-Pakete. Erfordert die Berechtigung root (CAP \ _NET \ _ADMIN)</li>
@@ -702,12 +704,46 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="beispiele-f&#xFC;r-transparenten-proxy"><a name="beispiele-f&#xFC;r-transparenten-proxy" class="plugin-anchor" href="#beispiele-f&#xFC;r-transparenten-proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Beispiele f&#xFC;r transparenten Proxy</h2>
 <p>F&#xFC;gen Sie eine dokodemo-T&#xFC;r eingehend wie folgt hinzu.</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Netzwerk&quot;</span>: <span class="hljs-string">&quot;tcp, udp&quot;</span>, <span class="hljs-string">&quot;Zeit&#xFC;berschreitung&quot;</span>: <span class="hljs-number">30</span>, <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>}
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp,udp&quot;</span>,
+  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">30</span>,
+  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>
+}
 </code></pre>
 <p>Konfigurieren Sie iptables wie folgt.</p>
-<pre><code class="lang-plain"># Create new chain root @ Wrt: ~ # iptables -t nat -N V2RAY root @ Wrt: ~ # iptables -t mangle -N V2RAY root @ Wrt: ~ # iptables -t mangle -N V2RAY_MARK # Ignoriere die Adresse deines V2Ray-Servers # Es ist sehr wichtig, sei einfach vorsichtig.
-root @ Wrt: ~ # iptables -t nat -A V2RAY -d 123.123.123.123 -j R&#xDC;CKKEHR # Ignorieren von LANs und anderen Adressen, die Sie den Proxy umgehen m&#xF6;chten # Eine vollst&#xE4;ndige Liste der reservierten Netzwerke finden Sie unter Wikipedia und RFC5735.
-root @ Wrt: ~ # iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN Wurzel @ Wrt: ~ # iptables - t nat -A V2RAY -d 172.16.0.0/12 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN Wurzel @ Wrt: ~ # iptables -t nat -A V2RAY -d 240.0.0.0/4 -j ZUR&#xDC;CK # Alles andere sollte zu Dokodemo-doors lokalen Port root @ Wrt umgeleitet werden: ~ # iptables -t nat -A V2RAY -p tcp -j REDIRECT --zu-ports 12345 # F&#xFC;gen Sie alle UDP-Regeln root @ Wrt hinzu: ~ # ip route hinzuf&#xFC;gen lokalen Standard dev lo Tabelle 100 root @ Wrt: ~ # ip rule add fwmark 1 lookup 100 Wurzel @ Wrt: ~ # iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-Markierung 0x01 / 0x01 root @ Wrt: ~ # iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1 # Wende die Regeln root @ Wrt an: ~ # iptables -t nat - A OUTPUT -p tcp -j V2RAY Wurzel @ Wrt: ~ # iptables -t mangle -A PREROUTING -j V2RAY Wurzel @ Wrt: ~ # iptables -t mangle -A OUTPUT -j V2RAY_MARK
+<pre><code class="lang-plain"># Create new chain
+root@Wrt:~# iptables -t nat -N V2RAY
+root@Wrt:~# iptables -t mangle -N V2RAY
+root@Wrt:~# iptables -t mangle -N V2RAY_MARK
+
+# Ignore your V2Ray server&apos;s addresses
+# It&apos;s very IMPORTANT, just be careful.
+root@Wrt:~# iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
+
+# Ignore LANs and any other addresses you&apos;d like to bypass the proxy
+# See Wikipedia and RFC5735 for full list of reserved networks.
+root@Wrt:~# iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
+root@Wrt:~# iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
+
+# Anything else should be redirected to Dokodemo-door&apos;s local port
+root@Wrt:~# iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
+
+# Add any UDP rules
+root@Wrt:~# ip route add local default dev lo table 100
+root@Wrt:~# ip rule add fwmark 1 lookup 100
+root@Wrt:~# iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
+root@Wrt:~# iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
+
+# Apply the rules
+root@Wrt:~# iptables -t nat -A OUTPUT -p tcp -j V2RAY
+root@Wrt:~# iptables -t mangle -A PREROUTING -j V2RAY
+root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
 </code></pre>
 
                                 
@@ -736,7 +772,7 @@ root @ Wrt: ~ # iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN Wurzel @ Wrt: ~ 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-06-29T11:24:59.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T11:26:30.127Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Schwarzes Loch","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-06-29T12:48:16.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-29T12:49:45.282Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
