@@ -1,0 +1,814 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TCP · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mkcp.html" />
+    
+    
+    <link rel="prev" href="../transport.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../welcome/versions.html">
+            
+                <a href="../../welcome/versions.html">
+            
+                    
+                    Чейнджлог
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../welcome/workflow.html">
+            
+                <a href="../../welcome/workflow.html">
+            
+                    
+                    Принцип работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../welcome/install.html">
+            
+                <a href="../../welcome/install.html">
+            
+                    
+                    Установка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../welcome/start.html">
+            
+                <a href="../../welcome/start.html">
+            
+                    
+                    Быстрый старт
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../welcome/command.html">
+            
+                <a href="../../welcome/command.html">
+            
+                    
+                    Командная строка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../../welcome/donate.html">
+            
+                <a href="../../welcome/donate.html">
+            
+                    
+                    Пожертвование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../../welcome/help.html">
+            
+                <a href="../../welcome/help.html">
+            
+                    
+                    Поддержка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.7.1" data-path="../../welcome/tg.html">
+            
+                <a href="../../welcome/tg.html">
+            
+                    
+                    Telegram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7.2" data-path="../../welcome/pgp.html">
+            
+                <a href="../../welcome/pgp.html">
+            
+                    
+                    Приватное сообщение
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/license.html">
+            
+                <a href="../../welcome/license.html">
+            
+                    
+                    Лицензия
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Настройка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../overview.html">
+            
+                <a href="../overview.html">
+            
+                    
+                    Обзор
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../protocols.html">
+            
+                <a href="../protocols.html">
+            
+                    
+                    Протоколы
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../protocols/blackhole.html">
+            
+                <a href="../protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../protocols/dokodemo.html">
+            
+                <a href="../protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../protocols/freedom.html">
+            
+                <a href="../protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../protocols/http.html">
+            
+                <a href="../protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../protocols/shadowsocks.html">
+            
+                <a href="../protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../protocols/socks.html">
+            
+                <a href="../protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../protocols/vmess.html">
+            
+                <a href="../protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../policy.html">
+            
+                <a href="../policy.html">
+            
+                    
+                    Правила
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../routing.html">
+            
+                <a href="../routing.html">
+            
+                    
+                    Маршрутизация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../dns.html">
+            
+                <a href="../dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../mux.html">
+            
+                <a href="../mux.html">
+            
+                    
+                    Мультиплексирование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../api.html">
+            
+                <a href="../api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../stats.html">
+            
+                <a href="../stats.html">
+            
+                    
+                    Статистика
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../transport.html">
+            
+                <a href="../transport.html">
+            
+                    
+                    Доставка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.9.1" data-path="tcp.html">
+            
+                <a href="tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
+            
+                <a href="mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="h2.html">
+            
+                <a href="h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../env.html">
+            
+                <a href="../env.html">
+            
+                    
+                    Переменные
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../ui_client/">
+            
+                <a href="../../ui_client/">
+            
+                    
+                    Клиенты
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../ui_client/windows.html">
+            
+                <a href="../../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../ui_client/osx.html">
+            
+                <a href="../../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../ui_client/ios.html">
+            
+                <a href="../../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../ui_client/android.html">
+            
+                <a href="../../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../ui_client/service.html">
+            
+                <a href="../../ui_client/service.html">
+            
+                    
+                    Службы
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >TCP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tcp-transport"><a name="tcp-transport" class="plugin-anchor" href="#tcp-transport"><i class="fa fa-link" aria-hidden="true"></i></a>TCP Transport</h1>
+<p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/transport/tcp.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
+<p>Configuration:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
+  }
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>header</code>: Header obfuscation settings: <ul>
+<li><code>type</code>: Type of obfuscation. Choices are: <ul>
+<li><code>&quot;none&quot;</code>: Default. No obfuscation at all.</li>
+<li><code>&quot;http&quot;</code>: HTTP obfuscation. See below.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="http-obfuscation"><a name="http-obfuscation" class="plugin-anchor" href="#http-obfuscation"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP obfuscation</h2>
+<p>HTTP obfuscation must be configured (and matching) for the inbound and outbound of the connecting peers.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
+    <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;GET&quot;</span>,
+    <span class="hljs-string">&quot;path&quot;</span>: [<span class="hljs-string">&quot;/&quot;</span>],
+    <span class="hljs-string">&quot;headers&quot;</span>: {
+      <span class="hljs-string">&quot;Host&quot;</span>: [<span class="hljs-string">&quot;www.baidu.com&quot;</span>, <span class="hljs-string">&quot;www.bing.com&quot;</span>],
+      <span class="hljs-string">&quot;User-Agent&quot;</span>: [
+        <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;</span>,
+        <span class="hljs-string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46&quot;</span>
+      ],
+      <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: [<span class="hljs-string">&quot;gzip, deflate&quot;</span>],
+      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
+      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
+    <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;200&quot;</span>,
+    <span class="hljs-string">&quot;reason&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>,
+    <span class="hljs-string">&quot;headers&quot;</span>: {
+      <span class="hljs-string">&quot;Content-Type&quot;</span>: [<span class="hljs-string">&quot;application/octet-stream&quot;</span>, <span class="hljs-string">&quot;video/mpeg&quot;</span>],
+      <span class="hljs-string">&quot;Transfer-Encoding&quot;</span>: [<span class="hljs-string">&quot;chunked&quot;</span>],
+      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
+      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
+    }
+  }
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>type</code>: same <code>type</code> entry as in <code>tcpSettings</code>.</li>
+<li><code>request</code>: HTTP request settings: <ul>
+<li><code>version</code>: HTTP version, default value <code>&quot;1.1&quot;</code></li>
+<li><code>method</code>: HTTP method, default value <code>&quot;GET&quot;</code>&#x3002;</li>
+<li><code>path</code>: Path. A string array. Default value is <code>[&quot;/&quot;]</code>. When there are multiple values, value is picked up randomly for each request.</li>
+<li><code>headers</code>: HTTP headers. It is a key value pair. Each key is key of the HTTP header, and value is the value of the HTTP header. When multiple values are set, the effetive value is picked up randomly for each request. Default settings is same as the example above.</li>
+</ul>
+</li>
+<li><code>response</code>: HTTP response. <ul>
+<li><code>version</code>: HTTP version. Default value is <code>&quot;1.1&quot;</code>.</li>
+<li><code>status</code>: HTTP status. Default value is <code>&quot;200&quot;</code>.</li>
+<li><code>reason</code>: HTTP status text. Default value is <code>&quot;OK&quot;</code>.</li>
+<li><code>headers</code>: HTTP header. Same as request headers, but for response.</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../transport.html" class="navigation navigation-prev " aria-label="Previous page: Доставка">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mkcp.html" class="navigation navigation-next " aria-label="Next page: mKCP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Доставка","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-06-30T17:21:53.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-30T17:23:42.377Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Приватное сообщение · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="license.html" />
+    
+    
+    <link rel="prev" href="tg.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="versions.html">
+            
+                <a href="versions.html">
+            
+                    
+                    Чейнджлог
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="workflow.html">
+            
+                <a href="workflow.html">
+            
+                    
+                    Принцип работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    Установка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    Быстрый старт
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Командная строка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="donate.html">
+            
+                <a href="donate.html">
+            
+                    
+                    Пожертвование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
+            
+                <a href="help.html">
+            
+                    
+                    Поддержка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.7.1" data-path="tg.html">
+            
+                <a href="tg.html">
+            
+                    
+                    Telegram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.7.2" data-path="pgp.html">
+            
+                <a href="pgp.html">
+            
+                    
+                    Приватное сообщение
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="license.html">
+            
+                <a href="license.html">
+            
+                    
+                    Лицензия
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../configuration/">
+            
+                <a href="../configuration/">
+            
+                    
+                    Настройка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../configuration/overview.html">
+            
+                <a href="../configuration/overview.html">
+            
+                    
+                    Обзор
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../configuration/protocols.html">
+            
+                <a href="../configuration/protocols.html">
+            
+                    
+                    Протоколы
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../configuration/protocols/blackhole.html">
+            
+                <a href="../configuration/protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../configuration/protocols/dokodemo.html">
+            
+                <a href="../configuration/protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../configuration/protocols/freedom.html">
+            
+                <a href="../configuration/protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/http.html">
+            
+                <a href="../configuration/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/shadowsocks.html">
+            
+                <a href="../configuration/protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/socks.html">
+            
+                <a href="../configuration/protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/vmess.html">
+            
+                <a href="../configuration/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../configuration/policy.html">
+            
+                <a href="../configuration/policy.html">
+            
+                    
+                    Правила
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../configuration/routing.html">
+            
+                <a href="../configuration/routing.html">
+            
+                    
+                    Маршрутизация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../configuration/dns.html">
+            
+                <a href="../configuration/dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../configuration/mux.html">
+            
+                <a href="../configuration/mux.html">
+            
+                    
+                    Мультиплексирование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../configuration/api.html">
+            
+                <a href="../configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    Статистика
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../configuration/transport.html">
+            
+                <a href="../configuration/transport.html">
+            
+                    
+                    Доставка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../configuration/transport/tcp.html">
+            
+                <a href="../configuration/transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../configuration/transport/mkcp.html">
+            
+                <a href="../configuration/transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="../configuration/transport/websocket.html">
+            
+                <a href="../configuration/transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="../configuration/transport/h2.html">
+            
+                <a href="../configuration/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../configuration/env.html">
+            
+                <a href="../configuration/env.html">
+            
+                    
+                    Переменные
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    Клиенты
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    Службы
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Приватное сообщение</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="private-communication"><a name="private-communication" class="plugin-anchor" href="#private-communication"><i class="fa fa-link" aria-hidden="true"></i></a>Private Communication</h1>
+<p><img src="../resources/englishc.svg" alt="English"> <a href=".https://www.v2ray.com/chapter_00/pgp.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
+<p>Please send a message to one of the address below, if you&apos;d like to talk to V2Ray team privately.</p>
+<ol>
+<li><code>love@v2ray.com</code></li>
+<li><code>v2ray@protonmail.com</code></li>
+</ol>
+<p>#1 is based on Gmail. If you concern the privacy of email content, please consider using the PGP public key below.</p>
+<p>#2 is based on ProtonMail which employs end to end encryption already.</p>
+<p>Sadly due to high workload, it is not promised that every email gets replied. Sorry for the inconvenience. For questions regarding the usage of V2Ray, please <a href="../get_started/issue.md">discuss it with our community</a> for quick response.</p>
+<pre><code class="lang-text">-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: GPGTools - https://gpgtools.org
+
+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
+PeRpd1GUXXeoGCw=
+=To5T
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tg.html" class="navigation navigation-prev " aria-label="Previous page: Telegram">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="license.html" class="navigation navigation-next " aria-label="Next page: Лицензия">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Приватное сообщение","level":"1.1.7.2","depth":3,"next":{"title":"Лицензия","level":"1.1.8","depth":2,"path":"welcome/license.md","ref":"welcome/license.md","articles":[]},"previous":{"title":"Telegram","level":"1.1.7.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/pgp.md","mtime":"2018-06-30T17:21:53.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-30T17:23:42.377Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

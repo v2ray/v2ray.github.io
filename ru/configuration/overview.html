@@ -1,0 +1,929 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Обзор · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="protocols.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../welcome/versions.html">
+            
+                <a href="../welcome/versions.html">
+            
+                    
+                    Чейнджлог
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../welcome/workflow.html">
+            
+                <a href="../welcome/workflow.html">
+            
+                    
+                    Принцип работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../welcome/install.html">
+            
+                <a href="../welcome/install.html">
+            
+                    
+                    Установка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/start.html">
+            
+                <a href="../welcome/start.html">
+            
+                    
+                    Быстрый старт
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/command.html">
+            
+                <a href="../welcome/command.html">
+            
+                    
+                    Командная строка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/donate.html">
+            
+                <a href="../welcome/donate.html">
+            
+                    
+                    Пожертвование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/help.html">
+            
+                <a href="../welcome/help.html">
+            
+                    
+                    Поддержка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.7.1" data-path="../welcome/tg.html">
+            
+                <a href="../welcome/tg.html">
+            
+                    
+                    Telegram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7.2" data-path="../welcome/pgp.html">
+            
+                <a href="../welcome/pgp.html">
+            
+                    
+                    Приватное сообщение
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+            
+                <a href="../welcome/license.html">
+            
+                    
+                    Лицензия
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Настройка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Обзор
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="protocols.html">
+            
+                <a href="protocols.html">
+            
+                    
+                    Протоколы
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="protocols/blackhole.html">
+            
+                <a href="protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="protocols/dokodemo.html">
+            
+                <a href="protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="protocols/freedom.html">
+            
+                <a href="protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="protocols/http.html">
+            
+                <a href="protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="protocols/shadowsocks.html">
+            
+                <a href="protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="protocols/socks.html">
+            
+                <a href="protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="protocols/vmess.html">
+            
+                <a href="protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="policy.html">
+            
+                <a href="policy.html">
+            
+                    
+                    Правила
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Маршрутизация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="dns.html">
+            
+                <a href="dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="mux.html">
+            
+                <a href="mux.html">
+            
+                    
+                    Мультиплексирование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Статистика
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="transport.html">
+            
+                <a href="transport.html">
+            
+                    
+                    Доставка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="transport/tcp.html">
+            
+                <a href="transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="transport/mkcp.html">
+            
+                <a href="transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="transport/websocket.html">
+            
+                <a href="transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    Переменные
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    Клиенты
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    Службы
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Обзор</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="configuration-overview"><a name="configuration-overview" class="plugin-anchor" href="#configuration-overview"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration Overview</h1>
+<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/01_overview.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
+<p>V2Ray shares a same structure of configuration between server side and client side shown as below. Server and client configurations are different in specific sections.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;log&quot;</span>: {},
+  <span class="hljs-string">&quot;api&quot;</span>: {},
+  <span class="hljs-string">&quot;dns&quot;</span>: {},
+  <span class="hljs-string">&quot;stats&quot;</span>: {},
+  <span class="hljs-string">&quot;routing&quot;</span>: {},
+  <span class="hljs-string">&quot;policy&quot;</span>: {},
+  <span class="hljs-string">&quot;inbound&quot;</span>: {},
+  <span class="hljs-string">&quot;outbound&quot;</span>: {},
+  <span class="hljs-string">&quot;inboundDetour&quot;</span>: [],
+  <span class="hljs-string">&quot;outboundDetour&quot;</span>: [],
+  <span class="hljs-string">&quot;transport&quot;</span>: {}
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>log</code>: log configuration. See below for detail.</li>
+<li><code>api</code>: RPC API to control the V2Ray instance. See <a href="api.html">API configuration</a> for details.</li>
+<li><code>dns</code>: Internal DNS server&apos;s configurations, if this section is omitted or empty, V2Ray will use your system-wide DNS configuration. For details, see <a href="dns.html">DNS Configurations</a>.</li>
+<li><code>stats</code>: When specified, internal <a href="stats.html">Statistics</a> is enabled.</li>
+<li><code>policy</code>: Configurations for permissions and other security strategies. For details, see <a href="policy.html">Local Policy</a>.</li>
+<li><code>routing</code>: <a href="routing.html">Routing configuration</a>.</li>
+<li><code>inbound</code>: master inbound interface configuration.</li>
+<li><code>outbound</code>: master outbound interface configuration.</li>
+<li><code>inboundDetour</code>: extra inbound interfaces configurations.</li>
+<li><code>outboundDetour</code>: extra outbound interfaces configurations.</li>
+<li><code>transport</code>: low-level transport protocol&apos;s configurations. For details, see <a href="transport.html">Protocol Transport Options</a>.</li>
+</ul>
+<h2 id="log-configuration&#xFF08;log&#xFF09;"><a name="log-configuration&#xFF08;log&#xFF09;" class="plugin-anchor" href="#log-configuration&#xFF08;log&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Log configuration&#xFF08;log&#xFF09;</h2>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;access&quot;</span>: <span class="hljs-string">&quot;/path/to/file&quot;</span>,
+  <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-string">&quot;/path/to/file&quot;</span>,
+  <span class="hljs-string">&quot;loglevel&quot;</span>: <span class="hljs-string">&quot;warning&quot;</span>
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>access</code>: Path of access log, available examples are: <ul>
+<li>A legal path of file, such as <code>&quot;/tmp/v2ray/_access.log&quot;</code>(Linux), or <code>&quot;C:\\Temp\\v2ray\\_access.log&quot;</code>(Windows);</li>
+<li>Leave it empty to discard logs, and content will send out through <code>stdout</code>.</li>
+</ul>
+</li>
+<li><code>error</code>: Path of error log, available examples are: <ul>
+<li>A legal path of file, such as <code>&quot;/tmp/v2ray/_error.log&quot;</code>(Linux), or <code>&quot;C:\\Temp\\v2ray\\_error.log&quot;</code>(Windows);</li>
+<li>Leave it empty to discard logs, and content will send out through <code>stdout</code>.</li>
+</ul>
+</li>
+<li><code>loglevel</code>: Level of log files, available values are<code>&quot;debug&quot;</code>&#x3001;<code>&quot;info&quot;</code>&#x3001;<code>&quot;warning&quot;</code>&#x3001;<code>&quot;error&quot;</code>, and<code>&quot;none&quot;</code>; <ul>
+<li>Among all of these levels, <code>&quot;debug&quot;</code> leaves the most log, <code>&quot;error&quot;</code> leaves the least log.</li>
+<li><code>&quot;none&quot;</code> would discard all error logs.</li>
+<li>Default value is <code>&quot;warning&quot;</code> if you leave it empty.</li>
+</ul>
+</li>
+</ul>
+<h2 id="master-inbound-interface-configurations-inbound"><a name="master-inbound-interface-configurations-inbound" class="plugin-anchor" href="#master-inbound-interface-configurations-inbound"><i class="fa fa-link" aria-hidden="true"></i></a>Master Inbound Interface Configurations (inbound)</h2>
+<p>Master inbound interface is used to receive data from clients, browsers, or other parent proxy servers, available protocols are listed at <a href="02_protocols.md">Protocols</a>.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,
+  <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;inbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;domainOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>port</code>: listening port.</li>
+<li><code>port</code>: port to be listen from. Accepted formats are: <ul>
+<li>Integer: actual port number.</li>
+<li>Env variable (V2Ray 3.23+): Beginning with <code>&quot;env:&quot;</code>, an env variable specifies the port in string format, such as <code>&quot;env:PORT&quot;</code>. V2Ray will decode the variable as string.</li>
+<li>String (V2Ray 3.23+): A numberic string value, such as <code>&quot;1234&quot;</code>.</li>
+</ul>
+</li>
+<li><code>listen</code>: listening IP address, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
+<li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
+<li><code>settings</code>: Protocol-specific settings, details are at protocols&apos; detail pages.</li>
+<li><code>streamSettings</code>: see <a href="05_transport.md">Protocol Transport Options</a>.</li>
+<li><code>tag</code>: This inbound interface&apos;s tag, which should be unique among all inbound/outbound interfaces.</li>
+<li><code>domainOverride</code>: recognize specific protocols&apos; packets and redirects its request targets. <ul>
+<li>Accepts an array of strings, default value is empty.</li>
+<li>Available values are <code>&quot;http&quot;</code> and <code>&quot;tls&quot;</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="master-outbound-interface-configurations-outbound"><a name="master-outbound-interface-configurations-outbound" class="plugin-anchor" href="#master-outbound-interface-configurations-outbound"><i class="fa fa-link" aria-hidden="true"></i></a>Master Outbound Interface Configurations (outbound)</h2>
+<p>Master outbound interface is used to send data to remote servers or next proxy server. Available protocols are listed at <a href="02_protocols.md">Protocols</a>.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;proxySettings&quot;</span>: {
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>
+  },
+  <span class="hljs-string">&quot;mux&quot;</span>: {}
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>sendThrough</code>: The network interface (IP) to send data, available when multiple IPs shown, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
+<li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
+<li><code>settings</code>: Protocol-specific settings, details are at protocols&apos; detail pages.</li>
+<li><code>tag</code>: This outbound interface&apos;s tag, which should be unique among all inbound/outbound interfaces.</li>
+<li><code>streamSettings</code>: see <a href="05_transport.md">Protocol Transport Options</a>.</li>
+<li><code>proxySettings</code>: Proxy for outbound connections. When this is set, <code>streamSettings</code> of this outbound will be omitted and disabled. <ul>
+<li><code>tag</code>: When another outbound tag is specified, the data would be send via to the specified outbound.</li>
+</ul>
+</li>
+<li><code>mux</code>: <a href="mux.html">Mux Configurations</a>.</li>
+</ul>
+<h2 id="extra-inbound-interfaces-configurations-inbound-detour"><a name="extra-inbound-interfaces-configurations-inbound-detour" class="plugin-anchor" href="#extra-inbound-interfaces-configurations-inbound-detour"><i class="fa fa-link" aria-hidden="true"></i></a>Extra Inbound Interfaces Configurations (inbound detour)</h2>
+<p>This section is an array contains multiple extra inbound interfaces&apos; configurations, each are using the structure like below:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-string">&quot;port_number&quot;</span>,
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_inbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;listen&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+  <span class="hljs-string">&quot;allocate&quot;</span>: {
+    <span class="hljs-string">&quot;strategy&quot;</span>: <span class="hljs-string">&quot;always&quot;</span>,
+    <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">&quot;concurrency&quot;</span>: <span class="hljs-number">3</span>
+  },
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;domainOverride&quot;</span>: [<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>]
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
+<li><code>port</code>: port to be listen from. Accepted formats are: <ul>
+<li>Integer: actual port number.</li>
+<li>Env variable (V2Ray 3.23+): Beginning with <code>&quot;env:&quot;</code>, an env variable specifies the port in string format, such as <code>&quot;env:PORT&quot;</code>. V2Ray will decode the variable as string.</li>
+<li>String: Either a numberic string value, such as <code>&quot;1234&quot;</code>, or a port range like <code>&quot;5-10&quot;</code> which stands for port number 5 to 10.</li>
+</ul>
+</li>
+<li><code>tag</code>: This inbound interface&apos;s tag, which should be unique among all inbound/outbound interfaces.</li>
+<li><code>listen</code>: listening IP address, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
+<li><code>allocate</code>: Allocation options: <ul>
+<li><code>strategy</code>: Allocation strategies, available values are <code>&quot;always&quot;</code> and <code>&quot;random&quot;</code>. For <code>&quot;always&quot;</code> option, all ports will be listening specified by <code>&quot;port&quot;</code> settings; for <code>&quot;random&quot;</code>, every certain minutes would choose certain ports among the port ranges, configured by <code>&quot;refresh&quot;</code>, <code>&quot;port&quot;</code>, and <code>&quot;concurrency&quot;</code>.</li>
+<li><code>refresh</code>: The interval refreshing random ports, with unit of minutes. Minimum value is <code>2</code>, recommended value is <code>5</code>. This setting will only take effect when <code>strategy = random</code>.</li>
+<li><code>concurrency</code>: Number of random ports. Minimum value is <code>1</code>, maximum value is a half of ports&apos; range. Recommended value is <code>3</code>.</li>
+</ul>
+</li>
+<li><code>settings</code>: Protocol-specific settings, details are at protocols&apos; detail pages.</li>
+<li><code>streamSettings</code>: see <a href="05_transport.md">Protocol Transport Options</a>.</li>
+<li><code>domainOverride</code>: recognize specific protocols&apos; packets and redirects its request targets. <ul>
+<li>Accepts an array of strings, default value is empty.</li>
+<li>Available values are <code>&quot;http&quot;</code> and <code>&quot;tls&quot;</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="extra-outbound-interfaces-configurations-outbound-detour"><a name="extra-outbound-interfaces-configurations-outbound-detour" class="plugin-anchor" href="#extra-outbound-interfaces-configurations-outbound-detour"><i class="fa fa-link" aria-hidden="true"></i></a>Extra Outbound Interfaces Configurations (outbound detour)</h3>
+<p>This section is an array contains multiple extra outbound interfaces&apos; configurations, each are using the structure like below:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;protocol_name&quot;</span>,
+  <span class="hljs-string">&quot;sendThrough&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;this_outbound_tag_name&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {},
+  <span class="hljs-string">&quot;streamSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;proxySettings&quot;</span>: {
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;another_outbound_tag_name&quot;</span>
+  },
+  <span class="hljs-string">&quot;mux&quot;</span>: {}
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>protocol</code>: protocol name, all available values are listed at <a href="02_protocols.md">Protocols</a>.</li>
+<li><code>sendThrough</code>: The network interface (IP) to send data, available when multiple IPs shown, default value is <code>&quot;0.0.0.0&quot;</code>.</li>
+<li><code>tag</code>: Outbound tag name of the current interface, data would be sent via this interface if this outbound is selected in routing configurations or other outbound&apos;s <code>proxySettings</code>.</li>
+<li><code>settings</code>: Protocol-specific settings, details are at protocols&apos; detail pages.</li>
+<li><code>streamSettings</code>: For details, see <a href="05_transport.md">Protocol Transport Options</a>.</li>
+<li><code>proxySettings</code>: Proxy for outbound connections. When this is set, <code>streamSettings</code> of this outbound will be omitted and disabled. <ul>
+<li><code>tag</code>: When another outbound tag is specified, the data would be send via to the specified outbound.</li>
+</ul>
+</li>
+<li><code>mux</code>: <a href="mux.html">Mux Configurations</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Настройка">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="protocols.html" class="navigation navigation-next " aria-label="Next page: Протоколы">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Обзор","level":"1.2.1","depth":2,"next":{"title":"Протоколы","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Настройка","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Обзор","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Протоколы","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Правила","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Доставка","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},{"title":"Переменные","level":"1.2.10","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-06-30T17:21:53.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-30T17:23:42.377Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
