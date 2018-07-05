@@ -684,183 +684,187 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="versionsgeschichte"><a name="versionsgeschichte" class="plugin-anchor" href="#versionsgeschichte"><i class="fa fa-link" aria-hidden="true"></i></a>Versionsgeschichte</h1>
 <p><img src="../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_00/01_versions.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinesisch"></a></p>
+<h2 id="20180706-v329"><a name="20180706-v329" class="plugin-anchor" href="#20180706-v329"><i class="fa fa-link" aria-hidden="true"></i></a>2018.07.06 v3.29</h2>
+<ul>
+<li>New inbound and outbound for MTProto proxy.</li>
+</ul>
 <h2 id="20180629-v327"><a name="20180629-v327" class="plugin-anchor" href="#20180629-v327"><i class="fa fa-link" aria-hidden="true"></i></a>2018.06.29 v3.27</h2>
 <ul>
-<li>DNS unterst&#xFC;tzt jetzt das EDNS-Client-Subnetz.</li>
-<li>Der statische DNS-Host unterst&#xFC;tzt jetzt das Sub-Domain-Matching.</li>
+<li>DNS now supports EDNS client subnet.</li>
+<li>DNS static host now supports sub-domain matching.</li>
 </ul>
 <h2 id="20180615-v326"><a name="20180615-v326" class="plugin-anchor" href="#20180615-v326"><i class="fa fa-link" aria-hidden="true"></i></a>2018.06.15 v3.26</h2>
 <ul>
-<li>F&#xFC;gen Sie Dragonfly BSD-Version hinzu.</li>
+<li>Add Dragonfly BSD release.</li>
 </ul>
 <h2 id="20180601-v324"><a name="20180601-v324" class="plugin-anchor" href="#20180601-v324"><i class="fa fa-link" aria-hidden="true"></i></a>2018.06.01 v3.24</h2>
 <ul>
-<li>Die interne Puffergr&#xF6;&#xDF;e (pro Verbindung) kann jetzt in der JSON-Konfiguration konfiguriert werden.</li>
-<li>mKCP unterst&#xFC;tzt jetzt den DTLS 1.2-Header.</li>
-<li>TLS-Transport unterst&#xFC;tzt jetzt nur Cipher-Suites in TLS 1.3-Spezifikation.</li>
+<li>Internal buffer size (per connection) can now be configured in JSON configuration.</li>
+<li>mKCP now supports DTLS 1.2 header.</li>
+<li>TLS transport now only support cipher suites in TLS 1.3 spec.</li>
 </ul>
 <h2 id="20180525-v323"><a name="20180525-v323" class="plugin-anchor" href="#20180525-v323"><i class="fa fa-link" aria-hidden="true"></i></a>2018.05.25 v3.23</h2>
 <ul>
-<li>In der JSON-Konfiguration kann der Port jetzt aus env-Variablen angegeben werden.</li>
-<li>JSON config unterst&#xFC;tzt jetzt das Laden von Domains und IPs aus bestimmten Dateien.</li>
+<li>In JSON configuration, port can now be specified from env variables.</li>
+<li>JSON config now supports to load domains and IPs from specified files.</li>
 </ul>
 <h2 id="20180420-v319"><a name="20180420-v319" class="plugin-anchor" href="#20180420-v319"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.20 v3.19</h2>
 <ul>
-<li>Traffic-Statistiken f&#xFC;r eingehende Proxys</li>
+<li>Traffic stats for inbound proxies.</li>
 </ul>
 <h2 id="20180413-v317"><a name="20180413-v317" class="plugin-anchor" href="#20180413-v317"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.13 v3.17</h2>
 <ul>
-<li>V2Ray kann die Konfigurationsdatei von HTTP (s) laden.</li>
-<li>TLS in V2Ray kann neue Zertifikate von bereitgestellten CA-Zertifikaten f&#xFC;r Dom&#xE4;nen in eingehenden Anforderungen ausstellen.</li>
-<li><a href="../configuration/transport/h2.html">HTTP / 2</a> Transport.</li>
+<li>V2Ray can load config file from HTTP(s).</li>
+<li>TLS in V2Ray can issue new certificates by provided CA certificates for domains in incoming requests.</li>
+<li><a href="../configuration/transport/h2.html">HTTP/2</a> transport.</li>
 </ul>
 <h2 id="20180406-v316"><a name="20180406-v316" class="plugin-anchor" href="#20180406-v316"><i class="fa fa-link" aria-hidden="true"></i></a>2018.04.06 v3.16</h2>
 <ul>
-<li><a href="../configuration/stats.html">Statistiken</a>.</li>
-<li>Shadowsocks inbound k&#xF6;nnen jetzt so konfiguriert werden, dass sie nur auf UDP warten. Es wird dringend empfohlen, nicht auf TCP und UDP auf demselben Port zu h&#xF6;ren.</li>
+<li><a href="../configuration/stats.html">Statistics</a>.</li>
+<li>Shadowsocks inbound now can be configured to only listen on UDP. Strongly recommend to not listen on both TCP and UDP on the same port.</li>
 </ul>
 <h2 id="20180302-v311"><a name="20180302-v311" class="plugin-anchor" href="#20180302-v311"><i class="fa fa-link" aria-hidden="true"></i></a>2018.03.02 v3.11</h2>
 <ul>
-<li>In VMess Inbound werden neue Einstellungen eingef&#xFC;hrt, um Clients zu verbieten, die unsichere Verschl&#xFC;sselungsmethoden verwenden.</li>
-<li>Bietet ARMv7-Version.</li>
-<li>Bietet MIPS-Version, die FPU nicht erfordert.</li>
+<li>A new settings is introduced in VMess inbound, to forbid client using insecure encryption methods.</li>
+<li>Offers ARMv7 release.</li>
+<li>Offers MIPS release that doesn&apos;t require FPU.</li>
 </ul>
 <h2 id="20180223-v310"><a name="20180223-v310" class="plugin-anchor" href="#20180223-v310"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.23 v3.10</h2>
 <ul>
-<li>Protokolleintr&#xE4;ge enthalten jetzt Sitzungs-ID zur Unterscheidung von Proxy-Sitzungen.</li>
+<li>Log entries now contain session ID to distinguish proxy sessions.</li>
 <li>Fehlerbehebung.</li>
 </ul>
 <h2 id="20180215-v39"><a name="20180215-v39" class="plugin-anchor" href="#20180215-v39"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.15 v3.9</h2>
 <ul>
-<li>Frohes neues Jahr!</li>
+<li>Happy New Year!</li>
 <li>Fehlerbehebung.</li>
 </ul>
 <h2 id="20180209-v37"><a name="20180209-v37" class="plugin-anchor" href="#20180209-v37"><i class="fa fa-link" aria-hidden="true"></i></a>2018.02.09 v3.7</h2>
 <ul>
-<li>Entwicklervorschau: <a href="../configuration/api.html">Remote API</a>.</li>
-<li>Fehlerbehebung.</li>
+<li>Developer preview: <a href="../configuration/api.html">Remote API</a>&#x3002;</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20171229-v35"><a name="20171229-v35" class="plugin-anchor" href="#20171229-v35"><i class="fa fa-link" aria-hidden="true"></i></a>2017.12.29 v3.5</h2>
 <ul>
-<li>Geoip unterst&#xFC;tzt nun die private Netzwerkadresse unter dem Namen &quot;privat&quot;.</li>
+<li>Geoip now supports private network address under name &quot;private&quot;.</li>
 </ul>
 <h2 id="20171222-v34"><a name="20171222-v34" class="plugin-anchor" href="#20171222-v34"><i class="fa fa-link" aria-hidden="true"></i></a>2017.12.22 v3.4</h2>
 <ul>
-<li>Websocket nows verwendet den Wert der X-Forwarded-For-Kopfzeile als Quelladresse.</li>
-<li>Unterst&#xFC;tzt die s390x-CPU-Architektur.</li>
+<li>Websocket nows uses value of X-Forwarded-For header as source address.</li>
+<li>Support s390x CPU architecture.</li>
 </ul>
 <h2 id="20171208-v31"><a name="20171208-v31" class="plugin-anchor" href="#20171208-v31"><i class="fa fa-link" aria-hidden="true"></i></a>2017.12.08 v3.1</h2>
 <ul>
-<li>Unterst&#xFC;tzungsrichtlinie</li>
-<li>Der Speicherort der Konfigurationsdatei kann &#xFC;ber die Umgebungsvariable angegeben werden.</li>
+<li>Support policy.</li>
+<li>Config file location can be specified via environment variable.</li>
 </ul>
 <h2 id="20171201-v30"><a name="20171201-v30" class="plugin-anchor" href="#20171201-v30"><i class="fa fa-link" aria-hidden="true"></i></a>2017.12.01 v3.0</h2>
 <ul>
-<li>Unterst&#xFC;tze Shadowsocks AEAD</li>
+<li>Support Shadowsocks AEAD</li>
 </ul>
 <h2 id="20171118-v250"><a name="20171118-v250" class="plugin-anchor" href="#20171118-v250"><i class="fa fa-link" aria-hidden="true"></i></a>2017.11.18 v2.50</h2>
 <ul>
-<li><code>v2ray</code> nun versucht, <code>v2ctl</code> f&#xFC;r das Konfigurations-Parsing zu verwenden. Bitte stellen Sie sicher, dass diese 2 Dateien im selben Verzeichnis sind.</li>
-<li>Neue <code>IPOnDemand</code> Strategie im Routing.</li>
+<li><code>v2ray</code> now tried to use <code>v2ctl</code> for configuration parsing. Please make sure these 2 files are in the same directory.</li>
+<li>New <code>IPOnDemand</code> strategy in routing.</li>
 </ul>
 <h2 id="20171110-v247"><a name="20171110-v247" class="plugin-anchor" href="#20171110-v247"><i class="fa fa-link" aria-hidden="true"></i></a>2017.11.10 v2.47</h2>
 <ul>
-<li><code>geosite</code> Daten sind jetzt in <code>geosite.dat</code> Datei.</li>
-<li>Fehlerbehebung.</li>
+<li><code>geosite</code> data is now in <code>geosite.dat</code> file.</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20171103-v246"><a name="20171103-v246" class="plugin-anchor" href="#20171103-v246"><i class="fa fa-link" aria-hidden="true"></i></a>2017.11.03 v2.46</h2>
 <ul>
-<li>Router unterst&#xFC;tzt nun <code>geosite: cn</code>, entspricht den <code>vorhandenen chinasites</code>, ist aber flexibler.</li>
-<li>Der Router unterst&#xFC;tzt jetzt <code>GeoIP</code>. <ul>
-<li>Datei <code>geoip.dat</code> wird zu Release-Paketen hinzugef&#xFC;gt. Diese Datei enth&#xE4;lt alle <code>GeoIP</code> Informationen und muss im selben Verzeichnis von <code>v2ray</code> Programm bleiben. Aufgrund der verz&#xF6;gerten Aktualisierung des Installationsskripts m&#xFC;ssen Sie die Datei m&#xF6;glicherweise manuell kopieren.</li>
+<li>Router now supports <code>geosite:cn</code>, equivalent to existing <code>chinasites</code>, but more flexible.</li>
+<li>Router now supports <code>geoip</code>. <ul>
+<li>File <code>geoip.dat</code> is added to release packages. This file contains all <code>geoip</code> information and has to stay in the same directory of <code>v2ray</code> program. Due to delayed update of installation script, you may have to copy the file manually.</li>
 </ul>
 </li>
-<li>Programm <code>v2ctl</code> wird zu Release-Paketen hinzugef&#xFC;gt. Sie k&#xF6;nnen <code>v2ctl verify / path / to / v2ray</code> ausf&#xFC;hren, um die Signatur von <code>v2ray</code> Programm zu &#xFC;berpr&#xFC;fen.</li>
+<li>Program <code>v2ctl</code> is added to release packages. You may run <code>v2ctl verify /path/to/v2ray</code> to verify the signature of <code>v2ray</code> program.</li>
 </ul>
 <h2 id="20171027-v244"><a name="20171027-v244" class="plugin-anchor" href="#20171027-v244"><i class="fa fa-link" aria-hidden="true"></i></a>2017.10.27 v2.44</h2>
 <ul>
-<li>HTTP unterst&#xFC;tzt jetzt die Standardauthentifizierung.</li>
-<li>Einige Fehler wurden behoben.</li>
+<li>HTTP now supports Basic Authentication.</li>
+<li>Some bugs are fixed.</li>
 </ul>
 <h2 id="20171006-v240"><a name="20171006-v240" class="plugin-anchor" href="#20171006-v240"><i class="fa fa-link" aria-hidden="true"></i></a>2017.10.06 v2.40</h2>
 <ul>
-<li>Beheben Sie ein Problem, das Speicherverlust verursacht.</li>
+<li>Fix an issue that causes memory leak.</li>
 </ul>
 <h2 id="20170929-v239"><a name="20170929-v239" class="plugin-anchor" href="#20170929-v239"><i class="fa fa-link" aria-hidden="true"></i></a>2017.09.29 v2.39</h2>
 <ul>
-<li>Eingehende Proxys schlie&#xDF;en Verbindungen jetzt schneller, wenn der Remote-Server sie schlie&#xDF;t.</li>
-<li>Das Standard-Verbindungstimeout &#xE4;ndert sich auf 5 Minuten.</li>
+<li>Inbound proxies now close connections more quickly when remote server closes them.</li>
+<li>Default connection timeout changes to 5 minutes.</li>
 </ul>
 <h2 id="20170512-v227"><a name="20170512-v227" class="plugin-anchor" href="#20170512-v227"><i class="fa fa-link" aria-hidden="true"></i></a>2017.05.12 v2.27</h2>
 <ul>
-<li>Neuer Dom&#xE4;nenmodus im Router.</li>
+<li>New domain mode in router.</li>
 </ul>
 <h2 id="20170505-v226"><a name="20170505-v226" class="plugin-anchor" href="#20170505-v226"><i class="fa fa-link" aria-hidden="true"></i></a>2017.05.05 v2.26</h2>
 <ul>
-<li>Stabilit&#xE4;t korrigiert.</li>
+<li>Stability fixes.</li>
 </ul>
 <h2 id="20170428-v225"><a name="20170428-v225" class="plugin-anchor" href="#20170428-v225"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.28 v2.25</h2>
 <ul>
-<li>Einfaches Sniffing auf HTTP- und TLS-Verkehr f&#xFC;r die aktuelle Domain auf Anfrage.</li>
+<li>Simple sniffing on HTTP and TLS traffic for the actual domain on request.</li>
 </ul>
 <h2 id="20170421-v224"><a name="20170421-v224" class="plugin-anchor" href="#20170421-v224"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.21 v2.24</h2>
 <ul>
-<li>Mux stabilisieren.</li>
-<li>Verbessert die Speichereffizienz.</li>
+<li>Stabilize Mux.</li>
+<li>Improves memory efficiency.</li>
 </ul>
 <h2 id="20170415-v223"><a name="20170415-v223" class="plugin-anchor" href="#20170415-v223"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.15 v2.23</h2>
 <ul>
-<li>Leistungsverbesserung in Mux.</li>
-<li>Die maximale Anzahl der Verbindungen kann jetzt in Mux konfiguriert werden.</li>
-<li>Leistungsverbesserung bei HTTP-Eingang</li>
-<li>connectionReuse-Einstellung wird zugunsten von Mux entfernt.</li>
+<li>Performance improvement in Mux.</li>
+<li>Max number of connections can be configured in Mux now.</li>
+<li>Performance improvement in HTTP inbound.</li>
+<li>connectionReuse setting is removed in favor of Mux.</li>
 </ul>
 <h2 id="20170408-v222"><a name="20170408-v222" class="plugin-anchor" href="#20170408-v222"><i class="fa fa-link" aria-hidden="true"></i></a>2017.04.08 v2.22</h2>
 <ul>
-<li>Mux.Cool Protokoll.</li>
+<li>Mux.Cool protocol.</li>
 </ul>
 <h2 id="20170225-v220"><a name="20170225-v220" class="plugin-anchor" href="#20170225-v220"><i class="fa fa-link" aria-hidden="true"></i></a>2017.02.25 v2.20</h2>
 <ul>
-<li>Die GPG-Signatur wird dem Download-Paket hinzugef&#xFC;gt.</li>
-<li>Die neue Bin&#xE4;rdatei wv2ray.exe wird dem Windows-Paket hinzugef&#xFC;gt, das als Hintergrundanwendung ausgef&#xFC;hrt wird.</li>
+<li>GPG signature is added to download package.</li>
+<li>New binary wv2ray.exe is added to Windows package, which runs as a background application.</li>
 </ul>
 <h2 id="20170218-v219"><a name="20170218-v219" class="plugin-anchor" href="#20170218-v219"><i class="fa fa-link" aria-hidden="true"></i></a>2017.02.18 v2.19</h2>
 <ul>
-<li>Ein neuer Mechanismus f&#xFC;r den Anti-Antwort-Angriff wird nun auf der Serverseite durchgesetzt. <ul>
-<li>Keine Auswirkungen auf bestehende Kunden.</li>
+<li>A new mechanism for anti reply attack is now enforced on server side. <ul>
+<li>No impact to existing clients.</li>
 </ul>
 </li>
-<li>Upgrade von VMess AES-128-GCM / Chacha20-Poly1305 / Keine Verschl&#xFC;sselungsmethoden. <ul>
-<li>Bitte aktualisieren Sie Client und Server sofort.</li>
-<li>AES-128-CFB ist nicht betroffen.</li>
+<li>Upgrade of VMess AES-128-GCM / Chacha20-Poly1305 / None encryption methods. <ul>
+<li>Please upgrade client and server at once.</li>
+<li>AES-128-CFB is not affected.</li>
 </ul>
 </li>
-<li>Errichtet mit Golang 1.8. F&#xFC;gen Sie 32-Bit-MIPS-Unterst&#xFC;tzung hinzu.</li>
+<li>Built with Golang 1.8. Add 32-bit MIPS support.</li>
 </ul>
 <h2 id="20170211-v218"><a name="20170211-v218" class="plugin-anchor" href="#20170211-v218"><i class="fa fa-link" aria-hidden="true"></i></a>2017.02.11 v2.18</h2>
 <ul>
-<li>WebSocket-Code bereinigen</li>
-<li>Entfernen Sie die allowPassive-Option. Jetzt sind passive Verbindungen immer erlaubt.</li>
-<li>Fehlerbehebung</li>
+<li>Cleanup WebSocket code.</li>
+<li>Remove allowPassive option. Now passive connections are always allowed.</li>
+<li>Bug fixes</li>
 </ul>
 <h2 id="20170204-v217"><a name="20170204-v217" class="plugin-anchor" href="#20170204-v217"><i class="fa fa-link" aria-hidden="true"></i></a>2017.02.04 v2.17</h2>
 <ul>
-<li>Fehlerbehebung.</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20170128-v216"><a name="20170128-v216" class="plugin-anchor" href="#20170128-v216"><i class="fa fa-link" aria-hidden="true"></i></a>2017.01.28 v2.16</h2>
 <ul>
-<li>Neue &quot;Redirect&quot; -Option in Freiheit. Es kann verwendet werden, um Werkzeuge wie Shadowsocks Obfs anzupassen.</li>
-<li>Leistungsverbesserung im VMess Nicht-Verschl&#xFC;sselungsmodus. Nicht kompatibel mit fr&#xFC;heren Versionen.</li>
-<li>Frohes neues Jahr!</li>
+<li>New &apos;redirect&apos; option in freedom. It can be used to adapt tools like Shadowsocks Obfs.</li>
+<li>Performance improvement in VMess non-encryption mode. Not compatible with previous versions.</li>
+<li>Happy New Year!</li>
 </ul>
 <h2 id="20170116-v215"><a name="20170116-v215" class="plugin-anchor" href="#20170116-v215"><i class="fa fa-link" aria-hidden="true"></i></a>2017.01.16 v2.15</h2>
 <ul>
-<li>Alle Proxies k&#xF6;nnen jetzt mKCP und WebSocket verwenden.</li>
+<li>All proxies can use mKCP and WebSocket now.</li>
 </ul>
 <h2 id="20170109-v214"><a name="20170109-v214" class="plugin-anchor" href="#20170109-v214"><i class="fa fa-link" aria-hidden="true"></i></a>2017.01.09 v2.14</h2>
 <ul>
-<li>Socken 5 Outbound.</li>
-<li>Fehlerbehebung.</li>
+<li>Socks 5 outbound.</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20170102-v213"><a name="20170102-v213" class="plugin-anchor" href="#20170102-v213"><i class="fa fa-link" aria-hidden="true"></i></a>2017.01.02 v2.13</h2>
 <ul>
@@ -868,175 +872,175 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="20161226-v212"><a name="20161226-v212" class="plugin-anchor" href="#20161226-v212"><i class="fa fa-link" aria-hidden="true"></i></a>2016.12.26 v2.12</h2>
 <ul>
-<li>Fehlerbehebung.</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20161219-v211"><a name="20161219-v211" class="plugin-anchor" href="#20161219-v211"><i class="fa fa-link" aria-hidden="true"></i></a>2016.12.19 v2.11</h2>
 <ul>
-<li>Die JSON-Konfigurationsdatei unterst&#xFC;tzt nun einen Kommentar.</li>
+<li>JSON config file now supports comment.</li>
 </ul>
 <h2 id="20161212-v210"><a name="20161212-v210" class="plugin-anchor" href="#20161212-v210"><i class="fa fa-link" aria-hidden="true"></i></a>2016.12.12 v2.10</h2>
 <ul>
-<li>VMess unterst&#xFC;tzt nun die Verschl&#xFC;sselungsmethoden AES-GCM und ChaCha20-Poly1305.</li>
+<li>VMess now supports AES-GCM and ChaCha20-Poly1305 encryption methods.</li>
 </ul>
 <h2 id="20161205-v29"><a name="20161205-v29" class="plugin-anchor" href="#20161205-v29"><i class="fa fa-link" aria-hidden="true"></i></a>2016.12.05 v2.9</h2>
 <ul>
-<li>Korrigiere Kompatibilit&#xE4;t mit Alpine Linux.</li>
+<li>Fix compatibility with Alpine Linux.</li>
 </ul>
 <h2 id="20161128-v28"><a name="20161128-v28" class="plugin-anchor" href="#20161128-v28"><i class="fa fa-link" aria-hidden="true"></i></a>2016.11.28 v2.8</h2>
 <ul>
-<li>Der Shadowsocks-Server akzeptiert jetzt OTA-Einstellungen.</li>
+<li>Shadowsocks server now accepts OTA settings.</li>
 <li>Fehlerbehebung.</li>
 </ul>
 <h2 id="20161121-v27"><a name="20161121-v27" class="plugin-anchor" href="#20161121-v27"><i class="fa fa-link" aria-hidden="true"></i></a>2016.11.21 v2.7</h2>
 <ul>
-<li>Main eingehende und ausgehende Verbindungshandler k&#xF6;nnen jetzt markiert werden.</li>
-<li>Fehlerbehebung.</li>
+<li>Main inbound and outbound connection handler can be tagged now.</li>
+<li>Bug fixes.</li>
 </ul>
 <h2 id="20161114-v26"><a name="20161114-v26" class="plugin-anchor" href="#20161114-v26"><i class="fa fa-link" aria-hidden="true"></i></a>2016.11.14 v2.6</h2>
 <ul>
-<li>Daten, die von einem Ausgang gesendet werden, k&#xF6;nnen an einen anderen Ausgang weitergeleitet werden.</li>
-<li>Das Routing kann auf dem eingehenden Tag basieren.</li>
+<li>Data sent by one outbound can be proxied to another outbound.</li>
+<li>Routing can be based on inbound tag.</li>
 </ul>
 <h2 id="20161107-v25"><a name="20161107-v25" class="plugin-anchor" href="#20161107-v25"><i class="fa fa-link" aria-hidden="true"></i></a>2016.11.07 v2.5</h2>
 <ul>
-<li>New Shadowsocks Ausgang;</li>
-<li>Neuer TCP-Header: HTTP;</li>
+<li>New Shadowsocks outbound;</li>
+<li>New TCP header: HTTP;</li>
 </ul>
 <h2 id="20161024-v24"><a name="20161024-v24" class="plugin-anchor" href="#20161024-v24"><i class="fa fa-link" aria-hidden="true"></i></a>2016.10.24 v2.4</h2>
 <ul>
-<li>TCP / mKCP / WebSocket kann pro eingehende / ausgehende konfiguriert werden;</li>
-<li>Routing kann auf Source-IP erfolgen;</li>
+<li>TCP / mKCP / WebSocket can be configured per inbound / outbound;</li>
+<li>Routing can be done on source IP;</li>
 </ul>
 <h2 id="20161017-v23"><a name="20161017-v23" class="plugin-anchor" href="#20161017-v23"><i class="fa fa-link" aria-hidden="true"></i></a>2016.10.17 v2.3</h2>
 <ul>
-<li>Einf&#xFC;hrung einer neuen Protobuf-basierten Konfiguration</li>
-<li>OpenBSD-Bin&#xE4;rdateien;</li>
-<li>Kleine Korrekturen;</li>
+<li>Introduce new Protobuf-based configuration;</li>
+<li>OpenBSD binaries;</li>
+<li>Small fixes;</li>
 </ul>
 <h2 id="20160919-v22"><a name="20160919-v22" class="plugin-anchor" href="#20160919-v22"><i class="fa fa-link" aria-hidden="true"></i></a>2016.09.19 v2.2</h2>
 <ul>
-<li>Neuer Transport: WebSocket (Danke an <a href="https://github.com/xiaokangwang" target="_blank">@xiaokangwang</a>);</li>
+<li>New transport: WebSocket (Thanks to <a href="https://github.com/xiaokangwang" target="_blank">@xiaokangwang</a>);</li>
 </ul>
 <h2 id="20160919-v21"><a name="20160919-v21" class="plugin-anchor" href="#20160919-v21"><i class="fa fa-link" aria-hidden="true"></i></a>2016.09.19 v2.1</h2>
 <ul>
-<li>mKCP Leistungsverbesserung;</li>
+<li>mKCP performance improvement;</li>
 </ul>
 <h2 id="20160820-v20"><a name="20160820-v20" class="plugin-anchor" href="#20160820-v20"><i class="fa fa-link" aria-hidden="true"></i></a>2016.08.20 v2.0</h2>
 <ul>
-<li>Ein Jahr;</li>
+<li>One year;</li>
 </ul>
 <h2 id="20160815-v124"><a name="20160815-v124" class="plugin-anchor" href="#20160815-v124"><i class="fa fa-link" aria-hidden="true"></i></a>2016.08.15 v1.24</h2>
 <ul>
-<li>Neuer mKCP-Header: utp;</li>
-<li>Neue Option in der eingehenden Verbindungskonfiguration &quot;allowPassive&quot; erlaubt eine passive Verbindung;</li>
+<li>New mKCP header: utp;</li>
+<li>New option in inbound connection config &quot;allowPassive&quot; to allow passive connection;</li>
 </ul>
 <h2 id="20160808-v123"><a name="20160808-v123" class="plugin-anchor" href="#20160808-v123"><i class="fa fa-link" aria-hidden="true"></i></a>2016.08.08 v1.23</h2>
 <ul>
-<li>Optimieren Sie das mKCP-Paketformat. Diese Version von mKCP ist NICHT kompatibel mit fr&#xFC;heren Versionen;</li>
-<li>mKCP kann jetzt so konfiguriert werden, dass es sich als Videodaten tarnt.</li>
+<li>Optimize mKCP packet format. This version of mKCP is NOT compatible with previous ones;</li>
+<li>mKCP can now be configured to disguise as video data.</li>
 </ul>
 <h2 id="20160801-v122"><a name="20160801-v122" class="plugin-anchor" href="#20160801-v122"><i class="fa fa-link" aria-hidden="true"></i></a>2016.08.01 v1.22</h2>
 <ul>
-<li>Repariere ein Speicherleck in mKCP;</li>
-<li>F&#xFC;ge FreeBSD-Version hinzu;</li>
+<li>Fix a memory leak in mKCP;</li>
+<li>Add FreeBSD release;</li>
 </ul>
 <h2 id="20160725-v121"><a name="20160725-v121" class="plugin-anchor" href="#20160725-v121"><i class="fa fa-link" aria-hidden="true"></i></a>2016.07.25 v1.21</h2>
 <ul>
-<li>Hochleistungs-Chacha20 (Danke an aead @);</li>
+<li>High performance Chacha20 (Thanks to aead@);</li>
 <li>Fehlerbehebung;</li>
 </ul>
 <h2 id="20160718-v120"><a name="20160718-v120" class="plugin-anchor" href="#20160718-v120"><i class="fa fa-link" aria-hidden="true"></i></a>2016.07.18 v1.20</h2>
 <ul>
-<li>Neue KCP-Optionen: readBufferSize und writeBufferSize;</li>
-<li>Fehlerbehebung;</li>
+<li>New KCP options: readBufferSize and writeBufferSize;</li>
+<li>Bug fixes;</li>
 </ul>
 <h2 id="20160711-v119"><a name="20160711-v119" class="plugin-anchor" href="#20160711-v119"><i class="fa fa-link" aria-hidden="true"></i></a>2016.07.11 v1.19</h2>
 <ul>
-<li>Aktivieren Sie die TLS-Option f&#xFC;r alle Proxies.</li>
-<li>Beheben Sie ein Leistungsproblem in KCP.</li>
-<li>Beheben Sie ein Problem in KCP, das eine EOF-Antwort verursachen k&#xF6;nnte.</li>
+<li>Enable TLS option for all proxies;</li>
+<li>Fix a performance issue in KCP;</li>
+<li>Fix an issue in KCP that could cause EOF response;</li>
 </ul>
 <h2 id="20160704-v118"><a name="20160704-v118" class="plugin-anchor" href="#20160704-v118"><i class="fa fa-link" aria-hidden="true"></i></a>2016.07.04 v1.18</h2>
 <ul>
-<li>Behebung eines Problems mit &quot;zu vielen offenen Dateien&quot; in KCP;</li>
-<li>KCP verwendet jetzt weniger CPU;</li>
-<li>Andere Fehlerkorrekturen;</li>
+<li>Fix a &quot;too many open files&quot; issue in KCP;</li>
+<li>KCP now uses fewer CPU;</li>
+<li>Other bug fixes;</li>
 </ul>
 <h2 id="20160619-v117"><a name="20160619-v117" class="plugin-anchor" href="#20160619-v117"><i class="fa fa-link" aria-hidden="true"></i></a>2016.06.19 v1.17</h2>
 <ul>
-<li>KCP ist jetzt in V2Ray integriert. (Besonderer Dank an <a href="https://github.com/xiaokangwang" target="_blank">xiaokangwang</a>, <a href="https://github.com/xtaci" target="_blank">xtaci</a> und <a href="https://github.com/skywind3000" target="_blank">skywind3000</a>)</li>
-<li>Kleinere Fehlerkorrekturen</li>
+<li>KCP now is integrated into V2Ray. (Special thanks to <a href="https://github.com/xiaokangwang" target="_blank">xiaokangwang</a>, <a href="https://github.com/xtaci" target="_blank">xtaci</a> and <a href="https://github.com/skywind3000" target="_blank">skywind3000</a>)</li>
+<li>Minor bug fixes</li>
 </ul>
 <h2 id="20160612-v116"><a name="20160612-v116" class="plugin-anchor" href="#20160612-v116"><i class="fa fa-link" aria-hidden="true"></i></a>2016.06.12 v1.16</h2>
 <ul>
-<li>Die Wiederverwendung von TCP-Verbindungen ist jetzt standardm&#xE4;&#xDF;ig aktiviert.</li>
-<li>Dokodemo-door kann TCP-Verbindungen erkennen, die von iptables umgeleitet werden;</li>
-<li>Blackhole kann HTTP-verbotene Daten zur&#xFC;cksenden;</li>
+<li>TCP connection reuse is now enabled by default;</li>
+<li>Dokodemo-door is able to recognize TCP connection redirected by iptables;</li>
+<li>Blackhole is able to send back HTTP forbidden data;</li>
 </ul>
 <h2 id="20160605-v115"><a name="20160605-v115" class="plugin-anchor" href="#20160605-v115"><i class="fa fa-link" aria-hidden="true"></i></a>2016.06.05 v1.15</h2>
 <ul>
-<li>Optionale Wiederverwendung der TCP-Verbindung f&#xFC;r bessere Leistung;</li>
-<li>Erlaube das Abh&#xF6;ren einer bestimmten IP-Adresse;</li>
-<li>Senden von Daten &#xFC;ber eine bestimmte IP-Adresse zulassen</li>
-<li>Behebung eines Problems im HTTP-Proxy, das den Speicher auslasten kann;</li>
+<li>Optionally reuse TCP connection for better performance;</li>
+<li>Allow listening on a specific IP address;</li>
+<li>Allow sending data through a specific IP address;</li>
+<li>Fix an issue in HTTP proxy that may exhaust memory;</li>
 </ul>
 <h2 id="20160529-v114"><a name="20160529-v114" class="plugin-anchor" href="#20160529-v114"><i class="fa fa-link" aria-hidden="true"></i></a>2016.05.29 v1.14</h2>
 <ul>
-<li>Behebung eines Panikproblems im http-Proxy;</li>
-<li>Weitere Funktionen im Installationsskript;</li>
-<li>Statische Route in DNS;</li>
-<li>Offizielle &#xC4;nderung der Serveradresse;</li>
+<li>Fix a panic issue in http proxy;</li>
+<li>More functionalies in install script;</li>
+<li>Static route in DNS;</li>
+<li>Official server address change;</li>
 </ul>
 <h2 id="20160516-v113"><a name="20160516-v113" class="plugin-anchor" href="#20160516-v113"><i class="fa fa-link" aria-hidden="true"></i></a>2016.05.16 v1.13</h2>
 <ul>
-<li>Interner DNS-Server, um bessere Routing-Ergebnisse in Verbindung mit Chinasites und Chinaip zu bieten;</li>
-<li>Behebung eines Problems in UDP-Relay;</li>
+<li>Internal DNS server, to provide better routing results combined with chinasites and chinaip;</li>
+<li>Fix an issue in UDP relay;</li>
 </ul>
 <h2 id="20160501-v1121"><a name="20160501-v1121" class="plugin-anchor" href="#20160501-v1121"><i class="fa fa-link" aria-hidden="true"></i></a>2016.05.01 v1.12.1</h2>
 <ul>
-<li>Beheben Sie einen Fehler in VMess.</li>
+<li>Fix a bug in VMess.</li>
 </ul>
 <h2 id="20160501-v112"><a name="20160501-v112" class="plugin-anchor" href="#20160501-v112"><i class="fa fa-link" aria-hidden="true"></i></a>2016.05.01 v1.12</h2>
 <ul>
-<li>Zweiter Versuch, das Speicherbelegungsproblem zu beheben;</li>
-<li>Verbessere die Shadowsocks-Leistung;</li>
-<li>Neue Option &quot;none&quot; in Loglevel;</li>
+<li>Second try to fix the memory usage issue;</li>
+<li>Improve Shadowsocks performance;</li>
+<li>New option &quot;none&quot; in loglevel;</li>
 </ul>
 <h2 id="20160418-v111"><a name="20160418-v111" class="plugin-anchor" href="#20160418-v111"><i class="fa fa-link" aria-hidden="true"></i></a>2016.04.18 v1.11</h2>
 <ul>
-<li>Versuchen Sie, das Speicherbelegungsproblem zu beheben.</li>
+<li>Try to fix the memory usage issue.</li>
 </ul>
 <h2 id="20160307-v110"><a name="20160307-v110" class="plugin-anchor" href="#20160307-v110"><i class="fa fa-link" aria-hidden="true"></i></a>2016.03.07 v1.10</h2>
 <ul>
-<li>Beheben Sie ein Leistungsproblem, wenn dynamische Ports aktualisiert werden.</li>
+<li>Fix an performance issue when dynamic ports refreshes.</li>
 </ul>
 <h2 id="20160229-v191"><a name="20160229-v191" class="plugin-anchor" href="#20160229-v191"><i class="fa fa-link" aria-hidden="true"></i></a>2016.02.29 v1.9.1</h2>
 <ul>
-<li>Behebung des One-Time Authentication (OTA) Problems von Shadowsocks.</li>
+<li>Fix Shadowsocks one-time authentication (OTA) issue.</li>
 </ul>
 <h2 id="20160229-v19"><a name="20160229-v19" class="plugin-anchor" href="#20160229-v19"><i class="fa fa-link" aria-hidden="true"></i></a>2016.02.29 v1.9</h2>
 <ul>
-<li>Unterst&#xFC;tzung f&#xFC;r Shadowsocks ChaCha20 Verschl&#xFC;sselung;</li>
-<li>F&#xFC;gen Sie der Standardkonfigurationsdatei weitere direkte Verbindungswebsites hinzu.</li>
-<li>Dynamische Ports erstellen jetzt automatisch ein Konto.</li>
+<li>Support for Shadowsocks ChaCha20 encryption;</li>
+<li>Add more direct connection sites to the default configuration file;</li>
+<li>Dynamic ports now automatically create an account.</li>
 </ul>
 <h2 id="20160222-v18"><a name="20160222-v18" class="plugin-anchor" href="#20160222-v18"><i class="fa fa-link" aria-hidden="true"></i></a>2016.02.22 v1.8</h2>
 <ul>
-<li>Aktualisieren Sie das Installationsskript install-release.sh (danke, @netcookies): <ul>
-<li>Sie k&#xF6;nnen den V2Ray-Prozess jetzt automatisch stoppen und nach Abschluss von V2Ray automatisch aktualisieren;</li>
-<li>Die Datei install-release.sh akzeptiert das Argument --proxy und den von V2Ray angegebenen Proxy-Download.</li>
+<li>Update installation script install-release.sh (thanks, @netcookies): <ul>
+<li>You can now automatically stop the V2Ray process and update automatically after the completion of V2Ray;</li>
+<li>The install-release.sh accepts the --proxy argument and V2Ray specified proxy download;</li>
 </ul>
 </li>
-<li>Verwenden Sie den Go 1.6-Compiler, um die Leistung der AES-Verschl&#xFC;sselung zu verbessern.</li>
+<li>Use Go 1.6 compiler to improve the performance of AES encryption;</li>
 <li>Kleinere Korrekturen;</li>
-<li>Aktualisieren Sie die offizielle IP-Adresse des Servers (laden Sie das Installationspaket erneut herunter, um die neueste Konfiguration zu erhalten).</li>
+<li>Update the official server IP (please re-download the installation package to get the latest configuration).</li>
 </ul>
 <h2 id="20160208-v17"><a name="20160208-v17" class="plugin-anchor" href="#20160208-v17"><i class="fa fa-link" aria-hidden="true"></i></a>2016.02.08 v1.7</h2>
 <ul>
-<li>UDP-Relay-Leistung verbessert;</li>
-<li>Shadowsocks Sicherheit verbessert;</li>
-<li>Kleinere Korrekturen;</li>
-<li>Frohes neues Jahr!</li>
+<li>UDP relay performance improved;</li>
+<li>Shadowsocks security improved;</li>
+<li>Minor fixes;</li>
+<li>Happy new year!</li>
 </ul>
 
                                 
@@ -1065,7 +1069,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Versionsgeschichte","level":"1.1.1","depth":2,"next":{"title":"Arbeitsablauf","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},"previous":{"title":"Project V","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"Versionsgeschichte","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},{"title":"Arbeitsablauf","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},{"title":"Installieren","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},{"title":"Commandline","level":"1.1.5","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},{"title":"Support","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.7.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.7.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},{"title":"License","level":"1.1.8","depth":2,"path":"welcome/license.md","ref":"welcome/license.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/versions.md","mtime":"2018-07-05T12:50:09.487Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T12:51:44.028Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Versionsgeschichte","level":"1.1.1","depth":2,"next":{"title":"Arbeitsablauf","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},"previous":{"title":"Project V","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"Versionsgeschichte","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},{"title":"Arbeitsablauf","level":"1.1.2","depth":2,"path":"welcome/workflow.md","ref":"welcome/workflow.md","articles":[]},{"title":"Installieren","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},{"title":"Commandline","level":"1.1.5","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},{"title":"Support","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.7.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.7.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},{"title":"License","level":"1.1.8","depth":2,"path":"welcome/license.md","ref":"welcome/license.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/versions.md","mtime":"2018-07-05T15:19:57.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T15:21:40.158Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
