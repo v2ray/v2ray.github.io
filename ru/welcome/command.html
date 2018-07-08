@@ -682,47 +682,47 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="commandline"><a name="commandline" class="plugin-anchor" href="#commandline"><i class="fa fa-link" aria-hidden="true"></i></a>Commandline</h1>
+                                <h1 id="&#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x430;&#x44F;-&#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430;"><a name="&#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x430;&#x44F;-&#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430;" class="plugin-anchor" href="#&#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x430;&#x44F;-&#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430;</h1>
 <p><a href="https://www.v2ray.com/en/welcome/command.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_00/command.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/welcome/command.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://crowdin.com/project/v2ray" target="_blank"><img src="../resources/lang.svg" alt="Translate"></a></p>
 <h2 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h2>
-<p>V2Ray has the following commandline parameters:</p>
+<p>V2Ray &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438;:</p>
 <pre><code class="lang-shell">v2ray [-version] [-test] [-config=config.json] [-format=json]
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
-<li><code>-version</code>: Print the version of V2Ray only, and then exit.</li>
-<li><code>-test</code>: Test configuration, output any errors and then exit.</li>
-<li><code>-config</code>: URI of the configuration. <ul>
-<li>When its value is <code>stdin:</code>, V2Ray reads configuration from standard input. Caller must close stdin after writing out configuration.</li>
-<li>When its value begins with <code>http://</code> or <code>https://</code> (lowercase), V2Ray tries to load configuration from the remote address.</li>
-<li>When not set, V2Ray first tries to load configuration from <code>config.json</code> under working directory, then from the directory specified by environment variable <code>v2ray.location.asset</code>.</li>
+<li><code>-version</code>: &#x412;&#x44B;&#x432;&#x435;&#x441;&#x442;&#x438; &#x432;&#x435;&#x440;&#x441;&#x438;&#x44E; V2Ray, &#x437;&#x430;&#x442;&#x435;&#x43C; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x438;&#x442;&#x44C; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x443;.</li>
+<li><code>-test</code>: &#x421;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44C; &#x438; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438;, &#x432;&#x44B;&#x432;&#x435;&#x441;&#x442;&#x438; &#x43D;&#x430;&#x439;&#x434;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x43A;&#x438;, &#x437;&#x430;&#x442;&#x435;&#x43C; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x438;&#x442;&#x44C; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x443;.</li>
+<li><code>-config</code>: URI &#x444;&#x430;&#x439;&#x43B;&#x430; &#x441; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;&#x43C;&#x438;. <ul>
+<li>&#x415;&#x441;&#x43B;&#x438; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x430;&#x432;&#x43D;&#x43E; <code>stdin:</code>, V2Ray &#x441;&#x447;&#x438;&#x442;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x438;&#x437; &#x441;&#x442;&#x430;&#x43D;&#x434;&#x430;&#x440;&#x442;&#x43D;&#x43E;&#x433;&#x43E; &#x432;&#x432;&#x43E;&#x434;&#x430;. &#x412;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x44E;&#x449;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x433;&#x440;&#x430;&#x43C;&#x43C;&#x430; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x430; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x44C; stdin &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x438; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x438;.</li>
+<li>&#x415;&#x441;&#x43B;&#x438; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x441; <code>http://</code> &#x438;&#x43B;&#x438; <code>https://</code> (&#x441;&#x442;&#x440;&#x43E;&#x447;&#x43D;&#x44B;&#x43C;&#x438;), V2Ray &#x43F;&#x44B;&#x442;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x438;&#x442;&#x44C; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x43F;&#x43E; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x43E;&#x43C;&#x443; &#x430;&#x434;&#x440;&#x435;&#x441;&#x443;.</li>
+<li>&#x415;&#x441;&#x43B;&#x438; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x435; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43E;, V2Ray &#x441;&#x43D;&#x430;&#x447;&#x430;&#x43B;&#x430; &#x43F;&#x44B;&#x442;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x438;&#x442;&#x44C; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x438;&#x437; <code>config.json</code> &#x438;&#x437; &#x440;&#x430;&#x431;&#x43E;&#x447;&#x435;&#x433;&#x43E; &#x43A;&#x430;&#x442;&#x430;&#x43B;&#x43E;&#x433;&#x430;, &#x430; &#x437;&#x430;&#x442;&#x435;&#x43C; &#x438;&#x437; &#x43A;&#x430;&#x442;&#x430;&#x43B;&#x43E;&#x433;&#x430;, &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x43F;&#x435;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x43D;&#x43E;&#x439; &#x441;&#x440;&#x435;&#x434;&#x44B; <code>v2ray.location.asset</code>.</li>
 </ul>
 </li>
-<li><code>-format</code>: Configuration format. Choices are: <ul>
-<li><code>json</code>: JSON format.</li>
-<li><code>pb</code> or <code>protobuf</code>: Protobuf format.</li>
+<li><code>-format</code>: &#x424;&#x43E;&#x440;&#x43C;&#x430;&#x442; &#x444;&#x430;&#x439;&#x43B;&#x430; &#x441; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;&#x43C;&#x438;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x44B;: <ul>
+<li><code>json</code>: &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442; JSON.</li>
+<li><code>pb</code> &#x438;&#x43B;&#x438; <code>protobuf</code>: &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442; Protobuf.</li>
 </ul>
 </li>
 </ul>
 <h2 id="v2ctl"><a name="v2ctl" class="plugin-anchor" href="#v2ctl"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl</h2>
-<p>V2Ctl has the following commandline parameters:</p>
+<p>V2Ctl &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x43D;&#x43E;&#x439; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x438;:</p>
 <pre><code class="lang-shell">v2ctl &lt;command&gt; &lt;options&gt;
 </code></pre>
-<p>Available commands are listed below. Each command has its own options.</p>
+<p>&#x41D;&#x438;&#x436;&#x435; &#x43F;&#x435;&#x440;&#x435;&#x447;&#x438;&#x441;&#x43B;&#x435;&#x43D;&#x44B; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B;&#x435; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x44B;. &#x41A;&#x430;&#x436;&#x434;&#x430;&#x44F; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x430; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x432;&#x43E;&#x438; &#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B;.</p>
 <h3 id="verify"><a name="verify" class="plugin-anchor" href="#verify"><i class="fa fa-link" aria-hidden="true"></i></a>Verify</h3>
 <p><code>v2ctl verify [--sig=/path/to/sigfile] /file/to/verify</code></p>
-<p>To verify the signature of a V2Ray binary.</p>
-<p>Options:</p>
+<p>&#x41F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x430; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x438; &#x431;&#x438;&#x43D;&#x430;&#x440;&#x43D;&#x43E;&#x433;&#x43E; &#x444;&#x430;&#x439;&#x43B;&#x430; V2Ray.</p>
+<p>&#x41E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B;:</p>
 <ul>
-<li><code>sig</code>&#xFF1A;Path to signature file. Default value is the &quot;.sig&quot; file to the path to be verified.</li>
-<li>First argument: the file to be verified.</li>
+<li><code>sig</code>&#xFF1A;&#x41F;&#x443;&#x442;&#x44C; &#x43A; &#x444;&#x430;&#x439;&#x43B;&#x443; &#x441; &#x43F;&#x43E;&#x434;&#x43F;&#x438;&#x441;&#x44C;&#x44E;. Default value is the &quot;.sig&quot; file to the path to be verified.</li>
+<li>&#x41F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x430;&#x440;&#x433;&#x443;&#x43C;&#x435;&#x43D;&#x442;: &#x444;&#x430;&#x439;&#x43B; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438;.</li>
 </ul>
 <h3 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h3>
 <p><code>v2ctl config</code></p>
-<p>No options. This command reads configuration in JSON format from stdin, and then write corresponding configuration in Protobuf format to stdout.</p>
+<p>&#x41D;&#x435;&#x442; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x43E;&#x432;. &#x42D;&#x442;&#x430; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x430; &#x441;&#x447;&#x438;&#x442;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x432; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x435; JSON &#x438;&#x437; &#x43F;&#x43E;&#x442;&#x43E;&#x43A;&#x430; stdin, &#x430; &#x432;&#x44B;&#x432;&#x43E;&#x434;&#x438;&#x442; &#x435;&#x451; &#x432; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x435; Protobuf &#x432; stdout.</p>
 <h3 id="uuid"><a name="uuid" class="plugin-anchor" href="#uuid"><i class="fa fa-link" aria-hidden="true"></i></a>UUID</h3>
 <p><code>v2ctl uuid</code></p>
-<p>No options. This command prints a random UUID.</p>
+<p>&#x41D;&#x435;&#x442; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x43E;&#x432;. &#x42D;&#x442;&#x430; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x430; &#x432;&#x44B;&#x432;&#x43E;&#x434;&#x438;&#x442; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x439;&#x43D;&#x44B;&#x439; UUID.</p>
 
                                 
                                 </section>
@@ -750,7 +750,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Командная строка","level":"1.1.5","depth":2,"next":{"title":"Пожертвование","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Быстрый старт","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-07-05T21:17:24.139Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T21:19:22.482Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Командная строка","level":"1.1.5","depth":2,"next":{"title":"Пожертвование","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Быстрый старт","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-07-08T21:55:16.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T21:56:59.134Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -684,12 +684,12 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="dokodemo-door"><a name="dokodemo-door" class="plugin-anchor" href="#dokodemo-door"><i class="fa fa-link" aria-hidden="true"></i></a>Dokodemo-door</h1>
 <p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/protocols/dokodemo.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
-<p>Dokodemo-door is a protocol for inbound connections. It take any connections and passes them to the specified destination.</p>
-<p>Dokodemo-door can also (if configured) work as a transparent proxy.</p>
+<p>Dokodemo-door - &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B; &#x434;&#x43B;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;. &#x41E;&#x43D; &#x43F;&#x440;&#x438;&#x43D;&#x438;&#x43C;&#x430;&#x435;&#x442; &#x43B;&#x44E;&#x431;&#x44B;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x438; &#x43F;&#x435;&#x440;&#x435;&#x434;&#x430;&#x435;&#x442; &#x438;&#x445; &#x432; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x43E;&#x435; &#x43C;&#x435;&#x441;&#x442;&#x43E; &#x43D;&#x430;&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F;.</p>
+<p>Dokodemo-door &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x442;&#x44C; (&#x435;&#x441;&#x43B;&#x438; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D;) &#x43A;&#x430;&#x43A; &#x43F;&#x440;&#x43E;&#x437;&#x440;&#x430;&#x447;&#x43D;&#x44B;&#x439; transparent proxy.</p>
 <ul>
-<li>Name: dokodemo-door</li>
-<li>Type: Inbound</li>
-<li>Configuration:</li>
+<li>&#x418;&#x43C;&#x44F;: dokodemo-door</li>
+<li>&#x422;&#x438;&#x43F;: &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x439;</li>
+<li>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F;:</li>
 </ul>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
@@ -699,18 +699,18 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
 }
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
-<li><code>address</code>: Address of the destination server. May be an IPv4, IPv6 or a domain, in string form. <ul>
-<li>when <code>followRedirect</code> (see below) is <code>true</code>, <code>address</code> can be empty.</li>
+<li><code>address</code>: &#x410;&#x434;&#x440;&#x435;&#x441; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430;. &#x41C;&#x43E;&#x436;&#x435;&#x442; &#x431;&#x44B;&#x442;&#x44C; IPv4, IPv6 &#x438;&#x43B;&#x438; &#x434;&#x43E;&#x43C;&#x435;&#x43D;&#x43E;&#x43C; &#x432; &#x444;&#x43E;&#x440;&#x43C;&#x435; &apos;string&apos;. <ul>
+<li>&#x43A;&#x43E;&#x433;&#x434;&#x430; <code>followRedirect</code> (&#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;) <code>true</code>, <code>address</code> &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x43F;&#x443;&#x441;&#x442;&#x44B;&#x43C;.</li>
 </ul>
 </li>
-<li><code>port</code>: Port of the destination server. Integer.</li>
-<li><code>network</code>: Type of network, either &quot;tcp&quot; or &quot;udp&quot;.</li>
-<li><code>followRedirect</code>: When set to <code>true</code>, dokodemo-door will recognize destination from TProxy and use it as its destination. <ul>
-<li>Only works on Linux</li>
-<li>Supports TCP/IPv4 connections</li>
-<li>Supports UDP/IPv4 packets. Requires root (CAP_NET_ADMIN) permission</li>
+<li><code>port</code>: &#x41F;&#x43E;&#x440;&#x442; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x451;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430;. &#x412;&#x44B;&#x440;&#x430;&#x436;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x444;&#x43E;&#x440;&#x43C;&#x43E;&#x439; &apos;Integer&apos;.</li>
+<li><code>network</code>: &#x422;&#x438;&#x43F; &#x441;&#x435;&#x442;&#x438;: &quot;tcp&quot; &#x438;&#x43B;&#x438; &quot;udp&quot;.</li>
+<li><code>followRedirect</code>: &#x415;&#x441;&#x43B;&#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>, dokodemo-door &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x435;&#x442; &#x43D;&#x430;&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43E;&#x442; TProxy &#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x435;&#x433;&#x43E; &#x432; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x435; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430;&#x442;&#x430;. <ul>
+<li>&#x420;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x435;&#x442; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43D;&#x430; Linux</li>
+<li>&#x41F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x430; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439; TCP / IPv4</li>
+<li>&#x41F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x44B; UDP / IPv4. &#x422;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x430;&#x432;&#x430; root (CAP \ _NET \ _ADMIN)</li>
 </ul>
 </li>
 <li><code>userLevel</code>: User level. All connections share this level. See <a href="../policy.html">Policy</a> for details.</li>
@@ -785,7 +785,7 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-07-05T21:17:24.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T21:19:22.482Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-07-08T21:55:16.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T21:56:59.134Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

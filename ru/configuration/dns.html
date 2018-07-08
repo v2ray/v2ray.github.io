@@ -685,7 +685,7 @@ if (inIframe() || !isValidDomain()) {
                                 <h1 id="dns"><a name="dns" class="plugin-anchor" href="#dns"><i class="fa fa-link" aria-hidden="true"></i></a>DNS</h1>
 <p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/04_dns.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
 <p>V2Ray has an internal DNS server which provides DNS relay for other components.</p>
-<p>Configuration:</p>
+<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;:</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;hosts&quot;</span>: {
     <span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
@@ -698,7 +698,7 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;clientIp&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
 }
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
 <li><code>hosts</code>: A list of static IP addresses. Each entry has a domain name as key and IP address as value. If a DNS query targets one of the domains in this list, the corresponding IP will be returned immediately and DNS query will not be relayed. The format of the domain is: <ul>
 <li>Such as <code>&quot;v2ray.com&quot;</code>: The domain to be resolved has to equal to this domain.</li>
@@ -714,13 +714,13 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <p>To use the internal DNS service, you need to configure <code>domainStrategy</code> in <a href="routing.html">routing</a>.</p>
 <p>The DNS queries relayed by this DNS service will also be dispatched based on routing settings. No extra configuration is required.</p>
-<h2 id="query-strategy"><a name="query-strategy" class="plugin-anchor" href="#query-strategy"><i class="fa fa-link" aria-hidden="true"></i></a>Query strategy</h2>
+<h2 id="strategy"><a name="strategy" class="plugin-anchor" href="#strategy"><i class="fa fa-link" aria-hidden="true"></i></a>Query strategy </h2>
 <p>DNS service will try to query both A and AAAA record in the same DNS message. As not all DNS servers support such query, V2Ray only sends A and AAAA query to the following DNS servers, and only send A queries to all other servers.</p>
 <pre><code class="lang-text">8.8.8.8
 8.8.4.4
 9.9.9.9
 </code></pre>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41F;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x43A;&#x438; </h2>
 <ul>
 <li>You are recommended to use DNS from your localhost, with a thirdparty DNS relay server, such as <a href="https://coredns.io/" target="_blank">CoreDNS</a>.</li>
 </ul>
@@ -751,7 +751,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-07-05T21:17:24.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T21:19:22.482Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-07-08T21:55:16.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T21:56:59.134Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

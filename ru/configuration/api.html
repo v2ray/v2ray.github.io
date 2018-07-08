@@ -684,9 +684,9 @@ if (inIframe() || !isValidDomain()) {
                                 
                                 <h1 id="api"><a name="api" class="plugin-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>API</h1>
 <p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/api.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
-<p>V2Ray provides some API for remote access. These APIs are based on <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
+<p>V2Ray &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; API &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;. &#x42D;&#x442;&#x438; API &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x43D;&#x44B; &#x43D;&#x430; <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
 <p>When API is enabled, V2Ray creates an outbound proxy automatically, tagged as <code>tag</code>. User must <a href="routing.html">route</a> all gRPC connections to this outbound.</p>
-<p>Configuration:</p>
+<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;:</p>
 <pre><code class="lang-javascript">{
     <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;api&quot;</span>,
     <span class="hljs-string">&quot;services&quot;</span>: [
@@ -696,12 +696,12 @@ if (inIframe() || !isValidDomain()) {
     ]
 }
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
 <li><code>tag</code>: The tag of the outbound proxy.</li>
-<li><code>services</code>: List of enabled APIs.</li>
+<li><code>services</code>: &#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x451;&#x43D;&#x43D;&#x44B;&#x445; API.</li>
 </ul>
-<h2 id="supported-api-list"><a name="supported-api-list" class="plugin-anchor" href="#supported-api-list"><i class="fa fa-link" aria-hidden="true"></i></a>Supported API list</h2>
+<h2 id="&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api"><a name="&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api" class="plugin-anchor" href="#&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api"><i class="fa fa-link" aria-hidden="true"></i></a>&#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445; API</h2>
 <h3 id="handlerservice"><a name="handlerservice" class="plugin-anchor" href="#handlerservice"><i class="fa fa-link" aria-hidden="true"></i></a>HandlerService</h3>
 <p>API for manipulating inbound and outbound proxies. The following functionalities are provided:</p>
 <ul>
@@ -741,7 +741,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-07-05T21:17:24.135Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-05T21:19:22.482Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-07-08T21:55:16.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T21:56:59.134Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
