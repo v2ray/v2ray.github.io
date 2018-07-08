@@ -116,7 +116,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../welcome/versions.html">
             
                     
-                    Чейнджлог
+                    История версий
             
                 </a>
             
@@ -332,7 +332,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="mtproto.html">
+            
+                <a href="mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="http.html">
             
                 <a href="http.html">
             
@@ -345,7 +358,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="shadowsocks.html">
             
                 <a href="shadowsocks.html">
             
@@ -358,7 +371,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="socks.html">
             
                 <a href="socks.html">
             
@@ -371,7 +384,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="vmess.html">
             
                 <a href="vmess.html">
             
@@ -713,28 +726,27 @@ if (inIframe() || !isValidDomain()) {
 <li>&#x41F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x44B; UDP / IPv4. &#x422;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x430;&#x432;&#x430; root (CAP \ _NET \ _ADMIN)</li>
 </ul>
 </li>
-<li><code>userLevel</code>: User level. All connections share this level. See <a href="../policy.html">Policy</a> for details.</li>
+<li><code>userLevel</code>: &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x438;&#x439; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;. &#x412;&#x441;&#x435; &#x43F;&#x43E;&#x434;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x445;&#x43E;&#x434;&#x44F;&#x442; &#x447;&#x435;&#x440;&#x435;&#x437; &#x44D;&#x442;&#x43E;&#x442; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;. &#x421;&#x43C;&#x43E;&#x442;&#x440;&#x435;&#x442;&#x44C; &#x43F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x435;&#x435;: <a href="../policy.html">Policy</a>.</li>
 </ul>
-<h2 id="examples-for-transparent-proxy"><a name="examples-for-transparent-proxy" class="plugin-anchor" href="#examples-for-transparent-proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Examples for transparent proxy</h2>
-<p>Add a dokodemo-door inbound as below.</p>
+<h2 id="&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x44B;-&#x434;&#x43B;&#x44F;-transparent-proxy"><a name="&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x44B;-&#x434;&#x43B;&#x44F;-transparent-proxy" class="plugin-anchor" href="#&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x44B;-&#x434;&#x43B;&#x44F;-transparent-proxy"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x44B; &#x434;&#x43B;&#x44F; transparent proxy</h2>
+<p>&#x414;&#x43E;&#x431;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x435; dokodemo-door, &#x43A;&#x430;&#x43A; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x43D;&#x438;&#x436;&#x435;.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp,udp&quot;</span>,
   <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">30</span>,
   <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
-<p>Configure iptables as below.</p>
-<pre><code class="lang-plain"># Create new chain
+<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x442;&#x435; iptables, &#x43A;&#x430;&#x43A; &#x43F;&#x43E;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43E; &#x43D;&#x438;&#x436;&#x435;.</p>
+<pre><code class="lang-plain"># &#x421;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x43D;&#x43E;&#x432;&#x443;&#x44E; &#x446;&#x435;&#x43F;&#x44C;
 root@Wrt:~# iptables -t nat -N V2RAY
 root@Wrt:~# iptables -t mangle -N V2RAY
 root@Wrt:~# iptables -t mangle -N V2RAY_MARK
 
-# Ignore your V2Ray server&apos;s addresses
-# It&apos;s very IMPORTANT, just be careful.
-root@Wrt:~# iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
-
-# Ignore LANs and any other addresses you&apos;d like to bypass the proxy
-# See Wikipedia and RFC5735 for full list of reserved networks.
+# &#x418;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x430;&#x434;&#x440;&#x435;&#x441; V2Ray &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430;
+# &#x41E;&#x447;&#x435;&#x43D;&#x44C; &#x432;&#x430;&#x436;&#x43D;&#x43E; &#x43D;&#x435; &#x43E;&#x448;&#x438;&#x431;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x437;&#x434;&#x435;&#x441;&#x44C;.
+root @ Wrt: ~ # iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN 
+# &#x418;&#x433;&#x43D;&#x43E;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430; &#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x441;&#x435;&#x442;&#x438; &#x438; &#x43B;&#x44E;&#x431;&#x44B;&#x435; &#x434;&#x440;&#x443;&#x433;&#x438;&#x435; &#x430;&#x434;&#x440;&#x435;&#x441;&#x430;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43D;&#x435; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x442;&#x44C; &#x447;&#x435;&#x440;&#x435;&#x437; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440; 
+# &#x421;&#x43C;. &#x412;&#x438;&#x43A;&#x438;&#x43F;&#x435;&#x434;&#x438;&#x44E; &#x438; RFC5735 &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x43B;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x43F;&#x438;&#x441;&#x43A;&#x430; &#x437;&#x430;&#x440;&#x435;&#x437;&#x435;&#x440;&#x432;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x442;&#x435;&#x439;.
 root@Wrt:~# iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
 root@Wrt:~# iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
 root@Wrt:~# iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
@@ -744,16 +756,16 @@ root@Wrt:~# iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 root@Wrt:~# iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 root@Wrt:~# iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
-# Anything else should be redirected to Dokodemo-door&apos;s local port
+# &#x41F;&#x435;&#x440;&#x435;&#x43D;&#x430;&#x43F;&#x440;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x43D;&#x430; &#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43F;&#x43E;&#x440;&#x442; Dokodemo-door
 root@Wrt:~# iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 
-# Add any UDP rules
+# &#x414;&#x43E;&#x431;&#x430;&#x432;&#x438;&#x442;&#x44C; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x430; &#x434;&#x43B;&#x44F; UDP
 root@Wrt:~# ip route add local default dev lo table 100
 root@Wrt:~# ip rule add fwmark 1 lookup 100
 root@Wrt:~# iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
 root@Wrt:~# iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
-# Apply the rules
+# &#x41F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x438;&#x442;&#x44C; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x430;
 root@Wrt:~# iptables -t nat -A OUTPUT -p tcp -j V2RAY
 root@Wrt:~# iptables -t mangle -A PREROUTING -j V2RAY
 root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
@@ -785,7 +797,7 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-07-08T21:55:16.184Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T21:56:59.134Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-07-08T22:14:30.103Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T22:16:07.009Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

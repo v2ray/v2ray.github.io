@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Blackhole · Project V Official</title>
+        <title>MTProto · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
 function inIframe () {
@@ -69,10 +69,10 @@ if (inIframe() || !isValidDomain()) {
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="dokodemo.html" />
+    <link rel="next" href="http.html" />
     
     
-    <link rel="prev" href="../protocols.html" />
+    <link rel="prev" href="freedom.html" />
     
 
     </head>
@@ -116,7 +116,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../welcome/versions.html">
             
                     
-                    Version History
+                    Versionsgeschichte
             
                 </a>
             
@@ -129,7 +129,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../welcome/workflow.html">
             
                     
-                    Workflow
+                    Arbeitsablauf
             
                 </a>
             
@@ -142,7 +142,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../welcome/install.html">
             
                     
-                    Install
+                    Installieren
             
                 </a>
             
@@ -257,7 +257,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Configuration
+                    Aufbau
             
                 </a>
             
@@ -271,7 +271,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../overview.html">
             
                     
-                    Overview
+                    Überblick
             
                 </a>
             
@@ -284,7 +284,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../protocols.html">
             
                     
-                    Protocols
+                    Protokolle
             
                 </a>
             
@@ -293,12 +293,12 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.2.1" data-path="blackhole.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="blackhole.html">
             
                 <a href="blackhole.html">
             
                     
-                    Blackhole
+                    Schwarzes Loch
             
                 </a>
             
@@ -324,7 +324,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="freedom.html">
             
                     
-                    Freedom
+                    Freiheit
             
                 </a>
             
@@ -332,7 +332,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="mtproto.html">
+        <li class="chapter active" data-level="1.2.2.4" data-path="mtproto.html">
             
                 <a href="mtproto.html">
             
@@ -407,7 +407,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../policy.html">
             
                     
-                    Policy
+                    Politik
             
                 </a>
             
@@ -472,7 +472,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../stats.html">
             
                     
-                    Statistics
+                    Statistiken
             
                 </a>
             
@@ -538,7 +538,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../transport/h2.html">
             
                     
-                    HTTP/2
+                    HTTP / 2
             
                 </a>
             
@@ -556,7 +556,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../env.html">
             
                     
-                    Env Variables
+                    Env-Variablen
             
                 </a>
             
@@ -574,7 +574,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../ui_client/">
             
                     
-                    Clients
+                    Kunden
             
                 </a>
             
@@ -640,7 +640,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../ui_client/service.html">
             
                     
-                    Services
+                    Dienstleistungen
             
                 </a>
             
@@ -683,7 +683,7 @@ if (inIframe() || !isValidDomain()) {
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Blackhole</a>
+        <a href="../.." >MTProto</a>
     </h1>
 </div>
 
@@ -695,31 +695,7 @@ if (inIframe() || !isValidDomain()) {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="blackhole"><a name="blackhole" class="plugin-anchor" href="#blackhole"><i class="fa fa-link" aria-hidden="true"></i></a>Blackhole</h1>
-<p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/protocols/blackhole.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
-<p>Blackhole is a protocol for outbound connections. It blocks all connections with pre-defined responses. Combined with <a href="../routing.html">Routing</a>, this can be used for blocking access to some websites.</p>
-<ul>
-<li>Name: blackhole</li>
-<li>Type: Outbound</li>
-<li>Configuration:</li>
-</ul>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;response&quot;</span>: {
-    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
-  }
-}
-</code></pre>
-<p>Where:</p>
-<ul>
-<li><code>response</code>: Pre-defined response. Blockhole will send (if any) pre-defined data immediately for any connection passed to it and close the connection.<ul>
-<li><code>type</code>: Type of the response, available options are:<ul>
-<li><code>&quot;none&quot;</code>: Default value. Empty response.</li>
-<li><code>&quot;http&quot;</code>: A valid HTTP 403 response.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                                <h1 id="mtproto"><a name="mtproto" class="plugin-anchor" href="#mtproto"><i class="fa fa-link" aria-hidden="true"></i></a>MTProto</h1>
 
                                 
                                 </section>
@@ -731,12 +707,12 @@ if (inIframe() || !isValidDomain()) {
 
             
                 
-                <a href="../protocols.html" class="navigation navigation-prev " aria-label="Previous page: Protocols">
+                <a href="freedom.html" class="navigation navigation-prev " aria-label="Previous page: Freiheit">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="dokodemo.html" class="navigation navigation-next " aria-label="Next page: Dokodemo">
+                <a href="http.html" class="navigation navigation-next " aria-label="Next page: HTTP">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -747,7 +723,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Blackhole","level":"1.2.2.1","depth":3,"next":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"previous":{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/blackhole.md","mtime":"2018-07-08T22:14:30.095Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T22:15:36.553Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MTProto","level":"1.2.2.4","depth":3,"next":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Freiheit","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/mtproto.md","mtime":"2018-07-08T22:15:45.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T22:15:51.623Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
