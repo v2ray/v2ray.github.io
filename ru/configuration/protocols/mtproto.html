@@ -247,6 +247,32 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://crowdin.com/project/v2ray">
+            
+                    
+                    Translate↪
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -696,9 +722,10 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="mtproto"><a name="mtproto" class="plugin-anchor" href="#mtproto"><i class="fa fa-link" aria-hidden="true"></i></a>MTProto</h1>
-<p>MTProto proxy - &#x441;&#x43F;&#x435;&#x446;&#x438;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x43A;&#x43E;&#x43B; &#x434;&#x43B;&#x44F; Telegram. &#x41E;&#x43D; &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x438;&#x437; &#x43F;&#x430;&#x440;&#x44B; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445; &#x438; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438; &#x432; V2Ray. &#x41E;&#x43D;&#x438; &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44E;&#x442;&#x441;&#x44F; &#x432;&#x43C;&#x435;&#x441;&#x442;&#x435; &#x434;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438; &#x434;&#x43B;&#x44F; Telegram.</p>
-<p><strong>&#x41D;&#x430; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43C;&#x43E;&#x43C;&#x435;&#x43D;&#x442; V2Ray &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; IPv4 &#x430;&#x434;&#x440;&#x435;&#x441; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430; Telegram.</strong></p>
-<p>&#x41E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B;&#x430;:</p>
+<p><a href="https://www.v2ray.com/en/configuration/protocols/mtproto.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/protocols/mtproto.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/protocols/mtproto.html" target="_blank"><img src="../../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/protocols/mtproto.html" target="_blank"><img src="../../resources/russian.svg" alt="Russian"></a></p>
+<p>MTProto proxy is a special procol for Telegram. It consists of a pair of inbound and outboud proxies in V2Ray. They are usually used together for building a proxy for Telegram</p>
+<p><strong>For now V2Ray only supports IPv4 address of Telegram server.</strong></p>
+<p>Protocol description:</p>
 <ul>
 <li>&#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435;: mtproto</li>
 <li>&#x422;&#x438;&#x43F;: &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x439; / &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x439;</li>
@@ -712,20 +739,20 @@ if (inIframe() || !isValidDomain()) {
   }]
 }
 </code></pre>
-<p>&#x413;&#x434;&#x435;:</p>
+<p>Where:</p>
 <ul>
 <li><code>users</code>: &#x41C;&#x430;&#x441;&#x441;&#x438;&#x432; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x439;. <strong>&#x41D;&#x430; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x43C;&#x43E;&#x43C;&#x435;&#x43D;&#x442; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x435;&#x440;&#x432;&#x44B;&#x439; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;</strong>. &#x41A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x443;&#x44E; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44E;: <ul>
 <li><code>email</code>: &#x42D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x43D;&#x43D;&#x430;&#x44F; &#x43F;&#x43E;&#x447;&#x442;&#x430; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;. &#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x441;&#x431;&#x43E;&#x440;&#x430; &#x441;&#x442;&#x430;&#x442;&#x438;&#x441;&#x442;&#x438;&#x43A;&#x438;. &#x421;&#x43C;. <a href="../stats.html"> &#x421;&#x442;&#x430;&#x442;&#x438;&#x441;&#x442;&#x438;&#x43A;&#x430; </a>.</li>
 <li><code>userLevel</code>: &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x438;&#x439; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;.</li>
-<li><code>secret</code>: User secret. In Telegram, user secret must be 32 characters long, and only contains characters between <code>0</code> to <code>9</code>, and <code>a</code>to <code>f</code>.</li>
+<li><code>secret</code>: &#x421;&#x435;&#x43A;&#x440;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;. &#x412; Telegram &#x441;&#x435;&#x43A;&#x440;&#x435;&#x442; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x434;&#x43B;&#x438;&#x43D;&#x43E;&#x439; 32 &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x430; &#x438; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x441;&#x438;&#x43C;&#x432;&#x43E;&#x43B;&#x44B; <code>0</code> &#x2014; <code>9</code>, &#x438; <code>a</code> &#x2014; <code>f</code>.</li>
 </ul>
 </li>
 </ul>
-<h2 id="outbound"><a name="outbound" class="plugin-anchor" href="#outbound"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound configuration </h2>
+<h2 id="outbound"><a name="outbound" class="plugin-anchor" href="#outbound"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; </h2>
 <pre><code class="lang-javascript">{
 }
 </code></pre>
-<h2 id="sample"><a name="sample" class="plugin-anchor" href="#sample"><i class="fa fa-link" aria-hidden="true"></i></a>Sample </h2>
+<h2 id="sample"><a name="sample" class="plugin-anchor" href="#sample"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440; </h2>
 <p>MTProto can only be used for Telegram traffic. You may need a routing rule to combine the corresponding inbound and outbound. Here is an incomplete sample.</p>
 <p>Inbound:</p>
 <pre><code class="lang-javascript">{
@@ -752,9 +779,9 @@ if (inIframe() || !isValidDomain()) {
 }
 </code></pre>
 <p>The configure your Telegram app to connect to 443 port on this machine.</p>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x421;&#x43E;&#x432;&#x435;&#x442;&#x44B; </h2>
 <ul>
-<li>Use this command to generate MTProto secret: <code>openssl rand -hex 16</code>.</li>
+<li>&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x439;&#x442;&#x435; &#x44D;&#x442;&#x443; &#x43A;&#x43E;&#x43C;&#x430;&#x43D;&#x434;&#x443; &#x434;&#x43B;&#x44F; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438; &#x441;&#x435;&#x43A;&#x440;&#x435;&#x442;&#x430; MTProto: <code>openssl rand -hex 16</code>.</li>
 </ul>
 
                                 
@@ -783,7 +810,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MTProto","level":"1.2.2.4","depth":3,"next":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/mtproto.md","mtime":"2018-07-09T11:42:51.615Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T11:44:37.209Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MTProto","level":"1.2.2.4","depth":3,"next":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/mtproto.md","mtime":"2018-07-09T14:25:29.707Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T14:27:32.055Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
