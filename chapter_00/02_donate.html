@@ -810,14 +810,162 @@ if (inIframe() || !isValidDomain()) {
     
         <li class="chapter " data-level="1.5" >
             
-                <a target="_blank" href="https://www.v2ray.com/eng/index.html">
+                <span>
             
                     
-                    开发人员手册↪
+                    开发人员手册
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../developer/intro/">
+            
+                <a href="../developer/intro/">
+            
+                    
+                    介绍
             
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../developer/intro/org.html">
+            
+                <a href="../developer/intro/org.html">
+            
+                    
+                    加入组织
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../developer/intro/roadmap.html">
+            
+                <a href="../developer/intro/roadmap.html">
+            
+                    
+                    开发计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../developer/intro/guide.html">
+            
+                <a href="../developer/intro/guide.html">
+            
+                    
+                    开发指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../developer/intro/design.html">
+            
+                <a href="../developer/intro/design.html">
+            
+                    
+                    核心设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../developer/intro/compile.html">
+            
+                <a href="../developer/intro/compile.html">
+            
+                    
+                    编译源文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    协议细节
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../developer/protocols/vmess.html">
+            
+                <a href="../developer/protocols/vmess.html">
+            
+                    
+                    VMess 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../developer/protocols/mkcp.html">
+            
+                <a href="../developer/protocols/mkcp.html">
+            
+                    
+                    mKCP 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../developer/protocols/muxcool.html">
+            
+                <a href="../developer/protocols/muxcool.html">
+            
+                    
+                    Mux.Cool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -873,62 +1021,11 @@ if (inIframe() || !isValidDomain()) {
 <li>&#x611F;&#x8C22;&#x60A8;&#x5BF9; Project V &#x7684;&#x70ED;&#x7231;&#x3002;</li>
 </ul>
 <h2 id="usual-way"><a name="usual-way" class="plugin-anchor" href="#usual-way"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x7EDF;&#x65B9;&#x5F0F; </h2>
-<p>&#x6350;&#x8D60;&#x91D1;&#x989D;&#xFF1A;<input id="damount" type="number" min="1" step="any" value="25">&#x7F8E;&#x5143;</p>
+<ul>
+<li><a href="https://www.paypal.me/ProjectV2Ray/25" target="_blank">Paypal transfer</a></li>
+<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amount=25&amp;currency_code=usd&amp;hosted_button_id=4TU3UKYANT2WY" target="_blank">Paypal with credit card</a></li>
+</ul>
 <p>* &#x7531;&#x4E8E;&#x5E73;&#x53F0;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5C0F;&#x4E8E; 1 &#x7F8E;&#x5143;&#x7684;&#x6350;&#x8D60;&#x53EF;&#x80FD;&#x4F1A;&#x5168;&#x90E8;&#x7528;&#x4E8E;&#x652F;&#x4ED8;&#x624B;&#x7EED;&#x8D39;&#x800C;&#x53D8;&#x5F97;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x5BF9;&#x4E8E;&#x8FD9;&#x7C7B;&#x6350;&#x8D60;&#x4F1A;&#x76F4;&#x63A5;&#x53D1;&#x8D77;&#x9000;&#x6B3E;&#x3002;</p>
-<!--
-<script src="https://js.stripe.com/v3/"></script>
--->
-<script>
-function getAmount() {
-    var e = document.getElementById('damount');
-    return e.value;
-}
-
-function doPaypal(event) {
-  event.preventDefault();
-  document.getElementById('paypalamount').value = getAmount();
-  document.getElementById('paypalform').submit();
-}
-
-function doPaypalMe(event) {
-  event.preventDefault();
-  document.location.href='https://www.paypal.me/ProjectV2Ray/' + getAmount();
-}
-
-// function doStripe(event) {
-//   event.preventDefault();
-//   var amt = parseInt(getAmount(), 10);
-//   if (!amt) {
-//     amt = 25;
-//   }
-//   amt = amt * 85;
-//   var stripe = Stripe('pk_live_gnBpo8a9p6mluv62soVQtjic');
-//   stripe.createSource({
-//     type: 'alipay',
-//     amount: amt,
-//     currency: 'eur',
-//     redirect: {
-//         return_url: 'https://www.v2ray.com/chapter_00/02_donate.html'
-//     },
-//     }).then(function(result) {
-//       console.log(result);
-//       var src = result.source;
-//       if (src && src.redirect && src.redirect.url) {
-//         document.location.href=src.redirect.url;
-//       }
-//     });
-// }
-
-</script>
-
-<p>&#x652F;&#x4ED8;&#x65B9;&#x5F0F;&#xFF1A;<input type="button" value="Paypal" onclick="doPaypalMe(event);"> <input type="button" value="&#x4FE1;&#x7528;&#x5361;" onclick="doPaypal(event);"></p>
-<form id="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input id="paypalamount" type="hidden" name="amount" value="25">
-<input type="hidden" name="currency_code" value="usd">
-<input type="hidden" name="hosted_button_id" value="4TU3UKYANT2WY">
-</form>
-
 <h2 id="crypto"><a name="crypto" class="plugin-anchor" href="#crypto"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6781;&#x5BA2;&#x65B9;&#x5F0F; </h2>
 <ul>
 <li>&#x6BD4;&#x7279;&#x5E01; (BTC): <a href="https://blockchain.info/address/15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW" target="_blank">15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW</a></li>
@@ -969,7 +1066,7 @@ function doPaypalMe(event) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"捐助支持","level":"1.1.6","depth":2,"next":{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]},"previous":{"title":"命令行参数","level":"1.1.5","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/02_donate.md","mtime":"2018-07-09T14:25:29.707Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T14:26:39.223Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"捐助支持","level":"1.1.6","depth":2,"next":{"title":"贡献你的 CPU","level":"1.1.6.1","depth":3,"path":"chapter_00/cpu.md","ref":"chapter_00/cpu.md","articles":[]},"previous":{"title":"命令行参数","level":"1.1.5","depth":2,"path":"chapter_00/command.md","ref":"chapter_00/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/02_donate.md","mtime":"2018-07-09T17:31:24.852Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T17:32:24.701Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

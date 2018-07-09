@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -722,7 +722,7 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="donation"><a name="donation" class="plugin-anchor" href="#donation"><i class="fa fa-link" aria-hidden="true"></i></a>Donation</h1>
-<p><a href="https://www.v2ray.com/en/welcome/donate.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_00/02_donate.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/welcome/donate.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://crowdin.com/project/v2ray" target="_blank"><img src="../resources/lang.svg" alt="Translate"></a></p>
+<p><a href="https://www.v2ray.com/en/welcome/donate.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_00/02_donate.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/welcome/donate.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/welcome/donate.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
 <p>Project V is a nonprofit project. The source code and program can be used freely under MIT licence. If you like this project, you may buy us a cup of coffee.</p>
 <p>Notes:</p>
 <ul>
@@ -731,35 +731,11 @@ if (inIframe() || !isValidDomain()) {
 <li>Thank you for loving Project V.</li>
 </ul>
 <h2 id="usual-way"><a name="usual-way" class="plugin-anchor" href="#usual-way"><i class="fa fa-link" aria-hidden="true"></i></a>The Usual Way </h2>
-<p>Amount: <input id="damount" type="number" min="1" step="any" value="25">USD</p>
-<p>* Donations that less than 1 USD may be refunded due to high service fees, and will not be listed in the sponsor list below.</p>
-<script>
-function getAmount() {
-    var e = document.getElementById('damount');
-    return e.value;
-}
-
-function doPaypal(event) {
-  event.preventDefault();
-  document.getElementById('paypalamount').value = getAmount();
-  document.getElementById('paypalform').submit();
-}
-
-function doPaypalMe(event) {
-  event.preventDefault();
-  document.location.href='https://www.paypal.me/ProjectV2Ray/' + getAmount();
-}
-
-</script>
-
-<p>Donate via: <input type="button" value="Paypal" onclick="doPaypalMe(event);"> <input type="button" value="Credit Card" onclick="doPaypal(event);"></p>
-<form id="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input id="paypalamount" type="hidden" name="amount" value="25">
-<input type="hidden" name="currency_code" value="usd">
-<input type="hidden" name="hosted_button_id" value="4TU3UKYANT2WY">
-</form>
-
+<ul>
+<li><a href="https://www.paypal.me/ProjectV2Ray/25" target="_blank">Paypal transfer</a></li>
+<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amount=25&amp;currency_code=usd&amp;hosted_button_id=4TU3UKYANT2WY" target="_blank">Paypal with credit card</a></li>
+</ul>
+<p>Please kindly notice that donation less than 1 USD is meaningless as Paypal charges high service fee.</p>
 <h2 id="crypto"><a name="crypto" class="plugin-anchor" href="#crypto"><i class="fa fa-link" aria-hidden="true"></i></a>Cryptocurrency </h2>
 <ul>
 <li>Bitcoin: <a href="https://blockchain.info/address/15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW" target="_blank">15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW</a></li>
@@ -799,7 +775,7 @@ function doPaypalMe(event) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.6","depth":2,"next":{"title":"Support","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.7.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.7.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Commandline","level":"1.1.5","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2018-07-09T14:25:29.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T14:26:58.249Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Donation","level":"1.1.6","depth":2,"next":{"title":"Support","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[{"title":"Telegram","level":"1.1.7.1","depth":3,"path":"welcome/tg.md","ref":"welcome/tg.md","articles":[]},{"title":"Private Communication","level":"1.1.7.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]}]},"previous":{"title":"Commandline","level":"1.1.5","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/donate.md","mtime":"2018-07-09T17:31:24.840Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T17:32:45.103Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
