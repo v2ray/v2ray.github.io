@@ -696,6 +696,66 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="mtproto"><a name="mtproto" class="plugin-anchor" href="#mtproto"><i class="fa fa-link" aria-hidden="true"></i></a>MTProto</h1>
+<p>MTProto proxy is a special procol for Telegram. It consists of a pair of inbound and outboud proxies in V2Ray. They are usually used together for building a proxy for Telegram</p>
+<p><strong>For now V2Ray only supports IPv4 address of Telegram server.</strong></p>
+<p>Protocol description:</p>
+<ul>
+<li>Name: mtproto</li>
+<li>Type: Inbound / Outbound</li>
+</ul>
+<h2 id="inbound"><a name="inbound" class="plugin-anchor" href="#inbound"><i class="fa fa-link" aria-hidden="true"></i></a>Inbound configuration </h2>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;users&quot;</span>: [{
+    <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>,
+    <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;secret&quot;</span>: <span class="hljs-string">&quot;b0cbcef5a486d9636472ac27f8e11a9d&quot;</span>
+  }]
+}
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>users</code>: An array of users. <strong>For now only the first user is effective</strong>. Each user has the following configuration: <ul>
+<li><code>email</code>: User email. Used for tracking purposes. See <a href="../stats.html">Stats</a>.</li>
+<li><code>level</code>: User level.</li>
+<li><code>secret</code>: User secret. In Telegram, user secret must be 32 characters long, and only contains characters between <code>0</code> to <code>9</code>, and <code>a</code>to <code>f</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="outbound"><a name="outbound" class="plugin-anchor" href="#outbound"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound configuration </h2>
+<pre><code class="lang-javascript">{
+}
+</code></pre>
+<h2 id="sample"><a name="sample" class="plugin-anchor" href="#sample"><i class="fa fa-link" aria-hidden="true"></i></a>Sample </h2>
+<p>MTProto can only be used for Telegram traffic. You may need a routing rule to combine the corresponding inbound and outbound. Here is an incomplete sample.</p>
+<p>Inbound:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;tg-in&quot;</span>,
+  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">443</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;mtproto&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {
+    <span class="hljs-string">&quot;users&quot;</span>: [{<span class="hljs-string">&quot;secret&quot;</span>: <span class="hljs-string">&quot;b0cbcef5a486d9636472ac27f8e11a9d&quot;</span>}]
+  }
+}
+</code></pre>
+<p>Outbound:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;tg-out&quot;</span>,
+  <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;mtproto&quot;</span>,
+  <span class="hljs-string">&quot;settings&quot;</span>: {}
+}
+</code></pre>
+<p>Routing:</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;field&quot;</span>,
+  <span class="hljs-string">&quot;inboundTag&quot;</span>: [<span class="hljs-string">&quot;tg-in&quot;</span>],
+  <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;tg-out&quot;</span>
+}
+</code></pre>
+<p>The configure your Telegram app to connect to 443 port on this machine.</p>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
+<ul>
+<li>Use this command to generate MTProto secret: <code>openssl rand -hex 16</code>.</li>
+</ul>
 
                                 
                                 </section>
@@ -723,7 +783,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MTProto","level":"1.2.2.4","depth":3,"next":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/mtproto.md","mtime":"2018-07-08T22:16:00.703Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-08T22:16:07.009Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MTProto","level":"1.2.2.4","depth":3,"next":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"previous":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/mtproto.md","mtime":"2018-07-09T09:09:49.248Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T09:11:58.164Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
