@@ -696,12 +696,12 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="http"><a name="http" class="plugin-anchor" href="#http"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP</h1>
-<p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/protocols/http.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
-<p>HTTP is a protocol for inbound connections. It is compatible with HTTP 1.1.</p>
+<p><img src="../../resources/englishc.svg" alt="&#x410;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439;"> <a href="https://www.v2ray.com/chapter_02/protocols/http.html" target="_blank"><img src="../../resources/chinese.svg" alt="&#x41A;&#x438;&#x442;&#x430;&#x439;&#x441;&#x43A;&#x438;&#x439;"></a></p>
+<p>HTTP - &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B; &#x434;&#x43B;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;. &#x41E;&#x43D; &#x441;&#x43E;&#x432;&#x43C;&#x435;&#x441;&#x442;&#x438;&#x43C; &#x441; HTTP 1.1.</p>
 <ul>
-<li>Name: http</li>
-<li>Type: Inbound</li>
-<li>Configuration:</li>
+<li>&#x41D;&#x430;&#x437;&#x432;&#x430;&#x43D;&#x438;&#x435;: http</li>
+<li>&#x422;&#x438;&#x43F;: &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x439;</li>
+<li>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F;:</li>
 </ul>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;accounts&quot;</span>: [
@@ -714,19 +714,19 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
 }
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
-<li><code>accounts</code>: An array in which each entry is an account. Username of the account is specified by <code>user</code>, and password specified by <code>pass</code>. Default empty. <ul>
-<li>If <code>accounts</code> is not empty, HTTP uses Basic Authentication for user verification.</li>
+<li><code>accounts</code>: &#x41C;&#x430;&#x441;&#x441;&#x438;&#x432;, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x43A;&#x430;&#x436;&#x434;&#x430;&#x44F; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x443;&#x447;&#x435;&#x442;&#x43D;&#x43E;&#x439; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C;&#x44E;. &#x418;&#x43C;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x443;&#x43A;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x447;&#x435;&#x440;&#x435;&#x437; <code>user</code>, &#x430; &#x43F;&#x430;&#x440;&#x43E;&#x43B;&#x44C; &#x447;&#x435;&#x440;&#x435;&#x437; <code>pass</code>. &#x417;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x43F;&#x443;&#x441;&#x442;&#x44B;&#x435;. <ul>
+<li>&#x415;&#x441;&#x43B;&#x438; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>accounts</code> &#x43D;&#x435; &#x43F;&#x443;&#x441;&#x442;&#x43E;&#x435;, HTTP &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x431;&#x430;&#x437;&#x43E;&#x432;&#x443;&#x44E; &#x430;&#x443;&#x442;&#x435;&#x43D;&#x442;&#x438;&#x444;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x44E; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x434;&#x442;&#x432;&#x435;&#x440;&#x436;&#x434;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F;.</li>
 </ul>
 </li>
-<li><code>allowTransparent</code>: If set to <code>true</code>, all HTTP request sent to this inbound will be proxied, including non-proxy request.</li>
-<li><code>userLevel</code>: User level. All connections share this level.</li>
+<li><code>allowTransparent</code>: &#x415;&#x441;&#x43B;&#x438; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; <code>true</code>, &#x432;&#x441;&#x435; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x435; HTTP-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x44B;, &#x431;&#x443;&#x434;&#x443;&#x442; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x44B;, &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x430;&#x44F; &#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x431;&#x435;&#x437; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;.</li>
+<li><code>userLevel</code>: &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x438;&#x439; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;. &#x412;&#x441;&#x435; &#x43F;&#x43E;&#x434;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x445;&#x43E;&#x434;&#x44F;&#x442; &#x447;&#x435;&#x440;&#x435;&#x437; &#x44D;&#x442;&#x43E;&#x442; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;.</li>
 </ul>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
-<p>Use the following settings in Linux to use HTTP proxy in current session.</p>
+<h2 id="&#x441;&#x43E;&#x432;&#x435;&#x442;&#x44B;"><a name="&#x441;&#x43E;&#x432;&#x435;&#x442;&#x44B;" class="plugin-anchor" href="#&#x441;&#x43E;&#x432;&#x435;&#x442;&#x44B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x421;&#x43E;&#x432;&#x435;&#x442;&#x44B;</h2>
+<p>&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x439;&#x442;&#x435; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438; &#x432; Linux &#x434;&#x43B;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430; HTTP &#x432; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x43C; &#x441;&#x435;&#x430;&#x43D;&#x441;&#x435;.</p>
 <ul>
-<li><code>export http_proxy=http://127.0.0.1:8080/</code> (URL has to change according to your config)</li>
+<li><code>export http_proxy=http://127.0.0.1:8080/</code> (&#x410;&#x434;&#x440;&#x435;&#x441; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; &#x431;&#x44B;&#x442;&#x44C; &#x438;&#x437;&#x43C;&#x435;&#x43D;&#x451;&#x43D; &#x43D;&#x430; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x43C;&#x44B;&#x439;)</li>
 <li><code>export https_proxy=$http_proxy</code></li>
 </ul>
 
@@ -756,7 +756,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HTTP","level":"1.2.2.5","depth":3,"next":{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"previous":{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/http.md","mtime":"2018-07-09T09:09:49.248Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T09:11:58.164Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"HTTP","level":"1.2.2.5","depth":3,"next":{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"previous":{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/http.md","mtime":"2018-07-09T11:42:51.615Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T11:44:37.209Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
