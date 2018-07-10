@@ -722,10 +722,11 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="transporteinstellungen"><a name="transporteinstellungen" class="plugin-anchor" href="#transporteinstellungen"><i class="fa fa-link" aria-hidden="true"></i></a>Transporteinstellungen</h1>
-<p><img src="../resources/englishc.svg" alt="Englisch"> <a href="https://www.v2ray.com/chapter_02/transport.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinesisch"></a></p>
-<p>Transporteinstellungen gibt an, wie V2Ray Daten von seinen Peers sendet und empf&#xE4;ngt. Die Einstellungen teilen sich in zwei Teile: globale Einstellungen und pro Proxy-Einstellungen. Per-Proxy-Einstellungen gibt an, wie jeder einzelne Proxy seine Daten verarbeitet, w&#xE4;hrend globale Einstellungen f&#xFC;r alle Proxies gelten. Normalerweise m&#xFC;ssen die eingehenden und ausgehenden Proxies zwischen dem verbindenden Peer die gleichen Transporteinstellungen haben. Wenn ein Proxy keine Transporteinstellungen hat, gelten die globalen Einstellungen.</p>
+<p><a href="https://www.v2ray.com/en/configuration/transport.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/05_transport.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/transport.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/transport.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
+<p>Transport is for how V2Ray sends and receives data from its peers. The responsiblity of a transport is to reliably transfer data to a peer. Usually a connection has matching transports on both endpoints. For example, if a V2Ray outbound uses WebSocket as its transport, the inbound it talks to also has to use WebSocket, otherwise a connection can&apos;t be established.</p>
+<p>The transport settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration </h2>
-<p>Globale Einstellungen befinden sich im Eintrag &quot;Transport&quot; von V2Ray config.</p>
+<p>Global settings is in the &quot;transport&quot; entry of V2Ray config.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
@@ -733,7 +734,7 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
 }
 </code></pre>
-<p>Woher:</p>
+<p>Where:</p>
 <ul>
 <li><code>tcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/tcp.html">TCP-Transport</a>.</li>
 <li><code>kcpSettings</code>: Einstellungen f&#xFC;r <a href="transport/mkcp.html">mKCP Transport</a>.</li>
@@ -741,7 +742,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>httpSettings</code>: Einstellungen f&#xFC;r <a href="transport/h2.html">HTTP/2 Transport</a>.</li>
 </ul>
 <h2 id="proxy"><a name="proxy" class="plugin-anchor" href="#proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Per-proxy Configuration </h2>
-<p>Jeder eingehende und ausgehende Proxy hat m&#xF6;glicherweise eigene Transporteinstellungen. Jeder eingehende, eingehendeDetour-, ausgehende und ausgehendeDetour-Eintrag kann eine <code>streamSettings</code> f&#xFC;r den Transport haben.</p>
+<p>Each inbound and outbound proxy may has its own transport settings. Each inbound, inboundDetour, outbound and outboundDetour entry may have a <code>streamSettings</code> for transport.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
   <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>,
@@ -813,7 +814,7 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
 }
 </code></pre>
-<p>Woher:</p>
+<p>Where:</p>
 <ul>
 <li><code>network</code>: Netzwerktyp des Stream-Transports. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>oder <code>&quot;http&quot;</code>. Standardwert <code>&quot;tcp&quot;</code>.</li>
 <li><code>security</code>: Art der Sicherheit. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;none&quot;</code> (Standard) f&#xFC;r keine zus&#xE4;tzliche Sicherheit oder <code>&quot;TLS&quot;</code> f&#xFC;r die Verwendung von <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
@@ -876,7 +877,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-07-09T18:01:43.323Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T18:03:04.507Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-07-10T16:02:32.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-10T16:03:53.508Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

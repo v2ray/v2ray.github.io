@@ -725,7 +725,17 @@ if (inIframe() || !isValidDomain()) {
 <p><a href="https://www.v2ray.com/en/configuration/dns.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/04_dns.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/dns.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/dns.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
 <p>V2Ray verf&#xFC;gt &#xFC;ber einen internen DNS-Server, der DNS-Relay f&#xFC;r andere Komponenten bereitstellt.</p>
 <p>Aufbau:</p>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Hosts&quot;</span>: {<span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>}, <span class="hljs-string">&quot;Server&quot;</span>: [<span class="hljs-string">&quot;8.8.8.8&quot;</span>, <span class="hljs-string">&quot;8.8.4.4&quot;</span>, <span class="hljs-string">&quot;localhost&quot;</span>], <span class="hljs-string">&quot;clientIp&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span> }
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;hosts&quot;</span>: {
+    <span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
+  },
+  <span class="hljs-string">&quot;servers&quot;</span>: [
+    <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
+    <span class="hljs-string">&quot;8.8.4.4&quot;</span>,
+    <span class="hljs-string">&quot;localhost&quot;</span>
+  ],
+  <span class="hljs-string">&quot;clientIp&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
+}
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -778,7 +788,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-07-09T18:01:43.323Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-09T18:03:04.507Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-07-10T16:02:32.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-10T16:03:53.508Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
