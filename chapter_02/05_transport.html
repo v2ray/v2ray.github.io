@@ -617,6 +617,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="transport/domainsocket.html">
+            
+                <a href="transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1021,7 +1034,8 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;dsSettings&quot;</span>: {}
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
@@ -1030,6 +1044,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>kcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/mkcp.html">mKCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
 <li><code>wsSettings</code>: &#x9488;&#x5BF9; <a href="transport/websocket.html">WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
 <li><code>httpSettings</code>: &#x9488;&#x5BF9; <a href="transport/h2.html">HTTP/2 &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
+<li><code>dsSettings</code>: &#x9488;&#x4E8E;<a href="transport/domainsocket.html">Domain Socket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
 </ul>
 <h2 id="perproxy"><a name="perproxy" class="plugin-anchor" href="#perproxy"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
 <p>&#x6BCF;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x3001;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
@@ -1101,12 +1116,13 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;httpSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;dsSettings&quot;</span>: {}
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
-<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001; <code>&quot;kcp&quot;</code>&#x3001; &quot;ws&quot;<code>&#x6216;</code>http<code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;</code>&quot;tcp&quot;`&#xFF1B;</li>
+<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001;<code>&quot;kcp&quot;</code>&#x3001;<code>&quot;ws&quot;</code>&#x3001;<code>http</code>&#x6216;<code>&quot;domainsocket&quot;</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#xFF1B;</li>
 <li><code>security</code>: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
 <li><code>tlsSettings</code>: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
 <li><code>serverName</code>: &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</li>
@@ -1132,6 +1148,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>kcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; mKCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; mKCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>wsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>httpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; HTTP/2 &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; HTTP/2 &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
+<li><code>dsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; Domain socket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; Domain socket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 </ul>
 <h2 id="tip"><a name="tip" class="plugin-anchor" href="#tip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
@@ -1168,7 +1185,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-07-11T16:59:43.251Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-11T17:00:33.636Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-07-16T15:46:40.095Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-16T15:47:34.803Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
