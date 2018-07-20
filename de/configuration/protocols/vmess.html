@@ -762,7 +762,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>port</code>: Server-Port</li>
 <li><code>users</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist <ul>
 <li><code>id</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
-<li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Empfehle 32.</li>
+<li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Empfehle 32. Its value must be not larger than the one in corresponding Inbound.</li>
 <li><code>level</code>: Benutzerebene. See <a href="../policy.html">Policy</a> for more detail.</li>
 <li><code>security</code>: Verschl&#xFC;sselungsmethode Optionen sind: <ul>
 <li><code>&quot;aes-128-cfb&quot;</code></li>
@@ -803,7 +803,7 @@ if (inIframe() || !isValidDomain()) {
 <li>Jeder Client enth&#xE4;lt: <ul>
 <li><code>id</code>: Benutzer ID, in Form von <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
 <li><code>level</code>: User level. See <a href="../policy.html">Policy</a> for its usage.</li>
-<li><code>alterId</code>: Number of alternative IDs. Same as in Inbound. Value must be the same as in client configuration.</li>
+<li><code>alterId</code>: Number of alternative IDs. Same as in Outbound.</li>
 <li><code>email</code>: Email address to identify users.</li>
 </ul>
 </li>
@@ -831,6 +831,7 @@ if (inIframe() || !isValidDomain()) {
 <li>Man kann den Dienst <code>ntp</code> unter Linux installieren, um die Systemzeit automatisch anzupassen.</li>
 </ul>
 </li>
+<li>You may choose the value of <code>alterId</code> at your interest. For daily usage, a value less than <code>100</code> is usually enough.</li>
 </ul>
 
                                 
@@ -859,7 +860,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-07-19T22:11:59.791Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-19T22:13:17.343Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-07-20T09:41:51.304Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-20T09:43:07.891Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
