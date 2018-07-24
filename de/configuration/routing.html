@@ -792,6 +792,7 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;inboundTag&quot;</span>: [
     <span class="hljs-string">&quot;tag-vmess&quot;</span>
   ],
+  <span class="hljs-string">&quot;protocol&quot;</span>:[<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;tls&quot;</span>, <span class="hljs-string">&quot;bittorrent&quot;</span>],
   <span class="hljs-string">&quot;outboundTag&quot;</span>: <span class="hljs-string">&quot;direct&quot;</span>
 }
 </code></pre>
@@ -825,7 +826,12 @@ if (inIframe() || !isValidDomain()) {
 <li><code>source</code>: Ein Array von IP-Bereichen. Gleiches Format wie <code>IP</code>. Wenn sich die Quell-IP der Verbindung im IP-Bereich befindet, wird diese Regel wirksam.</li>
 <li><code>user</code>: Ein Array von E-Mail-Adresse. Wenn die eingehende Verbindung ein Benutzerkonto der E-Mail-Adresse verwendet, wird diese Regel wirksam. Momentan unterst&#xFC;tzen Shadowsocks und VMess Benutzer mit E-Mail.</li>
 <li><code>inboundTag</code>: Ein Array mit einer Zeichenfolge als eingehende Proxy-Tags. Wenn die Verbindung von einem der angegebenen eingehenden Proxyserver stammt, wird diese Regel wirksam.</li>
-<li><code>outboundTag</code> <a href="protocols.html">Tag des Ausgangs</a> , an den die Verbindung gesendet wird, wenn diese Regel wirksam wird.</li>
+<li><code>protocol</code>: An array of string as protocol types. When the connection uses one of the protocols, this rule takes effect. <ul>
+<li>Available values are <code>&quot;http&quot;</code>,<code>&quot;tls&quot;</code>,<code>&quot;bittorrent&quot;</code>. All lower-cased.</li>
+<li><code>sniffing</code> in inbound proxy must be enabled in advance.</li>
+</ul>
+</li>
+<li><code>outboundTag</code> <a href="protocols.html">Tag of the outbound</a> that the connection will be sent to, if this rule take effect.</li>
 </ul>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
 <ul>
@@ -863,7 +869,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-07-20T11:27:23.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-20T11:28:50.473Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-07-24T11:02:51.583Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-07-24T11:04:18.304Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
