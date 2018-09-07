@@ -1029,7 +1029,10 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
   <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;dsSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;sockopt&quot;</span>: {
+    <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
+  }
 }
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
@@ -1042,16 +1045,16 @@ if (inIframe() || !isValidDomain()) {
 <li><code>allowInsecure</code>: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</li>
 <li><code>allowInsecureCiphers</code> (V2Ray 3.24+): &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; TLS &#x53EA;&#x4F7F;&#x7528; TLS 1.3 &#x63A8;&#x8350;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5957;&#x4EF6;&#xFF0C;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x9009;&#x9879;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x4E0E; TLS 1.2 &#x517C;&#x5BB9;&#x7684;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;&#x3002;</li>
 <li><code>certificates</code>: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;<ul>
-<li><code>usage</code> (V2Ray 3.17+): &#x8BC1;&#x4E66;&#x7528;&#x9014;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;encipherment&quot;</code>&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5982;&#x4E0B;&#xFF1A;<ul>
+<li><code>usage</code>: &#x8BC1;&#x4E66;&#x7528;&#x9014;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;encipherment&quot;</code>&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5982;&#x4E0B;&#xFF1A;<ul>
 <li><code>&quot;encipherment&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E; TLS &#x8BA4;&#x8BC1;&#x548C;&#x52A0;&#x5BC6;&#x3002;</li>
 <li><code>&quot;verify&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x8FDC;&#x7AEF; TLS &#x7684;&#x8BC1;&#x4E66;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x6B64;&#x9879;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8BC1;&#x4E66;&#x5FC5;&#x987B;&#x4E3A; CA &#x8BC1;&#x4E66;&#x3002;&#x6682;&#x4E0D;&#x652F;&#x6301; Windows &#x5E73;&#x53F0;&#x3002;</li>
 <li><code>&quot;issue&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E;&#x7B7E;&#x53D1;&#x5176;&#x5B83;&#x8BC1;&#x4E66;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x6B64;&#x9879;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8BC1;&#x4E66;&#x5FC5;&#x987B;&#x4E3A; CA &#x8BC1;&#x4E66;&#x3002;</li>
 </ul>
 </li>
 <li><code>certificateFile</code>: &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;</li>
-<li><code>certificate</code> (V2Ray 3.17+): &#x8BC1;&#x4E66;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x6240;&#x793A;&#x3002;<code>certificate</code>&#x548C;<code>certificateFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
+<li><code>certificate</code>: &#x8BC1;&#x4E66;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x6240;&#x793A;&#x3002;<code>certificate</code>&#x548C;<code>certificateFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
 <li><code>keyFile</code>: &#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;</li>
-<li><code>key</code> (V2Ray 3.17+): &#x5BC6;&#x94A5;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x5982;&#x793A;&#x3002;<code>key</code>&#x548C;<code>keyFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
+<li><code>key</code>: &#x5BC6;&#x94A5;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x5982;&#x793A;&#x3002;<code>key</code>&#x548C;<code>keyFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
 </ul>
 </li>
 </ul>
@@ -1061,6 +1064,10 @@ if (inIframe() || !isValidDomain()) {
 <li><code>wsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>httpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; HTTP/2 &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; HTTP/2 &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>dsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; Domain socket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; Domain socket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
+<li><code>sockopt</code> (V2Ray 3.40+): &#x8FDE;&#x63A5;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6709;:<ul>
+<li><code>mark</code>: &#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x5F53;&#x5176;&#x503C;&#x975E;&#x96F6;&#x65F6;&#xFF0C;&#x5728;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x6807;&#x8BB0; SO_MARK&#x3002;&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux &#x7CFB;&#x7EDF;&#x3002;</li>
+</ul>
+</li>
 </ul>
 <h2 id="tip"><a name="tip" class="plugin-anchor" href="#tip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
@@ -1097,7 +1104,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-02T08:22:23.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-02T08:23:07.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-07T10:35:46.194Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-07T10:36:30.797Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
