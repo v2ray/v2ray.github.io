@@ -823,7 +823,11 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
   <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
   <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;dsSettings&quot;</span>: {}
+  <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
+  <span class="hljs-string">&quot;sockopt&quot;</span>: {
+    <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>
+  }
 }
 </code></pre>
 <p>Where:</p>
@@ -855,6 +859,20 @@ if (inIframe() || !isValidDomain()) {
 <li><code>wsSettings</code>: WebSocket-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den WebSocket-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
 <li><code>httpSettings</code>: HTTP / 2-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den HTTP / 2-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
 <li><code>dsSettings</code>: Domain socket transport configuration for current proxy. Effective only when the proxy uses domain socket transport.</li>
+<li><code>sockopt</code> (V2Ray 3.40+): Socket options <ul>
+<li><code>mark</code>: An integer. If non-zero, the value will be set to outbound connections via socket option SO_MARK. Only apply on Linux and requires CAP_NET_ADMIN permission.</li>
+<li><code>tcpFastOpen</code>: Whether or not to enable <a href="https://en.wikipedia.org/wiki/TCP_Fast_Open" target="_blank">TCP Fast Open</a>. When set to <code>true</code>, V2Ray enables TFO for current connection. When set to <code>false</code>, V2Ray disables TFO. If this entry doesn&apos;t exist, V2Ray uses default settings from operating system. <ul>
+<li>Only apply on the following operating systems: <ul>
+<li>Windows 10 (1604) or later</li>
+<li>Mac OS 10.11 / iOS 9 or later</li>
+<li>Linux 3.16 or later: Enabled by system default.</li>
+</ul>
+</li>
+<li>Applicable for both inbound and outbound connections.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
 <ul>
@@ -890,7 +908,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-09-07T10:35:46.178Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-07T10:36:58.423Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-09-10T21:01:20.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-10T21:02:32.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

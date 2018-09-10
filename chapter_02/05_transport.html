@@ -1032,6 +1032,7 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
   <span class="hljs-string">&quot;sockopt&quot;</span>: {
     <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>
   }
 }
 </code></pre>
@@ -1041,7 +1042,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>security</code>: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
 <li><code>tlsSettings</code>: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
 <li><code>serverName</code>: &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</li>
-<li><code>alpn</code> (V2Ray 3.18+): &#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;&#x4E86; TLS &#x63E1;&#x624B;&#x65F6;&#x6307;&#x5B9A;&#x7684; ALPN &#x6570;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>[&quot;http/1.1&quot;]</code>&#x3002;</li>
+<li><code>alpn</code>: &#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;&#x4E86; TLS &#x63E1;&#x624B;&#x65F6;&#x6307;&#x5B9A;&#x7684; ALPN &#x6570;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>[&quot;http/1.1&quot;]</code>&#x3002;</li>
 <li><code>allowInsecure</code>: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</li>
 <li><code>allowInsecureCiphers</code> (V2Ray 3.24+): &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; TLS &#x53EA;&#x4F7F;&#x7528; TLS 1.3 &#x63A8;&#x8350;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5957;&#x4EF6;&#xFF0C;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x9009;&#x9879;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x4E0E; TLS 1.2 &#x517C;&#x5BB9;&#x7684;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;&#x3002;</li>
 <li><code>certificates</code>: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;<ul>
@@ -1065,7 +1066,21 @@ if (inIframe() || !isValidDomain()) {
 <li><code>httpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; HTTP/2 &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; HTTP/2 &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>dsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; Domain socket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; Domain socket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>sockopt</code> (V2Ray 3.40+): &#x8FDE;&#x63A5;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6709;:<ul>
-<li><code>mark</code>: &#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x5F53;&#x5176;&#x503C;&#x975E;&#x96F6;&#x65F6;&#xFF0C;&#x5728;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x6807;&#x8BB0; SO_MARK&#x3002;&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux &#x7CFB;&#x7EDF;&#x3002;</li>
+<li><code>mark</code>: &#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x5F53;&#x5176;&#x503C;&#x975E;&#x96F6;&#x65F6;&#xFF0C;&#x5728;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x6807;&#x8BB0; SO_MARK&#x3002;<ul>
+<li>&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux &#x7CFB;&#x7EDF;&#x3002;</li>
+<li>&#x9700;&#x8981; CAP_NET_ADMIN &#x6743;&#x9650;&#x3002;</li>
+</ul>
+</li>
+<li><code>tcpFastOpen</code>: &#x662F;&#x5426;&#x542F;&#x7528; <a href="https://zh.wikipedia.org/wiki/TCP%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80" target="_blank">TCP Fast Open</a>&#x3002;&#x5F53;&#x5176;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5F00;&#x542F;TFO&#xFF1B;&#x5F53;&#x5176;&#x5B83;&#x4E3A;<code>false</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5173;&#x95ED;TFO&#xFF1B;&#x5F53;&#x6B64;&#x9879;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;<ul>
+<li>&#x4EC5;&#x5728;&#x4EE5;&#x4E0B;&#x7248;&#x672C;&#xFF08;&#x6216;&#x66F4;&#x65B0;&#x7248;&#x672C;&#xFF09;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x53EF;&#x7528;:<ul>
+<li>Windows 10 (1604)</li>
+<li>Mac OS 10.11 / iOS 9</li>
+<li>Linux 3.16: &#x7CFB;&#x7EDF;&#x5DF2;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF0C;&#x65E0;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x3002;</li>
+</ul>
+</li>
+<li>&#x53EF;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x3002;</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1104,7 +1119,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-07T10:35:46.194Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-07T10:36:30.797Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-10T21:01:20.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-10T21:02:05.244Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
