@@ -952,8 +952,8 @@ if (inIframe() || !isValidDomain()) {
       <span class="hljs-string">&quot;users&quot;</span>: [
         {
           <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
-          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">10</span>,
-          <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">16</span>,
+          <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span>,
           <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
         }
       ]
@@ -968,7 +968,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>port</code>&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</li>
 <li><code>users</code>&#xFF1A;&#x4E00;&#x7EC4;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x53EF;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF1A;<ul>
 <li><code>id</code>&#xFF1A;VMess &#x7528;&#x6237;&#x7684;&#x4E3B; ID&#x3002;</li>
-<li><code>alterId</code>&#xFF1A;&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x9632;&#x6B62;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E3B; ID &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x518D;&#x989D;&#x5916;&#x751F;&#x6210;&#x591A;&#x4E2A; ID&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x989D;&#x5916;&#x7684; ID &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x63A8;&#x8350;&#x503C;&#x4E3A; 32&#x3002;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code>&#x3002;&#x6700;&#x5927;&#x503C; <code>65535</code>&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;</li>
+<li><code>alterId</code>&#xFF1A;&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x9632;&#x6B62;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E3B; ID &#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x518D;&#x989D;&#x5916;&#x751F;&#x6210;&#x591A;&#x4E2A; ID&#x3002;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x989D;&#x5916;&#x7684; ID &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x63A8;&#x8350;&#x503C;&#x4E3A; 16&#x3002;&#x4E0D;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>0</code>&#x3002;&#x6700;&#x5927;&#x503C; <code>65535</code>&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002;</li>
 <li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;</li>
 <li><code>security</code>&#xFF1A;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5C06;&#x4F7F;&#x7528;&#x914D;&#x7F6E;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#xFF0C;&#x65E0;&#x9700;&#x914D;&#x7F6E;&#x3002;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;&#xFF1A;<ul>
 <li><code>&quot;aes-128-gcm&quot;</code>&#xFF1A;&#x63A8;&#x8350;&#x5728; PC &#x4E0A;&#x4F7F;&#x7528;</li>
@@ -988,7 +988,7 @@ if (inIframe() || !isValidDomain()) {
     {
       <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
       <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">100</span>,
+      <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">16</span>,
       <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>
     }
   ],
@@ -1020,7 +1020,7 @@ if (inIframe() || !isValidDomain()) {
 </li>
 <li><code>default</code>: &#x53EF;&#x9009;&#xFF0C;clients &#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;<ul>
 <li><code>level</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x610F;&#x4E49;&#x540C;&#x4E0A;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>0</code>&#x3002;</li>
-<li><code>alterId</code>: &#x540C; Inbound&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>64</code>&#x3002;</li>
+<li><code>alterId</code>: &#x540C; Inbound&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>64</code>&#x3002;&#x63A8;&#x8350;&#x503C;<code>16</code>&#x3002;</li>
 </ul>
 </li>
 <li><code>disableInsecureEncryption</code>: &#x7981;&#x6B62;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x6307;&#x5B9A;&#x4E0B;&#x5217;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x4E3B;&#x52A8;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>false</code>&#x3002;<ul>
@@ -1065,7 +1065,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"本地策略","level":"1.2.3","depth":2,"path":"chapter_02/policy.md","ref":"chapter_02/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/socks.md","ref":"chapter_02/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/vmess.md","mtime":"2018-09-18T09:25:22.793Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-18T09:26:13.106Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"本地策略","level":"1.2.3","depth":2,"path":"chapter_02/policy.md","ref":"chapter_02/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/socks.md","ref":"chapter_02/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/vmess.md","mtime":"2018-09-18T11:05:56.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-18T11:06:46.580Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
