@@ -739,6 +739,13 @@ if (inIframe() || !isValidDomain()) {
     <span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
   },
   <span class="hljs-string">&quot;servers&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
+      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">5353</span>,
+      <span class="hljs-string">&quot;domains&quot;</span>: [
+        <span class="hljs-string">&quot;domain:v2ray.com&quot;</span>
+      ],
+    },
     <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
     <span class="hljs-string">&quot;8.8.4.4&quot;</span>,
     <span class="hljs-string">&quot;localhost&quot;</span>
@@ -753,9 +760,14 @@ if (inIframe() || !isValidDomain()) {
 <li>Beispiel: <code>&quot;domain: v2ray.com&quot;</code>: Die Dom&#xE4;ne, die aufgel&#xF6;st werden soll, kann diese Dom&#xE4;ne oder eine ihrer Unterdom&#xE4;nen sein.</li>
 </ul>
 </li>
-<li><code>Server</code>: Eine Liste der DNS-Serveradressen. Wenn mehrere Server vorhanden sind, werden sie von oben nach unten abgefragt. Optionen f&#xFC;r die DNS-Adresse: <ul>
-<li><code>&quot;IP&quot;</code>: Eine IP-Adresse, deren Port 53 f&#xFC;r die DNS-Abfrage ge&#xF6;ffnet ist.</li>
-<li><code>&quot;localhost&quot;</code>: Ein spezieller Wert, dass V2Ray die DNS-Abfrage von der lokalen Maschine verwendet.</li>
+<li><code>Server</code>: List of DNS servers. Each server may be specified in two formats: <ul>
+<li>Basic: A string such as <code>&quot;8.8.8.8&quot;</code> for DNS server address with port <code>53</code>. When the value is <code>&quot;localhost&quot;</code>, V2Ray queries localhost for DNS.</li>
+<li>Complete: <ul>
+<li><code>address</code>: DNS server address, such as <code>&quot;8.8.8.8&quot;</code>.</li>
+<li><code>port</code>: DNS server port, such as <code>53</code>.</li>
+<li><code>domains</code>: List of domains that are prioritized for this server. The format of a domain is the same as it is in <a href="routing.html">routing config</a>.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>clientIp</code>: IPv4-Adresse des aktuellen Systems. Dies wird verwendet, um den DNS-Server f&#xFC;r eine bessere IP-Aufl&#xF6;sung zu benachrichtigen. Der Wert darf keine private Adresse sein.</li>
@@ -769,6 +781,8 @@ if (inIframe() || !isValidDomain()) {
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
 <ul>
 <li>Es wird empfohlen, DNS von Ihrem lokalen Host mit einem Drittanbieter-DNS-Relayserver zu verwenden, z. B. <a href="https://coredns.io/" target="_blank">CoreDNS</a>.</li>
+<li>When using localhost as DNS server, outbound DNS queries are not sent through V2Ray by default. You may need some settings to intercept those queries if necessary.</li>
+<li>When a DNS server has the domain in its domain list, the domain will be queries in this server first, and then other servers. Otherwise DNS queries are sent to DNS servers in the order they appear in the config file.</li>
 </ul>
 
                                 
@@ -797,7 +811,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-09-19T14:37:48.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-19T14:39:09.457Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-09-21T07:20:39.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T07:21:57.409Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

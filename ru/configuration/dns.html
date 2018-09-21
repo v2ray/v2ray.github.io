@@ -739,6 +739,13 @@ if (inIframe() || !isValidDomain()) {
     <span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
   },
   <span class="hljs-string">&quot;servers&quot;</span>: [
+    {
+      <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
+      <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">5353</span>,
+      <span class="hljs-string">&quot;domains&quot;</span>: [
+        <span class="hljs-string">&quot;domain:v2ray.com&quot;</span>
+      ],
+    },
     <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
     <span class="hljs-string">&quot;8.8.4.4&quot;</span>,
     <span class="hljs-string">&quot;localhost&quot;</span>
@@ -753,9 +760,14 @@ if (inIframe() || !isValidDomain()) {
 <li><code>&quot;domain:v2ray.com&quot;</code>: &#x41F;&#x43E; &#x442;&#x430;&#x43A;&#x43E;&#x439; &#x441;&#x445;&#x435;&#x43C;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x43A;&#x430;&#x43A; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x434;&#x43E;&#x43C;&#x435;&#x43D;, &#x442;&#x430;&#x43A; &#x438; &#x435;&#x433;&#x43E; &#x43F;&#x43E;&#x434;&#x434;&#x43E;&#x43C;&#x435;&#x43D;&#x44B;.</li>
 </ul>
 </li>
-<li><code>servers</code>: &#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; DNS-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43E;&#x432;. &#x415;&#x441;&#x43B;&#x438; &#x437;&#x430;&#x434;&#x430;&#x43D;&#x43E; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43E;&#x432;, &#x43E;&#x43D;&#x438; &#x431;&#x443;&#x434;&#x443;&#x442; &#x43E;&#x43F;&#x440;&#x430;&#x448;&#x438;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x441;&#x432;&#x435;&#x440;&#x445;&#x443; &#x432;&#x43D;&#x438;&#x437;. &#x41F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x434;&#x43B;&#x44F; DNS-&#x430;&#x434;&#x440;&#x435;&#x441;&#x43E;&#x432;: <ul>
-<li><code>&quot;IP&quot;</code>: IP-&#x430;&#x434;&#x440;&#x435;&#x441;, 53-&#x439; &#x43F;&#x43E;&#x440;&#x442; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x433;&#x43E; &#x43E;&#x442;&#x43A;&#x440;&#x44B;&#x442; &#x434;&#x43B;&#x44F; DNS-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x43E;&#x432;.</li>
-<li><code>&quot;localhost&quot;</code>: &#x41E;&#x441;&#x43E;&#x431;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;, V2Ray &#x431;&#x443;&#x434;&#x435;&#x442; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x430;&#x442;&#x44C; DNS-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;&#x44B; &#x43D;&#x430; &#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x439; &#x43C;&#x430;&#x448;&#x438;&#x43D;&#x435;.</li>
+<li><code>servers</code>: List of DNS servers. Each server may be specified in two formats: <ul>
+<li>Basic: A string such as <code>&quot;8.8.8.8&quot;</code> for DNS server address with port <code>53</code>. When the value is <code>&quot;localhost&quot;</code>, V2Ray queries localhost for DNS.</li>
+<li>Complete: <ul>
+<li><code>address</code>: DNS server address, such as <code>&quot;8.8.8.8&quot;</code>.</li>
+<li><code>port</code>: DNS server port, such as <code>53</code>.</li>
+<li><code>domains</code>: List of domains that are prioritized for this server. The format of a domain is the same as it is in <a href="routing.html">routing config</a>.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>clientIp</code>: IPv4-&#x430;&#x434;&#x440;&#x435;&#x441; &#x442;&#x435;&#x43A;&#x443;&#x449;&#x435;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B;. &#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x443;&#x432;&#x435;&#x434;&#x43E;&#x43C;&#x43B;&#x435;&#x43D;&#x438;&#x44F; DNS-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430; &#x434;&#x43B;&#x44F; &#x43B;&#x443;&#x447;&#x448;&#x435;&#x433;&#x43E; &#x440;&#x430;&#x437;&#x440;&#x435;&#x448;&#x435;&#x43D;&#x438;&#x44F; IP. &#x417;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x430;&#x434;&#x440;&#x435;&#x441;&#x43E;&#x43C; &#x438;&#x437; &#x447;&#x430;&#x441;&#x442;&#x43D;&#x44B;&#x445; (&quot;&#x441;&#x435;&#x440;&#x44B;&#x445;&quot;) &#x434;&#x438;&#x430;&#x43F;&#x430;&#x437;&#x43E;&#x43D;&#x43E;&#x432;.</li>
@@ -771,6 +783,8 @@ if (inIframe() || !isValidDomain()) {
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41F;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x437;&#x43A;&#x438; </h2>
 <ul>
 <li>&#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x442;&#x441;&#x44F; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; DNS &#x441; &#x432;&#x430;&#x448;&#x435;&#x433;&#x43E; &#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x445;&#x43E;&#x441;&#x442;&#x430; &#x441; DNS-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43E;&#x43C; &#x43E;&#x442; &#x442;&#x440;&#x435;&#x442;&#x44C;&#x435;&#x439; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x44B;, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440; <a href="https://coredns.io/" target="_blank">CoreDNS</a>.</li>
+<li>When using localhost as DNS server, outbound DNS queries are not sent through V2Ray by default. You may need some settings to intercept those queries if necessary.</li>
+<li>When a DNS server has the domain in its domain list, the domain will be queries in this server first, and then other servers. Otherwise DNS queries are sent to DNS servers in the order they appear in the config file.</li>
 </ul>
 
                                 
@@ -799,7 +813,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-09-19T14:37:48.559Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-19T14:39:22.864Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2018-09-21T07:20:39.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T07:22:14.421Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

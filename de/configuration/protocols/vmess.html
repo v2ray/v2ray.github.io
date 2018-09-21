@@ -746,8 +746,8 @@ if (inIframe() || !isValidDomain()) {
       <span class="hljs-string">&quot;users&quot;</span>: [
         {
           <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span>,
-          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">10</span>,
-          <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">16</span>,
+          <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;auto&quot;</span>,
           <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>
         }
       ]
@@ -762,7 +762,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>port</code>: Server-Port</li>
 <li><code>users</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist <ul>
 <li><code>id</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
-<li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Empfehle 32. Its value must be not larger than the one in corresponding Inbound.</li>
+<li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Recommend 16. Its value must be not larger than the one in corresponding Inbound.</li>
 <li><code>level</code>: Benutzerebene. See <a href="../policy.html">Policy</a> for more detail.</li>
 <li><code>security</code>: Verschl&#xFC;sselungsmethode Optionen sind: <ul>
 <li><code>&quot;aes-128-gcm&quot;</code>: Recommended for PC.</li>
@@ -814,7 +814,7 @@ if (inIframe() || !isValidDomain()) {
 </li>
 <li><code>default</code>: Optionale Standard-Client-Konfiguration. Wird normalerweise im Umleitungs-Proxy verwendet. <ul>
 <li><code>level</code>: Benutzerebene.</li>
-<li><code>alterId</code>: Anzahl der alternativen IDs. Standardwert 64.</li>
+<li><code>alterId</code>: Anzahl der alternativen IDs. Standardwert 64. Recommend 16.</li>
 </ul>
 </li>
 <li><code>disableInsecureEncryption</code>: Forbids client for using insecure encryption methods. Wenn der Wert auf &quot;true&quot; gesetzt ist, werden die Verbindungen sofort beendet, wenn die folgende Verschl&#xFC;sselung verwendet wird. Standardwert <code>false</code>. <ul>
@@ -859,7 +859,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-09-19T14:37:48.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-19T14:39:09.457Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-09-21T07:20:39.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T07:21:57.409Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
