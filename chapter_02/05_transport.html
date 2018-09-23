@@ -1032,7 +1032,8 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
   <span class="hljs-string">&quot;sockopt&quot;</span>: {
     <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;tproxy&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>
   }
 }
 </code></pre>
@@ -1081,6 +1082,12 @@ if (inIframe() || !isValidDomain()) {
 <li>&#x53EF;&#x7528;&#x4E8E;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x3002;</li>
 </ul>
 </li>
+<li><code>tproxy</code> (V2Ray 3.44+): &#x662F;&#x5426;&#x5F00;&#x542F;&#x900F;&#x660E;&#x4EE3;&#x7406; (&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux)&#x3002;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;:<ul>
+<li><code>&quot;redirect&quot;</code>: &#x4F7F;&#x7528; Redirect &#x6A21;&#x5F0F;&#x7684;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;&#x4EC5;&#x652F;&#x6301; TCP/IPv4 &#x548C; UDP &#x8FDE;&#x63A5;&#x3002;</li>
+<li><code>&quot;tproxy&quot;</code>: &#x4F7F;&#x7528; TProxy &#x6A21;&#x5F0F;&#x7684;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;&#x652F;&#x6301; TCP &#x548C; UDP &#x8FDE;&#x63A5;&#x3002;</li>
+<li><code>&quot;off&quot;</code>: &#x5173;&#x95ED;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1091,6 +1098,8 @@ if (inIframe() || !isValidDomain()) {
 <li>&#x5F53;<code>usage</code>&#x4E3A;<code>&quot;verify&quot;</code>&#x65F6;&#xFF0C;<code>keyFile</code>&#x548C;<code>key</code>&#x53EF;&#x5747;&#x4E3A;&#x7A7A;&#x3002;</li>
 <li>&#x4F7F;&#x7528;<code>v2ctl cert -ca</code>&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x3002;</li>
 <li>&#x5728; Windows &#x5E73;&#x53F0;&#x4E0A;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5373;&#x53EF;&#x9A8C;&#x8BC1;&#x8FDC;&#x7AEF; TLS &#x7684;&#x8BC1;&#x4E66;&#x3002;</li>
+<li>&#x5F53; <a href="protocols/dokodemo.html">Dokodemo-door</a> &#x4E2D;&#x6307;&#x5B9A;&#x4E86;<code>followRedirect</code>&#xFF0C;&#x4E14;<code>sockopt.tproxy</code>&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;<code>sockopt.tproxy</code>&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x8BBE;&#x4E3A;<code>&quot;redirect&quot;</code>&#x3002;</li>
+<li>&#x900F;&#x660E;&#x4EE3;&#x7406;&#x9700;&#x8981; Root &#x6216; CAP_NET_ADMIN &#x6743;&#x9650;&#x3002;</li>
 </ul>
 
                                 
@@ -1119,7 +1128,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-22T08:48:12.656Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-22T08:49:04.641Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"传输配置","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"统计信息","level":"1.2.8","depth":2,"path":"chapter_02/stats.md","ref":"chapter_02/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-09-23T22:22:18.500Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-23T22:23:12.290Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
