@@ -826,7 +826,8 @@ if (inIframe() || !isValidDomain()) {
   <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
   <span class="hljs-string">&quot;sockopt&quot;</span>: {
     <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>
+    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;tproxy&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>
   }
 }
 </code></pre>
@@ -871,6 +872,12 @@ if (inIframe() || !isValidDomain()) {
 <li>Applicable for both inbound and outbound connections.</li>
 </ul>
 </li>
+<li><code>tproxy</code> (V2Ray 3.44+): Whether or not to enable transparent proxy on Linux. Choices are: <ul>
+<li><code>&quot;off&quot;</code>: Default value. Not enable TProxy at all.</li>
+<li><code>&quot;redirect&quot;</code>: Enable TProxy with Redirect mode. Supports TCP/IPv4 and UDP traffic.</li>
+<li><code>&quot;tproxy&quot;</code>: Enable TProxy with TProxy mode. Supports TCP and UDP traffic.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -880,6 +887,8 @@ if (inIframe() || !isValidDomain()) {
 <li>Wenn es eine neue Client-Anfrage gibt, sagen wir f&#xFC;r <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, findet V2Ray zuerst ein Zertifikat f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Wenn V2Ray nicht gefunden wird, versucht V2Ray, ein neues Zertifikat mit einem vorhandenen Zertifikat auszustellen, dessen <code>usage</code> <code>&quot;issue&quot;</code> f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Das neue Zertifikat l&#xE4;uft in einer Stunde ab und wird dem Zertifikatspool zur sp&#xE4;teren Wiederverwendung hinzugef&#xFC;gt.</li>
 <li>Wenn <code>usage</code> <code>&quot;verify&quot;</code>, k&#xF6;nnen sowohl <code>keyFile</code> als auch <code>key</code> leer sein.</li>
 <li>Verwenden Sie den Befehl <code>v2ctl cert -ca</code> , um ein neues CA-Zertifikat zu generieren.</li>
+<li>If <code>TProxy</code> is not set, and <code>allowRedirect</code> is set in <a href="protocols/dokodemo.html">dokodemo-door</a>, the value of <code>TProxy</code> will be set to <code>&quot;redirect&quot;</code> automatically.</li>
+<li>Transparent proxy requires Root or CAP_NET_ADMIN permission.</li>
 </ul>
 
                                 
@@ -908,7 +917,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-09-23T22:22:18.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-23T22:23:41.330Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-06T23:28:31.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-06T23:29:52.568Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
