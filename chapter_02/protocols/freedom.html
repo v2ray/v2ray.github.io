@@ -937,6 +937,9 @@ window.onload = function() {
     <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/protocols/freedom.html" target="_blank">
         <img src="/resources/flag_ru.svg" alt="Russian" height="16">
     </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.svg" alt="Translate" height="16">
+    </a>
     
 </div>
 
@@ -957,7 +960,6 @@ window.onload = function() {
 </ul>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;domainStrategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;AsIs&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;timeout&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
   <span class="token string">&quot;redirect&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1:3366&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;userLevel&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
 <span class="token punctuation">}</span>
@@ -969,10 +971,9 @@ window.onload = function() {
 <li><code>&quot;UseIP&quot;</code>: &#x4F7F;&#x7528; V2Ray &#x7684; <a href="../04_dns.html">DNS &#x670D;&#x52A1;&#x5668;</a>&#x89E3;&#x6790;&#x6210; IP &#x4E4B;&#x540E;&#x518D;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;</li>
 </ul>
 </li>
-<li><code>timeout</code> (V2Ray 3.1 &#x540E;&#x7B49;&#x4EF7;&#x4E8E;&#x5BF9;&#x5E94;&#x7528;&#x6237;&#x7B49;&#x7EA7;&#x7684; <code>connIdle</code> &#x7B56;&#x7565;): &#x4ECE;&#x76EE;&#x6807;&#x670D;&#x52A1;&#x5668;&#x8BFB;&#x53D6;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x7684;&#x65F6;&#x9650;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>300</code>&#x3002;</li>
 <li><code>redirect</code>: &#x5C06;&#x6240;&#x6709;&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;&#x6307;&#x5B9A;&#x5730;&#x5740;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x4F20;&#x5165;&#x534F;&#x8C03;&#x6307;&#x5B9A;&#x7684;&#x5730;&#x5740;&#xFF09;&#x3002;&#x5176;&#x503C;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6837;&#x4F8B;&#xFF1A;<code>&quot;127.0.0.1:80&quot;</code>, <code>&quot;:1234&quot;</code>&#x3002;<ul>
-<li>(V2Ray 3.31+)&#x5F53;&#x5730;&#x5740;&#x4E0D;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;&#x5982;<code>&quot;:443&quot;</code>&#xFF0C;Freedom &#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x5148;&#x7684;&#x76EE;&#x6807;&#x5730;&#x5740;&#x3002;</li>
-<li>(V2Ray 3.31+)&#x5F53;&#x7AEF;&#x53E3;&#x4E3A;<code>0</code>&#x65F6;&#xFF0C;&#x5982;<code>&quot;v2ray.com:0&quot;</code>&#xFF0C;Freedom &#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x5148;&#x7684;&#x7AEF;&#x53E3;&#x3002;</li>
+<li>&#x5F53;&#x5730;&#x5740;&#x4E0D;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;&#x5982;<code>&quot;:443&quot;</code>&#xFF0C;Freedom &#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x5148;&#x7684;&#x76EE;&#x6807;&#x5730;&#x5740;&#x3002;</li>
+<li>&#x5F53;&#x7AEF;&#x53E3;&#x4E3A;<code>0</code>&#x65F6;&#xFF0C;&#x5982;<code>&quot;v2ray.com:0&quot;</code>&#xFF0C;Freedom &#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x5148;&#x7684;&#x7AEF;&#x53E3;&#x3002;</li>
 </ul>
 </li>
 <li><code>userLevel</code>: &#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x90FD;&#x4F7F;&#x7528;&#x8FD9;&#x4E00;&#x7B49;&#x7EA7;&#x3002;</li>
@@ -992,7 +993,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/freedom","refen":"configuration/protocols/freedom","title":"Freedom","level":"1.2.2.3","depth":3,"next":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"chapter_02/protocols/http.md","ref":"chapter_02/protocols/http.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"chapter_02/protocols/dokodemo.md","ref":"chapter_02/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/freedom.md","mtime":"2018-10-08T15:28:39.734Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T15:29:21.950Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/freedom","refen":"configuration/protocols/freedom","title":"Freedom","level":"1.2.2.3","depth":3,"next":{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"chapter_02/protocols/http.md","ref":"chapter_02/protocols/http.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"chapter_02/protocols/dokodemo.md","ref":"chapter_02/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/freedom.md","mtime":"2018-10-08T18:52:16.532Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T18:53:07.319Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
