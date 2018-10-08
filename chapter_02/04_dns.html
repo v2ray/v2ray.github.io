@@ -29,7 +29,7 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coy.css">
                 
             
         
@@ -940,24 +940,24 @@ if (inIframe() || !isValidDomain()) {
 <p><a href="https://www.v2ray.com/en/configuration/dns.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/de/configuration/dns.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/dns.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
 <p>V2Ray &#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; DNS &#x67E5;&#x8BE2;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#x8F6C;&#x53D1;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x3002;</p>
 <p>&#x793A;&#x4F8B;&#x914D;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;hosts&quot;</span>: {
-    <span class="hljs-string">&quot;baidu.com&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>
-  },
-  <span class="hljs-string">&quot;servers&quot;</span>: [
-      {
-        <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>,
-        <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">5353</span>,
-        <span class="hljs-string">&quot;domains&quot;</span>: [
-          <span class="hljs-string">&quot;domain:v2ray.com&quot;</span>
-        ],
-      },
-      <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
-      <span class="hljs-string">&quot;8.8.4.4&quot;</span>,
-      <span class="hljs-string">&quot;localhost&quot;</span>
-  ],
-  <span class="hljs-string">&quot;clientIp&quot;</span>: <span class="hljs-string">&quot;1.2.3.4&quot;</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;hosts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;baidu.com&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;servers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">5353</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;domains&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;domain:v2ray.com&quot;</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;8.8.8.8&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;8.8.4.4&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;localhost&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
@@ -982,7 +982,7 @@ if (inIframe() || !isValidDomain()) {
 <p>&#x7531;&#x6B64; DNS &#x670D;&#x52A1;&#x5668;&#x6240;&#x53D1;&#x51FA;&#x7684; DNS &#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#xFF0C;&#x65E0;&#x9700;&#x989D;&#x5916;&#x914D;&#x7F6E;&#x3002;</p>
 <h2 id="strategy"><a name="strategy" class="plugin-anchor" href="#strategy"><i class="fa fa-link" aria-hidden="true"></i></a>&#x67E5;&#x8BE2;&#x7B56;&#x7565; </h2>
 <p>V2Ray &#x5185;&#x7F6E;&#x7684; DNS &#x4F1A;&#x5728;&#x5355;&#x4E2A; DNS &#x8BF7;&#x6C42;&#x4E2D;&#x540C;&#x65F6;&#x67E5;&#x8BE2; A &#x548C; AAAA &#x8BB0;&#x5F55;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709; DNS &#x670D;&#x52A1;&#x5668;&#x90FD;&#x652F;&#x6301;&#xFF0C;V2Ray &#x4EC5;&#x5BF9;&#x4EE5;&#x4E0B; DNS &#x670D;&#x52A1;&#x5668;&#x540C;&#x65F6;&#x67E5;&#x8BE2; A &#x548C; AAAA &#x8BB0;&#x5F55;&#xFF0C;&#x5BF9;&#x5176;&#x5B83;&#x6240;&#x6709;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53EA;&#x67E5;&#x8BE2; A &#x8BB0;&#x5F55;&#x3002;</p>
-<pre><code class="lang-text">8.8.8.8
+<pre class="language-"><code class="lang-text">8.8.8.8
 8.8.4.4
 9.9.9.9
 </code></pre>
@@ -1019,7 +1019,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2018-10-08T08:10:34.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:11:29.499Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","anchors","ga","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prismjs/themes/prism-coy.css"]},"anchors":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2018-10-08T08:36:32.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:37:19.065Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

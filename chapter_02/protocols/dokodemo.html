@@ -29,7 +29,7 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-coy.css">
                 
             
         
@@ -944,14 +944,14 @@ if (inIframe() || !isValidDomain()) {
 <li>&#x7C7B;&#x578B;&#xFF1A;Inbound</li>
 <li>&#x914D;&#x7F6E;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
-  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">53</span>,
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
-  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;8.8.8.8&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">53</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;timeout&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;followRedirect&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;userLevel&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
@@ -967,14 +967,14 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>&#x900F;&#x660E;&#x4EE3;&#x7406;&#x914D;&#x7F6E;&#x6837;&#x4F8B; </h2>
 <p>V2Ray &#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E2A; dokodemo-door &#x7684;&#x4F20;&#x5165;&#x534F;&#x8BAE;&#xFF1A;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp,udp&quot;</span>,
-  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">30</span>,
-  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp,udp&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;timeout&quot;</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;followRedirect&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x914D;&#x7F6E; iptables&#xFF1A;</p>
-<pre><code class="lang-plain"># Create new chain
+<pre class="language-"><code class="lang-plain"># Create new chain
 root@Wrt:~# iptables -t nat -N V2RAY
 root@Wrt:~# iptables -t mangle -N V2RAY
 root@Wrt:~# iptables -t mangle -N V2RAY_MARK
@@ -1035,7 +1035,7 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"chapter_02/protocols/blackhole.md","ref":"chapter_02/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2018-10-08T08:10:34.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:11:29.499Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"chapter_02/protocols/blackhole.md","ref":"chapter_02/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","anchors","ga","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prismjs/themes/prism-coy.css"]},"anchors":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2018-10-08T08:36:32.060Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:37:19.065Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

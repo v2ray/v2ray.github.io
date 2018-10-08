@@ -29,7 +29,7 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coy.css">
                 
             
         
@@ -735,14 +735,14 @@ if (inIframe() || !isValidDomain()) {
 <p>V2Ray bietet eine API f&#xFC;r den Remotezugriff. Diese APIs basieren auf <a href="https://grpc.io/" target="_blank">GRPC</a>.</p>
 <p>Wenn die API aktiviert ist, erstellt V2Ray automatisch einen ausgehenden Proxy, der als <code>Tag</code>. Benutzer must <a href="routing.html">Route</a> alle gRPC Verbindungen zu diesem Outbound.</p>
 <p>Aufbau:</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;api&quot;</span>,
-  <span class="hljs-string">&quot;services&quot;</span>: [
-    <span class="hljs-string">&quot;HandlerService&quot;</span>,
-    <span class="hljs-string">&quot;LoggerService&quot;</span>,
-    <span class="hljs-string">&quot;StatsService&quot;</span>
-  ]
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;api&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;services&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;HandlerService&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;LoggerService&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;StatsService&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Woher:</p>
 <ul>
@@ -789,7 +789,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-10-08T08:10:34.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:11:58.210Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","anchors","ga","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prismjs/themes/prism-coy.css"]},"anchors":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-10-08T08:36:32.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:37:48.502Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

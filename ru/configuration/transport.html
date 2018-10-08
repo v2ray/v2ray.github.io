@@ -29,7 +29,7 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-coy.css">
                 
             
         
@@ -736,13 +736,13 @@ if (inIframe() || !isValidDomain()) {
 <p>The transport settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration </h2>
 <p>Global settings is in the &quot;transport&quot; entry of V2Ray config.</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;dsSettings&quot;</span>: {}
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;tcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
@@ -754,82 +754,82 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="proxy"><a name="proxy" class="plugin-anchor" href="#proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Per-proxy Configuration </h2>
 <p>Each inbound and outbound proxy may has its own transport settings. Each inbound, inboundDetour, outbound and outboundDetour entry may have a <code>streamSettings</code> for transport.</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
-  <span class="hljs-string">&quot;security&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>,
-  <span class="hljs-string">&quot;tlsSettings&quot;</span>: {
-    <span class="hljs-string">&quot;serverName&quot;</span>: <span class="hljs-string">&quot;v2ray.com&quot;</span>,
-    <span class="hljs-string">&quot;alpn&quot;</span>: [<span class="hljs-string">&quot;http/1.1&quot;</span>],
-    <span class="hljs-string">&quot;allowInsecure&quot;</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-string">&quot;certificates&quot;</span>: [
-      {
-        <span class="hljs-string">&quot;usage&quot;</span>: <span class="hljs-string">&quot;encipherment&quot;</span>,
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;security&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tlsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;serverName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;v2ray.com&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;alpn&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;http/1.1&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;allowInsecure&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;certificates&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;usage&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;encipherment&quot;</span><span class="token punctuation">,</span>
 
-        <span class="hljs-string">&quot;certificateFile&quot;</span>: <span class="hljs-string">&quot;/path/to/certificate.crt&quot;</span>,
-        <span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;/path/to/key.key&quot;</span>,
+        <span class="token string">&quot;certificateFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/certificate.crt&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;keyFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/key.key&quot;</span><span class="token punctuation">,</span>
 
-        <span class="hljs-string">&quot;certificate&quot;</span>: [
-          <span class="hljs-string">&quot;-----BEGIN CERTIFICATE-----&quot;</span>,
-          <span class="hljs-string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span>,
-          <span class="hljs-string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span>,
-          <span class="hljs-string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span>,
-          <span class="hljs-string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span>,
-          <span class="hljs-string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span>,
-          <span class="hljs-string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span>,
-          <span class="hljs-string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span>,
-          <span class="hljs-string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span>,
-          <span class="hljs-string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span>,
-          <span class="hljs-string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span>,
-          <span class="hljs-string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span>,
-          <span class="hljs-string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span>,
-          <span class="hljs-string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span>,
-          <span class="hljs-string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span>,
-          <span class="hljs-string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span>,
-          <span class="hljs-string">&quot;-----END CERTIFICATE-----&quot;</span>
-        ],
-        <span class="hljs-string">&quot;key&quot;</span>: [
-          <span class="hljs-string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span>,
-          <span class="hljs-string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span>,
-          <span class="hljs-string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span>,
-          <span class="hljs-string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span>,
-          <span class="hljs-string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span>,
-          <span class="hljs-string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span>,
-          <span class="hljs-string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span>,
-          <span class="hljs-string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span>,
-          <span class="hljs-string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span>,
-          <span class="hljs-string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span>,
-          <span class="hljs-string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span>,
-          <span class="hljs-string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span>,
-          <span class="hljs-string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span>,
-          <span class="hljs-string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span>,
-          <span class="hljs-string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span>,
-          <span class="hljs-string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span>,
-          <span class="hljs-string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span>,
-          <span class="hljs-string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span>,
-          <span class="hljs-string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span>,
-          <span class="hljs-string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span>,
-          <span class="hljs-string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span>,
-          <span class="hljs-string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span>,
-          <span class="hljs-string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span>,
-          <span class="hljs-string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span>,
-          <span class="hljs-string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span>,
-          <span class="hljs-string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span>,
-          <span class="hljs-string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
-        ]
-      }
-    ]
-  },
-  <span class="hljs-string">&quot;tcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;kcpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;wsSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;httpSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;dsSettings&quot;</span>: {},
-  <span class="hljs-string">&quot;sockopt&quot;</span>: {
-    <span class="hljs-string">&quot;mark&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;tcpFastOpen&quot;</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-string">&quot;tproxy&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>
-  }
-}
+        <span class="token string">&quot;certificate&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;-----BEGIN CERTIFICATE-----&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;-----END CERTIFICATE-----&quot;</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;sockopt&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;mark&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;tcpFastOpen&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;tproxy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;off&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
@@ -917,7 +917,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-08T08:10:34.756Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:12:12.050Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","anchors","ga","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prismjs/themes/prism-coy.css"]},"anchors":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-08T08:36:32.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:38:02.479Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

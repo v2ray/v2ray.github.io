@@ -29,7 +29,7 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-coy.css">
                 
             
         
@@ -762,15 +762,15 @@ if (inIframe() || !isValidDomain()) {
 <li>Geben Sie ein: Eingehend / Ausgehend</li>
 </ul>
 <h2 id="inbound-proxy-konfiguration"><a name="inbound-proxy-konfiguration" class="plugin-anchor" href="#inbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Inbound-Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>,
-  <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;aes-128-cfb&quot;</span>,
-  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password&quot;</span>,
-  <span class="hljs-string">&quot;udp&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;ota&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;love@v2ray.com&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;method&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;aes-128-cfb&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;password&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;udp&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;level&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ota&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
@@ -797,7 +797,7 @@ if (inIframe() || !isValidDomain()) {
 <li><code>network</code>: Type of network, either <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. Standard auf <code>&quot;tcp&quot;</code>.</li>
 </ul>
 <h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
-<pre><code class="lang-javascript">{<span class="hljs-string">&quot;Server&quot;</span>: [{<span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;love@v2ray.com&quot;</span>, <span class="hljs-string">&quot;Adresse&quot;</span>: <span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-string">&quot;Port&quot;</span>: <span class="hljs-number">1234</span>, <span class="hljs-string">&quot;Methode&quot;</span>: <span class="hljs-string">&quot;Methode&quot;</span>, <span class="hljs-string">&quot;Passwort&quot;</span>: <span class="hljs-string">&quot;Passwort&quot;</span> , <span class="hljs-string">&quot;ota&quot;</span>: falsch, <span class="hljs-string">&quot;level&quot;</span>: <span class="hljs-number">0</span>}]}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span><span class="token string">&quot;Server&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;love@v2ray.com&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Adresse&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Port&quot;</span><span class="token punctuation">:</span> <span class="token number">1234</span><span class="token punctuation">,</span> <span class="token string">&quot;Methode&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Methode&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Passwort&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Passwort&quot;</span> <span class="token punctuation">,</span> <span class="token string">&quot;ota&quot;</span><span class="token punctuation">:</span> falsch<span class="token punctuation">,</span> <span class="token string">&quot;level&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
@@ -848,7 +848,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","anchors","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"anchors":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-10-08T08:10:34.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:11:58.210Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","anchors","ga","prism"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prismjs/themes/prism-coy.css"]},"anchors":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-10-08T08:36:32.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T08:37:48.502Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
