@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -113,7 +117,7 @@ window.onload = function() {
                 <a href="welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -165,7 +169,7 @@ window.onload = function() {
                 <a href="welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -231,7 +235,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="welcome/faq.html">
+            
+                <a href="welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="welcome/license.html">
             
                 <a href="welcome/license.html">
             
@@ -244,25 +261,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -386,7 +390,7 @@ window.onload = function() {
                 <a href="configuration/protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -717,6 +721,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/index.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/index.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/index.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/index.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -728,11 +748,10 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="projekt-v"><a name="projekt-v" class="plugin-anchor" href="#projekt-v"><i class="fa fa-link" aria-hidden="true"></i></a>Projekt V</h1>
-<p><a href="https://www.v2ray.com/en/" target="_blank"><img src="resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/" target="_blank"><img src="resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/" target="_blank"><img src="resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/" target="_blank"><img src="resources/russian.svg" alt="Russian"></a></p>
 <p>Project V ist eine Sammlung von Tools, mit denen Sie Ihr eigenes Datenschutznetzwerk &#xFC;ber das Internet aufbauen k&#xF6;nnen.</p>
 <h2 id="einf&#xFC;hrung"><a name="einf&#xFC;hrung" class="plugin-anchor" href="#einf&#xFC;hrung"><i class="fa fa-link" aria-hidden="true"></i></a>Einf&#xFC;hrung</h2>
-<p>Project V bietet einen einzelnen Kern mit verschiedenen GUI-Programmen. Der Kern, V2Ray, ist f&#xFC;r Netzwerkverbindung, Routing und Datenverarbeitung, w&#xE4;hrend GUI-Programme f&#xFC;r benutzerfreundliche Erfahrung sind.</p>
-<p>Die Verantwortung von V2Ray ist die &#xDC;bertragung von Daten von seinem Client an einen bestimmten Server, basierend auf der Benutzerkonfiguration. Es l&#xE4;uft als Kommandozeilenwerkzeug. Es kann &#xFC;ber eine JSON-basierte Konfiguration konfiguriert werden.</p>
+<p>Project V provides a single core with various GUI programs. The core, V2Ray, is for network connection, routing and data processing, while GUI programs are for user friendly experience.</p>
+<p>V2Ray&apos;s responsibility is transfer data from its client to specified server, based on user configuration. It runs as a commandline tool. It can be configured via JSON based configuration.</p>
 <h2 id="eigenschaften"><a name="eigenschaften" class="plugin-anchor" href="#eigenschaften"><i class="fa fa-link" aria-hidden="true"></i></a>Eigenschaften</h2>
 <h3 id="multi-proxy-unterst&#xFC;tzung"><a name="multi-proxy-unterst&#xFC;tzung" class="plugin-anchor" href="#multi-proxy-unterst&#xFC;tzung"><i class="fa fa-link" aria-hidden="true"></i></a>Multi-Proxy-Unterst&#xFC;tzung</h3>
 <p>V2Ray unterst&#xFC;tzt Socks, HTTP, Shadowsocks und VMess-Protokoll.</p>
@@ -744,9 +763,9 @@ window.onload = function() {
 <p>Alle oben genannten Proxies k&#xF6;nnen &#xFC;ber TLS, TCP, mKCP und weitere Transportprotokolle gesendet / empfangen werden.</p>
 <h3 id="flexibles-routing"><a name="flexibles-routing" class="plugin-anchor" href="#flexibles-routing"><i class="fa fa-link" aria-hidden="true"></i></a>Flexibles Routing</h3>
 <p>V2Ray verf&#xFC;gt &#xFC;ber einen internen Router, der so konfiguriert werden kann, dass er Datenverkehr vermittelt oder direkt sendet oder sogar blockiert.</p>
-<h2 id="aktualisieren-sie-diese-website"><a name="aktualisieren-sie-diese-website" class="plugin-anchor" href="#aktualisieren-sie-diese-website"><i class="fa fa-link" aria-hidden="true"></i></a>Aktualisieren Sie diese Website</h2>
-<p>Diese Seite wird von GitBook generiert und auf GitHub gehostet. Wenn Sie den Inhalt &#xE4;ndern m&#xF6;chten, senden Sie bitte eine Pull-Anfrage an <a href="https://github.com/v2ray/manual" target="_blank">dieses Repo</a>.</p>
-<h2 id="lizenz"><a name="lizenz" class="plugin-anchor" href="#lizenz"><i class="fa fa-link" aria-hidden="true"></i></a>Lizenz</h2>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p> This site is generated by GitBook, and host on GitHub. If you&apos;d like to modify its content, please send pull request to <a href="https://github.com/v2ray/manual" target="_blank">this repo</a>. </p>
+</div></div></p>
+<h2 id="license"><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h2>
 <p>Diese Website wird unter einer Lizenz <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Internationale Lizenz Creative Commons Attribution 4.0</a>.</p>
 
                                 
@@ -763,7 +782,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Project V","level":"1.1","depth":1,"next":{"title":"Versionsgeschichte","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"index","refen":"index","title":"Project V","level":"1.1","depth":1,"next":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

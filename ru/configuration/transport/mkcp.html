@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../../welcome/versions.html">
             
                     
-                    История версий
+                    Version History
             
                 </a>
             
@@ -154,7 +158,7 @@ window.onload = function() {
                 <a href="../../welcome/start.html">
             
                     
-                    Быстрый старт
+                    Quick Start
             
                 </a>
             
@@ -180,7 +184,7 @@ window.onload = function() {
                 <a href="../../welcome/donate.html">
             
                     
-                    Пожертвование
+                    Donation
             
                 </a>
             
@@ -193,7 +197,7 @@ window.onload = function() {
                 <a href="../../welcome/help.html">
             
                     
-                    Поддержка
+                    Support
             
                 </a>
             
@@ -220,7 +224,7 @@ window.onload = function() {
                 <a href="../../welcome/pgp.html">
             
                     
-                    Приватное сообщение
+                    Private Communication
             
                 </a>
             
@@ -233,12 +237,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/faq.html">
             
-                <a href="../../welcome/license.html">
+                <a href="../../welcome/faq.html">
             
                     
-                    Лицензия
+                    ЧаВо
             
                 </a>
             
@@ -246,12 +250,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
             
-                <a target="_blank" href="https://steemit.com/@v2ray">
+                <a href="../../welcome/license.html">
             
                     
-                    ↪ Блог
+                    License
             
                 </a>
             
@@ -261,10 +265,10 @@ window.onload = function() {
     
         <li class="chapter " data-level="1.1.10" >
             
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
+                <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
-                    ↪ Перевести
+                    Блог ↪
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/transport/mkcp.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/transport/mkcp.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/transport/mkcp.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/transport/mkcp.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,9 +750,8 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x430;-&#x447;&#x435;&#x440;&#x435;&#x437;-mkcp"><a name="&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x430;-&#x447;&#x435;&#x440;&#x435;&#x437;-mkcp" class="plugin-anchor" href="#&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x430;-&#x447;&#x435;&#x440;&#x435;&#x437;-mkcp"><i class="fa fa-link" aria-hidden="true"></i></a>&#x414;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43A;&#x430; &#x447;&#x435;&#x440;&#x435;&#x437; mKCP</h1>
-<p><a href="https://www.v2ray.com/en/configuration/transport/mkcp.html" target="_blank"><img src="../../resources/english.svg" alt="&#x410;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/chapter_02/transport/mkcp.html" target="_blank"><img src="../../resources/chinese.svg" alt="&#x41A;&#x438;&#x442;&#x430;&#x439;&#x441;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/de/configuration/transport/mkcp.html" target="_blank"><img src="../../resources/german.svg" alt="&#x41D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/ru/configuration/transport/mkcp.html" target="_blank"><img src="../../resources/russian.svg" alt="&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;"></a></p>
-<p>mKCP - &#x44D;&#x442;&#x43E; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x44B;&#x439; &#x43F;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x432;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B;. &#x41E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x43D; &#x43D;&#x430; UDP.</p>
-<p>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F;:</p>
+<p>mKCP is a reliable stream transport. It is an UDP based protocol.</p>
+<p>Configuration:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;mtu&quot;</span><span class="token punctuation">:</span> <span class="token number">1350</span><span class="token punctuation">,</span>
   <span class="token string">&quot;tti&quot;</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -746,44 +765,44 @@ window.onload = function() {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x413;&#x434;&#x435;:</p>
+<p>Where:</p>
 <ul>
 <li><code>mtu</code>: Maximum transmission unit. &#x423;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x43C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x435; &#x43A;&#x43E;&#x43B;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x431;&#x430;&#x439;&#x442;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x442;&#x44C; &#x43F;&#x430;&#x43A;&#x435;&#x442; UDP. &#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x43C;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x436;&#x434;&#x443; <code>576</code> &#x438; <code>1460</code>. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>1350</code>.</li>
-<li><code>tti</code>: Transmission time interval, &#x432; &#x43C;&#x438;&#x43B;&#x43B;&#x438;&#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x430;&#x445;. mKCP &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x442;&#x44C; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x447;&#x435;&#x440;&#x435;&#x437; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x43D;&#x44B;&#x439; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x432;&#x430;&#x43B;. &#x420;&#x435;&#x43A;&#x43E;&#x43C;&#x435;&#x43D;&#x434;&#x443;&#x435;&#x43C;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43C;&#x435;&#x436;&#x434;&#x443; <code>10</code> &#x438; <code>100</code>. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>50</code>.</li>
-<li><code>uplinkCapacity</code>: &#x428;&#x438;&#x440;&#x438;&#x43D;&#x430; &#x43F;&#x43E;&#x43B;&#x43E;&#x441;&#x44B; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x439; &#x43B;&#x438;&#x43D;&#x438;&#x438;, &#x41C;&#x411;/&#x441;. &#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x43D;&#x430;&#x44F; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x434;&#x43B;&#x44F; &#x44D;&#x43A;&#x437;&#x435;&#x43C;&#x43F;&#x43B;&#x44F;&#x440;&#x430; V2Ray &#x434;&#x43B;&#x44F; &#x432;&#x44B;&#x433;&#x440;&#x443;&#x437;&#x43A;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x432; &#x421;&#x435;&#x442;&#x44C;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>5</code>. <ul>
+<li><code>tti</code>: Transmission time interval, in milli-second. mKCP sends data in this interval. Recommended value is between <code>10</code> and <code>100</code>. Default value <code>50</code>.</li>
+<li><code>uplinkCapacity</code>: Uplink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to upload data to a remote one. Default value is <code>5</code>. <ul>
 <li>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435;, &#x432; &quot;&#x41C;&#x411;/&#x441;&quot; &#x411; - &#x44D;&#x442;&#x43E; &#x431;&#x430;&#x439;&#x442;, &#x430; &#x43D;&#x435; &#x431;&#x438;&#x442;.</li>
 <li>&#x41C;&#x43E;&#x436;&#x43D;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; <code>0</code> &#x434;&#x43B;&#x44F; &#x43D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x43D;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x438;.</li>
 </ul>
 </li>
-<li><code>downlinkCapacity</code>: &#x428;&#x438;&#x440;&#x438;&#x43D;&#x430; &#x43F;&#x43E;&#x43B;&#x43E;&#x441;&#x44B; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x439; &#x43B;&#x438;&#x43D;&#x438;&#x438;, &#x41C;&#x411;/&#x441;. &#x41C;&#x430;&#x43A;&#x441;&#x438;&#x43C;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x43D;&#x430;&#x44F; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x44C; &#x434;&#x43B;&#x44F; &#x44D;&#x43A;&#x437;&#x435;&#x43C;&#x43F;&#x43B;&#x44F;&#x440;&#x430; V2Ray &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x433;&#x440;&#x443;&#x437;&#x43A;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x438;&#x437; &#x421;&#x435;&#x442;&#x438;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>20</code>. <ul>
-<li>&#x41E;&#x431;&#x440;&#x430;&#x442;&#x438;&#x442;&#x435; &#x432;&#x43D;&#x438;&#x43C;&#x430;&#x43D;&#x438;&#x435;, &#x432; &quot;&#x41C;&#x411;/&#x441;&quot; &#x411; - &#x44D;&#x442;&#x43E; &#x431;&#x430;&#x439;&#x442;, &#x430; &#x43D;&#x435; &#x431;&#x438;&#x442;.</li>
-<li>&#x41C;&#x43E;&#x436;&#x43D;&#x43E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C; <code>0</code> &#x434;&#x43B;&#x44F; &#x43D;&#x435;&#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x43D;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x438;.</li>
+<li><code>downlinkCapacity</code>: Downlink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to download data. Default value is <code>20</code>. <ul>
+<li>Please note it is byte (in MB/s), not bit.</li>
+<li>One may use value <code>0</code> for a small bandwidth.</li>
 </ul>
 </li>
-<li><code>congestion</code>: &#x421;&#x43B;&#x435;&#x434;&#x443;&#x435;&#x442; &#x43B;&#x438; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x430;&#x442;&#x44C; &#x43A;&#x43E;&#x43D;&#x442;&#x440;&#x43E;&#x43B;&#x44C; &#x43F;&#x435;&#x440;&#x435;&#x433;&#x440;&#x443;&#x437;&#x43A;&#x438;. &#x417;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;: <code>false</code>. <ul>
-<li>&#x41A;&#x43E;&#x433;&#x434;&#x430; &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x435;&#x440;&#x435;&#x433;&#x440;&#x443;&#x437;&#x43A;&#x43E;&#x439; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43E;, V2Ray &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x435;&#x442; &#x43A;&#x430;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x441;&#x435;&#x442;&#x438;. &#x41E;&#x43D; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x442;&#x44C; &#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x435; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x43E;&#x432;, &#x435;&#x441;&#x43B;&#x438; &#x43F;&#x43E;&#x442;&#x435;&#x440;&#x44F; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x43E;&#x432; &#x431;&#x443;&#x434;&#x435;&#x442; &#x441;&#x435;&#x440;&#x44C;&#x435;&#x437;&#x43D;&#x43E;&#x439;, &#x438;&#x43B;&#x438; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;, &#x435;&#x441;&#x43B;&#x438; &#x441;&#x435;&#x442;&#x44C; &#x43D;&#x435; &#x43F;&#x43E;&#x43B;&#x43D;&#x43E;&#x441;&#x442;&#x44C;&#x44E; &#x437;&#x430;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x430;.</li>
+<li><code>congestion</code>: Whether or not to enable congestion control. Default value is <code>false</code>. <ul>
+<li>When congestion control is enabled, V2Ray will detect network quality. It will send less packets when packet loss is severe, or more data when network is not fully filled.</li>
 </ul>
 </li>
-<li><code>readBufferSize</code>: &#x420;&#x430;&#x437;&#x43C;&#x435;&#x440; &#x431;&#x443;&#x444;&#x435;&#x440;&#x430; &#x434;&#x43B;&#x44F; &#x447;&#x442;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;, &#x432; &#x41C;&#x411;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>2</code>.</li>
-<li><code>writeBufferSize</code>: &#x420;&#x430;&#x437;&#x43C;&#x435;&#x440; &#x431;&#x443;&#x444;&#x435;&#x440;&#x430; &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x438; &#x434;&#x43B;&#x44F; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;, &#x432; &#x41C;&#x411;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>2</code>.</li>
+<li><code>readBufferSize</code>: Read buffer size for a single connection, in MB. Default value is <code>2</code>.</li>
+<li><code>writeBufferSize</code>: Write buffer size for a single connection, in MB. Default value is <code>2</code>.</li>
 <li><code>header</code>: &#x417;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x430; &#x434;&#x43B;&#x44F; &#x43C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438;. <ul>
-<li><code>type</code>: &#x422;&#x438;&#x43F; &#x43C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x438;. &#x412;&#x43E;&#x437;&#x43C;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x432;&#x430;&#x440;&#x438;&#x430;&#x43D;&#x442;&#x44B;: <ul>
-<li><code>&quot;none&quot;</code>: &#x417;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x43F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E;. &#x411;&#x435;&#x437; &#x43E;&#x431;&#x444;&#x443;&#x441;&#x43A;&#x430;&#x446;&#x438;&#x438;.</li>
-<li><code>&quot;srtp&quot;</code>: &#x41C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430; &#x43F;&#x43E;&#x434; SRTP &#x442;&#x440;&#x430;&#x444;&#x438;&#x43A;. &#x414;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x441;&#x43B;&#x443;&#x448;&#x438;&#x432;&#x430;&#x44E;&#x449;&#x438;&#x445; &#x432;&#x44B;&#x433;&#x43B;&#x44F;&#x434;&#x438;&#x442; &#x43A;&#x430;&#x43A; &#x432;&#x438;&#x434;&#x435;&#x43E;&#x437;&#x432;&#x43E;&#x43D;&#x43E;&#x43A;, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x438;&#x437; Facetime.</li>
-<li><code>&quot;utp&quot;</code>: &#x41C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430; &#x43F;&#x43E;&#x434; uTP &#x442;&#x440;&#x430;&#x444;&#x438;&#x43A;. &#x421;&#x43E; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x44B; &#x432;&#x44B;&#x433;&#x43B;&#x44F;&#x434;&#x438;&#x442; &#x43A;&#x430;&#x43A; &#x442;&#x440;&#x430;&#x444;&#x438;&#x43A; &#x43E;&#x442; Bittorrent.</li>
+<li><code>type</code>: Type of obfuscation. Choices are: <ul>
+<li><code>&quot;none&quot;</code>: Default value. No obfuscation is added.</li>
+<li><code>&quot;srtp&quot;</code>: Obfuscated as SRTP traffic. It may be recognized as video calls such as Facetime.</li>
+<li><code>&quot;utp&quot;</code>: Obfuscated as uTP traffic. It may be recognized as Bittorrent traffic.</li>
 <li><code>&quot;wechat-video&quot;</code>: &#x41C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430; &#x43F;&#x43E;&#x434; WeChat.</li>
 <li><code>&quot;dtls&quot;</code>: &#x41C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430; &#x43F;&#x43E;&#x434; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x44B; DTLS 1.2.</li>
-<li><code>&quot;wireguard&quot;</code> (V2Ray 3.38+): &#x41C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430; &#x43F;&#x43E;&#x434; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x44B; WireGuard. (&#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43C;&#x430;&#x441;&#x43A;&#x438;&#x440;&#x43E;&#x432;&#x43A;&#x430;, &#x41D;&#x415; &#x43D;&#x430;&#x441;&#x442;&#x43E;&#x44F;&#x449;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B; WireGuard)</li>
+<li><code>&quot;wireguard&quot;</code> (V2Ray 3.38+): Obfuscated as WireGuard packets. (NOT true WireGuard protocol)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x417;&#x430;&#x43C;&#x435;&#x447;&#x430;&#x43D;&#x438;&#x44F; </h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
 <ul>
 <li><code>uplinkCapacity</code> &#x438; <code>downlinkCapacity</code> &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x44E;&#x442; &#x441;&#x43A;&#x43E;&#x440;&#x43E;&#x441;&#x442;&#x44C; mKCP. &#x41D;&#x430; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x435; &#x43A;&#x43B;&#x438;&#x435;&#x43D;&#x442;&#x430; <code>uplinkCapacity</code> &#x443;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x441;&#x43A;&#x43E;&#x440;&#x43E;&#x441;&#x442;&#x44C; &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43D;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;. &#x41D;&#x430; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x435; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430; <code>downlinkCapacity</code> &#x443;&#x441;&#x442;&#x430;&#x43D;&#x430;&#x432;&#x43B;&#x438;&#x432;&#x430;&#x435;&#x442; &#x441;&#x43A;&#x43E;&#x440;&#x43E;&#x441;&#x442;&#x44C; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43E;&#x43C;. &#x420;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x441;&#x43A;&#x43E;&#x440;&#x43E;&#x441;&#x442;&#x44C; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x43F;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x44F;&#x442;&#x44C;&#x441;&#x44F; &#x43D;&#x430;&#x438;&#x43C;&#x435;&#x43D;&#x44C;&#x448;&#x438;&#x43C; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C;.</li>
-<li>mKCP &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x442;&#x43E;&#x43A;&#x43E;&#x43B; UDP. &#x423;&#x431;&#x435;&#x434;&#x438;&#x442;&#x435;&#x441;&#x44C;, &#x447;&#x442;&#x43E; &#x432;&#x430;&#x448; &#x431;&#x440;&#x430;&#x43D;&#x434;&#x43C;&#x430;&#x443;&#x44D;&#x440; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43D; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x43E;.</li>
-<li>mKCP &#x43E;&#x442;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435; &#x442;&#x440;&#x430;&#x444;&#x438;&#x43A;&#x430; &#x434;&#x43B;&#x44F; &#x431;&#x43E;&#x43B;&#x435;&#x435; &#x43D;&#x438;&#x437;&#x43A;&#x43E;&#x439; &#x437;&#x430;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x438;. &#x427;&#x442;&#x43E;&#x431;&#x44B; &#x43F;&#x435;&#x440;&#x435;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; &#x43E;&#x434;&#x438;&#x43D; &#x438; &#x442;&#x43E;&#x442; &#x436;&#x435; &#x43E;&#x431;&#x44A;&#x435;&#x43C; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;, mKCP &#x43E;&#x431;&#x44B;&#x447;&#x43D;&#x43E; &#x442;&#x440;&#x435;&#x431;&#x443;&#x435;&#x442; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435;&#x439; &#x43F;&#x440;&#x43E;&#x43F;&#x443;&#x441;&#x43A;&#x43D;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x43E;&#x441;&#x442;&#x438;, &#x447;&#x435;&#x43C; TCP.</li>
+<li>mKCP uses UDP protocol. Please make sure your firewall is correctly setup.</li>
+<li>mKCP sends more traffic for lower latency. To transfer the same amount of data, mKCP usually requires more throughput than TCP does.</li>
 </ul>
 <h2 id="credits"><a name="credits" class="plugin-anchor" href="#credits"><i class="fa fa-link" aria-hidden="true"></i></a>&#x411;&#x43B;&#x430;&#x433;&#x43E;&#x434;&#x430;&#x440;&#x43D;&#x43E;&#x441;&#x442;&#x438; </h2>
 <ul>
@@ -806,7 +825,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mKCP","level":"1.2.9.2","depth":3,"next":{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"previous":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport/mkcp.md","mtime":"2018-10-09T13:02:26.272Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:56.825Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/mkcp","refen":"configuration/transport/mkcp","title":"mKCP","level":"1.2.9.2","depth":3,"next":{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"previous":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport/mkcp.md","mtime":"2018-10-09T14:01:21.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:52.491Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

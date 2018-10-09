@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Shadowsocks · Project V Official</title>
+        <title>Schattensocken · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
 function inIframe () {
@@ -33,6 +33,10 @@ window.onload = function() {
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/faq.html">
+            
+                <a href="../../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
             
                 <a href="../../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/protocols/shadowsocks.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/protocols/shadowsocks.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/protocols/shadowsocks.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/protocols/shadowsocks.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,17 +750,16 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="shadowsocks"><a name="shadowsocks" class="plugin-anchor" href="#shadowsocks"><i class="fa fa-link" aria-hidden="true"></i></a>Shadowsocks</h1>
-<p><a href="https://www.v2ray.com/en/configuration/protocols/shadowsocks.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/protocols/shadowsocks.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/protocols/shadowsocks.html" target="_blank"><img src="../../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/protocols/shadowsocks.html" target="_blank"><img src="../../resources/russian.svg" alt="Russian"></a></p>
 <p><a href="https://www.shadowsocks.org/" target="_blank">Shadowsocks</a> Protokoll f&#xFC;r ein- und ausgehende Verbindungen.</p>
 <p>Kompatibilit&#xE4;t mit der offiziellen Version:</p>
 <ul>
 <li>Unterst&#xFC;tzt sowohl TCP- als auch UDP-Verbindungen, wobei UDP optional deaktiviert sein kann.</li>
-<li>Unterst&#xFC;tzt <a href="https://web.archive.org/web/20161221022225/https://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>; <ul>
+<li>Supports <a href="https://web.archive.org/web/20161221022225/https://shadowsocks.org/en/spec/one-time-auth.html" target="_blank">OTA</a>&#xFF1B; <ul>
 <li>Der Kunde kann w&#xE4;hlen, ob er ein- oder ausschaltet.</li>
 <li>Der Server kann aktivieren, deaktivieren oder automatisch ausw&#xE4;hlen.</li>
 </ul>
 </li>
-<li>Verschl&#xFC;sselungsmethoden (<a href="https://shadowsocks.org/en/spec/AEAD-Ciphers.html" target="_blank">AEAD</a> Verschl&#xFC;sselungen in V2Ray 3.0 hinzugef&#xFC;gt): <ul>
+<li>Encryption methods (<a href="https://shadowsocks.org/en/spec/AEAD-Ciphers.html" target="_blank">AEAD</a> ciphers added in V2Ray 3.0): <ul>
 <li>aes-256-cfb</li>
 <li>aes-128-cfb</li>
 <li>chacha20</li>
@@ -758,7 +777,7 @@ window.onload = function() {
 <p>Info:</p>
 <ul>
 <li>Name: Schattensocken</li>
-<li>Geben Sie ein: Eingehend / Ausgehend</li>
+<li>Type: Inbound / Outbound</li>
 </ul>
 <h2 id="inbound-proxy-konfiguration"><a name="inbound-proxy-konfiguration" class="plugin-anchor" href="#inbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Inbound-Proxy-Konfiguration</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
@@ -773,8 +792,8 @@ window.onload = function() {
 </code></pre>
 <p>Where:</p>
 <ul>
-<li><code>E-Mail</code>: E-Mail-Adresse. Wird zur Benutzeridentifikation verwendet.</li>
-<li><code>Methode</code>: Verschl&#xFC;sselungsmethode Kein Standardwert Optionen sind: <ul>
+<li><code>email</code>: Email address. Used for user identification.</li>
+<li><code>Methode</code>: Encryption method. No default value. Options are: <ul>
 <li><code>&quot;aes-256-cfb&quot;</code></li>
 <li><code>&quot;aes-128-cfb&quot;</code></li>
 <li><code>&quot;chacha20&quot;</code></li>
@@ -784,41 +803,41 @@ window.onload = function() {
 <li><code>&quot;chacha20-poly1305&quot;</code> oder <code>&quot;chacha20-ietf-poly1305&quot;</code></li>
 </ul>
 </li>
-<li><code>Passwort</code>: Passwort. Kann eine beliebige Zeichenfolge sein.</li>
-<li><code>udp</code> (Veraltet, benutze <code>Netzwerk</code>): <code>true</code> oder <code>false</code>, ob UDP aktiviert werden soll oder nicht. Standardwert auf <code>false</code>.</li>
-<li><code>Stufe</code>: Benutzerebene. Standard auf <code>0</code>. Siehe <a href="../policy.html">Richtlinie</a>.</li>
+<li><code>password</code>: Password. Can be any string.</li>
+<li><code>udp</code> (Deprecated, use <code>network</code>): <code>true</code> or <code>false</code>, whether or not to enable UDP. Default to <code>false</code>.</li>
+<li><code>level</code>: User level. Default to <code>0</code>. See <a href="../policy.html">Policy</a>.</li>
 <li><code>ota</code>: <code>true</code> or <code>false</code>, whether or not to enable OTA. <ul>
 <li>Wenn AEAD verwendet wird, <code>OTA</code> hat keine Auswirkung.</li>
 <li>When this entry is not specified at all, Shadowsocks inbound detects client settings and then act accordingly.</li>
 <li>When this is set to <code>true</code> (or <code>false</code>) but client is set in the other way, Shadowsocks inbound disconnects connection immediately.</li>
 </ul>
 </li>
-<li><code>network</code>: Type of network, either <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. Standard auf <code>&quot;tcp&quot;</code>.</li>
+<li><code>network</code>: Type of network, either <code>&quot;tcp&quot;</code>, <code>&quot;udp&quot;</code>, or <code>&quot;tcp,udp&quot;</code>. Default to <code>&quot;tcp&quot;</code>.</li>
 </ul>
 <h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span><span class="token string">&quot;Server&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;love@v2ray.com&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Adresse&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Port&quot;</span><span class="token punctuation">:</span> <span class="token number">1234</span><span class="token punctuation">,</span> <span class="token string">&quot;Methode&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Methode&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Passwort&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Passwort&quot;</span> <span class="token punctuation">,</span> <span class="token string">&quot;ota&quot;</span><span class="token punctuation">:</span> falsch<span class="token punctuation">,</span> <span class="token string">&quot;level&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
-<li><code>E-Mail</code>: E-Mail-Adresse. Wird zur Benutzeridentifikation verwendet.</li>
-<li><code>Adresse</code>: Adresse des Shadowsocks-Servers. Kann IPv4, IPv6 oder Dom&#xE4;ne sein.</li>
+<li><code>email</code>: Email address. Used for user identification.</li>
+<li><code>address</code>: Address of Shadowsocks server. Can be IPv4, IPv6 or domain.</li>
 <li><code>Port</code>: Port des Shadowsocks-Servers.</li>
-<li><code>Methode</code>: Verschl&#xFC;sselungsmethode Kein Standardwert Optionen sind: <ul>
+<li><code>method</code>: Encryption method. No default value. Options are: <ul>
 <li><code>&quot;aes-256-cfb&quot;</code></li>
 <li><code>&quot;aes-128-cfb&quot;</code></li>
 <li><code>&quot;chacha20&quot;</code></li>
 <li><code>&quot;chacha20-ietf&quot;</code></li>
 <li><code>&quot;aes-256-gcm&quot;</code></li>
 <li><code>&quot;aes-128-gcm&quot;</code></li>
-<li><code>&quot;chacha20-poly1305&quot;</code> oder <code>&quot;chacha20-ietf-poly1305&quot;</code></li>
+<li><code>&quot;chacha20-poly1305&quot;</code> or <code>&quot;chacha20-ietf-poly1305&quot;</code></li>
 </ul>
 </li>
-<li><code>Passwort</code>: Passwort. Kann eine beliebige Zeichenfolge sein.</li>
+<li><code>password</code>: Password. Can be any string.</li>
 <li><code>ota</code>: Ob OTA verwendet werden soll oder nicht. <ul>
-<li>Wenn AEAD verwendet wird, <code>OTA</code> hat keine Auswirkung.</li>
+<li>When AEAD is used, <code>ota</code> has no effect.</li>
 </ul>
 </li>
-<li><code>Stufe</code>: Benutzerebene.</li>
+<li><code>level</code>: User level.</li>
 </ul>
 
                                 
@@ -835,7 +854,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/shadowsocks","refen":"configuration/protocols/shadowsocks","title":"Schattensocken","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"previous":{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/shadowsocks.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

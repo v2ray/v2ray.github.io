@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Commandline · Project V Official</title>
+        <title>Befehlszeile · Project V Official</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
 function inIframe () {
@@ -33,6 +33,10 @@ window.onload = function() {
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="license.html">
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
             
                 <a href="license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="../configuration/protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_00/command.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/welcome/command.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/welcome/command.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/welcome/command.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -729,47 +749,46 @@ window.onload = function() {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="befehlszeile"><a name="befehlszeile" class="plugin-anchor" href="#befehlszeile"><i class="fa fa-link" aria-hidden="true"></i></a>Befehlszeile</h1>
-<p><a href="https://www.v2ray.com/en/welcome/command.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_00/command.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/welcome/command.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/welcome/command.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
+                                <h1 id="commandline"><a name="commandline" class="plugin-anchor" href="#commandline"><i class="fa fa-link" aria-hidden="true"></i></a>Commandline</h1>
 <h2 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h2>
-<p>V2Ray hat die folgenden Kommandozeilenparameter:</p>
+<p>V2Ray has the following commandline parameters:</p>
 <pre class="language-"><code class="lang-shell">v2ray <span class="token punctuation">[</span>-version<span class="token punctuation">]</span> <span class="token punctuation">[</span>-test<span class="token punctuation">]</span> <span class="token punctuation">[</span>-config <span class="token operator">=</span> Konfiguration.json<span class="token punctuation">]</span> <span class="token punctuation">[</span>-format <span class="token operator">=</span> json<span class="token punctuation">]</span>
 </code></pre>
-<p>Woher:</p>
+<p>Where:</p>
 <ul>
 <li><code>Version</code>: Nur die Version von V2Ray drucken und dann beenden.</li>
 <li><code>-test</code>: Konfiguration testen, Fehler ausgeben und dann beenden.</li>
 <li><code>-config</code>: URI der Konfiguration <ul>
-<li>Wenn der Wert <code>stdin:</code>, liest V2Ray die Konfiguration aus der Standardeingabe. Der Anrufer muss die Standardeingabe nach dem Schreiben der Konfiguration schlie&#xDF;en.</li>
+<li>When its value is <code>stdin:</code>, V2Ray reads configuration from standard input. Caller must close stdin after writing out configuration.</li>
 <li>When its value begins with <code>http://</code> or <code>https://</code> (lowercase), V2Ray tries to load configuration from the remote address.</li>
 <li>Wenn er nicht gesetzt ist , versucht V2Ray erste Konfiguration von laden <code>config.json</code> unter Arbeitsverzeichnis, dann aus dem Verzeichnis , das durch die Umgebungsvariable spezifiziert <code>v2ray.location.asset</code>.</li>
 </ul>
 </li>
-<li><code>-Format</code>: Konfigurationsformat Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>-Format</code>: Configuration format. Choices are: <ul>
 <li><code>JSON</code>: JSON-Format.</li>
 <li><code>Pb</code> oder <code>Protobuf</code>: Protobuf-Format.</li>
 </ul>
 </li>
 </ul>
 <h2 id="v2ctl"><a name="v2ctl" class="plugin-anchor" href="#v2ctl"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl</h2>
-<p>V2Ctl hat die folgenden Befehlszeilenparameter:</p>
+<p>V2Ctl has the following commandline parameters:</p>
 <pre class="language-"><code class="lang-shell">v2ctl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>options<span class="token operator">&gt;</span>
 </code></pre>
-<p>Verf&#xFC;gbare Befehle sind unten aufgef&#xFC;hrt. Jeder Befehl hat seine eigenen Optionen.</p>
-<h3 id="&#xFC;berpr&#xFC;fen"><a name="&#xFC;berpr&#xFC;fen" class="plugin-anchor" href="#&#xFC;berpr&#xFC;fen"><i class="fa fa-link" aria-hidden="true"></i></a>&#xDC;berpr&#xFC;fen</h3>
-<p><code>v2ctl verify [--sig = / Pfad / zu / sigfile] / file / to / verify</code></p>
-<p>Um die Signatur einer V2Ray-Bin&#xE4;rdatei zu &#xFC;berpr&#xFC;fen.</p>
-<p>Optionen:</p>
+<p>Available commands are listed below. Each command has its own options.</p>
+<h3 id="verify"><a name="verify" class="plugin-anchor" href="#verify"><i class="fa fa-link" aria-hidden="true"></i></a>Verify</h3>
+<p><code>v2ctl verify [--sig=/path/to/sigfile] /file/to/verify</code></p>
+<p>To verify the signature of a V2Ray binary.</p>
+<p>Options:</p>
 <ul>
-<li><code>sig</code>: Pfad zur Signaturdatei. Der Standardwert ist die Datei &quot;.sig&quot; f&#xFC;r den zu verifizierenden Pfad.</li>
+<li><code>sig</code>&#xFF1A;Path to signature file. Default value is the &quot;.sig&quot; file to the path to be verified.</li>
 <li>Erstes Argument: Die zu verifizierende Datei.</li>
 </ul>
 <h3 id="konfig"><a name="konfig" class="plugin-anchor" href="#konfig"><i class="fa fa-link" aria-hidden="true"></i></a>Konfig</h3>
-<p><code>v2ctl Konfiguration</code></p>
-<p>Keine Optionen. Dieser Befehl liest die Konfiguration im JSON-Format von stdin und schreibt dann die entsprechende Konfiguration im Protobuf-Format in stdout.</p>
+<p><code>v2ctl config</code></p>
+<p>No options. This command reads configuration in JSON format from stdin, and then write corresponding configuration in Protobuf format to stdout.</p>
 <h3 id="uuid"><a name="uuid" class="plugin-anchor" href="#uuid"><i class="fa fa-link" aria-hidden="true"></i></a>UUID</h3>
-<p><code>v2ctl Uuid</code></p>
-<p>Keine Optionen. Dieser Befehl druckt eine zuf&#xE4;llige UUID.</p>
+<p><code>v2ctl uuid</code></p>
+<p>No options. This command prints a random UUID.</p>
 
                                 
                                 </section>
@@ -785,7 +804,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Commandline","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-10-09T13:02:26.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Befehlszeile","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

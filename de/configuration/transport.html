@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
+            
+                <a href="../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/05_transport.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,7 +750,6 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="transporteinstellungen"><a name="transporteinstellungen" class="plugin-anchor" href="#transporteinstellungen"><i class="fa fa-link" aria-hidden="true"></i></a>Transporteinstellungen</h1>
-<p><a href="https://www.v2ray.com/en/configuration/transport.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/05_transport.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/transport.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/transport.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
 <p>Transport is for how V2Ray sends and receives data from its peers. The responsiblity of a transport is to reliably transfer data to a peer. Usually a connection has matching transports on both endpoints. For example, if a V2Ray outbound uses WebSocket as its transport, the inbound it talks to also has to use WebSocket, otherwise a connection can&apos;t be established.</p>
 <p>The transport settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration </h2>
@@ -834,30 +853,30 @@ window.onload = function() {
 <ul>
 <li><code>network</code>: Netzwerktyp des Stream-Transports. Choices are <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>, <code>&quot;http&quot;</code>, or <code>&quot;domainsocket&quot;</code>. Standardwert <code>&quot;tcp&quot;</code>.</li>
 <li><code>security</code>: Art der Sicherheit. Die Auswahlm&#xF6;glichkeiten sind <code>&quot;none&quot;</code> (Standard) f&#xFC;r keine zus&#xE4;tzliche Sicherheit oder <code>&quot;TLS&quot;</code> f&#xFC;r die Verwendung von <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
-<li><code>tlsSettings</code>: TLS-Einstellungen TLS wird von Golang bereitgestellt. Unterst&#xFC;tzung f&#xFC;r TLS 1.2 DTLS wird nicht unterst&#xFC;tzt. <ul>
+<li><code>tlsSettings</code>: TLS settings. TLS is provided by Golang. Support up to TLS 1.2. DTLS is not supported. <ul>
 <li><code>servername</code>: Servername (normalerweise Dom&#xE4;ne), der f&#xFC;r die TLS-Authentifizierung verwendet wird.</li>
-<li><code>alpn</code> (V2Ray 3.18+): Ein Array von Strings, um den ALPN-Wert im TLS-Handshake zu spezifizieren. Der Standardwert ist <code>[&quot;http / 1.1&quot;]</code>.</li>
+<li><code>alpn</code> (V2Ray 3.18+): An array of strings, to specifiy the ALPN value in TLS handshake. Default value is <code>[&quot;http/1.1&quot;]</code>.</li>
 <li><code>allowInsecure</code>: Wenn <code>true</code>, erlaubt V2Ray eine unsichere Verbindung am TLS-Client.</li>
 <li><code>allowInsecureCiphers</code> (V2Ray 3.24+): Ob wir unsichere Cipher Suites erlauben oder nicht. Standardm&#xE4;&#xDF;ig verwendet TLS nur Cipher-Suites aus der Spezifikation TLS 1.3. Aktivieren Sie diese Option, um Verschl&#xFC;sselungssammlungen mit statischen RSA-Schl&#xFC;sseln zuzulassen.</li>
-<li><code>Zertifikate</code>: Liste der TLS-Zertifikate Jeder Eintrag ist ein Zertifikat. <ul>
-<li><code>usage</code> (V2Ray 3.17+): Zweck des Zertifikats. Standardwert <code>&quot;encipherment&quot;</code>. Auswahlm&#xF6;glichkeiten sind: <ul>
+<li><code>Zertifikate</code>: List of TLS certificates. Each entry is one certificate. <ul>
+<li><code>usage</code> (V2Ray 3.17+): Purpose of the certificate. Default value <code>&quot;encipherment&quot;</code>. Choices are: <ul>
 <li><code>&quot;encipherment&quot;</code>: Zertifikat wird f&#xFC;r TLS-Authentifizierung und Verschl&#xFC;sselung verwendet.</li>
-<li><code>&quot;verify&quot;</code>: Zertifikat wird zur Validierung von TLS-Zertifikaten von Remote-Peer verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein. Derzeit wird Windows nicht unterst&#xFC;tzt.</li>
-<li><code>&quot;issue&quot;</code>: Zertifikat wird f&#xFC;r die Ausstellung anderer Zertifikate verwendet. In diesem Fall muss das Zertifikat ein CA-Zertifikat sein.</li>
+<li><code>&quot;verify&quot;</code>: Certificate is used for validating TLS certificates from remote peer. In this case, the certificate has to be a CA certificate. For now, Windows is not supported.</li>
+<li><code>&quot;issue&quot;</code>: Certificate is used for issuing other certificates. In this case, the certificate has to be a CA certificate.</li>
 </ul>
 </li>
-<li><code>certificateFile</code>: Dateipfad zum Zertifikat. Wenn das Zertifikat von OpenSSL generiert wird, endet der Pfad mit &quot;.crt&quot;.</li>
-<li><code>certificate</code> (V2Ray 3.17+): Liste der Strings als Inhalt des Zertifikats. Siehe das obige Beispiel. Entweder <code>certificate</code> oder <code>certificateFile</code> darf nicht leer sein.</li>
-<li><code>keyFile</code>: Dateipfad zum privaten Schl&#xFC;ssel. Wenn von OpenSSL generiert, endet die Datei normalerweise mit &quot;.key&quot;. Schl&#xFC;sseldatei mit Passwort wird nicht unterst&#xFC;tzt.</li>
-<li><code>key</code> (V2Ray 3.17+): Liste der Strings als Inhalt des privaten Schl&#xFC;ssels. Siehe das obige Beispiel. Entweder <code>Taste</code> oder <code>Taste</code> darf nicht leer sein.</li>
+<li><code>certificateFile</code>: File path to the certificate. If the certificate is generated by OpenSSL, the path ends with &quot;.crt&quot;.</li>
+<li><code>certificate</code> (V2Ray 3.17+): List of strings as content of the certificate. See the example above. Either <code>certificate</code> or <code>certificateFile</code> must not be empty.</li>
+<li><code>keyFile</code>: File path to the private key. If generated by OpenSSL, the file usually ends with &quot;.key&quot;. Key file with password is not supported.</li>
+<li><code>key</code> (V2Ray 3.17+): List of strings as content of the private key. See the example above. Either <code>key</code> or <code>keyFile</code> must not be empty.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>tcpSettings</code>: TCP-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy TCP-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
-<li><code>kcpSettings</code>: mKCP-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den mKCP-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
-<li><code>wsSettings</code>: WebSocket-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den WebSocket-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
-<li><code>httpSettings</code>: HTTP / 2-Transportkonfiguration f&#xFC;r den aktuellen Proxy. Nur wirksam, wenn der Proxy den HTTP / 2-Transport verwendet. Die Konfiguration ist dieselbe wie in der globalen Konfiguration.</li>
+<li><code>tcpSettings</code>: TCP transport configuration for current proxy. Effective only when the proxy uses TCP transport. Configuration is the same as it is in global configuration.</li>
+<li><code>kcpSettings</code>: mKCP transport configuration for current proxy. Effective only when the proxy uses mKCP transport. Configuration is the same as it is in global configuration.</li>
+<li><code>wsSettings</code>: WebSocket transport configuration for current proxy. Effective only when the proxy uses WebSocket transport. Configuration is the same as it is in global configuration.</li>
+<li><code>httpSettings</code>: HTTP/2 transport configuration for current proxy. Effective only when the proxy uses HTTP/2 transport. Configuration is the same as it is in global configuration.</li>
 <li><code>dsSettings</code>: Domain socket transport configuration for current proxy. Effective only when the proxy uses domain socket transport.</li>
 <li><code>sockopt</code> (V2Ray 3.40+): Socket options <ul>
 <li><code>mark</code>: An integer. If non-zero, the value will be set to outbound connections via socket option SO_MARK. Only apply on Linux and requires CAP_NET_ADMIN permission.</li>
@@ -882,7 +901,7 @@ window.onload = function() {
 </ul>
 <h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
 <ul>
-<li>Wenn <code>certificateFile</code> und <code>certificate</code> beide ausgef&#xFC;llt. V2Ray verwendet <code>certificateFile</code>. Gleiches f&#xFC;r <code>keyFile</code> und <code>key</code>.</li>
+<li>When <code>certificateFile</code> and <code>certificate</code> are both filled in. V2Ray uses <code>certificateFile</code>. Same for <code>keyFile</code> and <code>key</code>.</li>
 <li>Wenn es eine neue Client-Anfrage gibt, sagen wir f&#xFC;r <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, findet V2Ray zuerst ein Zertifikat f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Wenn V2Ray nicht gefunden wird, versucht V2Ray, ein neues Zertifikat mit einem vorhandenen Zertifikat auszustellen, dessen <code>usage</code> <code>&quot;issue&quot;</code> f&#xFC;r <code>&quot;v2ray.com&quot;</code>. Das neue Zertifikat l&#xE4;uft in einer Stunde ab und wird dem Zertifikatspool zur sp&#xE4;teren Wiederverwendung hinzugef&#xFC;gt.</li>
 <li>Wenn <code>usage</code> <code>&quot;verify&quot;</code>, k&#xF6;nnen sowohl <code>keyFile</code> als auch <code>key</code> leer sein.</li>
 <li>Verwenden Sie den Befehl <code>v2ctl cert -ca</code> , um ein neues CA-Zertifikat zu generieren.</li>
@@ -904,7 +923,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Transport","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
+            
+                <a href="../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/mux.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/mux.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/mux.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/mux.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,15 +750,14 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="multiplexen"><a name="multiplexen" class="plugin-anchor" href="#multiplexen"><i class="fa fa-link" aria-hidden="true"></i></a>Multiplexen</h1>
-<p><a href="https://www.v2ray.com/en/configuration/mux.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/mux.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/mux.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/mux.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
 <p>Multiplexing, oder Mux, verwendet eine physische TCP-Verbindung f&#xFC;r mehrere virtuelle TCP-Verbindungen. Weitere Details zur Implementierung finden Sie unter <a href="https://www.v2ray.com/eng/protocols/muxcool.html" target="_blank">Mux.Cool</a>.</p>
-<p>Aufbau:</p>
+<p>Configuration:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span><span class="token string">&quot;aktiviert&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">&quot;Nebenl&#xE4;ufigkeit&quot;</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">}</span>
 </code></pre>
-<p>Woher:</p>
+<p>Where:</p>
 <ul>
 <li><code>enabled</code>: Ob Mux aktiv ist oder nicht</li>
-<li><code>Nebenl&#xE4;ufigkeit</code>: Maximale Anzahl an virtuellen Verbindungen, die eine physische Verbindung gleichzeitig bew&#xE4;ltigen kann. Max. Wert <code>1024</code>, Mindestwert <code>1</code>, Standard <code>8</code>. <ul>
+<li><code>Nebenl&#xE4;ufigkeit</code>: Max number of virtual connections that one physical connection can handle at a time. Max value <code>1024</code>, min value <code>1</code>, default <code>8</code>. <ul>
 <li>Normalerweise m&#xFC;ssen Sie diesen Wert nicht konfigurieren.</li>
 </ul>
 </li>
@@ -759,7 +778,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mux","level":"1.2.6","depth":2,"next":{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},"previous":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/mux.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/mux","refen":"configuration/mux","title":"Mux","level":"1.2.6","depth":2,"next":{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},"previous":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/mux.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

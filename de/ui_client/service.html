@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -113,7 +117,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -165,7 +169,7 @@ window.onload = function() {
                 <a href="../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -231,7 +235,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
+            
+                <a href="../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
@@ -244,25 +261,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -386,7 +390,7 @@ window.onload = function() {
                 <a href="../configuration/protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -717,6 +721,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/ui_client/service.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/ui_client/service.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/ui_client/service.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/ui_client/service.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -727,8 +747,7 @@ window.onload = function() {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="online-dienste"><a name="online-dienste" class="plugin-anchor" href="#online-dienste"><i class="fa fa-link" aria-hidden="true"></i></a>Online Dienste</h1>
-<p><a href="https://www.v2ray.com/en/ui_client/service.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/ui_client/service.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/ui_client/service.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/ui_client/service.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
+                                <h1 id="online-services"><a name="online-services" class="plugin-anchor" href="#online-services"><i class="fa fa-link" aria-hidden="true"></i></a>Online services</h1>
 <h2 id="v2ray-bezogen"><a name="v2ray-bezogen" class="plugin-anchor" href="#v2ray-bezogen"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray bezogen</h2>
 <ul>
 <li><a href="https://htfy96.github.io/v2ray-config-gen/" target="_blank">Konfigurationsgenerator</a></li>
@@ -736,7 +755,7 @@ window.onload = function() {
 </ul>
 <h2 id="vpn"><a name="vpn" class="plugin-anchor" href="#vpn"><i class="fa fa-link" aria-hidden="true"></i></a>VPN</h2>
 <ul>
-<li><a href="http://babydriver.me/" target="_blank">BabyDriver</a>: Unterst&#xFC;tzt V2Ray. Gutscheincode: bcb518</li>
+<li><a href="http://babydriver.me/" target="_blank">BabyDriver</a>: Supports V2Ray. Coupon code: bcb518</li>
 <li><a href="https://xn--i2ru8q2qg.com/" target="_blank">&#x55B5;&#x5E15;&#x65AF;</a>: V2Ray support (beta)</li>
 <li><a href="https://xn--sjt174g.com/" target="_blank">Lanan</a>: V2Ray based VPN service. Coupon code: v2ray</li>
 <li><a href="https://dspi.io/aff.php?aff=7" target="_blank">&#x591A;&#x6570;&#x6D3E;</a>: New V2Ray based VPN service.</li>
@@ -779,7 +798,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dienstleistungen","level":"1.3.5","depth":2,"previous":{"title":"Android","level":"1.3.4","depth":2,"path":"ui_client/android.md","ref":"ui_client/android.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"ui_client/service.md","mtime":"2018-10-09T13:02:26.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"ui_client/service","refen":"ui_client/service","title":"Dienstleistungen","level":"1.3.5","depth":2,"previous":{"title":"Android","level":"1.3.4","depth":2,"path":"ui_client/android.md","ref":"ui_client/android.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"ui_client/service.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

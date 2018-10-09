@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/faq.html">
+            
+                <a href="../../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
             
                 <a href="../../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/protocols/vmess.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/protocols/vmess.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/protocols/vmess.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/protocols/vmess.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,13 +750,12 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="vmess"><a name="vmess" class="plugin-anchor" href="#vmess"><i class="fa fa-link" aria-hidden="true"></i></a>VMess</h1>
-<p><a href="https://www.v2ray.com/en/configuration/protocols/vmess.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/protocols/vmess.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/protocols/vmess.html" target="_blank"><img src="../../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/protocols/vmess.html" target="_blank"><img src="../../resources/russian.svg" alt="Russian"></a></p>
 <p><a href="https://www.v2ray.com/eng/protocols/vmess.html" target="_blank">VMess</a> is a protocol for encrypted communications. It includes both inbound and outbound proxy.</p>
 <ul>
 <li>Name: vmess</li>
-<li>Geben Sie ein: Eingehend / Ausgehend</li>
+<li>Type: Inbound / Outbound</li>
 </ul>
-<h2 id="outbound-proxy-konfiguration"><a name="outbound-proxy-konfiguration" class="plugin-anchor" href="#outbound-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound-Proxy-Konfiguration</h2>
+<h2 id="outbound-proxy-configuration"><a name="outbound-proxy-configuration" class="plugin-anchor" href="#outbound-proxy-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Outbound Proxy Configuration</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;vnext&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
@@ -754,16 +773,16 @@ window.onload = function() {
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Wo:</p>
+<p>Where:</p>
 <ul>
 <li><code>vnext</code>: Ein Array, bei dem jeder Eintrag ein Remote-Server ist <ul>
 <li><code>Adresse</code>: Serveradresse, m&#xF6;glicherweise IPv4, IPv6 oder Dom&#xE4;nenname.</li>
-<li><code>port</code>: Server-Port</li>
+<li><code>port</code>: Server port</li>
 <li><code>users</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist <ul>
 <li><code>id</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
 <li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Recommend 16. Its value must be not larger than the one in corresponding Inbound.</li>
-<li><code>level</code>: Benutzerebene. See <a href="../policy.html">Policy</a> for more detail.</li>
-<li><code>security</code>: Verschl&#xFC;sselungsmethode Optionen sind: <ul>
+<li><code>level</code>: User level. See <a href="../policy.html">Policy</a> for more detail.</li>
+<li><code>security</code>: Encryption method. Options are: <ul>
 <li><code>&quot;aes-128-gcm&quot;</code>: Recommended for PC.</li>
 <li><code>&quot;chacha20-poly1305&quot;</code>: Recommended for mobile.</li>
 <li><code>&quot;auto&quot;</code>: Default value. Use <code>aes-128-gcm</code> on AMD64, ARM64 and S390x, or <code>chacha20-poly1305</code> otherwise.</li>
@@ -775,7 +794,7 @@ window.onload = function() {
 </ul>
 </li>
 </ul>
-<h2 id="eingehende-proxy-konfiguration"><a name="eingehende-proxy-konfiguration" class="plugin-anchor" href="#eingehende-proxy-konfiguration"><i class="fa fa-link" aria-hidden="true"></i></a>Eingehende Proxy-Konfiguration</h2>
+<h2 id="inbound-proxy-configuration"><a name="inbound-proxy-configuration" class="plugin-anchor" href="#inbound-proxy-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Inbound Proxy Configuration</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;clients&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
@@ -797,7 +816,7 @@ window.onload = function() {
 </code></pre>
 <p>Where:</p>
 <ul>
-<li><code>clients</code>: Ein Array f&#xFC;r g&#xFC;ltige Benutzerkonten. Kann leer sein, wenn es f&#xFC;r die dynamische Portfunktion verwendet wird. <ul>
+<li><code>clients</code>: An array for valid user accounts. May be empty when used for dynamic port feature. <ul>
 <li>Jeder Client enth&#xE4;lt: <ul>
 <li><code>id</code>: Benutzer ID, in Form von <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
 <li><code>level</code>: User level. See <a href="../policy.html">Policy</a> for its usage.</li>
@@ -808,24 +827,24 @@ window.onload = function() {
 </ul>
 </li>
 <li><code>detour</code>: Option, um dem Kunden einen Umweg zu empfehlen. <ul>
-<li><code>bis</code>: Das Tag eines eingehenden Proxy. See <a href="../protocols.html">Overview</a>. Wenn konfiguriert, schl&#xE4;gt VMess dem Client vor, den Umweg f&#xFC;r weitere Verbindungen zu verwenden.</li>
+<li><code>to</code>: The tag of an inbound proxy. See <a href="../protocols.html">Overview</a>. If configured, VMess will suggest its client to use the detour for further connections.</li>
 </ul>
 </li>
-<li><code>default</code>: Optionale Standard-Client-Konfiguration. Wird normalerweise im Umleitungs-Proxy verwendet. <ul>
-<li><code>level</code>: Benutzerebene.</li>
-<li><code>alterId</code>: Anzahl der alternativen IDs. Standardwert 64. Recommend 16.</li>
+<li><code>default</code>: Optional default client configuration. Usually used in detour proxy. <ul>
+<li><code>level</code>: User level.</li>
+<li><code>alterId</code>: Number of alternative IDs. Default value 64. Recommend 16.</li>
 </ul>
 </li>
-<li><code>disableInsecureEncryption</code>: Forbids client for using insecure encryption methods. Wenn der Wert auf &quot;true&quot; gesetzt ist, werden die Verbindungen sofort beendet, wenn die folgende Verschl&#xFC;sselung verwendet wird. Standardwert <code>false</code>. <ul>
+<li><code>disableInsecureEncryption</code>: Forbids client for using insecure encryption methods. When set to true, connections will be terminated immediately if the following encryption is used. Default value <code>false</code>. <ul>
 <li><code>none</code></li>
 <li><code>aes-128-cfb</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="tipps"><a name="tipps" class="plugin-anchor" href="#tipps"><i class="fa fa-link" aria-hidden="true"></i></a>Tipps</h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
 <ul>
 <li>Verwenden Sie immer die Verschl&#xFC;sselungsmethode <code>&quot;auto&quot;</code> , um sicher und kompatibel zu bleiben.</li>
-<li>VMess ist abh&#xE4;ngig von der Systemzeit. Bitte stellen Sie sicher, dass Ihre Systemzeit mit der UTC-Zeit &#xFC;bereinstimmt. Zeitzone spielt keine Rolle. <ul>
+<li>VMess depends on system time. Please ensure that your system time is in sync with UTC time. Timezone doesn&apos;t matter. <ul>
 <li>Man kann den Dienst <code>ntp</code> unter Linux installieren, um die Systemzeit automatisch anzupassen.</li>
 </ul>
 </li>
@@ -846,7 +865,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/vmess","refen":"configuration/protocols/vmess","title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

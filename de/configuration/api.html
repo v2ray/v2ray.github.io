@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
+            
+                <a href="../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/api.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/api.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/api.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/api.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,9 +750,8 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="api"><a name="api" class="plugin-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>API</h1>
-<p><a href="https://www.v2ray.com/en/configuration/api.html" target="_blank"><img src="../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/api.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/api.html" target="_blank"><img src="../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/api.html" target="_blank"><img src="../resources/russian.svg" alt="Russian"></a></p>
-<p>V2Ray bietet eine API f&#xFC;r den Remotezugriff. Diese APIs basieren auf <a href="https://grpc.io/" target="_blank">GRPC</a>.</p>
-<p>Wenn die API aktiviert ist, erstellt V2Ray automatisch einen ausgehenden Proxy, der als <code>Tag</code>. Benutzer must <a href="routing.html">Route</a> alle gRPC Verbindungen zu diesem Outbound.</p>
+<p>V2Ray provides some API for remote access. These APIs are based on <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
+<p>When API is enabled, V2Ray creates an outbound proxy automatically, tagged as <code>tag</code>. User must <a href="routing.html">route</a> all gRPC connections to this outbound.</p>
 <p>Aufbau:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;api&quot;</span><span class="token punctuation">,</span>
@@ -750,7 +769,7 @@ window.onload = function() {
 </ul>
 <h2 id="unterst&#xFC;tzte-api-liste"><a name="unterst&#xFC;tzte-api-liste" class="plugin-anchor" href="#unterst&#xFC;tzte-api-liste"><i class="fa fa-link" aria-hidden="true"></i></a>Unterst&#xFC;tzte API-Liste</h2>
 <h3 id="handlerservice"><a name="handlerservice" class="plugin-anchor" href="#handlerservice"><i class="fa fa-link" aria-hidden="true"></i></a>HandlerService</h3>
-<p>API zum Manipulieren von eingehenden und ausgehenden Proxies. Folgende Funktionalit&#xE4;ten stehen zur Verf&#xFC;gung:</p>
+<p>API for manipulating inbound and outbound proxies. The following functionalities are provided:</p>
 <ul>
 <li>F&#xFC;gen Sie einen neuen eingehenden / ausgehenden Proxy hinzu.</li>
 <li>Entfernen Sie einen vorhandenen eingehenden / ausgehenden Proxy.</li>
@@ -758,7 +777,7 @@ window.onload = function() {
 <li>Entfernen Sie einen vorhandenen Benutzer von einem eingehenden Proxy (nur VMess).</li>
 </ul>
 <h3 id="loggerservice"><a name="loggerservice" class="plugin-anchor" href="#loggerservice"><i class="fa fa-link" aria-hidden="true"></i></a>LoggerService</h3>
-<p>Um den internen Logger neu zu starten. Kann mit logrotate arbeiten, um Protokolldateien zu betreiben.</p>
+<p>To restart internal logger. Can work with logrotate for operating log files.</p>
 <h3 id="statistikdienst"><a name="statistikdienst" class="plugin-anchor" href="#statistikdienst"><i class="fa fa-link" aria-hidden="true"></i></a>Statistikdienst</h3>
 <p>Unterst&#xFC;tzung f&#xFC;r interne <a href="stats.html">Statistiken</a>.</p>
 
@@ -776,7 +795,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API","level":"1.2.7","depth":2,"next":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/api","refen":"configuration/api","title":"API","level":"1.2.7","depth":2,"next":{"title":"Statistiken","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

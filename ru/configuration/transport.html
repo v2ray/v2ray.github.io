@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    История версий
+                    Version History
             
                 </a>
             
@@ -154,7 +158,7 @@ window.onload = function() {
                 <a href="../welcome/start.html">
             
                     
-                    Быстрый старт
+                    Quick Start
             
                 </a>
             
@@ -180,7 +184,7 @@ window.onload = function() {
                 <a href="../welcome/donate.html">
             
                     
-                    Пожертвование
+                    Donation
             
                 </a>
             
@@ -193,7 +197,7 @@ window.onload = function() {
                 <a href="../welcome/help.html">
             
                     
-                    Поддержка
+                    Support
             
                 </a>
             
@@ -220,7 +224,7 @@ window.onload = function() {
                 <a href="../welcome/pgp.html">
             
                     
-                    Приватное сообщение
+                    Private Communication
             
                 </a>
             
@@ -233,12 +237,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
             
-                <a href="../welcome/license.html">
+                <a href="../welcome/faq.html">
             
                     
-                    Лицензия
+                    ЧаВо
             
                 </a>
             
@@ -246,12 +250,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
-                <a target="_blank" href="https://steemit.com/@v2ray">
+                <a href="../welcome/license.html">
             
                     
-                    ↪ Блог
+                    License
             
                 </a>
             
@@ -261,10 +265,10 @@ window.onload = function() {
     
         <li class="chapter " data-level="1.1.10" >
             
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
+                <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
-                    ↪ Перевести
+                    Блог ↪
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/05_transport.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/transport.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,7 +750,6 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="transport-settings"><a name="transport-settings" class="plugin-anchor" href="#transport-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Transport Settings</h1>
-<p><a href="https://www.v2ray.com/en/configuration/transport.html" target="_blank"><img src="../resources/english.svg" alt="&#x410;&#x43D;&#x433;&#x43B;&#x438;&#x439;&#x441;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/chapter_02/05_transport.html" target="_blank"><img src="../resources/chinese.svg" alt="&#x41A;&#x438;&#x442;&#x430;&#x439;&#x441;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/de/configuration/transport.html" target="_blank"><img src="../resources/german.svg" alt="&#x41D;&#x435;&#x43C;&#x435;&#x446;&#x43A;&#x438;&#x439;"></a> <a href="https://www.v2ray.com/ru/configuration/transport.html" target="_blank"><img src="../resources/russian.svg" alt="&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;"></a></p>
 <p>Transport is for how V2Ray sends and receives data from its peers. The responsiblity of a transport is to reliably transfer data to a peer. Usually a connection has matching transports on both endpoints. For example, if a V2Ray outbound uses WebSocket as its transport, the inbound it talks to also has to use WebSocket, otherwise a connection can&apos;t be established.</p>
 <p>The transport settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration </h2>
@@ -904,7 +923,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-09T13:02:26.272Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:56.825Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-09T14:01:21.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:52.491Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

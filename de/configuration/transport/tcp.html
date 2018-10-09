@@ -35,6 +35,10 @@ window.onload = function() {
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
         
 
     
@@ -115,7 +119,7 @@ window.onload = function() {
                 <a href="../../welcome/versions.html">
             
                     
-                    Versionsgeschichte
+                    Version History
             
                 </a>
             
@@ -167,7 +171,7 @@ window.onload = function() {
                 <a href="../../welcome/command.html">
             
                     
-                    Commandline
+                    Befehlszeile
             
                 </a>
             
@@ -233,7 +237,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.8" data-path="../../welcome/license.html">
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/faq.html">
+            
+                <a href="../../welcome/faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
             
                 <a href="../../welcome/license.html">
             
@@ -246,25 +263,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" >
+        <li class="chapter " data-level="1.1.10" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
                     Blog↪
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
-            
-                <a target="_blank" href="https://crowdin.com/project/v2ray">
-            
-                    
-                    Translate↪
             
                 </a>
             
@@ -388,7 +392,7 @@ window.onload = function() {
                 <a href="../protocols/shadowsocks.html">
             
                     
-                    Shadowsocks
+                    Schattensocken
             
                 </a>
             
@@ -719,6 +723,22 @@ window.onload = function() {
     
 
     
+    <a class="btn pull-left" href="https://www.v2ray.com/chapter_02/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/en/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/de/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://www.v2ray.com/ru/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -730,16 +750,15 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="tcp-transport"><a name="tcp-transport" class="plugin-anchor" href="#tcp-transport"><i class="fa fa-link" aria-hidden="true"></i></a>TCP-Transport</h1>
-<p><a href="https://www.v2ray.com/en/configuration/transport/tcp.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a> <a href="https://www.v2ray.com/chapter_02/transport/tcp.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a> <a href="https://www.v2ray.com/de/configuration/transport/tcp.html" target="_blank"><img src="../../resources/german.svg" alt="German"></a> <a href="https://www.v2ray.com/ru/configuration/transport/tcp.html" target="_blank"><img src="../../resources/russian.svg" alt="Russian"></a></p>
-<p>Aufbau:</p>
+<p>Configuration:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span><span class="token string">&quot;Kopfzeile&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">&quot;Typ&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;keine&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
 </code></pre>
-<p>Woher:</p>
+<p>Where:</p>
 <ul>
-<li><code>Header</code>: Kopfzeilenverschleierung Einstellungen: <ul>
-<li><code>Art</code>: Art der Verschleierung Auswahlm&#xF6;glichkeiten sind: <ul>
-<li><code>&quot;keine&quot;</code>: Standard. Keine Verschleierung.</li>
-<li><code>&quot;http&quot;</code>: HTTP-Verschleierung. Siehe unten.</li>
+<li><code>header</code>: Kopfzeilenverschleierung Einstellungen: <ul>
+<li><code>type</code>: Type of obfuscation. Choices are: <ul>
+<li><code>&quot;none&quot;</code>: Default. No obfuscation at all.</li>
+<li><code>&quot;http&quot;</code>: HTTP obfuscation. See below.</li>
 </ul>
 </li>
 </ul>
@@ -755,15 +774,15 @@ window.onload = function() {
 <li><code>anfordern</code>: HTTP-Anfrageeinstellungen: <ul>
 <li><code>Version</code>: HTTP-Version, Standardwert <code>&quot;1.1&quot;</code></li>
 <li><code>Methode</code>: HTTP-Methode, Standardwert <code>&quot;GET&quot;</code>.</li>
-<li><code>Pfad</code>: Pfad. Ein String-Array. Der Standardwert ist <code>[&quot;/&quot;]</code>. Wenn mehrere Werte vorhanden sind, wird der Wert f&#xFC;r jede Anforderung zuf&#xE4;llig ausgew&#xE4;hlt.</li>
+<li><code>path</code>: Path. A string array. Default value is <code>[&quot;/&quot;]</code>. When there are multiple values, value is picked up randomly for each request.</li>
 <li><code>Header</code>: HTTP-Header. Es ist ein Schl&#xFC;sselwertpaar. Jeder Schl&#xFC;ssel ist der Schl&#xFC;ssel des HTTP-Headers und der Wert ist der Wert des HTTP-Headers. Wenn mehrere Werte festgelegt sind, wird der effektive Wert f&#xFC;r jede Anforderung zuf&#xE4;llig ausgew&#xE4;hlt. Die Standardeinstellungen sind die gleichen wie im obigen Beispiel.</li>
 </ul>
 </li>
-<li><code>Antwort</code>: HTTP-Antwort <ul>
-<li><code>Version</code>: HTTP-Version. Standardwert ist <code>&quot;1.1&quot;</code>.</li>
-<li><code>Status</code>: HTTP-Status. Standardwert ist <code>&quot;200&quot;</code>.</li>
-<li><code>Grund</code>: HTTP-Statustext. Standardwert ist <code>&quot;OK&quot;</code>.</li>
-<li><code>Header</code>: HTTP-Header. Wie Anforderungsheader, aber f&#xFC;r die Antwort.</li>
+<li><code>response</code>: HTTP-Antwort <ul>
+<li><code>version</code>: HTTP version. Default value is <code>&quot;1.1&quot;</code>.</li>
+<li><code>status</code>: HTTP status. Default value is <code>&quot;200&quot;</code>.</li>
+<li><code>reason</code>: HTTP status text. Default value is <code>&quot;OK&quot;</code>.</li>
+<li><code>headers</code>: HTTP header. Same as request headers, but for response.</li>
 </ul>
 </li>
 </ul>
@@ -782,7 +801,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.9.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-10-09T13:02:26.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T13:03:42.737Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/tcp","refen":"configuration/transport/tcp","title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"previous":{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.9.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/transport/tcp.md","mtime":"2018-10-09T14:01:21.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T14:02:38.300Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
