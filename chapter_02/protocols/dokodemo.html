@@ -979,40 +979,40 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <p>&#x914D;&#x7F6E; iptables&#xFF1A;</p>
-<pre class="language-"><code class="lang-plain"><span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Create new chain</span>
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>N V2RAY
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>N V2RAY
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>N V2RAY_MARK</span>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># Create new chain</span>
+iptables -t nat -N V2RAY
+iptables -t mangle -N V2RAY
+iptables -t mangle -N V2RAY_MARK
 
-<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Ignore your V2Ray server&apos;s addresses</span>
-<span class="token list"><span class="token punctuation">#</span> It&apos;s very IMPORTANT, just be careful.</span>
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 123.123.123.123 </span><span class="token punctuation">-</span></span>j RETURN</span>
+<span class="token comment"># Ignore your V2Ray server&apos;s addresses</span>
+<span class="token comment"># It&apos;s very IMPORTANT, just be careful.</span>
+iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
 
-<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Ignore LANs and any other addresses you&apos;d like to bypass the proxy</span>
-<span class="token list"><span class="token punctuation">#</span> See Wikipedia and RFC5735 for full list of reserved networks.</span>
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 0.0.0.0/8 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 10.0.0.0/8 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 127.0.0.0/8 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 169.254.0.0/16 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 172.16.0.0/12 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 192.168.0.0/16 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 224.0.0.0/4 </span><span class="token punctuation">-</span></span>j RETURN
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">d 240.0.0.0/4 </span><span class="token punctuation">-</span></span>j RETURN</span>
+<span class="token comment"># Ignore LANs and any other addresses you&apos;d like to bypass the proxy</span>
+<span class="token comment"># See Wikipedia and RFC5735 for full list of reserved networks.</span>
+iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
-<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Anything else should be redirected to Dokodemo-door&apos;s local port</span>
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">p tcp </span><span class="token punctuation">-</span></span>j REDIRECT <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">-to</span><span class="token punctuation">-</span></span>ports 12345</span>
+<span class="token comment"># Anything else should be redirected to Dokodemo-door&apos;s local port</span>
+iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 
-<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Add any UDP rules</span>
-root@Wrt:~# ip route add local default dev lo table 100
-root@Wrt:~# ip rule add fwmark 1 lookup 100
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>A V2RAY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">p udp </span><span class="token punctuation">-</span></span><span class="token inline"><span class="token punctuation">-</span><span class="token deleted">dport 53 </span><span class="token punctuation">-</span></span>j TPROXY <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">-on</span><span class="token punctuation">-</span></span>port 12345 <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">-tproxy</span><span class="token punctuation">-</span></span>mark 0x01/0x01
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>A V2RAY_MARK <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">p udp </span><span class="token punctuation">-</span></span><span class="token inline"><span class="token punctuation">-</span><span class="token deleted">dport 53 </span><span class="token punctuation">-</span></span>j MARK <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">-set</span><span class="token punctuation">-</span></span>mark 1</span>
+<span class="token comment"># Add any UDP rules</span>
+ip route add local default dev lo table 100
+ip rule add fwmark 1 lookup 100
+iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
+iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
-<span class="token phrase"><span class="token list"><span class="token punctuation">#</span> Apply the rules</span>
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t nat </span><span class="token punctuation">-</span></span>A OUTPUT <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">p tcp </span><span class="token punctuation">-</span></span>j V2RAY
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>A PREROUTING -j V2RAY
-root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">-</span><span class="token deleted">t mangle </span><span class="token punctuation">-</span></span>A OUTPUT -j V2RAY_MARK
-</span></code></pre>
+<span class="token comment"># Apply the rules</span>
+iptables -t nat -A OUTPUT -p tcp -j V2RAY
+iptables -t mangle -A PREROUTING -j V2RAY
+iptables -t mangle -A OUTPUT -j V2RAY_MARK
+</code></pre>
 
                                 
                                 </section>
@@ -1028,7 +1028,7 @@ root@Wrt:~# iptables <span class="token inline"><span class="token punctuation">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/dokodemo","refen":"configuration/protocols/dokodemo","title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"chapter_02/protocols/blackhole.md","ref":"chapter_02/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2018-10-09T18:01:35.612Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T18:02:20.783Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/dokodemo","refen":"configuration/protocols/dokodemo","title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"chapter_02/protocols/blackhole.md","ref":"chapter_02/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2018-10-09T21:02:21.873Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-09T21:03:12.573Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
