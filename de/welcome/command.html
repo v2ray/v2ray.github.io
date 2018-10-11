@@ -726,10 +726,10 @@ window.onload = function() {
 <ul>
 <li><code>Version</code>: Nur die Version von V2Ray drucken und dann beenden.</li>
 <li><code>-test</code>: Konfiguration testen, Fehler ausgeben und dann beenden.</li>
-<li><code>-config</code>: URI der Konfiguration <ul>
-<li>When its value is <code>stdin:</code>, V2Ray reads configuration from standard input. Caller must close stdin after writing out configuration.</li>
-<li>When its value begins with <code>http://</code> or <code>https://</code> (lowercase), V2Ray tries to load configuration from the remote address.</li>
-<li>Wenn er nicht gesetzt ist , versucht V2Ray erste Konfiguration von laden <code>config.json</code> unter Arbeitsverzeichnis, dann aus dem Verzeichnis , das durch die Umgebungsvariable spezifiziert <code>v2ray.location.asset</code>.</li>
+<li><code>-config</code>: URI of the configuration. Avilable formats are: <ul>
+<li>Path to the local config file. May be a relative path or absolute path.</li>
+<li><code>&quot;stdin:&quot;</code>: Indicates V2Ray to read configuration from standard input. Caller must close stdin after writing out configuration.</li>
+<li>Value begins with <code>http://</code> or <code>https://</code> (lowercase): V2Ray tries to load configuration from the remote address.</li>
 </ul>
 </li>
 <li><code>-Format</code>: Configuration format. Choices are: <ul>
@@ -738,6 +738,8 @@ window.onload = function() {
 </ul>
 </li>
 </ul>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p> When <code>-config</code> is not specified, V2Ray first tries to load configuration from <code>config.json</code> under working directory, then from the directory specified by <a href="../configuration/env.html">environment variable</a> <code>v2ray.location.asset</code>. </p>
+</div></div></p>
 <h2 id="v2ctl"><a name="v2ctl" class="plugin-anchor" href="#v2ctl"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl</h2>
 <p>V2Ctl has the following commandline parameters:</p>
 <pre class="language-"><code class="lang-shell">v2ctl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>options<span class="token operator">&gt;</span>
@@ -772,7 +774,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Befehlszeile","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-10-11T14:01:29.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-11T14:02:46.021Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Befehlszeile","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-10-11T20:01:27.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-11T20:02:45.974Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
