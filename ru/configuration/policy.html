@@ -125,7 +125,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Version History
+                    История версий
             
                 </a>
             
@@ -164,7 +164,7 @@ window.onload = function() {
                 <a href="../welcome/start.html">
             
                     
-                    Quick Start
+                    Быстрый старт
             
                 </a>
             
@@ -190,7 +190,7 @@ window.onload = function() {
                 <a href="../welcome/donate.html">
             
                     
-                    Donation
+                    Пожертвование
             
                 </a>
             
@@ -203,7 +203,7 @@ window.onload = function() {
                 <a href="../welcome/help.html">
             
                     
-                    Support
+                    Поддержка
             
                 </a>
             
@@ -229,7 +229,7 @@ window.onload = function() {
                 <a href="../welcome/license.html">
             
                     
-                    License
+                    Лицензия
             
                 </a>
             
@@ -724,8 +724,8 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F;-&#x43F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430;"><a name="&#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F;-&#x43F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430;" class="plugin-anchor" href="#&#x43B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F;-&#x43F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430;</h1>
-<p>Local policy manages settings of current V2Ray instance, such as connection timeouts. The policys can be applied to each user level, or the whole system.</p>
-<p>Configuration:</p>
+<p>&#x41B;&#x43E;&#x43A;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x43F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x430; &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x430;&#x43C;&#x438; V2Ray, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440; &#x432;&#x440;&#x435;&#x43C;&#x435;&#x43D;&#x435;&#x43C; &#x43E;&#x436;&#x438;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x434;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F;. &#x41F;&#x43E;&#x43B;&#x438;&#x442;&#x438;&#x43A;&#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x43D;&#x44F;&#x442;&#x44C;&#x441;&#x44F; &#x43A; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x43E;&#x43C;&#x443; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x44E; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x435;&#x439; &#x438;&#x43B;&#x438; &#x434;&#x43B;&#x44F; &#x432;&#x441;&#x435;&#x439; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B;.</p>
+<p>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F;:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;levels&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;0&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -743,13 +743,13 @@ window.onload = function() {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
-<li><code>level</code>: A list of key value pairs. Each key is a string of integer (restricted by JSON), such as <code>&quot;0&quot;</code>, <code>&quot;1&quot;</code>, etc. The numeric value is for a certain user level. Each value has the following attributes: <ul>
-<li><code>handshake</code>: Timeout for establishing a connection, in seconds. Default value <code>4</code>.</li>
-<li><code>connIdle</code>: Timeout for idle connections, in seconds. Default value <code>300</code>.</li>
-<li><code>uplinkOnly</code>: Time for keeping connections open after the uplink of the connection is closed, in seconds. Default value <code>2</code>.</li>
-<li><code>downlinkOnly</code>: Time for keeping connections open after the downlink of the connection is closed, in seconds. Default value <code>5</code>.</li>
+<li><code>level</code>: &#x410;&#x441;&#x441;&#x43E;&#x446;&#x438;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x439; &#x43C;&#x430;&#x441;&#x441;&#x438;&#x432;, &#x43F;&#x430;&#x440;&#x44B; &#x43A;&#x43B;&#x44E;&#x447;-&#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;. &#x41A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x43A;&#x43B;&#x44E;&#x447; &#x2014; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x430; &#x441; &#x446;&#x435;&#x43B;&#x44B;&#x43C; &#x447;&#x438;&#x441;&#x43B;&#x43E;&#x43C; (&#x44D;&#x442;&#x43E; &#x43E;&#x433;&#x440;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x43D;&#x438;&#x44F; JSON), &#x442;&#x438;&#x43F;&#x430; <code>&quot;0&quot;</code>, <code>&quot;1&quot;</code>&#x438; &#x442;.&#x434;. &#x427;&#x438;&#x441;&#x43B;&#x43E;&#x432;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x2014; &#x44D;&#x442;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x438;&#x439; &#x443;&#x440;&#x43E;&#x432;&#x435;&#x43D;&#x44C;. &#x41A;&#x430;&#x436;&#x434;&#x43E;&#x435; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x430;&#x442;&#x440;&#x438;&#x431;&#x443;&#x442;&#x44B;: <ul>
+<li><code>handshake</code>: &#x422;&#x430;&#x439;&#x43C;&#x430;&#x443;&#x442; &#x43D;&#x430; &#x443;&#x441;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;, &#x432; &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x430;&#x445;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>4</code>.</li>
+<li><code>connIdle</code>: &#x422;&#x430;&#x439;&#x43C;&#x430;&#x443;&#x442; &#x434;&#x43B;&#x44F; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x430;&#x438;&#x432;&#x430;&#x44E;&#x449;&#x438;&#x445; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x439;, &#x432; &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x430;&#x445;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>300</code>.</li>
+<li><code>uplinkOnly</code>: &#x412;&#x440;&#x435;&#x43C;&#x44F; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x44F; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;, &#x432; &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x430;&#x445;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>2</code>.</li>
+<li><code>downlinkOnly</code>: &#x412;&#x440;&#x435;&#x43C;&#x44F; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x430;&#x43D;&#x438;&#x44F; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x43F;&#x43E;&#x441;&#x43B;&#x435; &#x437;&#x430;&#x43A;&#x440;&#x44B;&#x442;&#x438;&#x44F; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F;, &#x432; &#x441;&#x435;&#x43A;&#x443;&#x43D;&#x434;&#x430;&#x445;. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; <code>5</code>.</li>
 <li><code>statsUserUplink</code>: When set to <code>true</code>, V2Ray enables stat counter to uplink traffic for all users in this level.</li>
 <li><code>statsUserDownlink</code>: When set to <code>true</code>, V2Ray enables stat counter to downlink traffic for all users in this level.</li>
 <li><code>bufferSize</code> (V2Ray 3.24+): Size of internal buffer per connection, in kilo-bytes. Default value is <code>10240</code>. When it is set to <code>0</code>, the internal buffer is disabled.</li>
@@ -768,7 +768,7 @@ window.onload = function() {
 <li>After client (browser) closes the uplink of the connection, V2Ray aborts the connection after <code>downlinkOnly</code> time.</li>
 <li>After remote (server) closes the downlink of the connection, V2Ray aborts the connection after <code>uplinkOnly</code> times.</li>
 </ol>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x417;&#x430;&#x43C;&#x435;&#x447;&#x430;&#x43D;&#x438;&#x44F; </h2>
 <ul>
 <li>Each inbound and outbound connection can apply a user level. V2Ray applies corresponding policy based on user level.</li>
 <li><code>bufferSize</code> overrides <code>v2ray.ray.buffer.size</code> settings in <a href="env.html#cache-size-per-connection">env variables</a>.</li>
@@ -788,7 +788,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Правила","level":"1.2.3","depth":2,"next":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-10-20T09:01:05.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T09:02:38.479Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Правила","level":"1.2.3","depth":2,"next":{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-10-20T17:01:22.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T17:02:55.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

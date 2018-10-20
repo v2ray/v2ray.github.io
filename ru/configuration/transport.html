@@ -125,7 +125,7 @@ window.onload = function() {
                 <a href="../welcome/versions.html">
             
                     
-                    Version History
+                    История версий
             
                 </a>
             
@@ -164,7 +164,7 @@ window.onload = function() {
                 <a href="../welcome/start.html">
             
                     
-                    Quick Start
+                    Быстрый старт
             
                 </a>
             
@@ -190,7 +190,7 @@ window.onload = function() {
                 <a href="../welcome/donate.html">
             
                     
-                    Donation
+                    Пожертвование
             
                 </a>
             
@@ -203,7 +203,7 @@ window.onload = function() {
                 <a href="../welcome/help.html">
             
                     
-                    Support
+                    Поддержка
             
                 </a>
             
@@ -229,7 +229,7 @@ window.onload = function() {
                 <a href="../welcome/license.html">
             
                     
-                    License
+                    Лицензия
             
                 </a>
             
@@ -723,7 +723,7 @@ window.onload = function() {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="transport-settings"><a name="transport-settings" class="plugin-anchor" href="#transport-settings"><i class="fa fa-link" aria-hidden="true"></i></a>Transport Settings</h1>
+                                <h1 id="&#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B;-&#x442;&#x440;&#x430;&#x43D;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430;"><a name="&#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B;-&#x442;&#x440;&#x430;&#x43D;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430;" class="plugin-anchor" href="#&#x43F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B;-&#x442;&#x440;&#x430;&#x43D;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x442;&#x440;&#x430;&#x43D;&#x441;&#x43F;&#x43E;&#x440;&#x442;&#x430;</h1>
 <p>Transport is for how V2Ray sends and receives data from its peers. The responsiblity of a transport is to reliably transfer data to a peer. Usually a connection has matching transports on both endpoints. For example, if a V2Ray outbound uses WebSocket as its transport, the inbound it talks to also has to use WebSocket, otherwise a connection can&apos;t be established.</p>
 <p>The transport settings devides into two parts: global settings and per proxy settings. Per-proxy settings specifies how each individual proxy handles its data, while global settings is for all proxies. Usually the inbound and outbound proxies between the connecting peer must have the same transport settings. When a proxy has no transport settings, the global settings applies.</p>
 <h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>Global Configuration </h2>
@@ -736,7 +736,7 @@ window.onload = function() {
   <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
 <li><code>tcpSettings</code>: Settings for <a href="transport/tcp.html">TCP transport</a>.</li>
 <li><code>kcpSettings</code>: Settings for <a href="transport/mkcp.html">mKCP transport</a>.</li>
@@ -823,7 +823,7 @@ window.onload = function() {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<p>&#x413;&#x434;&#x435;:</p>
 <ul>
 <li><code>network</code>: Network type of the stream transport. Choices are <code>&quot;tcp&quot;</code>, <code>&quot;kcp&quot;</code>, <code>&quot;ws&quot;</code>, <code>&quot;http&quot;</code>, or <code>&quot;domainsocket&quot;</code>. Default value <code>&quot;tcp&quot;</code>.</li>
 <li><code>security</code>: Type of security. Choices are <code>&quot;none&quot;</code> (default) for no extra security, or <code>&quot;tls&quot;</code> for using <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</li>
@@ -873,7 +873,7 @@ window.onload = function() {
 </ul>
 </li>
 </ul>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
+<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x417;&#x430;&#x43C;&#x435;&#x447;&#x430;&#x43D;&#x438;&#x44F; </h2>
 <ul>
 <li>When <code>certificateFile</code> and <code>certificate</code> are both filled in. V2Ray uses <code>certificateFile</code>. Same for <code>keyFile</code> and <code>key</code>.</li>
 <li>When there is a new client request, say for <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, V2Ray will find a certificate for <code>&quot;v2ray.com&quot;</code> first. If not found, V2Ray will try to issue a new certificate using any existing certificate whose <code>usage</code> is <code>&quot;issue&quot;</code> for <code>&quot;v2ray.com&quot;</code>. The new certificate expires in one hour, and will be added to certificate pool for later reuse.</li>
@@ -897,7 +897,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-20T09:01:05.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T09:02:38.479Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Доставка","level":"1.2.9","depth":2,"next":{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-10-20T17:01:22.545Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T17:02:55.251Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
