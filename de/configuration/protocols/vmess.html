@@ -747,11 +747,11 @@ window.onload = function() {
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<p>Wo:</p>
 <ul>
 <li><code>vnext</code>: Ein Array, bei dem jeder Eintrag ein Remote-Server ist <ul>
 <li><code>Adresse</code>: Serveradresse, m&#xF6;glicherweise IPv4, IPv6 oder Dom&#xE4;nenname.</li>
-<li><code>port</code>: Server port</li>
+<li><code>port</code>: Server-Port</li>
 <li><code>users</code>: Ein Array, bei dem jeder Eintrag ein VMess-Benutzer ist <ul>
 <li><code>id</code>: Benutzer-ID in Form einer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</li>
 <li><code>alterId</code>: Anzahl der alternativen IDs. Die alternativen IDs werden deterministisch generiert. Standard auf 0. Maximal 65535. Recommend 16. Its value must be not larger than the one in corresponding Inbound.</li>
@@ -760,7 +760,7 @@ window.onload = function() {
 <li><code>&quot;aes-128-gcm&quot;</code>: Recommended for PC.</li>
 <li><code>&quot;chacha20-poly1305&quot;</code>: Recommended for mobile.</li>
 <li><code>&quot;auto&quot;</code>: Default value. Use <code>aes-128-gcm</code> on AMD64, ARM64 and S390x, or <code>chacha20-poly1305</code> otherwise.</li>
-<li><code>&quot;none&quot;</code>: Traffic is not encrypted at all.</li>
+<li><code>&quot;none&quot;</code>: Der Verkehr ist &#xFC;berhaupt nicht verschl&#xFC;sselt.</li>
 </ul>
 </li>
 </ul>
@@ -788,7 +788,7 @@ window.onload = function() {
   <span class="token string">&quot;disableInsecureEncryption&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<p>Wo:</p>
 <ul>
 <li><code>clients</code>: An array for valid user accounts. May be empty when used for dynamic port feature. <ul>
 <li>Jeder Client enth&#xE4;lt: <ul>
@@ -805,7 +805,7 @@ window.onload = function() {
 </ul>
 </li>
 <li><code>default</code>: Optional default client configuration. Usually used in detour proxy. <ul>
-<li><code>level</code>: User level.</li>
+<li><code>level</code>: Benutzerebene.</li>
 <li><code>alterId</code>: Number of alternative IDs. Default value 64. Recommend 16.</li>
 </ul>
 </li>
@@ -839,7 +839,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/vmess","refen":"configuration/protocols/vmess","title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-10-22T11:01:16.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-22T11:02:34.960Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/vmess","refen":"configuration/protocols/vmess","title":"VMess","level":"1.2.2.8","depth":3,"next":{"title":"Politik","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"previous":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"configuration/protocols/vmess.md","mtime":"2018-10-22T14:01:11.117Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-22T14:02:31.016Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
