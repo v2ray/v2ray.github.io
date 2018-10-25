@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -72,8 +81,6 @@ if (inIframe() || !isValidDomain()) {
     <link rel="next" href="overview.html" />
     
     
-    <link rel="prev" href="../welcome/license.html" />
-    
 
     </head>
     <body>
@@ -102,7 +109,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Welcome to V2Ray
+                    Project V
             
                 </a>
             
@@ -150,7 +157,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../welcome/command.html">
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/start.html">
+            
+                <a href="../welcome/start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/command.html">
             
                 <a href="../welcome/command.html">
             
@@ -163,7 +183,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../welcome/donate.html">
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/donate.html">
             
                 <a href="../welcome/donate.html">
             
@@ -176,7 +196,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="../welcome/help.html">
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/help.html">
             
                 <a href="../welcome/help.html">
             
@@ -187,15 +207,14 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="1.1.6.1" data-path="../welcome/tg.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
             
-                <a href="../welcome/tg.html">
+                <a href="../welcome/faq.html">
             
                     
-                    Telegram
+                    FAQ
             
                 </a>
             
@@ -203,30 +222,25 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="../welcome/pgp.html">
-            
-                <a href="../welcome/pgp.html">
-            
-                    
-                    Private Communication
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
                     
                     License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
             
                 </a>
             
@@ -319,7 +333,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="protocols/http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="protocols/mtproto.html">
+            
+                <a href="protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="protocols/http.html">
             
                 <a href="protocols/http.html">
             
@@ -332,7 +359,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="protocols/shadowsocks.html">
             
                 <a href="protocols/shadowsocks.html">
             
@@ -345,7 +372,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="protocols/socks.html">
             
                 <a href="protocols/socks.html">
             
@@ -358,7 +385,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="protocols/vmess.html">
             
                 <a href="protocols/vmess.html">
             
@@ -520,6 +547,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="transport/domainsocket.html">
+            
+                <a href="transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -654,11 +694,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Configuration</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/chapter_02/index.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/configuration/index.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/configuration/index.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/configuration/index.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -670,19 +722,19 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>Configuration</h1>
-<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
-<p>V2Ray uses configuration file in JSON format. If you are familiar with JSON, you may skip this page.</p>
+<p>V2Ray uses <a href="https://developers.google.com/protocol-buffers/" target="_blank">protobuf</a>-based configuration. Due the low readability of protobuf format, V2Ray also supports configuration in JSON. Before V2Ray runs, it automatically converts JSON config into protobuf. That being said, other configuration formats may be introduced in the furture.</p>
+<p>Here we introduce the JSON-based configuration.</p>
 <p>JSON, or <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation</a>, in short is objects in Javascript. One JSON file contains one and only one JSON object, beginning with &quot;{&quot; and ending with &quot;}&quot;.</p>
 <p>A JSON object contains a list of key value pairs. A key is a string, and a value may be various of types, such as string, number, boolean, array or another object. A typical object is like below:</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;stringValue&quot;</span>: <span class="hljs-string">&quot;This is a string.&quot;</span>,
-  <span class="hljs-string">&quot;numberValue&quot;</span>: <span class="hljs-number">42</span>,
-  <span class="hljs-string">&quot;boolValue&quot;</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-string">&quot;arrayValue&quot;</span>: [<span class="hljs-string">&quot;this&quot;</span>, <span class="hljs-string">&quot;is&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;string&quot;</span>, <span class="hljs-string">&quot;array&quot;</span>],
-  <span class="hljs-string">&quot;objectValue&quot;</span>: {
-    <span class="hljs-string">&quot;another&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
-  }
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;stringValue&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;This is a string.&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;numberValue&quot;</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;boolValue&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;arrayValue&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;this&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;is&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;array&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;objectValue&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;another&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;object&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Notice:</p>
 <ol>
@@ -698,25 +750,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="../welcome/license.html" class="navigation navigation-prev " aria-label="Previous page: License">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="overview.html" class="navigation navigation-next " aria-label="Next page: Overview">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.2","depth":1,"next":{"title":"Overview","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},"previous":{"title":"License","level":"1.1.7","depth":2,"path":"welcome/license.md","ref":"welcome/license.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/README.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/index","refen":"configuration/index","title":"Configuration","level":"1.2","depth":1,"next":{"title":"Overview","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},"previous":{"title":"Blog↪","level":"1.1.10","depth":2,"url":"https://steemit.com/@v2ray","ref":"https://steemit.com/@v2ray","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/README.md","mtime":"2018-10-24T18:01:20.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:24.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -726,23 +766,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -187,25 +196,6 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.6.1" data-path="../../chapter_00/cpu.html">
-            
-                <a href="../../chapter_00/cpu.html">
-            
-                    
-                    贡献你的 CPU
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.1.7" data-path="../../chapter_00/help.html">
@@ -218,38 +208,6 @@ if (inIframe() || !isValidDomain()) {
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.7.1" data-path="../../chapter_00/tg.html">
-            
-                <a href="../../chapter_00/tg.html">
-            
-                    
-                    Telegram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7.2" data-path="../../chapter_00/pgp.html">
-            
-                <a href="../../chapter_00/pgp.html">
-            
-                    
-                    私下联系
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -403,7 +361,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="../protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.5" data-path="../protocols/mtproto.html">
+            
+                <a href="../protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../protocols/shadowsocks.html">
             
                 <a href="../protocols/shadowsocks.html">
             
@@ -416,7 +387,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="../protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../protocols/socks.html">
             
                 <a href="../protocols/socks.html">
             
@@ -429,7 +400,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="../protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="../protocols/vmess.html">
             
                 <a href="../protocols/vmess.html">
             
@@ -591,6 +562,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="domainsocket.html">
+            
+                <a href="domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -698,12 +682,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../../chapter_03/">
+        <li class="chapter " data-level="1.4" data-path="../../developer/">
             
-                <a href="../../chapter_03/">
+                <a href="../../developer/">
             
                     
-                    进阶使用
+                    开发人员手册
             
                 </a>
             
@@ -712,12 +696,12 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../../chapter_03/00_dynport.html">
+        <li class="chapter " data-level="1.4.1" data-path="../../developer/intro/roadmap.html">
             
-                <a href="../../chapter_03/00_dynport.html">
+                <a href="../../developer/intro/roadmap.html">
             
                     
-                    动态端口
+                    开发计划
             
                 </a>
             
@@ -725,12 +709,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../../chapter_03/01_effective.html">
+        <li class="chapter " data-level="1.4.2" data-path="../../developer/intro/guide.html">
             
-                <a href="../../chapter_03/01_effective.html">
+                <a href="../../developer/intro/guide.html">
             
                     
-                    Effective V2Ray
+                    开发指引
             
                 </a>
             
@@ -738,12 +722,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../../chapter_03/kcp.html">
+        <li class="chapter " data-level="1.4.3" data-path="../../developer/intro/design.html">
             
-                <a href="../../chapter_03/kcp.html">
+                <a href="../../developer/intro/design.html">
             
                     
-                    mKCP
+                    核心设计
             
                 </a>
             
@@ -751,12 +735,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../../chapter_03/outboundproxy.html">
+        <li class="chapter " data-level="1.4.4" data-path="../../developer/intro/compile.html">
             
-                <a href="../../chapter_03/outboundproxy.html">
+                <a href="../../developer/intro/compile.html">
             
                     
-                    传出代理
+                    配置开发环境
             
                 </a>
             
@@ -764,12 +748,52 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../../chapter_03/speed.html">
+        <li class="chapter " data-level="1.4.5" >
             
-                <a href="../../chapter_03/speed.html">
+                <span>
             
                     
-                    速度测试
+                    协议细节
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../developer/protocols/vmess.html">
+            
+                <a href="../../developer/protocols/vmess.html">
+            
+                    
+                    VMess 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../developer/protocols/mkcp.html">
+            
+                <a href="../../developer/protocols/mkcp.html">
+            
+                    
+                    mKCP 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../../developer/protocols/muxcool.html">
+            
+                <a href="../../developer/protocols/muxcool.html">
+            
+                    
+                    Mux.Cool
             
                 </a>
             
@@ -782,16 +806,8 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.5" >
-            
-                <a target="_blank" href="https://www.v2ray.com/eng/index.html">
-            
-                    
-                    开发人员手册↪
-            
-                </a>
-            
 
+            </ul>
             
         </li>
     
@@ -822,11 +838,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >TCP</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/chapter_02/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/configuration/transport/tcp.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -838,13 +866,12 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#tcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>TCP &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
-<p><img src="../../resources/chinesec.svg" alt="Chinese"> <a href="https://www.v2ray.com/en/configuration/transport/tcp.html" target="_blank"><img src="../../resources/english.svg" alt="English"></a></p>
 <p>&#x914D;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;header&quot;</span>: {
-    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;none&quot;</span>
-  }
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;header&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
@@ -859,35 +886,35 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 <h2 id="http-header"><a name="http-header" class="plugin-anchor" href="#http-header"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E; </h2>
 <p>HTTP &#x4F2A;&#x88C5;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x5E94;&#x7684;&#x4F20;&#x5165;&#x4F20;&#x51FA;&#x8FDE;&#x63A5;&#x4E0A;&#x540C;&#x65F6;&#x914D;&#x7F6E;&#xFF0C;&#x4E14;&#x5185;&#x5BB9;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#x3002;</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;http&quot;</span>,
-  <span class="hljs-string">&quot;request&quot;</span>: {
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
-    <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;GET&quot;</span>,
-    <span class="hljs-string">&quot;path&quot;</span>: [<span class="hljs-string">&quot;/&quot;</span>],
-    <span class="hljs-string">&quot;headers&quot;</span>: {
-      <span class="hljs-string">&quot;Host&quot;</span>: [<span class="hljs-string">&quot;www.baidu.com&quot;</span>, <span class="hljs-string">&quot;www.bing.com&quot;</span>],
-      <span class="hljs-string">&quot;User-Agent&quot;</span>: [
-        <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;</span>,
-        <span class="hljs-string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46&quot;</span>
-      ],
-      <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: [<span class="hljs-string">&quot;gzip, deflate&quot;</span>],
-      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
-      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
-    }
-  },
-  <span class="hljs-string">&quot;response&quot;</span>: {
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.1&quot;</span>,
-    <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;200&quot;</span>,
-    <span class="hljs-string">&quot;reason&quot;</span>: <span class="hljs-string">&quot;OK&quot;</span>,
-    <span class="hljs-string">&quot;headers&quot;</span>: {
-      <span class="hljs-string">&quot;Content-Type&quot;</span>: [<span class="hljs-string">&quot;application/octet-stream&quot;</span>, <span class="hljs-string">&quot;video/mpeg&quot;</span>],
-      <span class="hljs-string">&quot;Transfer-Encoding&quot;</span>: [<span class="hljs-string">&quot;chunked&quot;</span>],
-      <span class="hljs-string">&quot;Connection&quot;</span>: [<span class="hljs-string">&quot;keep-alive&quot;</span>],
-      <span class="hljs-string">&quot;Pragma&quot;</span>: <span class="hljs-string">&quot;no-cache&quot;</span>
-    }
-  }
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;request&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;version&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;method&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;path&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;/&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;headers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;Host&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;www.baidu.com&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;www.bing.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;User-Agent&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Accept-Encoding&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;gzip, deflate&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Connection&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;keep-alive&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Pragma&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;no-cache&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;response&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;version&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;status&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;200&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;reason&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;OK&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;headers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;application/octet-stream&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;video/mpeg&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Transfer-Encoding&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;chunked&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Connection&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;keep-alive&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Pragma&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;no-cache&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x5176;&#x4E2D;&#xFF1A;</p>
 <ul>
@@ -916,25 +943,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="../05_transport.html" class="navigation navigation-prev " aria-label="Previous page: 传输配置">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="mkcp.html" class="navigation navigation-next " aria-label="Next page: mKCP">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"previous":{"title":"传输配置","level":"1.2.9","depth":2,"path":"chapter_02/05_transport.md","ref":"chapter_02/05_transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"chapter_02/transport/h2.md","ref":"chapter_02/transport/h2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/tcp.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/tcp","refen":"configuration/transport/tcp","title":"TCP","level":"1.2.9.1","depth":3,"next":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},"previous":{"title":"传输配置","level":"1.2.9","depth":2,"path":"chapter_02/05_transport.md","ref":"chapter_02/05_transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"chapter_02/transport/mkcp.md","ref":"chapter_02/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"chapter_02/transport/h2.md","ref":"chapter_02/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.9.5","depth":3,"path":"chapter_02/transport/domainsocket.md","ref":"chapter_02/transport/domainsocket.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/tcp.md","mtime":"2018-10-24T18:01:20.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:08.651Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -944,23 +959,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

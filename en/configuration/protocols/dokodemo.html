@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -102,7 +111,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../../">
             
                     
-                    Welcome to V2Ray
+                    Project V
             
                 </a>
             
@@ -150,7 +159,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../../welcome/command.html">
+        <li class="chapter " data-level="1.1.4" data-path="../../welcome/start.html">
+            
+                <a href="../../welcome/start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../welcome/command.html">
             
                 <a href="../../welcome/command.html">
             
@@ -163,7 +185,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../../welcome/donate.html">
+        <li class="chapter " data-level="1.1.6" data-path="../../welcome/donate.html">
             
                 <a href="../../welcome/donate.html">
             
@@ -176,7 +198,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="../../welcome/help.html">
+        <li class="chapter " data-level="1.1.7" data-path="../../welcome/help.html">
             
                 <a href="../../welcome/help.html">
             
@@ -187,15 +209,14 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="1.1.6.1" data-path="../../welcome/tg.html">
+        <li class="chapter " data-level="1.1.8" data-path="../../welcome/faq.html">
             
-                <a href="../../welcome/tg.html">
+                <a href="../../welcome/faq.html">
             
                     
-                    Telegram
+                    FAQ
             
                 </a>
             
@@ -203,30 +224,25 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="../../welcome/pgp.html">
-            
-                <a href="../../welcome/pgp.html">
-            
-                    
-                    Private Communication
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7" data-path="../../welcome/license.html">
+        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
             
                 <a href="../../welcome/license.html">
             
                     
                     License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
             
                 </a>
             
@@ -319,7 +335,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="mtproto.html">
+            
+                <a href="mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="http.html">
             
                 <a href="http.html">
             
@@ -332,7 +361,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="shadowsocks.html">
             
                 <a href="shadowsocks.html">
             
@@ -345,7 +374,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="socks.html">
             
                 <a href="socks.html">
             
@@ -358,7 +387,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="vmess.html">
             
                 <a href="vmess.html">
             
@@ -520,6 +549,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="../transport/domainsocket.html">
+            
+                <a href="../transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -654,11 +696,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Dokodemo</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/chapter_02/protocols/dokodemo.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/configuration/protocols/dokodemo.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/configuration/protocols/dokodemo.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/configuration/protocols/dokodemo.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -670,21 +724,20 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="dokodemo-door"><a name="dokodemo-door" class="plugin-anchor" href="#dokodemo-door"><i class="fa fa-link" aria-hidden="true"></i></a>Dokodemo-door</h1>
-<p><img src="../../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_02/protocols/dokodemo.html" target="_blank"><img src="../../resources/chinese.svg" alt="Chinese"></a></p>
-<p>Dokodemo door is a protocol for inbound connections. It take any connections and passes them to the specified destination.</p>
-<p>Dokodemo door can also (if configured) work as a transparent proxy.</p>
+<p>Dokodemo-door is a protocol for inbound connections. It take any connections and passes them to the specified destination.</p>
+<p>Dokodemo-door can also (if configured) work as a transparent proxy.</p>
 <ul>
 <li>Name: dokodemo-door</li>
 <li>Type: Inbound</li>
 <li>Configuration:</li>
 </ul>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;8.8.8.8&quot;</span>,
-  <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">53</span>,
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp&quot;</span>,
-  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-string">&quot;userLevel&quot;</span>: <span class="hljs-number">0</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;8.8.8.8&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">53</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;followRedirect&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;userLevel&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Where:</p>
 <ul>
@@ -694,56 +747,51 @@ if (inIframe() || !isValidDomain()) {
 </li>
 <li><code>port</code>: Port of the destination server. Integer.</li>
 <li><code>network</code>: Type of network, either &quot;tcp&quot; or &quot;udp&quot;.</li>
-<li><code>followRedirect</code>: When set to <code>true</code>, dokodemo-door will recognize destination from TProxy and use it as its destination.<ul>
-<li>Only works on Linux</li>
-<li>Supports TCP/IPv4 connections</li>
-<li>Supports UDP/IPv4 packets. Requires root (CAP_NET_ADMIN) permission</li>
-</ul>
-</li>
+<li><code>followRedirect</code>: When set to <code>true</code>, dokodemo-door will recognize destination from TProxy and use it as its destination. See <code>TProxy</code> in <a href="../transport.html">transport</a> for detail.</li>
 <li><code>userLevel</code>: User level. All connections share this level. See <a href="../policy.html">Policy</a> for details.</li>
 </ul>
 <h2 id="examples-for-transparent-proxy"><a name="examples-for-transparent-proxy" class="plugin-anchor" href="#examples-for-transparent-proxy"><i class="fa fa-link" aria-hidden="true"></i></a>Examples for transparent proxy</h2>
 <p>Add a dokodemo-door inbound as below.</p>
-<pre><code class="lang-javascript">{
-  <span class="hljs-string">&quot;network&quot;</span>: <span class="hljs-string">&quot;tcp,udp&quot;</span>,
-  <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">30</span>,
-  <span class="hljs-string">&quot;followRedirect&quot;</span>: <span class="hljs-literal">true</span>
-}
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp,udp&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;timeout&quot;</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;followRedirect&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Configure iptables as below.</p>
-<pre><code class="lang-plain"># Create new chain
-root@Wrt:~# iptables -t nat -N V2RAY
-root@Wrt:~# iptables -t mangle -N V2RAY
-root@Wrt:~# iptables -t mangle -N V2RAY_MARK
+<pre class="language-"><code class="lang-bash"><span class="token comment"># Create new chain</span>
+iptables -t nat -N V2RAY
+iptables -t mangle -N V2RAY
+iptables -t mangle -N V2RAY_MARK
 
-# Ignore your V2Ray server&apos;s addresses
-# It&apos;s very IMPORTANT, just be careful.
-root@Wrt:~# iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
+<span class="token comment"># Ignore your V2Ray server&apos;s addresses</span>
+<span class="token comment"># It&apos;s very IMPORTANT, just be careful.</span>
+iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
 
-# Ignore LANs and any other addresses you&apos;d like to bypass the proxy
-# See Wikipedia and RFC5735 for full list of reserved networks.
-root@Wrt:~# iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
-root@Wrt:~# iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
+<span class="token comment"># Ignore LANs and any other addresses you&apos;d like to bypass the proxy</span>
+<span class="token comment"># See Wikipedia and RFC5735 for full list of reserved networks.</span>
+iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
-# Anything else should be redirected to Dokodemo-door&apos;s local port
-root@Wrt:~# iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
+<span class="token comment"># Anything else should be redirected to Dokodemo-door&apos;s local port</span>
+iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 
-# Add any UDP rules
-root@Wrt:~# ip route add local default dev lo table 100
-root@Wrt:~# ip rule add fwmark 1 lookup 100
-root@Wrt:~# iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
-root@Wrt:~# iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
+<span class="token comment"># Add any UDP rules</span>
+ip route add local default dev lo table 100
+ip rule add fwmark 1 lookup 100
+iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
+iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
-# Apply the rules
-root@Wrt:~# iptables -t nat -A OUTPUT -p tcp -j V2RAY
-root@Wrt:~# iptables -t mangle -A PREROUTING -j V2RAY
-root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
+<span class="token comment"># Apply the rules</span>
+iptables -t nat -A OUTPUT -p tcp -j V2RAY
+iptables -t mangle -A PREROUTING -j V2RAY
+iptables -t mangle -A OUTPUT -j V2RAY_MARK
 </code></pre>
 
                                 
@@ -754,25 +802,13 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
                 
             </div>
 
-            
-                
-                <a href="blackhole.html" class="navigation navigation-prev " aria-label="Previous page: Blackhole">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="freedom.html" class="navigation navigation-next " aria-label="Next page: Freedom">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-05-27T18:14:28.407Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/dokodemo","refen":"configuration/protocols/dokodemo","title":"Dokodemo","level":"1.2.2.2","depth":3,"next":{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-10-24T18:01:20.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:24.307Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -782,23 +818,7 @@ root@Wrt:~# iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

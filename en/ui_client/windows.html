@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -102,7 +111,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Welcome to V2Ray
+                    Project V
             
                 </a>
             
@@ -150,7 +159,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="../welcome/command.html">
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/start.html">
+            
+                <a href="../welcome/start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/command.html">
             
                 <a href="../welcome/command.html">
             
@@ -163,7 +185,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="../welcome/donate.html">
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/donate.html">
             
                 <a href="../welcome/donate.html">
             
@@ -176,7 +198,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="../welcome/help.html">
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/help.html">
             
                 <a href="../welcome/help.html">
             
@@ -187,15 +209,14 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="1.1.6.1" data-path="../welcome/tg.html">
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
             
-                <a href="../welcome/tg.html">
+                <a href="../welcome/faq.html">
             
                     
-                    Telegram
+                    FAQ
             
                 </a>
             
@@ -203,30 +224,25 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="../welcome/pgp.html">
-            
-                <a href="../welcome/pgp.html">
-            
-                    
-                    Private Communication
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7" data-path="../welcome/license.html">
+        <li class="chapter " data-level="1.1.9" data-path="../welcome/license.html">
             
                 <a href="../welcome/license.html">
             
                     
                     License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
             
                 </a>
             
@@ -319,7 +335,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/mtproto.html">
+            
+                <a href="../configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/http.html">
             
                 <a href="../configuration/protocols/http.html">
             
@@ -332,7 +361,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/shadowsocks.html">
             
                 <a href="../configuration/protocols/shadowsocks.html">
             
@@ -345,7 +374,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/socks.html">
             
                 <a href="../configuration/protocols/socks.html">
             
@@ -358,7 +387,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="../configuration/protocols/vmess.html">
             
                 <a href="../configuration/protocols/vmess.html">
             
@@ -520,6 +549,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="../configuration/transport/domainsocket.html">
+            
+                <a href="../configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -654,11 +696,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Windows</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/ui_client/windows.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/ui_client/windows.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/ui_client/windows.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/ui_client/windows.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -670,7 +724,6 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="windows"><a name="windows" class="plugin-anchor" href="#windows"><i class="fa fa-link" aria-hidden="true"></i></a>Windows</h1>
-<p><img src="../resources/english.svg" alt="English"> <a href="https://www.v2ray.com/ui_client/windows.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
 <h2 id="v2rayw"><a name="v2rayw" class="plugin-anchor" href="#v2rayw"><i class="fa fa-link" aria-hidden="true"></i></a>V2RayW</h2>
 <ul>
 <li>Download: <a href="https://github.com/Cenmrev/V2RayW" target="_blank">Github</a></li>
@@ -679,7 +732,11 @@ if (inIframe() || !isValidDomain()) {
 <ul>
 <li>Download: <a href="https://github.com/2dust/v2rayN" target="_blank">Github</a></li>
 </ul>
-<h2 id="other-tools"><a name="other-tools" class="plugin-anchor" href="#other-tools"><i class="fa fa-link" aria-hidden="true"></i></a>Other tools</h2>
+<h2 id="v2rays"><a name="v2rays" class="plugin-anchor" href="#v2rays"><i class="fa fa-link" aria-hidden="true"></i></a>V2RayS</h2>
+<ul>
+<li>Download: <a href="https://github.com/Shinlor/V2RayS" target="_blank">Github</a></li>
+</ul>
+<h2 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>Other tools </h2>
 <h3 id="putty"><a name="putty" class="plugin-anchor" href="#putty"><i class="fa fa-link" aria-hidden="true"></i></a>PuTTY</h3>
 <p>SSH client.</p>
 <ul>
@@ -704,25 +761,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Clients">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="osx.html" class="navigation navigation-next " aria-label="Next page: OS X">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Windows","level":"1.3.1","depth":2,"next":{"title":"OS X","level":"1.3.2","depth":2,"path":"ui_client/osx.md","ref":"ui_client/osx.md","articles":[]},"previous":{"title":"Clients","level":"1.3","depth":1,"path":"ui_client/README.md","ref":"ui_client/README.md","articles":[{"title":"Windows","level":"1.3.1","depth":2,"path":"ui_client/windows.md","ref":"ui_client/windows.md","articles":[]},{"title":"OS X","level":"1.3.2","depth":2,"path":"ui_client/osx.md","ref":"ui_client/osx.md","articles":[]},{"title":"iOS","level":"1.3.3","depth":2,"path":"ui_client/ios.md","ref":"ui_client/ios.md","articles":[]},{"title":"Android","level":"1.3.4","depth":2,"path":"ui_client/android.md","ref":"ui_client/android.md","articles":[]},{"title":"Services","level":"1.3.5","depth":2,"path":"ui_client/service.md","ref":"ui_client/service.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"ui_client/windows.md","mtime":"2018-05-27T18:14:28.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"ui_client/windows","refen":"ui_client/windows","title":"Windows","level":"1.3.1","depth":2,"next":{"title":"OS X","level":"1.3.2","depth":2,"path":"ui_client/osx.md","ref":"ui_client/osx.md","articles":[]},"previous":{"title":"Clients","level":"1.3","depth":1,"path":"ui_client/README.md","ref":"ui_client/README.md","articles":[{"title":"Windows","level":"1.3.1","depth":2,"path":"ui_client/windows.md","ref":"ui_client/windows.md","articles":[]},{"title":"OS X","level":"1.3.2","depth":2,"path":"ui_client/osx.md","ref":"ui_client/osx.md","articles":[]},{"title":"iOS","level":"1.3.3","depth":2,"path":"ui_client/ios.md","ref":"ui_client/ios.md","articles":[]},{"title":"Android","level":"1.3.4","depth":2,"path":"ui_client/android.md","ref":"ui_client/android.md","articles":[]},{"title":"Services","level":"1.3.5","depth":2,"path":"ui_client/service.md","ref":"ui_client/service.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"ui_client/windows.md","mtime":"2018-10-24T18:01:20.097Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:24.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -732,23 +777,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

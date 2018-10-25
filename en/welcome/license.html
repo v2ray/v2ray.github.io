@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -69,10 +78,8 @@ if (inIframe() || !isValidDomain()) {
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../configuration/" />
     
-    
-    <link rel="prev" href="pgp.html" />
+    <link rel="prev" href="faq.html" />
     
 
     </head>
@@ -102,7 +109,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Welcome to V2Ray
+                    Project V
             
                 </a>
             
@@ -150,7 +157,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.4" data-path="command.html">
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="command.html">
             
                 <a href="command.html">
             
@@ -163,7 +183,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="donate.html">
+        <li class="chapter " data-level="1.1.6" data-path="donate.html">
             
                 <a href="donate.html">
             
@@ -176,7 +196,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="help.html">
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
             
                 <a href="help.html">
             
@@ -187,15 +207,14 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="1.1.6.1" data-path="tg.html">
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
             
-                <a href="tg.html">
+                <a href="faq.html">
             
                     
-                    Telegram
+                    FAQ
             
                 </a>
             
@@ -203,30 +222,25 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="pgp.html">
-            
-                <a href="pgp.html">
-            
-                    
-                    Private Communication
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.1.7" data-path="license.html">
+        <li class="chapter active" data-level="1.1.9" data-path="license.html">
             
                 <a href="license.html">
             
                     
                     License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
             
                 </a>
             
@@ -319,7 +333,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/mtproto.html">
+            
+                <a href="../configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/http.html">
             
                 <a href="../configuration/protocols/http.html">
             
@@ -332,7 +359,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/shadowsocks.html">
             
                 <a href="../configuration/protocols/shadowsocks.html">
             
@@ -345,7 +372,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/socks.html">
             
                 <a href="../configuration/protocols/socks.html">
             
@@ -358,7 +385,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="../configuration/protocols/vmess.html">
             
                 <a href="../configuration/protocols/vmess.html">
             
@@ -520,6 +547,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="../configuration/transport/domainsocket.html">
+            
+                <a href="../configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -654,11 +694,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >License</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/chapter_00/license.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/welcome/license.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/welcome/license.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/welcome/license.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -670,7 +722,6 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="license"><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h1>
-<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_00/license.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
 <p>Project V uses the following license.</p>
 <h2 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h2>
 <p>Source code and official releases are licensed under MIT license, including the source code and releases in the following repository.</p>
@@ -685,14 +736,14 @@ if (inIframe() || !isValidDomain()) {
 <li>Including <a href="https://www.v2ray.com/resources/v2ray_1024.png" target="_blank">Project V logo</a>.</li>
 <li>Including all source code that is used for generating the website, i.e., <a href="https://www.github.com/v2ray/manual" target="_blank">v2ray/manual</a>.</li>
 </ul>
-<h2 id="screenshot-and-other-files"><a name="screenshot-and-other-files" class="plugin-anchor" href="#screenshot-and-other-files"><i class="fa fa-link" aria-hidden="true"></i></a>Screenshot and other files</h2>
+<h2 id="screenshots"><a name="screenshots" class="plugin-anchor" href="#screenshots"><i class="fa fa-link" aria-hidden="true"></i></a>Screenshot and other files </h2>
 <p>All third party files listed below belong to their creator. Whoever creates the file owns the file.</p>
 <ul>
 <li>Including all screenshots of Project V.</li>
 <li>Including all configuration files that are used to run Project V.</li>
 <li>Including all logs generated by Project V during runtime.</li>
 </ul>
-<h2 id="other-content"><a name="other-content" class="plugin-anchor" href="#other-content"><i class="fa fa-link" aria-hidden="true"></i></a>Other content</h2>
+<h2 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>Other content </h2>
 <p>All content that are not mentioned above will be licensed case by case.</p>
 
                                 
@@ -703,25 +754,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="pgp.html" class="navigation navigation-prev " aria-label="Previous page: Private Communication">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../configuration/" class="navigation navigation-next " aria-label="Next page: Configuration">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"License","level":"1.1.7","depth":2,"next":{"title":"Configuration","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Overview","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Protocols","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"HTTP","level":"1.2.2.4","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.5","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.6","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.7","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Statistics","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Transport","level":"1.2.9","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.9.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]}]},{"title":"Env Variables","level":"1.2.10","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"previous":{"title":"Private Communication","level":"1.1.6.2","depth":3,"path":"welcome/pgp.md","ref":"welcome/pgp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/license.md","mtime":"2018-05-27T18:14:28.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/license","refen":"welcome/license","title":"License","level":"1.1.9","depth":2,"next":{"title":"Blog↪","level":"1.1.10","depth":2,"url":"https://steemit.com/@v2ray","ref":"https://steemit.com/@v2ray","articles":[]},"previous":{"title":"FAQ","level":"1.1.8","depth":2,"path":"welcome/faq.md","ref":"welcome/faq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/license.md","mtime":"2018-10-24T18:01:20.097Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:24.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -731,23 +770,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

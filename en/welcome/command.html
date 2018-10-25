@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -72,7 +81,7 @@ if (inIframe() || !isValidDomain()) {
     <link rel="next" href="donate.html" />
     
     
-    <link rel="prev" href="install.html" />
+    <link rel="prev" href="start.html" />
     
 
     </head>
@@ -102,7 +111,7 @@ if (inIframe() || !isValidDomain()) {
                 <a href="../">
             
                     
-                    Welcome to V2Ray
+                    Project V
             
                 </a>
             
@@ -150,7 +159,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter active" data-level="1.1.4" data-path="command.html">
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    Quick Start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.5" data-path="command.html">
             
                 <a href="command.html">
             
@@ -163,7 +185,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.5" data-path="donate.html">
+        <li class="chapter " data-level="1.1.6" data-path="donate.html">
             
                 <a href="donate.html">
             
@@ -176,7 +198,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6" data-path="help.html">
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
             
                 <a href="help.html">
             
@@ -187,15 +209,14 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
+        </li>
     
-        <li class="chapter " data-level="1.1.6.1" data-path="tg.html">
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
             
-                <a href="tg.html">
+                <a href="faq.html">
             
                     
-                    Telegram
+                    FAQ
             
                 </a>
             
@@ -203,30 +224,25 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.1.6.2" data-path="pgp.html">
-            
-                <a href="pgp.html">
-            
-                    
-                    Private Communication
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7" data-path="license.html">
+        <li class="chapter " data-level="1.1.9" data-path="license.html">
             
                 <a href="license.html">
             
                     
                     License
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
             
                 </a>
             
@@ -319,7 +335,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/http.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/mtproto.html">
+            
+                <a href="../configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/http.html">
             
                 <a href="../configuration/protocols/http.html">
             
@@ -332,7 +361,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/shadowsocks.html">
             
                 <a href="../configuration/protocols/shadowsocks.html">
             
@@ -345,7 +374,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/socks.html">
             
                 <a href="../configuration/protocols/socks.html">
             
@@ -358,7 +387,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="../configuration/protocols/vmess.html">
             
                 <a href="../configuration/protocols/vmess.html">
             
@@ -520,6 +549,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="../configuration/transport/domainsocket.html">
+            
+                <a href="../configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -654,11 +696,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Commandline</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/chapter_00/command.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/welcome/command.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/welcome/command.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/welcome/command.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -670,19 +724,18 @@ if (inIframe() || !isValidDomain()) {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="commandline"><a name="commandline" class="plugin-anchor" href="#commandline"><i class="fa fa-link" aria-hidden="true"></i></a>Commandline</h1>
-<p><img src="../resources/englishc.svg" alt="English"> <a href="https://www.v2ray.com/chapter_00/command.html" target="_blank"><img src="../resources/chinese.svg" alt="Chinese"></a></p>
 <h2 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h2>
 <p>V2Ray has the following commandline parameters:</p>
-<pre><code class="lang-shell">v2ray [-version] [-test] [-config=config.json] [-format=json]
+<pre class="language-"><code class="lang-shell">v2ray <span class="token punctuation">[</span>-version<span class="token punctuation">]</span> <span class="token punctuation">[</span>-test<span class="token punctuation">]</span> <span class="token punctuation">[</span>-config<span class="token operator">=</span>config.json<span class="token punctuation">]</span> <span class="token punctuation">[</span>-format<span class="token operator">=</span>json<span class="token punctuation">]</span>
 </code></pre>
 <p>Where:</p>
 <ul>
 <li><code>-version</code>: Print the version of V2Ray only, and then exit.</li>
 <li><code>-test</code>: Test configuration, output any errors and then exit.</li>
-<li><code>-config</code>: URI of the configuration.<ul>
-<li>When its value is <code>stdin:</code>, V2Ray reads configuration from standard input. Caller must close stdin after writing out configuration.</li>
-<li>(3.17+) When its value begins with <code>http://</code> or <code>https://</code> (lowercase), V2Ray tries to load configuration from the remote address.</li>
-<li>When not set, V2Ray first tries to load configuration from <code>config.json</code> under working directory, then from the directory specified by environment variable <code>v2ray.location.asset</code>.</li>
+<li><code>-config</code>: URI of the configuration. Avilable formats are:<ul>
+<li>Path to the local config file. May be a relative path or absolute path.</li>
+<li><code>&quot;stdin:&quot;</code>: Indicates V2Ray to read configuration from standard input. Caller must close stdin after writing out configuration.</li>
+<li>Value begins with <code>http://</code> or <code>https://</code> (lowercase): V2Ray tries to load configuration from the remote address.</li>
 </ul>
 </li>
 <li><code>-format</code>: Configuration format. Choices are:<ul>
@@ -691,9 +744,11 @@ if (inIframe() || !isValidDomain()) {
 </ul>
 </li>
 </ul>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>When <code>-config</code> is not specified, V2Ray first tries to load configuration from <code>config.json</code> under working directory, then from the directory specified by <a href="../configuration/env.html">environment variable</a> <code>v2ray.location.asset</code>.</p>
+</div></div></p>
 <h2 id="v2ctl"><a name="v2ctl" class="plugin-anchor" href="#v2ctl"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl</h2>
 <p>V2Ctl has the following commandline parameters:</p>
-<pre><code class="lang-shell">v2ctl &lt;command&gt; &lt;options&gt;
+<pre class="language-"><code class="lang-shell">v2ctl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>options<span class="token operator">&gt;</span>
 </code></pre>
 <p>Available commands are listed below. Each command has its own options.</p>
 <h3 id="verify"><a name="verify" class="plugin-anchor" href="#verify"><i class="fa fa-link" aria-hidden="true"></i></a>Verify</h3>
@@ -719,25 +774,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="install.html" class="navigation navigation-prev " aria-label="Previous page: Install">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="donate.html" class="navigation navigation-next " aria-label="Next page: Donation">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Commandline","level":"1.1.4","depth":2,"next":{"title":"Donation","level":"1.1.5","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-05-27T18:14:28.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:32.408Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Commandline","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-10-24T18:01:20.097Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:24.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -747,23 +790,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 

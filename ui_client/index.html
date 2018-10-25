@@ -12,11 +12,20 @@ function inIframe () {
 }
 function isValidDomain() {
     var host = window.location.hostname;
-    return host.indexOf('v2ray.com') >= 0 || host.indexOf('github') >= 0;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
 }
 if (inIframe() || !isValidDomain()) {
     window.top.location.href = 'https://www.v2ray.com/';
 }
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
         </script>
         
     
@@ -29,11 +38,11 @@ if (inIframe() || !isValidDomain()) {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
                 
             
         
@@ -187,25 +196,6 @@ if (inIframe() || !isValidDomain()) {
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.6.1" data-path="../chapter_00/cpu.html">
-            
-                <a href="../chapter_00/cpu.html">
-            
-                    
-                    贡献你的 CPU
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.1.7" data-path="../chapter_00/help.html">
@@ -218,38 +208,6 @@ if (inIframe() || !isValidDomain()) {
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.7.1" data-path="../chapter_00/tg.html">
-            
-                <a href="../chapter_00/tg.html">
-            
-                    
-                    Telegram
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7.2" data-path="../chapter_00/pgp.html">
-            
-                <a href="../chapter_00/pgp.html">
-            
-                    
-                    私下联系
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -403,7 +361,20 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.5" data-path="../chapter_02/protocols/shadowsocks.html">
+        <li class="chapter " data-level="1.2.2.5" data-path="../chapter_02/protocols/mtproto.html">
+            
+                <a href="../chapter_02/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../chapter_02/protocols/shadowsocks.html">
             
                 <a href="../chapter_02/protocols/shadowsocks.html">
             
@@ -416,7 +387,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="../chapter_02/protocols/socks.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="../chapter_02/protocols/socks.html">
             
                 <a href="../chapter_02/protocols/socks.html">
             
@@ -429,7 +400,7 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.7" data-path="../chapter_02/protocols/vmess.html">
+        <li class="chapter " data-level="1.2.2.8" data-path="../chapter_02/protocols/vmess.html">
             
                 <a href="../chapter_02/protocols/vmess.html">
             
@@ -591,6 +562,19 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
+        <li class="chapter " data-level="1.2.9.5" data-path="../chapter_02/transport/domainsocket.html">
+            
+                <a href="../chapter_02/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -698,12 +682,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../chapter_03/">
+        <li class="chapter " data-level="1.4" data-path="../developer/">
             
-                <a href="../chapter_03/">
+                <a href="../developer/">
             
                     
-                    进阶使用
+                    开发人员手册
             
                 </a>
             
@@ -712,12 +696,12 @@ if (inIframe() || !isValidDomain()) {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../chapter_03/00_dynport.html">
+        <li class="chapter " data-level="1.4.1" data-path="../developer/intro/roadmap.html">
             
-                <a href="../chapter_03/00_dynport.html">
+                <a href="../developer/intro/roadmap.html">
             
                     
-                    动态端口
+                    开发计划
             
                 </a>
             
@@ -725,12 +709,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../chapter_03/01_effective.html">
+        <li class="chapter " data-level="1.4.2" data-path="../developer/intro/guide.html">
             
-                <a href="../chapter_03/01_effective.html">
+                <a href="../developer/intro/guide.html">
             
                     
-                    Effective V2Ray
+                    开发指引
             
                 </a>
             
@@ -738,12 +722,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../chapter_03/kcp.html">
+        <li class="chapter " data-level="1.4.3" data-path="../developer/intro/design.html">
             
-                <a href="../chapter_03/kcp.html">
+                <a href="../developer/intro/design.html">
             
                     
-                    mKCP
+                    核心设计
             
                 </a>
             
@@ -751,12 +735,12 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../chapter_03/outboundproxy.html">
+        <li class="chapter " data-level="1.4.4" data-path="../developer/intro/compile.html">
             
-                <a href="../chapter_03/outboundproxy.html">
+                <a href="../developer/intro/compile.html">
             
                     
-                    传出代理
+                    配置开发环境
             
                 </a>
             
@@ -764,12 +748,52 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../chapter_03/speed.html">
+        <li class="chapter " data-level="1.4.5" >
             
-                <a href="../chapter_03/speed.html">
+                <span>
             
                     
-                    速度测试
+                    协议细节
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../developer/protocols/vmess.html">
+            
+                <a href="../developer/protocols/vmess.html">
+            
+                    
+                    VMess 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../developer/protocols/mkcp.html">
+            
+                <a href="../developer/protocols/mkcp.html">
+            
+                    
+                    mKCP 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../developer/protocols/muxcool.html">
+            
+                <a href="../developer/protocols/muxcool.html">
+            
+                    
+                    Mux.Cool
             
                 </a>
             
@@ -782,16 +806,8 @@ if (inIframe() || !isValidDomain()) {
             
         </li>
     
-        <li class="chapter " data-level="1.5" >
-            
-                <a target="_blank" href="https://www.v2ray.com/eng/index.html">
-            
-                    
-                    开发人员手册↪
-            
-                </a>
-            
 
+            </ul>
             
         </li>
     
@@ -822,11 +838,23 @@ if (inIframe() || !isValidDomain()) {
 <div class="book-header" role="navigation">
     
 
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >客户端与服务</a>
-    </h1>
+    
+    <a class="btn pull-left" href="/ui_client/index.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/ui_client/index.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/ui_client/index.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/de/ui_client/index.html" target="_blank">
+        <img src="/resources/flag_de.svg" alt="German" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
 </div>
 
 
@@ -855,25 +883,13 @@ if (inIframe() || !isValidDomain()) {
                 
             </div>
 
-            
-                
-                <a href="../chapter_02/env.html" class="navigation navigation-prev " aria-label="Previous page: 环境变量">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="windows.html" class="navigation navigation-next " aria-label="Next page: Windows">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
         
     </div>
 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"客户端与服务","level":"1.3","depth":1,"next":{"title":"Windows","level":"1.3.1","depth":2,"path":"ui_client/windows.md","ref":"ui_client/windows.md","articles":[]},"previous":{"title":"环境变量","level":"1.2.10","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","anchors"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchors":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"ui_client/README.md","mtime":"2018-05-27T18:14:28.415Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-27T18:15:16.335Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"ui_client/index","refen":"ui_client/index","title":"客户端与服务","level":"1.3","depth":1,"next":{"title":"Windows","level":"1.3.1","depth":2,"path":"ui_client/windows.md","ref":"ui_client/windows.md","articles":[]},"previous":{"title":"环境变量","level":"1.2.10","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"ui_client/README.md","mtime":"2018-10-24T18:01:20.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-24T18:02:08.651Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -883,23 +899,7 @@ if (inIframe() || !isValidDomain()) {
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
 
