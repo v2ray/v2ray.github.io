@@ -38,7 +38,7 @@ window.onload = function() {
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
                 
             
                 
@@ -879,10 +879,10 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="dns-&#x670D;&#x52A1;&#x5668;"><a name="dns-&#x670D;&#x52A1;&#x5668;" class="plugin-anchor" href="#dns-&#x670D;&#x52A1;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>DNS &#x670D;&#x52A1;&#x5668;</h1>
-<p>V2Ray &#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; DNS &#x67E5;&#x8BE2;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#x8F6C;&#x53D1;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x3002;</p>
+<p>V2Ray &#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; DNS &#x67E5;&#x8BE2;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x8BBE;&#x7F6E;&#x8F6C;&#x53D1;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x3002;&#x7531;&#x6B64; DNS &#x670D;&#x52A1;&#x5668;&#x6240;&#x53D1;&#x51FA;&#x7684; DNS &#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#xFF0C;&#x65E0;&#x9700;&#x989D;&#x5916;&#x914D;&#x7F6E;&#x3002;</p>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x7531;&#x4E8E; DNS &#x534F;&#x8BAE;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;V2Ray &#x53EA;&#x652F;&#x6301;&#x6700;&#x57FA;&#x672C;&#x7684; IP &#x67E5;&#x8BE2;&#xFF08;A &#x548C; AAAA &#x8BB0;&#x5F55;&#xFF09;&#x3002;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x672C;&#x673A; DNS &#x914D;&#x5408;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684; DNS &#x670D;&#x52A1;&#x5668;&#x6765;&#x505A; DNS &#x67E5;&#x8BE2;&#xFF0C;&#x5982; <a href="https://coredns.io/" target="_blank">CoreDNS</a>&#xFF0C;&#x4EE5;&#x4F7F;&#x7528;&#x5B8C;&#x6574;&#x7684; DNS &#x529F;&#x80FD;&#x3002;</p>
 </div></div></p>
-<p>&#x793A;&#x4F8B;&#x914D;&#x7F6E;&#xFF1A;</p>
+<h2 id="configuration"><a name="configuration" class="plugin-anchor" href="#configuration"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;&#x914D;&#x7F6E; </h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;hosts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;baidu.com&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span>
@@ -902,33 +902,50 @@ window.onload = function() {
   <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<blockquote>
+<p><strong>hosts</strong>: map</p>
+</blockquote>
+<p>&#x9759;&#x6001; IP &#x5217;&#x8868;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x4E00;&#x7CFB;&#x5217;&#x7684;&quot;&#x57DF;&#x540D;&quot;:&quot;IP&quot;&#x3002;IP &#x53EF;&#x4EE5;&#x662F; IPv4 &#x6216;&#x8005; IPv6&#x3002;&#x5728;&#x89E3;&#x6790;&#x57DF;&#x540D;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x57DF;&#x540D;&#x5339;&#x914D;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x9879;&#xFF0C;&#x5219;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;&#x8BE5;&#x9879;&#x7684; IP&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x4E0B;&#x8FF0;&#x7684; servers &#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p>
+<p>&#x57DF;&#x540D;&#x7684;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
-<li><code>hosts</code>: &#x9759;&#x6001; IP &#x5217;&#x8868;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x4E00;&#x7CFB;&#x5217;&#x7684;&quot;&#x57DF;&#x540D;&quot;:&quot;IP&quot;&#xFF0C;IP &#x53EF;&#x4EE5;&#x662F; IPv4 &#x6216;&#x8005; IPv6&#x3002;&#x5728;&#x89E3;&#x6790;&#x57DF;&#x540D;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x57DF;&#x540D;&#x5339;&#x914D;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x9879;&#xFF0C;&#x5219;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#x4E3A;&#x8BE5;&#x9879;&#x7684; IP&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x4E0B;&#x8FF0;&#x7684; servers &#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;&#x57DF;&#x540D;&#x7684;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;<ul>
 <li>&#x5F62;&#x5982; <code>&quot;v2ray.com&quot;</code>: &#x88AB;&#x89E3;&#x6790;&#x7684;&#x57DF;&#x540D;&#x9700;&#x8981;&#x548C;&#x6B64;&#x57DF;&#x540D;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF1B;</li>
 <li>&#x5F62;&#x5982; <code>&quot;domain:v2ray.com&quot;</code>: &#x88AB;&#x89E3;&#x6790;&#x7684;&#x57DF;&#x540D;&#x53EF;&#x4EE5;&#x662F;&#x6B64;&#x57DF;&#x540D;&#x6216;&#x662F;&#x5176;&#x5B50;&#x57DF;&#x540D;&#x3002;</li>
 </ul>
-</li>
-<li><code>servers</code>: &#x6307;&#x5B9A;&#x4E00;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x5217;&#x8868;&#xFF0C;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x683C;&#x5F0F;: <ul>
-<li>&#x57FA;&#x672C;&#x683C;&#x5F0F;: &#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;<code>&quot;8.8.8.8&quot;</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x4E3A;<code>53</code>&#x7684; DNS &#x670D;&#x52A1;&#x5668;&#x3002;&#x5F53;&#x503C;&#x4E3A;<code>&quot;localhost&quot;</code>&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x672C;&#x673A;&#x9884;&#x8BBE;&#x7684; DNS &#x914D;&#x7F6E;&#x3002;</li>
-<li>&#x5B8C;&#x6574;&#x683C;&#x5F0F; (V2Ray 3.42+):<ul>
-<li><code>address</code>: DNS &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x5982;<code>&quot;8.8.8.8&quot;</code>&#x3002;</li>
-<li><code>port</code>: DNS &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#xFF0C;&#x5982;<code>53</code>&#x3002;</li>
-<li><code>domains</code>: &#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5217;&#x8868;&#xFF0C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C06;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6B64;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x57DF;&#x540D;&#x683C;&#x5F0F;&#x548C;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x4E2D;&#x76F8;&#x540C;&#x3002;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>clientIp</code>: &#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x7684; IP &#x5730;&#x5740;&#xFF0C;&#x7528;&#x4E8E; DNS &#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x3002;&#x4E0D;&#x80FD;&#x662F;&#x79C1;&#x6709;&#x5730;&#x5740;&#x3002;</li>
-</ul>
-<p>&#x82E5;&#x8981;&#x4F7F; DNS &#x670D;&#x52A1;&#x751F;&#x6548;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#x4E2D;&#x7684; <code>domainStrategy</code>&#x3002;</p>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>&#x7531;&#x6B64; DNS &#x670D;&#x52A1;&#x5668;&#x6240;&#x53D1;&#x51FA;&#x7684; DNS &#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6839;&#x636E;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#xFF0C;&#x65E0;&#x9700;&#x989D;&#x5916;&#x914D;&#x7F6E;&#x3002;</p>
+<blockquote>
+<p><strong>servers</strong>: [string | <a href="#serverobject">ServerObject</a> | &quot;localhost&quot; ]</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x5217;&#x8868;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x4E09;&#x79CD;&#xFF1A;IP &#x5730;&#x5740;&#xFF08;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#xFF09;&#xFF0C;ServerObject&#xFF0C;&#x6216;&#x8005;<code>&quot;localhost&quot;</code>&#x3002;</p>
+<p>&#x5F53;&#x5B83;&#x7684;&#x503C;&#x662F;&#x4E00;&#x4E2A; IP &#x5730;&#x5740;&#x65F6;&#xFF0C;&#x5982;<code>&quot;8.8.8.8&quot;</code>&#xFF0C;V2Ray &#x4F1A;&#x4F7F;&#x7528;&#x6B64;&#x5730;&#x5740;&#x7684; 53 &#x7AEF;&#x53E3;&#x8FDB;&#x884C; DNS &#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x5F53;&#x503C;&#x4E3A;<code>&quot;localhost&quot;</code>&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x672C;&#x673A;&#x9884;&#x8BBE;&#x7684; DNS &#x914D;&#x7F6E;&#x3002;</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x5F53;&#x4F7F;&#x7528; localhost &#x65F6;&#xFF0C;&#x672C;&#x673A;&#x7684; DNS &#x8BF7;&#x6C42;&#x4E0D;&#x53D7; V2Ray &#x63A7;&#x5236;&#xFF0C;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x914D;&#x7F6E;&#x624D;&#x53EF;&#x4EE5;&#x4F7F; DNS &#x8BF7;&#x6C42;&#x7531; V2Ray &#x8F6C;&#x53D1;&#x3002;</p>
 </div></div></p>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
-<ul>
-<li>&#x5F53;&#x4F7F;&#x7528; localhost &#x65F6;&#xFF0C;&#x672C;&#x673A;&#x7684; DNS &#x8BF7;&#x6C42;&#x4E0D;&#x53D7; V2Ray &#x63A7;&#x5236;&#xFF0C;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x914D;&#x7F6E;&#x624D;&#x53EF;&#x4EE5;&#x4F7F; DNS &#x8BF7;&#x6C42;&#x7531; V2Ray &#x8F6C;&#x53D1;&#x3002;</li>
-<li>&#x5F53;&#x67D0;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x7684;&#x57DF;&#x540D;&#x5217;&#x8868;&#x5339;&#x914D;&#x4E86;&#x5F53;&#x524D;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x57DF;&#x540D;&#xFF0C;V2Ray &#x4F1A;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5426;&#x5219;&#x6309;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</li>
-</ul>
+<blockquote>
+<p><strong>clientIp</strong>: string</p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x7684; IP &#x5730;&#x5740;&#xFF0C;&#x7528;&#x4E8E; DNS &#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x3002;&#x4E0D;&#x80FD;&#x662F;&#x79C1;&#x6709;&#x5730;&#x5740;&#x3002;</p>
+<h3 id="serverobject"><a name="serverobject" class="plugin-anchor" href="#serverobject"><i class="fa fa-link" aria-hidden="true"></i></a>ServerObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">5353</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;domains&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;domain:v2ray.com&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><strong>address</strong>: string</p>
+</blockquote>
+<p>DNS &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x5982;<code>&quot;8.8.8.8&quot;</code>&#x3002;&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301; UDP &#x534F;&#x8BAE;&#x7684; DNS &#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<blockquote>
+<p><strong>port</strong>: number</p>
+</blockquote>
+<p>DNS &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#xFF0C;&#x5982;<code>53</code>&#x3002;</p>
+<blockquote>
+<p><strong>domains</strong>: [string]</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5217;&#x8868;&#xFF0C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C06;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6B64;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x57DF;&#x540D;&#x683C;&#x5F0F;&#x548C;<a href="03_routing.html">&#x8DEF;&#x7531;&#x914D;&#x7F6E;</a>&#x4E2D;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x82E5;&#x8981;&#x4F7F; DNS &#x670D;&#x52A1;&#x751F;&#x6548;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#x4E2D;&#x7684; <code>domainStrategy</code>&#x3002;</p>
+<p>&#x5F53;&#x67D0;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x7684;&#x57DF;&#x540D;&#x5217;&#x8868;&#x5339;&#x914D;&#x4E86;&#x5F53;&#x524D;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x57DF;&#x540D;&#xFF0C;V2Ray &#x4F1A;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5426;&#x5219;&#x6309;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
 
                                 
                                 </section>
@@ -944,7 +961,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2018-10-30T12:01:32.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-30T12:02:21.462Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2018-10-30T13:01:39.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-30T13:02:28.967Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
