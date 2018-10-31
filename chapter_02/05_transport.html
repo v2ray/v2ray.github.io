@@ -894,8 +894,8 @@ window.onload = function() {
                                 <h1 id="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><a name="&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x914D;&#x7F6E;</h1>
 <p>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#xFF08;transport&#xFF09;&#x662F;&#x5F53;&#x524D; V2Ray &#x8282;&#x70B9;&#x548C;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x5BF9;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x4E86;&#x7A33;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x901A;&#x9053;&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7684;&#x4E24;&#x7AEF;&#x9700;&#x8981;&#x6709;&#x5BF9;&#x79F0;&#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x7AEF;&#x7528;&#x4E86; WebSocket&#xFF0C;&#x90A3;&#x4E48;&#x53E6;&#x4E00;&#x4E2A;&#x7AEF;&#x4E5F;&#x5FC5;&#x987B;&#x4F7F;&#x7528; WebSocket&#xFF0C;&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x3002;</p>
 <p>&#x5E95;&#x5C42;&#x4F20;&#x8F93;&#xFF08;transport&#xFF09;&#x914D;&#x7F6E;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x662F;&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E8C;&#x662F;&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#x3002;&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5165;&#x7AD9;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x7528;&#x600E;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x8F93;&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5E94;&#x7684;&#x51FA;&#x7AD9;&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x540C;&#x6837;&#x7684;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x3002;&#x5F53;&#x5206;&#x534F;&#x8BAE;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x79CD;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x586B;&#x5199;&#x5176;&#x8BBE;&#x7F6E;&#x65F6;&#xFF0C;&#x6B64;&#x4F20;&#x8F93;&#x65B9;&#x5F0F;&#x4F1A;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E2D;&#x7684;&#x8BBE;&#x7F6E;&#x3002;</p>
-<h2 id="global"><a name="global" class="plugin-anchor" href="#global"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5168;&#x5C40;&#x914D;&#x7F6E; </h2>
-<p>&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4F4D;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684; &quot;transport&quot; &#x9879;&#x3002;</p>
+<h2 id="transportobject"><a name="transportobject" class="plugin-anchor" href="#transportobject"><i class="fa fa-link" aria-hidden="true"></i></a>TransportObject</h2>
+<p><code>TransportObject</code>&#x5BF9;&#x5E94;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;<code>transport</code>&#x9879;&#x3002;</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;tcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -904,81 +904,32 @@ window.onload = function() {
   <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
-<ul>
-<li><code>tcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/tcp.html">TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>kcpSettings</code>: &#x9488;&#x5BF9; <a href="transport/mkcp.html">mKCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>wsSettings</code>: &#x9488;&#x5BF9; <a href="transport/websocket.html">WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>httpSettings</code>: &#x9488;&#x5BF9; <a href="transport/h2.html">HTTP/2 &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-<li><code>dsSettings</code>: &#x9488;&#x4E8E;<a href="transport/domainsocket.html">Domain Socket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</li>
-</ul>
-<h2 id="perproxy"><a name="perproxy" class="plugin-anchor" href="#perproxy"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
-<p>&#x6BCF;&#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x3001;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x5728; inbound&#x3001;inboundDetour&#x3001;outbound&#x3001;outboundDetour &#x7684;&#x6BCF;&#x4E00;&#x9879;&#x4E2D;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; streamSettings &#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+<blockquote>
+<p><code>tcpSettings</code>: TcpObject</p>
+</blockquote>
+<p>&#x9488;&#x5BF9; <a href="transport/tcp.html">TCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</p>
+<blockquote>
+<p><code>kcpSettings</code>: KcpObject</p>
+</blockquote>
+<p>&#x9488;&#x5BF9; <a href="transport/mkcp.html">mKCP &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</p>
+<blockquote>
+<p><code>wsSettings</code>: WebSocketObject</p>
+</blockquote>
+<p>&#x9488;&#x5BF9; <a href="transport/websocket.html">WebSocket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</p>
+<blockquote>
+<p><code>httpSettings</code>: HttpObject</p>
+</blockquote>
+<p>&#x9488;&#x5BF9; <a href="transport/h2.html">HTTP/2 &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</p>
+<blockquote>
+<p><code>dsSettings</code>: DomainSocketObject</p>
+</blockquote>
+<p>&#x9488;&#x4E8E;<a href="transport/domainsocket.html">Domain Socket &#x8FDE;&#x63A5;&#x7684;&#x914D;&#x7F6E;</a>&#x3002;</p>
+<h2 id="streamsettingsobject"><a name="streamsettingsobject" class="plugin-anchor" href="#streamsettingsobject"><i class="fa fa-link" aria-hidden="true"></i></a>StreamSettingsObject</h2>
+<p><code>TransportObject</code>&#x5BF9;&#x5E94;&#x51FA;&#x7AD9;&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x4E2D;&#x7684;<code>streamSettings</code>&#x9879;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x3001;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x90FD;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<code>streamSettings</code>&#x6765;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4F20;&#x8F93;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;security&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;tlsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;serverName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;v2ray.com&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;allowInsecure&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;alpn&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;http/1.1&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;certificates&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        <span class="token string">&quot;usage&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;encipherment&quot;</span><span class="token punctuation">,</span>
-
-        <span class="token string">&quot;certificateFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/certificate.crt&quot;</span><span class="token punctuation">,</span>
-        <span class="token string">&quot;keyFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/key.key&quot;</span><span class="token punctuation">,</span>
-
-        <span class="token string">&quot;certificate&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-          <span class="token string">&quot;-----BEGIN CERTIFICATE-----&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;-----END CERTIFICATE-----&quot;</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-          <span class="token string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span><span class="token punctuation">,</span>
-          <span class="token string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
-        <span class="token punctuation">]</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tlsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;tcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -991,69 +942,200 @@ window.onload = function() {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<blockquote>
+<p><code>network</code>: &quot;tcp&quot; | &quot;kcp&quot; | &quot;ws&quot; | &quot;http&quot; | &quot;domainsocket&quot;</p>
+</blockquote>
+<p>&#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code></p>
+<blockquote>
+<p><code>security</code>: &quot;none&quot; | &quot;tls&quot;</p>
+</blockquote>
+<p>&#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</p>
+<blockquote>
+<p><code>tlsSettings</code>: <a href="#tlsobject">TLSObject</a></p>
+</blockquote>
+<p>TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;</p>
+<blockquote>
+<p><code>tcpSettings</code>: <a href="transport/tcp.html">TcpObject</a></p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; TCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; TCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>kcpSettings</code>: KcpObject</p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; mKCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; mKCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>wsSettings</code>: WebSocketObject</p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>httpSettings</code>: HttpObject</p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; HTTP/2 &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; HTTP/2 &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>dsSettings</code>: DomainSocketObject</p>
+</blockquote>
+<p>&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; Domain socket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; Domain socket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>sockopt</code>: SockoptObject</p>
+</blockquote>
+<p>&#x8FDE;&#x63A5;&#x9009;&#x9879;</p>
+<h2 id="tip"><a name="tip" class="plugin-anchor" href="#tip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
 <ul>
-<li><code>network</code>: &#x6570;&#x636E;&#x6D41;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EF;&#x9009;&#x7684;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#x3001;<code>&quot;kcp&quot;</code>&#x3001;<code>&quot;ws&quot;</code>&#x3001;<code>http</code>&#x6216;<code>&quot;domainsocket&quot;</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>&quot;tcp&quot;</code>&#xFF1B;</li>
-<li><code>security</code>: &#x662F;&#x5426;&#x542F;&#x5165;&#x4F20;&#x8F93;&#x5C42;&#x52A0;&#x5BC6;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x9009;&#x9879;&#x6709; <code>&quot;none&quot;</code> &#x8868;&#x793A;&#x4E0D;&#x52A0;&#x5BC6;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF0C;<code>&quot;tls&quot;</code> &#x8868;&#x793A;&#x4F7F;&#x7528; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>&#x3002;</li>
-<li><code>tlsSettings</code>: TLS &#x914D;&#x7F6E;&#x3002;TLS &#x7531; Golang &#x63D0;&#x4F9B;&#xFF0C;&#x652F;&#x6301; TLS 1.2&#xFF0C;&#x4E0D;&#x652F;&#x6301; DTLS&#x3002;<ul>
-<li><code>serverName</code>: &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</li>
-<li><code>alpn</code>: &#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;&#x4E86; TLS &#x63E1;&#x624B;&#x65F6;&#x6307;&#x5B9A;&#x7684; ALPN &#x6570;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>[&quot;http/1.1&quot;]</code>&#x3002;</li>
-<li><code>allowInsecure</code>: &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A; true &#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</li>
-<li><code>allowInsecureCiphers</code> (V2Ray 3.24+): &#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; TLS &#x53EA;&#x4F7F;&#x7528; TLS 1.3 &#x63A8;&#x8350;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5957;&#x4EF6;&#xFF0C;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x9009;&#x9879;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x4E0E; TLS 1.2 &#x517C;&#x5BB9;&#x7684;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;&#x3002;</li>
-<li><code>certificates</code>: &#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#xFF1A;<ul>
-<li><code>usage</code>: &#x8BC1;&#x4E66;&#x7528;&#x9014;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;encipherment&quot;</code>&#xFF0C;&#x53EF;&#x9009;&#x503C;&#x5982;&#x4E0B;&#xFF1A;<ul>
+<li>&#x4F7F;&#x7528;<code>v2ctl cert -ca</code>&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x3002;</li>
+<li>&#x5728; Windows &#x5E73;&#x53F0;&#x4E0A;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5373;&#x53EF;&#x9A8C;&#x8BC1;&#x8FDC;&#x7AEF; TLS &#x7684;&#x8BC1;&#x4E66;&#x3002;</li>
+<li>&#x5F53; <a href="protocols/dokodemo.html">Dokodemo-door</a> &#x4E2D;&#x6307;&#x5B9A;&#x4E86;<code>followRedirect</code>&#xFF0C;&#x4E14;<code>sockopt.tproxy</code>&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;<code>sockopt.tproxy</code>&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x8BBE;&#x4E3A;<code>&quot;redirect&quot;</code>&#x3002;</li>
+<li>&#x900F;&#x660E;&#x4EE3;&#x7406;&#x9700;&#x8981; Root &#x6216; CAP_NET_ADMIN &#x6743;&#x9650;&#x3002;</li>
+</ul>
+<h3 id="tlsobject"><a name="tlsobject" class="plugin-anchor" href="#tlsobject"><i class="fa fa-link" aria-hidden="true"></i></a>TLSObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;serverName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;v2ray.com&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;allowInsecure&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;alpn&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;http/1.1&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;certificates&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>serverName</code>: string</p>
+</blockquote>
+<p>&#x6307;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5728;&#x8FDE;&#x63A5;&#x7531; IP &#x5EFA;&#x7ACB;&#x65F6;&#x6709;&#x7528;&#x3002;</p>
+<blockquote>
+<p><code>alpn</code>: [ string ]</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;&#x4E86; TLS &#x63E1;&#x624B;&#x65F6;&#x6307;&#x5B9A;&#x7684; ALPN &#x6570;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>[&quot;http/1.1&quot;]</code>&#x3002;</p>
+<blockquote>
+<p><code>allowInsecure</code>: true | false</p>
+</blockquote>
+<p>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x8FDE;&#x63A5;&#xFF08;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;&#x5F53;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;V2Ray &#x4E0D;&#x4F1A;&#x68C0;&#x67E5;&#x8FDC;&#x7AEF;&#x4E3B;&#x673A;&#x6240;&#x63D0;&#x4F9B;&#x7684; TLS &#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x6027;&#x3002;</p>
+<blockquote>
+<p><code>allowInsecureCiphers</code>: true | false</p>
+</blockquote>
+<p>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; TLS &#x53EA;&#x4F7F;&#x7528; TLS 1.3 &#x63A8;&#x8350;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x5957;&#x4EF6;&#xFF0C;&#x5F00;&#x542F;&#x8FD9;&#x4E00;&#x9009;&#x9879;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x4E0E; TLS 1.2 &#x517C;&#x5BB9;&#x7684;&#x52A0;&#x5BC6;&#x5957;&#x4EF6;&#x3002;</p>
+<blockquote>
+<p><code>certificates</code>: [ <a href="#certificateobject">CertificateObject</a> ]</p>
+</blockquote>
+<p>&#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;</p>
+<h3 id="certificateobject"><a name="certificateobject" class="plugin-anchor" href="#certificateobject"><i class="fa fa-link" aria-hidden="true"></i></a>CertificateObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;usage&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;encipherment&quot;</span><span class="token punctuation">,</span>
+
+  <span class="token string">&quot;certificateFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/certificate.crt&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;keyFile&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/key.key&quot;</span><span class="token punctuation">,</span>
+
+  <span class="token string">&quot;certificate&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;-----BEGIN CERTIFICATE-----&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;MIICwDCCAaigAwIBAgIRAO16JMdESAuHidFYJAR/7kAwDQYJKoZIhvcNAQELBQAw&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ADAeFw0xODA0MTAxMzU1MTdaFw0xODA0MTAxNTU1MTdaMAAwggEiMA0GCSqGSIb3&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;DQEBAQUAA4IBDwAwggEKAoIBAQCs2PX0fFSCjOemmdm9UbOvcLctF94Ox4BpSfJ+&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;3lJHwZbvnOFuo56WhQJWrclKoImp/c9veL1J4Bbtam3sW3APkZVEK9UxRQ57HQuw&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;OzhV0FD20/0YELou85TwnkTw5l9GVCXT02NG+pGlYsFrxesUHpojdl8tIcn113M5&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;pypgDPVmPeeORRf7nseMC6GhvXYM4txJPyenohwegl8DZ6OE5FkSVR5wFQtAhbON&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;OAkIVVmw002K2J6pitPuJGOka9PxcCVWhko/W+JCGapcC7O74palwBUuXE1iH+Jp&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;noPjGp4qE2ognW3WH/sgQ+rvo20eXb9Um1steaYY8xlxgBsXAgMBAAGjNTAzMA4G&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;A1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAA&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;MA0GCSqGSIb3DQEBCwUAA4IBAQBUd9sGKYemzwPnxtw/vzkV8Q32NILEMlPVqeJU&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;7UxVgIODBV6A1b3tOUoktuhmgSSaQxjhYbFAVTD+LUglMUCxNbj56luBRlLLQWo+&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;9BUhC/ow393tLmqKcB59qNcwbZER6XT5POYwcaKM75QVqhCJVHJNb1zSEE7Co7iO&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;6wIan3lFyjBfYlBEz5vyRWQNIwKfdh5cK1yAu13xGENwmtlSTHiwbjBLXfk+0A/8&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;r/2s+sCYUkGZHhj8xY7bJ1zg0FRalP5LrqY+r6BckT1QPDIQKYy615j1LpOtwZe/&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;d4q7MD/dkzRDsch7t2cIjM/PYeMuzh87admSyL6hdtK0Nm/Q&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;-----END CERTIFICATE-----&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;-----BEGIN RSA PRIVATE KEY-----&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;MIIEowIBAAKCAQEArNj19HxUgoznppnZvVGzr3C3LRfeDseAaUnyft5SR8GW75zh&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;bqOeloUCVq3JSqCJqf3Pb3i9SeAW7Wpt7FtwD5GVRCvVMUUOex0LsDs4VdBQ9tP9&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;GBC6LvOU8J5E8OZfRlQl09NjRvqRpWLBa8XrFB6aI3ZfLSHJ9ddzOacqYAz1Zj3n&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;jkUX+57HjAuhob12DOLcST8np6IcHoJfA2ejhORZElUecBULQIWzjTgJCFVZsNNN&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;itieqYrT7iRjpGvT8XAlVoZKP1viQhmqXAuzu+KWpcAVLlxNYh/iaZ6D4xqeKhNq&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;IJ1t1h/7IEPq76NtHl2/VJtbLXmmGPMZcYAbFwIDAQABAoIBAFCgG4phfGIxK9Uw&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;qrp+o9xQLYGhQnmOYb27OpwnRCYojSlT+mvLcqwvevnHsr9WxyA+PkZ3AYS2PLue&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;C4xW0pzQgdn8wENtPOX8lHkuBocw1rNsCwDwvIguIuliSjI8o3CAy+xVDFgNhWap&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;/CMzfQYziB7GlnrM6hH838iiy0dlv4I/HKk+3/YlSYQEvnFokTf7HxbDDmznkJTM&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;aPKZ5qbnV+4AcQfcLYJ8QE0ViJ8dVZ7RLwIf7+SG0b0bqloti4+oQXqGtiESUwEW&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;/Wzi7oyCbFJoPsFWp1P5+wD7jAGpAd9lPIwPahdr1wl6VwIx9W0XYjoZn71AEaw4&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;bK4xUXECgYEA3g2o9WqyrhYSax3pGEdvV2qN0VQhw7Xe+jyy98CELOO2DNbB9QNJ&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;8cSSU/PjkxQlgbOJc8DEprdMldN5xI/srlsbQWCj72wXxXnVnh991bI2clwt7oYi&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;pcGZwzCrJyFL+QaZmYzLxkxYl1tCiiuqLm+EkjxCWKTX/kKEFb6rtnMCgYEAx0WR&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;L8Uue3lXxhXRdBS5QRTBNklkSxtU+2yyXRpvFa7Qam+GghJs5RKfJ9lTvjfM/PxG&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;3vhuBliWQOKQbm1ZGLbgGBM505EOP7DikUmH/kzKxIeRo4l64mioKdDwK/4CZtS7&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;az0Lq3eS6bq11qL4mEdE6Gn/Y+sqB83GHZYju80CgYABFm4KbbBcW+1RKv9WSBtK&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;gVIagV/89moWLa/uuLmtApyEqZSfn5mAHqdc0+f8c2/Pl9KHh50u99zfKv8AsHfH&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;TtjuVAvZg10GcZdTQ/I41ruficYL0gpfZ3haVWWxNl+J47di4iapXPxeGWtVA+u8&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eH1cvgDRMFWCgE7nUFzE8wKBgGndUomfZtdgGrp4ouLZk6W4ogD2MpsYNSixkXyW&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;64cIbV7uSvZVVZbJMtaXxb6bpIKOgBQ6xTEH5SMpenPAEgJoPVts816rhHdfwK5Q&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;8zetklegckYAZtFbqmM0xjOI6bu5rqwFLWr1xo33jF0wDYPQ8RHMJkruB1FIB8V2&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;GxvNAoGBAM4g2z8NTPMqX+8IBGkGgqmcYuRQxd3cs7LOSEjF9hPy1it2ZFe/yUKq&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ePa2E8osffK5LBkFzhyQb0WrGC9ijM9E6rv10gyuNjlwXdFJcdqVamxwPUBtxRJR&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;cYTY2HRkJXDdtT0Bkc3josE6UUDvwMpO0CfAETQPto1tjNEDhQhT&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;-----END RSA PRIVATE KEY-----&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>usage</code>: &quot;encipherment&quot; | &quot;verify&quot; | &quot;issue&quot;</p>
+</blockquote>
+<p>&#x8BC1;&#x4E66;&#x7528;&#x9014;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;encipherment&quot;</code></p>
+<ul>
 <li><code>&quot;encipherment&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E; TLS &#x8BA4;&#x8BC1;&#x548C;&#x52A0;&#x5BC6;&#x3002;</li>
 <li><code>&quot;verify&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x8FDC;&#x7AEF; TLS &#x7684;&#x8BC1;&#x4E66;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x6B64;&#x9879;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8BC1;&#x4E66;&#x5FC5;&#x987B;&#x4E3A; CA &#x8BC1;&#x4E66;&#x3002;&#x6682;&#x4E0D;&#x652F;&#x6301; Windows &#x5E73;&#x53F0;&#x3002;</li>
 <li><code>&quot;issue&quot;</code>: &#x8BC1;&#x4E66;&#x7528;&#x4E8E;&#x7B7E;&#x53D1;&#x5176;&#x5B83;&#x8BC1;&#x4E66;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x6B64;&#x9879;&#x65F6;&#xFF0C;&#x5F53;&#x524D;&#x8BC1;&#x4E66;&#x5FC5;&#x987B;&#x4E3A; CA &#x8BC1;&#x4E66;&#x3002;</li>
 </ul>
-</li>
-<li><code>certificateFile</code>: &#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;</li>
-<li><code>certificate</code>: &#x8BC1;&#x4E66;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x6240;&#x793A;&#x3002;<code>certificate</code>&#x548C;<code>certificateFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
-<li><code>keyFile</code>: &#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;</li>
-<li><code>key</code>: &#x5BC6;&#x94A5;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x5982;&#x793A;&#x3002;<code>key</code>&#x548C;<code>keyFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>tcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; TCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; TCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>kcpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; mKCP &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; mKCP &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>wsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; WebSocket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; WebSocket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>httpSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; HTTP/2 &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; HTTP/2 &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>dsSettings</code>: &#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7684; Domain socket &#x914D;&#x7F6E;&#xFF0C;&#x4EC5;&#x5F53;&#x6B64;&#x8FDE;&#x63A5;&#x4F7F;&#x7528; Domain socket &#x65F6;&#x6709;&#x6548;&#x3002;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x76F8;&#x540C;&#x3002;</li>
-<li><code>sockopt</code> (V2Ray 3.40+): &#x8FDE;&#x63A5;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6709;:<ul>
-<li><code>mark</code>: &#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x5F53;&#x5176;&#x503C;&#x975E;&#x96F6;&#x65F6;&#xFF0C;&#x5728;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x4E0A;&#x6807;&#x8BB0; SO_MARK&#x3002;<ul>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x5F53;&#x6709;&#x65B0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5047;&#x8BBE;&#x6240;&#x6307;&#x5B9A;&#x7684;<code>serverName</code>&#x4E3A;<code>&quot;v2ray.com&quot;</code>&#xFF0C;V2Ray &#x4F1A;&#x5148;&#x4ECE;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x7528;&#x4E8E;<code>&quot;v2ray.com&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x4EFB;&#x4E00;<code>usage</code>&#x4E3A;<code>&quot;issue&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#x7B7E;&#x53D1;&#x4E00;&#x4E2A;&#x9002;&#x7528;&#x4E8E;<code>&quot;v2ray.com&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x6709;&#x6548;&#x671F;&#x4E3A;&#x4E00;&#x5C0F;&#x65F6;&#x3002;&#x5E76;&#x5C06;&#x65B0;&#x7684;&#x8BC1;&#x4E66;&#x52A0;&#x5165;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x4EE5;&#x4F9B;&#x540E;&#x7EED;&#x4F7F;&#x7528;&#x3002;</p>
+</div></div></p>
+<blockquote>
+<p><code>certificateFile</code>: string</p>
+</blockquote>
+<p>&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .crt&#x3002;</p>
+<blockquote>
+<p><code>certificate</code>: [ string ]</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x8BC1;&#x4E66;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x6240;&#x793A;&#x3002;<code>certificate</code>&#x548C;<code>certificateFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</p>
+<blockquote>
+<p><code>keyFile</code>: string</p>
+</blockquote>
+<p>&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x4F7F;&#x7528; OpenSSL &#x751F;&#x6210;&#xFF0C;&#x540E;&#x7F00;&#x540D;&#x4E3A; .key&#x3002;&#x76EE;&#x524D;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x9700;&#x8981;&#x5BC6;&#x7801;&#x7684; key &#x6587;&#x4EF6;&#x3002;</p>
+<blockquote>
+<p><code>key</code>: [ string ]</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5BC6;&#x94A5;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x6837;&#x4F8B;&#x5982;&#x793A;&#x3002;<code>key</code>&#x548C;<code>keyFile</code>&#x4E8C;&#x8005;&#x9009;&#x4E00;&#x3002;</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x5F53;<code>certificateFile</code>&#x548C;<code>certificate</code>&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;V2Ray &#x4F18;&#x5148;&#x4F7F;&#x7528;<code>certificateFile</code>&#x3002;<code>keyFile</code>&#x548C;<code>key</code>&#x4E5F;&#x4E00;&#x6837;&#x3002;</p>
+</div></div></p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x5F53;<code>usage</code>&#x4E3A;<code>&quot;verify&quot;</code>&#x65F6;&#xFF0C;<code>keyFile</code>&#x548C;<code>key</code>&#x53EF;&#x5747;&#x4E3A;&#x7A7A;&#x3002;</p>
+</div></div></p>
+<h3 id="sockoptobject"><a name="sockoptobject" class="plugin-anchor" href="#sockoptobject"><i class="fa fa-link" aria-hidden="true"></i></a>SockoptObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;mark&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tcpFastOpen&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tproxy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;off&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>mark</code>: number</p>
+</blockquote>
+<p>&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x3002;&#x5F53;&#x5176;&#x503C;&#x975E;&#x96F6;&#x65F6;&#xFF0C;&#x5728;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x4E0A;&#x6807;&#x8BB0; SO_MARK&#x3002;</p>
+<ul>
 <li>&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux &#x7CFB;&#x7EDF;&#x3002;</li>
 <li>&#x9700;&#x8981; CAP_NET_ADMIN &#x6743;&#x9650;&#x3002;</li>
 </ul>
-</li>
-<li><code>tcpFastOpen</code>: &#x662F;&#x5426;&#x542F;&#x7528; <a href="https://zh.wikipedia.org/wiki/TCP%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80" target="_blank">TCP Fast Open</a>&#x3002;&#x5F53;&#x5176;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5F00;&#x542F;TFO&#xFF1B;&#x5F53;&#x5176;&#x5B83;&#x4E3A;<code>false</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5173;&#x95ED;TFO&#xFF1B;&#x5F53;&#x6B64;&#x9879;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;<ul>
+<blockquote>
+<p><code>tcpFastOpen</code>: true | false</p>
+</blockquote>
+<p>&#x662F;&#x5426;&#x542F;&#x7528; <a href="https://zh.wikipedia.org/wiki/TCP%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80" target="_blank">TCP Fast Open</a>&#x3002;&#x5F53;&#x5176;&#x503C;&#x4E3A;<code>true</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5F00;&#x542F;TFO&#xFF1B;&#x5F53;&#x5176;&#x5B83;&#x4E3A;<code>false</code>&#x65F6;&#xFF0C;&#x5F3A;&#x5236;&#x5173;&#x95ED;TFO&#xFF1B;&#x5F53;&#x6B64;&#x9879;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;&#x53EF;&#x7528;&#x4E8E;&#x5165;&#x7AD9;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x3002;</p>
+<ul>
 <li>&#x4EC5;&#x5728;&#x4EE5;&#x4E0B;&#x7248;&#x672C;&#xFF08;&#x6216;&#x66F4;&#x65B0;&#x7248;&#x672C;&#xFF09;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#x53EF;&#x7528;:<ul>
 <li>Windows 10 (1604)</li>
 <li>Mac OS 10.11 / iOS 9</li>
 <li>Linux 3.16: &#x7CFB;&#x7EDF;&#x5DF2;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#xFF0C;&#x65E0;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x3002;</li>
 </ul>
 </li>
-<li>&#x53EF;&#x7528;&#x4E8E;&#x5165;&#x7AD9;&#x51FA;&#x7AD9;&#x8FDE;&#x63A5;&#x3002;</li>
 </ul>
-</li>
-<li><code>tproxy</code> (V2Ray 3.44+): &#x662F;&#x5426;&#x5F00;&#x542F;&#x900F;&#x660E;&#x4EE3;&#x7406; (&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux)&#x3002;&#x53EF;&#x9009;&#x7684;&#x503C;&#x6709;:<ul>
+<blockquote>
+<p><code>tproxy</code>: &quot;redirect&quot; | &quot;tproxy&quot; | &quot;off&quot;</p>
+</blockquote>
+<p>&#x662F;&#x5426;&#x5F00;&#x542F;&#x900F;&#x660E;&#x4EE3;&#x7406; (&#x4EC5;&#x9002;&#x7528;&#x4E8E; Linux)&#x3002;</p>
+<ul>
 <li><code>&quot;redirect&quot;</code>: &#x4F7F;&#x7528; Redirect &#x6A21;&#x5F0F;&#x7684;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;&#x4EC5;&#x652F;&#x6301; TCP/IPv4 &#x548C; UDP &#x8FDE;&#x63A5;&#x3002;</li>
 <li><code>&quot;tproxy&quot;</code>: &#x4F7F;&#x7528; TProxy &#x6A21;&#x5F0F;&#x7684;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;&#x652F;&#x6301; TCP &#x548C; UDP &#x8FDE;&#x63A5;&#x3002;</li>
 <li><code>&quot;off&quot;</code>: &#x5173;&#x95ED;&#x900F;&#x660E;&#x4EE3;&#x7406;&#x3002;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="tip"><a name="tip" class="plugin-anchor" href="#tip"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x8D34;&#x58EB; </h2>
-<ul>
-<li>&#x5F53;<code>certificateFile</code>&#x548C;<code>certificate</code>&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;V2Ray &#x4F18;&#x5148;&#x4F7F;&#x7528;<code>certificateFile</code>&#x3002;<code>keyFile</code>&#x548C;<code>key</code>&#x4E5F;&#x4E00;&#x6837;&#x3002;</li>
-<li>&#x5F53;&#x6709;&#x65B0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x5047;&#x8BBE;&#x6240;&#x6307;&#x5B9A;&#x7684;<code>serverName</code>&#x4E3A;<code>&quot;v2ray.com&quot;</code>&#xFF0C;V2Ray &#x4F1A;&#x5148;&#x4ECE;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#x4E2D;&#x5BFB;&#x627E;&#x53EF;&#x7528;&#x4E8E;<code>&quot;v2ray.com&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x4EFB;&#x4E00;<code>usage</code>&#x4E3A;<code>&quot;issue&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#x7B7E;&#x53D1;&#x4E00;&#x4E2A;&#x9002;&#x7528;&#x4E8E;<code>&quot;v2ray.com&quot;</code>&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x6709;&#x6548;&#x671F;&#x4E3A;&#x4E00;&#x5C0F;&#x65F6;&#x3002;&#x5E76;&#x5C06;&#x65B0;&#x7684;&#x8BC1;&#x4E66;&#x52A0;&#x5165;&#x8BC1;&#x4E66;&#x5217;&#x8868;&#xFF0C;&#x4EE5;&#x4F9B;&#x540E;&#x7EED;&#x4F7F;&#x7528;&#x3002;</li>
-<li>&#x5F53;<code>usage</code>&#x4E3A;<code>&quot;verify&quot;</code>&#x65F6;&#xFF0C;<code>keyFile</code>&#x548C;<code>key</code>&#x53EF;&#x5747;&#x4E3A;&#x7A7A;&#x3002;</li>
-<li>&#x4F7F;&#x7528;<code>v2ctl cert -ca</code>&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x3002;</li>
-<li>&#x5728; Windows &#x5E73;&#x53F0;&#x4E0A;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x7B7E;&#x540D;&#x7684; CA &#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5373;&#x53EF;&#x9A8C;&#x8BC1;&#x8FDC;&#x7AEF; TLS &#x7684;&#x8BC1;&#x4E66;&#x3002;</li>
-<li>&#x5F53; <a href="protocols/dokodemo.html">Dokodemo-door</a> &#x4E2D;&#x6307;&#x5B9A;&#x4E86;<code>followRedirect</code>&#xFF0C;&#x4E14;<code>sockopt.tproxy</code>&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;<code>sockopt.tproxy</code>&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x8BBE;&#x4E3A;<code>&quot;redirect&quot;</code>&#x3002;</li>
-<li>&#x900F;&#x660E;&#x4EE3;&#x7406;&#x9700;&#x8981; Root &#x6216; CAP_NET_ADMIN &#x6743;&#x9650;&#x3002;</li>
 </ul>
 
                                 
@@ -1070,7 +1152,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"传输配置","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"反向代理","level":"1.2.9","depth":2,"path":"chapter_02/reverse.md","ref":"chapter_02/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-10-31T11:03:09.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-31T11:03:58.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"传输配置","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"previous":{"title":"反向代理","level":"1.2.9","depth":2,"path":"chapter_02/reverse.md","ref":"chapter_02/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/05_transport.md","mtime":"2018-10-31T12:01:31.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-31T12:02:19.083Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
