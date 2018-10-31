@@ -920,7 +920,8 @@ window.onload = function() {
 </ul>
 </li>
 </ul>
-<h2 id="inbound"><a name="inbound" class="plugin-anchor" href="#inbound"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
+<p>Shadowsocks &#x7684;&#x914D;&#x7F6E;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF0C;<code>InboundConfigurationObject</code>&#x548C;<code>OutboundConfigurationObject</code>&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x5165;&#x7AD9;&#x548C;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x914D;&#x7F6E;&#x4E2D;&#x7684;<code>settings</code>&#x9879;&#x3002;</p>
+<h2 id="inboundconfigurationobject"><a name="inboundconfigurationobject" class="plugin-anchor" href="#inboundconfigurationobject"><i class="fa fa-link" aria-hidden="true"></i></a>InboundConfigurationObject</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;love@v2ray.com&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;method&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;aes-128-cfb&quot;</span><span class="token punctuation">,</span>
@@ -932,31 +933,31 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><strong>email</strong>: string</p>
+<p><code>email</code>: string</p>
 </blockquote>
 <p>&#x90AE;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x7528;&#x6237;</p>
 <blockquote>
-<p><strong>method</strong>: string</p>
+<p><code>method</code>: string</p>
 </blockquote>
 <p>&#x5FC5;&#x586B;&#x3002;&#x53EF;&#x9009;&#x7684;&#x503C;&#x89C1;<a href="#encryption-list">&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x5217;&#x8868;</a></p>
 <blockquote>
-<p><strong>password</strong>: string</p>
+<p><code>password</code>: string</p>
 </blockquote>
 <p>&#x5FC5;&#x586B;&#xFF0C;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x3002;Shadowsocks &#x534F;&#x8BAE;&#x4E0D;&#x9650;&#x5236;&#x5BC6;&#x7801;&#x957F;&#x5EA6;&#xFF0C;&#x4F46;&#x77ED;&#x5BC6;&#x7801;&#x4F1A;&#x66F4;&#x53EF;&#x80FD;&#x88AB;&#x7834;&#x89E3;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; 16 &#x5B57;&#x7B26;&#x6216;&#x66F4;&#x957F;&#x7684;&#x5BC6;&#x7801;&#x3002;</p>
 <blockquote>
-<p><strong>level</strong>: number</p>
+<p><code>level</code>: number</p>
 </blockquote>
 <p>&#x7528;&#x6237;&#x7B49;&#x7EA7;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>0</code>&#x3002;&#x8BE6;&#x89C1;<a href="../policy.html">&#x672C;&#x5730;&#x7B56;&#x7565;</a>&#x3002;</p>
 <blockquote>
-<p><strong>ota</strong>: true | false</p>
+<p><code>ota</code>: true | false</p>
 </blockquote>
 <p>&#x662F;&#x5426;&#x5F3A;&#x5236; OTA&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x6B64;&#x9879;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x5224;&#x65AD;&#x3002;&#x5F3A;&#x5236;&#x5F00;&#x542F; OTA &#x540E;&#xFF0C;V2Ray &#x4F1A;&#x62D2;&#x7EDD;&#x672A;&#x542F;&#x7528; OTA &#x7684;&#x8FDE;&#x63A5;&#x3002;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</p>
 <p>&#x5F53;&#x4F7F;&#x7528; AEAD &#x65F6;&#xFF0C;<code>ota</code> &#x8BBE;&#x7F6E;&#x65E0;&#x6548;</p>
 <blockquote>
-<p><strong>network</strong>: &quot;tcp&quot; | &quot;udp&quot; | &quot;tcp,udp&quot;</p>
+<p><code>network</code>: &quot;tcp&quot; | &quot;udp&quot; | &quot;tcp,udp&quot;</p>
 </blockquote>
 <p>&#x53EF;&#x63A5;&#x6536;&#x7684;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>&quot;tcp&quot;</code>&#x3002;</p>
-<h2 id="outbound"><a name="outbound" class="plugin-anchor" href="#outbound"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x914D;&#x7F6E; </h2>
+<h2 id="outboundconfigurationobject"><a name="outboundconfigurationobject" class="plugin-anchor" href="#outboundconfigurationobject"><i class="fa fa-link" aria-hidden="true"></i></a>OutboundConfigurationObject</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;servers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
@@ -972,7 +973,7 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><strong>servers</strong>: [<a href="#serverobject">ServerObject</a>]</p>
+<p><code>servers</code>: [<a href="#serverobject">ServerObject</a>]</p>
 </blockquote>
 <p>&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x662F;&#x4E00;&#x4E2A; <a href="#serverobject">ServerObject</a>&#x3002;</p>
 <h3 id="serverobject"><a name="serverobject" class="plugin-anchor" href="#serverobject"><i class="fa fa-link" aria-hidden="true"></i></a>ServerObject</h3>
@@ -987,32 +988,32 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><strong>email</strong>: string</p>
+<p><code>email</code>: string</p>
 </blockquote>
 <p>&#x90AE;&#x4EF6;&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x9009;&#xFF0C;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x7528;&#x6237;</p>
 <blockquote>
-<p><strong>address</strong>: address</p>
+<p><code>address</code>: address</p>
 </blockquote>
 <p>Shadowsocks &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#xFF0C;&#x652F;&#x6301; IPv4&#x3001;IPv6 &#x548C;&#x57DF;&#x540D;&#x3002;&#x5FC5;&#x586B;&#x3002;</p>
 <blockquote>
-<p><strong>port</strong>: number</p>
+<p><code>port</code>: number</p>
 </blockquote>
 <p>Shadowsocks &#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x3002;&#x5FC5;&#x586B;&#x3002;</p>
 <blockquote>
-<p><strong>method</strong>: string</p>
+<p><code>method</code>: string</p>
 </blockquote>
 <p>&#x5FC5;&#x586B;&#x3002;&#x53EF;&#x9009;&#x7684;&#x503C;&#x89C1;<a href="#encryption-list">&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x5217;&#x8868;</a></p>
 <blockquote>
-<p><strong>password</strong>: string</p>
+<p><code>password</code>: string</p>
 </blockquote>
 <p>&#x5FC5;&#x586B;&#x3002;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x3002;Shadowsocks &#x534F;&#x8BAE;&#x4E0D;&#x9650;&#x5236;&#x5BC6;&#x7801;&#x957F;&#x5EA6;&#xFF0C;&#x4F46;&#x77ED;&#x5BC6;&#x7801;&#x4F1A;&#x66F4;&#x53EF;&#x80FD;&#x88AB;&#x7834;&#x89E3;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; 16 &#x5B57;&#x7B26;&#x6216;&#x66F4;&#x957F;&#x7684;&#x5BC6;&#x7801;&#x3002;</p>
 <blockquote>
-<p><strong>ota</strong>: true | false</p>
+<p><code>ota</code>: true | false</p>
 </blockquote>
 <p>&#x662F;&#x5426;&#x5F00;&#x542F; Shadowsocks &#x7684;&#x4E00;&#x6B21;&#x9A8C;&#x8BC1;&#xFF08;One time auth&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<code>false</code>&#x3002;</p>
 <p>&#x5F53;&#x4F7F;&#x7528; AEAD &#x65F6;&#xFF0C;<code>ota</code> &#x8BBE;&#x7F6E;&#x65E0;&#x6548;&#x3002;</p>
 <blockquote>
-<p><strong>level</strong>: number</p>
+<p><code>level</code>: number</p>
 </blockquote>
 <p>&#x7528;&#x6237;&#x7B49;&#x7EA7;</p>
 <h2 id="encryption-list"><a name="encryption-list" class="plugin-anchor" href="#encryption-list"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x5217;&#x8868; </h2>
@@ -1040,7 +1041,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/shadowsocks","refen":"configuration/protocols/shadowsocks","title":"Shadowsocks","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/socks.md","ref":"chapter_02/protocols/socks.md","articles":[]},"previous":{"title":"MTProto","level":"1.2.2.5","depth":3,"path":"chapter_02/protocols/mtproto.md","ref":"chapter_02/protocols/mtproto.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/shadowsocks.md","mtime":"2018-10-31T10:01:34.205Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-31T10:02:24.509Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/shadowsocks","refen":"configuration/protocols/shadowsocks","title":"Shadowsocks","level":"1.2.2.6","depth":3,"next":{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"chapter_02/protocols/socks.md","ref":"chapter_02/protocols/socks.md","articles":[]},"previous":{"title":"MTProto","level":"1.2.2.5","depth":3,"path":"chapter_02/protocols/mtproto.md","ref":"chapter_02/protocols/mtproto.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/shadowsocks.md","mtime":"2018-10-31T11:03:09.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-31T11:03:58.072Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
