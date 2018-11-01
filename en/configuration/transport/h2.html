@@ -725,22 +725,22 @@ window.onload = function() {
                                 
                                 <h1 id="http2-transport"><a name="http2-transport" class="plugin-anchor" href="#http2-transport"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP/2 Transport</h1>
 <p>HTTP/2 transport is added in V2Ray 3.17. It is based on standard HTTP/2, and can be proxies through other HTTP server, such as Nginx.</p>
-<p>Configuration:</p>
+<p>Due to HTTP/2 recommandation, the corressponding inbound and outbound must enable TLS to use this transport.</p>
+<h2 id="httpobject"><a name="httpobject" class="plugin-anchor" href="#httpobject"><i class="fa fa-link" aria-hidden="true"></i></a>HttpObject</h2>
+<p><code>DomainSocketObject</code> is used in <code>httpSettings</code> field in <code>TransportObject</code> and <code>StreamSettingsObject</code>.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;host&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;v2ray.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token string">&quot;path&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/random/path&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
-<ul>
-<li><code>host</code>: A string array. Each element is a domain. Client picks up a domain at random for each request. Server checks whether the domain in incoming request is in the list.</li>
-<li><code>path</code>: HTTP path. Client and server must have the same value.</li>
-</ul>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips</h2>
-<ul>
-<li>Both client and server must enable TLS for communication.</li>
-<li>This transport is currently in beta. It may have many bugs. It may also be changed in the future.</li>
-</ul>
+<blockquote>
+<p><code>host</code>: [ string ]</p>
+</blockquote>
+<p>A string array. Each element is a domain. Client picks up a domain at random for each request. Server checks whether the domain in incoming request is in the list.</p>
+<blockquote>
+<p><code>path</code>: string</p>
+</blockquote>
+<p>HTTP path. Client and server must have the same value.</p>
 
                                 
                                 </section>
@@ -756,7 +756,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/h2","refen":"configuration/transport/h2","title":"HTTP/2","level":"1.2.9.4","depth":3,"next":{"title":"DomainSocket","level":"1.2.9.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]},"previous":{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/transport/h2.md","mtime":"2018-11-01T15:01:39.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T15:02:46.867Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/h2","refen":"configuration/transport/h2","title":"HTTP/2","level":"1.2.9.4","depth":3,"next":{"title":"DomainSocket","level":"1.2.9.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]},"previous":{"title":"WebSocket","level":"1.2.9.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/transport/h2.md","mtime":"2018-11-01T16:01:40.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-01T16:02:43.970Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
