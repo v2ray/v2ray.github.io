@@ -726,7 +726,8 @@ window.onload = function() {
                                 <h1 id="api"><a name="api" class="plugin-anchor" href="#api"><i class="fa fa-link" aria-hidden="true"></i></a>API</h1>
 <p>V2Ray &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; API &#x434;&#x43B;&#x44F; &#x443;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x430;. &#x42D;&#x442;&#x438; API &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x430;&#x43D;&#x44B; &#x43D;&#x430; <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
 <p>&#x41A;&#x43E;&#x433;&#x434;&#x430; API &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x43E;, V2Ray &#x430;&#x432;&#x442;&#x43E;&#x43C;&#x430;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x435;&#x442; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;, &#x43F;&#x43E;&#x43C;&#x435;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x447;&#x435;&#x440;&#x435;&#x437; <code>tag</code>. &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C; &#x434;&#x43E;&#x43B;&#x436;&#x435;&#x43D; <a href="routing.html">&#x43C;&#x430;&#x440;&#x448;&#x440;&#x443;&#x442;&#x438;&#x437;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;</a> &#x432;&#x441;&#x435; &#x441;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; gRPC &#x432; &#x44D;&#x442;&#x43E;&#x442; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;.</p>
-<p>&#x41D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;:</p>
+<h2 id="apiobject"><a name="apiobject" class="plugin-anchor" href="#apiobject"><i class="fa fa-link" aria-hidden="true"></i></a>ApiObject</h2>
+<p><code>ApiObject</code> is used as <code>api</code> field in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;api&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;services&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
@@ -736,24 +737,27 @@ window.onload = function() {
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x413;&#x434;&#x435;:</p>
-<ul>
-<li><code>tag</code>: &#x41C;&#x435;&#x442;&#x43A;&#x430; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;.</li>
-<li><code>services</code>: &#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x432;&#x43A;&#x43B;&#x44E;&#x447;&#x451;&#x43D;&#x43D;&#x44B;&#x445; API.</li>
-</ul>
-<h2 id="&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api"><a name="&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api" class="plugin-anchor" href="#&#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A;-&#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445;-api"><i class="fa fa-link" aria-hidden="true"></i></a>&#x421;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x43C;&#x44B;&#x445; API</h2>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>The tag of the outbound proxy.</p>
+<blockquote>
+<p><code>services</code>: [ string ]</p>
+</blockquote>
+<p>List of enabled APIs.</p>
+<h2 id="supported-api-list"><a name="supported-api-list" class="plugin-anchor" href="#supported-api-list"><i class="fa fa-link" aria-hidden="true"></i></a>Supported API list</h2>
 <h3 id="handlerservice"><a name="handlerservice" class="plugin-anchor" href="#handlerservice"><i class="fa fa-link" aria-hidden="true"></i></a>HandlerService</h3>
-<p>API &#x434;&#x43B;&#x44F; &#x443;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x43C;&#x438; &#x438; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x438;&#x43C;&#x438; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;. &#x414;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x44B; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x435; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;:</p>
+<p>API for manipulating inbound and outbound proxies. The following functionalities are provided:</p>
 <ul>
-<li>&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E;/&#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;.</li>
-<li>&#x423;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x435;&#x433;&#x43E; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E;/&#x438;&#x441;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;.</li>
-<li>&#x414;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x43D;&#x43E;&#x432;&#x43E;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438; (&#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x434;&#x43B;&#x44F; VMess).</li>
-<li>&#x423;&#x434;&#x430;&#x43B;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x443;&#x44E;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44F; &#x432;&#x445;&#x43E;&#x434;&#x44F;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438; (&#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x434;&#x43B;&#x44F; VMess).</li>
+<li>Add a new inbound/outbound proxy.</li>
+<li>Remove an existing inbound/outbound proxy.</li>
+<li>Add a new user to an inbound proxy (VMess only).</li>
+<li>Remove an existing user from an inbound proxy (VMess only).</li>
 </ul>
 <h3 id="loggerservice"><a name="loggerservice" class="plugin-anchor" href="#loggerservice"><i class="fa fa-link" aria-hidden="true"></i></a>LoggerService</h3>
-<p>&#x41F;&#x435;&#x440;&#x435;&#x437;&#x430;&#x43F;&#x443;&#x441;&#x43A; &#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x435;&#x433;&#x43E; &#x43B;&#x43E;&#x433;&#x433;&#x435;&#x440;&#x430;. &#x41C;&#x43E;&#x436;&#x435;&#x442; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x442;&#x44C; &#x441; logrotate &#x434;&#x43B;&#x44F; &#x43E;&#x43F;&#x435;&#x440;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F; &#x444;&#x430;&#x439;&#x43B;&#x430;&#x43C;&#x438; &#x436;&#x443;&#x440;&#x43D;&#x430;&#x43B;&#x430;.</p>
+<p>To restart internal logger. Can work with logrotate for operating log files.</p>
 <h3 id="statsservice"><a name="statsservice" class="plugin-anchor" href="#statsservice"><i class="fa fa-link" aria-hidden="true"></i></a>StatsService</h3>
-<p>&#x41F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x43A;&#x430; <a href="stats.html">&#x432;&#x43D;&#x443;&#x442;&#x440;&#x435;&#x43D;&#x43D;&#x435;&#x439; &#x441;&#x442;&#x430;&#x442;&#x438;&#x441;&#x442;&#x438;&#x43A;&#x438;</a>.</p>
+<p>Support for internal <a href="stats.html">Statistics</a>.</p>
 
                                 
                                 </section>
@@ -769,7 +773,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/api","refen":"configuration/api","title":"API","level":"1.2.7","depth":2,"next":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-11-02T22:01:15.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-02T22:02:53.764Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/api","refen":"configuration/api","title":"API","level":"1.2.7","depth":2,"next":{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"previous":{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/api.md","mtime":"2018-11-03T22:01:24.825Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-03T22:03:01.779Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
