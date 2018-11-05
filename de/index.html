@@ -225,20 +225,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" data-path="welcome/license.html">
-            
-                <a href="welcome/license.html">
-            
-                    
-                    License
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.9" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
@@ -484,7 +471,20 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="configuration/transport.html">
+        <li class="chapter " data-level="1.2.9" data-path="configuration/reverse.html">
+            
+                <a href="configuration/reverse.html">
+            
+                    
+                    Reverse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="configuration/transport.html">
             
                 <a href="configuration/transport.html">
             
@@ -498,7 +498,7 @@ window.onload = function() {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.9.1" data-path="configuration/transport/tcp.html">
+        <li class="chapter " data-level="1.2.10.1" data-path="configuration/transport/tcp.html">
             
                 <a href="configuration/transport/tcp.html">
             
@@ -511,7 +511,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.2" data-path="configuration/transport/mkcp.html">
+        <li class="chapter " data-level="1.2.10.2" data-path="configuration/transport/mkcp.html">
             
                 <a href="configuration/transport/mkcp.html">
             
@@ -524,7 +524,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.3" data-path="configuration/transport/websocket.html">
+        <li class="chapter " data-level="1.2.10.3" data-path="configuration/transport/websocket.html">
             
                 <a href="configuration/transport/websocket.html">
             
@@ -537,12 +537,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.4" data-path="configuration/transport/h2.html">
+        <li class="chapter " data-level="1.2.10.4" data-path="configuration/transport/h2.html">
             
                 <a href="configuration/transport/h2.html">
             
                     
-                    HTTP / 2
+                    HTTP/2
             
                 </a>
             
@@ -550,7 +550,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.5" data-path="configuration/transport/domainsocket.html">
+        <li class="chapter " data-level="1.2.10.5" data-path="configuration/transport/domainsocket.html">
             
                 <a href="configuration/transport/domainsocket.html">
             
@@ -568,12 +568,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="configuration/env.html">
+        <li class="chapter " data-level="1.2.11" data-path="configuration/env.html">
             
                 <a href="configuration/env.html">
             
                     
-                    Env-Variablen
+                    Env Variables
             
                 </a>
             
@@ -724,26 +724,20 @@ window.onload = function() {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="projekt-v"><a name="projekt-v" class="plugin-anchor" href="#projekt-v"><i class="fa fa-link" aria-hidden="true"></i></a>Projekt V</h1>
-<p>Project V ist eine Sammlung von Tools, mit denen Sie Ihr eigenes Datenschutznetzwerk &#xFC;ber das Internet aufbauen k&#xF6;nnen.</p>
-<h2 id="einf&#xFC;hrung"><a name="einf&#xFC;hrung" class="plugin-anchor" href="#einf&#xFC;hrung"><i class="fa fa-link" aria-hidden="true"></i></a>Einf&#xFC;hrung</h2>
-<p>Project V provides a single core with various GUI programs. The core, V2Ray, is for network connection, routing and data processing, while GUI programs are for user friendly experience.</p>
-<p>V2Ray&apos;s responsibility is transfer data from its client to specified server, based on user configuration. It runs as a commandline tool. It can be configured via JSON based configuration.</p>
-<h2 id="eigenschaften"><a name="eigenschaften" class="plugin-anchor" href="#eigenschaften"><i class="fa fa-link" aria-hidden="true"></i></a>Eigenschaften</h2>
-<h3 id="multi-proxy-unterst&#xFC;tzung"><a name="multi-proxy-unterst&#xFC;tzung" class="plugin-anchor" href="#multi-proxy-unterst&#xFC;tzung"><i class="fa fa-link" aria-hidden="true"></i></a>Multi-Proxy-Unterst&#xFC;tzung</h3>
-<p>V2Ray unterst&#xFC;tzt Socks, HTTP, Shadowsocks und VMess-Protokoll.</p>
+                                <h1 id="project-v-"><a name="project-v-" class="plugin-anchor" href="#project-v-"><i class="fa fa-link" aria-hidden="true"></i></a>Project V <img style="float: right;" width="100" height="100" src="resources/v2ray_1024.png"></h1>
+<p>Project V is a set of tools to help you build your own privacy network over internet. The core of Project V, named <code>V2Ray</code>, is responsible for network protocols and communications. It can work alone, as well as combine with other tools.</p>
+<p>This website is mainly a manual for V2Ray, with some additional information regarding the whole project.</p>
+<h2 id="features"><a name="features" class="plugin-anchor" href="#features"><i class="fa fa-link" aria-hidden="true"></i></a>Features</h2>
 <ul>
-<li>Ein V2Ray-Prozess kann verschiedene Protokolle auf verschiedenen Ports gleichzeitig verwenden.</li>
-<li>Durch die Kombination verschiedener ein- und ausgehender Proxies kann das Datenverkehrsformat dynamisch ge&#xE4;ndert werden.</li>
+<li>Multiple inbound/outbound proxies: one V2Ray instance supports in parallel multiple inbound and outbound protocols. Each protocol works independently.</li>
+<li>Customizable routing: incoming traffic can be sent to different outbounds based on routing configuration. It is easy to route traffic by target region or domain.</li>
+<li>Multiple protocols: V2Ray supports multiple protocols, including Socks, HTTP, Shadowsocks, VMess etc. Each protocol may have its own transport, such as TCP, mKCP, WebSocket etc.</li>
+<li>Obfuscation: V2Ray has built in obfuscation to hide traffic in TLS, and can run in parallel with web servers.</li>
+<li>Reverse proxy: General support of reverse proxy. Can be used to build tunnels to localhost.</li>
+<li>Multiple platforms: V2Ray runs natively on Windows, Mac OS, Linux, etc. There is also third party support on mobile.</li>
 </ul>
-<h3 id="mehrere-transportprotokolle"><a name="mehrere-transportprotokolle" class="plugin-anchor" href="#mehrere-transportprotokolle"><i class="fa fa-link" aria-hidden="true"></i></a>Mehrere Transportprotokolle</h3>
-<p>Alle oben genannten Proxies k&#xF6;nnen &#xFC;ber TLS, TCP, mKCP und weitere Transportprotokolle gesendet / empfangen werden.</p>
-<h3 id="flexibles-routing"><a name="flexibles-routing" class="plugin-anchor" href="#flexibles-routing"><i class="fa fa-link" aria-hidden="true"></i></a>Flexibles Routing</h3>
-<p>V2Ray verf&#xFC;gt &#xFC;ber einen internen Router, der so konfiguriert werden kann, dass er Datenverkehr vermittelt oder direkt sendet oder sogar blockiert.</p>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p> This site is generated by GitBook, and host on GitHub. If you&apos;d like to modify its content, please send pull request to <a href="https://github.com/v2ray/manual" target="_blank">this repo</a>. </p>
 </div></div></p>
-<h2 id="license"><a name="license" class="plugin-anchor" href="#license"><i class="fa fa-link" aria-hidden="true"></i></a>License</h2>
-<p>Diese Website wird unter einer Lizenz <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Internationale Lizenz Creative Commons Attribution 4.0</a>.</p>
 
                                 
                                 </section>
@@ -759,7 +753,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"index","refen":"index","title":"Project V","level":"1.1","depth":1,"next":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-11-05T19:01:31.369Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T19:02:51.990Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"index","refen":"index","title":"Project V","level":"1.1","depth":1,"next":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"de","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-11-05T20:01:35.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T20:03:07.226Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -227,25 +227,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.1.9" data-path="../../welcome/license.html">
-            
-                <a href="../../welcome/license.html">
-            
-                    
-                    Лицензия
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.10" >
+        <li class="chapter " data-level="1.1.9" >
             
                 <a target="_blank" href="https://steemit.com/@v2ray">
             
                     
-                    Блог ↪
+                    Blog↪
             
                 </a>
             
@@ -486,12 +473,25 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9" data-path="../transport.html">
+        <li class="chapter " data-level="1.2.9" data-path="../reverse.html">
+            
+                <a href="../reverse.html">
+            
+                    
+                    Reverse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../transport.html">
             
                 <a href="../transport.html">
             
                     
-                    Доставка
+                    Transport
             
                 </a>
             
@@ -500,7 +500,7 @@ window.onload = function() {
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.9.1" data-path="tcp.html">
+        <li class="chapter " data-level="1.2.10.1" data-path="tcp.html">
             
                 <a href="tcp.html">
             
@@ -513,7 +513,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.2" data-path="mkcp.html">
+        <li class="chapter " data-level="1.2.10.2" data-path="mkcp.html">
             
                 <a href="mkcp.html">
             
@@ -526,7 +526,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter active" data-level="1.2.9.3" data-path="websocket.html">
+        <li class="chapter active" data-level="1.2.10.3" data-path="websocket.html">
             
                 <a href="websocket.html">
             
@@ -539,7 +539,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.4" data-path="h2.html">
+        <li class="chapter " data-level="1.2.10.4" data-path="h2.html">
             
                 <a href="h2.html">
             
@@ -552,7 +552,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.9.5" data-path="domainsocket.html">
+        <li class="chapter " data-level="1.2.10.5" data-path="domainsocket.html">
             
                 <a href="domainsocket.html">
             
@@ -570,12 +570,12 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="../env.html">
+        <li class="chapter " data-level="1.2.11" data-path="../env.html">
             
                 <a href="../env.html">
             
                     
-                    Переменные
+                    Env Variables
             
                 </a>
             
@@ -728,23 +728,25 @@ window.onload = function() {
                                 
                                 <h1 id="websocket"><a name="websocket" class="plugin-anchor" href="#websocket"><i class="fa fa-link" aria-hidden="true"></i></a>WebSocket</h1>
 <p>&#x418;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x441;&#x442;&#x430;&#x43D;&#x434;&#x430;&#x440;&#x442;&#x43D;&#x44B;&#x439; WebSocket &#x434;&#x43B;&#x44F; &#x43F;&#x435;&#x440;&#x435;&#x434;&#x430;&#x447;&#x438; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445;. &#x421;&#x43E;&#x435;&#x434;&#x438;&#x43D;&#x435;&#x43D;&#x438;&#x44F; Websocket &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x431;&#x44B;&#x442;&#x44C; &#x43F;&#x440;&#x43E;&#x43A;&#x441;&#x438;&#x444;&#x438;&#x446;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x44B; HTTP-&#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x43E;&#x43C;, &#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440; Nginx.</p>
-<p>&#x41A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x44F;:</p>
+<h2 id="websocketobject"><a name="websocketobject" class="plugin-anchor" href="#websocketobject"><i class="fa fa-link" aria-hidden="true"></i></a>WebSocketObject</h2>
+<p><code>WebSocketObject</code> is used as <code>wsSettings</code> in <code>TransportObject</code> or <code>StreamSettingsObject</code>.</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p> Websocket recognizes HTTP header X-Forwarded-For, and uses it as inbound source address. </p>
+</div></div></p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;path&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;path&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;headers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;Host&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;v2ray.com&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#x413;&#x434;&#x435;:</p>
-<ul>
-<li><code>path</code>: &#x41F;&#x443;&#x442;&#x44C;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C;&#x44B;&#x439; &#x434;&#x43B;&#x44F; WebSocket. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x43A;&#x43E;&#x440;&#x435;&#x43D;&#x44C; &#x434;&#x43E;&#x43C;&#x435;&#x43D;&#x430; <code>&quot;&quot;</code>.</li>
-<li><code>headers</code>: &#x41F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x438;&#x439; HTTP-&#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A;. &#x42D;&#x442;&#x43E; &#x43C;&#x430;&#x441;&#x441;&#x438;&#x432;, &#x432; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x43C; &#x43A;&#x430;&#x436;&#x434;&#x430;&#x44F; &#x437;&#x430;&#x43F;&#x438;&#x441;&#x44C; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x441;&#x43E;&#x431;&#x43E;&#x439; &#x43F;&#x430;&#x440;&#x443; &#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x432;&#x44B;&#x445; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x439; &#x432; &#x441;&#x442;&#x440;&#x43E;&#x43A;&#x435;, &#x434;&#x43B;&#x44F; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43A;&#x430; &#x438; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x432; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43A;&#x435; HTTP. &#x41F;&#x43E; &#x443;&#x43C;&#x43E;&#x43B;&#x447;&#x430;&#x43D;&#x438;&#x44E; &#x43F;&#x443;&#x441;&#x442;.</li>
-</ul>
-<h2 id="&#x432;&#x430;&#x436;&#x43D;&#x43E;"><a name="&#x432;&#x430;&#x436;&#x43D;&#x43E;" class="plugin-anchor" href="#&#x432;&#x430;&#x436;&#x43D;&#x43E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x412;&#x430;&#x436;&#x43D;&#x43E;</h2>
-<ul>
-<li>&#x41D;&#x430;&#x447;&#x438;&#x43D;&#x430;&#x44F; &#x441; V2Ray 3.4, Websocket &#x440;&#x430;&#x441;&#x43F;&#x43E;&#x437;&#x43D;&#x430;&#x435;&#x442; &#x437;&#x430;&#x433;&#x43E;&#x43B;&#x43E;&#x432;&#x43E;&#x43A; X-Forwarded-For &#x438; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442; &#x435;&#x433;&#x43E; &#x43A;&#x430;&#x43A; &#x438;&#x441;&#x445;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x430;&#x434;&#x440;&#x435;&#x441; &#x442;&#x440;&#x430;&#x444;&#x438;&#x43A;&#x430;.</li>
-</ul>
+<blockquote>
+<p><code>path</code>: string</p>
+</blockquote>
+<p>Path used for WebSocket. Default to root, as <code>&quot;/&quot;</code>.</p>
+<blockquote>
+<p><code>headers</code>: map{string, string}</p>
+</blockquote>
+<p>Custom HTTP header. An array where each entry is a key value pair in string, for header and value in HTTP header. Default is empty.</p>
 
                                 
                                 </section>
@@ -760,7 +762,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/websocket","refen":"configuration/transport/websocket","title":"WebSocket","level":"1.2.9.3","depth":3,"next":{"title":"HTTP/2","level":"1.2.9.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},"previous":{"title":"mKCP","level":"1.2.9.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport/websocket.md","mtime":"2018-11-05T19:01:31.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T19:03:08.187Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/websocket","refen":"configuration/transport/websocket","title":"WebSocket","level":"1.2.10.3","depth":3,"next":{"title":"HTTP/2","level":"1.2.10.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},"previous":{"title":"mKCP","level":"1.2.10.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport/websocket.md","mtime":"2018-11-05T20:01:35.857Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T20:03:22.466Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
