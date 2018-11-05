@@ -727,8 +727,8 @@ window.onload = function() {
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="mkcp-transport"><a name="mkcp-transport" class="plugin-anchor" href="#mkcp-transport"><i class="fa fa-link" aria-hidden="true"></i></a>mKCP Transport</h1>
-<p>mKCP is a reliable stream transport. It is an UDP based protocol.</p>
-<p>Configuration:</p>
+<p>mKCP is a reliable stream transport. It is an UDP based protocol. mKCP sends more traffic for lower latency. To transfer the same amount of data, mKCP usually requires more throughput than TCP does.</p>
+<h2 id="kcpobject"><a name="kcpobject" class="plugin-anchor" href="#kcpobject"><i class="fa fa-link" aria-hidden="true"></i></a>KcpObject</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;mtu&quot;</span><span class="token punctuation">:</span> <span class="token number">1350</span><span class="token punctuation">,</span>
   <span class="token string">&quot;tti&quot;</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
@@ -742,44 +742,56 @@ window.onload = function() {
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>Where:</p>
+<blockquote>
+<p><code>mtu</code>: number</p>
+</blockquote>
+<p>Maximum transmission unit. It indicates the maxium number bytes that an UDP packet can carry. Recommended value is between <code>576</code> and <code>1460</code>. Default value <code>1350</code>.</p>
+<blockquote>
+<p><code>tti</code>: number</p>
+</blockquote>
+<p>Transmission time interval, in milli-second. mKCP sends data in this interval. Recommended value is between <code>10</code> and <code>100</code>. Default value <code>50</code>.</p>
+<blockquote>
+<p><code>uplinkCapacity</code>: number</p>
+</blockquote>
+<p>Uplink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to upload data to a remote one. Default value is <code>5</code>. Please note it is byte (in MB/s), not bit. One may use value <code>0</code> for a small bandwidth.</p>
+<blockquote>
+<p><code>downlinkCapacity</code>: number</p>
+</blockquote>
+<p>Downlink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to download data. Default value is <code>20</code>. Please note it is byte (in MB/s), not bit. One may use value <code>0</code> for a small bandwidth.</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>uplinkCapacity</code> and <code>downlinkCapacity</code> determine the speed of mKCP. On client side, <code>uplinkCapacity</code> specifies the speed for client sending data to server. On sever side, <code>downlinkCapacity</code> specifies the speed of server receiving data. The minimum of this pair is effective in an actual connection.</p>
+</div></div></p>
+<blockquote>
+<p><code>congestion</code>: true | false</p>
+</blockquote>
+<p>Whether or not to enable congestion control. Default value is <code>false</code>. When congestion control is enabled, V2Ray will detect network quality. It will send less packets when packet loss is severe, or more data when network is not fully filled.</p>
+<blockquote>
+<p><code>readBufferSize</code>: number</p>
+</blockquote>
+<p>Read buffer size for a single connection, in MB. Default value is <code>2</code>.</p>
+<blockquote>
+<p><code>writeBufferSize</code>: number</p>
+</blockquote>
+<p>Write buffer size for a single connection, in MB. Default value is <code>2</code>.</p>
+<blockquote>
+<p><code>header</code>: [HeaderObject]{#headerobject}</p>
+</blockquote>
+<p>Configuration for packet header obfuscation.</p>
+<h3 id="headerobject"><a name="headerobject" class="plugin-anchor" href="#headerobject"><i class="fa fa-link" aria-hidden="true"></i></a>HeaderObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>type</code>: string</p>
+</blockquote>
+<p>Type of obfuscation. Corresponding inbound and outbound proxy must have the same settings. Choices are:</p>
 <ul>
-<li><code>mtu</code>: Maximum transmission unit. It indicates the maxium number bytes that an UDP packet can carry. Recommended value is between <code>576</code> and <code>1460</code>. Default value <code>1350</code>.</li>
-<li><code>tti</code>: Transmission time interval, in milli-second. mKCP sends data in this interval. Recommended value is between <code>10</code> and <code>100</code>. Default value <code>50</code>.</li>
-<li><code>uplinkCapacity</code>: Uplink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to upload data to a remote one. Default value is <code>5</code>.<ul>
-<li>Please note it is byte (in MB/s), not bit.</li>
-<li>One may use value <code>0</code> for a small bandwidth.</li>
-</ul>
-</li>
-<li><code>downlinkCapacity</code>: Downlink bandwidth, in MB/s. The maximum bandwidth for the V2Ray instance to download data. Default value is <code>20</code>.<ul>
-<li>Please note it is byte (in MB/s), not bit.</li>
-<li>One may use value <code>0</code> for a small bandwidth.</li>
-</ul>
-</li>
-<li><code>congestion</code>: Whether or not to enable congestion control. Default value is <code>false</code>.<ul>
-<li>When congestion control is enabled, V2Ray will detect network quality. It will send less packets when packet loss is severe, or more data when network is not fully filled.</li>
-</ul>
-</li>
-<li><code>readBufferSize</code>: Read buffer size for a single connection, in MB. Default value is <code>2</code>.</li>
-<li><code>writeBufferSize</code>: Write buffer size for a single connection, in MB. Default value is <code>2</code>.</li>
-<li><code>header</code>: Packet header for obfuscation.<ul>
-<li><code>type</code>: Type of obfuscation. Choices are:<ul>
-<li><code>&quot;none&quot;</code>: Default value. No obfuscation is added.</li>
+<li><code>&quot;none&quot;</code>: Default value. No obfuscation is used.</li>
 <li><code>&quot;srtp&quot;</code>: Obfuscated as SRTP traffic. It may be recognized as video calls such as Facetime.</li>
 <li><code>&quot;utp&quot;</code>: Obfuscated as uTP traffic. It may be recognized as Bittorrent traffic.</li>
 <li><code>&quot;wechat-video&quot;</code>: Obfuscated to WeChat traffic.</li>
 <li><code>&quot;dtls&quot;</code>: Obfuscated as DTLS 1.2 packets.</li>
-<li><code>&quot;wireguard&quot;</code> (V2Ray 3.38+): Obfuscated as WireGuard packets. (NOT true WireGuard protocol)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="tips"><a name="tips" class="plugin-anchor" href="#tips"><i class="fa fa-link" aria-hidden="true"></i></a>Tips </h2>
-<ul>
-<li><code>uplinkCapacity</code> and <code>downlinkCapacity</code> determine the speed of mKCP. On client side, <code>uplinkCapacity</code> specifies the speed for client sending data to server. On sever side, <code>downlinkCapacity</code> specifies the speed of server receiving data. The minimum of this pair is effective in an actual connection.</li>
-<li>mKCP uses UDP protocol. Please make sure your firewall is correctly setup.</li>
-<li>mKCP sends more traffic for lower latency. To transfer the same amount of data, mKCP usually requires more throughput than TCP does.</li>
+<li><code>&quot;wireguard&quot;</code>: Obfuscated as WireGuard packets. (NOT true WireGuard protocol)</li>
 </ul>
 <h2 id="credits"><a name="credits" class="plugin-anchor" href="#credits"><i class="fa fa-link" aria-hidden="true"></i></a>Credits </h2>
 <ul>
@@ -802,7 +814,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/mkcp","refen":"configuration/transport/mkcp","title":"mKCP","level":"1.2.10.2","depth":3,"next":{"title":"WebSocket","level":"1.2.10.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"previous":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/transport/mkcp.md","mtime":"2018-11-05T20:01:35.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T20:02:50.205Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/mkcp","refen":"configuration/transport/mkcp","title":"mKCP","level":"1.2.10.2","depth":3,"next":{"title":"WebSocket","level":"1.2.10.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},"previous":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/transport/mkcp.md","mtime":"2018-11-05T23:01:43.421Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T23:02:48.269Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
