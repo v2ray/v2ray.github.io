@@ -34,6 +34,10 @@ window.onload = function() {
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
                 
             
@@ -593,7 +597,7 @@ window.onload = function() {
                 <a href="../ui_client/">
             
                     
-                    Clients
+                    Third Party Tools
             
                 </a>
             
@@ -735,14 +739,42 @@ window.onload = function() {
                                 <h1 id="workflow"><a name="workflow" class="plugin-anchor" href="#workflow"><i class="fa fa-link" aria-hidden="true"></i></a>Workflow</h1>
 <h2 id="single-server"><a name="single-server" class="plugin-anchor" href="#single-server"><i class="fa fa-link" aria-hidden="true"></i></a>Single Server</h2>
 <p>Same as other proxies, you need a proxy server which runs V2Ray. Then you can connect to internet through that server from you PC, mobile or other devices.</p>
-<p><img src="../resources/direct.png" alt="direct"></p>
+<div class="mermaid">
+graph LR;
+A(PC) -.- B(Firewall);
+B -.-&gt; C(Blocked Website);
+A --&gt; D(V2Ray/VPS);
+D --&gt; C;
+A --&gt; E(Normal Website);
+</div>
+
 <p>V2Ray supports connections from multiple devices at the same time, with optionally different protocols. In the mean time, the local routing mechanism can smartly proxy necessary connections only.</p>
 <h2 id="server-bridge"><a name="server-bridge" class="plugin-anchor" href="#server-bridge"><i class="fa fa-link" aria-hidden="true"></i></a>Server Bridge</h2>
 <p>In the case you don&apos;t want configuration V2Ray on each of your devices, you may setup a server within the firewall, and then all traffic go through that server. The server does routing itself.</p>
-<p><img src="../resources/relay.png" alt="relay"></p>
+<div class="mermaid">
+graph LR;
+A(PC) -.-&gt; B(Firewall);
+B -.-&gt; C(Blocked Website);
+A --&gt; D(VPS 1);
+D --&gt; E(VPS 2);
+E --&gt; C;
+D --&gt; F(Normal Website);
+</div>
+
 <h2 id="internal"><a name="internal" class="plugin-anchor" href="#internal"><i class="fa fa-link" aria-hidden="true"></i></a>Internal</h2>
 <p>The internal of V2Ray looks like below. It supports multiple inbound proxies, and multiple outbounds. Each of them are independent from others.</p>
-<p><img src="../resources/internal.svg" alt="internal"></p>
+<div class="mermaid">
+graph LR;
+A1(inbound) --&gt; D(Dispatcher / Router / DNS);
+A2(inbound) --&gt; D;
+A3(inbound) --&gt; D;
+A4(inbound) --&gt; D;
+D --&gt; B1(outbound);
+D --&gt; B2(outbound);
+D --&gt; B3(outbound);
+D --&gt; B4(outbound);
+</div>
+
 <p>Notes:</p>
 <ul>
 <li>You have to configure at least one inbound and one outbound to make V2Ray work properly.</li>
@@ -766,7 +798,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"Workflow","level":"1.1.2","depth":2,"next":{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"previous":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/workflow.md","mtime":"2018-11-06T22:01:06.877Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T22:02:17.221Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"Workflow","level":"1.1.2","depth":2,"next":{"title":"Install","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"previous":{"title":"Version History","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/workflow.md","mtime":"2018-11-06T23:01:12.121Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T23:02:29.532Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -776,9 +808,15 @@ window.onload = function() {
     <script src="../gitbook/theme.js"></script>
     
         
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
+    
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
     
 
     </body>
