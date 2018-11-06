@@ -734,21 +734,30 @@ window.onload = function() {
 <p>V2Ray has the following commandline parameters:</p>
 <pre class="language-"><code class="lang-shell">v2ray <span class="token punctuation">[</span>-version<span class="token punctuation">]</span> <span class="token punctuation">[</span>-test<span class="token punctuation">]</span> <span class="token punctuation">[</span>-config<span class="token operator">=</span>config.json<span class="token punctuation">]</span> <span class="token punctuation">[</span>-format<span class="token operator">=</span>json<span class="token punctuation">]</span>
 </code></pre>
-<p>Where:</p>
+<blockquote>
+<p><code>-version</code></p>
+</blockquote>
+<p>Print the version of V2Ray only, and then exit.</p>
+<blockquote>
+<p><code>-test</code></p>
+</blockquote>
+<p>Test configuration, output any errors and then exit.</p>
+<blockquote>
+<p><code>-config</code></p>
+</blockquote>
+<p>URI of the configuration. Avilable formats are:</p>
 <ul>
-<li><code>-version</code>: Print the version of V2Ray only, and then exit.</li>
-<li><code>-test</code>: Test configuration, output any errors and then exit.</li>
-<li><code>-config</code>: URI of the configuration. Avilable formats are:<ul>
 <li>Path to the local config file. May be a relative path or absolute path.</li>
 <li><code>&quot;stdin:&quot;</code>: Indicates V2Ray to read configuration from standard input. Caller must close stdin after writing out configuration.</li>
 <li>Value begins with <code>http://</code> or <code>https://</code> (lowercase): V2Ray tries to load configuration from the remote address.</li>
 </ul>
-</li>
-<li><code>-format</code>: Configuration format. Choices are:<ul>
+<blockquote>
+<p><code>-format</code></p>
+</blockquote>
+<p>Configuration format. Choices are:</p>
+<ul>
 <li><code>json</code>: JSON format.</li>
 <li><code>pb</code> or <code>protobuf</code>: Protobuf format.</li>
-</ul>
-</li>
 </ul>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>When <code>-config</code> is not specified, V2Ray first tries to load configuration from <code>config.json</code> under working directory, then from the directory specified by <a href="../configuration/env.html">environment variable</a> <code>v2ray.location.asset</code>.</p>
 </div></div></p>
@@ -761,10 +770,13 @@ window.onload = function() {
 <p><code>v2ctl verify [--sig=/path/to/sigfile] /file/to/verify</code></p>
 <p>To verify the signature of a V2Ray binary.</p>
 <p>Options:</p>
-<ul>
-<li><code>sig</code>&#xFF1A;Path to signature file. Default value is the &quot;.sig&quot; file to the path to be verified.</li>
-<li>First argument: the file to be verified.</li>
-</ul>
+<blockquote>
+<p><code>sig</code></p>
+</blockquote>
+<p>Path to signature file. Default value is the &quot;.sig&quot; file to the path to be verified.</p>
+<blockquote>
+<p>First argument: the file to be verified.</p>
+</blockquote>
 <h3 id="config"><a name="config" class="plugin-anchor" href="#config"><i class="fa fa-link" aria-hidden="true"></i></a>Config</h3>
 <p><code>v2ctl config</code></p>
 <p>No options. This command reads configuration in JSON format from stdin, and then write corresponding configuration in Protobuf format to stdout.</p>
@@ -786,7 +798,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Commandline","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-11-06T13:01:25.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T13:02:28.477Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Commandline","level":"1.1.5","depth":2,"next":{"title":"Donation","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Quick Start","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2018-11-06T14:01:28.253Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T14:02:34.768Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

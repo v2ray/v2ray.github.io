@@ -746,12 +746,12 @@ window.onload = function() {
 <h2 id="&#xC5ED;-&#xAC1D;&#xCCB4;"><a name="&#xC5ED;-&#xAC1D;&#xCCB4;" class="plugin-anchor" href="#&#xC5ED;-&#xAC1D;&#xCCB4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xC5ED; &#xAC1D;&#xCCB4;</h2>
 <p><code>ReverseObject</code> is used as <code>reverse</code> field in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xBE0C;&#xB9AC;&#xC9C0;&quot;</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xB2E4;&#xB9AC;&quot;</span>
-    <span class="token string">&quot;&#xB3C4;&#xBA54;&#xC778;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xD3EC;&#xD138;&quot;</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xD3EC;&#xD138;&quot;</span>
+  <span class="token string">&quot;bridges&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;bridge&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;portals&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;portal&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
@@ -766,8 +766,8 @@ window.onload = function() {
 <p>An array of <code>portal</code>s. Each <code>portal</code> is a <a href="bridgeobject">PortalObject</a>.</p>
 <h3 id="bridgeobject"><a name="bridgeobject" class="plugin-anchor" href="#bridgeobject"><i class="fa fa-link" aria-hidden="true"></i></a>BridgeObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xBE0C;&#xB9AC;&#xC9C0;&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xB3C4;&#xBA54;&#xC778;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;bridge&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -793,45 +793,45 @@ window.onload = function() {
 <p><code>bridge</code> usually needs two outbounds. One for connecting <code>portal</code>, and another for connecting local web server.</p>
 <p>Reverse:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xBE0C;&#xB9AC;&#xC9C0;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xBE0C;&#xB9AC;&#xC9C0;&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;&#xB3C4;&#xBA54;&#xC778;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
+  <span class="token string">&quot;bridges&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;bridge&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>
   <span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Outbound:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;out&quot;</span>
-  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xC790;&#xC720;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;freedom&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;redirect&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1:80&quot;</span><span class="token comment">// &#xB85C;&#xCEEC; &#xC6F9; &#xC11C;&#xBC84;&#xB85C; &#xD2B8;&#xB798;&#xD53D; &#xBCF4;&#xB0B4;&#xAE30;</span>
+    <span class="token string">&quot;redirect&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1:80&quot;</span> <span class="token comment">// Send traffic to local web server</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
-
-  <span class="token string">&quot;&#xD504;&#xB85C;&#xD1A0;&#xCF5C;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;vmess&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xC124;&#xC815;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;vmess&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;vnext&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-      <span class="token string">&quot;&#xC8FC;&#xC18C;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xD3EC;&#xD138; IP &#xC8FC;&#xC18C;&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;portal&#x7684;IP&#x5730;&#x5740;&quot;</span><span class="token punctuation">,</span>
       <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">1024</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;users&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string">&quot; id &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;27848739-7e62-4138-9fd3-098a63964b6b &quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token string">&quot;users&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span><span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;tag &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;interconn &quot;</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;interconn&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Routing:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token string">&quot;&#xB77C;&#xC6B0;&#xD305;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xC804;&#xB7B5;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xADDC;&#xCE59;&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xC124;&#xC815;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xADDC;&#xCE59;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-      <span class="token string">&quot;&#xC720;&#xD615;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xD544;&#xB4DC;&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">&quot;&#xBE0C;&#xB9AC;&#xC9C0;&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;&#xB3C4;&#xBA54;&#xC778; &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;[full : test.v2ray.com &quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;outboundTag &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;interconn &quot;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      <span class="token string">&quot;type &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;field &quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;inboundTag &quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;bridge &quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;outboundTag &quot;</span> <span class="token punctuation">:</span> <span class="token string">&quot;out&quot;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token string">&quot;routing&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;strategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;rules&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;bridge&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;full:test.v2ray.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;interconn&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;bridge&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;out&quot;</span>
     <span class="token punctuation">}</span><span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -839,44 +839,44 @@ window.onload = function() {
 <p><code>portal</code> usually needs two inbounds. One for connections from <code>bridge</code>, and another for internet connections.</p>
 <p>Reverse:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xD3EC;&#xD138;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xD3EC;&#xD138;&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;&#xB3C4;&#xBA54;&#xC778;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span><span class="token comment">// &#xBE0C;&#xB9BF;&#xC9C0;</span>
-  &#xC640; &#xB3D9;&#xC77C;&#xD574;&#xC57C; &#xD568;<span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token string">&quot;portals&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;portal&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;domain&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test.v2ray.com&quot;</span>  <span class="token comment">// Must be the same as in bridge</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Inbound:</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xD0DC;&#xADF8;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xC678;&#xBD80;&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xD3EC;&#xD2B8;&quot;</span><span class="token punctuation">:</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token comment">// &#xC778;&#xD130;&#xB137; HTTP &#xD2B8;&#xB798;&#xD53D; &#xC6A9; &quot;&#xD3EC;&#xD2B8; 80&quot;</span>
-  <span class="token string">&quot;&#xD504;&#xB85C;&#xD1A0;&#xCF5C;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dokodemo-door&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xC124;&#xC815;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xC8FC;&#xC18C;&quot;</span><span class="token punctuation">:</span> &quot;<span class="token number">127.0</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;external&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">80</span><span class="token punctuation">,</span>  <span class="token comment">// Open port 80 for internet HTTP traffic</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dokodemo-door&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
     <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">{</span>
-  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token comment">// &#xBE0C;&#xB9AC;&#xC9C0; &#xC5F0;&#xACB0;&#xC758; &#xACBD;&#xC6B0;</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token comment">// For bridge connections</span>
   <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;interconn&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;protocol &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;vmess &quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;settings &quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;clients &quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;id &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;27848739-7e62-4138-9fd3-098a63964b6b &quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;vmess&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;clients&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;27848739-7e62-4138-9fd3-098a63964b6b&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p>Routing:</p>
-<pre class="language-"><code class="lang-javascript"><span class="token string">&quot;&#xB77C;&#xC6B0;&#xD305;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  <span class="token string">&quot;&#xC804;&#xB7B5;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xADDC;&#xCE59;&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;&#xC124;&#xC815;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;&#xADDC;&#xCE59;&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-      <span class="token string">&quot;&#xC720;&#xD615;&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#xD544;&#xB4DC;&quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">&quot;&#xC678;&#xBD80;&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token string">&quot; &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;&#xD3EC;&#xD138; &quot;</span>
-    <span class="token punctuation">,</span> <span class="token punctuation">{</span>
-      <span class="token string">&quot;&#xC720;&#xD615; &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;&#xD544;&#xB4DC; &quot;</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;&#xC778;&#xBC14;&#xC6B4;&#xB4DC; &#xD0DC;&#xADF8; &quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;interconn &quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token string">&quot;&#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xD0DC;&#xADF8; &quot;</span><span class="token punctuation">:</span><span class="token string">&quot;&#xD3EC;&#xD138; &quot;</span>
+<pre class="language-"><code class="lang-javascript"><span class="token string">&quot;routing&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;strategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;rules&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;external&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;portal&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;inboundTag&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;interconn&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;portal&quot;</span>
     <span class="token punctuation">}</span><span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -898,7 +898,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/reverse","refen":"configuration/reverse","title":"역","level":"1.2.9","depth":2,"next":{"title":"수송","level":"1.2.10","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.10.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"웹 소켓","level":"1.2.10.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.10.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.10.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]}]},"previous":{"title":"통계","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/reverse.md","mtime":"2018-11-06T13:01:25.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T13:03:12.176Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/reverse","refen":"configuration/reverse","title":"역","level":"1.2.9","depth":2,"next":{"title":"수송","level":"1.2.10","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.10.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"웹 소켓","level":"1.2.10.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP / 2","level":"1.2.10.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.10.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]}]},"previous":{"title":"통계","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/reverse.md","mtime":"2018-11-06T14:01:28.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T14:03:19.212Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
