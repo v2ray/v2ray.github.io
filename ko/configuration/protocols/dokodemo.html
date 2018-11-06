@@ -730,19 +730,19 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>&#xC8FC;&#xC18C;</code>: &#xC8FC;&#xC18C;</p>
+<p><code>address</code>: address</p>
 </blockquote>
 <p>&#xB300;&#xC0C1; &#xC11C;&#xBC84;&#xC758; &#xC8FC;&#xC18C;. &#xBB38;&#xC790;&#xC5F4; &#xD615;&#xC2DD;&#xC758; IPv4, IPv6 &#xB610;&#xB294; &#xB3C4;&#xBA54;&#xC778; &#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <code>followRedirect</code> (&#xC544;&#xB798; &#xCC38;&#xC870;)&#xC774; <code>&#xC774;&#xBA74; true</code>, <code>address</code> &#xB294; &#xBE44;&#xC5B4;&#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p><code>&#xD3EC;&#xD2B8;</code>: &#xBC88;&#xD638;</p>
+<p><code>port</code>: number</p>
 </blockquote>
 <p>&#xB300;&#xC0C1; &#xC11C;&#xBC84;&#xC758; &#xD3EC;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p><code>&#xB124;&#xD2B8;&#xC6CC;&#xD06C;</code>: &quot;tcp&quot;| &quot;udp&quot;| &quot;tcp, udp&quot;</p>
+<p><code>network</code>: &quot;tcp&quot; | &quot;udp&quot; | &quot;tcp,udp&quot;</p>
 </blockquote>
 <p>&#xC218;&#xC6A9; &#xD560; &#xC218;&#xC788;&#xB294; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC720;&#xD615;. <code>&quot;tcp&quot;</code> &#xC774; &#xC9C0;&#xC815;&#xB418;&#xBA74;&#xC774; dokodemo-door&#xB85C; &#xC804;&#xC1A1; &#xB41C; &#xBAA8;&#xB4E0; UDP &#xD2B8;&#xB798;&#xD53D;&#xC774; &#xC0AD;&#xC81C;&#xB429;&#xB2C8;&#xB2E4;.</p>
 <blockquote>
-<p><code>followRedirect</code>: true | &#xADF8;&#xB987;&#xB41C;</p>
+<p><code>followRedirect</code>: true | false</p>
 </blockquote>
 <p><code>&#xC124;&#xC815;&#xD558;&#xBA74;</code>, dokodemo-door&#xB294; TProxy&#xC758; &#xB300;&#xC0C1;&#xC744; &#xC778;&#xC2DD;&#xD558;&#xC5EC; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="../transport.html">&#xC804;&#xC1A1;</a> <code>TProxy</code> &#xC744; &#xCC38;&#xC870;&#xD558;&#xC2ED;&#xC2DC;&#xC624;.</p>
 <blockquote>
@@ -807,7 +807,7 @@ iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"도코 데모","level":"1.2.2.2","depth":3,"next":{"title":"자유","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"블랙홀","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-11-06T15:01:16.145Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T15:03:22.035Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"도코 데모","level":"1.2.2.2","depth":3,"next":{"title":"자유","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"블랙홀","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2018-11-06T16:01:15.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T16:02:55.079Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

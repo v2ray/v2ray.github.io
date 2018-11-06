@@ -715,6 +715,9 @@ window.onload = function() {
     <a class="btn pull-left" href="/fa/configuration/protocols/socks.html" target="_blank">
         <img src="/resources/flag_fa.svg" alt="Persian" height="16">
     </a>
+    <a class="btn pull-left" href="/vi/configuration/protocols/socks.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
     <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
         <img src="/resources/translate.png" alt="Translate" height="16">
     </a>
@@ -735,7 +738,9 @@ window.onload = function() {
 <li>&#xC720;&#xD615; : &#xC778;&#xBC14;&#xC6B4;&#xB4DC; / &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC;</li>
 </ul>
 <p>&#xC591;&#xB9D0; &#xD638;&#xD658; &#xD45C;&#xC900; SOCKS &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC758; &#xAD6C;&#xD604;&#xC774;&#xBA70;, <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">&#xC591;&#xB9D0; 4</a>, &#xC591;&#xB9D0; 4a &#xBC0F;&#xB3C4; <a href="http://ftp.icm.edu.pl/packages/socks/socks4/SOCKS4.protocol" target="_blank">&#xC591;&#xB9D0; 5</a>.</p>
-<h2 id="&#xC544;&#xC6C3;-&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;"><a name="&#xC544;&#xC6C3;-&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;" class="plugin-anchor" href="#&#xC544;&#xC6C3;-&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xD504;&#xB85D;&#xC2DC; &#xAD6C;&#xC131;</h2>
+<p>Socks configuration consists of two parts, <code>InboundConfigurationObject</code> and <code>OutboundConfigurationObject</code>, for inbound and outbound respectively.</p>
+<h2 id="outboundconfigurationobject"><a name="outboundconfigurationobject" class="plugin-anchor" href="#outboundconfigurationobject"><i class="fa fa-link" aria-hidden="true"></i></a>OutboundConfigurationObject</h2>
+<p><code>OutboundConfigurationObject</code> is used as <code>settings</code> field in <code>OutboundObject</code> in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;servers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
     <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
@@ -750,26 +755,57 @@ window.onload = function() {
   <span class="token punctuation">}</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#xC5B4;&#xB514;&#xC5D0;:</p>
-<ul>
-<li><code>&#xC11C;&#xBC84;</code>: &#xAC01; &#xD56D;&#xBAA9;&#xC5D0;&#xC788;&#xB294; &#xC591;&#xB9D0; &#xC11C;&#xBC84; &#xBAA9;&#xB85D; : <ul>
-<li><code>&#xC8FC;&#xC18C;</code>: &#xC11C;&#xBC84; &#xC8FC;&#xC18C;</li>
-<li><code>&#xD3EC;&#xD2B8;</code>: &#xC11C;&#xBC84; &#xD3EC;&#xD2B8;</li>
-<li><code>&#xC0AC;&#xC6A9;&#xC790;</code>: &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xBAA9;&#xB85D; : <ul>
-<li><code>&#xC0AC;&#xC6A9;&#xC790;</code>: &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xB984;</li>
-<li><code>&#xD328;&#xC2A4;</code>: &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;</li>
-<li><code>&#xC218;&#xC900;</code>: &#xC0AC;&#xC6A9;&#xC790; &#xC218;&#xC900;&#xC785;&#xB2C8;&#xB2E4;.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>&#xC8FC;&#xC758;:</p>
-<ul>
-<li>&#xC0AC;&#xC6A9;&#xC790; &#xBAA9;&#xB85D;&#xC774; &#xBE44;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;, socks&#xB294; &#xBB34;&#xC791;&#xC704; &#xC0AC;&#xC6A9;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC6D0;&#xACA9; &#xC11C;&#xBC84;&#xB85C; &#xC131;&#xB2A5; &#xC0AC;&#xC6A9;&#xC790; &#xC778;&#xC99D;&#xC744; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</li>
-<li>SOCKS5 &#xC11C;&#xBC84; &#xB9CC; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</li>
-</ul>
-<h2 id="&#xC778;&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;"><a name="&#xC778;&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;" class="plugin-anchor" href="#&#xC778;&#xBC14;&#xC6B4;&#xB4DC;-&#xD504;&#xB85D;&#xC2DC;-&#xAD6C;&#xC131;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xC778;&#xBC14;&#xC6B4;&#xB4DC; &#xD504;&#xB85D;&#xC2DC; &#xAD6C;&#xC131;</h2>
+<blockquote>
+<p><code>servers</code>: [ <a href="#serverobject">ServerObject</a> ]</p>
+</blockquote>
+<p>An array of Socks servers.</p>
+<h3 id="serverobject"><a name="serverobject" class="plugin-anchor" href="#serverobject"><i class="fa fa-link" aria-hidden="true"></i></a>ServerObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;users&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;user&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test user&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;pass&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test pass&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;level&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>address</code>: address</p>
+</blockquote>
+<p>Socks server address. May be IPv4, IPv6 or domain address.</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Only support Socks 5 servers.</p>
+</div></div></p>
+<blockquote>
+<p><code>port</code>: number</p>
+</blockquote>
+<p>Socks server port.</p>
+<blockquote>
+<p><code>users</code>: [ <a href="#userobject">UserObject</a> ]</p>
+</blockquote>
+<p>An array of users. Each element in the array is an user. If the list is not empty. Socks inbound will force user authentication. Otherwise, anonymous user is allowed.</p>
+<h3 id="userobject"><a name="userobject" class="plugin-anchor" href="#userobject"><i class="fa fa-link" aria-hidden="true"></i></a>UserObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;user&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test user&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;pass&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;test pass&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;level&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>user</code>: string</p>
+</blockquote>
+<p>Username as in Socks protocol</p>
+<blockquote>
+<p><code>pass</code>: string</p>
+</blockquote>
+<p>Password as in Socks protocol</p>
+<blockquote>
+<p><code>level</code>: number</p>
+</blockquote>
+<p>User level for tracking and policy purpose. Default value is <code>0</code>.</p>
+<h2 id="inboundconfigurationobject"><a name="inboundconfigurationobject" class="plugin-anchor" href="#inboundconfigurationobject"><i class="fa fa-link" aria-hidden="true"></i></a>InboundConfigurationObject</h2>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;auth&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;noauth&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;accounts&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
@@ -783,21 +819,40 @@ window.onload = function() {
   <span class="token string">&quot;userLevel&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>&#xC5B4;&#xB514;&#xC5D0;:</p>
-<ul>
-<li><code>&#xC815;&#xC2DD;</code>: &#xC591;&#xB9D0; &#xC778;&#xC99D; &#xBC29;&#xBC95;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>&quot;noauth&quot;</code>. &#xC635;&#xC158;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. <ul>
-<li><code>&quot;noauth&quot;</code>: &#xC775;&#xBA85;.</li>
-<li><code>&quot;&#xC554;&#xD638;&quot;</code>: &#xC0AC;&#xC6A9;&#xC790; &#xBC0F; &#xC554;&#xD638; <a href="https://tools.ietf.org/html/rfc1929" target="_blank">RFC 1929</a></li>
-</ul>
-</li>
-<li><code>&#xACC4;&#xC815;</code>: &#xAC01; &#xD56D;&#xBAA9;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xBC30;&#xC5F4; <code>&#xC0AC;&#xC6A9;&#xC790;</code> &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xB984; &#xBC0F; <code>&#xD328;&#xC2A4;</code> &#xC554;&#xD638;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; &#xBE44;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <ul>
-<li><code>&#xC778;&#xC99D;</code> &#xC774; <code>&#xC77C; &#xB54C;&#xB9CC; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &quot;&#xBE44;&#xBC00;&#xBC88;&#xD638;&quot;</code></li>
-</ul>
-</li>
-<li><code>udp</code>: <code>true</code> &#xB610;&#xB294; <code>false UDP&#xB97C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD558;&#xAC8C;&#xD558;&#xB824;&#xBA74;</code> . &#xAE30;&#xBCF8;&#xAC12;&#xC740; false&#xC785;&#xB2C8;&#xB2E4;.</li>
-<li><code>ip</code>: UDP&#xAC00; &#xD65C;&#xC131;&#xD654;&#xB418;&#xBA74;&#xC774; IP &#xC8FC;&#xC18C;&#xB294; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C;&#xBD80;&#xD130; UDP &#xD328;&#xD0B7;&#xC744;&#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>&quot;127.0.0.1&quot;</code>&#xC785;&#xB2C8;&#xB2E4;.</li>
-<li><code>userLevel</code>: &#xC0AC;&#xC6A9;&#xC790; &#xC218;&#xC900;. &#xBAA8;&#xB4E0; &#xC5F0;&#xACB0;&#xC740;&#xC774; &#xC218;&#xC900;&#xC744; &#xACF5;&#xC720;&#xD569;&#xB2C8;&#xB2E4;.</li>
-</ul>
+<blockquote>
+<p><code>auth</code>: &quot;noauth&quot; | &quot;password&quot;</p>
+</blockquote>
+<p>Socks autentication method. <code>&quot;noauth&quot;</code> is for anonymous authentication, and <code>&quot;password&quot;</code> for authentication with username and password. Default value is <code>&quot;noauth&quot;</code>.</p>
+<blockquote>
+<p><code>accounts</code>: [ <a href="#accountobject">AccountObject</a> ]</p>
+</blockquote>
+<p>An array of user accounts, for authenication purpose. Only take effect when <code>auth</code> is set to <code>&quot;password&quot;</code>.</p>
+<blockquote>
+<p><code>udp</code>: true | false</p>
+</blockquote>
+<p>Whether or not to enable UDP. Default value is <code>false</code>.</p>
+<blockquote>
+<p><code>ip</code>: address</p>
+</blockquote>
+<p>When UDP is enabled, V2Ray needs to know the IP address of current host. Default value is <code>&quot;127.0.0.1&quot;</code>. This must be set to the public IP address of the host, if you want to allow public UDP traffic.</p>
+<blockquote>
+<p><code>userLevel</code>: number</p>
+</blockquote>
+<p>User level. All incoming connections share this user level.</p>
+<h3 id="accountobject"><a name="accountobject" class="plugin-anchor" href="#accountobject"><i class="fa fa-link" aria-hidden="true"></i></a>AccountObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;user&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;my-username&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;pass&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;my-password&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>user</code>: string</p>
+</blockquote>
+<p>Username as in Socks protocol</p>
+<blockquote>
+<p><code>pass</code>: string</p>
+</blockquote>
+<p>Password as in Socks protocol</p>
 
                                 
                                 </section>
@@ -813,7 +868,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/socks","refen":"configuration/protocols/socks","title":"양말","level":"1.2.2.7","depth":3,"next":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"previous":{"title":"그림자 독","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/protocols/socks.md","mtime":"2018-11-06T15:01:16.145Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T15:03:22.035Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/socks","refen":"configuration/protocols/socks","title":"양말","level":"1.2.2.7","depth":3,"next":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"previous":{"title":"그림자 독","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/protocols/socks.md","mtime":"2018-11-06T16:01:15.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T16:02:55.079Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
