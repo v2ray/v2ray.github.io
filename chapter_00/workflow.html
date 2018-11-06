@@ -34,6 +34,10 @@ window.onload = function() {
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
                 
             
@@ -890,13 +894,44 @@ window.onload = function() {
                                 <h1 id="&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><a name="&#x5DE5;&#x4F5C;&#x673A;&#x5236;" class="plugin-anchor" href="#&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h1>
 <h2 id="single"><a name="single" class="plugin-anchor" href="#single"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F; </h2>
 <p>&#x548C;&#x5176;&#x5B83;&#x7684;&#x7F51;&#x7EDC;&#x4EE3;&#x7406;&#x5DE5;&#x5177;&#x4E00;&#x6837;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4E00;&#x53F0;&#x914D;&#x7F6E;&#x4E86; V2Ray &#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5; V2Ray &#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x7136;&#x540E;&#x5373;&#x53EF;&#x6D41;&#x7545;&#x5730;&#x8BBF;&#x95EE;&#x4E92;&#x8054;&#x7F51;&#x3002;</p>
-<p><img src="http://www.plantuml.com/plantuml/svg/UDhZud8eBaaiAYdDpU7YoabDAr4eoLSeoapFA558oInAJIx9pC_Zuj8ulFJGeaCpWUIIGzCEBp-qzz148Bdwq4nDXSHY1OroGqsWafM7PXpQ11HkFBGQeXmgQGIK33CAIgpK3mi8XeY1641J0vmr5NHrxQ1yC0dXWmq4oUhfGGq04a0EL8hB8JKl1UnY0CB-Gjy0"></p>
+<div class="mermaid">
+graph LR;
+A(PC) -.- B(&#x9632;&#x706B;&#x5899;);
+B -.-&gt; C(&#x5899;&#x5916;&#x7F51;&#x7AD9;);
+A --&gt; D(V2Ray/VPS);
+D --&gt; C;
+A --&gt; E(&#x5899;&#x5185;&#x7F51;&#x7AD9;);
+</div>
+
 <p>&#x4E00;&#x4E2A; V2Ray &#x670D;&#x52A1;&#x5668;&#x53EF;&#x540C;&#x65F6;&#x652F;&#x6301;&#x591A;&#x53F0;&#x8BBE;&#x5907;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7406;&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x7ECF;&#x8FC7;&#x5408;&#x7406;&#x7684;&#x914D;&#x7F6E;&#xFF0C;V2Ray &#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x5E76;&#x533A;&#x5206;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x548C;&#x4E0D;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x7684;&#x6D41;&#x91CF;&#xFF0C;&#x76F4;&#x8FDE;&#x7684;&#x6D41;&#x91CF;&#x4E0D;&#x9700;&#x8981;&#x7ED5;&#x8DEF;&#x3002;</p>
 <h2 id="bridge"><a name="bridge" class="plugin-anchor" href="#bridge"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6865;&#x63A5;&#x6A21;&#x5F0F; </h2>
 <p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x5728;&#x6BCF;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#x4E0A;&#x90FD;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x53F0;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6240;&#x6709;&#x6D41;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x5224;&#x65AD;&#x3002;</p>
-<p><img src="http://www.plantuml.com/plantuml/svg/UDhZud8eBaaiAYdDpU7YoabDAr4eoLSeoapFA558oInAJIx9pC_Zuj8ulFJGeaCpWUIIGzCEBp-qzz148Bdwq4nDXSHY1OroGqsWafM7PXpQ11HkFBGQeXmgQQI9fB_jK2iM_SP09M41mOOGRfaXX6i4vG8DuD88SDPKqDMrWye22IWFP3gGWF3AKUJ0neBqwUb1dG4aW1oeGYw7rBmKiBy1Dy5SQG00"></p>
+<div class="mermaid">
+graph LR;
+A(PC) -.-&gt; B(&#x9632;&#x706B;&#x5899;);
+B -.-&gt; C(&#x5899;&#x5916;&#x7F51;&#x7AD9;);
+A --&gt; D(&#x5899;&#x5185;VPS);
+D --&gt; E(&#x5899;&#x5916;VPS);
+E --&gt; C;
+D --&gt; F(&#x5899;&#x5185;&#x7F51;&#x7AD9;);
+</div>
+
 <h2 id="internals"><a name="internals" class="plugin-anchor" href="#internals"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x539F;&#x7406; </h2>
 <p>&#x5728;&#x914D;&#x7F6E; V2Ray &#x4E4B;&#x524D;&#xFF0C;&#x4E0D;&#x59A8;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B; V2Ray &#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x5355;&#x4E2A; V2Ray &#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#x793A;&#x610F;&#x56FE;&#x3002;&#x591A;&#x4E2A; V2Ray &#x4E4B;&#x95F4;&#x4E92;&#x76F8;&#x72EC;&#x7ACB;&#xFF0C;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#x3002;</p>
+<div class="mermaid">
+graph LR;
+subgraph V2Ray;
+  A1(inbound) --&gt; D(Dispatcher / Router / DNS);
+  A2(inbound) --&gt; D;
+  A3(inbound) --&gt; D;
+  A4(inbound) --&gt; D;
+  D --&gt; B1(outbound);
+  D --&gt; B2(outbound);
+  D --&gt; B3(outbound);
+  D --&gt; B4(outbound);
+end;
+</div>
+
 <ul>
 <li>&#x9700;&#x8981;&#x914D;&#x7F6E;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#xFF08;Inbound&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#xFF08;Outbound&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;<a href="../chapter_02/02_protocols.html">&#x534F;&#x8BAE;&#x5217;&#x8868;</a>&#x89C1;&#x7B2C;&#x4E8C;&#x7AE0;&#x8282;&#x3002;<ul>
 <li>&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x8D1F;&#x8D23;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x5982;&#x6D4F;&#x89C8;&#x5668;&#xFF09;&#x901A;&#x4FE1;&#xFF1A;<ul>
@@ -928,7 +963,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"使用方式","level":"1.1.2","depth":2,"next":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"previous":{"title":"版本历史","level":"1.1.1","depth":2,"path":"chapter_00/01_versions.md","ref":"chapter_00/01_versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","puml","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"puml":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/workflow.md","mtime":"2018-11-06T21:06:18.046Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T21:07:23.289Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"使用方式","level":"1.1.2","depth":2,"next":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"previous":{"title":"版本历史","level":"1.1.1","depth":2,"path":"chapter_00/01_versions.md","ref":"chapter_00/01_versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/workflow.md","mtime":"2018-11-06T22:01:06.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T22:01:59.319Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -938,8 +973,15 @@ window.onload = function() {
     <script src="../gitbook/theme.js"></script>
     
         
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
+    
+    
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
     
 
     </body>
