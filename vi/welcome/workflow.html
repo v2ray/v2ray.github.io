@@ -1,0 +1,785 @@
+
+<!DOCTYPE HTML>
+<html lang="vi" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Quy trình làm việc · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    
+
+    
+    <link rel="next" href="install.html" />
+    
+    
+    <link rel="prev" href="versions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="versions.html">
+            
+                <a href="versions.html">
+            
+                    
+                    Lịch sử phiên bản
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="workflow.html">
+            
+                <a href="workflow.html">
+            
+                    
+                    Quy trình làm việc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    cài đặt, dựng lên
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    Bắt đầu nhanh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    Dòng lệnh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="donate.html">
+            
+                <a href="donate.html">
+            
+                    
+                    Quyên góp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
+            
+                <a href="help.html">
+            
+                    
+                    Ủng hộ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    Câu hỏi thường gặp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    Blog↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../configuration/">
+            
+                <a href="../configuration/">
+            
+                    
+                    Cấu hình
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../configuration/overview.html">
+            
+                <a href="../configuration/overview.html">
+            
+                    
+                    Tổng quan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../configuration/protocols.html">
+            
+                <a href="../configuration/protocols.html">
+            
+                    
+                    Giao thức
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../configuration/protocols/blackhole.html">
+            
+                <a href="../configuration/protocols/blackhole.html">
+            
+                    
+                    Hố đen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../configuration/protocols/dokodemo.html">
+            
+                <a href="../configuration/protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../configuration/protocols/freedom.html">
+            
+                <a href="../configuration/protocols/freedom.html">
+            
+                    
+                    Sự tự do
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/mtproto.html">
+            
+                <a href="../configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/http.html">
+            
+                <a href="../configuration/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/shadowsocks.html">
+            
+                <a href="../configuration/protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/socks.html">
+            
+                <a href="../configuration/protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../configuration/protocols/vmess.html">
+            
+                <a href="../configuration/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../configuration/policy.html">
+            
+                <a href="../configuration/policy.html">
+            
+                    
+                    Chính sách
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../configuration/routing.html">
+            
+                <a href="../configuration/routing.html">
+            
+                    
+                    định tuyến
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../configuration/dns.html">
+            
+                <a href="../configuration/dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../configuration/mux.html">
+            
+                <a href="../configuration/mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../configuration/api.html">
+            
+                <a href="../configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    Số liệu thống kê
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../configuration/reverse.html">
+            
+                <a href="../configuration/reverse.html">
+            
+                    
+                    Đảo ngược
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../configuration/transport.html">
+            
+                <a href="../configuration/transport.html">
+            
+                    
+                    Vận chuyển
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="../configuration/transport/tcp.html">
+            
+                <a href="../configuration/transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="../configuration/transport/mkcp.html">
+            
+                <a href="../configuration/transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="../configuration/transport/websocket.html">
+            
+                <a href="../configuration/transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="../configuration/transport/h2.html">
+            
+                <a href="../configuration/transport/h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="../configuration/transport/domainsocket.html">
+            
+                <a href="../configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../configuration/env.html">
+            
+                <a href="../configuration/env.html">
+            
+                    
+                    Biến Env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    Khách hàng
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    các cửa sổ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    Dịch vụ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Xuất bản với GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    
+    <a class="btn pull-left" href="/chapter_00/workflow.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/ko/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_ko.svg" alt="Korean" height="16">
+    </a>
+    <a class="btn pull-left" href="/fa/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_fa.svg" alt="Persian" height="16">
+    </a>
+    <a class="btn pull-left" href="/vi/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c"><a name="quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c" class="plugin-anchor" href="#quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c"><i class="fa fa-link" aria-hidden="true"></i></a>Quy tr&#xEC;nh l&#xE0;m vi&#x1EC7;c</h1>
+<h2 id="m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n"><a name="m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n" class="plugin-anchor" href="#m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n"><i class="fa fa-link" aria-hidden="true"></i></a>M&#xE1;y ch&#x1EE7; &#x111;&#x1A1;n</h2>
+<p>Gi&#x1ED1;ng nh&#x1B0; c&#xE1;c proxy kh&#xE1;c, b&#x1EA1;n c&#x1EA7;n m&#x1ED9;t m&#xE1;y ch&#x1EE7; proxy ch&#x1EA1;y V2Ray. Sau &#x111;&#xF3;, b&#x1EA1;n c&#xF3; th&#x1EC3; k&#x1EBF;t n&#x1ED1;i v&#x1EDB;i internet th&#xF4;ng qua m&#xE1;y ch&#x1EE7; &#x111;&#xF3; t&#x1EEB; m&#xE1;y t&#xED;nh, thi&#x1EBF;t b&#x1ECB; di &#x111;&#x1ED9;ng ho&#x1EB7;c c&#xE1;c thi&#x1EBF;t b&#x1ECB; kh&#xE1;c.</p>
+<p><img src="../resources/direct.png" alt="th&#x1EB3;ng th&#x1EAF;n"></p>
+<p>V2Ray h&#x1ED7; tr&#x1EE3; k&#x1EBF;t n&#x1ED1;i t&#x1EEB; nhi&#x1EC1;u thi&#x1EBF;t b&#x1ECB; c&#xF9;ng m&#x1ED9;t l&#xFA;c, v&#x1EDB;i c&#xE1;c giao th&#x1EE9;c t&#xF9;y ch&#x1ECD;n kh&#xE1;c nhau. Trong th&#x1EDD;i gian &#x111;&#xF3;, c&#x1A1; ch&#x1EBF; &#x111;&#x1ECB;nh tuy&#x1EBF;n c&#x1EE5;c b&#x1ED9; ch&#x1EC9; c&#xF3; th&#x1EC3; &#x1EE7;y quy&#x1EC1;n th&#xF4;ng minh c&#xE1;c k&#x1EBF;t n&#x1ED1;i c&#x1EA7;n thi&#x1EBF;t.</p>
+<h2 id="server-bridge"><a name="server-bridge" class="plugin-anchor" href="#server-bridge"><i class="fa fa-link" aria-hidden="true"></i></a>Server Bridge</h2>
+<p>Trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p b&#x1EA1;n kh&#xF4;ng mu&#x1ED1;n c&#x1EA5;u h&#xEC;nh V2Ray tr&#xEA;n m&#x1ED7;i thi&#x1EBF;t b&#x1ECB; c&#x1EE7;a m&#xEC;nh, b&#x1EA1;n c&#xF3; th&#x1EC3; thi&#x1EBF;t l&#x1EAD;p m&#xE1;y ch&#x1EE7; trong t&#x1B0;&#x1EDD;ng l&#x1EED;a v&#xE0; sau &#x111;&#xF3; t&#x1EA5;t c&#x1EA3; l&#x1B0;u l&#x1B0;&#x1EE3;ng truy c&#x1EAD;p &#x111;i qua m&#xE1;y ch&#x1EE7; &#x111;&#xF3;. M&#xE1;y ch&#x1EE7; &#x111;&#x1ECB;nh tuy&#x1EBF;n ch&#xED;nh n&#xF3;.</p>
+<p><img src="../resources/relay.png" alt="ti&#x1EBF;p s&#x1EE9;c"></p>
+<h2 id="n&#x1ED9;i-b&#x1ED9;"><a name="n&#x1ED9;i-b&#x1ED9;" class="plugin-anchor" href="#n&#x1ED9;i-b&#x1ED9;"><i class="fa fa-link" aria-hidden="true"></i></a>N&#x1ED9;i b&#x1ED9;</h2>
+<p>N&#x1ED9;i b&#x1ED9; c&#x1EE7;a V2Ray tr&#xF4;ng gi&#x1ED1;ng nh&#x1B0; b&#xEA;n d&#x1B0;&#x1EDB;i. N&#xF3; h&#x1ED7; tr&#x1EE3; nhi&#x1EC1;u proxy g&#x1EED;i &#x111;&#x1EBF;n, v&#xE0; nhi&#x1EC1;u outbounds. M&#x1ED7;i ng&#x1B0;&#x1EDD;i trong s&#x1ED1; h&#x1ECD; l&#xE0; &#x111;&#x1ED9;c l&#x1EAD;p v&#x1EDB;i nh&#x1EEF;ng ng&#x1B0;&#x1EDD;i kh&#xE1;c.</p>
+<p><img src="../resources/internal.svg" alt="n&#x1ED9;i b&#x1ED9;"></p>
+<p>Ghi ch&#xFA;:</p>
+<ul>
+<li>B&#x1EA1;n ph&#x1EA3;i &#x111;&#x1ECB;nh c&#x1EA5;u h&#xEC;nh &#xED;t nh&#x1EA5;t m&#x1ED9;t l&#x1B0;&#x1EE3;t v&#xE0;o v&#xE0; ra ngo&#xE0;i &#x111;&#x1EC3; l&#xE0;m cho V2Ray ho&#x1EA1;t &#x111;&#x1ED9;ng ch&#xED;nh x&#xE1;c.</li>
+<li>Proxy g&#x1EED;i &#x111;&#x1EBF;n giao ti&#x1EBF;p v&#x1EDB;i ph&#x1EA7;n m&#x1EC1;m &#x1EE9;ng d&#x1EE5;ng kh&#xE1;ch nh&#x1B0; tr&#xEC;nh duy&#x1EC7;t.</li>
+<li>Proxy &#x111;i giao ti&#x1EBF;p v&#x1EDB;i m&#xE1;y ch&#x1EE7; t&#x1EEB; xa, ch&#x1EB3;ng h&#x1EA1;n nh&#x1B0; Apache cho m&#x1ED9;t trang web.</li>
+<li>&#x110;i&#x1EC1;u ph&#x1ED1;i vi&#xEA;n ch&#x1ECB;u tr&#xE1;ch nhi&#x1EC7;m ch&#x1ECD;n m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng &#x111;i cho m&#x1ED9;t k&#x1EBF;t n&#x1ED1;i nh&#x1EA5;t &#x111;&#x1ECB;nh, d&#x1EF1;a tr&#xEA;n c&#xE1;c quy t&#x1EAF;c c&#xF3; th&#x1EC3; c&#x1EA5;u h&#xEC;nh &#x111;&#x1B0;&#x1EE3;c.</li>
+</ul>
+<p>C&#x1EA5;u h&#xEC;nh chi ti&#x1EBF;t c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c t&#xEC;m th&#x1EA5;y <a href="../configuration/overview.html">&#x1EDF; &#x111;&#xE2;y</a>.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"Quy trình làm việc","level":"1.1.2","depth":2,"next":{"title":"cài đặt, dựng lên","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"previous":{"title":"Lịch sử phiên bản","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/workflow.md","mtime":"2018-11-06T17:24:09.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T17:26:29.073Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

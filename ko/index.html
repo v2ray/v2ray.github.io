@@ -1,0 +1,778 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Project V · Project V</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
+        </script>
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    
+
+    
+    <link rel="next" href="welcome/versions.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="welcome/versions.html">
+            
+                <a href="welcome/versions.html">
+            
+                    
+                    버전 기록
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="welcome/workflow.html">
+            
+                <a href="welcome/workflow.html">
+            
+                    
+                    워크 플로
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="welcome/install.html">
+            
+                <a href="welcome/install.html">
+            
+                    
+                    설치
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="welcome/start.html">
+            
+                <a href="welcome/start.html">
+            
+                    
+                    빠른 시작
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="welcome/command.html">
+            
+                <a href="welcome/command.html">
+            
+                    
+                    명령 행
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="welcome/donate.html">
+            
+                <a href="welcome/donate.html">
+            
+                    
+                    기부
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="welcome/help.html">
+            
+                <a href="welcome/help.html">
+            
+                    
+                    지원하다
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="welcome/faq.html">
+            
+                <a href="welcome/faq.html">
+            
+                    
+                    자주하는 질문
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    블로그↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="configuration/">
+            
+                <a href="configuration/">
+            
+                    
+                    구성
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="configuration/overview.html">
+            
+                <a href="configuration/overview.html">
+            
+                    
+                    개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="configuration/protocols.html">
+            
+                <a href="configuration/protocols.html">
+            
+                    
+                    프로토콜
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="configuration/protocols/blackhole.html">
+            
+                <a href="configuration/protocols/blackhole.html">
+            
+                    
+                    블랙홀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="configuration/protocols/dokodemo.html">
+            
+                <a href="configuration/protocols/dokodemo.html">
+            
+                    
+                    도코 데모
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="configuration/protocols/freedom.html">
+            
+                <a href="configuration/protocols/freedom.html">
+            
+                    
+                    자유
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="configuration/protocols/mtproto.html">
+            
+                <a href="configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="configuration/protocols/http.html">
+            
+                <a href="configuration/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="configuration/protocols/shadowsocks.html">
+            
+                <a href="configuration/protocols/shadowsocks.html">
+            
+                    
+                    그림자 독
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="configuration/protocols/socks.html">
+            
+                <a href="configuration/protocols/socks.html">
+            
+                    
+                    양말
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="configuration/protocols/vmess.html">
+            
+                <a href="configuration/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="configuration/policy.html">
+            
+                <a href="configuration/policy.html">
+            
+                    
+                    정책
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="configuration/routing.html">
+            
+                <a href="configuration/routing.html">
+            
+                    
+                    라우팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="configuration/dns.html">
+            
+                <a href="configuration/dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="configuration/mux.html">
+            
+                <a href="configuration/mux.html">
+            
+                    
+                    다중 화기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="configuration/api.html">
+            
+                <a href="configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="configuration/stats.html">
+            
+                <a href="configuration/stats.html">
+            
+                    
+                    통계
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="configuration/reverse.html">
+            
+                <a href="configuration/reverse.html">
+            
+                    
+                    역
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="configuration/transport.html">
+            
+                <a href="configuration/transport.html">
+            
+                    
+                    수송
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="configuration/transport/tcp.html">
+            
+                <a href="configuration/transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="configuration/transport/mkcp.html">
+            
+                <a href="configuration/transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="configuration/transport/websocket.html">
+            
+                <a href="configuration/transport/websocket.html">
+            
+                    
+                    웹 소켓
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="configuration/transport/h2.html">
+            
+                <a href="configuration/transport/h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="configuration/transport/domainsocket.html">
+            
+                <a href="configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="configuration/env.html">
+            
+                <a href="configuration/env.html">
+            
+                    
+                    Env 변수
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ui_client/">
+            
+                <a href="ui_client/">
+            
+                    
+                    고객
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="ui_client/windows.html">
+            
+                <a href="ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="ui_client/osx.html">
+            
+                <a href="ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="ui_client/ios.html">
+            
+                <a href="ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ui_client/android.html">
+            
+                <a href="ui_client/android.html">
+            
+                    
+                    기계적 인조 인간
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="ui_client/service.html">
+            
+                <a href="ui_client/service.html">
+            
+                    
+                    서비스
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    
+    <a class="btn pull-left" href="/index.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/index.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/index.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/ko/index.html" target="_blank">
+        <img src="/resources/flag_ko.svg" alt="Korean" height="16">
+    </a>
+    <a class="btn pull-left" href="/fa/index.html" target="_blank">
+        <img src="/resources/flag_fa.svg" alt="Persian" height="16">
+    </a>
+    <a class="btn pull-left" href="/vi/index.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="project-v-"><a name="project-v-" class="plugin-anchor" href="#project-v-"><i class="fa fa-link" aria-hidden="true"></i></a>Project V <img style="float: right;" width="100" height="100" src="resources/v2ray_1024.png"></h1>
+<p>Project V&#xB294; &#xC778;&#xD130;&#xB137;&#xC744; &#xD1B5;&#xD574; &#xC790;&#xC2E0; &#xB9CC;&#xC758; &#xAC1C;&#xC778; &#xC815;&#xBCF4; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xAD6C;&#xCD95; &#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB3C4;&#xC640;&#xC8FC;&#xB294; &#xC77C;&#xB828;&#xC758; &#xB3C4;&#xAD6C;&#xC785;&#xB2C8;&#xB2E4;. <code>V2Ray</code>&#xC774;&#xB77C;&#xB294; Project V&#xC758; &#xD575;&#xC2EC;&#xC740; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xACFC; &#xD1B5;&#xC2E0;&#xC744; &#xB2F4;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xD63C;&#xC790;&#xC11C; &#xC791;&#xC5C5; &#xD560; &#xC218;&#xC788;&#xC744;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xB2E4;&#xB978; &#xB3C4;&#xAD6C;&#xC640; &#xACB0;&#xD569; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xC6F9; &#xC0AC;&#xC774;&#xD2B8;&#xB294; &#xC8FC;&#xB85C; &#xC804;&#xCCB4; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC640; &#xAD00;&#xB828;&#xB41C; &#xBA87; &#xAC00;&#xC9C0; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xC640; &#xD568;&#xAED8; V2Ray&#xC758; &#xC124;&#xBA85;&#xC11C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h2 id="&#xD48D;&#xBAA8;"><a name="&#xD48D;&#xBAA8;" class="plugin-anchor" href="#&#xD48D;&#xBAA8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xD48D;&#xBAA8;</h2>
+<ul>
+<li>&#xB2E4;&#xC911; &#xC778;&#xBC14;&#xC6B4;&#xB4DC; / &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xD504;&#xB85D;&#xC2DC; : &#xD558;&#xB098;&#xC758; V2Ray &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB294; &#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xC778;&#xBC14;&#xC6B4;&#xB4DC; &#xBC0F; &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xBCD1;&#xB82C;&#xB85C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xAC01; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC740; &#xB3C5;&#xB9BD;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB9DE;&#xCDA4;&#xD615; &#xB77C;&#xC6B0;&#xD305; : &#xB77C;&#xC6B0;&#xD305; &#xAD6C;&#xC131;&#xC5D0; &#xB530;&#xB77C; &#xC218;&#xC2E0; &#xD2B8;&#xB798;&#xD53D;&#xC744; &#xC5EC;&#xB7EC; &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC;&#xB85C; &#xBCF4;&#xB0BC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC0C1; &#xC9C0;&#xC5ED; &#xB610;&#xB294; &#xB3C4;&#xBA54;&#xC778;&#xBCC4;&#xB85C; &#xD2B8;&#xB798;&#xD53D;&#xC744; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xAE30; &#xC27D;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB2E4;&#xC911; &#xD504;&#xB85C;&#xD1A0;&#xCF5C; : V2Ray&#xB294; Socks, HTTP, Shadowsock, VMess &#xB4F1; &#xC5EC;&#xB7EC; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xAC01; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;&#xC5D0;&#xB294; TCP, mKCP, WebSocket &#xB4F1;&#xACFC; &#xAC19;&#xC740; &#xC790;&#xCCB4; &#xC804;&#xC1A1;&#xC774;&#xC788;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xB09C;&#xB3C5; &#xD654; : V2Ray&#xB294; TLS&#xC5D0;&#xC11C; &#xD2B8;&#xB798;&#xD53D;&#xC744; &#xC228;&#xAE30;&#xAE30; &#xC704;&#xD574; &#xB09C;&#xB3C5; &#xD654; &#xAE30;&#xB2A5;&#xC744; &#xB0B4;&#xC7A5;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA70; &#xC6F9; &#xC11C;&#xBC84;&#xC640; &#xBCD1;&#xB82C;&#xB85C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC5ED;&#xBC29;&#xD5A5; &#xD504;&#xB85D;&#xC2DC; : &#xC5ED;&#xBC29;&#xD5A5; &#xD504;&#xB85D;&#xC2DC;&#xC758; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC9C0;&#xC6D0;. localhost&#xC5D0; &#xD130;&#xB110;&#xC744; &#xBE4C;&#xB4DC;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC5EC;&#xB7EC; &#xD50C;&#xB7AB;&#xD3FC; : Windows, Mac OS, Linux &#xB4F1;&#xC5D0;&#xC11C; V2Ray&#xAC00; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C; &#xBAA8;&#xBC14;&#xC77C;&#xC5D0;&#xC11C; &#xD0C0;&#xC0AC; &#xC9C0;&#xC6D0;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>This site is generated by GitBook, and host on GitHub. If you&apos;d like to modify its content, please send pull request to <a href="https://github.com/v2ray/manual" target="_blank">this repo</a>.</p>
+</div></div></p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"refcn":"index","refen":"index","title":"Project V","level":"1.1","depth":1,"next":{"title":"버전 기록","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-11-06T17:24:09.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T17:25:56.423Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

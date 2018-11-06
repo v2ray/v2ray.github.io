@@ -1,0 +1,948 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用方式 · Project V 官方网站</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.loli.net/css?family=Source+Code+Pro:400|Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    
+
+    
+    <link rel="next" href="install.html" />
+    
+    
+    <link rel="prev" href="01_versions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="01_versions.html">
+            
+                <a href="01_versions.html">
+            
+                    
+                    版本历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="workflow.html">
+            
+                <a href="workflow.html">
+            
+                    
+                    使用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    下载安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    新手上路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    命令行参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="02_donate.html">
+            
+                <a href="02_donate.html">
+            
+                    
+                    捐助支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
+            
+                <a href="help.html">
+            
+                    
+                    寻求帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    博客↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" >
+            
+                <a target="_blank" href="https://toutyrater.github.io/">
+            
+                    
+                    白话文教程↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter_02/">
+            
+                <a href="../chapter_02/">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter_02/01_overview.html">
+            
+                <a href="../chapter_02/01_overview.html">
+            
+                    
+                    文件格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter_02/02_protocols.html">
+            
+                <a href="../chapter_02/02_protocols.html">
+            
+                    
+                    协议列表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../chapter_02/protocols/blackhole.html">
+            
+                <a href="../chapter_02/protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../chapter_02/protocols/dokodemo.html">
+            
+                <a href="../chapter_02/protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../chapter_02/protocols/freedom.html">
+            
+                <a href="../chapter_02/protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../chapter_02/protocols/http.html">
+            
+                <a href="../chapter_02/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../chapter_02/protocols/mtproto.html">
+            
+                <a href="../chapter_02/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../chapter_02/protocols/shadowsocks.html">
+            
+                <a href="../chapter_02/protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../chapter_02/protocols/socks.html">
+            
+                <a href="../chapter_02/protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../chapter_02/protocols/vmess.html">
+            
+                <a href="../chapter_02/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter_02/policy.html">
+            
+                <a href="../chapter_02/policy.html">
+            
+                    
+                    本地策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter_02/03_routing.html">
+            
+                <a href="../chapter_02/03_routing.html">
+            
+                    
+                    路由配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter_02/04_dns.html">
+            
+                <a href="../chapter_02/04_dns.html">
+            
+                    
+                    DNS 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter_02/mux.html">
+            
+                <a href="../chapter_02/mux.html">
+            
+                    
+                    Mux 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../chapter_02/api.html">
+            
+                <a href="../chapter_02/api.html">
+            
+                    
+                    API 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter_02/stats.html">
+            
+                <a href="../chapter_02/stats.html">
+            
+                    
+                    统计信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter_02/reverse.html">
+            
+                <a href="../chapter_02/reverse.html">
+            
+                    
+                    反向代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_02/05_transport.html">
+            
+                <a href="../chapter_02/05_transport.html">
+            
+                    
+                    传输配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="../chapter_02/transport/tcp.html">
+            
+                <a href="../chapter_02/transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="../chapter_02/transport/mkcp.html">
+            
+                <a href="../chapter_02/transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="../chapter_02/transport/websocket.html">
+            
+                <a href="../chapter_02/transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="../chapter_02/transport/h2.html">
+            
+                <a href="../chapter_02/transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="../chapter_02/transport/domainsocket.html">
+            
+                <a href="../chapter_02/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../chapter_02/env.html">
+            
+                <a href="../chapter_02/env.html">
+            
+                    
+                    环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    客户端与服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    在线服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../developer/">
+            
+                <a href="../developer/">
+            
+                    
+                    开发人员手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../developer/intro/roadmap.html">
+            
+                <a href="../developer/intro/roadmap.html">
+            
+                    
+                    开发计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../developer/intro/guide.html">
+            
+                <a href="../developer/intro/guide.html">
+            
+                    
+                    开发指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../developer/intro/design.html">
+            
+                <a href="../developer/intro/design.html">
+            
+                    
+                    核心设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../developer/intro/compile.html">
+            
+                <a href="../developer/intro/compile.html">
+            
+                    
+                    配置开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../developer/intro/tools.html">
+            
+                <a href="../developer/intro/tools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    协议细节
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../developer/protocols/vmess.html">
+            
+                <a href="../developer/protocols/vmess.html">
+            
+                    
+                    VMess 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../developer/protocols/mkcp.html">
+            
+                <a href="../developer/protocols/mkcp.html">
+            
+                    
+                    mKCP 协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../developer/protocols/muxcool.html">
+            
+                <a href="../developer/protocols/muxcool.html">
+            
+                    
+                    Mux.Cool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    
+    <a class="btn pull-left" href="/chapter_00/workflow.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/ko/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_ko.svg" alt="Korean" height="16">
+    </a>
+    <a class="btn pull-left" href="/fa/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_fa.svg" alt="Persian" height="16">
+    </a>
+    <a class="btn pull-left" href="/vi/welcome/workflow.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><a name="&#x5DE5;&#x4F5C;&#x673A;&#x5236;" class="plugin-anchor" href="#&#x5DE5;&#x4F5C;&#x673A;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h1>
+<h2 id="single"><a name="single" class="plugin-anchor" href="#single"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5355;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F; </h2>
+<p>&#x548C;&#x5176;&#x5B83;&#x7684;&#x7F51;&#x7EDC;&#x4EE3;&#x7406;&#x5DE5;&#x5177;&#x4E00;&#x6837;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x4E00;&#x53F0;&#x914D;&#x7F6E;&#x4E86; V2Ray &#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x5B89;&#x88C5; V2Ray &#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x7136;&#x540E;&#x5373;&#x53EF;&#x6D41;&#x7545;&#x5730;&#x8BBF;&#x95EE;&#x4E92;&#x8054;&#x7F51;&#x3002;</p>
+<p><img src="../resources/direct.svg" alt="direct"></p>
+<p>&#x4E00;&#x4E2A; V2Ray &#x670D;&#x52A1;&#x5668;&#x53EF;&#x540C;&#x65F6;&#x652F;&#x6301;&#x591A;&#x53F0;&#x8BBE;&#x5907;&#xFF0C;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7406;&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x7ECF;&#x8FC7;&#x5408;&#x7406;&#x7684;&#x914D;&#x7F6E;&#xFF0C;V2Ray &#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x5E76;&#x533A;&#x5206;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x548C;&#x4E0D;&#x9700;&#x8981;&#x4EE3;&#x7406;&#x7684;&#x6D41;&#x91CF;&#xFF0C;&#x76F4;&#x8FDE;&#x7684;&#x6D41;&#x91CF;&#x4E0D;&#x9700;&#x8981;&#x7ED5;&#x8DEF;&#x3002;</p>
+<h2 id="bridge"><a name="bridge" class="plugin-anchor" href="#bridge"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6865;&#x63A5;&#x6A21;&#x5F0F; </h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x5728;&#x6BCF;&#x4E00;&#x53F0;&#x8BBE;&#x5907;&#x4E0A;&#x90FD;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x53F0;&#x4E2D;&#x8F6C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x6240;&#x6709;&#x6D41;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x5224;&#x65AD;&#x3002;</p>
+<p><img src="../resources/relay.svg" alt="relay"></p>
+<h2 id="internals"><a name="internals" class="plugin-anchor" href="#internals"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x4F5C;&#x539F;&#x7406; </h2>
+<p>&#x5728;&#x914D;&#x7F6E; V2Ray &#x4E4B;&#x524D;&#xFF0C;&#x4E0D;&#x59A8;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B; V2Ray &#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x5355;&#x4E2A; V2Ray &#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#x793A;&#x610F;&#x56FE;&#x3002;&#x591A;&#x4E2A; V2Ray &#x4E4B;&#x95F4;&#x4E92;&#x76F8;&#x72EC;&#x7ACB;&#xFF0C;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#x3002;</p>
+<p><img src="../resources/internal.svg" alt="internal"></p>
+<ul>
+<li>&#x9700;&#x8981;&#x914D;&#x7F6E;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#xFF08;Inbound&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#xFF08;Outbound&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;<a href="../chapter_02/02_protocols.html">&#x534F;&#x8BAE;&#x5217;&#x8868;</a>&#x89C1;&#x7B2C;&#x4E8C;&#x7AE0;&#x8282;&#x3002;<ul>
+<li>&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x8D1F;&#x8D23;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#xFF08;&#x5982;&#x6D4F;&#x89C8;&#x5668;&#xFF09;&#x901A;&#x4FE1;&#xFF1A;<ul>
+<li>&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#xFF0C;&#x5982; ID &#x548C;&#x5BC6;&#x7801;&#x7B49;&#xFF1B;</li>
+<li>&#x5165;&#x7AD9;&#x534F;&#x8BAE;&#x6536;&#x5230;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x4EA4;&#x7ED9;&#x5206;&#x53D1;&#x5668;&#xFF08;Dispatcher&#xFF09;&#x8FDB;&#x884C;&#x5206;&#x53D1;&#xFF1B;</li>
+</ul>
+</li>
+<li>&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x8D1F;&#x8D23;&#x5C06;&#x6570;&#x636E;&#x53D1;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5982;&#x53E6;&#x4E00;&#x53F0;&#x4E3B;&#x673A;&#x4E0A;&#x7684; V2Ray&#x3002;</li>
+</ul>
+</li>
+<li>&#x5F53;&#x6709;&#x591A;&#x4E2A;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#xFF08;Routing&#xFF09;&#x6765;&#x6307;&#x5B9A;&#x67D0;&#x4E00;&#x7C7B;&#x6D41;&#x91CF;&#x7531;&#x67D0;&#x4E00;&#x4E2A;&#x51FA;&#x7AD9;&#x534F;&#x8BAE;&#x53D1;&#x51FA;&#x3002;<ul>
+<li>&#x8DEF;&#x7531;&#x4F1A;&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x67E5;&#x8BE2; DNS &#x4EE5;&#x83B7;&#x53D6;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x8BE6;&#x89C1;<a href="../chapter_02/01_overview.html">&#x7B2C;&#x4E8C;&#x7AE0;&#x8282;</a>&#x3002;</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"使用方式","level":"1.1.2","depth":2,"next":{"title":"下载安装","level":"1.1.3","depth":2,"path":"chapter_00/install.md","ref":"chapter_00/install.md","articles":[]},"previous":{"title":"版本历史","level":"1.1.1","depth":2,"path":"chapter_00/01_versions.md","ref":"chapter_00/01_versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_00/workflow.md","mtime":"2018-11-06T17:24:09.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T17:25:05.010Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

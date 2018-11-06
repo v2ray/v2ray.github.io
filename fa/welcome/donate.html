@@ -1,0 +1,811 @@
+
+<!DOCTYPE HTML>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>کمک مالی · Project V</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    
+
+    
+    <link rel="next" href="help.html" />
+    
+    
+    <link rel="prev" href="command.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="versions.html">
+            
+                <a href="versions.html">
+            
+                    
+                    تاریخچه نسخه
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="workflow.html">
+            
+                <a href="workflow.html">
+            
+                    
+                    گردش کار
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    نصب
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="start.html">
+            
+                <a href="start.html">
+            
+                    
+                    شروع سریع
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="command.html">
+            
+                <a href="command.html">
+            
+                    
+                    خط فرمان
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.6" data-path="donate.html">
+            
+                <a href="donate.html">
+            
+                    
+                    کمک مالی
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="help.html">
+            
+                <a href="help.html">
+            
+                    
+                    حمایت کردن
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    سوالات متداول
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    وبلاگ↪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../configuration/">
+            
+                <a href="../configuration/">
+            
+                    
+                    پیکربندی
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../configuration/overview.html">
+            
+                <a href="../configuration/overview.html">
+            
+                    
+                    بررسی اجمالی
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../configuration/protocols.html">
+            
+                <a href="../configuration/protocols.html">
+            
+                    
+                    پروتکل ها
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../configuration/protocols/blackhole.html">
+            
+                <a href="../configuration/protocols/blackhole.html">
+            
+                    
+                    سیاه چاله
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../configuration/protocols/dokodemo.html">
+            
+                <a href="../configuration/protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../configuration/protocols/freedom.html">
+            
+                <a href="../configuration/protocols/freedom.html">
+            
+                    
+                    آزادی
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../configuration/protocols/mtproto.html">
+            
+                <a href="../configuration/protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../configuration/protocols/http.html">
+            
+                <a href="../configuration/protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../configuration/protocols/shadowsocks.html">
+            
+                <a href="../configuration/protocols/shadowsocks.html">
+            
+                    
+                    سایه ها
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../configuration/protocols/socks.html">
+            
+                <a href="../configuration/protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../configuration/protocols/vmess.html">
+            
+                <a href="../configuration/protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../configuration/policy.html">
+            
+                <a href="../configuration/policy.html">
+            
+                    
+                    سیاست
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../configuration/routing.html">
+            
+                <a href="../configuration/routing.html">
+            
+                    
+                    مسیریابی
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../configuration/dns.html">
+            
+                <a href="../configuration/dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../configuration/mux.html">
+            
+                <a href="../configuration/mux.html">
+            
+                    
+                    mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../configuration/api.html">
+            
+                <a href="../configuration/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../configuration/stats.html">
+            
+                <a href="../configuration/stats.html">
+            
+                    
+                    آمار
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../configuration/reverse.html">
+            
+                <a href="../configuration/reverse.html">
+            
+                    
+                    معکوس
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../configuration/transport.html">
+            
+                <a href="../configuration/transport.html">
+            
+                    
+                    حمل و نقل
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="../configuration/transport/tcp.html">
+            
+                <a href="../configuration/transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="../configuration/transport/mkcp.html">
+            
+                <a href="../configuration/transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="../configuration/transport/websocket.html">
+            
+                <a href="../configuration/transport/websocket.html">
+            
+                    
+                    وبسایت
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="../configuration/transport/h2.html">
+            
+                <a href="../configuration/transport/h2.html">
+            
+                    
+                    HTTP / 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="../configuration/transport/domainsocket.html">
+            
+                <a href="../configuration/transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../configuration/env.html">
+            
+                <a href="../configuration/env.html">
+            
+                    
+                    متغیرهای Env
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    مشتریان
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    پنجره ها
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    در iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    اندروید
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    خدمات
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            انتشار یافته توسط GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    
+    <a class="btn pull-left" href="/chapter_00/02_donate.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/welcome/donate.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/welcome/donate.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/ko/welcome/donate.html" target="_blank">
+        <img src="/resources/flag_ko.svg" alt="Korean" height="16">
+    </a>
+    <a class="btn pull-left" href="/fa/welcome/donate.html" target="_blank">
+        <img src="/resources/flag_fa.svg" alt="Persian" height="16">
+    </a>
+    <a class="btn pull-left" href="/vi/welcome/donate.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6A9;&#x645;&#x6A9;-&#x645;&#x627;&#x644;&#x6CC;"><a name="&#x6A9;&#x645;&#x6A9;-&#x645;&#x627;&#x644;&#x6CC;" class="plugin-anchor" href="#&#x6A9;&#x645;&#x6A9;-&#x645;&#x627;&#x644;&#x6CC;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6A9;&#x645;&#x6A9; &#x645;&#x627;&#x644;&#x6CC;</h1>
+<p>&#x67E;&#x631;&#x648;&#x698;&#x647; V &#x6CC;&#x6A9; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x63A;&#x6CC;&#x631; &#x627;&#x646;&#x62A;&#x641;&#x627;&#x639;&#x6CC; &#x627;&#x633;&#x62A;. &#x6A9;&#x62F; &#x645;&#x646;&#x628;&#x639; &#x648; &#x628;&#x631;&#x646;&#x627;&#x645;&#x647; &#x631;&#x627; &#x645;&#x6CC; &#x62A;&#x648;&#x627;&#x646; &#x622;&#x632;&#x627;&#x62F;&#x627;&#x646;&#x647; (&#x639;&#x645;&#x62F;&#x62A;&#x627;) &#x62A;&#x62D;&#x62A; &#x645;&#x62C;&#x648;&#x632; MIT &#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x6A9;&#x631;&#x62F;. &#x627;&#x6AF;&#x631; &#x627;&#x6CC;&#x646; &#x67E;&#x631;&#x648;&#x698;&#x647; &#x631;&#x627; &#x62F;&#x648;&#x633;&#x62A; &#x62F;&#x627;&#x631;&#x6CC;&#x62F;&#x60C; &#x645;&#x645;&#x6A9;&#x646; &#x627;&#x633;&#x62A; &#x6CC;&#x6A9; &#x641;&#x646;&#x62C;&#x627;&#x646; &#x642;&#x647;&#x648;&#x647; &#x628;&#x62E;&#x631;&#x6CC;&#x62F;.</p>
+<ul>
+<li>&#x627;&#x633;&#x62A;&#x641;&#x627;&#x62F;&#x647; &#x627;&#x632; &#x6A9;&#x645;&#x6A9; &#x647;&#x627;&#x6CC; &#x645;&#x627;&#x644;&#x6CC; &#x646;&#x645;&#x6CC; &#x634;&#x648;&#x62F; &#x627;&#x641;&#x634;&#x627; &#x634;&#x648;&#x62F;.</li>
+<li>&#x6A9;&#x645;&#x6A9; &#x645;&#x627;&#x644;&#x6CC; &#x634;&#x645;&#x627; &#x647;&#x6CC;&#x686; &#x627;&#x631;&#x62A;&#x628;&#x627;&#x637; &#x645;&#x633;&#x62A;&#x642;&#x6CC;&#x645;&#x6CC; &#x628;&#x627; &#x62A;&#x648;&#x633;&#x639;&#x647; &#x648; &#x62E;&#x62F;&#x645;&#x627;&#x62A; &#x67E;&#x631;&#x648;&#x698;&#x647; V &#x646;&#x62F;&#x627;&#x631;&#x62F;.</li>
+</ul>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>&#x628;&#x627; &#x62A;&#x634;&#x6A9;&#x631; &#x627;&#x632; &#x634;&#x645;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x62F;&#x648;&#x633;&#x62A; &#x62F;&#x627;&#x634;&#x62A;&#x646; &#x648; &#x62D;&#x645;&#x627;&#x6CC;&#x62A; &#x627;&#x632; &#x67E;&#x631;&#x648;&#x698;&#x647; V. &#x628;&#x631;&#x627;&#x6CC; &#x647;&#x631; &#x6A9;&#x645;&#x6A9; &#x645;&#x627;&#x644;&#x6CC;&#x60C; &#x645;&#x627; &#x6CC;&#x6A9; &#x62A;&#x627;&#x6CC;&#x6CC;&#x62F; &#x628;&#x647; &#x627;&#x6CC;&#x645;&#x6CC;&#x644; &#x634;&#x645;&#x627; &#x627;&#x631;&#x633;&#x627;&#x644; &#x645;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x645;. &#x644;&#x637;&#x641;&#x627; &#x627;&#x6CC;&#x645;&#x6CC;&#x644; &#x62E;&#x648;&#x62F; &#x631;&#x627; &#x62F;&#x631; &#x627;&#x647;&#x62F;&#x627;&#x621; &#x627;&#x6AF;&#x631; &#x628;&#x62E;&#x648;&#x627;&#x647;&#x6CC;&#x62F; &#x622;&#x646; &#x631;&#x627; &#x62F;&#x631;&#x6CC;&#x627;&#x641;&#x62A; &#x6A9;&#x646;&#x6CC;&#x62F;&#x60C; &#x6CC;&#x627; &#x628;&#x647; &#x635;&#x631;&#x627;&#x62D;&#x62A; &#x627;&#x639;&#x644;&#x627;&#x645; &#x6A9;&#x646;&#x6CC;&#x62F; &#x62A;&#x627;&#x6CC;&#x6CC;&#x62F; &#x644;&#x627;&#x632;&#x645; &#x646;&#x6CC;&#x633;&#x62A; &#x627;&#x6AF;&#x631; &#x627;&#x6CC;&#x646; &#x6A9;&#x627;&#x631; &#x631;&#x627; &#x646;&#x6A9;&#x646;&#x6CC;&#x62F;.</p>
+</div></div></p>
+<h2 id="usual-way"><a name="usual-way" class="plugin-anchor" href="#usual-way"><i class="fa fa-link" aria-hidden="true"></i></a>&#x631;&#x627;&#x647; &#x645;&#x639;&#x645;&#x648;&#x644; </h2>
+<ul>
+<li><a href="https://www.paypal.me/ProjectV2Ray/25" target="_blank">&#x627;&#x646;&#x62A;&#x642;&#x627;&#x644; &#x67E;&#x6CC; &#x67E;&#x627;&#x644;</a></li>
+<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amount=25&amp;currency_code=usd&amp;hosted_button_id=4TU3UKYANT2WY" target="_blank">&#x67E;&#x6CC; &#x67E;&#x627;&#x644; &#x628;&#x627; &#x6A9;&#x627;&#x631;&#x62A; &#x627;&#x639;&#x62A;&#x628;&#x627;&#x631;&#x6CC;</a></li>
+<li><a href="https://www.patreon.com/v2ray" target="_blank">Patreon</a></li>
+<li><a href="https://www.amazon.com/Amazon-eGift-Card-Birthday-Balloons/dp/B01FIS88SY" target="_blank">Amazon Giftcard</a>: &#x627;&#x631;&#x633;&#x627;&#x644; &#x628;&#x647; <code>love@v2ray.com</code>.</li>
+</ul>
+<p><div class="alert alert-danger hints-alert"><div class="hints-icon"><i class="fa fa-exclamation-circle"></i></div><div class="hints-container"><p>&#x644;&#x637;&#x641;&#x627; &#x62A;&#x648;&#x62C;&#x647; &#x62F;&#x627;&#x634;&#x62A;&#x647; &#x628;&#x627;&#x634;&#x6CC;&#x62F; &#x6A9;&#x647; &#x6A9;&#x645;&#x6A9; &#x628;&#x647; &#x6A9;&#x645;&#x62A;&#x631; &#x627;&#x632; 1 &#x62F;&#x644;&#x627;&#x631; &#x628;&#x6CC; &#x645;&#x639;&#x646;&#x6CC; &#x627;&#x633;&#x62A; &#x632;&#x6CC;&#x631;&#x627; Paypal &#x647;&#x632;&#x6CC;&#x646;&#x647; &#x62E;&#x62F;&#x645;&#x627;&#x62A; &#x628;&#x627;&#x644;&#x627; &#x631;&#x627; &#x67E;&#x631;&#x62F;&#x627;&#x62E;&#x62A; &#x645;&#x6CC; &#x6A9;&#x646;&#x62F;.</p>
+</div></div></p>
+<h2 id="crypto"><a name="crypto" class="plugin-anchor" href="#crypto"><i class="fa fa-link" aria-hidden="true"></i></a>Cryptocurrency </h2>
+<ul>
+<li>&#x628;&#x6CC;&#x62A; &#x6A9;&#x648;&#x6CC;&#x646;: <code>15dQnC9yvX6JJXaFkP9MiRYvJS3FvsqvKW</code></li>
+<li>&#x645;&#x648;&#x631;&#x62F; Bitcoin: <code>1NNRgpWYD8UX1bkcokCEoD6HHpaw98onxa</code></li>
+<li>&#x627;&#x62A;&#x631;&#x6CC;&#x645;: <code>0x196b695ce3b44c4bd16fe43981bcc908a6a09c2e</code> <ul>
+<li>&#x647;&#x645;&#x686;&#x646;&#x6CC;&#x646; &#x627;&#x632; &#x627;&#x6CC;&#x646; &#x646;&#x634;&#x627;&#x646;&#x647; &#x647;&#x627;&#x6CC; ERC20 &#x67E;&#x634;&#x62A;&#x6CC;&#x628;&#x627;&#x646;&#x6CC; &#x645;&#x6CC; &#x6A9;&#x646;&#x62F;: OMG&#x60C; REP&#x60C; GNT&#x60C; DGD</li>
+</ul>
+</li>
+<li>EOS: <code>EOS8Civdok4CBN3jCpsaGQijzesjKof1eyaRFuBU5mLMtWVkLsy8a</code></li>
+<li>&#x644;&#x6CC;&#x62A;&#x648;&#x6A9;&#x6CC;&#x646;: <code>LVdeH2HkCgGRs8ZEpan7fkAEEPbiJ4McoR</code></li>
+<li>Monero: <code>48kA4NyLRCWQvB7U2A77G66Z25uWbyzmoZSYjxJfrMR1J4dRFW6fWFLDn3wirAqP8ySnR4rnvoXWxfkNFhrK5ZxY1WyBqKg</code></li>
+<li>&#x645;&#x648;&#x62C; &#x62F;&#x627;&#x631; &#x634;&#x62F;&#x646;: <code>r439fPk8DzCf4nSxkpfodEuE2cG4KVZQHq</code> <ul>
+<li>&#x628;&#x631;&#x686;&#x633;&#x628; &#x645;&#x648;&#x631;&#x62F; &#x646;&#x6CC;&#x627;&#x632; &#x646;&#x6CC;&#x633;&#x62A;</li>
+</ul>
+</li>
+</ul>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p><a href="../ui_client/service.html">&#x627;&#x6CC;&#x646; &#x635;&#x641;&#x62D;&#x647;</a> &#x644;&#x6CC;&#x633;&#x62A;&#x6CC; &#x627;&#x632; &#x633;&#x631;&#x648;&#x6CC;&#x633;&#x647;&#x627;&#x6CC; &#x645;&#x639;&#x645;&#x648;&#x644;&#x6CC; &#x631;&#x627; &#x627;&#x631;&#x627;&#x626;&#x647; &#x645;&#x6CC; &#x62F;&#x647;&#x62F; &#x6A9;&#x647; &#x62F;&#x631; &#x622;&#x646; &#x634;&#x645;&#x627; &#x645;&#x6CC; &#x62A;&#x648;&#x627;&#x646;&#x6CC;&#x62F; &#x62E;&#x631;&#x6CC;&#x62F; &#x627;&#x648;&#x631;&#x627;&#x642; &#x628;&#x647;&#x627;&#x62F;&#x627;&#x631; &#x631;&#x627; &#x62E;&#x631;&#x6CC;&#x62F;&#x627;&#x631;&#x6CC; &#x6A9;&#x646;&#x6CC;&#x62F;.</p>
+</div></div></p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x628;&#x627; &#x62A;&#x648;&#x62C;&#x647; &#x628;&#x647; &#x646;&#x627;&#x645;&#x62D;&#x62F;&#x648;&#x62F; &#x637;&#x628;&#x6CC;&#x639;&#x6CC; cryptocurrenty&#x60C; &#x627;&#x6AF;&#x631; &#x645;&#x6CC;&#x62E;&#x648;&#x627;&#x647;&#x6CC;&#x62F; &#x62A;&#x623;&#x6CC;&#x6CC;&#x62F; &#x6A9;&#x646;&#x6CC;&#x62F;&#x60C; &#x642;&#x628;&#x644; &#x627;&#x632; &#x627;&#x647;&#x62F;&#x627;&#x6CC; &#x634;&#x645;&#x627;&#x60C; &#x6CC;&#x6A9; &#x627;&#x6CC;&#x645;&#x6CC;&#x644; &#x627;&#x631;&#x633;&#x627;&#x644; &#x6A9;&#x646;&#x6CC;&#x62F;.</p>
+</div></div></p>
+<h2 id="&#x627;&#x632;-&#x62D;&#x645;&#x627;&#x6CC;&#x62A;-&#x634;&#x645;&#x627;-&#x645;&#x62A;&#x634;&#x6A9;&#x631;&#x6CC;&#x645;"><a name="&#x627;&#x632;-&#x62D;&#x645;&#x627;&#x6CC;&#x62A;-&#x634;&#x645;&#x627;-&#x645;&#x62A;&#x634;&#x6A9;&#x631;&#x6CC;&#x645;" class="plugin-anchor" href="#&#x627;&#x632;-&#x62D;&#x645;&#x627;&#x6CC;&#x62A;-&#x634;&#x645;&#x627;-&#x645;&#x62A;&#x634;&#x6A9;&#x631;&#x6CC;&#x645;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x627;&#x632; &#x62D;&#x645;&#x627;&#x6CC;&#x62A; &#x634;&#x645;&#x627; &#x645;&#x62A;&#x634;&#x6A9;&#x631;&#x6CC;&#x645;</h2>
+<ul>
+<li>&#x628;&#x631;&#x627;&#x6CC; &#x647;&#x631; &#x639;&#x645;&#x644;&#x6CC;&#x627;&#x62A; &#x627;&#x631;&#x632;&#x634;&#x645;&#x646;&#x62F; &#x628;&#x6CC;&#x634; &#x627;&#x632; 50 &#x62F;&#x644;&#x627;&#x631;&#x60C; &#x645;&#x645;&#x6A9;&#x646; &#x627;&#x633;&#x62A; &#x6CC;&#x6A9;&#x6CC; &#x627;&#x632; &#x645;&#x648;&#x627;&#x631;&#x62F; &#x632;&#x6CC;&#x631; &#x631;&#x627; &#x627;&#x646;&#x62A;&#x62E;&#x627;&#x628; &#x6A9;&#x646;&#x6CC;&#x62F;: <ul>
+<li>&#x646;&#x627;&#x645; &#x648; &#x646;&#x627;&#x645; &#x62E;&#x627;&#x646;&#x648;&#x627;&#x62F;&#x6AF;&#x6CC; &#x62E;&#x648;&#x62F; &#x631;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x6CC;&#x6A9; &#x645;&#x627;&#x647; &#x648;&#x627;&#x631;&#x62F; &#x635;&#x641;&#x62D;&#x647; &#x627;&#x635;&#x644;&#x6CC; &#x645;&#x627; &#x6A9;&#x646;&#x6CC;&#x62F;</li>
+<li>&#x6A9;&#x62F; &#x645;&#x648;&#x631;&#x62F;&#x646;&#x638;&#x631; &#x645;&#x627; &#x631;&#x627; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x62F;&#x647;&#x6CC;&#x62F;. &#x645;&#x62D;&#x62F;&#x648;&#x62F;&#x6CC;&#x62A; &#x647;&#x627;: &#x647;&#x6CC;&#x686; &#x6A9;&#x627;&#x631;&#x628;&#x631; &#x631;&#x648;&#x628;&#x631;&#x648; functionlity &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x646;&#x645;&#x6CC; &#x6A9;&#x646;&#x62F;&#x61B; &#x628;&#x62F;&#x648;&#x646; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x627;&#x633;&#x646;&#x627;&#x62F; &#x62A;&#x63A;&#x6CC;&#x6CC;&#x631; &#x634;&#x645;&#x627; &#x628;&#x631;&#x627;&#x6CC; &#x6CC;&#x6A9; &#x645;&#x627;&#x647; &#x628;&#x627;&#x642;&#x6CC; &#x62E;&#x648;&#x627;&#x647;&#x62F; &#x645;&#x627;&#x646;&#x62F;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/02_donate","refen":"welcome/donate","title":"کمک مالی","level":"1.1.6","depth":2,"next":{"title":"حمایت کردن","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[]},"previous":{"title":"خط فرمان","level":"1.1.5","depth":2,"path":"welcome/command.md","ref":"welcome/command.md","articles":[]},"dir":"rtl"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"fa","gitbook":"*","direction":"rtl"},"file":{"path":"welcome/donate.md","mtime":"2018-11-06T17:24:09.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T17:26:12.531Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,988 @@
+
+<!DOCTYPE HTML>
+<html lang="ru" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Обзор · Project V Official</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/javascript">
+function inIframe () {
+    try { return window.self !== window.top; } catch (e) { return true; }
+}
+function isValidDomain() {
+    var host = window.location.hostname;
+    var domains = ['v2ray.com', 'github.io', 'mux.cool', 'v2ray.cool'];
+    for (var dx in domains) {
+        if (host.indexOf(domains[dx]) >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+if (inIframe() || !isValidDomain()) {
+    window.top.location.href = 'https://www.v2ray.com/';
+}
+window.onload = function() {
+    $('.book-body,.body-inner').scrollTop(0);
+};
+        </script>
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" type="image/png" href="/resources/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" type="image/png" href="/resources/favicon-180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon-192.png">
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400|Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    
+
+    
+    <link rel="next" href="protocols.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Project V
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../welcome/versions.html">
+            
+                <a href="../welcome/versions.html">
+            
+                    
+                    История версий
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../welcome/workflow.html">
+            
+                <a href="../welcome/workflow.html">
+            
+                    
+                    Принцип работы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../welcome/install.html">
+            
+                <a href="../welcome/install.html">
+            
+                    
+                    Установка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../welcome/start.html">
+            
+                <a href="../welcome/start.html">
+            
+                    
+                    Быстрый старт
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../welcome/command.html">
+            
+                <a href="../welcome/command.html">
+            
+                    
+                    Командная строка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../welcome/donate.html">
+            
+                <a href="../welcome/donate.html">
+            
+                    
+                    Пожертвование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../welcome/help.html">
+            
+                <a href="../welcome/help.html">
+            
+                    
+                    Поддержка
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="../welcome/faq.html">
+            
+                <a href="../welcome/faq.html">
+            
+                    
+                    ЧаВо
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" >
+            
+                <a target="_blank" href="https://steemit.com/@v2ray">
+            
+                    
+                    ↪ Блог
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Настройка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Обзор
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="protocols.html">
+            
+                <a href="protocols.html">
+            
+                    
+                    Протоколы
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="protocols/blackhole.html">
+            
+                <a href="protocols/blackhole.html">
+            
+                    
+                    Blackhole
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="protocols/dokodemo.html">
+            
+                <a href="protocols/dokodemo.html">
+            
+                    
+                    Dokodemo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="protocols/freedom.html">
+            
+                <a href="protocols/freedom.html">
+            
+                    
+                    Freedom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="protocols/mtproto.html">
+            
+                <a href="protocols/mtproto.html">
+            
+                    
+                    MTProto
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="protocols/http.html">
+            
+                <a href="protocols/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="protocols/shadowsocks.html">
+            
+                <a href="protocols/shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="protocols/socks.html">
+            
+                <a href="protocols/socks.html">
+            
+                    
+                    SOCKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="protocols/vmess.html">
+            
+                <a href="protocols/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="policy.html">
+            
+                <a href="policy.html">
+            
+                    
+                    Правила
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Маршрутизация
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="dns.html">
+            
+                <a href="dns.html">
+            
+                    
+                    DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="mux.html">
+            
+                <a href="mux.html">
+            
+                    
+                    Мультиплексирование
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="stats.html">
+            
+                <a href="stats.html">
+            
+                    
+                    Статистика
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="reverse.html">
+            
+                <a href="reverse.html">
+            
+                    
+                    Reverse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="transport.html">
+            
+                <a href="transport.html">
+            
+                    
+                    Доставка
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="transport/tcp.html">
+            
+                <a href="transport/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="transport/mkcp.html">
+            
+                <a href="transport/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="transport/websocket.html">
+            
+                <a href="transport/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.4" data-path="transport/h2.html">
+            
+                <a href="transport/h2.html">
+            
+                    
+                    HTTP/2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.5" data-path="transport/domainsocket.html">
+            
+                <a href="transport/domainsocket.html">
+            
+                    
+                    DomainSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    Переменные
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ui_client/">
+            
+                <a href="../ui_client/">
+            
+                    
+                    Клиенты
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ui_client/windows.html">
+            
+                <a href="../ui_client/windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ui_client/osx.html">
+            
+                <a href="../ui_client/osx.html">
+            
+                    
+                    OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ui_client/ios.html">
+            
+                <a href="../ui_client/ios.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../ui_client/android.html">
+            
+                <a href="../ui_client/android.html">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../ui_client/service.html">
+            
+                <a href="../ui_client/service.html">
+            
+                    
+                    Службы
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Опубликовано с помощью GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    
+    <a class="btn pull-left" href="/chapter_02/01_overview.html" target="_blank">
+        <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
+    </a>
+    <a class="btn pull-left" href="/en/configuration/overview.html" target="_blank">
+        <img src="/resources/flag_en.svg" alt="English" height="16">
+    </a>
+    <a class="btn pull-left" href="/ru/configuration/overview.html" target="_blank">
+        <img src="/resources/flag_ru.svg" alt="Russian" height="16">
+    </a>
+    <a class="btn pull-left" href="/ko/configuration/overview.html" target="_blank">
+        <img src="/resources/flag_ko.svg" alt="Korean" height="16">
+    </a>
+    <a class="btn pull-left" href="/fa/configuration/overview.html" target="_blank">
+        <img src="/resources/flag_fa.svg" alt="Persian" height="16">
+    </a>
+    <a class="btn pull-left" href="/vi/configuration/overview.html" target="_blank">
+        <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
+    </a>
+    <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
+        <img src="/resources/translate.png" alt="Translate" height="16">
+    </a>
+    
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x43E;&#x431;&#x437;&#x43E;&#x440;-&#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A;"><a name="&#x43E;&#x431;&#x437;&#x43E;&#x440;-&#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A;" class="plugin-anchor" href="#&#x43E;&#x431;&#x437;&#x43E;&#x440;-&#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x41E;&#x431;&#x437;&#x43E;&#x440; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A;</h1>
+<p>V2Ray &#x438;&#x43C;&#x435;&#x435;&#x442; &#x43E;&#x434;&#x438;&#x43D;&#x430;&#x43A;&#x43E;&#x432;&#x443;&#x44E; &#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x443; (&#x441;&#x43C;. &#x43D;&#x438;&#x436;&#x435;) &#x444;&#x430;&#x439;&#x43B;&#x43E;&#x432; &#x441; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x430;&#x43C;&#x438; &#x43A;&#x430;&#x43A; &#x43D;&#x430; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x435;, &#x442;&#x430;&#x43A; &#x438; &#x43D;&#x430; &#x43A;&#x43B;&#x438;&#x435;&#x43D;&#x442;&#x435;. &#x412; &#x43E;&#x442;&#x434;&#x435;&#x43B;&#x44C;&#x43D;&#x44B;&#x445; &#x441;&#x435;&#x43A;&#x446;&#x438;&#x44F;&#x445; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x439;&#x43A;&#x438; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430; &#x438; &#x43A;&#x43B;&#x438;&#x435;&#x43D;&#x442;&#x430; &#x43E;&#x442;&#x43B;&#x438;&#x447;&#x430;&#x44E;&#x442;&#x441;&#x44F;.</p>
+<p>&#x41D;&#x438;&#x436;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x430; &#x200B;&#x200B;&#x441;&#x442;&#x440;&#x443;&#x43A;&#x442;&#x443;&#x440;&#x430; &#x432;&#x435;&#x440;&#x445;&#x43D;&#x435;&#x433;&#x43E; &#x443;&#x440;&#x43E;&#x432;&#x43D;&#x44F; &#x43A;&#x43E;&#x43D;&#x444;&#x438;&#x433;&#x443;&#x440;&#x430;&#x446;&#x438;&#x438;. &#x41A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B; &#x438;&#x43C;&#x435;&#x435;&#x442; &#x441;&#x432;&#x43E;&#x439; &#x441;&#x43E;&#x431;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x44B;&#x439; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;log&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;api&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dns&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;stats&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;routing&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;policy&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;inbounds&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;outbounds&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;inboundDetour&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;outboundDetour&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;transport&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>log</code>: <a href="#logobject">LogObject</a></p>
+</blockquote>
+<p>Log configuration to control log outputs.</p>
+<blockquote>
+<p><code>api</code>: <a href="api.html">ApiObject</a></p>
+</blockquote>
+<p>RPC API to control the V2Ray instance. See <a href="api.html">API configuration</a> for details.</p>
+<blockquote>
+<p><code>dns</code>: <a href="dns.html">DnsObject</a></p>
+</blockquote>
+<p>Configuration for internal DNS server&apos;s configurations. If this section is omitted, V2Ray will use your system-wide DNS configuration. For details, see <a href="dns.html">DNS Configurations</a>.</p>
+<blockquote>
+<p><code>stats</code>: <a href="stats.html">StatsObject</a></p>
+</blockquote>
+<p>When specified, internal <a href="stats.html">Statistics</a> is enabled.</p>
+<blockquote>
+<p><code>policy</code>: <a href="policy.html">PolicyObject</a></p>
+</blockquote>
+<p>Configurations for permissions and other security strategies. For details, see <a href="policy.html">Local Policy</a>.</p>
+<blockquote>
+<p><code>routing</code>: <a href="routing.html">RoutingObject</a></p>
+</blockquote>
+<p>Configuration for internal <a href="routing.html">Routing</a> strategy.</p>
+<blockquote>
+<p><code>inbounds</code>: [ <a href="#inboundobject">InboundObject</a> ]</p>
+</blockquote>
+<p>An array of <a href="#inboundobject">InboundObject</a> as configuration for inbound proxies.</p>
+<blockquote>
+<p><code>outbounds</code>: [ <a href="#outboundobject">OutboundObject</a> ]</p>
+</blockquote>
+<p>An array of <a href="#outboundobject">OutboundObject</a> as configuration for outbound proxies. The first outbound in the array is the main one. It is the default outbound in routing decision.</p>
+<blockquote>
+<p><code>transport</code>: <a href="transport.html">TransportObject</a></p>
+</blockquote>
+<p>Low-level transport protocol&apos;s configurations. For details, see <a href="transport.html">Protocol Transport Options</a>.</p>
+<h2 id="logobject"><a name="logobject" class="plugin-anchor" href="#logobject"><i class="fa fa-link" aria-hidden="true"></i></a>LogObject</h2>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;access&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/file&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;error&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;/path/to/file&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;loglevel&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;warning&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>access</code>: string</p>
+</blockquote>
+<p>Path to access log. If not empty, it must be a legal file path, such as <code>&quot;/tmp/v2ray/_access.log&quot;</code>(Linux), or <code>&quot;C:\\Temp\\v2ray\\_access.log&quot;</code>(Windows). If empty, V2Ray writes access log to <code>stdout</code>.</p>
+<blockquote>
+<p><code>error</code>: string</p>
+</blockquote>
+<p>Path to error log. If not empty, it must be a legal file path. If empty, V2Ray writes error log to <code>stdout</code>.</p>
+<blockquote>
+<p><code>loglevel</code>: &quot;debug&quot; | &quot;info&quot; | &quot;warning&quot; | &quot;error&quot; | &quot;none&quot;</p>
+</blockquote>
+<p>Level of logs to be written. Different log levels indicate different content of logs. Default value is <code>&quot;warning&quot;</code>.</p>
+<p>&#x423;&#x440;&#x43E;&#x432;&#x43D;&#x438; &#x436;&#x443;&#x440;&#x43D;&#x430;&#x43B;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x44F;:</p>
+<ul>
+<li><code>&quot;debug&quot;</code>: Information for developers only. Also includes all <code>&quot;info&quot;</code> logs.</li>
+<li><code>&quot;info&quot;</code>: Information for current state of V2Ray. Users don&apos;t have to take care of those. Also includes all <code>&quot;warning&quot;</code> logs.</li>
+<li><code>&quot;warning&quot;</code>: Something wrong with the environment, usually outside of V2Ray, e.g., network breakage. V2Ray still runs, but users may experience some breakages. Also includes all <code>&quot;error&quot;</code> logs.</li>
+<li><code>&quot;error&quot;</code>: Something severely wrong, that V2Ray can&apos;t run at all.</li>
+<li><code>&quot;none&quot;</code>: All logging are disabled.</li>
+</ul>
+<h2 id="inboundobject"><a name="inboundobject" class="plugin-anchor" href="#inboundobject"><i class="fa fa-link" aria-hidden="true"></i></a>InboundObject</h2>
+<p>An InboundObject defines an inbound proxy. It handles incoming connections to V2Ray. Available proxies are <a href="protocols.html">listed here</a>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">1080</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;listen&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;protocol_name&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;streamSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;inbound_tag_name&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;sniffing&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;enabled&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;destOverride&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;tls&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;allocate&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;strategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;refresh&quot;</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;concurrency&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>port</code>: number | &quot;env:variable&quot; | string</p>
+</blockquote>
+<p>Port that the proxy is listening on. Acceptable formats are:</p>
+<ul>
+<li>Integer: actual port number.</li>
+<li>Environment variable: Beginning with <code>&quot;env:&quot;</code>, an env variable specifies the port in string format, such as <code>&quot;env:PORT&quot;</code>. V2Ray will decode the variable as string.</li>
+<li>String: A numberic string value, such as <code>&quot;1234&quot;</code>, or a range of ports, such as <code>&quot;5-10&quot;</code> for 6 ports in total.</li>
+</ul>
+<p>The actual ports to open also depend on <code>allocate</code> setting. See below.</p>
+<blockquote>
+<p><code>listen</code>: address</p>
+</blockquote>
+<p>The address to be listened on. Default value is <code>&quot;0.0.0.0&quot;</code> for incoming connections on all network interfaces. Otherwise the value has to be the address of an existing network interface.</p>
+<blockquote>
+<p><code>protocol</code>: string</p>
+</blockquote>
+<p>Name of the inbound protocol. See each individual for available values.</p>
+<blockquote>
+<p><code>settings</code>: InboundConfigurationObject</p>
+</blockquote>
+<p>Protocol-specific settings. See <code>InboundConfigurationObject</code> defined in each protocol.</p>
+<blockquote>
+<p><code>streamSettings</code>: [StreamSettingsObject]</p>
+</blockquote>
+<p>See <a href="transport.html">Protocol Transport Options</a> for detail.</p>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>The tag of the inbound proxy. It can be used for routing decisions. If not empty, it must be unique among all inbound proxies.</p>
+<blockquote>
+<p><code>sniffing</code>: <a href="#sniffingobject">SniffingObject</a></p>
+</blockquote>
+<p>Configuration for content sniffing.</p>
+<blockquote>
+<p><code>allocate</code>: <a href="#allocateobject">AllocateObject</a></p>
+</blockquote>
+<p>Configuration for port allocation.</p>
+<h3 id="sniffingobject"><a name="sniffingobject" class="plugin-anchor" href="#sniffingobject"><i class="fa fa-link" aria-hidden="true"></i></a>SniffingObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;enabled&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;destOverride&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;tls&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>enabled</code>: true | false</p>
+</blockquote>
+<p>Whether or not to enable content sniffing.</p>
+<blockquote>
+<p><code>destOverride</code>: [&quot;http&quot; | &quot;tls&quot;]</p>
+</blockquote>
+<p>An array of content type. If the content type of incoming traffic is specified in the list, the destination of the connection will be overwritten by sniffed value.</p>
+<h3 id="allocateobject"><a name="allocateobject" class="plugin-anchor" href="#allocateobject"><i class="fa fa-link" aria-hidden="true"></i></a>AllocateObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;strategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;refresh&quot;</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;concurrency&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>strategy</code>: &quot;always&quot; | &quot;random&quot;</p>
+</blockquote>
+<p>Strategy of port allocation. When it is set to <code>&quot;always&quot;</code>, all port in the <code>port</code> field will be allocated for listening. If <code>&quot;random&quot;</code> is set, V2Ray will listen on number of <code>concurrency</code> ports, and the list of ports are refereshed every <code>refresh</code> minutes.</p>
+<blockquote>
+<p><code>refresh</code>: number</p>
+</blockquote>
+<p>Number of minutes to refresh the ports of listening. Min value is <code>2</code>. This setting is only effective when <code>strategy</code> is set to <code>&quot;random&quot;</code>.</p>
+<blockquote>
+<p><code>concurrency</code>: number</p>
+</blockquote>
+<p>Number of ports to listen. Min value is <code>1</code>. Max value is one third of entire port range.</p>
+<h2 id="outboundobject"><a name="outboundobject" class="plugin-anchor" href="#outboundobject"><i class="fa fa-link" aria-hidden="true"></i></a>OutboundObject</h2>
+<p>An OutboundObject defines an outbound proxy for handling out-going connections. Available protocols are listed <a href="protocols.html">here</a>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;sendThrough&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;0.0.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;protocol_name&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;this_outbound_tag_name&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;streamSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;proxySettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;another_outbound_tag_name&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;mux&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>sendThrough</code>: address</p>
+</blockquote>
+<p>An IP address for sending traffic out. The default value, <code>&quot;0.0.0.0&quot;</code> is for randomly choosing an IP available on the host. Otherwise the value has to be an IP address from existing network interfaces.</p>
+<blockquote>
+<p><code>protocol</code>: string</p>
+</blockquote>
+<p>The protocol name of this outbound. See <a href="protocols.html">Protocols</a> for all available values.</p>
+<blockquote>
+<p><code>settings</code>: OutboundConfigurationObject</p>
+</blockquote>
+<p>Protocol-specific settings. See <code>OutboundConfigurationObject</code> in each individual protocols.</p>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>The tag of this outbound. If not empty, it must be unique among all outbounds.</p>
+<blockquote>
+<p><code>streamSettings</code>: <a href="transport.html">StreamSettingsObject</a></p>
+</blockquote>
+<p>Low-level transport settings. See <a href="transport.html">Protocol Transport Options</a>.</p>
+<blockquote>
+<p><code>proxySettings</code>: <a href="#proxysettingsobject">ProxySettingsObject</a></p>
+</blockquote>
+<p>Configuration for delegating traffic from this outbound to another. When this is set, <code>streamSettings</code> of this outbound will has no effect.</p>
+<blockquote>
+<p><code>mux</code>: <a href="mux.html">MuxObject</a></p>
+</blockquote>
+<p>See <a href="mux.html">Mux</a> configuration for detail.</p>
+<h3 id="proxysettingsobject"><a name="proxysettingsobject" class="plugin-anchor" href="#proxysettingsobject"><i class="fa fa-link" aria-hidden="true"></i></a>ProxySettingsObject</h3>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;another-outbound-tag&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>When <code>tag</code> is set to the tag of another outbound, the out-going traffic of current outbound will be delegated to the specified one.</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/01_overview","refen":"configuration/overview","title":"Обзор","level":"1.2.1","depth":2,"next":{"title":"Протоколы","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},"previous":{"title":"Настройка","level":"1.2","depth":1,"path":"configuration/README.md","ref":"configuration/README.md","articles":[{"title":"Обзор","level":"1.2.1","depth":2,"path":"configuration/overview.md","ref":"configuration/overview.md","articles":[]},{"title":"Протоколы","level":"1.2.2","depth":2,"path":"configuration/protocols.md","ref":"configuration/protocols.md","articles":[{"title":"Blackhole","level":"1.2.2.1","depth":3,"path":"configuration/protocols/blackhole.md","ref":"configuration/protocols/blackhole.md","articles":[]},{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},{"title":"Freedom","level":"1.2.2.3","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},{"title":"HTTP","level":"1.2.2.5","depth":3,"path":"configuration/protocols/http.md","ref":"configuration/protocols/http.md","articles":[]},{"title":"Shadowsocks","level":"1.2.2.6","depth":3,"path":"configuration/protocols/shadowsocks.md","ref":"configuration/protocols/shadowsocks.md","articles":[]},{"title":"SOCKS","level":"1.2.2.7","depth":3,"path":"configuration/protocols/socks.md","ref":"configuration/protocols/socks.md","articles":[]},{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]}]},{"title":"Правила","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},{"title":"Маршрутизация","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},{"title":"Мультиплексирование","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},{"title":"API","level":"1.2.7","depth":2,"path":"configuration/api.md","ref":"configuration/api.md","articles":[]},{"title":"Статистика","level":"1.2.8","depth":2,"path":"configuration/stats.md","ref":"configuration/stats.md","articles":[]},{"title":"Reverse","level":"1.2.9","depth":2,"path":"configuration/reverse.md","ref":"configuration/reverse.md","articles":[]},{"title":"Доставка","level":"1.2.10","depth":2,"path":"configuration/transport.md","ref":"configuration/transport.md","articles":[{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},{"title":"mKCP","level":"1.2.10.2","depth":3,"path":"configuration/transport/mkcp.md","ref":"configuration/transport/mkcp.md","articles":[]},{"title":"WebSocket","level":"1.2.10.3","depth":3,"path":"configuration/transport/websocket.md","ref":"configuration/transport/websocket.md","articles":[]},{"title":"HTTP/2","level":"1.2.10.4","depth":3,"path":"configuration/transport/h2.md","ref":"configuration/transport/h2.md","articles":[]},{"title":"DomainSocket","level":"1.2.10.5","depth":3,"path":"configuration/transport/domainsocket.md","ref":"configuration/transport/domainsocket.md","articles":[]}]},{"title":"Переменные","level":"1.2.11","depth":2,"path":"configuration/env.md","ref":"configuration/env.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/overview.md","mtime":"2018-11-06T17:24:09.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T17:25:40.634Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+
