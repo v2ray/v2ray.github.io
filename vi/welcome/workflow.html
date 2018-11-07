@@ -295,7 +295,7 @@ window.onload = function() {
                 <a href="../configuration/protocols/blackhole.html">
             
                     
-                    Hố đen
+                    Blackhole
             
                 </a>
             
@@ -321,7 +321,7 @@ window.onload = function() {
                 <a href="../configuration/protocols/freedom.html">
             
                     
-                    Sự tự do
+                    Freedom
             
                 </a>
             
@@ -548,7 +548,7 @@ window.onload = function() {
                 <a href="../configuration/transport/h2.html">
             
                     
-                    HTTP / 2
+                    HTTP/2
             
                 </a>
             
@@ -597,7 +597,7 @@ window.onload = function() {
                 <a href="../ui_client/">
             
                     
-                    Khách hàng
+                    Third Party Tools
             
                 </a>
             
@@ -739,22 +739,50 @@ window.onload = function() {
                                 <h1 id="quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c"><a name="quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c" class="plugin-anchor" href="#quy-tr&#xEC;nh-l&#xE0;m-vi&#x1EC7;c"><i class="fa fa-link" aria-hidden="true"></i></a>Quy tr&#xEC;nh l&#xE0;m vi&#x1EC7;c</h1>
 <h2 id="m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n"><a name="m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n" class="plugin-anchor" href="#m&#xE1;y-ch&#x1EE7;-&#x111;&#x1A1;n"><i class="fa fa-link" aria-hidden="true"></i></a>M&#xE1;y ch&#x1EE7; &#x111;&#x1A1;n</h2>
 <p>Gi&#x1ED1;ng nh&#x1B0; c&#xE1;c proxy kh&#xE1;c, b&#x1EA1;n c&#x1EA7;n m&#x1ED9;t m&#xE1;y ch&#x1EE7; proxy ch&#x1EA1;y V2Ray. Sau &#x111;&#xF3;, b&#x1EA1;n c&#xF3; th&#x1EC3; k&#x1EBF;t n&#x1ED1;i v&#x1EDB;i internet th&#xF4;ng qua m&#xE1;y ch&#x1EE7; &#x111;&#xF3; t&#x1EEB; m&#xE1;y t&#xED;nh, thi&#x1EBF;t b&#x1ECB; di &#x111;&#x1ED9;ng ho&#x1EB7;c c&#xE1;c thi&#x1EBF;t b&#x1ECB; kh&#xE1;c.</p>
-<p><img src="../resources/direct.png" alt="th&#x1EB3;ng th&#x1EAF;n"></p>
-<p>V2Ray h&#x1ED7; tr&#x1EE3; k&#x1EBF;t n&#x1ED1;i t&#x1EEB; nhi&#x1EC1;u thi&#x1EBF;t b&#x1ECB; c&#xF9;ng m&#x1ED9;t l&#xFA;c, v&#x1EDB;i c&#xE1;c giao th&#x1EE9;c t&#xF9;y ch&#x1ECD;n kh&#xE1;c nhau. Trong th&#x1EDD;i gian &#x111;&#xF3;, c&#x1A1; ch&#x1EBF; &#x111;&#x1ECB;nh tuy&#x1EBF;n c&#x1EE5;c b&#x1ED9; ch&#x1EC9; c&#xF3; th&#x1EC3; &#x1EE7;y quy&#x1EC1;n th&#xF4;ng minh c&#xE1;c k&#x1EBF;t n&#x1ED1;i c&#x1EA7;n thi&#x1EBF;t.</p>
+<div class="mermaid">
+graph LR;
+A(PC) -.- B(Firewall);
+B -.-&gt; C(Blocked Website);
+A --&gt; D(V2Ray/VPS);
+D --&gt; C;
+A --&gt; E(Normal Website);
+</div>
+
+<p>V2Ray supports connections from multiple devices at the same time, with optionally different protocols. In the mean time, the local routing mechanism can smartly proxy necessary connections only.</p>
 <h2 id="server-bridge"><a name="server-bridge" class="plugin-anchor" href="#server-bridge"><i class="fa fa-link" aria-hidden="true"></i></a>Server Bridge</h2>
-<p>Trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p b&#x1EA1;n kh&#xF4;ng mu&#x1ED1;n c&#x1EA5;u h&#xEC;nh V2Ray tr&#xEA;n m&#x1ED7;i thi&#x1EBF;t b&#x1ECB; c&#x1EE7;a m&#xEC;nh, b&#x1EA1;n c&#xF3; th&#x1EC3; thi&#x1EBF;t l&#x1EAD;p m&#xE1;y ch&#x1EE7; trong t&#x1B0;&#x1EDD;ng l&#x1EED;a v&#xE0; sau &#x111;&#xF3; t&#x1EA5;t c&#x1EA3; l&#x1B0;u l&#x1B0;&#x1EE3;ng truy c&#x1EAD;p &#x111;i qua m&#xE1;y ch&#x1EE7; &#x111;&#xF3;. M&#xE1;y ch&#x1EE7; &#x111;&#x1ECB;nh tuy&#x1EBF;n ch&#xED;nh n&#xF3;.</p>
-<p><img src="../resources/relay.png" alt="ti&#x1EBF;p s&#x1EE9;c"></p>
+<p>In the case you don&apos;t want configuration V2Ray on each of your devices, you may setup a server within the firewall, and then all traffic go through that server. The server does routing itself.</p>
+<div class="mermaid">
+graph LR;
+A(PC) -.-&gt; B(Firewall);
+B -.-&gt; C(Blocked Website);
+A --&gt; D(VPS 1);
+D --&gt; E(VPS 2);
+E --&gt; C;
+D --&gt; F(Normal Website);
+</div>
+
 <h2 id="n&#x1ED9;i-b&#x1ED9;"><a name="n&#x1ED9;i-b&#x1ED9;" class="plugin-anchor" href="#n&#x1ED9;i-b&#x1ED9;"><i class="fa fa-link" aria-hidden="true"></i></a>N&#x1ED9;i b&#x1ED9;</h2>
-<p>N&#x1ED9;i b&#x1ED9; c&#x1EE7;a V2Ray tr&#xF4;ng gi&#x1ED1;ng nh&#x1B0; b&#xEA;n d&#x1B0;&#x1EDB;i. N&#xF3; h&#x1ED7; tr&#x1EE3; nhi&#x1EC1;u proxy g&#x1EED;i &#x111;&#x1EBF;n, v&#xE0; nhi&#x1EC1;u outbounds. M&#x1ED7;i ng&#x1B0;&#x1EDD;i trong s&#x1ED1; h&#x1ECD; l&#xE0; &#x111;&#x1ED9;c l&#x1EAD;p v&#x1EDB;i nh&#x1EEF;ng ng&#x1B0;&#x1EDD;i kh&#xE1;c.</p>
-<p><img src="../resources/internal.svg" alt="n&#x1ED9;i b&#x1ED9;"></p>
-<p>Ghi ch&#xFA;:</p>
+<p>The internal of V2Ray looks like below. It supports multiple inbound proxies, and multiple outbounds. Each of them are independent from others.</p>
+<div class="mermaid">
+graph LR;
+A1(inbound) --&gt; D(Dispatcher / Router / DNS);
+A2(inbound) --&gt; D;
+A3(inbound) --&gt; D;
+A4(inbound) --&gt; D;
+D --&gt; B1(outbound);
+D --&gt; B2(outbound);
+D --&gt; B3(outbound);
+D --&gt; B4(outbound);
+</div>
+
+<p>Notes:</p>
 <ul>
 <li>B&#x1EA1;n ph&#x1EA3;i &#x111;&#x1ECB;nh c&#x1EA5;u h&#xEC;nh &#xED;t nh&#x1EA5;t m&#x1ED9;t l&#x1B0;&#x1EE3;t v&#xE0;o v&#xE0; ra ngo&#xE0;i &#x111;&#x1EC3; l&#xE0;m cho V2Ray ho&#x1EA1;t &#x111;&#x1ED9;ng ch&#xED;nh x&#xE1;c.</li>
 <li>Proxy g&#x1EED;i &#x111;&#x1EBF;n giao ti&#x1EBF;p v&#x1EDB;i ph&#x1EA7;n m&#x1EC1;m &#x1EE9;ng d&#x1EE5;ng kh&#xE1;ch nh&#x1B0; tr&#xEC;nh duy&#x1EC7;t.</li>
 <li>Proxy &#x111;i giao ti&#x1EBF;p v&#x1EDB;i m&#xE1;y ch&#x1EE7; t&#x1EEB; xa, ch&#x1EB3;ng h&#x1EA1;n nh&#x1B0; Apache cho m&#x1ED9;t trang web.</li>
 <li>&#x110;i&#x1EC1;u ph&#x1ED1;i vi&#xEA;n ch&#x1ECB;u tr&#xE1;ch nhi&#x1EC7;m ch&#x1ECD;n m&#x1ED9;t &#x111;&#x1B0;&#x1EDD;ng &#x111;i cho m&#x1ED9;t k&#x1EBF;t n&#x1ED1;i nh&#x1EA5;t &#x111;&#x1ECB;nh, d&#x1EF1;a tr&#xEA;n c&#xE1;c quy t&#x1EAF;c c&#xF3; th&#x1EC3; c&#x1EA5;u h&#xEC;nh &#x111;&#x1B0;&#x1EE3;c.</li>
 </ul>
-<p>C&#x1EA5;u h&#xEC;nh chi ti&#x1EBF;t c&#xF3; th&#x1EC3; &#x111;&#x1B0;&#x1EE3;c t&#xEC;m th&#x1EA5;y <a href="../configuration/overview.html">&#x1EDF; &#x111;&#xE2;y</a>.</p>
+<p>Detailed configuration can be found <a href="../configuration/overview.html">here</a>.</p>
 
                                 
                                 </section>
@@ -770,7 +798,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"Quy trình làm việc","level":"1.1.2","depth":2,"next":{"title":"cài đặt, dựng lên","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"previous":{"title":"Lịch sử phiên bản","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/workflow.md","mtime":"2018-11-06T23:01:12.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-06T23:03:43.185Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/workflow","refen":"welcome/workflow","title":"Quy trình làm việc","level":"1.1.2","depth":2,"next":{"title":"cài đặt, dựng lên","level":"1.1.3","depth":2,"path":"welcome/install.md","ref":"welcome/install.md","articles":[]},"previous":{"title":"Lịch sử phiên bản","level":"1.1.1","depth":2,"path":"welcome/versions.md","ref":"welcome/versions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/workflow.md","mtime":"2018-11-07T07:01:16.409Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-07T07:03:39.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
