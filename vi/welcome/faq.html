@@ -746,39 +746,45 @@ window.onload = function() {
 <li>N&#x1EBF;u b&#x1EA1;n &#x111;ang s&#x1EED; d&#x1EE5;ng Linux v&#x1EDB;i systemd, b&#x1EA1;n c&#xF3; th&#x1EC3; xem nh&#x1EAD;t k&#xFD; ho&#x1EA3;ng lo&#x1EA1;n b&#x1EB1;ng l&#x1EC7;nh <code>journalctl -u v2ray</code>.</li>
 <li>N&#xF3;i chung b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y l&#x1EC7;nh <code>v2ray -config =<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>config-file</span><span class="token punctuation">&gt;</span></span> -test</code> &#x111;&#x1EC3; xem th&#xF4;ng tin l&#x1ED7;i.</li>
 </ul>
+<h3 id="backward-compatibility"><a name="backward-compatibility" class="plugin-anchor" href="#backward-compatibility"><i class="fa fa-link" aria-hidden="true"></i></a>Backward Compatibility</h3>
+<ul>
+<li>For configuration file (e.g., JSON), backward compatibility applies to at least one major releases. For example, V2Ray 4.x supports config files from V2Ray 3.x.</li>
+<li>For Protobuf based communication protocols, such as <a href="../api.md">Api</a>, backward compatibility applies to at least one major releases.</li>
+<li>For binary based commnunication protocols, such as Shadowsocks and VMess, it is always backward compatible when server version is not older than clients. When client version is newer, backward compatibility applies to at least 12 minor releases.</li>
+</ul>
 <h2 id="l&#x1ED7;i-v2ray"><a name="l&#x1ED7;i-v2ray" class="plugin-anchor" href="#l&#x1ED7;i-v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>L&#x1ED7;i V2Ray</h2>
 <h3 id="socks-unknown-socks-version-67"><a name="socks-unknown-socks-version-67" class="plugin-anchor" href="#socks-unknown-socks-version-67"><i class="fa fa-link" aria-hidden="true"></i></a>Socks: Unknown Socks version: 67</h3>
 <p>Nguy&#xEA;n nh&#xE2;n c&#xF3; th&#x1EC3;</p>
 <ul>
-<li>B&#x1EA1;n &#x111;ang s&#x1EED; d&#x1EE5;ng v&#x1EDB; &#x111;i trong V2Ray, nh&#x1B0;ng tr&#xEC;nh duy&#x1EC7;t c&#x1EE7;a b&#x1EA1;n &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1ECB;nh c&#x1EA5;u h&#xEC;nh &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng proxy HTTP.</li>
+<li>You are using socks inbound in V2Ray, but your browser is configured to use HTTP proxy.</li>
 </ul>
 <p>Dung d&#x1ECB;ch</p>
 <ul>
-<li>Th&#xEA;m HTTP v&#xE0;o trong V2Ray v&#xE0; sau &#x111;&#xF3; c&#x1EAD;p nh&#x1EAD;t c&#xE0;i &#x111;&#x1EB7;t proxy tr&#xEC;nh duy&#x1EC7;t c&#x1EE7;a b&#x1EA1;n &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng proxy n&#xE0;y.</li>
+<li>Add a HTTP inbound in V2Ray, and then update your browser proxy settings to use this proxy.</li>
 </ul>
 <h2 id="gi&#x1EA5;y-ph&#xE9;p-c&#x1EE7;a-d&#x1EF1;-&#xE1;n-n&#xE0;y"><a name="gi&#x1EA5;y-ph&#xE9;p-c&#x1EE7;a-d&#x1EF1;-&#xE1;n-n&#xE0;y" class="plugin-anchor" href="#gi&#x1EA5;y-ph&#xE9;p-c&#x1EE7;a-d&#x1EF1;-&#xE1;n-n&#xE0;y"><i class="fa fa-link" aria-hidden="true"></i></a>Gi&#x1EA5;y ph&#xE9;p c&#x1EE7;a d&#x1EF1; &#xE1;n n&#xE0;y</h2>
 <p>Project V s&#x1EED; d&#x1EE5;ng gi&#x1EA5;y ph&#xE9;p sau.</p>
 <h3 id="v2ray"><a name="v2ray" class="plugin-anchor" href="#v2ray"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray</h3>
 <p>M&#xE3; ngu&#x1ED3;n v&#xE0; c&#xE1;c b&#x1EA3;n ph&#xE1;t h&#xE0;nh ch&#xED;nh th&#x1EE9;c &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;p ph&#xE9;p theo gi&#x1EA5;y ph&#xE9;p MIT, bao g&#x1ED3;m m&#xE3; ngu&#x1ED3;n v&#xE0; c&#xE1;c b&#x1EA3;n ph&#xE1;t h&#xE0;nh trong kho l&#x1B0;u tr&#x1EEF; sau.</p>
 <ul>
-<li><a href="https://www.github.com/v2ray/v2ray-core/" target="_blank">l&#xF5;i v2ray / v2ray</a></li>
-<li><a href="https://www.github.com/v2ray/ext" target="_blank">v2ray / ext</a></li>
+<li><a href="https://www.github.com/v2ray/v2ray-core/" target="_blank">v2ray/v2ray-core</a></li>
+<li><a href="https://www.github.com/v2ray/ext" target="_blank">v2ray/ext</a></li>
 </ul>
 <h3 id="v2raycom"><a name="v2raycom" class="plugin-anchor" href="#v2raycom"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ray.Com</h3>
 <p>Trang web ch&#xED;nh th&#x1EE9;c, <a href="https://www.v2ray.com/" target="_blank">v2ray.com</a>, &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;p ph&#xE9;p theo <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Gi&#x1EA5;y ph&#xE9;p Creative Commons Ghi c&#xF4;ng 4.0 Qu&#x1ED1;c t&#x1EBF;</a>.</p>
 <ul>
-<li>Bao g&#x1ED3;m t&#x1EA5;t c&#x1EA3; v&#x103;n b&#x1EA3;n v&#xE0; h&#xEC;nh &#x1EA3;nh hi&#x1EC3;n th&#x1ECB; tr&#xEA;n trang web.</li>
-<li>Bao g&#x1ED3;m <a href="https://www.v2ray.com/resources/v2ray_1024.png" target="_blank">bi&#x1EC3;u t&#x1B0;&#x1EE3;ng Project V</a>.</li>
-<li>Bao g&#x1ED3;m t&#x1EA5;t c&#x1EA3; m&#xE3; ngu&#x1ED3;n &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; t&#x1EA1;o trang web, v&#xED; d&#x1EE5; <a href="https://www.github.com/v2ray/manual" target="_blank">v2ray / manual</a>.</li>
+<li>Including all visible text and pictures on the website.</li>
+<li>Including <a href="https://www.v2ray.com/resources/v2ray_1024.png" target="_blank">Project V logo</a>.</li>
+<li>Including all source code that is used for generating the website, i.e., <a href="https://www.github.com/v2ray/manual" target="_blank">v2ray/manual</a>.</li>
 </ul>
-<h3 id="screenshots"><a name="screenshots" class="plugin-anchor" href="#screenshots"><i class="fa fa-link" aria-hidden="true"></i></a>&#x1EA2;nh ch&#x1EE5;p m&#xE0;n h&#xEC;nh v&#xE0; c&#xE1;c t&#x1EC7;p kh&#xE1;c </h3>
+<h3 id="screenshots"><a name="screenshots" class="plugin-anchor" href="#screenshots"><i class="fa fa-link" aria-hidden="true"></i></a>Screenshot and other files </h3>
 <p>T&#x1EA5;t c&#x1EA3; c&#xE1;c t&#x1EC7;p c&#x1EE7;a b&#xEA;n th&#x1EE9; ba &#x111;&#x1B0;&#x1EE3;c li&#x1EC7;t k&#xEA; b&#xEA;n d&#x1B0;&#x1EDB;i &#x111;&#x1EC1;u thu&#x1ED9;c v&#x1EC1; ng&#x1B0;&#x1EDD;i t&#x1EA1;o c&#x1EE7;a h&#x1ECD;. B&#x1EA5;t k&#x1EF3; ai t&#x1EA1;o t&#x1EC7;p &#x111;&#x1EC1;u s&#x1EDF; h&#x1EEF;u t&#x1EC7;p.</p>
 <ul>
-<li>Bao g&#x1ED3;m t&#x1EA5;t c&#x1EA3; &#x1EA3;nh ch&#x1EE5;p m&#xE0;n h&#xEC;nh c&#x1EE7;a Project V.</li>
-<li>Bao g&#x1ED3;m t&#x1EA5;t c&#x1EA3; c&#xE1;c t&#x1EC7;p c&#x1EA5;u h&#xEC;nh &#x111;&#x1B0;&#x1EE3;c s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; ch&#x1EA1;y Project V.</li>
-<li>Bao g&#x1ED3;m t&#x1EA5;t c&#x1EA3; c&#xE1;c b&#x1EA3;n ghi &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o b&#x1EDF;i Project V trong th&#x1EDD;i gian ch&#x1EA1;y.</li>
+<li>Including all screenshots of Project V.</li>
+<li>Including all configuration files that are used to run Project V.</li>
+<li>Including all logs generated by Project V during runtime.</li>
 </ul>
-<h3 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>N&#x1ED9;i dung kh&#xE1;c </h3>
+<h3 id="other"><a name="other" class="plugin-anchor" href="#other"><i class="fa fa-link" aria-hidden="true"></i></a>Other content </h3>
 <p>T&#x1EA5;t c&#x1EA3; n&#x1ED9;i dung kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EC1; c&#x1EAD;p &#x1EDF; tr&#xEA;n s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;p ph&#xE9;p theo t&#x1EEB;ng tr&#x1B0;&#x1EDD;ng h&#x1EE3;p.</p>
 
                                 
@@ -795,7 +801,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/faq","refen":"welcome/faq","title":"Câu hỏi thường gặp","level":"1.1.8","depth":2,"next":{"title":"Blog↪","level":"1.1.9","depth":2,"url":"https://steemit.com/@v2ray","ref":"https://steemit.com/@v2ray","articles":[]},"previous":{"title":"Ủng hộ","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/faq.md","mtime":"2018-11-07T09:03:07.073Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-07T09:05:32.029Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/faq","refen":"welcome/faq","title":"Câu hỏi thường gặp","level":"1.1.8","depth":2,"next":{"title":"Blog↪","level":"1.1.9","depth":2,"url":"https://steemit.com/@v2ray","ref":"https://steemit.com/@v2ray","articles":[]},"previous":{"title":"Ủng hộ","level":"1.1.7","depth":2,"path":"welcome/help.md","ref":"welcome/help.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/faq.md","mtime":"2018-11-07T17:01:20.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-07T17:03:53.939Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
