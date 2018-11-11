@@ -808,7 +808,18 @@ window.onload = function() {
 <p><code>bufferSize</code>: number</p>
 </blockquote>
 <p>K&#xED;ch th&#x1B0;&#x1EDB;c c&#x1EE7;a b&#x1ED9; &#x111;&#x1EC7;m trong m&#x1ED7;i k&#x1EBF;t n&#x1ED1;i, t&#xED;nh b&#x1EB1;ng kilo-byte. Gi&#xE1; tr&#x1ECB; m&#x1EB7;c &#x111;&#x1ECB;nh l&#xE0; <code>10240</code>. Khi n&#xF3; &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t th&#xE0;nh <code>0</code>, b&#x1ED9; &#x111;&#x1EC7;m b&#xEA;n trong b&#x1ECB; t&#x1EAF;t.</p>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>bufferSize</code> ghi &#x111;&#xE8; <code>thi&#x1EBF;t l&#x1EAD;p v2ray.ray.buffer.size</code> trong <a href="env.html#cache-size-per-connection">bi&#x1EBF;n env</a>.</p>
+<p>Default value (V2Ray 4.4+):</p>
+<ul>
+<li><code>0</code> on ARM, MIPS and MIPSLE.</li>
+<li><code>4</code> on ARM64, MIPS64 and MIPS64LE.</li>
+<li><code>512</code> on other platforms.</li>
+</ul>
+<p>Default value (V2Ray 4.3-):</p>
+<ul>
+<li><code>16</code> on ARM, ARM64, MIPS, MIPS64, MIPSLE and MIPS64LE.</li>
+<li><code>2048</code> on other platforms.</li>
+</ul>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>bufferSize</code> overrides <code>v2ray.ray.buffer.size</code> settings in <a href="env.html#cache-size-per-connection">env variables</a>.</p>
 </div></div></p>
 <h3 id="systempolicyobject"><a name="systempolicyobject" class="plugin-anchor" href="#systempolicyobject"><i class="fa fa-link" aria-hidden="true"></i></a>SystemPolicyObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
@@ -819,11 +830,11 @@ window.onload = function() {
 <blockquote>
 <p><code>statsInboundUplink</code>: true | false</p>
 </blockquote>
-<p>Khi &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t th&#xE0;nh <code>true</code>, V2Ray cho ph&#xE9;p b&#x1ED9; &#x111;&#x1EBF;m stat cho t&#x1EA5;t c&#x1EA3; l&#x1B0;u l&#x1B0;&#x1EE3;ng truy c&#x1EAD;p &#x111;&#x1B0;&#x1EDD;ng l&#xEA;n trong t&#x1EA5;t c&#x1EA3; c&#xE1;c proxy g&#x1EED;i &#x111;&#x1EBF;n.</p>
+<p>When set to <code>true</code>, V2Ray enables stat counter for all uplink traffic in all inbound proxies.</p>
 <blockquote>
 <p><code>statsInboundDownlink</code>: true | false</p>
 </blockquote>
-<p>Khi &#x111;&#x1B0;&#x1EE3;c &#x111;&#x1EB7;t th&#xE0;nh <code>true</code>, V2Ray cho ph&#xE9;p b&#x1ED9; &#x111;&#x1EBF;m stat cho t&#x1EA5;t c&#x1EA3; l&#x1B0;u l&#x1B0;&#x1EE3;ng truy c&#x1EAD;p &#x111;&#x1B0;&#x1EDD;ng xu&#x1ED1;ng trong t&#x1EA5;t c&#x1EA3; c&#xE1;c proxy g&#x1EED;i &#x111;&#x1EBF;n.</p>
+<p>When set to <code>true</code>, V2Ray enables stat counter for all downlink traffic in all inbound proxies.</p>
 
                                 
                                 </section>
@@ -839,7 +850,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Chính sách","level":"1.2.3","depth":2,"next":{"title":"định tuyến","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-11-11T10:01:18.769Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T10:03:41.196Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Chính sách","level":"1.2.3","depth":2,"next":{"title":"định tuyến","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-11-11T16:01:22.817Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T16:04:11.953Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
