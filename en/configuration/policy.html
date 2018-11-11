@@ -808,6 +808,17 @@ window.onload = function() {
 <p><code>bufferSize</code>: number</p>
 </blockquote>
 <p>Size of internal buffer per connection, in kilo-bytes. Default value is <code>10240</code>. When it is set to <code>0</code>, the internal buffer is disabled.</p>
+<p>Default value (V2Ray 4.4+):</p>
+<ul>
+<li><code>0</code> on ARM, MIPS and MIPSLE.</li>
+<li><code>4</code> on ARM64, MIPS64 and MIPS64LE.</li>
+<li><code>512</code> on other platforms.</li>
+</ul>
+<p>Default value (V2Ray 4.3-):</p>
+<ul>
+<li><code>16</code> on ARM, ARM64, MIPS, MIPS64, MIPSLE and MIPS64LE.</li>
+<li><code>2048</code> on other platforms.</li>
+</ul>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>bufferSize</code> overrides <code>v2ray.ray.buffer.size</code> settings in <a href="env.html#cache-size-per-connection">env variables</a>.</p>
 </div></div></p>
 <h3 id="systempolicyobject"><a name="systempolicyobject" class="plugin-anchor" href="#systempolicyobject"><i class="fa fa-link" aria-hidden="true"></i></a>SystemPolicyObject</h3>
@@ -839,7 +850,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Policy","level":"1.2.3","depth":2,"next":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-11-10T10:01:25.509Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-10T10:02:35.439Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/policy","refen":"configuration/policy","title":"Policy","level":"1.2.3","depth":2,"next":{"title":"Routing","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"previous":{"title":"VMess","level":"1.2.2.8","depth":3,"path":"configuration/protocols/vmess.md","ref":"configuration/protocols/vmess.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/policy.md","mtime":"2018-11-11T10:01:18.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T10:02:30.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
