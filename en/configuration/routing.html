@@ -742,7 +742,8 @@ window.onload = function() {
 <p><code>RoutingObject</code> is used as <code>routing</code> in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;domainStrategy&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;AsIs&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;balancers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -761,7 +762,11 @@ window.onload = function() {
 <blockquote>
 <p><code>rules</code>: [<a href="#ruleobject">RuleObject</a>]</p>
 </blockquote>
-<p>An array of rules. For each inbound connection, V2Ray tries these rules from top down one by one. If a rule takes effect, the connection will be routed to the <code>outboundTag</code> of the rule.</p>
+<p>An array of rules. For each inbound connection, V2Ray tries these rules from top down one by one. If a rule takes effect, the connection will be routed to the <code>outboundTag</code> (or <code>balancerTag</code>, V2Ray 4.4+) of the rule.</p>
+<blockquote>
+<p><code>balancers</code>: [ <a href="#balancerobject">BalancerObject</a> ]</p>
+</blockquote>
+<p>(V2Ray 4.4+) An array of load balancers. When a routing rule points to a load balancer, the balancer will select an outbound based on configuration. Then traffic will be sent to that outbound.</p>
 <h3 id="ruleobject"><a name="ruleobject" class="plugin-anchor" href="#ruleobject"><i class="fa fa-link" aria-hidden="true"></i></a>RuleObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;field&quot;</span><span class="token punctuation">,</span>
@@ -789,7 +794,8 @@ window.onload = function() {
     <span class="token string">&quot;tag-vmess&quot;</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;tls&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bittorrent&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;direct&quot;</span>
+  <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;direct&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;balancerTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;balancer&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>When multiple fields are specified, these fields have to be all satisfied, in order to make the rule effective. If you need both <code>domain</code> and <code>ip</code> rules, it is highly likely you need put them into separate rules.</p>
@@ -860,6 +866,26 @@ window.onload = function() {
 <p><code>outboundTag</code> string</p>
 </blockquote>
 <p><a href="protocols.html">Tag of the outbound</a> that the connection will be sent to, if this rule take effect.</p>
+<blockquote>
+<p><code>balancerTag</code>: string</p>
+</blockquote>
+<p>Tag of an load balancer. Then this rule takes effect, V2Ray will use the balancer to select an outbound. Either <code>outboundTag</code> or <code>balancerTag</code> must be specified. When both are specified, <code>outboundTag</code> takes priority.</p>
+<h3 id="balancerobject"><a name="balancerobject" class="plugin-anchor" href="#balancerobject"><i class="fa fa-link" aria-hidden="true"></i></a>BalancerObject</h3>
+<p>Configuration for a load balancer. When a load balancer takes effective, it selects one outbound from matching outbounds. This outbound will be used for send out-going traffic.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;balancer&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;selector&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>Tag of this <code>BalancerObject</code>, to be matched from <code>balancerTag</code> in <code>RuleObject</code>.</p>
+<blockquote>
+<p><code>selector</code>: [ string ]</p>
+</blockquote>
+<p>An array of strings. These strings are used to select outbounds with prefix matching. For example, with the following outbound tags: <code>[ &quot;a&quot;, &quot;ab&quot;, &quot;c&quot;, &quot;ba&quot; ]</code>&#xFF0C;selector <code>[&quot;a&quot;]</code> matches <code>[ &quot;a&quot;, &quot;ab&quot; ]</code>.</p>
+<p>When multiple outbounds are selected, load balancer for now picks one final outbound at random.</p>
 
                                 
                                 </section>
@@ -875,7 +901,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-11-11T16:01:22.805Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T16:02:46.855Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2018-11-12T11:01:36.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-12T11:03:06.081Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
