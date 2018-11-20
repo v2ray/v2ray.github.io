@@ -757,10 +757,11 @@ window.onload = function() {
 <li><code>&quot;AsIs&quot;</code>: Gi&#xE1; tr&#x1ECB; m&#x1EB7;c &#x111;&#x1ECB;nh. Gi&#x1EA3;i quy&#x1EBF;t t&#xEA;n mi&#x1EC1;n theo h&#x1EC7; th&#x1ED1;ng.</li>
 <li><code>&quot;UseIP&quot;</code>: S&#x1EED; d&#x1EE5;ng <a href="../dns.html">DNS n&#x1ED9;i b&#x1ED9;</a> cho &#x111;&#x1ED9; ph&#xE2;n gi&#x1EA3;i t&#xEA;n mi&#x1EC1;n.</li>
 </ul>
+<p>(V2Ray 4.6+) In <code>UseIP</code> mode, when <code>sendThrough</code> is specified in <a href="../overview.html#outboundobject">OutboundObject</a>, Freedom will automatically choose between IPv4 and IPv6 address for destination based on <code>sendThrough</code> settings.</p>
 <blockquote>
 <p><code>redirect</code>: address_port</p>
 </blockquote>
-<p>Chuy&#x1EC3;n h&#x1B0;&#x1EDB;ng t&#x1EA5;t c&#x1EA3; c&#xE1;c k&#x1EBF;t n&#x1ED1;i &#x111;&#x1EBF;n &#x111;&#x1ECB;a ch&#x1EC9; n&#xE0;y, d&#x1B0;&#x1EDB;i d&#x1EA1;ng <code>&quot;127.0.0.1:80&quot;</code> ho&#x1EB7;c <code>&quot;: 1234&quot;</code>.</p>
+<p>Redirect all connections to this address, in form like <code>&quot;127.0.0.1:80&quot;</code> or <code>&quot;:1234&quot;</code>.</p>
 <ul>
 <li>Khi &#x111;&#x1ECB;a ch&#x1EC9; tr&#x1ED1;ng, v&#xED; d&#x1EE5;: <code>&quot;: 443&quot;</code>, T&#x1EF1; do s&#x1EBD; s&#x1EED; d&#x1EE5;ng &#x111;&#x1ECB;a ch&#x1EC9; &#x111;&#xED;ch ban &#x111;&#x1EA7;u.</li>
 <li>Khi c&#x1ED5;ng l&#xE0; <code>0</code>, v&#xED; d&#x1EE5; <code>&quot;v2ray.com:0&quot;</code>, T&#x1EF1; do s&#x1EBD; s&#x1EED; d&#x1EE5;ng c&#x1ED5;ng g&#x1ED1;c.</li>
@@ -768,7 +769,7 @@ window.onload = function() {
 <blockquote>
 <p><code>userLevel</code>: number</p>
 </blockquote>
-<p>C&#x1EA5;p ng&#x1B0;&#x1EDD;i d&#xF9;ng. T&#x1EA5;t c&#x1EA3; c&#xE1;c k&#x1EBF;t n&#x1ED1;i &#x111;&#x1EC1;u chia s&#x1EBB; c&#x1EA5;p &#x111;&#x1ED9; n&#xE0;y.</p>
+<p>User level. All connections share this level.</p>
 
                                 
                                 </section>
@@ -784,7 +785,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/freedom","refen":"configuration/protocols/freedom","title":"Freedom","level":"1.2.2.3","depth":3,"next":{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/protocols/freedom.md","mtime":"2018-11-19T21:01:57.937Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-19T21:04:43.396Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/freedom","refen":"configuration/protocols/freedom","title":"Freedom","level":"1.2.2.3","depth":3,"next":{"title":"MTProto","level":"1.2.2.4","depth":3,"path":"configuration/protocols/mtproto.md","ref":"configuration/protocols/mtproto.md","articles":[]},"previous":{"title":"Dokodemo","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dokodemo.md","ref":"configuration/protocols/dokodemo.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/protocols/freedom.md","mtime":"2018-11-20T07:01:53.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-20T07:04:43.533Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
