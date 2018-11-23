@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>mKCP · Project V 官方网站</title>
+        <title>QUIC · Project V 官方网站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/javascript">
 function inIframe () {
@@ -85,10 +85,10 @@ window.onload = function() {
     
 
     
-    <link rel="next" href="websocket.html" />
+    <link rel="next" href="../env.html" />
     
     
-    <link rel="prev" href="tcp.html" />
+    <link rel="prev" href="domainsocket.html" />
     
 
     </head>
@@ -530,7 +530,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter active" data-level="1.2.10.2" data-path="mkcp.html">
+        <li class="chapter " data-level="1.2.10.2" data-path="mkcp.html">
             
                 <a href="mkcp.html">
             
@@ -582,7 +582,7 @@ window.onload = function() {
             
         </li>
     
-        <li class="chapter " data-level="1.2.10.6" data-path="quic.html">
+        <li class="chapter active" data-level="1.2.10.6" data-path="quic.html">
             
                 <a href="quic.html">
             
@@ -872,22 +872,22 @@ window.onload = function() {
     
 
     
-    <a class="btn pull-left" href="/chapter_02/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/chapter_02/transport/quic.html" target="_blank">
         <img src="/resources/flag_cn.svg" alt="Chinese" height="16">
     </a>
-    <a class="btn pull-left" href="/en/configuration/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/en/configuration/transport/quic.html" target="_blank">
         <img src="/resources/flag_en.svg" alt="English" height="16">
     </a>
-    <a class="btn pull-left" href="/ru/configuration/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/ru/configuration/transport/quic.html" target="_blank">
         <img src="/resources/flag_ru.svg" alt="Russian" height="16">
     </a>
-    <a class="btn pull-left" href="/ko/configuration/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/ko/configuration/transport/quic.html" target="_blank">
         <img src="/resources/flag_ko.svg" alt="Korean" height="16">
     </a>
-    <a class="btn pull-left" href="/fa/configuration/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/fa/configuration/transport/quic.html" target="_blank">
         <img src="/resources/flag_fa.svg" alt="Persian" height="16">
     </a>
-    <a class="btn pull-left" href="/vi/configuration/transport/mkcp.html" target="_blank">
+    <a class="btn pull-left" href="/vi/configuration/transport/quic.html" target="_blank">
         <img src="/resources/flag_vi.svg" alt="Vietnamese" height="16">
     </a>
     <a class="btn pull-left" href="https://crowdin.com/project/v2ray" target="_blank">
@@ -904,54 +904,39 @@ window.onload = function() {
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mkcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="mkcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#mkcp-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>mKCP &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
-<p>mKCP &#x4F7F;&#x7528; UDP &#x6765;&#x6A21;&#x62DF; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x8BF7;&#x786E;&#x5B9A;&#x4E3B;&#x673A;&#x4E0A;&#x7684;&#x9632;&#x706B;&#x5899;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#x3002;mKCP &#x727A;&#x7272;&#x5E26;&#x5BBD;&#x6765;&#x964D;&#x4F4E;&#x5EF6;&#x8FDF;&#x3002;&#x4F20;&#x8F93;&#x540C;&#x6837;&#x7684;&#x5185;&#x5BB9;&#xFF0C;mKCP &#x4E00;&#x822C;&#x6BD4; TCP &#x6D88;&#x8017;&#x66F4;&#x591A;&#x7684;&#x6D41;&#x91CF;&#x3002;</p>
-<h2 id="kcpobject"><a name="kcpobject" class="plugin-anchor" href="#kcpobject"><i class="fa fa-link" aria-hidden="true"></i></a>KcpObject</h2>
+                                <h1 id="quic-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><a name="quic-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#quic-&#x4F20;&#x8F93;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>QUIC &#x4F20;&#x8F93;&#x65B9;&#x5F0F;</h1>
+<p>QUIC &#x5168;&#x79F0; Quick UDP Internet Connection&#xFF0C;&#x662F;&#x7531; Google &#x63D0;&#x51FA;&#x7684;&#x4F7F;&#x7528; UDP &#x8FDB;&#x884C;&#x591A;&#x8DEF;&#x5E76;&#x53D1;&#x4F20;&#x8F93;&#x7684;&#x534F;&#x8BAE;&#x3002;&#x5176;&#x4E3B;&#x8981;&#x4F18;&#x52BF;&#x662F;:</p>
+<ol>
+<li>&#x51CF;&#x5C11;&#x4E86;&#x63E1;&#x624B;&#x7684;&#x5EF6;&#x8FDF;&#xFF08;1-RTT &#x6216; 0-RTT&#xFF09;</li>
+<li>&#x591A;&#x8DEF;&#x590D;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709; TCP &#x7684;&#x963B;&#x585E;&#x95EE;&#x9898;</li>
+<li>&#x8FDE;&#x63A5;&#x8FC1;&#x79FB;&#xFF0C;&#xFF08;&#x4E3B;&#x8981;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x5F53;&#x7531; Wifi &#x8F6C;&#x79FB;&#x5230; 4G &#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x4E0D;&#x4F1A;&#x88AB;&#x65AD;&#x5F00;&#x3002;</li>
+</ol>
+<p>QUIC &#x76EE;&#x524D;&#x5904;&#x4E8E;&#x5B9E;&#x9A8C;&#x671F;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x6B63;&#x5728;&#x6807;&#x51C6;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684; IETF &#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4E0E;&#x6700;&#x7EC8;&#x7248;&#x672C;&#x7684;&#x517C;&#x5BB9;&#x6027;&#x3002;</p>
+<h2 id="&#x7248;&#x672C;&#x5386;&#x53F2;"><a name="&#x7248;&#x672C;&#x5386;&#x53F2;" class="plugin-anchor" href="#&#x7248;&#x672C;&#x5386;&#x53F2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7248;&#x672C;&#x5386;&#x53F2;</h2>
+<p>V2Ray 4.7:</p>
+<ul>
+<li>&#x5F00;&#x59CB;&#x652F;&#x6301; QUIC&#x3002;</li>
+<li>&#x5BF9;&#x63A5;&#x7684;&#x4E24;&#x4E2A; IP &#x4E4B;&#x95F4;&#x7684;&#x5E76;&#x53D1;&#x8FDE;&#x63A5;&#x6570;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7; 256&#x3002;&#x8D85;&#x8FC7;&#x4E4B;&#x540E;&#x65B0;&#x8FDE;&#x63A5;&#x4F1A;&#x88AB;&#x6302;&#x8D77;&#xFF0C;&#x76F4;&#x5230;&#x8FDE;&#x63A5;&#x6570;&#x5C0F;&#x4E8E; 256 &#x65F6;&#x3002;&#x53EF;&#x4EE5;&#x5F00;&#x542F; <a href="../mux.html">Mux</a> &#x4EE5;&#x7F13;&#x89E3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+<h2 id="quicobject"><a name="quicobject" class="plugin-anchor" href="#quicobject"><i class="fa fa-link" aria-hidden="true"></i></a>QuicObject</h2>
+<p>QUIC &#x7684;&#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#x4E2D;&#x7684; <code>quicSettings</code> &#x9879;&#x3002;&#x5BF9;&#x63A5;&#x7684;&#x4E24;&#x7AEF;&#x7684;&#x914D;&#x7F6E;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#x3002;QUIC &#x5F3A;&#x5236;&#x8981;&#x6C42;&#x5F00;&#x542F; TLS&#xFF0C;&#x5728;&#x4F20;&#x8F93;&#x914D;&#x7F6E;&#x4E2D;&#x6CA1;&#x6709;&#x5F00;&#x542F; TLS &#x65F6;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x884C;&#x7B7E;&#x53D1;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#x8FDB;&#x884C; TLS &#x901A;&#x8BAF;&#x3002;&#x5728;&#x4F7F;&#x7528; QUIC &#x4F20;&#x8F93;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5173;&#x95ED; VMess &#x7684;&#x52A0;&#x5BC6;&#x3002;</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
-  <span class="token string">&quot;mtu&quot;</span><span class="token punctuation">:</span> <span class="token number">1350</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;tti&quot;</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;uplinkCapacity&quot;</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;downlinkCapacity&quot;</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;congestion&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;readBufferSize&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;writeBufferSize&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;security&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;header&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>mtu</code>: number</p>
+<p><code>security</code>: &quot;none&quot; | &quot;aes-128-gcm&quot; | &quot;chacha20-poly1305&quot;</p>
 </blockquote>
-<p>&#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;&#xFF08;maximum transmission unit&#xFF09;&#xFF0C;&#x8BF7;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; <code>576</code> - <code>1460</code> &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>1350</code>&#x3002;</p>
+<p>&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x4E0D;&#x52A0;&#x5BC6;&#x3002;</p>
+<p>&#x6B64;&#x52A0;&#x5BC6;&#x662F;&#x5BF9; QUIC &#x6570;&#x636E;&#x5305;&#x7684;&#x52A0;&#x5BC6;&#xFF0C;&#x52A0;&#x5BC6;&#x540E;&#x6570;&#x636E;&#x5305;&#x65E0;&#x6CD5;&#x88AB;&#x63A2;&#x6D4B;&#x3002;</p>
 <blockquote>
-<p><code>tti</code>: number</p>
+<p><code>key</code>: string</p>
 </blockquote>
-<p>&#x4F20;&#x8F93;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;transmission time interval&#xFF09;&#xFF0C;&#x5355;&#x4F4D;&#x6BEB;&#x79D2;&#xFF08;ms&#xFF09;&#xFF0C;mKCP &#x5C06;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x95F4;&#x9891;&#x7387;&#x53D1;&#x9001;&#x6570;&#x636E;&#x3002;&#x8BF7;&#x9009;&#x8BD1;&#x4E00;&#x4E2A;&#x4ECB;&#x4E8E; <code>10</code> - <code>100</code> &#x4E4B;&#x95F4;&#x7684;&#x503C;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>50</code>&#x3002;</p>
-<blockquote>
-<p><code>uplinkCapacity</code>: number</p>
-</blockquote>
-<p>&#x4E0A;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x53D1;&#x51FA;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB/s&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>5</code>&#x3002;&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#x3002;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#x3002;</p>
-<blockquote>
-<p><code>downlinkCapacity</code>: number</p>
-</blockquote>
-<p>&#x4E0B;&#x884C;&#x94FE;&#x8DEF;&#x5BB9;&#x91CF;&#xFF0C;&#x5373;&#x4E3B;&#x673A;&#x63A5;&#x6536;&#x6570;&#x636E;&#x6240;&#x7528;&#x7684;&#x6700;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x5355;&#x4F4D; MB/s&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <code>20</code>&#x3002;&#x6CE8;&#x610F;&#x662F; Byte &#x800C;&#x975E; bit&#x3002;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; <code>0</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x5E26;&#x5BBD;&#x3002;</p>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>uplinkCapacity</code> &#x548C; <code>downlinkCapacity</code> &#x51B3;&#x5B9A;&#x4E86; mKCP &#x7684;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x4EE5;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6570;&#x636E;&#x4E3A;&#x4F8B;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684; <code>uplinkCapacity</code> &#x6307;&#x5B9A;&#x4E86;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x800C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684; <code>downlinkCapacity</code> &#x6307;&#x5B9A;&#x4E86;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x4E24;&#x8005;&#x7684;&#x503C;&#x4EE5;&#x8F83;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x4E3A;&#x51C6;&#x3002;&#x63A8;&#x8350;&#x628A; <code>downlinkCapacity</code> &#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x503C;&#xFF0C;&#x6BD4;&#x5982; 100&#xFF0C;&#x800C; <code>uplinkCapacity</code> &#x8BBE;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x7F51;&#x7EDC;&#x901F;&#x5EA6;&#x3002;&#x5F53;&#x901F;&#x5EA6;&#x4E0D;&#x591F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x9010;&#x6E10;&#x589E;&#x52A0; <code>uplinkCapacity</code> &#x7684;&#x503C;&#xFF0C;&#x76F4;&#x5230;&#x5E26;&#x5BBD;&#x7684;&#x4E24;&#x500D;&#x5DE6;&#x53F3;&#x3002;</p>
-</div></div></p>
-<blockquote>
-<p><code>congestion</code>: true | false</p>
-</blockquote>
-<p>&#x662F;&#x5426;&#x542F;&#x7528;&#x62E5;&#x585E;&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>false</code>&#x3002;&#x5F00;&#x542F;&#x62E5;&#x585E;&#x63A7;&#x5236;&#x4E4B;&#x540E;&#xFF0C;V2Ray &#x4F1A;&#x81EA;&#x52A8;&#x76D1;&#x6D4B;&#x7F51;&#x7EDC;&#x8D28;&#x91CF;&#xFF0C;&#x5F53;&#x4E22;&#x5305;&#x4E25;&#x91CD;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x964D;&#x4F4E;&#x541E;&#x5410;&#x91CF;&#xFF1B;&#x5F53;&#x7F51;&#x7EDC;&#x7545;&#x901A;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x9002;&#x5F53;&#x589E;&#x52A0;&#x541E;&#x5410;&#x91CF;&#x3002;</p>
-<blockquote>
-<p><code>readBufferSize</code>: number</p>
-</blockquote>
-<p>&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x8BFB;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x662F; MB&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>2</code>&#x3002;</p>
-<blockquote>
-<p><code>writeBufferSize</code>: number</p>
-</blockquote>
-<p>&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x5199;&#x5165;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#xFF0C;&#x5355;&#x4F4D;&#x662F; MB&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>2</code>&#x3002;</p>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p><code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x6307;&#x5B9A;&#x4E86;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;&#x5728;&#x9700;&#x8981;&#x9AD8;&#x901F;&#x4F20;&#x8F93;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x8F83;&#x5927;&#x7684; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x4F1A;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x63D0;&#x9AD8;&#x901F;&#x5EA6;&#xFF0C;&#x4F46;&#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#x3002;&#x5728;&#x7F51;&#x901F;&#x4E0D;&#x8D85;&#x8FC7; 20MB/s &#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; 1MB &#x53EF;&#x4EE5;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF1B;&#x8D85;&#x8FC7;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x589E;&#x52A0; <code>readBufferSize</code> &#x548C; <code>writeBufferSize</code> &#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x624B;&#x52A8;&#x5E73;&#x8861;&#x901F;&#x5EA6;&#x548C;&#x5185;&#x5B58;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
-</div></div></p>
+<p>&#x52A0;&#x5BC6;&#x65F6;&#x6240;&#x7528;&#x7684;&#x5BC6;&#x94A5;&#x3002;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5F53;<code>security</code>&#x4E0D;&#x4E3A;<code>&quot;none&quot;</code>&#x65F6;&#x6709;&#x6548;&#x3002;</p>
 <blockquote>
 <p><code>header</code>: [HeaderObject]{#headerobject}</p>
 </blockquote>
@@ -973,21 +958,8 @@ window.onload = function() {
 <li><code>&quot;dtls&quot;</code>: &#x4F2A;&#x88C5;&#x6210; DTLS 1.2 &#x6570;&#x636E;&#x5305;&#x3002;</li>
 <li><code>&quot;wireguard&quot;</code>: &#x4F2A;&#x88C5;&#x6210; WireGuard &#x6570;&#x636E;&#x5305;&#x3002;(&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684; WireGuard &#x534F;&#x8BAE;)</li>
 </ul>
-<h2 id="credits"><a name="credits" class="plugin-anchor" href="#credits"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9E23;&#x8C22; </h2>
-<ul>
-<li>@skywind3000 &#x53D1;&#x660E;&#x5E76;&#x5B9E;&#x73B0;&#x4E86; KCP &#x534F;&#x8BAE;&#xFF1B;</li>
-<li>@xtaci &#x5C06; KCP &#x7531; C &#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7FFB;&#x8BD1;&#x6210; Go&#xFF1B;</li>
-<li>@xiaokangwang &#x6D4B;&#x8BD5; KCP &#x4E0E; V2Ray &#x7684;&#x6574;&#x5408;&#x5E76;&#x63D0;&#x4EA4;&#x4E86;&#x6700;&#x521D;&#x7684; PR&#x3002;</li>
-</ul>
-<h2 id="&#x5BF9;-kcp-&#x534F;&#x8BAE;&#x7684;&#x6539;&#x8FDB;"><a name="&#x5BF9;-kcp-&#x534F;&#x8BAE;&#x7684;&#x6539;&#x8FDB;" class="plugin-anchor" href="#&#x5BF9;-kcp-&#x534F;&#x8BAE;&#x7684;&#x6539;&#x8FDB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9; KCP &#x534F;&#x8BAE;&#x7684;&#x6539;&#x8FDB;</h2>
-<h3 id="&#x66F4;&#x5C0F;&#x7684;&#x534F;&#x8BAE;&#x5934;"><a name="&#x66F4;&#x5C0F;&#x7684;&#x534F;&#x8BAE;&#x5934;" class="plugin-anchor" href="#&#x66F4;&#x5C0F;&#x7684;&#x534F;&#x8BAE;&#x5934;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x66F4;&#x5C0F;&#x7684;&#x534F;&#x8BAE;&#x5934;</h3>
-<p>&#x539F;&#x751F; KCP &#x534F;&#x8BAE;&#x4F7F;&#x7528;&#x4E86; 24 &#x5B57;&#x8282;&#x7684;&#x56FA;&#x5B9A;&#x5934;&#x90E8;&#xFF0C;&#x800C; mKCP &#x4FEE;&#x6539;&#x4E3A;&#x6570;&#x636E;&#x5305; 18 &#x5B57;&#x8282;&#xFF0C;&#x786E;&#x8BA4;&#xFF08;ACK&#xFF09;&#x5305; 16 &#x5B57;&#x8282;&#x3002;&#x66F4;&#x5C0F;&#x7684;&#x5934;&#x90E8;&#x6709;&#x52A9;&#x4E8E;&#x8EB2;&#x907F;&#x7279;&#x5F81;&#x68C0;&#x67E5;&#xFF0C;&#x5E76;&#x52A0;&#x5FEB;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;</p>
-<p>&#x53E6;&#x5916;&#xFF0C;&#x539F;&#x751F; KCP &#x7684;&#x5355;&#x4E2A;&#x786E;&#x8BA4;&#x5305;&#x53EA;&#x80FD;&#x786E;&#x8BA4;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5305;&#x5DF2;&#x6536;&#x5230;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5F53; KCP &#x9700;&#x8981;&#x786E;&#x8BA4; 100 &#x4E2A;&#x6570;&#x636E;&#x5DF2;&#x6536;&#x5230;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x53D1;&#x51FA; 24 * 100 = 2400 &#x5B57;&#x8282;&#x7684;&#x6570;&#x636E;&#x3002;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x5927;&#x91CF;&#x91CD;&#x590D;&#x7684;&#x5934;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x9020;&#x6210;&#x5E26;&#x5BBD;&#x7684;&#x6D6A;&#x8D39;&#x3002;mKCP &#x4F1A;&#x5BF9;&#x591A;&#x4E2A;&#x786E;&#x8BA4;&#x5305;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;100 &#x4E2A;&#x786E;&#x8BA4;&#x5305;&#x53EA;&#x9700;&#x8981; 16 + 2 + 100 * 4 = 418 &#x5B57;&#x8282;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x539F;&#x751F;&#x7684;&#x516D;&#x5206;&#x4E4B;&#x4E00;&#x3002;</p>
-<h3 id="&#x786E;&#x8BA4;&#x5305;&#x91CD;&#x4F20;"><a name="&#x786E;&#x8BA4;&#x5305;&#x91CD;&#x4F20;" class="plugin-anchor" href="#&#x786E;&#x8BA4;&#x5305;&#x91CD;&#x4F20;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x786E;&#x8BA4;&#x5305;&#x91CD;&#x4F20;</h3>
-<p>&#x539F;&#x751F; KCP &#x534F;&#x8BAE;&#x7684;&#x786E;&#x8BA4;&#xFF08;ACK&#xFF09;&#x5305;&#x53EA;&#x53D1;&#x9001;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x786E;&#x8BA4;&#x5305;&#x4E22;&#x5931;&#xFF0C;&#x5219;&#x4E00;&#x5B9A;&#x4F1A;&#x5BFC;&#x81F4;&#x6570;&#x636E;&#x91CD;&#x4F20;&#xFF0C;&#x9020;&#x6210;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5E26;&#x5BBD;&#x6D6A;&#x8D39;&#x3002;&#x800C; mKCP &#x4F1A;&#x4EE5;&#x4E00;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x91CD;&#x53D1;&#x786E;&#x8BA4;&#x5305;&#xFF0C;&#x76F4;&#x5230;&#x53D1;&#x9001;&#x65B9;&#x786E;&#x8BA4;&#x4E3A;&#x6B62;&#x3002;&#x5355;&#x4E2A;&#x786E;&#x8BA4;&#x5305;&#x7684;&#x5927;&#x5C0F;&#x4E3A; 22 &#x5B57;&#x8282;&#xFF0C;&#x76F8;&#x6BD4;&#x8D77;&#x6570;&#x636E;&#x5305;&#x7684; 1000 &#x5B57;&#x8282;&#x4EE5;&#x4E0A;&#xFF0C;&#x91CD;&#x4F20;&#x786E;&#x8BA4;&#x5305;&#x7684;&#x4EE3;&#x4EF7;&#x8981;&#x5C0F;&#x5F97;&#x591A;&#x3002;</p>
-<h3 id="&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x63A7;&#x5236;"><a name="&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x63A7;&#x5236;" class="plugin-anchor" href="#&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x63A7;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x63A7;&#x5236;</h3>
-<p>mKCP &#x53EF;&#x4EE5;&#x6709;&#x6548;&#x5730;&#x5F00;&#x542F;&#x548C;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x3002;&#x5F53;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E3B;&#x52A8;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x4F1A;&#x5728;&#x4E24;&#x79D2;&#x949F;&#x4E4B;&#x5185;&#x91CA;&#x653E;&#xFF1B;&#x5F53;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x65AD;&#x7EBF;&#x65F6;&#xFF0C;&#x8FDE;&#x63A5;&#x4F1A;&#x5728;&#x6700;&#x591A; 30 &#x79D2;&#x5185;&#x91CA;&#x653E;&#x3002;</p>
-<p>&#x539F;&#x751F; KCP &#x4E0D;&#x652F;&#x6301;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x3002;</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>&#x5F53;&#x52A0;&#x5BC6;&#x548C;&#x4F2A;&#x88C5;&#x90FD;&#x4E0D;&#x542F;&#x7528;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5305;&#x5373;&#x4E3A;&#x539F;&#x59CB;&#x7684; QUIC &#x6570;&#x636E;&#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x5B83;&#x7684; QUIC &#x5DE5;&#x5177;&#x5BF9;&#x63A5;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x88AB;&#x63A2;&#x6D4B;&#xFF0C;&#x5EFA;&#x8BAE;&#x52A0;&#x5BC6;&#x6216;&#x4F2A;&#x88C5;&#x81F3;&#x5C11;&#x5F00;&#x542F;&#x4E00;&#x9879;&#x3002;</p>
+</div></div></p>
 
                                 
                                 </section>
@@ -1003,7 +975,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/mkcp","refen":"configuration/transport/mkcp","title":"mKCP","level":"1.2.10.2","depth":3,"next":{"title":"WebSocket","level":"1.2.10.3","depth":3,"path":"chapter_02/transport/websocket.md","ref":"chapter_02/transport/websocket.md","articles":[]},"previous":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"chapter_02/transport/tcp.md","ref":"chapter_02/transport/tcp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/mkcp.md","mtime":"2018-11-23T10:01:46.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-23T10:02:44.008Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/transport/quic","refen":"configuration/transport/quic","title":"QUIC","level":"1.2.10.6","depth":3,"next":{"title":"环境变量","level":"1.2.11","depth":2,"path":"chapter_02/env.md","ref":"chapter_02/env.md","articles":[]},"previous":{"title":"DomainSocket","level":"1.2.10.5","depth":3,"path":"chapter_02/transport/domainsocket.md","ref":"chapter_02/transport/domainsocket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/transport/quic.md","mtime":"2018-11-23T10:01:46.965Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-23T10:02:44.008Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
