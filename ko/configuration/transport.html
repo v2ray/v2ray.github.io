@@ -759,7 +759,8 @@ window.onload = function() {
   <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;quicSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -782,8 +783,12 @@ window.onload = function() {
 <p><code>dsSettings</code>: DomainSocketObject</p>
 </blockquote>
 <p><a href="transport/domainsocket.html">&#xB3C4;&#xBA54;&#xC778; &#xC18C;&#xCF13; &#xC804;&#xC1A1; &#xC124;&#xC815;</a>.</p>
+<blockquote>
+<p><code>quicSettings</code>: QUICObject</p>
+</blockquote>
+<p>(V2Ray 4.7+) Settings for <a href="transport/quic.html">QUIC transport</a>.</p>
 <h2 id="streamsettingsobject"><a name="streamsettingsobject" class="plugin-anchor" href="#streamsettingsobject"><i class="fa fa-link" aria-hidden="true"></i></a>StreamSettingsObject</h2>
-<p>&#xAC01; &#xC778;&#xBC14;&#xC6B4;&#xB4DC; &#xBC0F; &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xD504;&#xB85D;&#xC2DC;&#xB294; &#xCD5C;&#xC0C1;&#xC704; &#xB808;&#xBCA8; &#xAD6C;&#xC131;&#xC758; <code>streamSettings</code> &#xD544;&#xB4DC;&#xC5D0; &#xC9C0;&#xC815;&#xB41C;&#xB300;&#xB85C; &#xC790;&#xCCB4; &#xC804;&#xC1A1; &#xC124;&#xC815;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Each inbound and outbound proxy may has its own transport settings, as specified in <code>streamSettings</code> field in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;network&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;tcp&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;security&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
@@ -793,6 +798,7 @@ window.onload = function() {
   <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;quicSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;sockopt&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;mark&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
     <span class="token string">&quot;tcpFastOpen&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
@@ -801,41 +807,45 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>&#xB124;&#xD2B8;&#xC6CC;&#xD06C;</code>: &quot;tcp&quot;| &quot;kcp&quot;| &quot;ws&quot;| &quot;http&quot;| &quot;domainsocket&quot;</p>
+<p><code>network</code>: &quot;tcp&quot; | &quot;kcp&quot; | &quot;ws&quot; | &quot;http&quot; | &quot;domainsocket&quot; | &quot;quic&quot;</p>
 </blockquote>
-<p>&#xC2A4;&#xD2B8;&#xB9BC; &#xC804;&#xC1A1;&#xC758; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC720;&#xD615;. &#xAE30;&#xBCF8;&#xAC12; <code>&quot;tcp&quot;</code>.</p>
+<p>Network type of the stream transport. Default value <code>&quot;tcp&quot;</code>.</p>
 <blockquote>
-<p><code>&#xBCF4;&#xC548;</code>: &quot;&#xC5C6;&#xC74C;&quot;| &quot;tls&quot;</p>
+<p><code>security</code>: &quot;none&quot; | &quot;tls&quot;</p>
 </blockquote>
-<p>&#xBCF4;&#xC548; &#xC720;&#xD615;. &#xC120;&#xD0DD;&#xC740; &#xC5C6;&#xB2E4; <code>&quot;&#xC5C6;&#xC74C;&quot;</code> &#xBCC4;&#xB3C4;&#xC758; &#xBCF4;&#xC548; (&#xAE30;&#xBCF8;&#xAC12;) &#xB610;&#xB294; <code>&quot;TLS&quot;</code> &#xC0AC;&#xC6A9;&#xD558;&#xB294; <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</p>
+<p>Type of security. Choices are <code>&quot;none&quot;</code> (default) for no extra security, or <code>&quot;tls&quot;</code> for using <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">TLS</a>.</p>
 <blockquote>
 <p><code>tlsSettings</code>: <a href="#tlsobject">TLSObject</a></p>
 </blockquote>
-<p>TLS &#xC124;&#xC815;. TLS&#xB294; Golang&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xCD5C;&#xB300; TLS 1.2&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. DTLS&#xB294; &#xC9C0;&#xC6D0;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>TLS settings. TLS is provided by Golang. Support up to TLS 1.2. DTLS is not supported.</p>
 <blockquote>
 <p><code>tcpSettings</code>: <a href="transport/tcp.html">TcpObject</a></p>
 </blockquote>
-<p>&#xD604;&#xC7AC; &#xD504;&#xB85D;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; TCP &#xC804;&#xC1A1; &#xAD6C;&#xC131;&#xC785;&#xB2C8;&#xB2E4;. &#xD504;&#xB85D;&#xC2DC;&#xAC00; TCP &#xC804;&#xC1A1;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB9CC; &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xC131;&#xC740; &#xC804;&#xC5ED; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>TCP transport configuration for current proxy. Effective only when the proxy uses TCP transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>kcpSettings</code>: KcpObject</p>
 </blockquote>
-<p>&#xD604;&#xC7AC; &#xD504;&#xB85D;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; mKCP &#xC804;&#xC1A1; &#xAD6C;&#xC131;. &#xD504;&#xB85D;&#xC2DC;&#xAC00; mKCP &#xC804;&#xC1A1;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB9CC; &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xC131;&#xC740; &#xC804;&#xC5ED; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>mKCP transport configuration for current proxy. Effective only when the proxy uses mKCP transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>wsSettings</code>: WebSocketObject</p>
 </blockquote>
-<p>&#xD604;&#xC7AC; &#xD504;&#xB85D;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; WebSocket &#xC804;&#xC1A1; &#xAD6C;&#xC131;&#xC785;&#xB2C8;&#xB2E4;. &#xD504;&#xB85D;&#xC2DC;&#xAC00; WebSocket &#xC804;&#xC1A1;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xB9CC; &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xC131;&#xC740; &#xC804;&#xC5ED; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>WebSocket transport configuration for current proxy. Effective only when the proxy uses WebSocket transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>httpSettings</code>: HttpObject</p>
 </blockquote>
-<p>&#xD604;&#xC7AC; &#xD504;&#xB85D;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; HTTP / 2 &#xC804;&#xC1A1; &#xAD6C;&#xC131; &#xD504;&#xB85D;&#xC2DC;&#xAC00; HTTP / 2 &#xC804;&#xC1A1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xC131;&#xC740; &#xC804;&#xC5ED; &#xAD6C;&#xC131;&#xACFC; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>HTTP/2 transport configuration for current proxy. Effective only when the proxy uses HTTP/2 transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>dsSettings</code>: DomainSocketObject</p>
 </blockquote>
-<p>&#xD604;&#xC7AC; &#xD504;&#xB85D;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; &#xB3C4;&#xBA54;&#xC778; &#xC18C;&#xCF13; &#xC804;&#xC1A1; &#xAD6C;&#xC131;&#xC785;&#xB2C8;&#xB2E4;. &#xD504;&#xB85D;&#xC2DC;&#xAC00; &#xB3C4;&#xBA54;&#xC778; &#xC18C;&#xCF13; &#xC804;&#xC1A1;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xC720;&#xD6A8;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>Domain socket transport configuration for current proxy. Effective only when the proxy uses domain socket transport. Configuration is the same as it is in global configuration.</p>
+<blockquote>
+<p><code>quicSettings</code>: QUICObject</p>
+</blockquote>
+<p>(V2Ray 4.7+) QUIC transport configuration for current proxy. Effective only when the proxy uses QUIC transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>sockopt</code>: SockoptObject</p>
 </blockquote>
-<p>&#xB4E4;&#xC5B4;&#xC624;&#xACE0; &#xB098;&#xAC00;&#xB294; &#xC5F0;&#xACB0;&#xC744;&#xC704;&#xD55C; &#xC18C;&#xCF13; &#xC635;&#xC158;.</p>
+<p>Socket options for incoming and out-going connections.</p>
 <h3 id="tlsobject"><a name="tlsobject" class="plugin-anchor" href="#tlsobject"><i class="fa fa-link" aria-hidden="true"></i></a>TLSObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;serverName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;v2ray.com&quot;</span><span class="token punctuation">,</span>
@@ -845,25 +855,25 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>serverName</code>: &#xBB38;&#xC790;&#xC5F4;</p>
+<p><code>serverName</code>: string</p>
 </blockquote>
-<p>TLS &#xC778;&#xC99D;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC11C;&#xBC84; &#xC774;&#xB984; (&#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB3C4;&#xBA54;&#xC778;)&#xC785;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xAC83;&#xC740; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xC778;&#xBC14;&#xC6B4;&#xB4DC; / &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC;&#xAC00; &#xD1B5;&#xC2E0;&#xC744; &#xC704;&#xD574; IP&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>Server name (usually domain) used for TLS authentication. Typically this is used when corressponding inbound/outbound uses IP for communication.</p>
 <blockquote>
-<p><code>alpn</code>: \ [string ]</p>
+<p><code>alpn</code>: [ string ]</p>
 </blockquote>
-<p>TLS &#xD578;&#xB4DC; &#xC170;&#xC774;&#xD06C;&#xC758; ALPN &#xAC12;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xAC12;&#xC740; <code>[ &quot;http / 1.1&quot;]&#xC785;&#xB2C8;&#xB2E4;.</code>.</p>
+<p>An array of strings, to specifiy the ALPN value in TLS handshake. Default value is <code>[&quot;http/1.1&quot;]</code>.</p>
 <blockquote>
-<p><code>allowInsecure</code>: true | &#xADF8;&#xB987;&#xB41C;</p>
+<p><code>allowInsecure</code>: true | false</p>
 </blockquote>
-<p><code>&#xCC38;</code>&#xC774;&#xBA74; V2Ray&#xB294; TLS &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC548;&#xC804;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC5F0;&#xACB0;&#xC744; &#xD5C8;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, TLS &#xC11C;&#xBC84;&#xB294; &#xD655;&#xC778;&#xD560; &#xC218;&#xC5C6;&#xB294; &#xC778;&#xC99D;&#xC11C;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>If <code>true</code>, V2Ray allowss insecure connection at TLS client, e.g., TLS server uses unverifiable certificates.</p>
 <blockquote>
-<p><code>allowInsecureCiphers</code>: true | &#xADF8;&#xB987;&#xB41C;</p>
+<p><code>allowInsecureCiphers</code>: true | false</p>
 </blockquote>
-<p>&#xC548;&#xC804;&#xD558;&#xC9C0; &#xBABB;&#xD55C; &#xC554;&#xD638; &#xBAA8;&#xC74C;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xAC70;&#xB098; &#xAE08;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; TLS&#xB294; TLS 1.3 &#xC0AC;&#xC591;&#xC758; &#xC554;&#xD638;&#xD654; &#xC81C;&#xD488;&#xAD70; &#xB9CC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC635;&#xC158;&#xC744; &#xCF1C;&#xBA74; &#xC815;&#xC801; RSA &#xD0A4;&#xAC00;&#xC788;&#xB294; &#xC554;&#xD638; &#xADF8;&#xB8F9;&#xC744; &#xD5C8;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Whehter or not to allow insecure cipher suites. By default TLS only uses cipher suites from TLS 1.3 spec. Turn on this option to allow cipher suites with static RSA keys.</p>
 <blockquote>
-<p><code>&#xC778;&#xC99D;&#xC11C;</code>: \ [ <a href="#certificateobject">CertificateObject</a>]</p>
+<p><code>certificates</code>: [ <a href="#certificateobject">CertificateObject</a> ]</p>
 </blockquote>
-<p>TLS &#xC778;&#xC99D;&#xC11C; &#xBAA9;&#xB85D;. &#xAC01; &#xD56D;&#xBAA9;&#xC740; &#xD558;&#xB098;&#xC758; &#xC778;&#xC99D;&#xC11C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>List of TLS certificates. Each entry is one certificate.</p>
 <h3 id="certificateobject"><a name="certificateobject" class="plugin-anchor" href="#certificateobject"><i class="fa fa-link" aria-hidden="true"></i></a>CertificateObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;usage&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;encipherment&quot;</span><span class="token punctuation">,</span>
@@ -922,9 +932,9 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>&#xC0AC;&#xC6A9;</code>: &quot;&#xC554;&#xD638;&#xD654;&quot;| &quot;&#xD655;&#xC778;&quot;| &quot;&#xBC1C;&#xD589;&#xBB3C;&quot;</p>
+<p><code>usage</code>: &quot;encipherment&quot; | &quot;verify&quot; | &quot;issue&quot;</p>
 </blockquote>
-<p>&#xC778;&#xC99D;&#xC11C;&#xC758; &#xBAA9;&#xC801;. &#xAE30;&#xBCF8;&#xAC12; <code>&quot;&#xC554;&#xD638;&#xD654;&quot;</code>. &#xC120;&#xD0DD; &#xC0AC;&#xD56D;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>Purpose of the certificate. Default value <code>&quot;encipherment&quot;</code>. Choices are:</p>
 <ul>
 <li><code>&quot;&#xC554;&#xD638;&#xD654;&quot;</code>: &#xC778;&#xC99D;&#xC11C;&#xB294; TLS &#xC778;&#xC99D; &#xBC0F; &#xC554;&#xD638;&#xD654;&#xC5D0; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</li>
 <li><code>&quot;verify&quot;</code>: &#xC778;&#xC99D;&#xC11C;&#xB294; &#xC6D0;&#xACA9; &#xD53C;&#xC5B4;&#xC5D0;&#xC11C; TLS &#xC778;&#xC99D;&#xC11C;&#xC758; &#xC720;&#xD6A8;&#xC131;&#xC744; &#xAC80;&#xC0AC;&#xD558;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0; &#xC778;&#xC99D;&#xC11C;&#xB294; CA &#xC778;&#xC99D;&#xC11C; &#xC5EC;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</li>
@@ -935,21 +945,21 @@ window.onload = function() {
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>When there is a new client request, say for <code>serverName</code> = <code>&quot;v2ray.com&quot;</code>, V2Ray will find a certificate for <code>&quot;v2ray.com&quot;</code> first. If not found, V2Ray will try to issue a new certificate using any existing certificate whose <code>usage</code> is <code>&quot;issue&quot;</code> for <code>&quot;v2ray.com&quot;</code>. The new certificate expires in one hour, and will be added to certificate pool for later reuse.</p>
 </div></div></p>
 <blockquote>
-<p><code>&#xC778;&#xC99D;&#xC11C; &#xD30C;&#xC77C;</code>: &#xBB38;&#xC790;&#xC5F4;</p>
+<p><code>certificateFile</code>: string</p>
 </blockquote>
 <p>File path to the certificate. If the certificate is generated by OpenSSL, the path ends with &quot;.crt&quot;.</p>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Use <code>v2ctl cert -ca</code> command to generate a new CA certificate.</p>
 </div></div></p>
 <blockquote>
-<p><code>&#xC778;&#xC99D;&#xC11C;</code>: \ [string ]</p>
+<p><code>certificate</code>: [ string ]</p>
 </blockquote>
 <p>List of strings as content of the certificate. See the example above. Either <code>certificate</code> or <code>certificateFile</code> must not be empty.</p>
 <blockquote>
-<p><code>keyFile</code>: &#xBB38;&#xC790;&#xC5F4;</p>
+<p><code>keyFile</code>: string</p>
 </blockquote>
 <p>File path to the private key. If generated by OpenSSL, the file usually ends with &quot;.key&quot;. Key file with password is not supported.</p>
 <blockquote>
-<p><code>&#xD0A4;</code>: \ [string ]</p>
+<p><code>key</code>: [ string ]</p>
 </blockquote>
 <p>List of strings as content of the private key. See the example above. Either <code>key</code> or <code>keyFile</code> must not be empty.</p>
 <p>When <code>certificateFile</code> and <code>certificate</code> are both filled in. V2Ray uses <code>certificateFile</code>. Same for <code>keyFile</code> and <code>key</code>.</p>
@@ -963,11 +973,11 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>&#xC810;</code>: &#xC22B;&#xC790;</p>
+<p><code>mark</code>: number</p>
 </blockquote>
 <p>An integer. If non-zero, the value will be set to out-going connections via socket option SO_MARK. This mechanism only applies on Linux and requires CAP_NET_ADMIN permission.</p>
 <blockquote>
-<p><code>tcpFastOpen</code>: true | &#xADF8;&#xB987;&#xB41C;</p>
+<p><code>tcpFastOpen</code>: true | false</p>
 </blockquote>
 <p>Whether or not to enable <a href="https://en.wikipedia.org/wiki/TCP_Fast_Open" target="_blank">TCP Fast Open</a>. When set to <code>true</code>, V2Ray enables TFO for current connection. When set to <code>false</code>, V2Ray disables TFO. If this entry doesn&apos;t exist, V2Ray uses default settings from operating system.</p>
 <ul>
@@ -980,7 +990,7 @@ window.onload = function() {
 <li>&#xC778;&#xBC14;&#xC6B4;&#xB4DC; &#xBC0F; &#xC544;&#xC6C3; &#xBC14;&#xC6B4;&#xB4DC; &#xC5F0;&#xACB0;&#xC5D0; &#xBAA8;&#xB450; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
 <blockquote>
-<p><code>tproxy</code>: &quot;redirect&quot;| &quot;tproxy&quot;| &quot;&#xB5A8;&#xC5B4;&#xC838;&#xC11C;&quot;</p>
+<p><code>tproxy</code>: &quot;redirect&quot; | &quot;tproxy&quot; | &quot;off&quot;</p>
 </blockquote>
 <p>Whether or not to enable transparent proxy on Linux. Choices are:</p>
 <ul>
@@ -1006,7 +1016,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"수송","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"역","level":"1.2.9","depth":2,"path":"configuration/reverse.md","ref":"configuration/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-11-26T14:01:14.021Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T14:03:18.374Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"수송","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"역","level":"1.2.9","depth":2,"path":"configuration/reverse.md","ref":"configuration/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-11-29T15:01:42.357Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-29T15:03:44.718Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

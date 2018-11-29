@@ -759,7 +759,8 @@ window.onload = function() {
   <span class="token string">&quot;kcpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;quicSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -782,6 +783,10 @@ window.onload = function() {
 <p><code>dsSettings</code>: DomainSocketObject</p>
 </blockquote>
 <p>Settings for <a href="transport/domainsocket.html">Domain Socket transport</a>.</p>
+<blockquote>
+<p><code>quicSettings</code>: QUICObject</p>
+</blockquote>
+<p>(V2Ray 4.7+) Settings for <a href="transport/quic.html">QUIC transport</a>.</p>
 <h2 id="streamsettingsobject"><a name="streamsettingsobject" class="plugin-anchor" href="#streamsettingsobject"><i class="fa fa-link" aria-hidden="true"></i></a>StreamSettingsObject</h2>
 <p>Each inbound and outbound proxy may has its own transport settings, as specified in <code>streamSettings</code> field in top level configuration.</p>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
@@ -793,6 +798,7 @@ window.onload = function() {
   <span class="token string">&quot;wsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;httpSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;dsSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;quicSettings&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token string">&quot;sockopt&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
     <span class="token string">&quot;mark&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
     <span class="token string">&quot;tcpFastOpen&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
@@ -801,7 +807,7 @@ window.onload = function() {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>network</code>: &quot;tcp&quot; | &quot;kcp&quot; | &quot;ws&quot; | &quot;http&quot; | &quot;domainsocket&quot;</p>
+<p><code>network</code>: &quot;tcp&quot; | &quot;kcp&quot; | &quot;ws&quot; | &quot;http&quot; | &quot;domainsocket&quot; | &quot;quic&quot;</p>
 </blockquote>
 <p>Network type of the stream transport. Default value <code>&quot;tcp&quot;</code>.</p>
 <blockquote>
@@ -831,7 +837,11 @@ window.onload = function() {
 <blockquote>
 <p><code>dsSettings</code>: DomainSocketObject</p>
 </blockquote>
-<p>Domain socket transport configuration for current proxy. Effective only when the proxy uses domain socket transport.</p>
+<p>Domain socket transport configuration for current proxy. Effective only when the proxy uses domain socket transport. Configuration is the same as it is in global configuration.</p>
+<blockquote>
+<p><code>quicSettings</code>: QUICObject</p>
+</blockquote>
+<p>(V2Ray 4.7+) QUIC transport configuration for current proxy. Effective only when the proxy uses QUIC transport. Configuration is the same as it is in global configuration.</p>
 <blockquote>
 <p><code>sockopt</code>: SockoptObject</p>
 </blockquote>
@@ -1006,7 +1016,7 @@ window.onload = function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Доставка","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Обратный прокси","level":"1.2.9","depth":2,"path":"configuration/reverse.md","ref":"configuration/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-11-26T14:01:14.025Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T14:02:57.572Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/05_transport","refen":"configuration/transport","title":"Доставка","level":"1.2.10","depth":2,"next":{"title":"TCP","level":"1.2.10.1","depth":3,"path":"configuration/transport/tcp.md","ref":"configuration/transport/tcp.md","articles":[]},"previous":{"title":"Обратный прокси","level":"1.2.9","depth":2,"path":"configuration/reverse.md","ref":"configuration/reverse.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/transport.md","mtime":"2018-11-29T15:01:42.361Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-29T15:03:24.659Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
