@@ -769,7 +769,8 @@ if (inIframe() || !isValidDomain()) {
     <span class="token string">&quot;8.8.4.4&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;localhost&quot;</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span>
+  <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dns_inbound&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -789,6 +790,10 @@ if (inIframe() || !isValidDomain()) {
 <p><code>clientIp</code>: string</p>
 </blockquote>
 <p>&#x110;&#x1ECB;a ch&#x1EC9; IP c&#x1EE7;a m&#xE1;y hi&#x1EC7;n t&#x1EA1;i. N&#x1EBF;u &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; &#x111;&#x1ECB;nh, V2Ray s&#x1EED; d&#x1EE5;ng IP n&#xE0;y l&#xE0;m EDNS-Client-Subnet. &#x110;&#x1ECB;a ch&#x1EC9; IP n&#xE0;y kh&#xF4;ng th&#x1EC3; l&#xE0; &#x111;&#x1ECB;a ch&#x1EC9; ri&#xEA;ng t&#x1B0;.</p>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>(V2Ray 4.13+) All traffic initiated from this DNS, except to localhost, will have this tag as inbound. It can be used for routing.</p>
 <h3 id="serverobject"><a name="serverobject" class="plugin-anchor" href="#serverobject"><i class="fa fa-link" aria-hidden="true"></i></a>ServerObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
@@ -801,17 +806,17 @@ if (inIframe() || !isValidDomain()) {
 <blockquote>
 <p><code>address</code>: address</p>
 </blockquote>
-<p>&#x110;&#x1ECB;a ch&#x1EC9; c&#x1EE7;a m&#xE1;y ch&#x1EE7; DNS. Hi&#x1EC7;n t&#x1EA1;i ch&#x1EC9; h&#x1ED7; tr&#x1EE3; c&#xE1;c m&#xE1;y ch&#x1EE7; UDP.</p>
+<p>Address of the DNS server. For now only UDP servers are supported.</p>
 <blockquote>
 <p><code>port</code>: number</p>
 </blockquote>
-<p>C&#x1ED5;ng c&#x1EE7;a m&#xE1;y ch&#x1EE7; DNS. Th&#xF4;ng th&#x1B0;&#x1EDD;ng n&#xF3; l&#xE0; <code>53</code> ho&#x1EB7;c <code>5353</code>.</p>
+<p>Port of the DNS server. Usually it is <code>53</code> or <code>5353</code>.</p>
 <blockquote>
 <p><code>domains</code>: [string]</p>
 </blockquote>
-<p>Danh s&#xE1;ch c&#xE1;c t&#xEA;n mi&#x1EC1;n. N&#x1EBF;u mi&#x1EC1;n y&#xEA;u c&#x1EA7;u kh&#x1EDB;p v&#x1EDB;i m&#x1ED9;t trong danh s&#xE1;ch, m&#xE1;y ch&#x1EE7; DNS n&#xE0;y s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c &#x1B0;u ti&#xEA;n cho truy v&#x1EA5;n DNS cho t&#xEA;n mi&#x1EC1;n n&#xE0;y.</p>
-<p>&#x110;&#x1ECB;nh d&#x1EA1;ng t&#xEA;n mi&#x1EC1;n gi&#x1ED1;ng v&#x1EDB;i &#x111;&#x1ECB;nh d&#x1EA1;ng <a href="routing.html">&#x111;&#x1ECB;nh tuy&#x1EBF;n</a>.</p>
-<p>Khi m&#x1ED9;t m&#xE1;y ch&#x1EE7; DNS c&#xF3; t&#xEA;n mi&#x1EC1;n trong danh s&#xE1;ch t&#xEA;n mi&#x1EC1;n c&#x1EE7;a n&#xF3;, t&#xEA;n mi&#x1EC1;n s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c truy v&#x1EA5;n trong m&#xE1;y ch&#x1EE7; n&#xE0;y tr&#x1B0;&#x1EDB;c, v&#xE0; sau &#x111;&#xF3; l&#xE0; c&#xE1;c m&#xE1;y ch&#x1EE7; kh&#xE1;c. N&#x1EBF;u kh&#xF4;ng, c&#xE1;c truy v&#x1EA5;n DNS s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c g&#x1EED;i &#x111;&#x1EBF;n c&#xE1;c m&#xE1;y ch&#x1EE7; DNS theo th&#x1EE9; t&#x1EF1; ch&#xFA;ng xu&#x1EA5;t hi&#x1EC7;n trong t&#x1EAD;p tin c&#x1EA5;u h&#xEC;nh.</p>
+<p>A list of domains. If the domain of enquire matches one of the list, this DNS server will be prioritized for DNS query for this domain.</p>
+<p>Domain name format is the same as in <a href="routing.html">routing</a>.</p>
+<p>When a DNS server has the domain in its domain list, the domain will be queried in this server first, and then other servers. Otherwise DNS queries are sent to DNS servers in the order they appear in the config file.</p>
 
                                 
                                 </section>
@@ -827,7 +832,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"định tuyến","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2019-01-16T20:01:26.512Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T20:04:21.136Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS","level":"1.2.5","depth":2,"next":{"title":"Mux","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"định tuyến","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2019-01-16T22:01:25.032Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T22:04:16.190Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -769,7 +769,8 @@ if (inIframe() || !isValidDomain()) {
     <span class="token string">&quot;8.8.4.4&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;localhost&quot;</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span>
+  <span class="token string">&quot;clientIp&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;tag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;dns_inbound&quot;</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
@@ -789,6 +790,10 @@ if (inIframe() || !isValidDomain()) {
 <p><code>clientIp</code>: string</p>
 </blockquote>
 <p>IP address of current machine. If specified, V2Ray uses this IP as EDNS-Client-Subnet. This IP can&apos;t be a private address.</p>
+<blockquote>
+<p><code>tag</code>: string</p>
+</blockquote>
+<p>(V2Ray 4.13+) All traffic initiated from this DNS, except to localhost, will have this tag as inbound. It can be used for routing.</p>
 <h3 id="serverobject"><a name="serverobject" class="plugin-anchor" href="#serverobject"><i class="fa fa-link" aria-hidden="true"></i></a>ServerObject</h3>
 <pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
   <span class="token string">&quot;address&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1.2.3.4&quot;</span><span class="token punctuation">,</span>
@@ -799,15 +804,15 @@ if (inIframe() || !isValidDomain()) {
 <span class="token punctuation">}</span>
 </code></pre>
 <blockquote>
-<p><code>&#xC8FC;&#xC18C;</code>: &#xC8FC;&#xC18C;</p>
+<p><code>address</code>: address</p>
 </blockquote>
 <p>Address of the DNS server. For now only UDP servers are supported.</p>
 <blockquote>
-<p><code>&#xD3EC;&#xD2B8;</code>: &#xBC88;&#xD638;</p>
+<p><code>port</code>: number</p>
 </blockquote>
 <p>Port of the DNS server. Usually it is <code>53</code> or <code>5353</code>.</p>
 <blockquote>
-<p><code>&#xB3C4;&#xBA54;&#xC778;</code>: \ [string ]</p>
+<p><code>domains</code>: [string]</p>
 </blockquote>
 <p>A list of domains. If the domain of enquire matches one of the list, this DNS server will be prioritized for DNS query for this domain.</p>
 <p>Domain name format is the same as in <a href="routing.html">routing</a>.</p>
@@ -827,7 +832,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS","level":"1.2.5","depth":2,"next":{"title":"다중 화기","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"라우팅","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2019-01-16T20:01:26.508Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T20:03:36.598Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS","level":"1.2.5","depth":2,"next":{"title":"다중 화기","level":"1.2.6","depth":2,"path":"configuration/mux.md","ref":"configuration/mux.md","articles":[]},"previous":{"title":"라우팅","level":"1.2.4","depth":2,"path":"configuration/routing.md","ref":"configuration/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V","language":"ko","gitbook":"*"},"file":{"path":"configuration/dns.md","mtime":"2019-01-16T22:01:25.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-16T22:03:33.307Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
