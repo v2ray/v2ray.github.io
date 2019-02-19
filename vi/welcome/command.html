@@ -882,27 +882,88 @@ if (inIframe() || !isValidDomain()) {
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Khi <code>-config</code> kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; &#x111;&#x1ECB;nh, V2Ray &#x111;&#x1EA7;u ti&#xEA;n c&#x1ED1; g&#x1EAF;ng t&#x1EA3;i c&#x1EA5;u h&#xEC;nh t&#x1EEB; <code>config.json</code> trong th&#x1B0; m&#x1EE5;c l&#xE0;m vi&#x1EC7;c, sau &#x111;&#xF3; t&#x1EEB; th&#x1B0; m&#x1EE5;c &#x111;&#x1B0;&#x1EE3;c ch&#x1EC9; &#x111;&#x1ECB;nh b&#x1EDF;i <a href="../configuration/env.html">bi&#x1EBF;n m&#xF4;i tr&#x1B0;&#x1EDD;ng</a> <code>v2ray.location.asset</code>.</p>
 </div></div></p>
 <h2 id="v2ctl"><a name="v2ctl" class="plugin-anchor" href="#v2ctl"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl</h2>
-<p>V2Ctl c&#xF3; c&#xE1;c tham s&#x1ED1; d&#xF2;ng l&#x1EC7;nh sau:</p>
-<pre class="language-"><code class="lang-shell">v2ctl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>options<span class="token operator">&gt;</span>
+<p>V2Ctl is a collection of commandline tools. It runs in the following way:</p>
+<pre class="language-"><code class="lang-bash">v2ctl <span class="token operator">&lt;</span>command<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>options<span class="token operator">&gt;</span>
 </code></pre>
-<p>C&#xE1;c l&#x1EC7;nh kh&#x1EA3; d&#x1EE5;ng &#x111;&#x1B0;&#x1EE3;c li&#x1EC7;t k&#xEA; d&#x1B0;&#x1EDB;i &#x111;&#xE2;y. M&#x1ED7;i l&#x1EC7;nh c&#xF3; c&#xE1;c t&#xF9;y ch&#x1ECD;n ri&#xEA;ng.</p>
-<h3 id="ki&#x1EC3;m-ch&#x1EE9;ng"><a name="ki&#x1EC3;m-ch&#x1EE9;ng" class="plugin-anchor" href="#ki&#x1EC3;m-ch&#x1EE9;ng"><i class="fa fa-link" aria-hidden="true"></i></a>Ki&#x1EC3;m ch&#x1EE9;ng</h3>
-<p><code>v2ctl x&#xE1;c minh [--sig = / path / to / sigfile] / t&#x1EC7;p / t&#x1EDB;i / x&#xE1;c minh</code></p>
-<p>&#x110;&#x1EC3; x&#xE1;c minh ch&#x1EEF; k&#xFD; c&#x1EE7;a m&#x1ED9;t nh&#x1ECB; ph&#xE2;n V2Ray.</p>
-<p>T&#xF9;y ch&#x1ECD;n:</p>
 <blockquote>
-<p><code>sig</code></p>
+<p><code>command</code></p>
 </blockquote>
-<p>&#x110;&#x1B0;&#x1EDD;ng d&#x1EAB;n &#x111;&#x1EBF;n t&#x1EC7;p ch&#x1EEF; k&#xFD;. Gi&#xE1; tr&#x1ECB; m&#x1EB7;c &#x111;&#x1ECB;nh l&#xE0; t&#x1EC7;p &quot;.sig&quot; &#x111;&#x1EBF;n &#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n c&#x1EA7;n &#x111;&#x1B0;&#x1EE3;c x&#xE1;c minh.</p>
+<p>Subcommand. Available values are below:</p>
+<ul>
+<li><code>api</code>: Invoke remote control commands in V2Ray instances.</li>
+<li><code>config</code>: Convert configuration from JSON format to protobuf.</li>
+<li><code>cert</code>: Generate TLS certificates.</li>
+<li><code>fetch</code>: Fetch remove resources.</li>
+<li><code>tlsping</code>: (V2Ray 4.17+) Test TLS handshake.</li>
+<li><code>verify</code>: Verify the signature of V2Ray releases.</li>
+<li><code>uuid</code>: Generate UUID.</li>
+</ul>
+<h3 id="v2ctl-api"><a name="v2ctl-api" class="plugin-anchor" href="#v2ctl-api"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl Api</h3>
+<p><code>v2ctl api [--server=127.0.0.1:8080] <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Service.Method</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Request</span><span class="token punctuation">&gt;</span></span></code></p>
+<p>Invoke remote control commands in V2Ray instances. Example:</p>
+<p><code>v2ctl api --server=127.0.0.1:8080 LoggerService.RestartLogger &apos;&apos;</code></p>
+<h3 id="v2ctl-config"><a name="v2ctl-config" class="plugin-anchor" href="#v2ctl-config"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl Config</h3>
+<p><code>v2ctl config</code></p>
+<p>No option for this command. It reads JSON configuration from stdin, and print out corresponding Protobuf to stdout, if succeeds.</p>
+<h3 id="v2ctl-cert"><a name="v2ctl-cert" class="plugin-anchor" href="#v2ctl-cert"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl Cert</h3>
+<p><code>v2ctl cert [--ca] [--domain=v2ray.com] [--expire=240h] [--name=&quot;V2Ray Inc&quot;] [--org=&quot;V2Ray Inc] [--json] [--file=v2ray]</code></p>
+<p>Generates a TLS cerificate based on options.</p>
 <blockquote>
-<p>&#x110;&#x1ED1;i s&#x1ED1; &#x111;&#x1EA7;u ti&#xEA;n: t&#x1EC7;p c&#x1EA7;n &#x111;&#x1B0;&#x1EE3;c x&#xE1;c minh.</p>
+<p><code>--ca</code></p>
 </blockquote>
-<h3 id="c&#x1EA5;u-h&#xEC;nh"><a name="c&#x1EA5;u-h&#xEC;nh" class="plugin-anchor" href="#c&#x1EA5;u-h&#xEC;nh"><i class="fa fa-link" aria-hidden="true"></i></a>C&#x1EA5;u h&#xEC;nh</h3>
-<p><code>C&#x1EA5;u h&#xEC;nh v2ctl</code></p>
-<p>Kh&#xF4;ng c&#xF3; l&#x1EF1;a ch&#x1ECD;n. L&#x1EC7;nh n&#xE0;y &#x111;&#x1ECD;c c&#x1EA5;u h&#xEC;nh &#x1EDF; &#x111;&#x1ECB;nh d&#x1EA1;ng JSON t&#x1EEB; stdin, v&#xE0; sau &#x111;&#xF3; vi&#x1EBF;t c&#x1EA5;u h&#xEC;nh t&#x1B0;&#x1A1;ng &#x1EE9;ng trong &#x111;&#x1ECB;nh d&#x1EA1;ng Protobuf &#x111;&#x1EC3; stdout.</p>
-<h3 id="uuid"><a name="uuid" class="plugin-anchor" href="#uuid"><i class="fa fa-link" aria-hidden="true"></i></a>UUID</h3>
+<p>If specified, the certificate will be a CA certificate.</p>
+<blockquote>
+<p><code>--domain</code></p>
+</blockquote>
+<p>Alternative Names in the certificate. This option can be used multiple times for multiple domains. For example: <code>--domain=v2ray.com --domain=v2ray.cool</code>.</p>
+<blockquote>
+<p><code>--expire</code></p>
+</blockquote>
+<p>Expire date of the certificate. Value is a <a href="https://golang.org/pkg/time/#ParseDuration" target="_blank">Golang duration</a>.</p>
+<blockquote>
+<p><code>--name</code></p>
+</blockquote>
+<p>Command Name in the certificate.</p>
+<blockquote>
+<p><code>--org</code></p>
+</blockquote>
+<p>Orgnization in the certificate.</p>
+<blockquote>
+<p><code>--json</code></p>
+</blockquote>
+<p>If specified, the certificate will be printed to stdout in the JSON format that is used in V2Ray.</p>
+<blockquote>
+<p><code>--file</code></p>
+</blockquote>
+<p>Prints the certificate into files. When <code>--file=a</code>, two files named <code>a_cert.pem</code> and <code>a_key.pem</code> will be generated.</p>
+<h3 id="v2ctl-fetch"><a name="v2ctl-fetch" class="plugin-anchor" href="#v2ctl-fetch"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl Fetch</h3>
+<p><code>v2ctl fetch <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span></code></p>
+<p>Fetch remove resources and print to stdout. Only HTTP and HTTPS URL are supported.</p>
+<h3 id="v2ctl-tlsping"><a name="v2ctl-tlsping" class="plugin-anchor" href="#v2ctl-tlsping"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl TlsPing</h3>
+<p><code>v2ctl tlsping <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>domain</span><span class="token punctuation">&gt;</span></span> --ip=[ip]</code></p>
+<p>Test TLS handlshake with specific domain.</p>
+<blockquote>
+<p>domain</p>
+</blockquote>
+<p>Target domain for the TLS handshake.</p>
+<blockquote>
+<p>--ip</p>
+</blockquote>
+<p>The IP address of the domain. If not specifed, V2Ctl resolves it through system DNS.</p>
+<h3 id="v2ctl-verify"><a name="v2ctl-verify" class="plugin-anchor" href="#v2ctl-verify"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl Verify</h3>
+<p><code>v2ctl verify [--sig=/path/to/sigfile] <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filepath</span><span class="token punctuation">&gt;</span></span></code></p>
+<p>To verify the signature of a V2Ray binary.</p>
+<blockquote>
+<p><code>--sig</code></p>
+</blockquote>
+<p>Path to signature file. Default value is the &quot;.sig&quot; file to the path to be verified.</p>
+<blockquote>
+<p><code>filepath</code></p>
+</blockquote>
+<p>The file to be verified.</p>
+<h3 id="v2ctl-uuid"><a name="v2ctl-uuid" class="plugin-anchor" href="#v2ctl-uuid"><i class="fa fa-link" aria-hidden="true"></i></a>V2Ctl UUID</h3>
 <p><code>v2ctl uuid</code></p>
-<p>Kh&#xF4;ng c&#xF3; l&#x1EF1;a ch&#x1ECD;n. L&#x1EC7;nh n&#xE0;y in m&#x1ED9;t UUID ng&#x1EAB;u nhi&#xEA;n.</p>
+<p>No options. This command prints a random UUID.</p>
 
                                 
                                 </section>
@@ -918,7 +979,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Dòng lệnh","level":"1.1.5","depth":2,"next":{"title":"Quyên góp","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Bắt đầu nhanh","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2019-02-19T11:18:07.883Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-19T11:21:54.437Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_00/command","refen":"welcome/command","title":"Dòng lệnh","level":"1.1.5","depth":2,"next":{"title":"Quyên góp","level":"1.1.6","depth":2,"path":"welcome/donate.md","ref":"welcome/donate.md","articles":[]},"previous":{"title":"Bắt đầu nhanh","level":"1.1.4","depth":2,"path":"welcome/start.md","ref":"welcome/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"welcome/command.md","mtime":"2019-02-19T14:17:33.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-19T14:21:06.785Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
