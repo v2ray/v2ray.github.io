@@ -926,8 +926,7 @@ if (inIframe() || !isValidDomain()) {
 <li>Regular expression: Begining with <code>&quot;regexp:&quot;</code>, the rest is a regular expression. When the regexp matches targeting domain, this rule takes effect. Example: rule <code>&quot;regexp:\\.goo.*\\.com$&quot;</code> matches <code>&quot;www.google.com&quot;</code> and <code>&quot;fonts.googleapis.com&quot;</code>, but not <code>&quot;google.com&quot;</code>.</li>
 <li>Subdomain (recommended): Begining with <code>&quot;domain:&quot;</code> and the rest is a domain. When the targeting domain is exactly the value, or is a subdomain of the value, this rule takes effect. Example: rule <code>&quot;domain:v2ray.com&quot;</code> matches <code>&quot;www.v2ray.com&quot;</code>, <code>&quot;v2ray.com&quot;</code>, but not <code>&quot;xv2ray.com&quot;</code>.</li>
 <li>Full domain: Begining with <code>&quot;full:&quot;</code> and the rest is a domain. When the targeting domain is exactly the value, the rule takes effect. Example: rule <code>&quot;domain:v2ray.com&quot;</code> matches <code>&quot;v2ray.com&quot;</code>, but not <code>&quot;www.v2ray.com&quot;</code>.</li>
-<li>Special value <code>&quot;geosite:cn&quot;</code>: a list of <a href="https://www.v2ray.com/links/chinasites/" target="_blank">common domains in China</a>.</li>
-<li>Special value <code>&quot;geosite:speedtest&quot;</code> (V2Ray 3.32+): list of all public servers of speedtest.net.</li>
+<li>Pre-defined domain list: Begining with <code>&quot;geosite:&quot;</code> and the rest is a name, such as <code>geosite:google</code> or <code>geosite:cn</code>. See <a href="#pre-defined-domain-lists">Pre-defined domain list</a> for more detail.</li>
 <li>Domains from file: Such as <code>&quot;ext:file:tag&quot;</code>. The value must begin with <code>ext:</code> (lowercase), and followed by filename and tag. The file is placed in <a href="env.html#location-of-v2ray-asset">resource directory</a>, and has the same format of <code>geosite.dat</code>. The tag must exist in the file.</li>
 </ul>
 <blockquote>
@@ -998,6 +997,19 @@ if (inIframe() || !isValidDomain()) {
 </blockquote>
 <p>An array of strings. These strings are used to select outbounds with prefix matching. For example, with the following outbound tags: <code>[ &quot;a&quot;, &quot;ab&quot;, &quot;c&quot;, &quot;ba&quot; ]</code>&#xFF0C;selector <code>[&quot;a&quot;]</code> matches <code>[ &quot;a&quot;, &quot;ab&quot; ]</code>.</p>
 <p>When multiple outbounds are selected, load balancer for now picks one final outbound at random.</p>
+<h2 id="pre-defined-domain-lists"><a name="pre-defined-domain-lists" class="plugin-anchor" href="#pre-defined-domain-lists"><i class="fa fa-link" aria-hidden="true"></i></a>Pre-defined domain lists</h2>
+<p>This is a domain lists maintained by <a href="https://github.com/v2ray/domain-list-community" target="_blank">domain-list-community</a> project. It provides a file named <code>geosite.dat</code> for some predefined domain lists. Notably:</p>
+<ul>
+<li><code>category-ads</code>: Common ads domains.</li>
+<li><code>category-ads-all</code>: Common ads domains and ads providers&apos; domains.</li>
+<li><code>cn</code>: Equivalent to an union of <code>geolocation-cn</code> and <code>tld-cn</code>.</li>
+<li><code>google</code>: All Google domains.</li>
+<li><code>facebook</code>: All Facebook domains.</li>
+<li><code>geolocation-cn</code>: Common domains that serve in China.</li>
+<li><code>geolocation-!cn</code>: Common domains that don&apos;t serve in China</li>
+<li><code>speedtest</code>: All domains used by Speedtest.</li>
+<li><code>tld-cn</code>: All .cn and .&#x4E2D;&#x56FD; domains.</li>
+</ul>
 
                                 
                                 </section>
@@ -1013,7 +1025,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2019-02-25T07:49:07.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T07:51:34.680Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Routing","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Policy","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"en","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2019-02-26T20:30:06.524Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-26T20:32:44.291Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
