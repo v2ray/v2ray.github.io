@@ -907,6 +907,7 @@ if (inIframe() || !isValidDomain()) {
     <span class="token string">&quot;tag-vmess&quot;</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token string">&quot;protocol&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&quot;http&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;tls&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bittorrent&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;attrs&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;attrs[&apos;:method&apos;] == &apos;GET&apos;&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;outboundTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;direct&quot;</span><span class="token punctuation">,</span>
   <span class="token string">&quot;balancerTag&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;balancer&quot;</span>
 <span class="token punctuation">}</span>
@@ -974,6 +975,18 @@ if (inIframe() || !isValidDomain()) {
 </blockquote>
 <p>An array of string as protocol types. When the connection uses one of the protocols, this rule takes effect. To recognize the protocol of a connection, one must enable <code>sniffing</code> option in inbound proxy.</p>
 <blockquote>
+<p><code>attrs</code>: string</p>
+</blockquote>
+<p>(V2Ray 4.18+) A Starlark script, used for detecting traffic attributes. When this script returns true, this rule takes effect.</p>
+<p><a href="https://github.com/bazelbuild/starlark" target="_blank">Starlark</a> is a subset of Python. The script takes a global varible named <code>attrs</code>. It contains all attributes of the traffic.</p>
+<p>At the moment, only http inbound sets <code>attrs</code>.</p>
+<p>Examples:</p>
+<ul>
+<li>Detect HTTP GET: <code>&quot;attrs[&apos;:method&apos;] == &apos;GET&apos;&quot;</code></li>
+<li>Detect HTTP Path: <code>&quot;attrs[&apos;:path&apos;].startswith(&apos;/test&apos;)&quot;</code></li>
+<li>Detect Content Type: <code>&quot;attrs[&apos;accept&apos;].index(&apos;text/html&apos;) &gt;= 0&quot;</code></li>
+</ul>
+<blockquote>
 <p><code>outboundTag</code> string</p>
 </blockquote>
 <p><a href="protocols.html">Tag of the outbound</a> that the connection will be sent to, if this rule take effect.</p>
@@ -1025,7 +1038,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Маршрутизация","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Правила","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2019-05-13T08:11:58.068Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-13T08:14:36.154Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/03_routing","refen":"configuration/routing","title":"Маршрутизация","level":"1.2.4","depth":2,"next":{"title":"DNS","level":"1.2.5","depth":2,"path":"configuration/dns.md","ref":"configuration/dns.md","articles":[]},"previous":{"title":"Правила","level":"1.2.3","depth":2,"path":"configuration/policy.md","ref":"configuration/policy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"ru","gitbook":"*"},"file":{"path":"configuration/routing.md","mtime":"2019-05-23T07:49:01.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T07:51:32.010Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
