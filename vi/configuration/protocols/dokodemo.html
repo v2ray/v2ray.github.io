@@ -882,27 +882,27 @@ iptables -t mangle -N V2RAY_MARK
 
 <span class="token comment"># B&#x1ECF; qua &#x111;&#x1ECB;a ch&#x1EC9; m&#xE1;y ch&#x1EE7; V2Ray c&#x1EE7;a b&#x1EA1;n</span>
 <span class="token comment"># N&#xF3; r&#x1EA5;t QUAN TR&#x1ECC;NG, h&#xE3;y c&#x1EA9;n th&#x1EAD;n.</span>
-iptables -t nat -A V2RAY -d 123.123.123.123 -j TR&#x1EDE; L&#x1EA0;I
+iptables -t nat -A V2RAY -d <span class="token number">123.123</span>.123.123 -j TR&#x1EDE; L&#x1EA0;I
 
 <span class="token comment"># B&#x1ECF; qua m&#x1EA1;ng LAN v&#xE0; b&#x1EA5;t k&#x1EF3; &#x111;&#x1ECB;a ch&#x1EC9; n&#xE0;o kh&#xE1;c m&#xE0; b&#x1EA1;n mu&#x1ED1;n b&#x1ECF; qua proxy</span>
 <span class="token comment"># Xem Wikipedia v&#xE0; RFC5735 &#x111;&#x1EC3; c&#xF3; danh s&#xE1;ch &#x111;&#x1EA7;y &#x111;&#x1EE7; c&#xE1;c m&#x1EA1;ng &#x111;&#x1B0;&#x1EE3;c b&#x1EA3;o l&#x1B0;u.</span>
-iptables -t nat -A V2RAY -d 0.0.0.0/8 -j TR&#x1EDE; L&#x1EA0;I
-iptables -t nat -A V2RAY -d 10.0.0.0/8 -j TR&#x1EDE; L&#x1EA0;I
+iptables -t nat -A V2RAY -d <span class="token number">0.0</span>.0.0/8 -j TR&#x1EDE; L&#x1EA0;I
+iptables -t nat -A V2RAY -d <span class="token number">10.0</span>.0.0/8 -j TR&#x1EDE; L&#x1EA0;I
 iptables -t nat -A V2RAY-127.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY-169.254.0.0/16 -j TR&#x1EDE; L&#x1EA0;I
 iptables -t nat -A V2RAY-172.16.0.0/12 -j TR&#x1EDE; L&#x1EA0;I
-iptables -t nat -A V2RAY-192.168 .0.0 / 16 -j RETURN
+iptables -t nat -A V2RAY-192.168 .0.0 / <span class="token number">16</span> -j RETURN
 iptables -t nat -A V2RAY-224.0.0.0/4 -j TR&#x1EA2; L&#x1EA0;I
 iptables -t nat -A V2RAY-240.0.0.0/4 -j TR&#x1EA2; L&#x1EA0;I
 
 <span class="token comment"># M&#x1ECD;i th&#x1EE9; kh&#xE1;c c&#x1EA7;n &#x111;&#x1B0;&#x1EE3;c chuy&#x1EC3;n h&#x1B0;&#x1EDB;ng &#x111;&#x1EBF;n c&#x1ED5;ng &#x111;&#x1ECB;a ph&#x1B0;&#x1A1;ng c&#x1EE7;a c&#x1EED;a Dokodemo</span>
-iptables -t nat -A V2RAY -p tcp -j &#x110;&#x1ED4;I M&#x1EDA;I - sang-c&#x1ED5;ng 12345
+iptables -t nat -A V2RAY -p tcp -j &#x110;&#x1ED4;I M&#x1EDA;I - sang-c&#x1ED5;ng <span class="token number">12345</span>
 
 <span class="token comment"># Th&#xEA;m b&#x1EA5;t k&#x1EF3; quy t&#x1EAF;c UDP n&#xE0;o</span>
-tuy&#x1EBF;n IP th&#xEA;m &#x111;&#x1ECB;a ch&#x1EC9; m&#x1EB7;c &#x111;&#x1ECB;nh dev lo table 100
-<span class="token function">ip</span> rule <span class="token function">add</span> fwmark 1 tra c&#x1EE9;u 100
-iptables -t mangle -A V2RAY -p udp --d&#x1EEF; 53 -j TPROXY --on-port 12345 --tinxy-mark 0x01 / 0x01
-iptables -t mangle -A V2RAY_MARK -p udp --d&#x1EAB;n 53 -j MARK --set-mark 1
+tuy&#x1EBF;n IP th&#xEA;m &#x111;&#x1ECB;a ch&#x1EC9; m&#x1EB7;c &#x111;&#x1ECB;nh dev lo table <span class="token number">100</span>
+<span class="token function">ip</span> rule <span class="token function">add</span> fwmark <span class="token number">1</span> tra c&#x1EE9;u <span class="token number">100</span>
+iptables -t mangle -A V2RAY -p udp --d&#x1EEF; <span class="token number">53</span> -j TPROXY --on-port <span class="token number">12345</span> --tinxy-mark 0x01 / 0x01
+iptables -t mangle -A V2RAY_MARK -p udp --d&#x1EAB;n <span class="token number">53</span> -j MARK --set-mark <span class="token number">1</span>
 
 <span class="token comment"># &#xC1;p d&#x1EE5;ng c&#xE1;c quy t&#x1EAF;c</span>
 iptables -t nat -M&#x1ED9;t OUTPUT -p tcp -j V2RAY
@@ -924,7 +924,7 @@ iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.3","depth":3,"next":{"title":"Freedom","level":"1.2.2.4","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"DNS","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dns.md","ref":"configuration/protocols/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2019-07-15T15:19:15.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T15:22:28.857Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Dokodemo","level":"1.2.2.3","depth":3,"next":{"title":"Freedom","level":"1.2.2.4","depth":3,"path":"configuration/protocols/freedom.md","ref":"configuration/protocols/freedom.md","articles":[]},"previous":{"title":"DNS","level":"1.2.2.2","depth":3,"path":"configuration/protocols/dns.md","ref":"configuration/protocols/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V Official","language":"vi","gitbook":"*"},"file":{"path":"configuration/protocols/dokodemo.md","mtime":"2019-08-10T12:07:33.689Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T12:10:51.294Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -933,27 +933,27 @@ iptables -t mangle -N V2RAY_MARK
 
 <span class="token comment"># Ignore your V2Ray server&apos;s addresses</span>
 <span class="token comment"># It&apos;s very IMPORTANT, just be careful.</span>
-iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">123.123</span>.123.123 -j RETURN
 
 <span class="token comment"># Ignore LANs and any other addresses you&apos;d like to bypass the proxy</span>
 <span class="token comment"># See Wikipedia and RFC5735 for full list of reserved networks.</span>
-iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A V2RAY -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A V2RAY -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">0.0</span>.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">10.0</span>.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">127.0</span>.0.0/8 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">169.254</span>.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">172.16</span>.0.0/12 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">192.168</span>.0.0/16 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">224.0</span>.0.0/4 -j RETURN
+iptables -t nat -A V2RAY -d <span class="token number">240.0</span>.0.0/4 -j RETURN
 
 <span class="token comment"># Anything else should be redirected to Dokodemo-door&apos;s local port</span>
-iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
+iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports <span class="token number">12345</span>
 
 <span class="token comment"># Add any UDP rules</span>
-<span class="token function">ip</span> route <span class="token function">add</span> local default dev lo table 100
-<span class="token function">ip</span> rule <span class="token function">add</span> fwmark 1 lookup 100
-iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
-iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
+<span class="token function">ip</span> route <span class="token function">add</span> <span class="token builtin class-name">local</span> default dev lo table <span class="token number">100</span>
+<span class="token function">ip</span> rule <span class="token function">add</span> fwmark <span class="token number">1</span> lookup <span class="token number">100</span>
+iptables -t mangle -A V2RAY -p udp --dport <span class="token number">53</span> -j TPROXY --on-port <span class="token number">12345</span> --tproxy-mark 0x01/0x01
+iptables -t mangle -A V2RAY_MARK -p udp --dport <span class="token number">53</span> -j MARK --set-mark <span class="token number">1</span>
 
 <span class="token comment"># Apply the rules</span>
 iptables -t nat -A OUTPUT -p tcp -j V2RAY
@@ -975,7 +975,7 @@ iptables -t mangle -A OUTPUT -j V2RAY_MARK
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/dokodemo","refen":"configuration/protocols/dokodemo","title":"Dokodemo","level":"1.2.2.3","depth":3,"next":{"title":"Freedom","level":"1.2.2.4","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"DNS","level":"1.2.2.2","depth":3,"path":"chapter_02/protocols/dns.md","ref":"chapter_02/protocols/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2019-07-15T15:19:15.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T15:20:56.394Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/protocols/dokodemo","refen":"configuration/protocols/dokodemo","title":"Dokodemo","level":"1.2.2.3","depth":3,"next":{"title":"Freedom","level":"1.2.2.4","depth":3,"path":"chapter_02/protocols/freedom.md","ref":"chapter_02/protocols/freedom.md","articles":[]},"previous":{"title":"DNS","level":"1.2.2.2","depth":3,"path":"chapter_02/protocols/dns.md","ref":"chapter_02/protocols/dns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/protocols/dokodemo.md","mtime":"2019-08-10T12:07:33.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T12:09:24.044Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
