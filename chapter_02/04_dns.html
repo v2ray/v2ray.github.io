@@ -891,7 +891,10 @@ if (inIframe() || !isValidDomain()) {
       <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">5353</span><span class="token punctuation">,</span>
       <span class="token string">&quot;domains&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
         <span class="token string">&quot;domain:v2ray.com&quot;</span>
-      <span class="token punctuation">]</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;expectIPs&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;geoip:cn&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token string">&quot;8.8.8.8&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;8.8.4.4&quot;</span><span class="token punctuation">,</span>
@@ -938,6 +941,9 @@ if (inIframe() || !isValidDomain()) {
   <span class="token string">&quot;port&quot;</span><span class="token punctuation">:</span> <span class="token number">5353</span><span class="token punctuation">,</span>
   <span class="token string">&quot;domains&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token string">&quot;domain:v2ray.com&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;expectIPs&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;geoip:cn&quot;</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
@@ -952,9 +958,44 @@ if (inIframe() || !isValidDomain()) {
 <blockquote>
 <p><code>domains</code>: [string]</p>
 </blockquote>
-<p>&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5217;&#x8868;&#xFF0C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C06;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6B64;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x57DF;&#x540D;&#x683C;&#x5F0F;&#x548C;<a href="03_routing.html">&#x8DEF;&#x7531;&#x914D;&#x7F6E;</a>&#x4E2D;&#x76F8;&#x540C;&#x3002;</p>
-<p>&#x82E5;&#x8981;&#x4F7F; DNS &#x670D;&#x52A1;&#x751F;&#x6548;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#x4E2D;&#x7684; <code>domainStrategy</code>&#x3002;</p>
-<p>&#x5F53;&#x67D0;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x7684;&#x57DF;&#x540D;&#x5217;&#x8868;&#x5339;&#x914D;&#x4E86;&#x5F53;&#x524D;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x57DF;&#x540D;&#xFF0C;V2Ray &#x4F1A;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5426;&#x5219;&#x6309;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x5217;&#x8868;&#xFF0C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x5C06;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6B64;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x57DF;&#x540D;&#x683C;&#x5F0F;&#x548C;<a href="03_routing.html#ruleobject">&#x8DEF;&#x7531;&#x914D;&#x7F6E;</a>&#x4E2D;&#x76F8;&#x540C;&#x3002;</p>
+<blockquote>
+<p><code>expectIPs</code>:[string]</p>
+</blockquote>
+<p>(V2Ray 4.22.0+) &#x4E00;&#x4E2A; IP &#x8303;&#x56F4;&#x5217;&#x8868;&#xFF0C;&#x683C;&#x5F0F;&#x548C;<a href="03_routing.html#ruleobject">&#x8DEF;&#x7531;&#x914D;&#x7F6E;</a>&#x4E2D;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x5F53;&#x914D;&#x7F6E;&#x6B64;&#x9879;&#x65F6;&#xFF0C;V2Ray DNS &#x4F1A;&#x5BF9;&#x8FD4;&#x56DE;&#x7684; IP &#x7684;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x5305;&#x542B; expectIPs &#x5217;&#x8868;&#x4E2D;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672A;&#x914D;&#x7F6E;&#x6B64;&#x9879;&#xFF0C;&#x4F1A;&#x539F;&#x6837;&#x8FD4;&#x56DE; IP &#x5730;&#x5740;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x82E5;&#x8981;&#x4F7F; DNS &#x670D;&#x52A1;&#x751F;&#x6548;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x529F;&#x80FD;&#x4E2D;&#x7684; <code>domainStrategy</code>&#x3002;</p>
+<h3 id="dns-&#x5904;&#x7406;&#x6D41;&#x7A0B;"><a name="dns-&#x5904;&#x7406;&#x6D41;&#x7A0B;" class="plugin-anchor" href="#dns-&#x5904;&#x7406;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>DNS &#x5904;&#x7406;&#x6D41;&#x7A0B;</h3>
+<p>&#x5F53;&#x67D0;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x7684;&#x57DF;&#x540D;&#x5217;&#x8868;&#x5339;&#x914D;&#x4E86;&#x5F53;&#x524D;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x57DF;&#x540D;&#xFF0C;V2Ray &#x4F1A;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A; DNS &#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x5426;&#x5219;&#x6309;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x540C;&#x65F6;&#x53EA;&#x8FD4;&#x56DE;&#x5339;&#x914D; expectIPs &#x7684; IP &#x5217;&#x8868;&#x3002;</p>
+<p>&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x793A;&#x610F;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../resources/dns_flowchart.svg" alt=""></p>
+<h3 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><a name="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;" class="plugin-anchor" href="#&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h3>
+<p>&#x5BF9;&#x56FD;&#x5185;&#x7FFB;&#x5899;&#x7684;&#x4E00;&#x822C;&#x9700;&#x6C42;&#xFF0C;&#x4E3A;&#x8FBE;&#x5230; DNS &#x5C31;&#x8FD1;&#x8BBF;&#x95EE;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B; DNS &#x914D;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;servers&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;119.29.29.29&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;port&quot;</span><span class="token operator">:</span> <span class="token number">53</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;domains&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;geosite:cn&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;expectIPs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;geoip:cn&quot;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;8.8.8.8&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;port&quot;</span><span class="token operator">:</span> <span class="token number">53</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;domains&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;geosite:geolocation-!cn&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;geosite:speedtest&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;ext:h2y.dat:gfw&quot;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
                                 
                                 </section>
@@ -970,7 +1011,7 @@ if (inIframe() || !isValidDomain()) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2019-11-28T09:38:07.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-28T09:41:05.302Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"refcn":"chapter_02/04_dns","refen":"configuration/dns","title":"DNS 配置","level":"1.2.5","depth":2,"next":{"title":"Mux 配置","level":"1.2.6","depth":2,"path":"chapter_02/mux.md","ref":"chapter_02/mux.md","articles":[]},"previous":{"title":"路由配置","level":"1.2.4","depth":2,"path":"chapter_02/03_routing.md","ref":"chapter_02/03_routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-search","-lunr","-highlight","-sharing","mermaid-gb3","anchors","ga","prism","prism-themes","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-73620536-1"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"],"lang":{"objc":"objectivec","shell":"bash","text":"textile","plain":"textile"}},"mermaid-gb3":{},"anchors":{},"prism-themes":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Project V 官方网站","language":"zh","gitbook":"*"},"file":{"path":"chapter_02/04_dns.md","mtime":"2019-11-28T10:03:41.638Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-28T10:05:35.479Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
