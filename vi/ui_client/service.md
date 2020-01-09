@@ -9,7 +9,7 @@ The following online services may help you better use Project V. These services 
 ## V2Ray có liên quan
 
 * [Trình tạo cấu hình](https://htfy96.github.io/v2ray-config-gen/)
-* [Máy phát điện UUID](https://www.uuidgenerator.net/)
+* [Máy phát điện UUID](https://www.uuidtools.com/)
 
 ## VPN
 

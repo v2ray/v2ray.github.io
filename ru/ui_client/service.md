@@ -9,7 +9,7 @@ The following online services may help you better use Project V. These services 
 ## Связанные с V2Ray
 
 * [Генератор конфигурации](https://htfy96.github.io/v2ray-config-gen/)
-* [Генератор UUID](https://www.uuidgenerator.net/)
+* [Генератор UUID](https://www.uuidtools.com/)
 
 ## VPN
 

@@ -9,7 +9,7 @@ The following online services may help you better use Project V. These services 
 ## V2Ray مرتبط است
 
 * [ژنراتور پیکربندی](https://htfy96.github.io/v2ray-config-gen/)
-* [ژنراتور UUID](https://www.uuidgenerator.net/)
+* [ژنراتور UUID](https://www.uuidtools.com/)
 
 ## VPN
 
