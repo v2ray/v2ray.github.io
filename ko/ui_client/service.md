@@ -9,7 +9,7 @@ The following online services may help you better use Project V. These services 
 ## V2Ray 관련
 
 * [구성 생성기](https://htfy96.github.io/v2ray-config-gen/)
-* [UUID 생성기](https://www.uuidgenerator.net/)
+* [UUID 생성기](https://www.uuidtools.com/)
 
 ## VPN
 
