@@ -10,12 +10,6 @@ Kitsunebi là một ứng dụng iOS dựa trên V2Ray. Nó cung cấp đầy đ
 
 * Download: [iTunes](https://itunes.apple.com/us/app/kitsunebi-proxy-utility/id1446584073?mt=8)
 
-## Kitsunebi Lite
-
-Phiên bản nhẹ của Kitsunebi.
-
-* Tải xuống: [iTunes](https://www.v2ray.com/itunes/us/kitsunebi-lite/id1387913765/)
-
 ## Shadowrocket
 
 Shadowrocket là một ứng dụng VPN chung. Hỗ trợ nhiều giao thức như Shadowsocks, VMess, SSR, v.v.
@@ -31,6 +25,17 @@ Pepi là ứng dụng tương thích V2Ray. Có thể tạo các kết nối VPN
 ## Quantumult
 
 * Tải xuống: [iTunes](https://www.v2ray.com/itunes/us/quantumult/id1252015438/)
+
+
+## Fair VPN
+
+Fair VPN là một ứng dụng iOS có hỗ trợ giao thức: vmess, vless, xtls, trojan, shadowsocks và shadowsocksR.
+
+Hiện tại 2023-01-09T12:47:17Z, ứng dụng này miễn phí.
+
+Tái bút Phần còn lại của các ứng dụng ở trên hóa ra phải trả phí hoặc không hỗ trợ các giao thức này.
+
+* Tải xuống: [App Store](https://apps.apple.com/us/app/fair-vpn/id1533873488?platform=iphone)
 
 ## Các công cụ khác {#other}
 

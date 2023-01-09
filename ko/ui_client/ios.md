@@ -10,12 +10,6 @@ Kitsunebi는 V2Ray를 기반으로하는 iOS 앱입니다. V2Ray와 같은 모�
 
 * Download: [iTunes](https://itunes.apple.com/us/app/kitsunebi-proxy-utility/id1446584073?mt=8)
 
-## 키츠 네비 라이트
-
-Kitsunebi의 가벼운 버전.
-
-* 다운로드 : [iTunes](https://www.v2ray.com/itunes/us/kitsunebi-lite/id1387913765/)
-
 ## 그림자 격자
 
 Shadowrocket은 일반적인 VPN 응용 프로그램입니다. Is는 Shadowsocks, VMess, SSR 등과 같은 여러 프로토콜을 지원합니다.
@@ -31,6 +25,17 @@ Pepi는 V2Ray 호환 응용 프로그램입니다. VMess 프로토콜을 기반�
 ## Quantumult
 
 * 다운로드 : [iTunes](https://www.v2ray.com/itunes/us/quantumult/id1252015438/)
+
+
+## Fair VPN
+
+Fair VPN은 vmess, vless, xtls, trojan, shadowsocks 및 shadowsocksR 프로토콜을 지원하는 iOS 앱입니다.
+
+현재 2023-01-09T12:47:17Z, 이 애플리케이션은 무료입니다.
+
+추신 위의 나머지 애플리케이션은 유료이거나 이러한 프로토콜을 지원하지 않는 것으로 판명되었습니다.
+
+* 다운로드: [App Store](https://apps.apple.com/us/app/fair-vpn/id1533873488?platform=iphone)
 
 ## 기타 도구 {#other}
 
